@@ -1,0 +1,1492 @@
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB63:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** 
+  14:main.c        **** // Declaration of global variables
+  15:main.c        **** #define PWM_MAX_DUTY 100 // Maksimal Duty cycle
+  16:main.c        **** #define PWM_MIN_DUTY 0   // Minimum Duty cycle
+  17:main.c        **** 
+  18:main.c        **** // Initialisering af funktioner
+  19:main.c        **** CY_ISR_PROTO(ISR_UART_rx_handler);
+  20:main.c        **** void handleByteReceived(uint8_t byteReceived);
+  21:main.c        **** // void decreaseSpeed(void);
+  22:main.c        **** // void increaseSpeed(void);
+  23:main.c        **** void driveForwards(void);
+  24:main.c        **** void driveBackwards(void);
+  25:main.c        **** void stop(void);
+  26:main.c        **** 
+  27:main.c        **** 
+  28:main.c        **** 
+  29:main.c        **** int main(void)
+  30:main.c        **** {
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 2
+
+
+  28              		.loc 1 30 0
+  29              		.cfi_startproc
+  30              		@ Volatile: function does not return.
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  31:main.c        ****     CyGlobalIntEnable;                        /* Enable global interrupts. */
+  37              		.loc 1 31 0
+  38              		.syntax unified
+  39              	@ 31 "main.c" 1
+  40 0002 62B6     		CPSIE   i
+  41              	@ 0 "" 2
+  32:main.c        ****     isr_uart_rx_StartEx(ISR_UART_rx_handler); // Start af Interrupt Service Routine for UART_Rx
+  42              		.loc 1 32 0
+  43              		.thumb
+  44              		.syntax unified
+  45 0004 0248     		ldr	r0, .L4
+  46 0006 FFF7FEFF 		bl	isr_uart_rx_StartEx
+  47              	.LVL0:
+  33:main.c        ****     UART_Start();                           // Initialisering af UART_1
+  48              		.loc 1 33 0
+  49 000a FFF7FEFF 		bl	UART_Start
+  50              	.LVL1:
+  51              	.L2:
+  52 000e FEE7     		b	.L2
+  53              	.L5:
+  54              		.align	2
+  55              	.L4:
+  56 0010 00000000 		.word	ISR_UART_rx_handler
+  57              		.cfi_endproc
+  58              	.LFE63:
+  59              		.size	main, .-main
+  60              		.section	.text.driveForwards,"ax",%progbits
+  61              		.align	2
+  62              		.global	driveForwards
+  63              		.thumb
+  64              		.thumb_func
+  65              		.type	driveForwards, %function
+  66              	driveForwards:
+  67              	.LFB66:
+  34:main.c        ****     // A_ENABLE_Write(0);
+  35:main.c        ****     // B_ENABLE_Write(0);
+  36:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  37:main.c        **** 
+  38:main.c        ****     for(;;)
+  39:main.c        ****     {
+  40:main.c        ****         /* Place your application code here. */
+  41:main.c        ****     }
+  42:main.c        **** }
+  43:main.c        **** 
+  44:main.c        **** CY_ISR(ISR_UART_rx_handler)
+  45:main.c        **** {
+  46:main.c        ****     uint8_t bytesToRead = UART_GetRxBufferSize();
+  47:main.c        ****     while (bytesToRead > 0)
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 3
+
+
+  48:main.c        ****     {
+  49:main.c        ****         uint8_t byteReceived = UART_ReadRxData();
+  50:main.c        ****         UART_WriteTxData(byteReceived); // echo back
+  51:main.c        ****         
+  52:main.c        ****         handleByteReceived(byteReceived);
+  53:main.c        ****         
+  54:main.c        ****         bytesToRead--;
+  55:main.c        ****     }
+  56:main.c        **** }
+  57:main.c        **** 
+  58:main.c        **** void handleByteReceived(uint8_t byteReceived)
+  59:main.c        **** {
+  60:main.c        ****        switch(byteReceived) // Switch statements til UART kommunikation med keyboard knapper.
+  61:main.c        ****     {
+  62:main.c        ****         case '1' :
+  63:main.c        ****         {
+  64:main.c        ****             driveForwards();
+  65:main.c        ****         }
+  66:main.c        ****         break;
+  67:main.c        ****         case '2' :
+  68:main.c        ****         {
+  69:main.c        ****             driveBackwards();
+  70:main.c        ****         }
+  71:main.c        ****         break;
+  72:main.c        ****         case '0' :
+  73:main.c        ****         {
+  74:main.c        ****             stop();
+  75:main.c        ****             
+  76:main.c        ****         }
+  77:main.c        ****         break;
+  78:main.c        ****         default :
+  79:main.c        ****         {
+  80:main.c        ****             // nothing
+  81:main.c        ****         }
+  82:main.c        ****         break;
+  83:main.c        ****     }
+  84:main.c        **** }
+  85:main.c        **** 
+  86:main.c        **** void driveForwards()
+  87:main.c        **** {
+  68              		.loc 1 87 0
+  69              		.cfi_startproc
+  70              		@ args = 0, pretend = 0, frame = 0
+  71              		@ frame_needed = 0, uses_anonymous_args = 0
+  72 0000 08B5     		push	{r3, lr}
+  73              		.cfi_def_cfa_offset 8
+  74              		.cfi_offset 3, -8
+  75              		.cfi_offset 14, -4
+  88:main.c        ****     // Sætter koerselsretning til fremad
+  89:main.c        ****     UART_PutString("Set direction: Forwards\r\n");
+  76              		.loc 1 89 0
+  77 0002 0848     		ldr	r0, .L8
+  78 0004 FFF7FEFF 		bl	UART_PutString
+  79              	.LVL2:
+  90:main.c        ****     IN1_Write(0);
+  80              		.loc 1 90 0
+  81 0008 0020     		movs	r0, #0
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 4
+
+
+  82 000a FFF7FEFF 		bl	IN1_Write
+  83              	.LVL3:
+  91:main.c        ****     IN2_Write(1);
+  84              		.loc 1 91 0
+  85 000e 0120     		movs	r0, #1
+  86 0010 FFF7FEFF 		bl	IN2_Write
+  87              	.LVL4:
+  92:main.c        ****     IN3_Write(0);
+  88              		.loc 1 92 0
+  89 0014 0020     		movs	r0, #0
+  90 0016 FFF7FEFF 		bl	IN3_Write
+  91              	.LVL5:
+  93:main.c        ****     IN4_Write(1);
+  92              		.loc 1 93 0
+  93 001a 0120     		movs	r0, #1
+  94 001c FFF7FEFF 		bl	IN4_Write
+  95              	.LVL6:
+  96 0020 08BD     		pop	{r3, pc}
+  97              	.L9:
+  98 0022 00BF     		.align	2
+  99              	.L8:
+ 100 0024 00000000 		.word	.LC0
+ 101              		.cfi_endproc
+ 102              	.LFE66:
+ 103              		.size	driveForwards, .-driveForwards
+ 104              		.section	.text.driveBackwards,"ax",%progbits
+ 105              		.align	2
+ 106              		.global	driveBackwards
+ 107              		.thumb
+ 108              		.thumb_func
+ 109              		.type	driveBackwards, %function
+ 110              	driveBackwards:
+ 111              	.LFB67:
+  94:main.c        **** }
+  95:main.c        **** 
+  96:main.c        **** void driveBackwards()
+  97:main.c        **** {
+ 112              		.loc 1 97 0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116 0000 08B5     		push	{r3, lr}
+ 117              		.cfi_def_cfa_offset 8
+ 118              		.cfi_offset 3, -8
+ 119              		.cfi_offset 14, -4
+  98:main.c        ****     // Sætter koerselsretning til baglaens
+  99:main.c        ****     UART_PutString("Set direction: Backwards\r\n");
+ 120              		.loc 1 99 0
+ 121 0002 0848     		ldr	r0, .L12
+ 122 0004 FFF7FEFF 		bl	UART_PutString
+ 123              	.LVL7:
+ 100:main.c        ****     IN1_Write(1);
+ 124              		.loc 1 100 0
+ 125 0008 0120     		movs	r0, #1
+ 126 000a FFF7FEFF 		bl	IN1_Write
+ 127              	.LVL8:
+ 101:main.c        ****     IN2_Write(0);
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 5
+
+
+ 128              		.loc 1 101 0
+ 129 000e 0020     		movs	r0, #0
+ 130 0010 FFF7FEFF 		bl	IN2_Write
+ 131              	.LVL9:
+ 102:main.c        ****     IN3_Write(1);
+ 132              		.loc 1 102 0
+ 133 0014 0120     		movs	r0, #1
+ 134 0016 FFF7FEFF 		bl	IN3_Write
+ 135              	.LVL10:
+ 103:main.c        ****     IN4_Write(0);
+ 136              		.loc 1 103 0
+ 137 001a 0020     		movs	r0, #0
+ 138 001c FFF7FEFF 		bl	IN4_Write
+ 139              	.LVL11:
+ 140 0020 08BD     		pop	{r3, pc}
+ 141              	.L13:
+ 142 0022 00BF     		.align	2
+ 143              	.L12:
+ 144 0024 1C000000 		.word	.LC1
+ 145              		.cfi_endproc
+ 146              	.LFE67:
+ 147              		.size	driveBackwards, .-driveBackwards
+ 148              		.section	.text.stop,"ax",%progbits
+ 149              		.align	2
+ 150              		.global	stop
+ 151              		.thumb
+ 152              		.thumb_func
+ 153              		.type	stop, %function
+ 154              	stop:
+ 155              	.LFB68:
+ 104:main.c        ****     
+ 105:main.c        **** }
+ 106:main.c        **** 
+ 107:main.c        **** void stop() {
+ 156              		.loc 1 107 0
+ 157              		.cfi_startproc
+ 158              		@ args = 0, pretend = 0, frame = 0
+ 159              		@ frame_needed = 0, uses_anonymous_args = 0
+ 160 0000 08B5     		push	{r3, lr}
+ 161              		.cfi_def_cfa_offset 8
+ 162              		.cfi_offset 3, -8
+ 163              		.cfi_offset 14, -4
+ 108:main.c        ****     // Sætter alle LOGIC_Inputs til 1 for at stoppe/bremse.
+ 109:main.c        ****     UART_PutString("Stop \r\n");
+ 164              		.loc 1 109 0
+ 165 0002 0848     		ldr	r0, .L16
+ 166 0004 FFF7FEFF 		bl	UART_PutString
+ 167              	.LVL12:
+ 110:main.c        ****     IN1_Write(1);
+ 168              		.loc 1 110 0
+ 169 0008 0120     		movs	r0, #1
+ 170 000a FFF7FEFF 		bl	IN1_Write
+ 171              	.LVL13:
+ 111:main.c        ****     IN2_Write(1);
+ 172              		.loc 1 111 0
+ 173 000e 0120     		movs	r0, #1
+ 174 0010 FFF7FEFF 		bl	IN2_Write
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 6
+
+
+ 175              	.LVL14:
+ 112:main.c        ****     IN3_Write(1);
+ 176              		.loc 1 112 0
+ 177 0014 0120     		movs	r0, #1
+ 178 0016 FFF7FEFF 		bl	IN3_Write
+ 179              	.LVL15:
+ 113:main.c        ****     IN4_Write(1);
+ 180              		.loc 1 113 0
+ 181 001a 0120     		movs	r0, #1
+ 182 001c FFF7FEFF 		bl	IN4_Write
+ 183              	.LVL16:
+ 184 0020 08BD     		pop	{r3, pc}
+ 185              	.L17:
+ 186 0022 00BF     		.align	2
+ 187              	.L16:
+ 188 0024 38000000 		.word	.LC2
+ 189              		.cfi_endproc
+ 190              	.LFE68:
+ 191              		.size	stop, .-stop
+ 192              		.section	.text.handleByteReceived,"ax",%progbits
+ 193              		.align	2
+ 194              		.global	handleByteReceived
+ 195              		.thumb
+ 196              		.thumb_func
+ 197              		.type	handleByteReceived, %function
+ 198              	handleByteReceived:
+ 199              	.LFB65:
+  59:main.c        ****        switch(byteReceived) // Switch statements til UART kommunikation med keyboard knapper.
+ 200              		.loc 1 59 0
+ 201              		.cfi_startproc
+ 202              		@ args = 0, pretend = 0, frame = 0
+ 203              		@ frame_needed = 0, uses_anonymous_args = 0
+ 204              	.LVL17:
+ 205 0000 08B5     		push	{r3, lr}
+ 206              		.cfi_def_cfa_offset 8
+ 207              		.cfi_offset 3, -8
+ 208              		.cfi_offset 14, -4
+  60:main.c        ****     {
+ 209              		.loc 1 60 0
+ 210 0002 3128     		cmp	r0, #49
+ 211 0004 04D0     		beq	.L20
+ 212 0006 3228     		cmp	r0, #50
+ 213 0008 05D0     		beq	.L21
+ 214 000a 3028     		cmp	r0, #48
+ 215 000c 08D1     		bne	.L18
+ 216 000e 05E0     		b	.L22
+ 217              	.L20:
+  64:main.c        ****         }
+ 218              		.loc 1 64 0
+ 219 0010 FFF7FEFF 		bl	driveForwards
+ 220              	.LVL18:
+  66:main.c        ****         case '2' :
+ 221              		.loc 1 66 0
+ 222 0014 08BD     		pop	{r3, pc}
+ 223              	.LVL19:
+ 224              	.L21:
+  69:main.c        ****         }
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 7
+
+
+ 225              		.loc 1 69 0
+ 226 0016 FFF7FEFF 		bl	driveBackwards
+ 227              	.LVL20:
+  71:main.c        ****         case '0' :
+ 228              		.loc 1 71 0
+ 229 001a 08BD     		pop	{r3, pc}
+ 230              	.LVL21:
+ 231              	.L22:
+  74:main.c        ****             
+ 232              		.loc 1 74 0
+ 233 001c FFF7FEFF 		bl	stop
+ 234              	.LVL22:
+ 235              	.L18:
+ 236 0020 08BD     		pop	{r3, pc}
+ 237              		.cfi_endproc
+ 238              	.LFE65:
+ 239              		.size	handleByteReceived, .-handleByteReceived
+ 240 0022 00BF     		.section	.text.ISR_UART_rx_handler,"ax",%progbits
+ 241              		.align	2
+ 242              		.global	ISR_UART_rx_handler
+ 243              		.thumb
+ 244              		.thumb_func
+ 245              		.type	ISR_UART_rx_handler, %function
+ 246              	ISR_UART_rx_handler:
+ 247              	.LFB64:
+  45:main.c        ****     uint8_t bytesToRead = UART_GetRxBufferSize();
+ 248              		.loc 1 45 0
+ 249              		.cfi_startproc
+ 250              		@ args = 0, pretend = 0, frame = 0
+ 251              		@ frame_needed = 0, uses_anonymous_args = 0
+ 252 0000 38B5     		push	{r3, r4, r5, lr}
+ 253              		.cfi_def_cfa_offset 16
+ 254              		.cfi_offset 3, -16
+ 255              		.cfi_offset 4, -12
+ 256              		.cfi_offset 5, -8
+ 257              		.cfi_offset 14, -4
+  46:main.c        ****     while (bytesToRead > 0)
+ 258              		.loc 1 46 0
+ 259 0002 FFF7FEFF 		bl	UART_GetRxBufferSize
+ 260              	.LVL23:
+ 261 0006 0446     		mov	r4, r0
+ 262              	.LVL24:
+  47:main.c        ****     {
+ 263              		.loc 1 47 0
+ 264 0008 09E0     		b	.L25
+ 265              	.L26:
+ 266              	.LBB2:
+  49:main.c        ****         UART_WriteTxData(byteReceived); // echo back
+ 267              		.loc 1 49 0
+ 268 000a FFF7FEFF 		bl	UART_ReadRxData
+ 269              	.LVL25:
+ 270 000e 0546     		mov	r5, r0
+ 271              	.LVL26:
+  50:main.c        ****         
+ 272              		.loc 1 50 0
+ 273 0010 FFF7FEFF 		bl	UART_WriteTxData
+ 274              	.LVL27:
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 8
+
+
+  52:main.c        ****         
+ 275              		.loc 1 52 0
+ 276 0014 2846     		mov	r0, r5
+ 277 0016 FFF7FEFF 		bl	handleByteReceived
+ 278              	.LVL28:
+  54:main.c        ****     }
+ 279              		.loc 1 54 0
+ 280 001a 013C     		subs	r4, r4, #1
+ 281              	.LVL29:
+ 282 001c E4B2     		uxtb	r4, r4
+ 283              	.LVL30:
+ 284              	.L25:
+ 285              	.LBE2:
+  47:main.c        ****     {
+ 286              		.loc 1 47 0
+ 287 001e 002C     		cmp	r4, #0
+ 288 0020 F3D1     		bne	.L26
+  56:main.c        **** 
+ 289              		.loc 1 56 0
+ 290 0022 38BD     		pop	{r3, r4, r5, pc}
+ 291              		.cfi_endproc
+ 292              	.LFE64:
+ 293              		.size	ISR_UART_rx_handler, .-ISR_UART_rx_handler
+ 294              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 295              		.align	2
+ 296              	.LC0:
+ 297 0000 53657420 		.ascii	"Set direction: Forwards\015\012\000"
+ 297      64697265 
+ 297      6374696F 
+ 297      6E3A2046 
+ 297      6F727761 
+ 298 001a 0000     		.space	2
+ 299              	.LC1:
+ 300 001c 53657420 		.ascii	"Set direction: Backwards\015\012\000"
+ 300      64697265 
+ 300      6374696F 
+ 300      6E3A2042 
+ 300      61636B77 
+ 301 0037 00       		.space	1
+ 302              	.LC2:
+ 303 0038 53746F70 		.ascii	"Stop \015\012\000"
+ 303      200D0A00 
+ 304              		.text
+ 305              	.Letext0:
+ 306              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 307              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 308              		.file 4 "Generated_Source\\PSoC5/isr_uart_rx.h"
+ 309              		.file 5 "Generated_Source\\PSoC5/UART.h"
+ 310              		.file 6 "Generated_Source\\PSoC5/IN1.h"
+ 311              		.file 7 "Generated_Source\\PSoC5/IN2.h"
+ 312              		.file 8 "Generated_Source\\PSoC5/IN3.h"
+ 313              		.file 9 "Generated_Source\\PSoC5/IN4.h"
+ 314              		.file 10 "Generated_Source\\PSoC5/core_cm3.h"
+ 315              		.section	.debug_info,"",%progbits
+ 316              	.Ldebug_info0:
+ 317 0000 87030000 		.4byte	0x387
+ 318 0004 0400     		.2byte	0x4
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 9
+
+
+ 319 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 320 000a 04       		.byte	0x4
+ 321 000b 01       		.uleb128 0x1
+ 322 000c 6C000000 		.4byte	.LASF35
+ 323 0010 0C       		.byte	0xc
+ 324 0011 29020000 		.4byte	.LASF36
+ 325 0015 0E010000 		.4byte	.LASF37
+ 326 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 327 001d 00000000 		.4byte	0
+ 328 0021 00000000 		.4byte	.Ldebug_line0
+ 329 0025 02       		.uleb128 0x2
+ 330 0026 01       		.byte	0x1
+ 331 0027 06       		.byte	0x6
+ 332 0028 7D020000 		.4byte	.LASF0
+ 333 002c 03       		.uleb128 0x3
+ 334 002d 14000000 		.4byte	.LASF4
+ 335 0031 02       		.byte	0x2
+ 336 0032 1D       		.byte	0x1d
+ 337 0033 37000000 		.4byte	0x37
+ 338 0037 02       		.uleb128 0x2
+ 339 0038 01       		.byte	0x1
+ 340 0039 08       		.byte	0x8
+ 341 003a 5E000000 		.4byte	.LASF1
+ 342 003e 02       		.uleb128 0x2
+ 343 003f 02       		.byte	0x2
+ 344 0040 05       		.byte	0x5
+ 345 0041 3A020000 		.4byte	.LASF2
+ 346 0045 02       		.uleb128 0x2
+ 347 0046 02       		.byte	0x2
+ 348 0047 07       		.byte	0x7
+ 349 0048 39000000 		.4byte	.LASF3
+ 350 004c 03       		.uleb128 0x3
+ 351 004d 2F000000 		.4byte	.LASF5
+ 352 0051 02       		.byte	0x2
+ 353 0052 3F       		.byte	0x3f
+ 354 0053 57000000 		.4byte	0x57
+ 355 0057 02       		.uleb128 0x2
+ 356 0058 04       		.byte	0x4
+ 357 0059 05       		.byte	0x5
+ 358 005a 63020000 		.4byte	.LASF6
+ 359 005e 02       		.uleb128 0x2
+ 360 005f 04       		.byte	0x4
+ 361 0060 07       		.byte	0x7
+ 362 0061 4F010000 		.4byte	.LASF7
+ 363 0065 02       		.uleb128 0x2
+ 364 0066 08       		.byte	0x8
+ 365 0067 05       		.byte	0x5
+ 366 0068 1B020000 		.4byte	.LASF8
+ 367 006c 02       		.uleb128 0x2
+ 368 006d 08       		.byte	0x8
+ 369 006e 07       		.byte	0x7
+ 370 006f C2010000 		.4byte	.LASF9
+ 371 0073 04       		.uleb128 0x4
+ 372 0074 04       		.byte	0x4
+ 373 0075 05       		.byte	0x5
+ 374 0076 696E7400 		.ascii	"int\000"
+ 375 007a 02       		.uleb128 0x2
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 10
+
+
+ 376 007b 04       		.byte	0x4
+ 377 007c 07       		.byte	0x7
+ 378 007d A7010000 		.4byte	.LASF10
+ 379 0081 03       		.uleb128 0x3
+ 380 0082 D9010000 		.4byte	.LASF11
+ 381 0086 03       		.byte	0x3
+ 382 0087 18       		.byte	0x18
+ 383 0088 2C000000 		.4byte	0x2c
+ 384 008c 03       		.uleb128 0x3
+ 385 008d FB010000 		.4byte	.LASF12
+ 386 0091 03       		.byte	0x3
+ 387 0092 2C       		.byte	0x2c
+ 388 0093 4C000000 		.4byte	0x4c
+ 389 0097 02       		.uleb128 0x2
+ 390 0098 04       		.byte	0x4
+ 391 0099 04       		.byte	0x4
+ 392 009a 58000000 		.4byte	.LASF13
+ 393 009e 02       		.uleb128 0x2
+ 394 009f 08       		.byte	0x8
+ 395 00a0 04       		.byte	0x4
+ 396 00a1 91010000 		.4byte	.LASF14
+ 397 00a5 02       		.uleb128 0x2
+ 398 00a6 01       		.byte	0x1
+ 399 00a7 08       		.byte	0x8
+ 400 00a8 6C020000 		.4byte	.LASF15
+ 401 00ac 02       		.uleb128 0x2
+ 402 00ad 08       		.byte	0x8
+ 403 00ae 04       		.byte	0x4
+ 404 00af 71020000 		.4byte	.LASF16
+ 405 00b3 02       		.uleb128 0x2
+ 406 00b4 04       		.byte	0x4
+ 407 00b5 07       		.byte	0x7
+ 408 00b6 12020000 		.4byte	.LASF17
+ 409 00ba 05       		.uleb128 0x5
+ 410 00bb 98010000 		.4byte	.LASF38
+ 411 00bf 01       		.byte	0x1
+ 412 00c0 1D       		.byte	0x1d
+ 413 00c1 73000000 		.4byte	0x73
+ 414 00c5 00000000 		.4byte	.LFB63
+ 415 00c9 14000000 		.4byte	.LFE63-.LFB63
+ 416 00cd 01       		.uleb128 0x1
+ 417 00ce 9C       		.byte	0x9c
+ 418 00cf F4000000 		.4byte	0xf4
+ 419 00d3 06       		.uleb128 0x6
+ 420 00d4 0A000000 		.4byte	.LVL0
+ 421 00d8 1C030000 		.4byte	0x31c
+ 422 00dc EA000000 		.4byte	0xea
+ 423 00e0 07       		.uleb128 0x7
+ 424 00e1 01       		.uleb128 0x1
+ 425 00e2 50       		.byte	0x50
+ 426 00e3 05       		.uleb128 0x5
+ 427 00e4 03       		.byte	0x3
+ 428 00e5 00000000 		.4byte	ISR_UART_rx_handler
+ 429 00e9 00       		.byte	0
+ 430 00ea 08       		.uleb128 0x8
+ 431 00eb 0E000000 		.4byte	.LVL1
+ 432 00ef 27030000 		.4byte	0x327
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 11
+
+
+ 433 00f3 00       		.byte	0
+ 434 00f4 09       		.uleb128 0x9
+ 435 00f5 B4010000 		.4byte	.LASF18
+ 436 00f9 01       		.byte	0x1
+ 437 00fa 56       		.byte	0x56
+ 438 00fb 00000000 		.4byte	.LFB66
+ 439 00ff 28000000 		.4byte	.LFE66-.LFB66
+ 440 0103 01       		.uleb128 0x1
+ 441 0104 9C       		.byte	0x9c
+ 442 0105 69010000 		.4byte	0x169
+ 443 0109 06       		.uleb128 0x6
+ 444 010a 08000000 		.4byte	.LVL2
+ 445 010e 32030000 		.4byte	0x332
+ 446 0112 20010000 		.4byte	0x120
+ 447 0116 07       		.uleb128 0x7
+ 448 0117 01       		.uleb128 0x1
+ 449 0118 50       		.byte	0x50
+ 450 0119 05       		.uleb128 0x5
+ 451 011a 03       		.byte	0x3
+ 452 011b 00000000 		.4byte	.LC0
+ 453 011f 00       		.byte	0
+ 454 0120 06       		.uleb128 0x6
+ 455 0121 0E000000 		.4byte	.LVL3
+ 456 0125 3D030000 		.4byte	0x33d
+ 457 0129 33010000 		.4byte	0x133
+ 458 012d 07       		.uleb128 0x7
+ 459 012e 01       		.uleb128 0x1
+ 460 012f 50       		.byte	0x50
+ 461 0130 01       		.uleb128 0x1
+ 462 0131 30       		.byte	0x30
+ 463 0132 00       		.byte	0
+ 464 0133 06       		.uleb128 0x6
+ 465 0134 14000000 		.4byte	.LVL4
+ 466 0138 48030000 		.4byte	0x348
+ 467 013c 46010000 		.4byte	0x146
+ 468 0140 07       		.uleb128 0x7
+ 469 0141 01       		.uleb128 0x1
+ 470 0142 50       		.byte	0x50
+ 471 0143 01       		.uleb128 0x1
+ 472 0144 31       		.byte	0x31
+ 473 0145 00       		.byte	0
+ 474 0146 06       		.uleb128 0x6
+ 475 0147 1A000000 		.4byte	.LVL5
+ 476 014b 53030000 		.4byte	0x353
+ 477 014f 59010000 		.4byte	0x159
+ 478 0153 07       		.uleb128 0x7
+ 479 0154 01       		.uleb128 0x1
+ 480 0155 50       		.byte	0x50
+ 481 0156 01       		.uleb128 0x1
+ 482 0157 30       		.byte	0x30
+ 483 0158 00       		.byte	0
+ 484 0159 0A       		.uleb128 0xa
+ 485 015a 20000000 		.4byte	.LVL6
+ 486 015e 5E030000 		.4byte	0x35e
+ 487 0162 07       		.uleb128 0x7
+ 488 0163 01       		.uleb128 0x1
+ 489 0164 50       		.byte	0x50
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 12
+
+
+ 490 0165 01       		.uleb128 0x1
+ 491 0166 31       		.byte	0x31
+ 492 0167 00       		.byte	0
+ 493 0168 00       		.byte	0
+ 494 0169 09       		.uleb128 0x9
+ 495 016a 03020000 		.4byte	.LASF19
+ 496 016e 01       		.byte	0x1
+ 497 016f 60       		.byte	0x60
+ 498 0170 00000000 		.4byte	.LFB67
+ 499 0174 28000000 		.4byte	.LFE67-.LFB67
+ 500 0178 01       		.uleb128 0x1
+ 501 0179 9C       		.byte	0x9c
+ 502 017a DE010000 		.4byte	0x1de
+ 503 017e 06       		.uleb128 0x6
+ 504 017f 08000000 		.4byte	.LVL7
+ 505 0183 32030000 		.4byte	0x332
+ 506 0187 95010000 		.4byte	0x195
+ 507 018b 07       		.uleb128 0x7
+ 508 018c 01       		.uleb128 0x1
+ 509 018d 50       		.byte	0x50
+ 510 018e 05       		.uleb128 0x5
+ 511 018f 03       		.byte	0x3
+ 512 0190 1C000000 		.4byte	.LC1
+ 513 0194 00       		.byte	0
+ 514 0195 06       		.uleb128 0x6
+ 515 0196 0E000000 		.4byte	.LVL8
+ 516 019a 3D030000 		.4byte	0x33d
+ 517 019e A8010000 		.4byte	0x1a8
+ 518 01a2 07       		.uleb128 0x7
+ 519 01a3 01       		.uleb128 0x1
+ 520 01a4 50       		.byte	0x50
+ 521 01a5 01       		.uleb128 0x1
+ 522 01a6 31       		.byte	0x31
+ 523 01a7 00       		.byte	0
+ 524 01a8 06       		.uleb128 0x6
+ 525 01a9 14000000 		.4byte	.LVL9
+ 526 01ad 48030000 		.4byte	0x348
+ 527 01b1 BB010000 		.4byte	0x1bb
+ 528 01b5 07       		.uleb128 0x7
+ 529 01b6 01       		.uleb128 0x1
+ 530 01b7 50       		.byte	0x50
+ 531 01b8 01       		.uleb128 0x1
+ 532 01b9 30       		.byte	0x30
+ 533 01ba 00       		.byte	0
+ 534 01bb 06       		.uleb128 0x6
+ 535 01bc 1A000000 		.4byte	.LVL10
+ 536 01c0 53030000 		.4byte	0x353
+ 537 01c4 CE010000 		.4byte	0x1ce
+ 538 01c8 07       		.uleb128 0x7
+ 539 01c9 01       		.uleb128 0x1
+ 540 01ca 50       		.byte	0x50
+ 541 01cb 01       		.uleb128 0x1
+ 542 01cc 31       		.byte	0x31
+ 543 01cd 00       		.byte	0
+ 544 01ce 0A       		.uleb128 0xa
+ 545 01cf 20000000 		.4byte	.LVL11
+ 546 01d3 5E030000 		.4byte	0x35e
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 13
+
+
+ 547 01d7 07       		.uleb128 0x7
+ 548 01d8 01       		.uleb128 0x1
+ 549 01d9 50       		.byte	0x50
+ 550 01da 01       		.uleb128 0x1
+ 551 01db 30       		.byte	0x30
+ 552 01dc 00       		.byte	0
+ 553 01dd 00       		.byte	0
+ 554 01de 09       		.uleb128 0x9
+ 555 01df 7F010000 		.4byte	.LASF20
+ 556 01e3 01       		.byte	0x1
+ 557 01e4 6B       		.byte	0x6b
+ 558 01e5 00000000 		.4byte	.LFB68
+ 559 01e9 28000000 		.4byte	.LFE68-.LFB68
+ 560 01ed 01       		.uleb128 0x1
+ 561 01ee 9C       		.byte	0x9c
+ 562 01ef 53020000 		.4byte	0x253
+ 563 01f3 06       		.uleb128 0x6
+ 564 01f4 08000000 		.4byte	.LVL12
+ 565 01f8 32030000 		.4byte	0x332
+ 566 01fc 0A020000 		.4byte	0x20a
+ 567 0200 07       		.uleb128 0x7
+ 568 0201 01       		.uleb128 0x1
+ 569 0202 50       		.byte	0x50
+ 570 0203 05       		.uleb128 0x5
+ 571 0204 03       		.byte	0x3
+ 572 0205 38000000 		.4byte	.LC2
+ 573 0209 00       		.byte	0
+ 574 020a 06       		.uleb128 0x6
+ 575 020b 0E000000 		.4byte	.LVL13
+ 576 020f 3D030000 		.4byte	0x33d
+ 577 0213 1D020000 		.4byte	0x21d
+ 578 0217 07       		.uleb128 0x7
+ 579 0218 01       		.uleb128 0x1
+ 580 0219 50       		.byte	0x50
+ 581 021a 01       		.uleb128 0x1
+ 582 021b 31       		.byte	0x31
+ 583 021c 00       		.byte	0
+ 584 021d 06       		.uleb128 0x6
+ 585 021e 14000000 		.4byte	.LVL14
+ 586 0222 48030000 		.4byte	0x348
+ 587 0226 30020000 		.4byte	0x230
+ 588 022a 07       		.uleb128 0x7
+ 589 022b 01       		.uleb128 0x1
+ 590 022c 50       		.byte	0x50
+ 591 022d 01       		.uleb128 0x1
+ 592 022e 31       		.byte	0x31
+ 593 022f 00       		.byte	0
+ 594 0230 06       		.uleb128 0x6
+ 595 0231 1A000000 		.4byte	.LVL15
+ 596 0235 53030000 		.4byte	0x353
+ 597 0239 43020000 		.4byte	0x243
+ 598 023d 07       		.uleb128 0x7
+ 599 023e 01       		.uleb128 0x1
+ 600 023f 50       		.byte	0x50
+ 601 0240 01       		.uleb128 0x1
+ 602 0241 31       		.byte	0x31
+ 603 0242 00       		.byte	0
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 14
+
+
+ 604 0243 0A       		.uleb128 0xa
+ 605 0244 20000000 		.4byte	.LVL16
+ 606 0248 5E030000 		.4byte	0x35e
+ 607 024c 07       		.uleb128 0x7
+ 608 024d 01       		.uleb128 0x1
+ 609 024e 50       		.byte	0x50
+ 610 024f 01       		.uleb128 0x1
+ 611 0250 31       		.byte	0x31
+ 612 0251 00       		.byte	0
+ 613 0252 00       		.byte	0
+ 614 0253 09       		.uleb128 0x9
+ 615 0254 61010000 		.4byte	.LASF21
+ 616 0258 01       		.byte	0x1
+ 617 0259 3A       		.byte	0x3a
+ 618 025a 00000000 		.4byte	.LFB65
+ 619 025e 22000000 		.4byte	.LFE65-.LFB65
+ 620 0262 01       		.uleb128 0x1
+ 621 0263 9C       		.byte	0x9c
+ 622 0264 93020000 		.4byte	0x293
+ 623 0268 0B       		.uleb128 0xb
+ 624 0269 98020000 		.4byte	.LASF24
+ 625 026d 01       		.byte	0x1
+ 626 026e 3A       		.byte	0x3a
+ 627 026f 81000000 		.4byte	0x81
+ 628 0273 00000000 		.4byte	.LLST0
+ 629 0277 08       		.uleb128 0x8
+ 630 0278 14000000 		.4byte	.LVL18
+ 631 027c F4000000 		.4byte	0xf4
+ 632 0280 08       		.uleb128 0x8
+ 633 0281 1A000000 		.4byte	.LVL20
+ 634 0285 69010000 		.4byte	0x169
+ 635 0289 08       		.uleb128 0x8
+ 636 028a 20000000 		.4byte	.LVL22
+ 637 028e DE010000 		.4byte	0x1de
+ 638 0292 00       		.byte	0
+ 639 0293 09       		.uleb128 0x9
+ 640 0294 FA000000 		.4byte	.LASF22
+ 641 0298 01       		.byte	0x1
+ 642 0299 2C       		.byte	0x2c
+ 643 029a 00000000 		.4byte	.LFB64
+ 644 029e 24000000 		.4byte	.LFE64-.LFB64
+ 645 02a2 01       		.uleb128 0x1
+ 646 02a3 9C       		.byte	0x9c
+ 647 02a4 0B030000 		.4byte	0x30b
+ 648 02a8 0C       		.uleb128 0xc
+ 649 02a9 4C000000 		.4byte	.LASF23
+ 650 02ad 01       		.byte	0x1
+ 651 02ae 2E       		.byte	0x2e
+ 652 02af 81000000 		.4byte	0x81
+ 653 02b3 53000000 		.4byte	.LLST1
+ 654 02b7 0D       		.uleb128 0xd
+ 655 02b8 0A000000 		.4byte	.LBB2
+ 656 02bc 14000000 		.4byte	.LBE2-.LBB2
+ 657 02c0 01030000 		.4byte	0x301
+ 658 02c4 0C       		.uleb128 0xc
+ 659 02c5 98020000 		.4byte	.LASF24
+ 660 02c9 01       		.byte	0x1
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 15
+
+
+ 661 02ca 31       		.byte	0x31
+ 662 02cb 81000000 		.4byte	0x81
+ 663 02cf 71000000 		.4byte	.LLST2
+ 664 02d3 08       		.uleb128 0x8
+ 665 02d4 0E000000 		.4byte	.LVL25
+ 666 02d8 69030000 		.4byte	0x369
+ 667 02dc 06       		.uleb128 0x6
+ 668 02dd 14000000 		.4byte	.LVL27
+ 669 02e1 74030000 		.4byte	0x374
+ 670 02e5 F0020000 		.4byte	0x2f0
+ 671 02e9 07       		.uleb128 0x7
+ 672 02ea 01       		.uleb128 0x1
+ 673 02eb 50       		.byte	0x50
+ 674 02ec 02       		.uleb128 0x2
+ 675 02ed 75       		.byte	0x75
+ 676 02ee 00       		.sleb128 0
+ 677 02ef 00       		.byte	0
+ 678 02f0 0A       		.uleb128 0xa
+ 679 02f1 1A000000 		.4byte	.LVL28
+ 680 02f5 53020000 		.4byte	0x253
+ 681 02f9 07       		.uleb128 0x7
+ 682 02fa 01       		.uleb128 0x1
+ 683 02fb 50       		.byte	0x50
+ 684 02fc 02       		.uleb128 0x2
+ 685 02fd 75       		.byte	0x75
+ 686 02fe 00       		.sleb128 0
+ 687 02ff 00       		.byte	0
+ 688 0300 00       		.byte	0
+ 689 0301 08       		.uleb128 0x8
+ 690 0302 06000000 		.4byte	.LVL23
+ 691 0306 7F030000 		.4byte	0x37f
+ 692 030a 00       		.byte	0
+ 693 030b 0E       		.uleb128 0xe
+ 694 030c 84010000 		.4byte	.LASF39
+ 695 0310 0A       		.byte	0xa
+ 696 0311 1207     		.2byte	0x712
+ 697 0313 17030000 		.4byte	0x317
+ 698 0317 0F       		.uleb128 0xf
+ 699 0318 8C000000 		.4byte	0x8c
+ 700 031c 10       		.uleb128 0x10
+ 701 031d 00000000 		.4byte	.LASF25
+ 702 0321 00000000 		.4byte	.LASF25
+ 703 0325 04       		.byte	0x4
+ 704 0326 18       		.byte	0x18
+ 705 0327 10       		.uleb128 0x10
+ 706 0328 74010000 		.4byte	.LASF26
+ 707 032c 74010000 		.4byte	.LASF26
+ 708 0330 05       		.byte	0x5
+ 709 0331 54       		.byte	0x54
+ 710 0332 10       		.uleb128 0x10
+ 711 0333 89020000 		.4byte	.LASF27
+ 712 0337 89020000 		.4byte	.LASF27
+ 713 033b 05       		.byte	0x5
+ 714 033c 8B       		.byte	0x8b
+ 715 033d 10       		.uleb128 0x10
+ 716 033e 9D010000 		.4byte	.LASF28
+ 717 0342 9D010000 		.4byte	.LASF28
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 16
+
+
+ 718 0346 06       		.byte	0x6
+ 719 0347 26       		.byte	0x26
+ 720 0348 10       		.uleb128 0x10
+ 721 0349 E1010000 		.4byte	.LASF29
+ 722 034d E1010000 		.4byte	.LASF29
+ 723 0351 07       		.byte	0x7
+ 724 0352 26       		.byte	0x26
+ 725 0353 10       		.uleb128 0x10
+ 726 0354 30020000 		.4byte	.LASF30
+ 727 0358 30020000 		.4byte	.LASF30
+ 728 035c 08       		.byte	0x8
+ 729 035d 26       		.byte	0x26
+ 730 035e 10       		.uleb128 0x10
+ 731 035f 44020000 		.4byte	.LASF31
+ 732 0363 44020000 		.4byte	.LASF31
+ 733 0367 09       		.byte	0x9
+ 734 0368 26       		.byte	0x26
+ 735 0369 10       		.uleb128 0x10
+ 736 036a EB010000 		.4byte	.LASF32
+ 737 036e EB010000 		.4byte	.LASF32
+ 738 0372 05       		.byte	0x5
+ 739 0373 6F       		.byte	0x6f
+ 740 0374 10       		.uleb128 0x10
+ 741 0375 1E000000 		.4byte	.LASF33
+ 742 0379 1E000000 		.4byte	.LASF33
+ 743 037d 05       		.byte	0x5
+ 744 037e 88       		.byte	0x88
+ 745 037f 10       		.uleb128 0x10
+ 746 0380 4E020000 		.4byte	.LASF34
+ 747 0384 4E020000 		.4byte	.LASF34
+ 748 0388 05       		.byte	0x5
+ 749 0389 73       		.byte	0x73
+ 750 038a 00       		.byte	0
+ 751              		.section	.debug_abbrev,"",%progbits
+ 752              	.Ldebug_abbrev0:
+ 753 0000 01       		.uleb128 0x1
+ 754 0001 11       		.uleb128 0x11
+ 755 0002 01       		.byte	0x1
+ 756 0003 25       		.uleb128 0x25
+ 757 0004 0E       		.uleb128 0xe
+ 758 0005 13       		.uleb128 0x13
+ 759 0006 0B       		.uleb128 0xb
+ 760 0007 03       		.uleb128 0x3
+ 761 0008 0E       		.uleb128 0xe
+ 762 0009 1B       		.uleb128 0x1b
+ 763 000a 0E       		.uleb128 0xe
+ 764 000b 55       		.uleb128 0x55
+ 765 000c 17       		.uleb128 0x17
+ 766 000d 11       		.uleb128 0x11
+ 767 000e 01       		.uleb128 0x1
+ 768 000f 10       		.uleb128 0x10
+ 769 0010 17       		.uleb128 0x17
+ 770 0011 00       		.byte	0
+ 771 0012 00       		.byte	0
+ 772 0013 02       		.uleb128 0x2
+ 773 0014 24       		.uleb128 0x24
+ 774 0015 00       		.byte	0
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 17
+
+
+ 775 0016 0B       		.uleb128 0xb
+ 776 0017 0B       		.uleb128 0xb
+ 777 0018 3E       		.uleb128 0x3e
+ 778 0019 0B       		.uleb128 0xb
+ 779 001a 03       		.uleb128 0x3
+ 780 001b 0E       		.uleb128 0xe
+ 781 001c 00       		.byte	0
+ 782 001d 00       		.byte	0
+ 783 001e 03       		.uleb128 0x3
+ 784 001f 16       		.uleb128 0x16
+ 785 0020 00       		.byte	0
+ 786 0021 03       		.uleb128 0x3
+ 787 0022 0E       		.uleb128 0xe
+ 788 0023 3A       		.uleb128 0x3a
+ 789 0024 0B       		.uleb128 0xb
+ 790 0025 3B       		.uleb128 0x3b
+ 791 0026 0B       		.uleb128 0xb
+ 792 0027 49       		.uleb128 0x49
+ 793 0028 13       		.uleb128 0x13
+ 794 0029 00       		.byte	0
+ 795 002a 00       		.byte	0
+ 796 002b 04       		.uleb128 0x4
+ 797 002c 24       		.uleb128 0x24
+ 798 002d 00       		.byte	0
+ 799 002e 0B       		.uleb128 0xb
+ 800 002f 0B       		.uleb128 0xb
+ 801 0030 3E       		.uleb128 0x3e
+ 802 0031 0B       		.uleb128 0xb
+ 803 0032 03       		.uleb128 0x3
+ 804 0033 08       		.uleb128 0x8
+ 805 0034 00       		.byte	0
+ 806 0035 00       		.byte	0
+ 807 0036 05       		.uleb128 0x5
+ 808 0037 2E       		.uleb128 0x2e
+ 809 0038 01       		.byte	0x1
+ 810 0039 3F       		.uleb128 0x3f
+ 811 003a 19       		.uleb128 0x19
+ 812 003b 03       		.uleb128 0x3
+ 813 003c 0E       		.uleb128 0xe
+ 814 003d 3A       		.uleb128 0x3a
+ 815 003e 0B       		.uleb128 0xb
+ 816 003f 3B       		.uleb128 0x3b
+ 817 0040 0B       		.uleb128 0xb
+ 818 0041 27       		.uleb128 0x27
+ 819 0042 19       		.uleb128 0x19
+ 820 0043 49       		.uleb128 0x49
+ 821 0044 13       		.uleb128 0x13
+ 822 0045 8701     		.uleb128 0x87
+ 823 0047 19       		.uleb128 0x19
+ 824 0048 11       		.uleb128 0x11
+ 825 0049 01       		.uleb128 0x1
+ 826 004a 12       		.uleb128 0x12
+ 827 004b 06       		.uleb128 0x6
+ 828 004c 40       		.uleb128 0x40
+ 829 004d 18       		.uleb128 0x18
+ 830 004e 9742     		.uleb128 0x2117
+ 831 0050 19       		.uleb128 0x19
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 18
+
+
+ 832 0051 01       		.uleb128 0x1
+ 833 0052 13       		.uleb128 0x13
+ 834 0053 00       		.byte	0
+ 835 0054 00       		.byte	0
+ 836 0055 06       		.uleb128 0x6
+ 837 0056 898201   		.uleb128 0x4109
+ 838 0059 01       		.byte	0x1
+ 839 005a 11       		.uleb128 0x11
+ 840 005b 01       		.uleb128 0x1
+ 841 005c 31       		.uleb128 0x31
+ 842 005d 13       		.uleb128 0x13
+ 843 005e 01       		.uleb128 0x1
+ 844 005f 13       		.uleb128 0x13
+ 845 0060 00       		.byte	0
+ 846 0061 00       		.byte	0
+ 847 0062 07       		.uleb128 0x7
+ 848 0063 8A8201   		.uleb128 0x410a
+ 849 0066 00       		.byte	0
+ 850 0067 02       		.uleb128 0x2
+ 851 0068 18       		.uleb128 0x18
+ 852 0069 9142     		.uleb128 0x2111
+ 853 006b 18       		.uleb128 0x18
+ 854 006c 00       		.byte	0
+ 855 006d 00       		.byte	0
+ 856 006e 08       		.uleb128 0x8
+ 857 006f 898201   		.uleb128 0x4109
+ 858 0072 00       		.byte	0
+ 859 0073 11       		.uleb128 0x11
+ 860 0074 01       		.uleb128 0x1
+ 861 0075 31       		.uleb128 0x31
+ 862 0076 13       		.uleb128 0x13
+ 863 0077 00       		.byte	0
+ 864 0078 00       		.byte	0
+ 865 0079 09       		.uleb128 0x9
+ 866 007a 2E       		.uleb128 0x2e
+ 867 007b 01       		.byte	0x1
+ 868 007c 3F       		.uleb128 0x3f
+ 869 007d 19       		.uleb128 0x19
+ 870 007e 03       		.uleb128 0x3
+ 871 007f 0E       		.uleb128 0xe
+ 872 0080 3A       		.uleb128 0x3a
+ 873 0081 0B       		.uleb128 0xb
+ 874 0082 3B       		.uleb128 0x3b
+ 875 0083 0B       		.uleb128 0xb
+ 876 0084 27       		.uleb128 0x27
+ 877 0085 19       		.uleb128 0x19
+ 878 0086 11       		.uleb128 0x11
+ 879 0087 01       		.uleb128 0x1
+ 880 0088 12       		.uleb128 0x12
+ 881 0089 06       		.uleb128 0x6
+ 882 008a 40       		.uleb128 0x40
+ 883 008b 18       		.uleb128 0x18
+ 884 008c 9742     		.uleb128 0x2117
+ 885 008e 19       		.uleb128 0x19
+ 886 008f 01       		.uleb128 0x1
+ 887 0090 13       		.uleb128 0x13
+ 888 0091 00       		.byte	0
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 19
+
+
+ 889 0092 00       		.byte	0
+ 890 0093 0A       		.uleb128 0xa
+ 891 0094 898201   		.uleb128 0x4109
+ 892 0097 01       		.byte	0x1
+ 893 0098 11       		.uleb128 0x11
+ 894 0099 01       		.uleb128 0x1
+ 895 009a 31       		.uleb128 0x31
+ 896 009b 13       		.uleb128 0x13
+ 897 009c 00       		.byte	0
+ 898 009d 00       		.byte	0
+ 899 009e 0B       		.uleb128 0xb
+ 900 009f 05       		.uleb128 0x5
+ 901 00a0 00       		.byte	0
+ 902 00a1 03       		.uleb128 0x3
+ 903 00a2 0E       		.uleb128 0xe
+ 904 00a3 3A       		.uleb128 0x3a
+ 905 00a4 0B       		.uleb128 0xb
+ 906 00a5 3B       		.uleb128 0x3b
+ 907 00a6 0B       		.uleb128 0xb
+ 908 00a7 49       		.uleb128 0x49
+ 909 00a8 13       		.uleb128 0x13
+ 910 00a9 02       		.uleb128 0x2
+ 911 00aa 17       		.uleb128 0x17
+ 912 00ab 00       		.byte	0
+ 913 00ac 00       		.byte	0
+ 914 00ad 0C       		.uleb128 0xc
+ 915 00ae 34       		.uleb128 0x34
+ 916 00af 00       		.byte	0
+ 917 00b0 03       		.uleb128 0x3
+ 918 00b1 0E       		.uleb128 0xe
+ 919 00b2 3A       		.uleb128 0x3a
+ 920 00b3 0B       		.uleb128 0xb
+ 921 00b4 3B       		.uleb128 0x3b
+ 922 00b5 0B       		.uleb128 0xb
+ 923 00b6 49       		.uleb128 0x49
+ 924 00b7 13       		.uleb128 0x13
+ 925 00b8 02       		.uleb128 0x2
+ 926 00b9 17       		.uleb128 0x17
+ 927 00ba 00       		.byte	0
+ 928 00bb 00       		.byte	0
+ 929 00bc 0D       		.uleb128 0xd
+ 930 00bd 0B       		.uleb128 0xb
+ 931 00be 01       		.byte	0x1
+ 932 00bf 11       		.uleb128 0x11
+ 933 00c0 01       		.uleb128 0x1
+ 934 00c1 12       		.uleb128 0x12
+ 935 00c2 06       		.uleb128 0x6
+ 936 00c3 01       		.uleb128 0x1
+ 937 00c4 13       		.uleb128 0x13
+ 938 00c5 00       		.byte	0
+ 939 00c6 00       		.byte	0
+ 940 00c7 0E       		.uleb128 0xe
+ 941 00c8 34       		.uleb128 0x34
+ 942 00c9 00       		.byte	0
+ 943 00ca 03       		.uleb128 0x3
+ 944 00cb 0E       		.uleb128 0xe
+ 945 00cc 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 20
+
+
+ 946 00cd 0B       		.uleb128 0xb
+ 947 00ce 3B       		.uleb128 0x3b
+ 948 00cf 05       		.uleb128 0x5
+ 949 00d0 49       		.uleb128 0x49
+ 950 00d1 13       		.uleb128 0x13
+ 951 00d2 3F       		.uleb128 0x3f
+ 952 00d3 19       		.uleb128 0x19
+ 953 00d4 3C       		.uleb128 0x3c
+ 954 00d5 19       		.uleb128 0x19
+ 955 00d6 00       		.byte	0
+ 956 00d7 00       		.byte	0
+ 957 00d8 0F       		.uleb128 0xf
+ 958 00d9 35       		.uleb128 0x35
+ 959 00da 00       		.byte	0
+ 960 00db 49       		.uleb128 0x49
+ 961 00dc 13       		.uleb128 0x13
+ 962 00dd 00       		.byte	0
+ 963 00de 00       		.byte	0
+ 964 00df 10       		.uleb128 0x10
+ 965 00e0 2E       		.uleb128 0x2e
+ 966 00e1 00       		.byte	0
+ 967 00e2 3F       		.uleb128 0x3f
+ 968 00e3 19       		.uleb128 0x19
+ 969 00e4 3C       		.uleb128 0x3c
+ 970 00e5 19       		.uleb128 0x19
+ 971 00e6 6E       		.uleb128 0x6e
+ 972 00e7 0E       		.uleb128 0xe
+ 973 00e8 03       		.uleb128 0x3
+ 974 00e9 0E       		.uleb128 0xe
+ 975 00ea 3A       		.uleb128 0x3a
+ 976 00eb 0B       		.uleb128 0xb
+ 977 00ec 3B       		.uleb128 0x3b
+ 978 00ed 0B       		.uleb128 0xb
+ 979 00ee 00       		.byte	0
+ 980 00ef 00       		.byte	0
+ 981 00f0 00       		.byte	0
+ 982              		.section	.debug_loc,"",%progbits
+ 983              	.Ldebug_loc0:
+ 984              	.LLST0:
+ 985 0000 00000000 		.4byte	.LVL17
+ 986 0004 13000000 		.4byte	.LVL18-1
+ 987 0008 0100     		.2byte	0x1
+ 988 000a 50       		.byte	0x50
+ 989 000b 13000000 		.4byte	.LVL18-1
+ 990 000f 16000000 		.4byte	.LVL19
+ 991 0013 0400     		.2byte	0x4
+ 992 0015 F3       		.byte	0xf3
+ 993 0016 01       		.uleb128 0x1
+ 994 0017 50       		.byte	0x50
+ 995 0018 9F       		.byte	0x9f
+ 996 0019 16000000 		.4byte	.LVL19
+ 997 001d 19000000 		.4byte	.LVL20-1
+ 998 0021 0100     		.2byte	0x1
+ 999 0023 50       		.byte	0x50
+ 1000 0024 19000000 		.4byte	.LVL20-1
+ 1001 0028 1C000000 		.4byte	.LVL21
+ 1002 002c 0400     		.2byte	0x4
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 21
+
+
+ 1003 002e F3       		.byte	0xf3
+ 1004 002f 01       		.uleb128 0x1
+ 1005 0030 50       		.byte	0x50
+ 1006 0031 9F       		.byte	0x9f
+ 1007 0032 1C000000 		.4byte	.LVL21
+ 1008 0036 1F000000 		.4byte	.LVL22-1
+ 1009 003a 0100     		.2byte	0x1
+ 1010 003c 50       		.byte	0x50
+ 1011 003d 1F000000 		.4byte	.LVL22-1
+ 1012 0041 22000000 		.4byte	.LFE65
+ 1013 0045 0400     		.2byte	0x4
+ 1014 0047 F3       		.byte	0xf3
+ 1015 0048 01       		.uleb128 0x1
+ 1016 0049 50       		.byte	0x50
+ 1017 004a 9F       		.byte	0x9f
+ 1018 004b 00000000 		.4byte	0
+ 1019 004f 00000000 		.4byte	0
+ 1020              	.LLST1:
+ 1021 0053 08000000 		.4byte	.LVL24
+ 1022 0057 1C000000 		.4byte	.LVL29
+ 1023 005b 0100     		.2byte	0x1
+ 1024 005d 54       		.byte	0x54
+ 1025 005e 1E000000 		.4byte	.LVL30
+ 1026 0062 24000000 		.4byte	.LFE64
+ 1027 0066 0100     		.2byte	0x1
+ 1028 0068 54       		.byte	0x54
+ 1029 0069 00000000 		.4byte	0
+ 1030 006d 00000000 		.4byte	0
+ 1031              	.LLST2:
+ 1032 0071 10000000 		.4byte	.LVL26
+ 1033 0075 1E000000 		.4byte	.LVL30
+ 1034 0079 0100     		.2byte	0x1
+ 1035 007b 55       		.byte	0x55
+ 1036 007c 00000000 		.4byte	0
+ 1037 0080 00000000 		.4byte	0
+ 1038              		.section	.debug_aranges,"",%progbits
+ 1039 0000 44000000 		.4byte	0x44
+ 1040 0004 0200     		.2byte	0x2
+ 1041 0006 00000000 		.4byte	.Ldebug_info0
+ 1042 000a 04       		.byte	0x4
+ 1043 000b 00       		.byte	0
+ 1044 000c 0000     		.2byte	0
+ 1045 000e 0000     		.2byte	0
+ 1046 0010 00000000 		.4byte	.LFB63
+ 1047 0014 14000000 		.4byte	.LFE63-.LFB63
+ 1048 0018 00000000 		.4byte	.LFB66
+ 1049 001c 28000000 		.4byte	.LFE66-.LFB66
+ 1050 0020 00000000 		.4byte	.LFB67
+ 1051 0024 28000000 		.4byte	.LFE67-.LFB67
+ 1052 0028 00000000 		.4byte	.LFB68
+ 1053 002c 28000000 		.4byte	.LFE68-.LFB68
+ 1054 0030 00000000 		.4byte	.LFB65
+ 1055 0034 22000000 		.4byte	.LFE65-.LFB65
+ 1056 0038 00000000 		.4byte	.LFB64
+ 1057 003c 24000000 		.4byte	.LFE64-.LFB64
+ 1058 0040 00000000 		.4byte	0
+ 1059 0044 00000000 		.4byte	0
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 22
+
+
+ 1060              		.section	.debug_ranges,"",%progbits
+ 1061              	.Ldebug_ranges0:
+ 1062 0000 00000000 		.4byte	.LFB63
+ 1063 0004 14000000 		.4byte	.LFE63
+ 1064 0008 00000000 		.4byte	.LFB66
+ 1065 000c 28000000 		.4byte	.LFE66
+ 1066 0010 00000000 		.4byte	.LFB67
+ 1067 0014 28000000 		.4byte	.LFE67
+ 1068 0018 00000000 		.4byte	.LFB68
+ 1069 001c 28000000 		.4byte	.LFE68
+ 1070 0020 00000000 		.4byte	.LFB65
+ 1071 0024 22000000 		.4byte	.LFE65
+ 1072 0028 00000000 		.4byte	.LFB64
+ 1073 002c 24000000 		.4byte	.LFE64
+ 1074 0030 00000000 		.4byte	0
+ 1075 0034 00000000 		.4byte	0
+ 1076              		.section	.debug_line,"",%progbits
+ 1077              	.Ldebug_line0:
+ 1078 0000 05020000 		.section	.debug_str,"MS",%progbits,1
+ 1078      02007E01 
+ 1078      00000201 
+ 1078      FB0E0D00 
+ 1078      01010101 
+ 1079              	.LASF25:
+ 1080 0000 6973725F 		.ascii	"isr_uart_rx_StartEx\000"
+ 1080      75617274 
+ 1080      5F72785F 
+ 1080      53746172 
+ 1080      74457800 
+ 1081              	.LASF4:
+ 1082 0014 5F5F7569 		.ascii	"__uint8_t\000"
+ 1082      6E74385F 
+ 1082      7400
+ 1083              	.LASF33:
+ 1084 001e 55415254 		.ascii	"UART_WriteTxData\000"
+ 1084      5F577269 
+ 1084      74655478 
+ 1084      44617461 
+ 1084      00
+ 1085              	.LASF5:
+ 1086 002f 5F5F696E 		.ascii	"__int32_t\000"
+ 1086      7433325F 
+ 1086      7400
+ 1087              	.LASF3:
+ 1088 0039 73686F72 		.ascii	"short unsigned int\000"
+ 1088      7420756E 
+ 1088      7369676E 
+ 1088      65642069 
+ 1088      6E7400
+ 1089              	.LASF23:
+ 1090 004c 62797465 		.ascii	"bytesToRead\000"
+ 1090      73546F52 
+ 1090      65616400 
+ 1091              	.LASF13:
+ 1092 0058 666C6F61 		.ascii	"float\000"
+ 1092      7400
+ 1093              	.LASF1:
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 23
+
+
+ 1094 005e 756E7369 		.ascii	"unsigned char\000"
+ 1094      676E6564 
+ 1094      20636861 
+ 1094      7200
+ 1095              	.LASF35:
+ 1096 006c 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1096      43313120 
+ 1096      352E342E 
+ 1096      31203230 
+ 1096      31363036 
+ 1097 009f 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1097      20726576 
+ 1097      6973696F 
+ 1097      6E203233 
+ 1097      37373135 
+ 1098 00d2 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1098      66756E63 
+ 1098      74696F6E 
+ 1098      2D736563 
+ 1098      74696F6E 
+ 1099              	.LASF22:
+ 1100 00fa 4953525F 		.ascii	"ISR_UART_rx_handler\000"
+ 1100      55415254 
+ 1100      5F72785F 
+ 1100      68616E64 
+ 1100      6C657200 
+ 1101              	.LASF37:
+ 1102 010e 433A5C55 		.ascii	"C:\\Users\\Askja\\Documents\\PSoC Creator\\BattleBo"
+ 1102      73657273 
+ 1102      5C41736B 
+ 1102      6A615C44 
+ 1102      6F63756D 
+ 1103 013c 745C4D6F 		.ascii	"t\\Motor_Test.cydsn\000"
+ 1103      746F725F 
+ 1103      54657374 
+ 1103      2E637964 
+ 1103      736E00
+ 1104              	.LASF7:
+ 1105 014f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1105      20756E73 
+ 1105      69676E65 
+ 1105      6420696E 
+ 1105      7400
+ 1106              	.LASF21:
+ 1107 0161 68616E64 		.ascii	"handleByteReceived\000"
+ 1107      6C654279 
+ 1107      74655265 
+ 1107      63656976 
+ 1107      656400
+ 1108              	.LASF26:
+ 1109 0174 55415254 		.ascii	"UART_Start\000"
+ 1109      5F537461 
+ 1109      727400
+ 1110              	.LASF20:
+ 1111 017f 73746F70 		.ascii	"stop\000"
+ 1111      00
+ 1112              	.LASF39:
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 24
+
+
+ 1113 0184 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1113      52784275 
+ 1113      66666572 
+ 1113      00
+ 1114              	.LASF14:
+ 1115 0191 646F7562 		.ascii	"double\000"
+ 1115      6C6500
+ 1116              	.LASF38:
+ 1117 0198 6D61696E 		.ascii	"main\000"
+ 1117      00
+ 1118              	.LASF28:
+ 1119 019d 494E315F 		.ascii	"IN1_Write\000"
+ 1119      57726974 
+ 1119      6500
+ 1120              	.LASF10:
+ 1121 01a7 756E7369 		.ascii	"unsigned int\000"
+ 1121      676E6564 
+ 1121      20696E74 
+ 1121      00
+ 1122              	.LASF18:
+ 1123 01b4 64726976 		.ascii	"driveForwards\000"
+ 1123      65466F72 
+ 1123      77617264 
+ 1123      7300
+ 1124              	.LASF9:
+ 1125 01c2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1125      206C6F6E 
+ 1125      6720756E 
+ 1125      7369676E 
+ 1125      65642069 
+ 1126              	.LASF11:
+ 1127 01d9 75696E74 		.ascii	"uint8_t\000"
+ 1127      385F7400 
+ 1128              	.LASF29:
+ 1129 01e1 494E325F 		.ascii	"IN2_Write\000"
+ 1129      57726974 
+ 1129      6500
+ 1130              	.LASF32:
+ 1131 01eb 55415254 		.ascii	"UART_ReadRxData\000"
+ 1131      5F526561 
+ 1131      64527844 
+ 1131      61746100 
+ 1132              	.LASF12:
+ 1133 01fb 696E7433 		.ascii	"int32_t\000"
+ 1133      325F7400 
+ 1134              	.LASF19:
+ 1135 0203 64726976 		.ascii	"driveBackwards\000"
+ 1135      65426163 
+ 1135      6B776172 
+ 1135      647300
+ 1136              	.LASF17:
+ 1137 0212 73697A65 		.ascii	"sizetype\000"
+ 1137      74797065 
+ 1137      00
+ 1138              	.LASF8:
+ 1139 021b 6C6F6E67 		.ascii	"long long int\000"
+ 1139      206C6F6E 
+ARM GAS  C:\Users\Askja\AppData\Local\Temp\ccmKJXm5.s 			page 25
+
+
+ 1139      6720696E 
+ 1139      7400
+ 1140              	.LASF36:
+ 1141 0229 6D61696E 		.ascii	"main.c\000"
+ 1141      2E6300
+ 1142              	.LASF30:
+ 1143 0230 494E335F 		.ascii	"IN3_Write\000"
+ 1143      57726974 
+ 1143      6500
+ 1144              	.LASF2:
+ 1145 023a 73686F72 		.ascii	"short int\000"
+ 1145      7420696E 
+ 1145      7400
+ 1146              	.LASF31:
+ 1147 0244 494E345F 		.ascii	"IN4_Write\000"
+ 1147      57726974 
+ 1147      6500
+ 1148              	.LASF34:
+ 1149 024e 55415254 		.ascii	"UART_GetRxBufferSize\000"
+ 1149      5F476574 
+ 1149      52784275 
+ 1149      66666572 
+ 1149      53697A65 
+ 1150              	.LASF6:
+ 1151 0263 6C6F6E67 		.ascii	"long int\000"
+ 1151      20696E74 
+ 1151      00
+ 1152              	.LASF15:
+ 1153 026c 63686172 		.ascii	"char\000"
+ 1153      00
+ 1154              	.LASF16:
+ 1155 0271 6C6F6E67 		.ascii	"long double\000"
+ 1155      20646F75 
+ 1155      626C6500 
+ 1156              	.LASF0:
+ 1157 027d 7369676E 		.ascii	"signed char\000"
+ 1157      65642063 
+ 1157      68617200 
+ 1158              	.LASF27:
+ 1159 0289 55415254 		.ascii	"UART_PutString\000"
+ 1159      5F507574 
+ 1159      53747269 
+ 1159      6E6700
+ 1160              	.LASF24:
+ 1161 0298 62797465 		.ascii	"byteReceived\000"
+ 1161      52656365 
+ 1161      69766564 
+ 1161      00
+ 1162              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

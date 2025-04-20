@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\grace\\source\\repos\\PRJ3 Save Speed\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FDB6FD15-56A5-43F8-98F7-1C2526C61A99}|PRJ3 Save Speed.vcxproj|C:\\Users\\grace\\source\\repos\\PRJ3 Save Speed\\SaveSpeed.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FDB6FD15-56A5-43F8-98F7-1C2526C61A99}|PRJ3 Save Speed.vcxproj|solutionrelative:SaveSpeed.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SaveSpeed.cpp",
+              "DocumentMoniker": "C:\\Users\\grace\\source\\repos\\PRJ3 Save Speed\\SaveSpeed.cpp",
+              "RelativeDocumentMoniker": "SaveSpeed.cpp",
+              "ToolTip": "C:\\Users\\grace\\source\\repos\\PRJ3 Save Speed\\SaveSpeed.cpp*",
+              "RelativeToolTip": "SaveSpeed.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-31T14:25:10.318Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
