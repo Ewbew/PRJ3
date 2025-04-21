@@ -1,0 +1,158 @@
+#include "UART_handler.h"
+#include "motor_control.h"
+#include <stdio.h>
+
+// UART RX interrupt service routine for Bluetooth
+CY_ISR(ISR_UART_rx_handler_BT)
+{
+    static char btBuffer[50];     // Buffer for the incoming string
+    static uint8_t index = 0;
+    int temp1, temp2;
+    int8_t VAR1, VAR2;
+
+    while (UART_BT_GetRxBufferSize() > 0)
+    {
+        char byteReceived = UART_BT_ReadRxData();
+
+        // Store the byte if we have room
+        if (index < sizeof(btBuffer) - 1)
+        {
+            btBuffer[index++] = byteReceived;
+        }
+
+        // Message is considered done if we get \n, \r, or if buffer is full
+        if (byteReceived == '\n' || byteReceived == '\r' || index >= 49)
+        {
+            btBuffer[index] = '\0';  // Null-terminate the string
+
+            char message[150];
+            snprintf(message, sizeof(message), "\r\n[BT Response] %s\r\n", btBuffer);
+            UART_PutString(message);
+
+            // Try to parse the format: (e.g.) "-39,45"
+            if (sscanf(btBuffer, "%d,%d", &temp1, &temp2) == 2)
+            {
+                VAR1 = (int8_t)temp1;
+                VAR2 = (int8_t)temp2;
+                set_speedA(VAR1);
+                set_speedB(VAR2);
+            }
+            else
+            {
+                // Combine parse error message into one formatted string
+                snprintf(message, sizeof(message), "\r\nParse error. Content of BT buffer: %s\r\n", btBuffer);
+                UART_PutString(message);
+            }
+
+            index = 0; // Reset buffer for next message
+        }
+    }
+}
+
+
+// UART RX interrupt service routine for PC
+CY_ISR(ISR_UART_rx_handler_PC)
+{
+    uint8_t bytesToRead = UART_GetRxBufferSize();
+    while (bytesToRead > 0)
+    {
+        uint8_t byteReceived = UART_ReadRxData();
+        UART_WriteTxData(byteReceived); // Echo back the received byte
+
+        handleByteReceived(byteReceived);
+        
+        bytesToRead--;
+    }
+}
+
+void handleByteReceived(uint8_t byteReceived)
+{
+    // A static variable to keep track of the current speed.
+    // Valid range is from -PWM_MAX_DUTY to PWM_MAX_DUTY.
+    static int8_t currentSpeed = 0;
+    char command_address[] = "AT+MAC\r\n";
+    char command_baud[] = "AT+BAUD\r\n";
+    char command_status[] = "AT+STAT\r\n";
+    
+    switch(byteReceived)
+    {
+        case '1':
+            // Increase speed by 5, ensuring we do not exceed PWM_MAX_DUTY.
+            if (currentSpeed < PWM_MAX_DUTY)
+            {
+                UART_PutString("Increase speed\r\n");
+                currentSpeed += 5;
+                if (currentSpeed > PWM_MAX_DUTY)
+                {
+                    currentSpeed = PWM_MAX_DUTY;
+                }
+                set_speedA(currentSpeed);
+                set_speedB(currentSpeed);
+                if (currentSpeed == PWM_MAX_DUTY)
+                {
+                    UART_PutString("Max forward speed reached\r\n");
+                }
+            }
+            else
+            {
+                UART_PutString("Already at max forward speed\r\n");
+            }
+            break;
+            
+        case '2':
+            // Decrease speed by 5, ensuring we do not drop below -PWM_MAX_DUTY.
+            if (currentSpeed > -PWM_MAX_DUTY)
+            {
+                UART_PutString("Decrease speed\r\n");
+                currentSpeed -= 5;
+                if (currentSpeed < -PWM_MAX_DUTY)
+                {
+                    currentSpeed = -PWM_MAX_DUTY;
+                }
+                set_speedA(currentSpeed);
+                set_speedB(currentSpeed);
+                if (currentSpeed == -PWM_MAX_DUTY)
+                {
+                    UART_PutString("Max reverse speed reached\r\n");
+                }
+            }
+            else
+            {
+                UART_PutString("Already at max reverse speed\r\n");
+            }
+            break;
+            
+        case '0':
+            // Stop the motors by setting current speed to 0.
+            currentSpeed = 0;
+            stop();
+            break;
+        
+        case 'a':
+           // Sends
+            UART_PutString("Sending GetMACAddress command to Bluetooth module\r\n");
+            UART_BT_PutString(command_address);
+            break;
+         
+        case 'b':
+           // Sends
+            UART_PutString("Sending GetBAUDRate command to Bluetooth module\r\n");
+            UART_BT_PutString(command_baud);
+            break;
+            
+        case 's':
+            UART_PutString("Sending GetStatus command to Bluetooth module\r\n");
+            UART_BT_PutString(command_status);
+            break;
+        
+        case 't':
+            // Test
+            UART_PutString("Testing for response from BT module\r\n");
+            UART_BT_PutString("AT+VER\r\n");
+            break;
+            
+        default:
+            // Do nothing for unrecognized commands.
+            break;
+    }
+}

@@ -1,0 +1,2158 @@
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"UART_handler.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.ISR_UART_rx_handler_BT,"ax",%progbits
+  20              		.align	2
+  21              		.global	ISR_UART_rx_handler_BT
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	ISR_UART_rx_handler_BT, %function
+  25              	ISR_UART_rx_handler_BT:
+  26              	.LFB64:
+  27              		.file 1 "UART_handler.c"
+   1:UART_handler.c **** #include "UART_handler.h"
+   2:UART_handler.c **** #include "motor_control.h"
+   3:UART_handler.c **** #include <stdio.h>
+   4:UART_handler.c **** 
+   5:UART_handler.c **** // UART RX interrupt service routine for Bluetooth
+   6:UART_handler.c **** CY_ISR(ISR_UART_rx_handler_BT)
+   7:UART_handler.c **** {
+  28              		.loc 1 7 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 160
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  36 0002 A8B0     		sub	sp, sp, #160
+  37              		.cfi_def_cfa_offset 168
+   8:UART_handler.c ****     static char btBuffer[50];     // Buffer for the incoming string
+   9:UART_handler.c ****     static uint8_t index = 0;
+  10:UART_handler.c ****     int temp1, temp2;
+  11:UART_handler.c ****     int8_t VAR1, VAR2;
+  12:UART_handler.c **** 
+  13:UART_handler.c ****     while (UART_BT_GetRxBufferSize() > 0)
+  38              		.loc 1 13 0
+  39 0004 3FE0     		b	.L2
+  40              	.L8:
+  41              	.LBB2:
+  14:UART_handler.c ****     {
+  15:UART_handler.c ****         char byteReceived = UART_BT_ReadRxData();
+  42              		.loc 1 15 0
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 2
+
+
+  43 0006 FFF7FEFF 		bl	UART_BT_ReadRxData
+  44              	.LVL0:
+  16:UART_handler.c **** 
+  17:UART_handler.c ****         // Store the byte if we have room
+  18:UART_handler.c ****         if (index < sizeof(btBuffer) - 1)
+  45              		.loc 1 18 0
+  46 000a 224B     		ldr	r3, .L10
+  47 000c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  48 000e 302B     		cmp	r3, #48
+  49 0010 04D8     		bhi	.L3
+  19:UART_handler.c ****         {
+  20:UART_handler.c ****             btBuffer[index++] = byteReceived;
+  50              		.loc 1 20 0
+  51 0012 204A     		ldr	r2, .L10
+  52 0014 591C     		adds	r1, r3, #1
+  53 0016 1170     		strb	r1, [r2]
+  54 0018 1344     		add	r3, r3, r2
+  55 001a 1871     		strb	r0, [r3, #4]
+  56              	.L3:
+  21:UART_handler.c ****         }
+  22:UART_handler.c **** 
+  23:UART_handler.c ****         // Message is considered done if we get \n, \r, or if buffer is full
+  24:UART_handler.c ****         if (byteReceived == '\n' || byteReceived == '\r' || index >= 49)
+  57              		.loc 1 24 0
+  58 001c 0A28     		cmp	r0, #10
+  59 001e 05D0     		beq	.L4
+  60              		.loc 1 24 0 is_stmt 0 discriminator 1
+  61 0020 0D28     		cmp	r0, #13
+  62 0022 03D0     		beq	.L4
+  63              		.loc 1 24 0 discriminator 2
+  64 0024 1B4B     		ldr	r3, .L10
+  65 0026 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  66 0028 302B     		cmp	r3, #48
+  67 002a 2CD9     		bls	.L2
+  68              	.L4:
+  69              	.LBB3:
+  25:UART_handler.c ****         {
+  26:UART_handler.c ****             btBuffer[index] = '\0';  // Null-terminate the string
+  70              		.loc 1 26 0 is_stmt 1
+  71 002c 1948     		ldr	r0, .L10
+  72              	.LVL1:
+  73 002e 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+  74 0030 0344     		add	r3, r3, r0
+  75 0032 0022     		movs	r2, #0
+  76 0034 1A71     		strb	r2, [r3, #4]
+  27:UART_handler.c **** 
+  28:UART_handler.c ****             char message[150];
+  29:UART_handler.c ****             snprintf(message, sizeof(message), "\r\n[BT Response] %s\r\n", btBuffer);
+  77              		.loc 1 29 0
+  78 0036 041D     		adds	r4, r0, #4
+  79 0038 2346     		mov	r3, r4
+  80 003a 174A     		ldr	r2, .L10+4
+  81 003c 9621     		movs	r1, #150
+  82 003e 6846     		mov	r0, sp
+  83 0040 FFF7FEFF 		bl	snprintf
+  84              	.LVL2:
+  30:UART_handler.c ****             UART_PutString(message);
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 3
+
+
+  85              		.loc 1 30 0
+  86 0044 6846     		mov	r0, sp
+  87 0046 FFF7FEFF 		bl	UART_PutString
+  88              	.LVL3:
+  31:UART_handler.c **** 
+  32:UART_handler.c ****             // Try to parse the format: (e.g.) "-39,45"
+  33:UART_handler.c ****             if (sscanf(btBuffer, "%d,%d", &temp1, &temp2) == 2)
+  89              		.loc 1 33 0
+  90 004a 26AB     		add	r3, sp, #152
+  91 004c 27AA     		add	r2, sp, #156
+  92 004e 1349     		ldr	r1, .L10+8
+  93 0050 2046     		mov	r0, r4
+  94 0052 FFF7FEFF 		bl	sscanf
+  95              	.LVL4:
+  96 0056 0228     		cmp	r0, #2
+  97 0058 09D1     		bne	.L6
+  98              	.LVL5:
+  34:UART_handler.c ****             {
+  35:UART_handler.c ****                 VAR1 = (int8_t)temp1;
+  36:UART_handler.c ****                 VAR2 = (int8_t)temp2;
+  99              		.loc 1 36 0
+ 100 005a 9DF99840 		ldrsb	r4, [sp, #152]
+ 101              	.LVL6:
+  37:UART_handler.c ****                 set_speedA(VAR1);
+ 102              		.loc 1 37 0
+ 103 005e 9DF99C00 		ldrsb	r0, [sp, #156]
+ 104 0062 FFF7FEFF 		bl	set_speedA
+ 105              	.LVL7:
+  38:UART_handler.c ****                 set_speedB(VAR2);
+ 106              		.loc 1 38 0
+ 107 0066 2046     		mov	r0, r4
+ 108 0068 FFF7FEFF 		bl	set_speedB
+ 109              	.LVL8:
+ 110 006c 08E0     		b	.L7
+ 111              	.LVL9:
+ 112              	.L6:
+  39:UART_handler.c ****             }
+  40:UART_handler.c ****             else
+  41:UART_handler.c ****             {
+  42:UART_handler.c ****                 // Combine parse error message into one formatted string
+  43:UART_handler.c ****                 snprintf(message, sizeof(message), "\r\nParse error. Content of BT buffer: %s\r\n",
+ 113              		.loc 1 43 0
+ 114 006e 0C4B     		ldr	r3, .L10+12
+ 115 0070 0C4A     		ldr	r2, .L10+16
+ 116 0072 9621     		movs	r1, #150
+ 117 0074 6846     		mov	r0, sp
+ 118 0076 FFF7FEFF 		bl	snprintf
+ 119              	.LVL10:
+  44:UART_handler.c ****                 UART_PutString(message);
+ 120              		.loc 1 44 0
+ 121 007a 6846     		mov	r0, sp
+ 122 007c FFF7FEFF 		bl	UART_PutString
+ 123              	.LVL11:
+ 124              	.L7:
+  45:UART_handler.c ****             }
+  46:UART_handler.c **** 
+  47:UART_handler.c ****             index = 0; // Reset buffer for next message
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 4
+
+
+ 125              		.loc 1 47 0
+ 126 0080 0022     		movs	r2, #0
+ 127 0082 044B     		ldr	r3, .L10
+ 128 0084 1A70     		strb	r2, [r3]
+ 129              	.L2:
+ 130              	.LBE3:
+ 131              	.LBE2:
+  13:UART_handler.c ****     {
+ 132              		.loc 1 13 0
+ 133 0086 FFF7FEFF 		bl	UART_BT_GetRxBufferSize
+ 134              	.LVL12:
+ 135 008a 0028     		cmp	r0, #0
+ 136 008c BBD1     		bne	.L8
+  48:UART_handler.c ****         }
+  49:UART_handler.c ****     }
+  50:UART_handler.c **** }
+ 137              		.loc 1 50 0
+ 138 008e 28B0     		add	sp, sp, #160
+ 139              		.cfi_def_cfa_offset 8
+ 140              		@ sp needed
+ 141 0090 10BD     		pop	{r4, pc}
+ 142              	.L11:
+ 143 0092 00BF     		.align	2
+ 144              	.L10:
+ 145 0094 00000000 		.word	.LANCHOR0
+ 146 0098 00000000 		.word	.LC0
+ 147 009c 18000000 		.word	.LC1
+ 148 00a0 04000000 		.word	.LANCHOR0+4
+ 149 00a4 20000000 		.word	.LC2
+ 150              		.cfi_endproc
+ 151              	.LFE64:
+ 152              		.size	ISR_UART_rx_handler_BT, .-ISR_UART_rx_handler_BT
+ 153              		.section	.text.handleByteReceived,"ax",%progbits
+ 154              		.align	2
+ 155              		.global	handleByteReceived
+ 156              		.thumb
+ 157              		.thumb_func
+ 158              		.type	handleByteReceived, %function
+ 159              	handleByteReceived:
+ 160              	.LFB66:
+  51:UART_handler.c **** 
+  52:UART_handler.c **** 
+  53:UART_handler.c **** // UART RX interrupt service routine for PC
+  54:UART_handler.c **** CY_ISR(ISR_UART_rx_handler_PC)
+  55:UART_handler.c **** {
+  56:UART_handler.c ****     uint8_t bytesToRead = UART_GetRxBufferSize();
+  57:UART_handler.c ****     while (bytesToRead > 0)
+  58:UART_handler.c ****     {
+  59:UART_handler.c ****         uint8_t byteReceived = UART_ReadRxData();
+  60:UART_handler.c ****         UART_WriteTxData(byteReceived); // Echo back the received byte
+  61:UART_handler.c **** 
+  62:UART_handler.c ****         handleByteReceived(byteReceived);
+  63:UART_handler.c ****         
+  64:UART_handler.c ****         bytesToRead--;
+  65:UART_handler.c ****     }
+  66:UART_handler.c **** }
+  67:UART_handler.c **** 
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 5
+
+
+  68:UART_handler.c **** void handleByteReceived(uint8_t byteReceived)
+  69:UART_handler.c **** {
+ 161              		.loc 1 69 0
+ 162              		.cfi_startproc
+ 163              		@ args = 0, pretend = 0, frame = 40
+ 164              		@ frame_needed = 0, uses_anonymous_args = 0
+ 165              	.LVL13:
+ 166 0000 10B5     		push	{r4, lr}
+ 167              		.cfi_def_cfa_offset 8
+ 168              		.cfi_offset 4, -8
+ 169              		.cfi_offset 14, -4
+ 170 0002 8AB0     		sub	sp, sp, #40
+ 171              		.cfi_def_cfa_offset 48
+ 172 0004 0446     		mov	r4, r0
+  70:UART_handler.c ****     // A static variable to keep track of the current speed.
+  71:UART_handler.c ****     // Valid range is from -PWM_MAX_DUTY to PWM_MAX_DUTY.
+  72:UART_handler.c ****     static int8_t currentSpeed = 0;
+  73:UART_handler.c ****     char command_address[] = "AT+MAC\r\n";
+ 173              		.loc 1 73 0
+ 174 0006 5A4A     		ldr	r2, .L27
+ 175 0008 07AB     		add	r3, sp, #28
+ 176 000a 07CA     		ldmia	r2, {r0, r1, r2}
+ 177              	.LVL14:
+ 178 000c 03C3     		stmia	r3!, {r0, r1}
+ 179 000e 1A70     		strb	r2, [r3]
+  74:UART_handler.c ****     char command_baud[] = "AT+BAUD\r\n";
+ 180              		.loc 1 74 0
+ 181 0010 584A     		ldr	r2, .L27+4
+ 182 0012 04AB     		add	r3, sp, #16
+ 183 0014 07CA     		ldmia	r2, {r0, r1, r2}
+ 184 0016 03C3     		stmia	r3!, {r0, r1}
+ 185 0018 1A80     		strh	r2, [r3]	@ movhi
+  75:UART_handler.c ****     char command_status[] = "AT+STAT\r\n";
+ 186              		.loc 1 75 0
+ 187 001a 574A     		ldr	r2, .L27+8
+ 188 001c 01AB     		add	r3, sp, #4
+ 189 001e 07CA     		ldmia	r2, {r0, r1, r2}
+ 190 0020 03C3     		stmia	r3!, {r0, r1}
+ 191 0022 1A80     		strh	r2, [r3]	@ movhi
+  76:UART_handler.c ****     
+  77:UART_handler.c ****     switch(byteReceived)
+ 192              		.loc 1 77 0
+ 193 0024 A4F13000 		sub	r0, r4, #48
+ 194 0028 4428     		cmp	r0, #68
+ 195 002a 00F29E80 		bhi	.L12
+ 196 002e DFE800F0 		tbb	[pc, r0]
+ 197              	.L15:
+ 198 0032 7A       		.byte	(.L14-.L15)/2
+ 199 0033 23       		.byte	(.L16-.L15)/2
+ 200 0034 4D       		.byte	(.L17-.L15)/2
+ 201 0035 9C       		.byte	(.L12-.L15)/2
+ 202 0036 9C       		.byte	(.L12-.L15)/2
+ 203 0037 9C       		.byte	(.L12-.L15)/2
+ 204 0038 9C       		.byte	(.L12-.L15)/2
+ 205 0039 9C       		.byte	(.L12-.L15)/2
+ 206 003a 9C       		.byte	(.L12-.L15)/2
+ 207 003b 9C       		.byte	(.L12-.L15)/2
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 6
+
+
+ 208 003c 9C       		.byte	(.L12-.L15)/2
+ 209 003d 9C       		.byte	(.L12-.L15)/2
+ 210 003e 9C       		.byte	(.L12-.L15)/2
+ 211 003f 9C       		.byte	(.L12-.L15)/2
+ 212 0040 9C       		.byte	(.L12-.L15)/2
+ 213 0041 9C       		.byte	(.L12-.L15)/2
+ 214 0042 9C       		.byte	(.L12-.L15)/2
+ 215 0043 9C       		.byte	(.L12-.L15)/2
+ 216 0044 9C       		.byte	(.L12-.L15)/2
+ 217 0045 9C       		.byte	(.L12-.L15)/2
+ 218 0046 9C       		.byte	(.L12-.L15)/2
+ 219 0047 9C       		.byte	(.L12-.L15)/2
+ 220 0048 9C       		.byte	(.L12-.L15)/2
+ 221 0049 9C       		.byte	(.L12-.L15)/2
+ 222 004a 9C       		.byte	(.L12-.L15)/2
+ 223 004b 9C       		.byte	(.L12-.L15)/2
+ 224 004c 9C       		.byte	(.L12-.L15)/2
+ 225 004d 9C       		.byte	(.L12-.L15)/2
+ 226 004e 9C       		.byte	(.L12-.L15)/2
+ 227 004f 9C       		.byte	(.L12-.L15)/2
+ 228 0050 9C       		.byte	(.L12-.L15)/2
+ 229 0051 9C       		.byte	(.L12-.L15)/2
+ 230 0052 9C       		.byte	(.L12-.L15)/2
+ 231 0053 9C       		.byte	(.L12-.L15)/2
+ 232 0054 9C       		.byte	(.L12-.L15)/2
+ 233 0055 9C       		.byte	(.L12-.L15)/2
+ 234 0056 9C       		.byte	(.L12-.L15)/2
+ 235 0057 9C       		.byte	(.L12-.L15)/2
+ 236 0058 9C       		.byte	(.L12-.L15)/2
+ 237 0059 9C       		.byte	(.L12-.L15)/2
+ 238 005a 9C       		.byte	(.L12-.L15)/2
+ 239 005b 9C       		.byte	(.L12-.L15)/2
+ 240 005c 9C       		.byte	(.L12-.L15)/2
+ 241 005d 9C       		.byte	(.L12-.L15)/2
+ 242 005e 9C       		.byte	(.L12-.L15)/2
+ 243 005f 9C       		.byte	(.L12-.L15)/2
+ 244 0060 9C       		.byte	(.L12-.L15)/2
+ 245 0061 9C       		.byte	(.L12-.L15)/2
+ 246 0062 9C       		.byte	(.L12-.L15)/2
+ 247 0063 81       		.byte	(.L18-.L15)/2
+ 248 0064 88       		.byte	(.L19-.L15)/2
+ 249 0065 9C       		.byte	(.L12-.L15)/2
+ 250 0066 9C       		.byte	(.L12-.L15)/2
+ 251 0067 9C       		.byte	(.L12-.L15)/2
+ 252 0068 9C       		.byte	(.L12-.L15)/2
+ 253 0069 9C       		.byte	(.L12-.L15)/2
+ 254 006a 9C       		.byte	(.L12-.L15)/2
+ 255 006b 9C       		.byte	(.L12-.L15)/2
+ 256 006c 9C       		.byte	(.L12-.L15)/2
+ 257 006d 9C       		.byte	(.L12-.L15)/2
+ 258 006e 9C       		.byte	(.L12-.L15)/2
+ 259 006f 9C       		.byte	(.L12-.L15)/2
+ 260 0070 9C       		.byte	(.L12-.L15)/2
+ 261 0071 9C       		.byte	(.L12-.L15)/2
+ 262 0072 9C       		.byte	(.L12-.L15)/2
+ 263 0073 9C       		.byte	(.L12-.L15)/2
+ 264 0074 9C       		.byte	(.L12-.L15)/2
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 7
+
+
+ 265 0075 8F       		.byte	(.L20-.L15)/2
+ 266 0076 96       		.byte	(.L21-.L15)/2
+ 267 0077 00       		.p2align 1
+ 268              	.L16:
+  78:UART_handler.c ****     {
+  79:UART_handler.c ****         case '1':
+  80:UART_handler.c ****             // Increase speed by 5, ensuring we do not exceed PWM_MAX_DUTY.
+  81:UART_handler.c ****             if (currentSpeed < PWM_MAX_DUTY)
+ 269              		.loc 1 81 0
+ 270 0078 404B     		ldr	r3, .L27+12
+ 271 007a 93F93630 		ldrsb	r3, [r3, #54]
+ 272 007e 312B     		cmp	r3, #49
+ 273 0080 20DC     		bgt	.L22
+  82:UART_handler.c ****             {
+  83:UART_handler.c ****                 UART_PutString("Increase speed\r\n");
+ 274              		.loc 1 83 0
+ 275 0082 3F48     		ldr	r0, .L27+16
+ 276 0084 FFF7FEFF 		bl	UART_PutString
+ 277              	.LVL15:
+  84:UART_handler.c ****                 currentSpeed += 5;
+ 278              		.loc 1 84 0
+ 279 0088 3C4A     		ldr	r2, .L27+12
+ 280 008a 92F83630 		ldrb	r3, [r2, #54]	@ zero_extendqisi2
+ 281 008e 0533     		adds	r3, r3, #5
+ 282 0090 5BB2     		sxtb	r3, r3
+ 283 0092 82F83630 		strb	r3, [r2, #54]
+  85:UART_handler.c ****                 if (currentSpeed > PWM_MAX_DUTY)
+ 284              		.loc 1 85 0
+ 285 0096 322B     		cmp	r3, #50
+ 286 0098 03DD     		ble	.L23
+  86:UART_handler.c ****                 {
+  87:UART_handler.c ****                     currentSpeed = PWM_MAX_DUTY;
+ 287              		.loc 1 87 0
+ 288 009a 3222     		movs	r2, #50
+ 289 009c 374B     		ldr	r3, .L27+12
+ 290 009e 83F83620 		strb	r2, [r3, #54]
+ 291              	.L23:
+  88:UART_handler.c ****                 }
+  89:UART_handler.c ****                 set_speedA(currentSpeed);
+ 292              		.loc 1 89 0
+ 293 00a2 364C     		ldr	r4, .L27+12
+ 294 00a4 94F93600 		ldrsb	r0, [r4, #54]
+ 295 00a8 FFF7FEFF 		bl	set_speedA
+ 296              	.LVL16:
+  90:UART_handler.c ****                 set_speedB(currentSpeed);
+ 297              		.loc 1 90 0
+ 298 00ac 94F93600 		ldrsb	r0, [r4, #54]
+ 299 00b0 FFF7FEFF 		bl	set_speedB
+ 300              	.LVL17:
+  91:UART_handler.c ****                 if (currentSpeed == PWM_MAX_DUTY)
+ 301              		.loc 1 91 0
+ 302 00b4 94F93630 		ldrsb	r3, [r4, #54]
+ 303 00b8 322B     		cmp	r3, #50
+ 304 00ba 56D1     		bne	.L12
+  92:UART_handler.c ****                 {
+  93:UART_handler.c ****                     UART_PutString("Max forward speed reached\r\n");
+ 305              		.loc 1 93 0
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 8
+
+
+ 306 00bc 3148     		ldr	r0, .L27+20
+ 307 00be FFF7FEFF 		bl	UART_PutString
+ 308              	.LVL18:
+ 309 00c2 52E0     		b	.L12
+ 310              	.L22:
+  94:UART_handler.c ****                 }
+  95:UART_handler.c ****             }
+  96:UART_handler.c ****             else
+  97:UART_handler.c ****             {
+  98:UART_handler.c ****                 UART_PutString("Already at max forward speed\r\n");
+ 311              		.loc 1 98 0
+ 312 00c4 3048     		ldr	r0, .L27+24
+ 313 00c6 FFF7FEFF 		bl	UART_PutString
+ 314              	.LVL19:
+ 315 00ca 4EE0     		b	.L12
+ 316              	.L17:
+  99:UART_handler.c ****             }
+ 100:UART_handler.c ****             break;
+ 101:UART_handler.c ****             
+ 102:UART_handler.c ****         case '2':
+ 103:UART_handler.c ****             // Decrease speed by 5, ensuring we do not drop below -PWM_MAX_DUTY.
+ 104:UART_handler.c ****             if (currentSpeed > -PWM_MAX_DUTY)
+ 317              		.loc 1 104 0
+ 318 00cc 2B4B     		ldr	r3, .L27+12
+ 319 00ce 93F93630 		ldrsb	r3, [r3, #54]
+ 320 00d2 13F1310F 		cmn	r3, #49
+ 321 00d6 22DB     		blt	.L24
+ 105:UART_handler.c ****             {
+ 106:UART_handler.c ****                 UART_PutString("Decrease speed\r\n");
+ 322              		.loc 1 106 0
+ 323 00d8 2C48     		ldr	r0, .L27+28
+ 324 00da FFF7FEFF 		bl	UART_PutString
+ 325              	.LVL20:
+ 107:UART_handler.c ****                 currentSpeed -= 5;
+ 326              		.loc 1 107 0
+ 327 00de 274A     		ldr	r2, .L27+12
+ 328 00e0 92F83630 		ldrb	r3, [r2, #54]	@ zero_extendqisi2
+ 329 00e4 053B     		subs	r3, r3, #5
+ 330 00e6 5BB2     		sxtb	r3, r3
+ 331 00e8 82F83630 		strb	r3, [r2, #54]
+ 108:UART_handler.c ****                 if (currentSpeed < -PWM_MAX_DUTY)
+ 332              		.loc 1 108 0
+ 333 00ec 13F1320F 		cmn	r3, #50
+ 334 00f0 03DA     		bge	.L25
+ 109:UART_handler.c ****                 {
+ 110:UART_handler.c ****                     currentSpeed = -PWM_MAX_DUTY;
+ 335              		.loc 1 110 0
+ 336 00f2 CE22     		movs	r2, #206
+ 337 00f4 214B     		ldr	r3, .L27+12
+ 338 00f6 83F83620 		strb	r2, [r3, #54]
+ 339              	.L25:
+ 111:UART_handler.c ****                 }
+ 112:UART_handler.c ****                 set_speedA(currentSpeed);
+ 340              		.loc 1 112 0
+ 341 00fa 204C     		ldr	r4, .L27+12
+ 342 00fc 94F93600 		ldrsb	r0, [r4, #54]
+ 343 0100 FFF7FEFF 		bl	set_speedA
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 9
+
+
+ 344              	.LVL21:
+ 113:UART_handler.c ****                 set_speedB(currentSpeed);
+ 345              		.loc 1 113 0
+ 346 0104 94F93600 		ldrsb	r0, [r4, #54]
+ 347 0108 FFF7FEFF 		bl	set_speedB
+ 348              	.LVL22:
+ 114:UART_handler.c ****                 if (currentSpeed == -PWM_MAX_DUTY)
+ 349              		.loc 1 114 0
+ 350 010c 94F93630 		ldrsb	r3, [r4, #54]
+ 351 0110 13F1320F 		cmn	r3, #50
+ 352 0114 29D1     		bne	.L12
+ 115:UART_handler.c ****                 {
+ 116:UART_handler.c ****                     UART_PutString("Max reverse speed reached\r\n");
+ 353              		.loc 1 116 0
+ 354 0116 1E48     		ldr	r0, .L27+32
+ 355 0118 FFF7FEFF 		bl	UART_PutString
+ 356              	.LVL23:
+ 357 011c 25E0     		b	.L12
+ 358              	.L24:
+ 117:UART_handler.c ****                 }
+ 118:UART_handler.c ****             }
+ 119:UART_handler.c ****             else
+ 120:UART_handler.c ****             {
+ 121:UART_handler.c ****                 UART_PutString("Already at max reverse speed\r\n");
+ 359              		.loc 1 121 0
+ 360 011e 1D48     		ldr	r0, .L27+36
+ 361 0120 FFF7FEFF 		bl	UART_PutString
+ 362              	.LVL24:
+ 363 0124 21E0     		b	.L12
+ 364              	.L14:
+ 122:UART_handler.c ****             }
+ 123:UART_handler.c ****             break;
+ 124:UART_handler.c ****             
+ 125:UART_handler.c ****         case '0':
+ 126:UART_handler.c ****             // Stop the motors by setting current speed to 0.
+ 127:UART_handler.c ****             currentSpeed = 0;
+ 365              		.loc 1 127 0
+ 366 0126 0022     		movs	r2, #0
+ 367 0128 144B     		ldr	r3, .L27+12
+ 368 012a 83F83620 		strb	r2, [r3, #54]
+ 128:UART_handler.c ****             stop();
+ 369              		.loc 1 128 0
+ 370 012e FFF7FEFF 		bl	stop
+ 371              	.LVL25:
+ 129:UART_handler.c ****             break;
+ 372              		.loc 1 129 0
+ 373 0132 1AE0     		b	.L12
+ 374              	.L18:
+ 130:UART_handler.c ****         
+ 131:UART_handler.c ****         case 'a':
+ 132:UART_handler.c ****            // Sends
+ 133:UART_handler.c ****             UART_PutString("Sending GetMACAddress command to Bluetooth module\r\n");
+ 375              		.loc 1 133 0
+ 376 0134 1848     		ldr	r0, .L27+40
+ 377 0136 FFF7FEFF 		bl	UART_PutString
+ 378              	.LVL26:
+ 134:UART_handler.c ****             UART_BT_PutString(command_address);
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 10
+
+
+ 379              		.loc 1 134 0
+ 380 013a 07A8     		add	r0, sp, #28
+ 381 013c FFF7FEFF 		bl	UART_BT_PutString
+ 382              	.LVL27:
+ 135:UART_handler.c ****             break;
+ 383              		.loc 1 135 0
+ 384 0140 13E0     		b	.L12
+ 385              	.L19:
+ 136:UART_handler.c ****          
+ 137:UART_handler.c ****         case 'b':
+ 138:UART_handler.c ****            // Sends
+ 139:UART_handler.c ****             UART_PutString("Sending GetBAUDRate command to Bluetooth module\r\n");
+ 386              		.loc 1 139 0
+ 387 0142 1648     		ldr	r0, .L27+44
+ 388 0144 FFF7FEFF 		bl	UART_PutString
+ 389              	.LVL28:
+ 140:UART_handler.c ****             UART_BT_PutString(command_baud);
+ 390              		.loc 1 140 0
+ 391 0148 04A8     		add	r0, sp, #16
+ 392 014a FFF7FEFF 		bl	UART_BT_PutString
+ 393              	.LVL29:
+ 141:UART_handler.c ****             break;
+ 394              		.loc 1 141 0
+ 395 014e 0CE0     		b	.L12
+ 396              	.L20:
+ 142:UART_handler.c ****             
+ 143:UART_handler.c ****         case 's':
+ 144:UART_handler.c ****             UART_PutString("Sending GetStatus command to Bluetooth module\r\n");
+ 397              		.loc 1 144 0
+ 398 0150 1348     		ldr	r0, .L27+48
+ 399 0152 FFF7FEFF 		bl	UART_PutString
+ 400              	.LVL30:
+ 145:UART_handler.c ****             UART_BT_PutString(command_status);
+ 401              		.loc 1 145 0
+ 402 0156 01A8     		add	r0, sp, #4
+ 403 0158 FFF7FEFF 		bl	UART_BT_PutString
+ 404              	.LVL31:
+ 146:UART_handler.c ****             break;
+ 405              		.loc 1 146 0
+ 406 015c 05E0     		b	.L12
+ 407              	.L21:
+ 147:UART_handler.c ****         
+ 148:UART_handler.c ****         case 't':
+ 149:UART_handler.c ****             // Test
+ 150:UART_handler.c ****             UART_PutString("Testing for response from BT module\r\n");
+ 408              		.loc 1 150 0
+ 409 015e 1148     		ldr	r0, .L27+52
+ 410 0160 FFF7FEFF 		bl	UART_PutString
+ 411              	.LVL32:
+ 151:UART_handler.c ****             UART_BT_PutString("AT+VER\r\n");
+ 412              		.loc 1 151 0
+ 413 0164 1048     		ldr	r0, .L27+56
+ 414 0166 FFF7FEFF 		bl	UART_BT_PutString
+ 415              	.LVL33:
+ 416              	.L12:
+ 152:UART_handler.c ****             break;
+ 153:UART_handler.c ****             
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 11
+
+
+ 154:UART_handler.c ****         default:
+ 155:UART_handler.c ****             // Do nothing for unrecognized commands.
+ 156:UART_handler.c ****             break;
+ 157:UART_handler.c ****     }
+ 158:UART_handler.c **** }
+ 417              		.loc 1 158 0
+ 418 016a 0AB0     		add	sp, sp, #40
+ 419              		.cfi_def_cfa_offset 8
+ 420              		@ sp needed
+ 421 016c 10BD     		pop	{r4, pc}
+ 422              	.L28:
+ 423 016e 00BF     		.align	2
+ 424              	.L27:
+ 425 0170 B8010000 		.word	.LC3
+ 426 0174 C4010000 		.word	.LC4
+ 427 0178 D0010000 		.word	.LC5
+ 428 017c 00000000 		.word	.LANCHOR0
+ 429 0180 4C000000 		.word	.LC6
+ 430 0184 60000000 		.word	.LC7
+ 431 0188 7C000000 		.word	.LC8
+ 432 018c 9C000000 		.word	.LC9
+ 433 0190 B0000000 		.word	.LC10
+ 434 0194 CC000000 		.word	.LC11
+ 435 0198 EC000000 		.word	.LC12
+ 436 019c 20010000 		.word	.LC13
+ 437 01a0 54010000 		.word	.LC14
+ 438 01a4 84010000 		.word	.LC15
+ 439 01a8 AC010000 		.word	.LC16
+ 440              		.cfi_endproc
+ 441              	.LFE66:
+ 442              		.size	handleByteReceived, .-handleByteReceived
+ 443              		.section	.text.ISR_UART_rx_handler_PC,"ax",%progbits
+ 444              		.align	2
+ 445              		.global	ISR_UART_rx_handler_PC
+ 446              		.thumb
+ 447              		.thumb_func
+ 448              		.type	ISR_UART_rx_handler_PC, %function
+ 449              	ISR_UART_rx_handler_PC:
+ 450              	.LFB65:
+  55:UART_handler.c ****     uint8_t bytesToRead = UART_GetRxBufferSize();
+ 451              		.loc 1 55 0
+ 452              		.cfi_startproc
+ 453              		@ args = 0, pretend = 0, frame = 0
+ 454              		@ frame_needed = 0, uses_anonymous_args = 0
+ 455 0000 38B5     		push	{r3, r4, r5, lr}
+ 456              		.cfi_def_cfa_offset 16
+ 457              		.cfi_offset 3, -16
+ 458              		.cfi_offset 4, -12
+ 459              		.cfi_offset 5, -8
+ 460              		.cfi_offset 14, -4
+  56:UART_handler.c ****     while (bytesToRead > 0)
+ 461              		.loc 1 56 0
+ 462 0002 FFF7FEFF 		bl	UART_GetRxBufferSize
+ 463              	.LVL34:
+ 464 0006 0446     		mov	r4, r0
+ 465              	.LVL35:
+  57:UART_handler.c ****     {
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 12
+
+
+ 466              		.loc 1 57 0
+ 467 0008 09E0     		b	.L30
+ 468              	.L31:
+ 469              	.LBB4:
+  59:UART_handler.c ****         UART_WriteTxData(byteReceived); // Echo back the received byte
+ 470              		.loc 1 59 0
+ 471 000a FFF7FEFF 		bl	UART_ReadRxData
+ 472              	.LVL36:
+ 473 000e 0546     		mov	r5, r0
+ 474              	.LVL37:
+  60:UART_handler.c **** 
+ 475              		.loc 1 60 0
+ 476 0010 FFF7FEFF 		bl	UART_WriteTxData
+ 477              	.LVL38:
+  62:UART_handler.c ****         
+ 478              		.loc 1 62 0
+ 479 0014 2846     		mov	r0, r5
+ 480 0016 FFF7FEFF 		bl	handleByteReceived
+ 481              	.LVL39:
+  64:UART_handler.c ****     }
+ 482              		.loc 1 64 0
+ 483 001a 013C     		subs	r4, r4, #1
+ 484              	.LVL40:
+ 485 001c E4B2     		uxtb	r4, r4
+ 486              	.LVL41:
+ 487              	.L30:
+ 488              	.LBE4:
+  57:UART_handler.c ****     {
+ 489              		.loc 1 57 0
+ 490 001e 002C     		cmp	r4, #0
+ 491 0020 F3D1     		bne	.L31
+  66:UART_handler.c **** 
+ 492              		.loc 1 66 0
+ 493 0022 38BD     		pop	{r3, r4, r5, pc}
+ 494              		.cfi_endproc
+ 495              	.LFE65:
+ 496              		.size	ISR_UART_rx_handler_PC, .-ISR_UART_rx_handler_PC
+ 497              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 498              		.align	2
+ 499              	.LC0:
+ 500 0000 0D0A5B42 		.ascii	"\015\012[BT Response] %s\015\012\000"
+ 500      54205265 
+ 500      73706F6E 
+ 500      73655D20 
+ 500      25730D0A 
+ 501 0015 000000   		.space	3
+ 502              	.LC1:
+ 503 0018 25642C25 		.ascii	"%d,%d\000"
+ 503      6400
+ 504 001e 0000     		.space	2
+ 505              	.LC2:
+ 506 0020 0D0A5061 		.ascii	"\015\012Parse error. Content of BT buffer: %s\015\012"
+ 506      72736520 
+ 506      6572726F 
+ 506      722E2043 
+ 506      6F6E7465 
+ 507 0049 00       		.ascii	"\000"
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 13
+
+
+ 508 004a 0000     		.space	2
+ 509              	.LC6:
+ 510 004c 496E6372 		.ascii	"Increase speed\015\012\000"
+ 510      65617365 
+ 510      20737065 
+ 510      65640D0A 
+ 510      00
+ 511 005d 000000   		.space	3
+ 512              	.LC7:
+ 513 0060 4D617820 		.ascii	"Max forward speed reached\015\012\000"
+ 513      666F7277 
+ 513      61726420 
+ 513      73706565 
+ 513      64207265 
+ 514              	.LC8:
+ 515 007c 416C7265 		.ascii	"Already at max forward speed\015\012\000"
+ 515      61647920 
+ 515      6174206D 
+ 515      61782066 
+ 515      6F727761 
+ 516 009b 00       		.space	1
+ 517              	.LC9:
+ 518 009c 44656372 		.ascii	"Decrease speed\015\012\000"
+ 518      65617365 
+ 518      20737065 
+ 518      65640D0A 
+ 518      00
+ 519 00ad 000000   		.space	3
+ 520              	.LC10:
+ 521 00b0 4D617820 		.ascii	"Max reverse speed reached\015\012\000"
+ 521      72657665 
+ 521      72736520 
+ 521      73706565 
+ 521      64207265 
+ 522              	.LC11:
+ 523 00cc 416C7265 		.ascii	"Already at max reverse speed\015\012\000"
+ 523      61647920 
+ 523      6174206D 
+ 523      61782072 
+ 523      65766572 
+ 524 00eb 00       		.space	1
+ 525              	.LC12:
+ 526 00ec 53656E64 		.ascii	"Sending GetMACAddress command to Bluetooth module\015"
+ 526      696E6720 
+ 526      4765744D 
+ 526      41434164 
+ 526      64726573 
+ 527 011e 0A00     		.ascii	"\012\000"
+ 528              	.LC13:
+ 529 0120 53656E64 		.ascii	"Sending GetBAUDRate command to Bluetooth module\015"
+ 529      696E6720 
+ 529      47657442 
+ 529      41554452 
+ 529      61746520 
+ 530 0150 0A00     		.ascii	"\012\000"
+ 531 0152 0000     		.space	2
+ 532              	.LC14:
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 14
+
+
+ 533 0154 53656E64 		.ascii	"Sending GetStatus command to Bluetooth module\015\012"
+ 533      696E6720 
+ 533      47657453 
+ 533      74617475 
+ 533      7320636F 
+ 534 0183 00       		.ascii	"\000"
+ 535              	.LC15:
+ 536 0184 54657374 		.ascii	"Testing for response from BT module\015\012\000"
+ 536      696E6720 
+ 536      666F7220 
+ 536      72657370 
+ 536      6F6E7365 
+ 537 01aa 0000     		.space	2
+ 538              	.LC16:
+ 539 01ac 41542B56 		.ascii	"AT+VER\015\012\000"
+ 539      45520D0A 
+ 539      00
+ 540 01b5 000000   		.space	3
+ 541              	.LC3:
+ 542 01b8 41542B4D 		.ascii	"AT+MAC\015\012\000"
+ 542      41430D0A 
+ 542      00
+ 543 01c1 000000   		.space	3
+ 544              	.LC4:
+ 545 01c4 41542B42 		.ascii	"AT+BAUD\015\012\000"
+ 545      4155440D 
+ 545      0A00
+ 546 01ce 0000     		.space	2
+ 547              	.LC5:
+ 548 01d0 41542B53 		.ascii	"AT+STAT\015\012\000"
+ 548      5441540D 
+ 548      0A00
+ 549              		.bss
+ 550              		.align	2
+ 551              		.set	.LANCHOR0,. + 0
+ 552              		.type	index.6752, %object
+ 553              		.size	index.6752, 1
+ 554              	index.6752:
+ 555 0000 00       		.space	1
+ 556 0001 000000   		.space	3
+ 557              		.type	btBuffer.6751, %object
+ 558              		.size	btBuffer.6751, 50
+ 559              	btBuffer.6751:
+ 560 0004 00000000 		.space	50
+ 560      00000000 
+ 560      00000000 
+ 560      00000000 
+ 560      00000000 
+ 561              		.type	currentSpeed.6773, %object
+ 562              		.size	currentSpeed.6773, 1
+ 563              	currentSpeed.6773:
+ 564 0036 00       		.space	1
+ 565              		.text
+ 566              	.Letext0:
+ 567              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 568              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 569              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 15
+
+
+ 570              		.file 5 "Generated_Source\\PSoC5/UART.h"
+ 571              		.file 6 "motor_control.h"
+ 572              		.file 7 "Generated_Source\\PSoC5/UART_BT.h"
+ 573              		.file 8 "Generated_Source\\PSoC5/core_cm3.h"
+ 574              		.section	.debug_info,"",%progbits
+ 575              	.Ldebug_info0:
+ 576 0000 59050000 		.4byte	0x559
+ 577 0004 0400     		.2byte	0x4
+ 578 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 579 000a 04       		.byte	0x4
+ 580 000b 01       		.uleb128 0x1
+ 581 000c B5000000 		.4byte	.LASF48
+ 582 0010 0C       		.byte	0xc
+ 583 0011 43010000 		.4byte	.LASF49
+ 584 0015 52010000 		.4byte	.LASF50
+ 585 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 586 001d 00000000 		.4byte	0
+ 587 0021 00000000 		.4byte	.Ldebug_line0
+ 588 0025 02       		.uleb128 0x2
+ 589 0026 1C000000 		.4byte	.LASF0
+ 590 002a 02       		.byte	0x2
+ 591 002b 1B       		.byte	0x1b
+ 592 002c 30000000 		.4byte	0x30
+ 593 0030 03       		.uleb128 0x3
+ 594 0031 01       		.byte	0x1
+ 595 0032 06       		.byte	0x6
+ 596 0033 28030000 		.4byte	.LASF2
+ 597 0037 02       		.uleb128 0x2
+ 598 0038 25000000 		.4byte	.LASF1
+ 599 003c 02       		.byte	0x2
+ 600 003d 1D       		.byte	0x1d
+ 601 003e 42000000 		.4byte	0x42
+ 602 0042 03       		.uleb128 0x3
+ 603 0043 01       		.byte	0x1
+ 604 0044 08       		.byte	0x8
+ 605 0045 A7000000 		.4byte	.LASF3
+ 606 0049 03       		.uleb128 0x3
+ 607 004a 02       		.byte	0x2
+ 608 004b 05       		.byte	0x5
+ 609 004c CD020000 		.4byte	.LASF4
+ 610 0050 03       		.uleb128 0x3
+ 611 0051 02       		.byte	0x2
+ 612 0052 07       		.byte	0x7
+ 613 0053 6A000000 		.4byte	.LASF5
+ 614 0057 02       		.uleb128 0x2
+ 615 0058 57000000 		.4byte	.LASF6
+ 616 005c 02       		.byte	0x2
+ 617 005d 3F       		.byte	0x3f
+ 618 005e 62000000 		.4byte	0x62
+ 619 0062 03       		.uleb128 0x3
+ 620 0063 04       		.byte	0x4
+ 621 0064 05       		.byte	0x5
+ 622 0065 15030000 		.4byte	.LASF7
+ 623 0069 03       		.uleb128 0x3
+ 624 006a 04       		.byte	0x4
+ 625 006b 07       		.byte	0x7
+ 626 006c AC010000 		.4byte	.LASF8
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 16
+
+
+ 627 0070 03       		.uleb128 0x3
+ 628 0071 08       		.byte	0x8
+ 629 0072 05       		.byte	0x5
+ 630 0073 95020000 		.4byte	.LASF9
+ 631 0077 03       		.uleb128 0x3
+ 632 0078 08       		.byte	0x8
+ 633 0079 07       		.byte	0x7
+ 634 007a 35020000 		.4byte	.LASF10
+ 635 007e 04       		.uleb128 0x4
+ 636 007f 04       		.byte	0x4
+ 637 0080 05       		.byte	0x5
+ 638 0081 696E7400 		.ascii	"int\000"
+ 639 0085 03       		.uleb128 0x3
+ 640 0086 04       		.byte	0x4
+ 641 0087 07       		.byte	0x7
+ 642 0088 18020000 		.4byte	.LASF11
+ 643 008c 02       		.uleb128 0x2
+ 644 008d 89000000 		.4byte	.LASF12
+ 645 0091 03       		.byte	0x3
+ 646 0092 14       		.byte	0x14
+ 647 0093 25000000 		.4byte	0x25
+ 648 0097 02       		.uleb128 0x2
+ 649 0098 4C020000 		.4byte	.LASF13
+ 650 009c 03       		.byte	0x3
+ 651 009d 18       		.byte	0x18
+ 652 009e 37000000 		.4byte	0x37
+ 653 00a2 02       		.uleb128 0x2
+ 654 00a3 90000000 		.4byte	.LASF14
+ 655 00a7 03       		.byte	0x3
+ 656 00a8 2C       		.byte	0x2c
+ 657 00a9 57000000 		.4byte	0x57
+ 658 00ad 03       		.uleb128 0x3
+ 659 00ae 04       		.byte	0x4
+ 660 00af 04       		.byte	0x4
+ 661 00b0 98000000 		.4byte	.LASF15
+ 662 00b4 03       		.uleb128 0x3
+ 663 00b5 08       		.byte	0x8
+ 664 00b6 04       		.byte	0x4
+ 665 00b7 E3010000 		.4byte	.LASF16
+ 666 00bb 03       		.uleb128 0x3
+ 667 00bc 01       		.byte	0x1
+ 668 00bd 08       		.byte	0x8
+ 669 00be B6020000 		.4byte	.LASF17
+ 670 00c2 03       		.uleb128 0x3
+ 671 00c3 08       		.byte	0x8
+ 672 00c4 04       		.byte	0x4
+ 673 00c5 80020000 		.4byte	.LASF18
+ 674 00c9 03       		.uleb128 0x3
+ 675 00ca 04       		.byte	0x4
+ 676 00cb 07       		.byte	0x7
+ 677 00cc 8C020000 		.4byte	.LASF19
+ 678 00d0 05       		.uleb128 0x5
+ 679 00d1 E9020000 		.4byte	.LASF28
+ 680 00d5 01       		.byte	0x1
+ 681 00d6 06       		.byte	0x6
+ 682 00d7 00000000 		.4byte	.LFB64
+ 683 00db A8000000 		.4byte	.LFE64-.LFB64
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 17
+
+
+ 684 00df 01       		.uleb128 0x1
+ 685 00e0 9C       		.byte	0x9c
+ 686 00e1 4D020000 		.4byte	0x24d
+ 687 00e5 06       		.uleb128 0x6
+ 688 00e6 9E000000 		.4byte	.LASF20
+ 689 00ea 01       		.byte	0x1
+ 690 00eb 08       		.byte	0x8
+ 691 00ec 4D020000 		.4byte	0x24d
+ 692 00f0 05       		.uleb128 0x5
+ 693 00f1 03       		.byte	0x3
+ 694 00f2 04000000 		.4byte	btBuffer.6751
+ 695 00f6 06       		.uleb128 0x6
+ 696 00f7 BB020000 		.4byte	.LASF21
+ 697 00fb 01       		.byte	0x1
+ 698 00fc 09       		.byte	0x9
+ 699 00fd 97000000 		.4byte	0x97
+ 700 0101 05       		.uleb128 0x5
+ 701 0102 03       		.byte	0x3
+ 702 0103 00000000 		.4byte	index.6752
+ 703 0107 06       		.uleb128 0x6
+ 704 0108 C1020000 		.4byte	.LASF22
+ 705 010c 01       		.byte	0x1
+ 706 010d 0A       		.byte	0xa
+ 707 010e 7E000000 		.4byte	0x7e
+ 708 0112 02       		.uleb128 0x2
+ 709 0113 91       		.byte	0x91
+ 710 0114 74       		.sleb128 -12
+ 711 0115 06       		.uleb128 0x6
+ 712 0116 C7020000 		.4byte	.LASF23
+ 713 011a 01       		.byte	0x1
+ 714 011b 0A       		.byte	0xa
+ 715 011c 7E000000 		.4byte	0x7e
+ 716 0120 02       		.uleb128 0x2
+ 717 0121 91       		.byte	0x91
+ 718 0122 70       		.sleb128 -16
+ 719 0123 07       		.uleb128 0x7
+ 720 0124 1E030000 		.4byte	.LASF24
+ 721 0128 01       		.byte	0x1
+ 722 0129 0B       		.byte	0xb
+ 723 012a 8C000000 		.4byte	0x8c
+ 724 012e 00000000 		.4byte	.LLST0
+ 725 0132 07       		.uleb128 0x7
+ 726 0133 23030000 		.4byte	.LASF25
+ 727 0137 01       		.byte	0x1
+ 728 0138 0B       		.byte	0xb
+ 729 0139 8C000000 		.4byte	0x8c
+ 730 013d 14000000 		.4byte	.LLST1
+ 731 0141 08       		.uleb128 0x8
+ 732 0142 06000000 		.4byte	.LBB2
+ 733 0146 80000000 		.4byte	.LBE2-.LBB2
+ 734 014a 43020000 		.4byte	0x243
+ 735 014e 07       		.uleb128 0x7
+ 736 014f 43030000 		.4byte	.LASF26
+ 737 0153 01       		.byte	0x1
+ 738 0154 0F       		.byte	0xf
+ 739 0155 BB000000 		.4byte	0xbb
+ 740 0159 27000000 		.4byte	.LLST2
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 18
+
+
+ 741 015d 08       		.uleb128 0x8
+ 742 015e 2C000000 		.4byte	.LBB3
+ 743 0162 5A000000 		.4byte	.LBE3-.LBB3
+ 744 0166 39020000 		.4byte	0x239
+ 745 016a 06       		.uleb128 0x6
+ 746 016b 00000000 		.4byte	.LASF27
+ 747 016f 01       		.byte	0x1
+ 748 0170 1C       		.byte	0x1c
+ 749 0171 5D020000 		.4byte	0x25d
+ 750 0175 03       		.uleb128 0x3
+ 751 0176 91       		.byte	0x91
+ 752 0177 D87E     		.sleb128 -168
+ 753 0179 09       		.uleb128 0x9
+ 754 017a 44000000 		.4byte	.LVL2
+ 755 017e D8040000 		.4byte	0x4d8
+ 756 0182 A2010000 		.4byte	0x1a2
+ 757 0186 0A       		.uleb128 0xa
+ 758 0187 01       		.uleb128 0x1
+ 759 0188 50       		.byte	0x50
+ 760 0189 02       		.uleb128 0x2
+ 761 018a 7D       		.byte	0x7d
+ 762 018b 00       		.sleb128 0
+ 763 018c 0A       		.uleb128 0xa
+ 764 018d 01       		.uleb128 0x1
+ 765 018e 51       		.byte	0x51
+ 766 018f 02       		.uleb128 0x2
+ 767 0190 08       		.byte	0x8
+ 768 0191 96       		.byte	0x96
+ 769 0192 0A       		.uleb128 0xa
+ 770 0193 01       		.uleb128 0x1
+ 771 0194 52       		.byte	0x52
+ 772 0195 05       		.uleb128 0x5
+ 773 0196 03       		.byte	0x3
+ 774 0197 00000000 		.4byte	.LC0
+ 775 019b 0A       		.uleb128 0xa
+ 776 019c 01       		.uleb128 0x1
+ 777 019d 53       		.byte	0x53
+ 778 019e 02       		.uleb128 0x2
+ 779 019f 74       		.byte	0x74
+ 780 01a0 00       		.sleb128 0
+ 781 01a1 00       		.byte	0
+ 782 01a2 09       		.uleb128 0x9
+ 783 01a3 4A000000 		.4byte	.LVL3
+ 784 01a7 E3040000 		.4byte	0x4e3
+ 785 01ab B6010000 		.4byte	0x1b6
+ 786 01af 0A       		.uleb128 0xa
+ 787 01b0 01       		.uleb128 0x1
+ 788 01b1 50       		.byte	0x50
+ 789 01b2 02       		.uleb128 0x2
+ 790 01b3 7D       		.byte	0x7d
+ 791 01b4 00       		.sleb128 0
+ 792 01b5 00       		.byte	0
+ 793 01b6 09       		.uleb128 0x9
+ 794 01b7 56000000 		.4byte	.LVL4
+ 795 01bb EE040000 		.4byte	0x4ee
+ 796 01bf DF010000 		.4byte	0x1df
+ 797 01c3 0A       		.uleb128 0xa
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 19
+
+
+ 798 01c4 01       		.uleb128 0x1
+ 799 01c5 50       		.byte	0x50
+ 800 01c6 02       		.uleb128 0x2
+ 801 01c7 74       		.byte	0x74
+ 802 01c8 00       		.sleb128 0
+ 803 01c9 0A       		.uleb128 0xa
+ 804 01ca 01       		.uleb128 0x1
+ 805 01cb 51       		.byte	0x51
+ 806 01cc 05       		.uleb128 0x5
+ 807 01cd 03       		.byte	0x3
+ 808 01ce 18000000 		.4byte	.LC1
+ 809 01d2 0A       		.uleb128 0xa
+ 810 01d3 01       		.uleb128 0x1
+ 811 01d4 52       		.byte	0x52
+ 812 01d5 02       		.uleb128 0x2
+ 813 01d6 91       		.byte	0x91
+ 814 01d7 74       		.sleb128 -12
+ 815 01d8 0A       		.uleb128 0xa
+ 816 01d9 01       		.uleb128 0x1
+ 817 01da 53       		.byte	0x53
+ 818 01db 02       		.uleb128 0x2
+ 819 01dc 91       		.byte	0x91
+ 820 01dd 70       		.sleb128 -16
+ 821 01de 00       		.byte	0
+ 822 01df 0B       		.uleb128 0xb
+ 823 01e0 66000000 		.4byte	.LVL7
+ 824 01e4 F9040000 		.4byte	0x4f9
+ 825 01e8 09       		.uleb128 0x9
+ 826 01e9 6C000000 		.4byte	.LVL8
+ 827 01ed 04050000 		.4byte	0x504
+ 828 01f1 FC010000 		.4byte	0x1fc
+ 829 01f5 0A       		.uleb128 0xa
+ 830 01f6 01       		.uleb128 0x1
+ 831 01f7 50       		.byte	0x50
+ 832 01f8 02       		.uleb128 0x2
+ 833 01f9 74       		.byte	0x74
+ 834 01fa 00       		.sleb128 0
+ 835 01fb 00       		.byte	0
+ 836 01fc 09       		.uleb128 0x9
+ 837 01fd 7A000000 		.4byte	.LVL10
+ 838 0201 D8040000 		.4byte	0x4d8
+ 839 0205 28020000 		.4byte	0x228
+ 840 0209 0A       		.uleb128 0xa
+ 841 020a 01       		.uleb128 0x1
+ 842 020b 50       		.byte	0x50
+ 843 020c 02       		.uleb128 0x2
+ 844 020d 7D       		.byte	0x7d
+ 845 020e 00       		.sleb128 0
+ 846 020f 0A       		.uleb128 0xa
+ 847 0210 01       		.uleb128 0x1
+ 848 0211 51       		.byte	0x51
+ 849 0212 02       		.uleb128 0x2
+ 850 0213 08       		.byte	0x8
+ 851 0214 96       		.byte	0x96
+ 852 0215 0A       		.uleb128 0xa
+ 853 0216 01       		.uleb128 0x1
+ 854 0217 52       		.byte	0x52
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 20
+
+
+ 855 0218 05       		.uleb128 0x5
+ 856 0219 03       		.byte	0x3
+ 857 021a 20000000 		.4byte	.LC2
+ 858 021e 0A       		.uleb128 0xa
+ 859 021f 01       		.uleb128 0x1
+ 860 0220 53       		.byte	0x53
+ 861 0221 05       		.uleb128 0x5
+ 862 0222 03       		.byte	0x3
+ 863 0223 04000000 		.4byte	.LANCHOR0+4
+ 864 0227 00       		.byte	0
+ 865 0228 0C       		.uleb128 0xc
+ 866 0229 80000000 		.4byte	.LVL11
+ 867 022d E3040000 		.4byte	0x4e3
+ 868 0231 0A       		.uleb128 0xa
+ 869 0232 01       		.uleb128 0x1
+ 870 0233 50       		.byte	0x50
+ 871 0234 02       		.uleb128 0x2
+ 872 0235 7D       		.byte	0x7d
+ 873 0236 00       		.sleb128 0
+ 874 0237 00       		.byte	0
+ 875 0238 00       		.byte	0
+ 876 0239 0B       		.uleb128 0xb
+ 877 023a 0A000000 		.4byte	.LVL0
+ 878 023e 0F050000 		.4byte	0x50f
+ 879 0242 00       		.byte	0
+ 880 0243 0B       		.uleb128 0xb
+ 881 0244 8A000000 		.4byte	.LVL12
+ 882 0248 1A050000 		.4byte	0x51a
+ 883 024c 00       		.byte	0
+ 884 024d 0D       		.uleb128 0xd
+ 885 024e BB000000 		.4byte	0xbb
+ 886 0252 5D020000 		.4byte	0x25d
+ 887 0256 0E       		.uleb128 0xe
+ 888 0257 C9000000 		.4byte	0xc9
+ 889 025b 31       		.byte	0x31
+ 890 025c 00       		.byte	0
+ 891 025d 0D       		.uleb128 0xd
+ 892 025e BB000000 		.4byte	0xbb
+ 893 0262 6D020000 		.4byte	0x26d
+ 894 0266 0E       		.uleb128 0xe
+ 895 0267 C9000000 		.4byte	0xc9
+ 896 026b 95       		.byte	0x95
+ 897 026c 00       		.byte	0
+ 898 026d 05       		.uleb128 0x5
+ 899 026e BE010000 		.4byte	.LASF29
+ 900 0272 01       		.byte	0x1
+ 901 0273 44       		.byte	0x44
+ 902 0274 00000000 		.4byte	.LFB66
+ 903 0278 AC010000 		.4byte	.LFE66-.LFB66
+ 904 027c 01       		.uleb128 0x1
+ 905 027d 9C       		.byte	0x9c
+ 906 027e 2F040000 		.4byte	0x42f
+ 907 0282 0F       		.uleb128 0xf
+ 908 0283 43030000 		.4byte	.LASF26
+ 909 0287 01       		.byte	0x1
+ 910 0288 44       		.byte	0x44
+ 911 0289 97000000 		.4byte	0x97
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 21
+
+
+ 912 028d 3A000000 		.4byte	.LLST3
+ 913 0291 06       		.uleb128 0x6
+ 914 0292 73020000 		.4byte	.LASF30
+ 915 0296 01       		.byte	0x1
+ 916 0297 48       		.byte	0x48
+ 917 0298 8C000000 		.4byte	0x8c
+ 918 029c 05       		.uleb128 0x5
+ 919 029d 03       		.byte	0x3
+ 920 029e 36000000 		.4byte	currentSpeed.6773
+ 921 02a2 06       		.uleb128 0x6
+ 922 02a3 25020000 		.4byte	.LASF31
+ 923 02a7 01       		.byte	0x1
+ 924 02a8 49       		.byte	0x49
+ 925 02a9 2F040000 		.4byte	0x42f
+ 926 02ad 02       		.uleb128 0x2
+ 927 02ae 91       		.byte	0x91
+ 928 02af 6C       		.sleb128 -20
+ 929 02b0 06       		.uleb128 0x6
+ 930 02b1 0F000000 		.4byte	.LASF32
+ 931 02b5 01       		.byte	0x1
+ 932 02b6 4A       		.byte	0x4a
+ 933 02b7 3F040000 		.4byte	0x43f
+ 934 02bb 02       		.uleb128 0x2
+ 935 02bc 91       		.byte	0x91
+ 936 02bd 60       		.sleb128 -32
+ 937 02be 06       		.uleb128 0x6
+ 938 02bf 54020000 		.4byte	.LASF33
+ 939 02c3 01       		.byte	0x1
+ 940 02c4 4B       		.byte	0x4b
+ 941 02c5 3F040000 		.4byte	0x43f
+ 942 02c9 02       		.uleb128 0x2
+ 943 02ca 91       		.byte	0x91
+ 944 02cb 54       		.sleb128 -44
+ 945 02cc 09       		.uleb128 0x9
+ 946 02cd 88000000 		.4byte	.LVL15
+ 947 02d1 E3040000 		.4byte	0x4e3
+ 948 02d5 E3020000 		.4byte	0x2e3
+ 949 02d9 0A       		.uleb128 0xa
+ 950 02da 01       		.uleb128 0x1
+ 951 02db 50       		.byte	0x50
+ 952 02dc 05       		.uleb128 0x5
+ 953 02dd 03       		.byte	0x3
+ 954 02de 4C000000 		.4byte	.LC6
+ 955 02e2 00       		.byte	0
+ 956 02e3 0B       		.uleb128 0xb
+ 957 02e4 AC000000 		.4byte	.LVL16
+ 958 02e8 F9040000 		.4byte	0x4f9
+ 959 02ec 0B       		.uleb128 0xb
+ 960 02ed B4000000 		.4byte	.LVL17
+ 961 02f1 04050000 		.4byte	0x504
+ 962 02f5 09       		.uleb128 0x9
+ 963 02f6 C2000000 		.4byte	.LVL18
+ 964 02fa E3040000 		.4byte	0x4e3
+ 965 02fe 0C030000 		.4byte	0x30c
+ 966 0302 0A       		.uleb128 0xa
+ 967 0303 01       		.uleb128 0x1
+ 968 0304 50       		.byte	0x50
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 22
+
+
+ 969 0305 05       		.uleb128 0x5
+ 970 0306 03       		.byte	0x3
+ 971 0307 60000000 		.4byte	.LC7
+ 972 030b 00       		.byte	0
+ 973 030c 09       		.uleb128 0x9
+ 974 030d CA000000 		.4byte	.LVL19
+ 975 0311 E3040000 		.4byte	0x4e3
+ 976 0315 23030000 		.4byte	0x323
+ 977 0319 0A       		.uleb128 0xa
+ 978 031a 01       		.uleb128 0x1
+ 979 031b 50       		.byte	0x50
+ 980 031c 05       		.uleb128 0x5
+ 981 031d 03       		.byte	0x3
+ 982 031e 7C000000 		.4byte	.LC8
+ 983 0322 00       		.byte	0
+ 984 0323 09       		.uleb128 0x9
+ 985 0324 DE000000 		.4byte	.LVL20
+ 986 0328 E3040000 		.4byte	0x4e3
+ 987 032c 3A030000 		.4byte	0x33a
+ 988 0330 0A       		.uleb128 0xa
+ 989 0331 01       		.uleb128 0x1
+ 990 0332 50       		.byte	0x50
+ 991 0333 05       		.uleb128 0x5
+ 992 0334 03       		.byte	0x3
+ 993 0335 9C000000 		.4byte	.LC9
+ 994 0339 00       		.byte	0
+ 995 033a 0B       		.uleb128 0xb
+ 996 033b 04010000 		.4byte	.LVL21
+ 997 033f F9040000 		.4byte	0x4f9
+ 998 0343 0B       		.uleb128 0xb
+ 999 0344 0C010000 		.4byte	.LVL22
+ 1000 0348 04050000 		.4byte	0x504
+ 1001 034c 09       		.uleb128 0x9
+ 1002 034d 1C010000 		.4byte	.LVL23
+ 1003 0351 E3040000 		.4byte	0x4e3
+ 1004 0355 63030000 		.4byte	0x363
+ 1005 0359 0A       		.uleb128 0xa
+ 1006 035a 01       		.uleb128 0x1
+ 1007 035b 50       		.byte	0x50
+ 1008 035c 05       		.uleb128 0x5
+ 1009 035d 03       		.byte	0x3
+ 1010 035e B0000000 		.4byte	.LC10
+ 1011 0362 00       		.byte	0
+ 1012 0363 09       		.uleb128 0x9
+ 1013 0364 24010000 		.4byte	.LVL24
+ 1014 0368 E3040000 		.4byte	0x4e3
+ 1015 036c 7A030000 		.4byte	0x37a
+ 1016 0370 0A       		.uleb128 0xa
+ 1017 0371 01       		.uleb128 0x1
+ 1018 0372 50       		.byte	0x50
+ 1019 0373 05       		.uleb128 0x5
+ 1020 0374 03       		.byte	0x3
+ 1021 0375 CC000000 		.4byte	.LC11
+ 1022 0379 00       		.byte	0
+ 1023 037a 0B       		.uleb128 0xb
+ 1024 037b 32010000 		.4byte	.LVL25
+ 1025 037f 25050000 		.4byte	0x525
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 23
+
+
+ 1026 0383 09       		.uleb128 0x9
+ 1027 0384 3A010000 		.4byte	.LVL26
+ 1028 0388 E3040000 		.4byte	0x4e3
+ 1029 038c 9A030000 		.4byte	0x39a
+ 1030 0390 0A       		.uleb128 0xa
+ 1031 0391 01       		.uleb128 0x1
+ 1032 0392 50       		.byte	0x50
+ 1033 0393 05       		.uleb128 0x5
+ 1034 0394 03       		.byte	0x3
+ 1035 0395 EC000000 		.4byte	.LC12
+ 1036 0399 00       		.byte	0
+ 1037 039a 09       		.uleb128 0x9
+ 1038 039b 40010000 		.4byte	.LVL27
+ 1039 039f 30050000 		.4byte	0x530
+ 1040 03a3 AE030000 		.4byte	0x3ae
+ 1041 03a7 0A       		.uleb128 0xa
+ 1042 03a8 01       		.uleb128 0x1
+ 1043 03a9 50       		.byte	0x50
+ 1044 03aa 02       		.uleb128 0x2
+ 1045 03ab 91       		.byte	0x91
+ 1046 03ac 6C       		.sleb128 -20
+ 1047 03ad 00       		.byte	0
+ 1048 03ae 09       		.uleb128 0x9
+ 1049 03af 48010000 		.4byte	.LVL28
+ 1050 03b3 E3040000 		.4byte	0x4e3
+ 1051 03b7 C5030000 		.4byte	0x3c5
+ 1052 03bb 0A       		.uleb128 0xa
+ 1053 03bc 01       		.uleb128 0x1
+ 1054 03bd 50       		.byte	0x50
+ 1055 03be 05       		.uleb128 0x5
+ 1056 03bf 03       		.byte	0x3
+ 1057 03c0 20010000 		.4byte	.LC13
+ 1058 03c4 00       		.byte	0
+ 1059 03c5 09       		.uleb128 0x9
+ 1060 03c6 4E010000 		.4byte	.LVL29
+ 1061 03ca 30050000 		.4byte	0x530
+ 1062 03ce D9030000 		.4byte	0x3d9
+ 1063 03d2 0A       		.uleb128 0xa
+ 1064 03d3 01       		.uleb128 0x1
+ 1065 03d4 50       		.byte	0x50
+ 1066 03d5 02       		.uleb128 0x2
+ 1067 03d6 91       		.byte	0x91
+ 1068 03d7 60       		.sleb128 -32
+ 1069 03d8 00       		.byte	0
+ 1070 03d9 09       		.uleb128 0x9
+ 1071 03da 56010000 		.4byte	.LVL30
+ 1072 03de E3040000 		.4byte	0x4e3
+ 1073 03e2 F0030000 		.4byte	0x3f0
+ 1074 03e6 0A       		.uleb128 0xa
+ 1075 03e7 01       		.uleb128 0x1
+ 1076 03e8 50       		.byte	0x50
+ 1077 03e9 05       		.uleb128 0x5
+ 1078 03ea 03       		.byte	0x3
+ 1079 03eb 54010000 		.4byte	.LC14
+ 1080 03ef 00       		.byte	0
+ 1081 03f0 09       		.uleb128 0x9
+ 1082 03f1 5C010000 		.4byte	.LVL31
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 24
+
+
+ 1083 03f5 30050000 		.4byte	0x530
+ 1084 03f9 04040000 		.4byte	0x404
+ 1085 03fd 0A       		.uleb128 0xa
+ 1086 03fe 01       		.uleb128 0x1
+ 1087 03ff 50       		.byte	0x50
+ 1088 0400 02       		.uleb128 0x2
+ 1089 0401 91       		.byte	0x91
+ 1090 0402 54       		.sleb128 -44
+ 1091 0403 00       		.byte	0
+ 1092 0404 09       		.uleb128 0x9
+ 1093 0405 64010000 		.4byte	.LVL32
+ 1094 0409 E3040000 		.4byte	0x4e3
+ 1095 040d 1B040000 		.4byte	0x41b
+ 1096 0411 0A       		.uleb128 0xa
+ 1097 0412 01       		.uleb128 0x1
+ 1098 0413 50       		.byte	0x50
+ 1099 0414 05       		.uleb128 0x5
+ 1100 0415 03       		.byte	0x3
+ 1101 0416 84010000 		.4byte	.LC15
+ 1102 041a 00       		.byte	0
+ 1103 041b 0C       		.uleb128 0xc
+ 1104 041c 6A010000 		.4byte	.LVL33
+ 1105 0420 30050000 		.4byte	0x530
+ 1106 0424 0A       		.uleb128 0xa
+ 1107 0425 01       		.uleb128 0x1
+ 1108 0426 50       		.byte	0x50
+ 1109 0427 05       		.uleb128 0x5
+ 1110 0428 03       		.byte	0x3
+ 1111 0429 AC010000 		.4byte	.LC16
+ 1112 042d 00       		.byte	0
+ 1113 042e 00       		.byte	0
+ 1114 042f 0D       		.uleb128 0xd
+ 1115 0430 BB000000 		.4byte	0xbb
+ 1116 0434 3F040000 		.4byte	0x43f
+ 1117 0438 0E       		.uleb128 0xe
+ 1118 0439 C9000000 		.4byte	0xc9
+ 1119 043d 08       		.byte	0x8
+ 1120 043e 00       		.byte	0
+ 1121 043f 0D       		.uleb128 0xd
+ 1122 0440 BB000000 		.4byte	0xbb
+ 1123 0444 4F040000 		.4byte	0x44f
+ 1124 0448 0E       		.uleb128 0xe
+ 1125 0449 C9000000 		.4byte	0xc9
+ 1126 044d 09       		.byte	0x9
+ 1127 044e 00       		.byte	0
+ 1128 044f 05       		.uleb128 0x5
+ 1129 0450 40000000 		.4byte	.LASF34
+ 1130 0454 01       		.byte	0x1
+ 1131 0455 36       		.byte	0x36
+ 1132 0456 00000000 		.4byte	.LFB65
+ 1133 045a 24000000 		.4byte	.LFE65-.LFB65
+ 1134 045e 01       		.uleb128 0x1
+ 1135 045f 9C       		.byte	0x9c
+ 1136 0460 C7040000 		.4byte	0x4c7
+ 1137 0464 07       		.uleb128 0x7
+ 1138 0465 7D000000 		.4byte	.LASF35
+ 1139 0469 01       		.byte	0x1
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 25
+
+
+ 1140 046a 38       		.byte	0x38
+ 1141 046b 97000000 		.4byte	0x97
+ 1142 046f 5B000000 		.4byte	.LLST4
+ 1143 0473 08       		.uleb128 0x8
+ 1144 0474 0A000000 		.4byte	.LBB4
+ 1145 0478 14000000 		.4byte	.LBE4-.LBB4
+ 1146 047c BD040000 		.4byte	0x4bd
+ 1147 0480 07       		.uleb128 0x7
+ 1148 0481 43030000 		.4byte	.LASF26
+ 1149 0485 01       		.byte	0x1
+ 1150 0486 3B       		.byte	0x3b
+ 1151 0487 97000000 		.4byte	0x97
+ 1152 048b 79000000 		.4byte	.LLST5
+ 1153 048f 0B       		.uleb128 0xb
+ 1154 0490 0E000000 		.4byte	.LVL36
+ 1155 0494 3B050000 		.4byte	0x53b
+ 1156 0498 09       		.uleb128 0x9
+ 1157 0499 14000000 		.4byte	.LVL38
+ 1158 049d 46050000 		.4byte	0x546
+ 1159 04a1 AC040000 		.4byte	0x4ac
+ 1160 04a5 0A       		.uleb128 0xa
+ 1161 04a6 01       		.uleb128 0x1
+ 1162 04a7 50       		.byte	0x50
+ 1163 04a8 02       		.uleb128 0x2
+ 1164 04a9 75       		.byte	0x75
+ 1165 04aa 00       		.sleb128 0
+ 1166 04ab 00       		.byte	0
+ 1167 04ac 0C       		.uleb128 0xc
+ 1168 04ad 1A000000 		.4byte	.LVL39
+ 1169 04b1 6D020000 		.4byte	0x26d
+ 1170 04b5 0A       		.uleb128 0xa
+ 1171 04b6 01       		.uleb128 0x1
+ 1172 04b7 50       		.byte	0x50
+ 1173 04b8 02       		.uleb128 0x2
+ 1174 04b9 75       		.byte	0x75
+ 1175 04ba 00       		.sleb128 0
+ 1176 04bb 00       		.byte	0
+ 1177 04bc 00       		.byte	0
+ 1178 04bd 0B       		.uleb128 0xb
+ 1179 04be 06000000 		.4byte	.LVL34
+ 1180 04c2 51050000 		.4byte	0x551
+ 1181 04c6 00       		.byte	0
+ 1182 04c7 10       		.uleb128 0x10
+ 1183 04c8 D6010000 		.4byte	.LASF51
+ 1184 04cc 08       		.byte	0x8
+ 1185 04cd 1207     		.2byte	0x712
+ 1186 04cf D3040000 		.4byte	0x4d3
+ 1187 04d3 11       		.uleb128 0x11
+ 1188 04d4 A2000000 		.4byte	0xa2
+ 1189 04d8 12       		.uleb128 0x12
+ 1190 04d9 61000000 		.4byte	.LASF36
+ 1191 04dd 61000000 		.4byte	.LASF36
+ 1192 04e1 04       		.byte	0x4
+ 1193 04e2 FD       		.byte	0xfd
+ 1194 04e3 12       		.uleb128 0x12
+ 1195 04e4 34030000 		.4byte	.LASF37
+ 1196 04e8 34030000 		.4byte	.LASF37
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 26
+
+
+ 1197 04ec 05       		.byte	0x5
+ 1198 04ed 8B       		.byte	0x8b
+ 1199 04ee 12       		.uleb128 0x12
+ 1200 04ef 08000000 		.4byte	.LASF38
+ 1201 04f3 08000000 		.4byte	.LASF38
+ 1202 04f7 04       		.byte	0x4
+ 1203 04f8 BF       		.byte	0xbf
+ 1204 04f9 12       		.uleb128 0x12
+ 1205 04fa EA010000 		.4byte	.LASF39
+ 1206 04fe EA010000 		.4byte	.LASF39
+ 1207 0502 06       		.byte	0x6
+ 1208 0503 0A       		.byte	0xa
+ 1209 0504 12       		.uleb128 0x12
+ 1210 0505 F5010000 		.4byte	.LASF40
+ 1211 0509 F5010000 		.4byte	.LASF40
+ 1212 050d 06       		.byte	0x6
+ 1213 050e 0B       		.byte	0xb
+ 1214 050f 12       		.uleb128 0x12
+ 1215 0510 A3020000 		.4byte	.LASF41
+ 1216 0514 A3020000 		.4byte	.LASF41
+ 1217 0518 07       		.byte	0x7
+ 1218 0519 6F       		.byte	0x6f
+ 1219 051a 12       		.uleb128 0x12
+ 1220 051b 00020000 		.4byte	.LASF42
+ 1221 051f 00020000 		.4byte	.LASF42
+ 1222 0523 07       		.byte	0x7
+ 1223 0524 73       		.byte	0x73
+ 1224 0525 12       		.uleb128 0x12
+ 1225 0526 D1010000 		.4byte	.LASF43
+ 1226 052a D1010000 		.4byte	.LASF43
+ 1227 052e 06       		.byte	0x6
+ 1228 052f 0E       		.byte	0xe
+ 1229 0530 12       		.uleb128 0x12
+ 1230 0531 D7020000 		.4byte	.LASF44
+ 1231 0535 D7020000 		.4byte	.LASF44
+ 1232 0539 07       		.byte	0x7
+ 1233 053a 8B       		.byte	0x8b
+ 1234 053b 12       		.uleb128 0x12
+ 1235 053c 63020000 		.4byte	.LASF45
+ 1236 0540 63020000 		.4byte	.LASF45
+ 1237 0544 05       		.byte	0x5
+ 1238 0545 6F       		.byte	0x6f
+ 1239 0546 12       		.uleb128 0x12
+ 1240 0547 2F000000 		.4byte	.LASF46
+ 1241 054b 2F000000 		.4byte	.LASF46
+ 1242 054f 05       		.byte	0x5
+ 1243 0550 88       		.byte	0x88
+ 1244 0551 12       		.uleb128 0x12
+ 1245 0552 00030000 		.4byte	.LASF47
+ 1246 0556 00030000 		.4byte	.LASF47
+ 1247 055a 05       		.byte	0x5
+ 1248 055b 73       		.byte	0x73
+ 1249 055c 00       		.byte	0
+ 1250              		.section	.debug_abbrev,"",%progbits
+ 1251              	.Ldebug_abbrev0:
+ 1252 0000 01       		.uleb128 0x1
+ 1253 0001 11       		.uleb128 0x11
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 27
+
+
+ 1254 0002 01       		.byte	0x1
+ 1255 0003 25       		.uleb128 0x25
+ 1256 0004 0E       		.uleb128 0xe
+ 1257 0005 13       		.uleb128 0x13
+ 1258 0006 0B       		.uleb128 0xb
+ 1259 0007 03       		.uleb128 0x3
+ 1260 0008 0E       		.uleb128 0xe
+ 1261 0009 1B       		.uleb128 0x1b
+ 1262 000a 0E       		.uleb128 0xe
+ 1263 000b 55       		.uleb128 0x55
+ 1264 000c 17       		.uleb128 0x17
+ 1265 000d 11       		.uleb128 0x11
+ 1266 000e 01       		.uleb128 0x1
+ 1267 000f 10       		.uleb128 0x10
+ 1268 0010 17       		.uleb128 0x17
+ 1269 0011 00       		.byte	0
+ 1270 0012 00       		.byte	0
+ 1271 0013 02       		.uleb128 0x2
+ 1272 0014 16       		.uleb128 0x16
+ 1273 0015 00       		.byte	0
+ 1274 0016 03       		.uleb128 0x3
+ 1275 0017 0E       		.uleb128 0xe
+ 1276 0018 3A       		.uleb128 0x3a
+ 1277 0019 0B       		.uleb128 0xb
+ 1278 001a 3B       		.uleb128 0x3b
+ 1279 001b 0B       		.uleb128 0xb
+ 1280 001c 49       		.uleb128 0x49
+ 1281 001d 13       		.uleb128 0x13
+ 1282 001e 00       		.byte	0
+ 1283 001f 00       		.byte	0
+ 1284 0020 03       		.uleb128 0x3
+ 1285 0021 24       		.uleb128 0x24
+ 1286 0022 00       		.byte	0
+ 1287 0023 0B       		.uleb128 0xb
+ 1288 0024 0B       		.uleb128 0xb
+ 1289 0025 3E       		.uleb128 0x3e
+ 1290 0026 0B       		.uleb128 0xb
+ 1291 0027 03       		.uleb128 0x3
+ 1292 0028 0E       		.uleb128 0xe
+ 1293 0029 00       		.byte	0
+ 1294 002a 00       		.byte	0
+ 1295 002b 04       		.uleb128 0x4
+ 1296 002c 24       		.uleb128 0x24
+ 1297 002d 00       		.byte	0
+ 1298 002e 0B       		.uleb128 0xb
+ 1299 002f 0B       		.uleb128 0xb
+ 1300 0030 3E       		.uleb128 0x3e
+ 1301 0031 0B       		.uleb128 0xb
+ 1302 0032 03       		.uleb128 0x3
+ 1303 0033 08       		.uleb128 0x8
+ 1304 0034 00       		.byte	0
+ 1305 0035 00       		.byte	0
+ 1306 0036 05       		.uleb128 0x5
+ 1307 0037 2E       		.uleb128 0x2e
+ 1308 0038 01       		.byte	0x1
+ 1309 0039 3F       		.uleb128 0x3f
+ 1310 003a 19       		.uleb128 0x19
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 28
+
+
+ 1311 003b 03       		.uleb128 0x3
+ 1312 003c 0E       		.uleb128 0xe
+ 1313 003d 3A       		.uleb128 0x3a
+ 1314 003e 0B       		.uleb128 0xb
+ 1315 003f 3B       		.uleb128 0x3b
+ 1316 0040 0B       		.uleb128 0xb
+ 1317 0041 27       		.uleb128 0x27
+ 1318 0042 19       		.uleb128 0x19
+ 1319 0043 11       		.uleb128 0x11
+ 1320 0044 01       		.uleb128 0x1
+ 1321 0045 12       		.uleb128 0x12
+ 1322 0046 06       		.uleb128 0x6
+ 1323 0047 40       		.uleb128 0x40
+ 1324 0048 18       		.uleb128 0x18
+ 1325 0049 9742     		.uleb128 0x2117
+ 1326 004b 19       		.uleb128 0x19
+ 1327 004c 01       		.uleb128 0x1
+ 1328 004d 13       		.uleb128 0x13
+ 1329 004e 00       		.byte	0
+ 1330 004f 00       		.byte	0
+ 1331 0050 06       		.uleb128 0x6
+ 1332 0051 34       		.uleb128 0x34
+ 1333 0052 00       		.byte	0
+ 1334 0053 03       		.uleb128 0x3
+ 1335 0054 0E       		.uleb128 0xe
+ 1336 0055 3A       		.uleb128 0x3a
+ 1337 0056 0B       		.uleb128 0xb
+ 1338 0057 3B       		.uleb128 0x3b
+ 1339 0058 0B       		.uleb128 0xb
+ 1340 0059 49       		.uleb128 0x49
+ 1341 005a 13       		.uleb128 0x13
+ 1342 005b 02       		.uleb128 0x2
+ 1343 005c 18       		.uleb128 0x18
+ 1344 005d 00       		.byte	0
+ 1345 005e 00       		.byte	0
+ 1346 005f 07       		.uleb128 0x7
+ 1347 0060 34       		.uleb128 0x34
+ 1348 0061 00       		.byte	0
+ 1349 0062 03       		.uleb128 0x3
+ 1350 0063 0E       		.uleb128 0xe
+ 1351 0064 3A       		.uleb128 0x3a
+ 1352 0065 0B       		.uleb128 0xb
+ 1353 0066 3B       		.uleb128 0x3b
+ 1354 0067 0B       		.uleb128 0xb
+ 1355 0068 49       		.uleb128 0x49
+ 1356 0069 13       		.uleb128 0x13
+ 1357 006a 02       		.uleb128 0x2
+ 1358 006b 17       		.uleb128 0x17
+ 1359 006c 00       		.byte	0
+ 1360 006d 00       		.byte	0
+ 1361 006e 08       		.uleb128 0x8
+ 1362 006f 0B       		.uleb128 0xb
+ 1363 0070 01       		.byte	0x1
+ 1364 0071 11       		.uleb128 0x11
+ 1365 0072 01       		.uleb128 0x1
+ 1366 0073 12       		.uleb128 0x12
+ 1367 0074 06       		.uleb128 0x6
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 29
+
+
+ 1368 0075 01       		.uleb128 0x1
+ 1369 0076 13       		.uleb128 0x13
+ 1370 0077 00       		.byte	0
+ 1371 0078 00       		.byte	0
+ 1372 0079 09       		.uleb128 0x9
+ 1373 007a 898201   		.uleb128 0x4109
+ 1374 007d 01       		.byte	0x1
+ 1375 007e 11       		.uleb128 0x11
+ 1376 007f 01       		.uleb128 0x1
+ 1377 0080 31       		.uleb128 0x31
+ 1378 0081 13       		.uleb128 0x13
+ 1379 0082 01       		.uleb128 0x1
+ 1380 0083 13       		.uleb128 0x13
+ 1381 0084 00       		.byte	0
+ 1382 0085 00       		.byte	0
+ 1383 0086 0A       		.uleb128 0xa
+ 1384 0087 8A8201   		.uleb128 0x410a
+ 1385 008a 00       		.byte	0
+ 1386 008b 02       		.uleb128 0x2
+ 1387 008c 18       		.uleb128 0x18
+ 1388 008d 9142     		.uleb128 0x2111
+ 1389 008f 18       		.uleb128 0x18
+ 1390 0090 00       		.byte	0
+ 1391 0091 00       		.byte	0
+ 1392 0092 0B       		.uleb128 0xb
+ 1393 0093 898201   		.uleb128 0x4109
+ 1394 0096 00       		.byte	0
+ 1395 0097 11       		.uleb128 0x11
+ 1396 0098 01       		.uleb128 0x1
+ 1397 0099 31       		.uleb128 0x31
+ 1398 009a 13       		.uleb128 0x13
+ 1399 009b 00       		.byte	0
+ 1400 009c 00       		.byte	0
+ 1401 009d 0C       		.uleb128 0xc
+ 1402 009e 898201   		.uleb128 0x4109
+ 1403 00a1 01       		.byte	0x1
+ 1404 00a2 11       		.uleb128 0x11
+ 1405 00a3 01       		.uleb128 0x1
+ 1406 00a4 31       		.uleb128 0x31
+ 1407 00a5 13       		.uleb128 0x13
+ 1408 00a6 00       		.byte	0
+ 1409 00a7 00       		.byte	0
+ 1410 00a8 0D       		.uleb128 0xd
+ 1411 00a9 01       		.uleb128 0x1
+ 1412 00aa 01       		.byte	0x1
+ 1413 00ab 49       		.uleb128 0x49
+ 1414 00ac 13       		.uleb128 0x13
+ 1415 00ad 01       		.uleb128 0x1
+ 1416 00ae 13       		.uleb128 0x13
+ 1417 00af 00       		.byte	0
+ 1418 00b0 00       		.byte	0
+ 1419 00b1 0E       		.uleb128 0xe
+ 1420 00b2 21       		.uleb128 0x21
+ 1421 00b3 00       		.byte	0
+ 1422 00b4 49       		.uleb128 0x49
+ 1423 00b5 13       		.uleb128 0x13
+ 1424 00b6 2F       		.uleb128 0x2f
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 30
+
+
+ 1425 00b7 0B       		.uleb128 0xb
+ 1426 00b8 00       		.byte	0
+ 1427 00b9 00       		.byte	0
+ 1428 00ba 0F       		.uleb128 0xf
+ 1429 00bb 05       		.uleb128 0x5
+ 1430 00bc 00       		.byte	0
+ 1431 00bd 03       		.uleb128 0x3
+ 1432 00be 0E       		.uleb128 0xe
+ 1433 00bf 3A       		.uleb128 0x3a
+ 1434 00c0 0B       		.uleb128 0xb
+ 1435 00c1 3B       		.uleb128 0x3b
+ 1436 00c2 0B       		.uleb128 0xb
+ 1437 00c3 49       		.uleb128 0x49
+ 1438 00c4 13       		.uleb128 0x13
+ 1439 00c5 02       		.uleb128 0x2
+ 1440 00c6 17       		.uleb128 0x17
+ 1441 00c7 00       		.byte	0
+ 1442 00c8 00       		.byte	0
+ 1443 00c9 10       		.uleb128 0x10
+ 1444 00ca 34       		.uleb128 0x34
+ 1445 00cb 00       		.byte	0
+ 1446 00cc 03       		.uleb128 0x3
+ 1447 00cd 0E       		.uleb128 0xe
+ 1448 00ce 3A       		.uleb128 0x3a
+ 1449 00cf 0B       		.uleb128 0xb
+ 1450 00d0 3B       		.uleb128 0x3b
+ 1451 00d1 05       		.uleb128 0x5
+ 1452 00d2 49       		.uleb128 0x49
+ 1453 00d3 13       		.uleb128 0x13
+ 1454 00d4 3F       		.uleb128 0x3f
+ 1455 00d5 19       		.uleb128 0x19
+ 1456 00d6 3C       		.uleb128 0x3c
+ 1457 00d7 19       		.uleb128 0x19
+ 1458 00d8 00       		.byte	0
+ 1459 00d9 00       		.byte	0
+ 1460 00da 11       		.uleb128 0x11
+ 1461 00db 35       		.uleb128 0x35
+ 1462 00dc 00       		.byte	0
+ 1463 00dd 49       		.uleb128 0x49
+ 1464 00de 13       		.uleb128 0x13
+ 1465 00df 00       		.byte	0
+ 1466 00e0 00       		.byte	0
+ 1467 00e1 12       		.uleb128 0x12
+ 1468 00e2 2E       		.uleb128 0x2e
+ 1469 00e3 00       		.byte	0
+ 1470 00e4 3F       		.uleb128 0x3f
+ 1471 00e5 19       		.uleb128 0x19
+ 1472 00e6 3C       		.uleb128 0x3c
+ 1473 00e7 19       		.uleb128 0x19
+ 1474 00e8 6E       		.uleb128 0x6e
+ 1475 00e9 0E       		.uleb128 0xe
+ 1476 00ea 03       		.uleb128 0x3
+ 1477 00eb 0E       		.uleb128 0xe
+ 1478 00ec 3A       		.uleb128 0x3a
+ 1479 00ed 0B       		.uleb128 0xb
+ 1480 00ee 3B       		.uleb128 0x3b
+ 1481 00ef 0B       		.uleb128 0xb
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 31
+
+
+ 1482 00f0 00       		.byte	0
+ 1483 00f1 00       		.byte	0
+ 1484 00f2 00       		.byte	0
+ 1485              		.section	.debug_loc,"",%progbits
+ 1486              	.Ldebug_loc0:
+ 1487              	.LLST0:
+ 1488 0000 5A000000 		.4byte	.LVL5
+ 1489 0004 65000000 		.4byte	.LVL7-1
+ 1490 0008 0200     		.2byte	0x2
+ 1491 000a 91       		.byte	0x91
+ 1492 000b 74       		.sleb128 -12
+ 1493 000c 00000000 		.4byte	0
+ 1494 0010 00000000 		.4byte	0
+ 1495              	.LLST1:
+ 1496 0014 5E000000 		.4byte	.LVL6
+ 1497 0018 6E000000 		.4byte	.LVL9
+ 1498 001c 0100     		.2byte	0x1
+ 1499 001e 54       		.byte	0x54
+ 1500 001f 00000000 		.4byte	0
+ 1501 0023 00000000 		.4byte	0
+ 1502              	.LLST2:
+ 1503 0027 0A000000 		.4byte	.LVL0
+ 1504 002b 2E000000 		.4byte	.LVL1
+ 1505 002f 0100     		.2byte	0x1
+ 1506 0031 50       		.byte	0x50
+ 1507 0032 00000000 		.4byte	0
+ 1508 0036 00000000 		.4byte	0
+ 1509              	.LLST3:
+ 1510 003a 00000000 		.4byte	.LVL13
+ 1511 003e 0C000000 		.4byte	.LVL14
+ 1512 0042 0100     		.2byte	0x1
+ 1513 0044 50       		.byte	0x50
+ 1514 0045 0C000000 		.4byte	.LVL14
+ 1515 0049 AC010000 		.4byte	.LFE66
+ 1516 004d 0400     		.2byte	0x4
+ 1517 004f F3       		.byte	0xf3
+ 1518 0050 01       		.uleb128 0x1
+ 1519 0051 50       		.byte	0x50
+ 1520 0052 9F       		.byte	0x9f
+ 1521 0053 00000000 		.4byte	0
+ 1522 0057 00000000 		.4byte	0
+ 1523              	.LLST4:
+ 1524 005b 08000000 		.4byte	.LVL35
+ 1525 005f 1C000000 		.4byte	.LVL40
+ 1526 0063 0100     		.2byte	0x1
+ 1527 0065 54       		.byte	0x54
+ 1528 0066 1E000000 		.4byte	.LVL41
+ 1529 006a 24000000 		.4byte	.LFE65
+ 1530 006e 0100     		.2byte	0x1
+ 1531 0070 54       		.byte	0x54
+ 1532 0071 00000000 		.4byte	0
+ 1533 0075 00000000 		.4byte	0
+ 1534              	.LLST5:
+ 1535 0079 10000000 		.4byte	.LVL37
+ 1536 007d 1E000000 		.4byte	.LVL41
+ 1537 0081 0100     		.2byte	0x1
+ 1538 0083 55       		.byte	0x55
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 32
+
+
+ 1539 0084 00000000 		.4byte	0
+ 1540 0088 00000000 		.4byte	0
+ 1541              		.section	.debug_aranges,"",%progbits
+ 1542 0000 2C000000 		.4byte	0x2c
+ 1543 0004 0200     		.2byte	0x2
+ 1544 0006 00000000 		.4byte	.Ldebug_info0
+ 1545 000a 04       		.byte	0x4
+ 1546 000b 00       		.byte	0
+ 1547 000c 0000     		.2byte	0
+ 1548 000e 0000     		.2byte	0
+ 1549 0010 00000000 		.4byte	.LFB64
+ 1550 0014 A8000000 		.4byte	.LFE64-.LFB64
+ 1551 0018 00000000 		.4byte	.LFB66
+ 1552 001c AC010000 		.4byte	.LFE66-.LFB66
+ 1553 0020 00000000 		.4byte	.LFB65
+ 1554 0024 24000000 		.4byte	.LFE65-.LFB65
+ 1555 0028 00000000 		.4byte	0
+ 1556 002c 00000000 		.4byte	0
+ 1557              		.section	.debug_ranges,"",%progbits
+ 1558              	.Ldebug_ranges0:
+ 1559 0000 00000000 		.4byte	.LFB64
+ 1560 0004 A8000000 		.4byte	.LFE64
+ 1561 0008 00000000 		.4byte	.LFB66
+ 1562 000c AC010000 		.4byte	.LFE66
+ 1563 0010 00000000 		.4byte	.LFB65
+ 1564 0014 24000000 		.4byte	.LFE65
+ 1565 0018 00000000 		.4byte	0
+ 1566 001c 00000000 		.4byte	0
+ 1567              		.section	.debug_line,"",%progbits
+ 1568              	.Ldebug_line0:
+ 1569 0000 6C020000 		.section	.debug_str,"MS",%progbits,1
+ 1569      0200E401 
+ 1569      00000201 
+ 1569      FB0E0D00 
+ 1569      01010101 
+ 1570              	.LASF27:
+ 1571 0000 6D657373 		.ascii	"message\000"
+ 1571      61676500 
+ 1572              	.LASF38:
+ 1573 0008 73736361 		.ascii	"sscanf\000"
+ 1573      6E6600
+ 1574              	.LASF32:
+ 1575 000f 636F6D6D 		.ascii	"command_baud\000"
+ 1575      616E645F 
+ 1575      62617564 
+ 1575      00
+ 1576              	.LASF0:
+ 1577 001c 5F5F696E 		.ascii	"__int8_t\000"
+ 1577      74385F74 
+ 1577      00
+ 1578              	.LASF1:
+ 1579 0025 5F5F7569 		.ascii	"__uint8_t\000"
+ 1579      6E74385F 
+ 1579      7400
+ 1580              	.LASF46:
+ 1581 002f 55415254 		.ascii	"UART_WriteTxData\000"
+ 1581      5F577269 
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 33
+
+
+ 1581      74655478 
+ 1581      44617461 
+ 1581      00
+ 1582              	.LASF34:
+ 1583 0040 4953525F 		.ascii	"ISR_UART_rx_handler_PC\000"
+ 1583      55415254 
+ 1583      5F72785F 
+ 1583      68616E64 
+ 1583      6C65725F 
+ 1584              	.LASF6:
+ 1585 0057 5F5F696E 		.ascii	"__int32_t\000"
+ 1585      7433325F 
+ 1585      7400
+ 1586              	.LASF36:
+ 1587 0061 736E7072 		.ascii	"snprintf\000"
+ 1587      696E7466 
+ 1587      00
+ 1588              	.LASF5:
+ 1589 006a 73686F72 		.ascii	"short unsigned int\000"
+ 1589      7420756E 
+ 1589      7369676E 
+ 1589      65642069 
+ 1589      6E7400
+ 1590              	.LASF35:
+ 1591 007d 62797465 		.ascii	"bytesToRead\000"
+ 1591      73546F52 
+ 1591      65616400 
+ 1592              	.LASF12:
+ 1593 0089 696E7438 		.ascii	"int8_t\000"
+ 1593      5F7400
+ 1594              	.LASF14:
+ 1595 0090 696E7433 		.ascii	"int32_t\000"
+ 1595      325F7400 
+ 1596              	.LASF15:
+ 1597 0098 666C6F61 		.ascii	"float\000"
+ 1597      7400
+ 1598              	.LASF20:
+ 1599 009e 62744275 		.ascii	"btBuffer\000"
+ 1599      66666572 
+ 1599      00
+ 1600              	.LASF3:
+ 1601 00a7 756E7369 		.ascii	"unsigned char\000"
+ 1601      676E6564 
+ 1601      20636861 
+ 1601      7200
+ 1602              	.LASF48:
+ 1603 00b5 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1603      43313120 
+ 1603      352E342E 
+ 1603      31203230 
+ 1603      31363036 
+ 1604 00e8 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1604      20726576 
+ 1604      6973696F 
+ 1604      6E203233 
+ 1604      37373135 
+ 1605 011b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 34
+
+
+ 1605      66756E63 
+ 1605      74696F6E 
+ 1605      2D736563 
+ 1605      74696F6E 
+ 1606              	.LASF49:
+ 1607 0143 55415254 		.ascii	"UART_handler.c\000"
+ 1607      5F68616E 
+ 1607      646C6572 
+ 1607      2E6300
+ 1608              	.LASF50:
+ 1609 0152 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\Elektronik ingenioer\\3rd s"
+ 1609      635C486F 
+ 1609      6D655C44 
+ 1609      65736B74 
+ 1609      6F705C45 
+ 1610 017f 656D6573 		.ascii	"emester\\PRJ3\\PRJ3\\BattleBot\\Motor_Test.cydsn\000"
+ 1610      7465725C 
+ 1610      50524A33 
+ 1610      5C50524A 
+ 1610      335C4261 
+ 1611              	.LASF8:
+ 1612 01ac 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1612      20756E73 
+ 1612      69676E65 
+ 1612      6420696E 
+ 1612      7400
+ 1613              	.LASF29:
+ 1614 01be 68616E64 		.ascii	"handleByteReceived\000"
+ 1614      6C654279 
+ 1614      74655265 
+ 1614      63656976 
+ 1614      656400
+ 1615              	.LASF43:
+ 1616 01d1 73746F70 		.ascii	"stop\000"
+ 1616      00
+ 1617              	.LASF51:
+ 1618 01d6 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1618      52784275 
+ 1618      66666572 
+ 1618      00
+ 1619              	.LASF16:
+ 1620 01e3 646F7562 		.ascii	"double\000"
+ 1620      6C6500
+ 1621              	.LASF39:
+ 1622 01ea 7365745F 		.ascii	"set_speedA\000"
+ 1622      73706565 
+ 1622      644100
+ 1623              	.LASF40:
+ 1624 01f5 7365745F 		.ascii	"set_speedB\000"
+ 1624      73706565 
+ 1624      644200
+ 1625              	.LASF42:
+ 1626 0200 55415254 		.ascii	"UART_BT_GetRxBufferSize\000"
+ 1626      5F42545F 
+ 1626      47657452 
+ 1626      78427566 
+ 1626      66657253 
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 35
+
+
+ 1627              	.LASF11:
+ 1628 0218 756E7369 		.ascii	"unsigned int\000"
+ 1628      676E6564 
+ 1628      20696E74 
+ 1628      00
+ 1629              	.LASF31:
+ 1630 0225 636F6D6D 		.ascii	"command_address\000"
+ 1630      616E645F 
+ 1630      61646472 
+ 1630      65737300 
+ 1631              	.LASF10:
+ 1632 0235 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1632      206C6F6E 
+ 1632      6720756E 
+ 1632      7369676E 
+ 1632      65642069 
+ 1633              	.LASF13:
+ 1634 024c 75696E74 		.ascii	"uint8_t\000"
+ 1634      385F7400 
+ 1635              	.LASF33:
+ 1636 0254 636F6D6D 		.ascii	"command_status\000"
+ 1636      616E645F 
+ 1636      73746174 
+ 1636      757300
+ 1637              	.LASF45:
+ 1638 0263 55415254 		.ascii	"UART_ReadRxData\000"
+ 1638      5F526561 
+ 1638      64527844 
+ 1638      61746100 
+ 1639              	.LASF30:
+ 1640 0273 63757272 		.ascii	"currentSpeed\000"
+ 1640      656E7453 
+ 1640      70656564 
+ 1640      00
+ 1641              	.LASF18:
+ 1642 0280 6C6F6E67 		.ascii	"long double\000"
+ 1642      20646F75 
+ 1642      626C6500 
+ 1643              	.LASF19:
+ 1644 028c 73697A65 		.ascii	"sizetype\000"
+ 1644      74797065 
+ 1644      00
+ 1645              	.LASF9:
+ 1646 0295 6C6F6E67 		.ascii	"long long int\000"
+ 1646      206C6F6E 
+ 1646      6720696E 
+ 1646      7400
+ 1647              	.LASF41:
+ 1648 02a3 55415254 		.ascii	"UART_BT_ReadRxData\000"
+ 1648      5F42545F 
+ 1648      52656164 
+ 1648      52784461 
+ 1648      746100
+ 1649              	.LASF17:
+ 1650 02b6 63686172 		.ascii	"char\000"
+ 1650      00
+ 1651              	.LASF21:
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccZYtP4n.s 			page 36
+
+
+ 1652 02bb 696E6465 		.ascii	"index\000"
+ 1652      7800
+ 1653              	.LASF22:
+ 1654 02c1 74656D70 		.ascii	"temp1\000"
+ 1654      3100
+ 1655              	.LASF23:
+ 1656 02c7 74656D70 		.ascii	"temp2\000"
+ 1656      3200
+ 1657              	.LASF4:
+ 1658 02cd 73686F72 		.ascii	"short int\000"
+ 1658      7420696E 
+ 1658      7400
+ 1659              	.LASF44:
+ 1660 02d7 55415254 		.ascii	"UART_BT_PutString\000"
+ 1660      5F42545F 
+ 1660      50757453 
+ 1660      7472696E 
+ 1660      6700
+ 1661              	.LASF28:
+ 1662 02e9 4953525F 		.ascii	"ISR_UART_rx_handler_BT\000"
+ 1662      55415254 
+ 1662      5F72785F 
+ 1662      68616E64 
+ 1662      6C65725F 
+ 1663              	.LASF47:
+ 1664 0300 55415254 		.ascii	"UART_GetRxBufferSize\000"
+ 1664      5F476574 
+ 1664      52784275 
+ 1664      66666572 
+ 1664      53697A65 
+ 1665              	.LASF7:
+ 1666 0315 6C6F6E67 		.ascii	"long int\000"
+ 1666      20696E74 
+ 1666      00
+ 1667              	.LASF24:
+ 1668 031e 56415231 		.ascii	"VAR1\000"
+ 1668      00
+ 1669              	.LASF25:
+ 1670 0323 56415232 		.ascii	"VAR2\000"
+ 1670      00
+ 1671              	.LASF2:
+ 1672 0328 7369676E 		.ascii	"signed char\000"
+ 1672      65642063 
+ 1672      68617200 
+ 1673              	.LASF37:
+ 1674 0334 55415254 		.ascii	"UART_PutString\000"
+ 1674      5F507574 
+ 1674      53747269 
+ 1674      6E6700
+ 1675              	.LASF26:
+ 1676 0343 62797465 		.ascii	"byteReceived\000"
+ 1676      52656365 
+ 1676      69766564 
+ 1676      00
+ 1677              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

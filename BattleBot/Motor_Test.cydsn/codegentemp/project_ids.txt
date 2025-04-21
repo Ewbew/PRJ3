@@ -1,0 +1,6 @@
+\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\Motor_Test.cyprj|94090b11-30e3-4473-bbdd-092393e2d8e7
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|aef96265-e9e7-4ae8-8012-06e3cf2039fe
+C:\Mac\Home\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|20581374-44c7-4f5f-9403-e7ba64eb37c0
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|f57f4338-1b20-4ef3-8c5d-2fa664ab2ccd
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|1772f23a-3c10-4688-93d3-4ac82ac9d6bb
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|f8ab8b15-6cec-4f51-8064-5e58f743fc7b

@@ -1,0 +1,633 @@
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccIfpxMh.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB63:
+  27              		.file 1 "main.c"
+   1:main.c        **** #include "project.h"
+   2:main.c        **** #include "motor_control.h"
+   3:main.c        **** #include "UART_handler.h"
+   4:main.c        **** 
+   5:main.c        **** int main(void)
+   6:main.c        **** {
+  28              		.loc 1 6 0
+  29              		.cfi_startproc
+  30              		@ Volatile: function does not return.
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+   7:main.c        ****     CyGlobalIntEnable;  /* Enable global interrupts. */
+  37              		.loc 1 7 0
+  38              		.syntax unified
+  39              	@ 7 "main.c" 1
+  40 0002 62B6     		CPSIE   i
+  41              	@ 0 "" 2
+   8:main.c        **** 
+   9:main.c        ****     // Start the UART RX ISR and UART component
+  10:main.c        ****     isr_uart_rx_StartEx(ISR_UART_rx_handler_PC);
+  42              		.loc 1 10 0
+  43              		.thumb
+  44              		.syntax unified
+  45 0004 0848     		ldr	r0, .L4
+  46 0006 FFF7FEFF 		bl	isr_uart_rx_StartEx
+  47              	.LVL0:
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccIfpxMh.s 			page 2
+
+
+  11:main.c        ****     isr_uart_rx_BT_StartEx(ISR_UART_rx_handler_BT);
+  48              		.loc 1 11 0
+  49 000a 0848     		ldr	r0, .L4+4
+  50 000c FFF7FEFF 		bl	isr_uart_rx_BT_StartEx
+  51              	.LVL1:
+  12:main.c        ****     UART_Start();
+  52              		.loc 1 12 0
+  53 0010 FFF7FEFF 		bl	UART_Start
+  54              	.LVL2:
+  13:main.c        ****     UART_BT_Start();
+  55              		.loc 1 13 0
+  56 0014 FFF7FEFF 		bl	UART_BT_Start
+  57              	.LVL3:
+  14:main.c        ****     PWM_A_Start();
+  58              		.loc 1 14 0
+  59 0018 FFF7FEFF 		bl	PWM_A_Start
+  60              	.LVL4:
+  15:main.c        ****     PWM_B_Start();
+  61              		.loc 1 15 0
+  62 001c FFF7FEFF 		bl	PWM_B_Start
+  63              	.LVL5:
+  16:main.c        ****     UART_PutString("Starting program...\r\n");
+  64              		.loc 1 16 0
+  65 0020 0348     		ldr	r0, .L4+8
+  66 0022 FFF7FEFF 		bl	UART_PutString
+  67              	.LVL6:
+  68              	.L2:
+  69 0026 FEE7     		b	.L2
+  70              	.L5:
+  71              		.align	2
+  72              	.L4:
+  73 0028 00000000 		.word	ISR_UART_rx_handler_PC
+  74 002c 00000000 		.word	ISR_UART_rx_handler_BT
+  75 0030 00000000 		.word	.LC0
+  76              		.cfi_endproc
+  77              	.LFE63:
+  78              		.size	main, .-main
+  79              		.section	.rodata.str1.4,"aMS",%progbits,1
+  80              		.align	2
+  81              	.LC0:
+  82 0000 53746172 		.ascii	"Starting program...\015\012\000"
+  82      74696E67 
+  82      2070726F 
+  82      6772616D 
+  82      2E2E2E0D 
+  83              		.text
+  84              	.Letext0:
+  85              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  86              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  87              		.file 4 "Generated_Source\\PSoC5/isr_uart_rx.h"
+  88              		.file 5 "Generated_Source\\PSoC5/isr_uart_rx_BT.h"
+  89              		.file 6 "Generated_Source\\PSoC5/UART.h"
+  90              		.file 7 "Generated_Source\\PSoC5/UART_BT.h"
+  91              		.file 8 "Generated_Source\\PSoC5/PWM_A.h"
+  92              		.file 9 "Generated_Source\\PSoC5/PWM_B.h"
+  93              		.file 10 "Generated_Source\\PSoC5/core_cm3.h"
+  94              		.section	.debug_info,"",%progbits
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccIfpxMh.s 			page 3
+
+
+  95              	.Ldebug_info0:
+  96 0000 62010000 		.4byte	0x162
+  97 0004 0400     		.2byte	0x4
+  98 0006 00000000 		.4byte	.Ldebug_abbrev0
+  99 000a 04       		.byte	0x4
+ 100 000b 01       		.uleb128 0x1
+ 101 000c 79000000 		.4byte	.LASF23
+ 102 0010 0C       		.byte	0xc
+ 103 0011 53000000 		.4byte	.LASF24
+ 104 0015 43010000 		.4byte	.LASF25
+ 105 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 106 001d 00000000 		.4byte	0
+ 107 0021 00000000 		.4byte	.Ldebug_line0
+ 108 0025 02       		.uleb128 0x2
+ 109 0026 01       		.byte	0x1
+ 110 0027 06       		.byte	0x6
+ 111 0028 CE010000 		.4byte	.LASF0
+ 112 002c 02       		.uleb128 0x2
+ 113 002d 01       		.byte	0x1
+ 114 002e 08       		.byte	0x8
+ 115 002f 45000000 		.4byte	.LASF1
+ 116 0033 02       		.uleb128 0x2
+ 117 0034 02       		.byte	0x2
+ 118 0035 05       		.byte	0x5
+ 119 0036 0A020000 		.4byte	.LASF2
+ 120 003a 02       		.uleb128 0x2
+ 121 003b 02       		.byte	0x2
+ 122 003c 07       		.byte	0x7
+ 123 003d 0E000000 		.4byte	.LASF3
+ 124 0041 03       		.uleb128 0x3
+ 125 0042 E6010000 		.4byte	.LASF9
+ 126 0046 02       		.byte	0x2
+ 127 0047 3F       		.byte	0x3f
+ 128 0048 4C000000 		.4byte	0x4c
+ 129 004c 02       		.uleb128 0x2
+ 130 004d 04       		.byte	0x4
+ 131 004e 05       		.byte	0x5
+ 132 004f A2010000 		.4byte	.LASF4
+ 133 0053 02       		.uleb128 0x2
+ 134 0054 04       		.byte	0x4
+ 135 0055 07       		.byte	0x7
+ 136 0056 0F010000 		.4byte	.LASF5
+ 137 005a 02       		.uleb128 0x2
+ 138 005b 08       		.byte	0x8
+ 139 005c 05       		.byte	0x5
+ 140 005d 00000000 		.4byte	.LASF6
+ 141 0061 02       		.uleb128 0x2
+ 142 0062 08       		.byte	0x8
+ 143 0063 07       		.byte	0x7
+ 144 0064 21010000 		.4byte	.LASF7
+ 145 0068 04       		.uleb128 0x4
+ 146 0069 04       		.byte	0x4
+ 147 006a 05       		.byte	0x5
+ 148 006b 696E7400 		.ascii	"int\000"
+ 149 006f 02       		.uleb128 0x2
+ 150 0070 04       		.byte	0x4
+ 151 0071 07       		.byte	0x7
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccIfpxMh.s 			page 4
+
+
+ 152 0072 21000000 		.4byte	.LASF8
+ 153 0076 03       		.uleb128 0x3
+ 154 0077 07010000 		.4byte	.LASF10
+ 155 007b 03       		.byte	0x3
+ 156 007c 2C       		.byte	0x2c
+ 157 007d 41000000 		.4byte	0x41
+ 158 0081 02       		.uleb128 0x2
+ 159 0082 04       		.byte	0x4
+ 160 0083 04       		.byte	0x4
+ 161 0084 F0010000 		.4byte	.LASF11
+ 162 0088 02       		.uleb128 0x2
+ 163 0089 08       		.byte	0x8
+ 164 008a 04       		.byte	0x4
+ 165 008b AB010000 		.4byte	.LASF12
+ 166 008f 02       		.uleb128 0x2
+ 167 0090 01       		.byte	0x1
+ 168 0091 08       		.byte	0x8
+ 169 0092 9D010000 		.4byte	.LASF13
+ 170 0096 02       		.uleb128 0x2
+ 171 0097 08       		.byte	0x8
+ 172 0098 04       		.byte	0x4
+ 173 0099 DA010000 		.4byte	.LASF14
+ 174 009d 02       		.uleb128 0x2
+ 175 009e 04       		.byte	0x4
+ 176 009f 07       		.byte	0x7
+ 177 00a0 20020000 		.4byte	.LASF15
+ 178 00a4 05       		.uleb128 0x5
+ 179 00a5 66000000 		.4byte	.LASF26
+ 180 00a9 01       		.byte	0x1
+ 181 00aa 05       		.byte	0x5
+ 182 00ab 68000000 		.4byte	0x68
+ 183 00af 00000000 		.4byte	.LFB63
+ 184 00b3 34000000 		.4byte	.LFE63-.LFB63
+ 185 00b7 01       		.uleb128 0x1
+ 186 00b8 9C       		.byte	0x9c
+ 187 00b9 07010000 		.4byte	0x107
+ 188 00bd 06       		.uleb128 0x6
+ 189 00be 0A000000 		.4byte	.LVL0
+ 190 00c2 18010000 		.4byte	0x118
+ 191 00c6 06       		.uleb128 0x6
+ 192 00c7 10000000 		.4byte	.LVL1
+ 193 00cb 23010000 		.4byte	0x123
+ 194 00cf 06       		.uleb128 0x6
+ 195 00d0 14000000 		.4byte	.LVL2
+ 196 00d4 2E010000 		.4byte	0x12e
+ 197 00d8 06       		.uleb128 0x6
+ 198 00d9 18000000 		.4byte	.LVL3
+ 199 00dd 39010000 		.4byte	0x139
+ 200 00e1 06       		.uleb128 0x6
+ 201 00e2 1C000000 		.4byte	.LVL4
+ 202 00e6 44010000 		.4byte	0x144
+ 203 00ea 06       		.uleb128 0x6
+ 204 00eb 20000000 		.4byte	.LVL5
+ 205 00ef 4F010000 		.4byte	0x14f
+ 206 00f3 07       		.uleb128 0x7
+ 207 00f4 26000000 		.4byte	.LVL6
+ 208 00f8 5A010000 		.4byte	0x15a
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccIfpxMh.s 			page 5
+
+
+ 209 00fc 08       		.uleb128 0x8
+ 210 00fd 01       		.uleb128 0x1
+ 211 00fe 50       		.byte	0x50
+ 212 00ff 05       		.uleb128 0x5
+ 213 0100 03       		.byte	0x3
+ 214 0101 00000000 		.4byte	.LC0
+ 215 0105 00       		.byte	0
+ 216 0106 00       		.byte	0
+ 217 0107 09       		.uleb128 0x9
+ 218 0108 C1010000 		.4byte	.LASF27
+ 219 010c 0A       		.byte	0xa
+ 220 010d 1207     		.2byte	0x712
+ 221 010f 13010000 		.4byte	0x113
+ 222 0113 0A       		.uleb128 0xa
+ 223 0114 76000000 		.4byte	0x76
+ 224 0118 0B       		.uleb128 0xb
+ 225 0119 F6010000 		.4byte	.LASF16
+ 226 011d F6010000 		.4byte	.LASF16
+ 227 0121 04       		.byte	0x4
+ 228 0122 18       		.byte	0x18
+ 229 0123 0B       		.uleb128 0xb
+ 230 0124 2E000000 		.4byte	.LASF17
+ 231 0128 2E000000 		.4byte	.LASF17
+ 232 012c 05       		.byte	0x5
+ 233 012d 18       		.byte	0x18
+ 234 012e 0B       		.uleb128 0xb
+ 235 012f 38010000 		.4byte	.LASF18
+ 236 0133 38010000 		.4byte	.LASF18
+ 237 0137 06       		.byte	0x6
+ 238 0138 54       		.byte	0x54
+ 239 0139 0B       		.uleb128 0xb
+ 240 013a 6B000000 		.4byte	.LASF19
+ 241 013e 6B000000 		.4byte	.LASF19
+ 242 0142 07       		.byte	0x7
+ 243 0143 54       		.byte	0x54
+ 244 0144 0B       		.uleb128 0xb
+ 245 0145 14020000 		.4byte	.LASF20
+ 246 0149 14020000 		.4byte	.LASF20
+ 247 014d 08       		.byte	0x8
+ 248 014e 92       		.byte	0x92
+ 249 014f 0B       		.uleb128 0xb
+ 250 0150 5A000000 		.4byte	.LASF21
+ 251 0154 5A000000 		.4byte	.LASF21
+ 252 0158 09       		.byte	0x9
+ 253 0159 92       		.byte	0x92
+ 254 015a 0B       		.uleb128 0xb
+ 255 015b B2010000 		.4byte	.LASF22
+ 256 015f B2010000 		.4byte	.LASF22
+ 257 0163 06       		.byte	0x6
+ 258 0164 8B       		.byte	0x8b
+ 259 0165 00       		.byte	0
+ 260              		.section	.debug_abbrev,"",%progbits
+ 261              	.Ldebug_abbrev0:
+ 262 0000 01       		.uleb128 0x1
+ 263 0001 11       		.uleb128 0x11
+ 264 0002 01       		.byte	0x1
+ 265 0003 25       		.uleb128 0x25
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccIfpxMh.s 			page 6
+
+
+ 266 0004 0E       		.uleb128 0xe
+ 267 0005 13       		.uleb128 0x13
+ 268 0006 0B       		.uleb128 0xb
+ 269 0007 03       		.uleb128 0x3
+ 270 0008 0E       		.uleb128 0xe
+ 271 0009 1B       		.uleb128 0x1b
+ 272 000a 0E       		.uleb128 0xe
+ 273 000b 55       		.uleb128 0x55
+ 274 000c 17       		.uleb128 0x17
+ 275 000d 11       		.uleb128 0x11
+ 276 000e 01       		.uleb128 0x1
+ 277 000f 10       		.uleb128 0x10
+ 278 0010 17       		.uleb128 0x17
+ 279 0011 00       		.byte	0
+ 280 0012 00       		.byte	0
+ 281 0013 02       		.uleb128 0x2
+ 282 0014 24       		.uleb128 0x24
+ 283 0015 00       		.byte	0
+ 284 0016 0B       		.uleb128 0xb
+ 285 0017 0B       		.uleb128 0xb
+ 286 0018 3E       		.uleb128 0x3e
+ 287 0019 0B       		.uleb128 0xb
+ 288 001a 03       		.uleb128 0x3
+ 289 001b 0E       		.uleb128 0xe
+ 290 001c 00       		.byte	0
+ 291 001d 00       		.byte	0
+ 292 001e 03       		.uleb128 0x3
+ 293 001f 16       		.uleb128 0x16
+ 294 0020 00       		.byte	0
+ 295 0021 03       		.uleb128 0x3
+ 296 0022 0E       		.uleb128 0xe
+ 297 0023 3A       		.uleb128 0x3a
+ 298 0024 0B       		.uleb128 0xb
+ 299 0025 3B       		.uleb128 0x3b
+ 300 0026 0B       		.uleb128 0xb
+ 301 0027 49       		.uleb128 0x49
+ 302 0028 13       		.uleb128 0x13
+ 303 0029 00       		.byte	0
+ 304 002a 00       		.byte	0
+ 305 002b 04       		.uleb128 0x4
+ 306 002c 24       		.uleb128 0x24
+ 307 002d 00       		.byte	0
+ 308 002e 0B       		.uleb128 0xb
+ 309 002f 0B       		.uleb128 0xb
+ 310 0030 3E       		.uleb128 0x3e
+ 311 0031 0B       		.uleb128 0xb
+ 312 0032 03       		.uleb128 0x3
+ 313 0033 08       		.uleb128 0x8
+ 314 0034 00       		.byte	0
+ 315 0035 00       		.byte	0
+ 316 0036 05       		.uleb128 0x5
+ 317 0037 2E       		.uleb128 0x2e
+ 318 0038 01       		.byte	0x1
+ 319 0039 3F       		.uleb128 0x3f
+ 320 003a 19       		.uleb128 0x19
+ 321 003b 03       		.uleb128 0x3
+ 322 003c 0E       		.uleb128 0xe
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccIfpxMh.s 			page 7
+
+
+ 323 003d 3A       		.uleb128 0x3a
+ 324 003e 0B       		.uleb128 0xb
+ 325 003f 3B       		.uleb128 0x3b
+ 326 0040 0B       		.uleb128 0xb
+ 327 0041 27       		.uleb128 0x27
+ 328 0042 19       		.uleb128 0x19
+ 329 0043 49       		.uleb128 0x49
+ 330 0044 13       		.uleb128 0x13
+ 331 0045 8701     		.uleb128 0x87
+ 332 0047 19       		.uleb128 0x19
+ 333 0048 11       		.uleb128 0x11
+ 334 0049 01       		.uleb128 0x1
+ 335 004a 12       		.uleb128 0x12
+ 336 004b 06       		.uleb128 0x6
+ 337 004c 40       		.uleb128 0x40
+ 338 004d 18       		.uleb128 0x18
+ 339 004e 9742     		.uleb128 0x2117
+ 340 0050 19       		.uleb128 0x19
+ 341 0051 01       		.uleb128 0x1
+ 342 0052 13       		.uleb128 0x13
+ 343 0053 00       		.byte	0
+ 344 0054 00       		.byte	0
+ 345 0055 06       		.uleb128 0x6
+ 346 0056 898201   		.uleb128 0x4109
+ 347 0059 00       		.byte	0
+ 348 005a 11       		.uleb128 0x11
+ 349 005b 01       		.uleb128 0x1
+ 350 005c 31       		.uleb128 0x31
+ 351 005d 13       		.uleb128 0x13
+ 352 005e 00       		.byte	0
+ 353 005f 00       		.byte	0
+ 354 0060 07       		.uleb128 0x7
+ 355 0061 898201   		.uleb128 0x4109
+ 356 0064 01       		.byte	0x1
+ 357 0065 11       		.uleb128 0x11
+ 358 0066 01       		.uleb128 0x1
+ 359 0067 31       		.uleb128 0x31
+ 360 0068 13       		.uleb128 0x13
+ 361 0069 00       		.byte	0
+ 362 006a 00       		.byte	0
+ 363 006b 08       		.uleb128 0x8
+ 364 006c 8A8201   		.uleb128 0x410a
+ 365 006f 00       		.byte	0
+ 366 0070 02       		.uleb128 0x2
+ 367 0071 18       		.uleb128 0x18
+ 368 0072 9142     		.uleb128 0x2111
+ 369 0074 18       		.uleb128 0x18
+ 370 0075 00       		.byte	0
+ 371 0076 00       		.byte	0
+ 372 0077 09       		.uleb128 0x9
+ 373 0078 34       		.uleb128 0x34
+ 374 0079 00       		.byte	0
+ 375 007a 03       		.uleb128 0x3
+ 376 007b 0E       		.uleb128 0xe
+ 377 007c 3A       		.uleb128 0x3a
+ 378 007d 0B       		.uleb128 0xb
+ 379 007e 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccIfpxMh.s 			page 8
+
+
+ 380 007f 05       		.uleb128 0x5
+ 381 0080 49       		.uleb128 0x49
+ 382 0081 13       		.uleb128 0x13
+ 383 0082 3F       		.uleb128 0x3f
+ 384 0083 19       		.uleb128 0x19
+ 385 0084 3C       		.uleb128 0x3c
+ 386 0085 19       		.uleb128 0x19
+ 387 0086 00       		.byte	0
+ 388 0087 00       		.byte	0
+ 389 0088 0A       		.uleb128 0xa
+ 390 0089 35       		.uleb128 0x35
+ 391 008a 00       		.byte	0
+ 392 008b 49       		.uleb128 0x49
+ 393 008c 13       		.uleb128 0x13
+ 394 008d 00       		.byte	0
+ 395 008e 00       		.byte	0
+ 396 008f 0B       		.uleb128 0xb
+ 397 0090 2E       		.uleb128 0x2e
+ 398 0091 00       		.byte	0
+ 399 0092 3F       		.uleb128 0x3f
+ 400 0093 19       		.uleb128 0x19
+ 401 0094 3C       		.uleb128 0x3c
+ 402 0095 19       		.uleb128 0x19
+ 403 0096 6E       		.uleb128 0x6e
+ 404 0097 0E       		.uleb128 0xe
+ 405 0098 03       		.uleb128 0x3
+ 406 0099 0E       		.uleb128 0xe
+ 407 009a 3A       		.uleb128 0x3a
+ 408 009b 0B       		.uleb128 0xb
+ 409 009c 3B       		.uleb128 0x3b
+ 410 009d 0B       		.uleb128 0xb
+ 411 009e 00       		.byte	0
+ 412 009f 00       		.byte	0
+ 413 00a0 00       		.byte	0
+ 414              		.section	.debug_aranges,"",%progbits
+ 415 0000 1C000000 		.4byte	0x1c
+ 416 0004 0200     		.2byte	0x2
+ 417 0006 00000000 		.4byte	.Ldebug_info0
+ 418 000a 04       		.byte	0x4
+ 419 000b 00       		.byte	0
+ 420 000c 0000     		.2byte	0
+ 421 000e 0000     		.2byte	0
+ 422 0010 00000000 		.4byte	.LFB63
+ 423 0014 34000000 		.4byte	.LFE63-.LFB63
+ 424 0018 00000000 		.4byte	0
+ 425 001c 00000000 		.4byte	0
+ 426              		.section	.debug_ranges,"",%progbits
+ 427              	.Ldebug_ranges0:
+ 428 0000 00000000 		.4byte	.LFB63
+ 429 0004 34000000 		.4byte	.LFE63
+ 430 0008 00000000 		.4byte	0
+ 431 000c 00000000 		.4byte	0
+ 432              		.section	.debug_line,"",%progbits
+ 433              	.Ldebug_line0:
+ 434 0000 AC010000 		.section	.debug_str,"MS",%progbits,1
+ 434      02009101 
+ 434      00000201 
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccIfpxMh.s 			page 9
+
+
+ 434      FB0E0D00 
+ 434      01010101 
+ 435              	.LASF6:
+ 436 0000 6C6F6E67 		.ascii	"long long int\000"
+ 436      206C6F6E 
+ 436      6720696E 
+ 436      7400
+ 437              	.LASF3:
+ 438 000e 73686F72 		.ascii	"short unsigned int\000"
+ 438      7420756E 
+ 438      7369676E 
+ 438      65642069 
+ 438      6E7400
+ 439              	.LASF8:
+ 440 0021 756E7369 		.ascii	"unsigned int\000"
+ 440      676E6564 
+ 440      20696E74 
+ 440      00
+ 441              	.LASF17:
+ 442 002e 6973725F 		.ascii	"isr_uart_rx_BT_StartEx\000"
+ 442      75617274 
+ 442      5F72785F 
+ 442      42545F53 
+ 442      74617274 
+ 443              	.LASF1:
+ 444 0045 756E7369 		.ascii	"unsigned char\000"
+ 444      676E6564 
+ 444      20636861 
+ 444      7200
+ 445              	.LASF24:
+ 446 0053 6D61696E 		.ascii	"main.c\000"
+ 446      2E6300
+ 447              	.LASF21:
+ 448 005a 50574D5F 		.ascii	"PWM_B_Start\000"
+ 448      425F5374 
+ 448      61727400 
+ 449              	.LASF26:
+ 450 0066 6D61696E 		.ascii	"main\000"
+ 450      00
+ 451              	.LASF19:
+ 452 006b 55415254 		.ascii	"UART_BT_Start\000"
+ 452      5F42545F 
+ 452      53746172 
+ 452      7400
+ 453              	.LASF23:
+ 454 0079 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 454      43313120 
+ 454      352E342E 
+ 454      31203230 
+ 454      31363036 
+ 455 00ac 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 455      20726576 
+ 455      6973696F 
+ 455      6E203233 
+ 455      37373135 
+ 456 00df 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 456      66756E63 
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccIfpxMh.s 			page 10
+
+
+ 456      74696F6E 
+ 456      2D736563 
+ 456      74696F6E 
+ 457              	.LASF10:
+ 458 0107 696E7433 		.ascii	"int32_t\000"
+ 458      325F7400 
+ 459              	.LASF5:
+ 460 010f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 460      20756E73 
+ 460      69676E65 
+ 460      6420696E 
+ 460      7400
+ 461              	.LASF7:
+ 462 0121 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 462      206C6F6E 
+ 462      6720756E 
+ 462      7369676E 
+ 462      65642069 
+ 463              	.LASF18:
+ 464 0138 55415254 		.ascii	"UART_Start\000"
+ 464      5F537461 
+ 464      727400
+ 465              	.LASF25:
+ 466 0143 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\Elektronik ingenioer\\3rd s"
+ 466      635C486F 
+ 466      6D655C44 
+ 466      65736B74 
+ 466      6F705C45 
+ 467 0170 656D6573 		.ascii	"emester\\PRJ3\\PRJ3\\BattleBot\\Motor_Test.cydsn\000"
+ 467      7465725C 
+ 467      50524A33 
+ 467      5C50524A 
+ 467      335C4261 
+ 468              	.LASF13:
+ 469 019d 63686172 		.ascii	"char\000"
+ 469      00
+ 470              	.LASF4:
+ 471 01a2 6C6F6E67 		.ascii	"long int\000"
+ 471      20696E74 
+ 471      00
+ 472              	.LASF12:
+ 473 01ab 646F7562 		.ascii	"double\000"
+ 473      6C6500
+ 474              	.LASF22:
+ 475 01b2 55415254 		.ascii	"UART_PutString\000"
+ 475      5F507574 
+ 475      53747269 
+ 475      6E6700
+ 476              	.LASF27:
+ 477 01c1 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 477      52784275 
+ 477      66666572 
+ 477      00
+ 478              	.LASF0:
+ 479 01ce 7369676E 		.ascii	"signed char\000"
+ 479      65642063 
+ 479      68617200 
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccIfpxMh.s 			page 11
+
+
+ 480              	.LASF14:
+ 481 01da 6C6F6E67 		.ascii	"long double\000"
+ 481      20646F75 
+ 481      626C6500 
+ 482              	.LASF9:
+ 483 01e6 5F5F696E 		.ascii	"__int32_t\000"
+ 483      7433325F 
+ 483      7400
+ 484              	.LASF11:
+ 485 01f0 666C6F61 		.ascii	"float\000"
+ 485      7400
+ 486              	.LASF16:
+ 487 01f6 6973725F 		.ascii	"isr_uart_rx_StartEx\000"
+ 487      75617274 
+ 487      5F72785F 
+ 487      53746172 
+ 487      74457800 
+ 488              	.LASF2:
+ 489 020a 73686F72 		.ascii	"short int\000"
+ 489      7420696E 
+ 489      7400
+ 490              	.LASF20:
+ 491 0214 50574D5F 		.ascii	"PWM_A_Start\000"
+ 491      415F5374 
+ 491      61727400 
+ 492              	.LASF15:
+ 493 0220 73697A65 		.ascii	"sizetype\000"
+ 493      74797065 
+ 493      00
+ 494              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
