@@ -1,7 +1,0 @@
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|83e493fa-febb-43d5-86d4-d7cee5809c65
-C:\Users\Askja\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|902e6cff-d87c-4cb2-b1e3-500be74dc7c5
-C:\Users\Askja\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|3a99b8e6-1f5b-4a43-88b4-934e8f32d20b
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|60c1dfde-a489-40c1-90f9-d3ab20ad7743
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|58a7d268-0683-40cb-86eb-2c0e4927db0b
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|dc767c51-bad2-4d94-b2ef-9a80838d0931
-C:\Users\Askja\Documents\PSoC Creator\BattleBot\Motor_Test.cydsn\Motor_Test.cyprj|2c1ef271-8f90-40f4-a157-54f206d79b8c
