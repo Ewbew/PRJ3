@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     Apr 21 2025 21:47:14
+#File Generated:     Apr 21 2025 22:09:32
 
 #Purpose:            
 
@@ -88,7 +88,7 @@ Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
 Clock: UART_BT_IntClock     | Frequency:  50.0 MHz | Target:   0.1 MHz
-Clock: UART_IntClock        | Frequency:  50.0 MHz | Target:   0.5 MHz
+Clock: UART_PC_IntClock     | Frequency:  50.0 MHz | Target:   0.5 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -109,12 +109,12 @@ Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
 Clock: UART_BT_IntClock     | Frequency:   1.3 MHz | Target:   0.1 MHz
-Clock: UART_IntClock        | Frequency:   2.5 MHz | Target:   0.5 MHz
+Clock: UART_PC_IntClock     | Frequency:   2.5 MHz | Target:   0.5 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 0.5 (sec)
+D2088: Phase 7, elapsed time : 0.6 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	18
@@ -145,15 +145,15 @@ analysis after routing.
                      Clock Summary 
 ======================================================================
 Number of clocks: 9
-Clock: Clock_PWM_A          | Frequency:  77.2 MHz | Target:   0.0 MHz
+Clock: Clock_PWM_A          | Frequency:  76.8 MHz | Target:   0.0 MHz
 Clock: Clock_PWM_B          | Frequency:  85.3 MHz | Target:   0.0 MHz
-Clock: CyBUS_CLK            | Frequency:   1.5 MHz | Target:  24.0 MHz
+Clock: CyBUS_CLK            | Frequency:   1.4 MHz | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: UART_BT_IntClock     | Frequency:   1.5 MHz | Target:   0.1 MHz
-Clock: UART_IntClock        | Frequency:   2.8 MHz | Target:   0.5 MHz
+Clock: UART_BT_IntClock     | Frequency:   1.4 MHz | Target:   0.1 MHz
+Clock: UART_PC_IntClock     | Frequency:   2.7 MHz | Target:   0.5 MHz
 
 ======================================================================
                      End of Clock Summary

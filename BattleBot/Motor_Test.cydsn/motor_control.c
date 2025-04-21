@@ -5,7 +5,7 @@
 // Stops the motors by setting all direction pins to logic high
 void stop(void)
 {
-    UART_PutString("Stop \r\n");
+    UART_PC_PutString("Stop \r\n");
      // Motor A: disable PWM and force both pins high.
     PWM_A_WriteCompare1(0);
     PWM_A_WriteCompare2(0);

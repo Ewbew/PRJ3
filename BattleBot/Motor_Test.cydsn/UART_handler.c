@@ -27,7 +27,7 @@ CY_ISR(ISR_UART_rx_handler_BT)
 
             char message[150];
             snprintf(message, sizeof(message), "\r\n[BT Response] %s\r\n", btBuffer);
-            UART_PutString(message);
+            UART_PC_PutString(message);
 
             // Try to parse the format: (e.g.) "-39,45"
             if (sscanf(btBuffer, "%d,%d", &temp1, &temp2) == 2)
@@ -41,7 +41,7 @@ CY_ISR(ISR_UART_rx_handler_BT)
             {
                 // Combine parse error message into one formatted string
                 snprintf(message, sizeof(message), "\r\nParse error. Content of BT buffer: %s\r\n", btBuffer);
-                UART_PutString(message);
+                UART_PC_PutString(message);
             }
 
             index = 0; // Reset buffer for next message
@@ -53,11 +53,11 @@ CY_ISR(ISR_UART_rx_handler_BT)
 // UART RX interrupt service routine for PC
 CY_ISR(ISR_UART_rx_handler_PC)
 {
-    uint8_t bytesToRead = UART_GetRxBufferSize();
+    uint8_t bytesToRead = UART_PC_GetRxBufferSize();
     while (bytesToRead > 0)
     {
-        uint8_t byteReceived = UART_ReadRxData();
-        UART_WriteTxData(byteReceived); // Echo back the received byte
+        uint8_t byteReceived = UART_PC_ReadRxData();
+        UART_PC_WriteTxData(byteReceived); // Echo back the received byte
 
         handleByteReceived(byteReceived);
         
@@ -80,7 +80,7 @@ void handleByteReceived(uint8_t byteReceived)
             // Increase speed by 5, ensuring we do not exceed PWM_MAX_DUTY.
             if (currentSpeed < PWM_MAX_DUTY)
             {
-                UART_PutString("Increase speed\r\n");
+                UART_PC_PutString("Increase speed\r\n");
                 currentSpeed += 5;
                 if (currentSpeed > PWM_MAX_DUTY)
                 {
@@ -90,12 +90,12 @@ void handleByteReceived(uint8_t byteReceived)
                 set_speedB(currentSpeed);
                 if (currentSpeed == PWM_MAX_DUTY)
                 {
-                    UART_PutString("Max forward speed reached\r\n");
+                    UART_PC_PutString("Max forward speed reached\r\n");
                 }
             }
             else
             {
-                UART_PutString("Already at max forward speed\r\n");
+                UART_PC_PutString("Already at max forward speed\r\n");
             }
             break;
             
@@ -103,7 +103,7 @@ void handleByteReceived(uint8_t byteReceived)
             // Decrease speed by 5, ensuring we do not drop below -PWM_MAX_DUTY.
             if (currentSpeed > -PWM_MAX_DUTY)
             {
-                UART_PutString("Decrease speed\r\n");
+                UART_PC_PutString("Decrease speed\r\n");
                 currentSpeed -= 5;
                 if (currentSpeed < -PWM_MAX_DUTY)
                 {
@@ -113,12 +113,12 @@ void handleByteReceived(uint8_t byteReceived)
                 set_speedB(currentSpeed);
                 if (currentSpeed == -PWM_MAX_DUTY)
                 {
-                    UART_PutString("Max reverse speed reached\r\n");
+                    UART_PC_PutString("Max reverse speed reached\r\n");
                 }
             }
             else
             {
-                UART_PutString("Already at max reverse speed\r\n");
+                UART_PC_PutString("Already at max reverse speed\r\n");
             }
             break;
             
@@ -130,24 +130,24 @@ void handleByteReceived(uint8_t byteReceived)
         
         case 'a':
            // Sends
-            UART_PutString("Sending GetMACAddress command to Bluetooth module\r\n");
+            UART_PC_PutString("Sending GetMACAddress command to Bluetooth module\r\n");
             UART_BT_PutString(command_address);
             break;
          
         case 'b':
            // Sends
-            UART_PutString("Sending GetBAUDRate command to Bluetooth module\r\n");
+            UART_PC_PutString("Sending GetBAUDRate command to Bluetooth module\r\n");
             UART_BT_PutString(command_baud);
             break;
             
         case 's':
-            UART_PutString("Sending GetStatus command to Bluetooth module\r\n");
+            UART_PC_PutString("Sending GetStatus command to Bluetooth module\r\n");
             UART_BT_PutString(command_status);
             break;
         
         case 't':
             // Test
-            UART_PutString("Testing for response from BT module\r\n");
+            UART_PC_PutString("Testing for response from BT module\r\n");
             UART_BT_PutString("AT+VER\r\n");
             break;
             
