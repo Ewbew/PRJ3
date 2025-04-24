@@ -1,28 +1,49 @@
-#pragma once
+#ifndef SLIDERWINDOW_H
+#define SLIDERWINDOW_H
 
-#include <QtWidgets/QApplication>
 #include <QWidget>
-#include <QSlider>
-#include <QLabel>
 #include <QVBoxLayout>
-#include <QString>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QSlider>
+#include <QDial>
+#include <QPushButton>
+#include <QTimer>
 #include "VarHandler.h"
 
 class SliderWindow : public QWidget {
     Q_OBJECT
 
 public:
-    SliderWindow(VarHandler* handler,QWidget *parent = nullptr);
+    explicit SliderWindow(VarHandler* handler, QWidget *parent = nullptr);
 
 private slots:
-    void updateVar1(int value);
-
-    void updateVar2(int value);
+    void updateMode();
+    void toggleMode();
+    void printStatus();
 
 private:
-    int var1, var2;
     VarHandler* VarHandler_;
-    QLabel *label1, *label2;
-    QSlider *slider1, *slider2;
+
+    QVBoxLayout* layout;
+    QHBoxLayout* controlWidgetLayout;
+
+    QLabel* modeTitle;
+    QPushButton* toggleModeButton;
+    QPushButton* toggleShootStateButton;
+    QTimer* statusTimer;
+
+    // Drive mode widgets
+    QLabel* driveLabel1;
+    QSlider* driveSlider1;
+    QLabel* driveLabel2;
+    QSlider* driveSlider2;
+
+    // Shoot mode widgets
+    QLabel* shootDialLabel;
+    QDial* shootDial;
+    QLabel* shootSliderLabel;
+    QSlider* shootSlider;
 };
 
+#endif // SLIDERWINDOW_H
