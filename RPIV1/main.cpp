@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
 
     SliderWindow window(&handler);
-    window.resize(300, 150);
+    window.resize(800, 600);
     window.show();
 
     
