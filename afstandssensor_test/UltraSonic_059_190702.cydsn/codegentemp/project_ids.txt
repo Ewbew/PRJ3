@@ -1,0 +1,6 @@
+\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\afstandssensor_test\UltraSonic_059_190702.cydsn\UltraSonic_059_190702.cyprj|f3b654e7-47f5-43e8-be9d-70ec73903aad
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|2925818e-1bed-4be3-a565-9a86a0bb4ef5
+C:\Mac\Home\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|f7500327-12b6-4e3f-96d9-2191df1ecd73
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|6097f06a-62df-4d63-b8ff-a4ffff71cb83
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|0af2d7a5-3823-40e4-8b17-47704f72ba40
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|07f7c47c-debf-49a6-af9e-5c03b74e6c8e
