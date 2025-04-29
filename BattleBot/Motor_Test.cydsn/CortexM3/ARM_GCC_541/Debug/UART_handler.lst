@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 1
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 1
   45              		.section	.text.ISR_UART_rx_handler_BT,"ax",%progbits
   46              		.align	2
   47              		.global	ISR_UART_rx_handler_BT
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 2
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 2
 
 
   48              		.thumb
@@ -67,10 +67,11 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 1
   51              	ISR_UART_rx_handler_BT:
   52              	.LFB65:
   11:UART_handler.c **** }
-  12:UART_handler.c **** // UART RX interrupt service routine for Bluetooth
-  13:UART_handler.c **** CY_ISR(ISR_UART_rx_handler_BT)
-  14:UART_handler.c **** {
-  53              		.loc 1 14 0
+  12:UART_handler.c **** 
+  13:UART_handler.c **** // UART RX interrupt service routine for Bluetooth
+  14:UART_handler.c **** CY_ISR(ISR_UART_rx_handler_BT)
+  15:UART_handler.c **** {
+  53              		.loc 1 15 0
   54              		.cfi_startproc
   55              		@ args = 0, pretend = 0, frame = 168
   56              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -80,240 +81,265 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 1
   60              		.cfi_offset 14, -4
   61 0002 ACB0     		sub	sp, sp, #176
   62              		.cfi_def_cfa_offset 184
-  15:UART_handler.c ****     static char btBuffer[50];     // Buffer for the incoming string
-  16:UART_handler.c ****     static uint8_t index = 0;
-  17:UART_handler.c ****     int temp1, temp2, tempBool;
-  18:UART_handler.c ****     char tempMode;
-  19:UART_handler.c ****     char message[150];
-  20:UART_handler.c ****     
-  21:UART_handler.c ****     int8_t VAR1, VAR2;
-  22:UART_handler.c **** 
-  23:UART_handler.c ****     while (UART_BT_GetRxBufferSize() > 0)
-  63              		.loc 1 23 0
-  64 0004 5EE0     		b	.L5
-  65              	.L11:
+  16:UART_handler.c ****     static char btBuffer[50];     // Buffer for the incoming string
+  17:UART_handler.c ****     static uint8_t index = 0;
+  18:UART_handler.c ****     int temp1, temp2, tempBool;
+  19:UART_handler.c ****     char tempMode;
+  20:UART_handler.c ****     char message[150];
+  21:UART_handler.c ****     
+  22:UART_handler.c ****     int8_t VAR1, VAR2;
+  23:UART_handler.c **** 
+  24:UART_handler.c ****     while (UART_BT_GetRxBufferSize() > 0)
+  63              		.loc 1 24 0
+  64 0004 71E0     		b	.L5
+  65              	.L13:
   66              	.LBB2:
-  24:UART_handler.c ****     {
-  25:UART_handler.c ****         char byteReceived = UART_BT_ReadRxData();
-  67              		.loc 1 25 0
+  25:UART_handler.c ****     {
+  26:UART_handler.c ****         char byteReceived = UART_BT_ReadRxData();
+  67              		.loc 1 26 0
   68 0006 FFF7FEFF 		bl	UART_BT_ReadRxData
   69              	.LVL1:
-  26:UART_handler.c **** 
-  27:UART_handler.c ****         // Store the byte if we have room
-  28:UART_handler.c ****         if (index < sizeof(btBuffer) - 1)
-  70              		.loc 1 28 0
-  71 000a 314B     		ldr	r3, .L13
+  27:UART_handler.c **** 
+  28:UART_handler.c ****         // Store the byte if we have room
+  29:UART_handler.c ****         if (index < sizeof(btBuffer) - 1)
+  70              		.loc 1 29 0
+  71 000a 3B4B     		ldr	r3, .L15
   72 000c 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
   73 000e 302B     		cmp	r3, #48
   74 0010 04D8     		bhi	.L6
-  29:UART_handler.c ****         {
-  30:UART_handler.c ****             btBuffer[index++] = byteReceived;
-  75              		.loc 1 30 0
-  76 0012 2F4A     		ldr	r2, .L13
+  30:UART_handler.c ****         {
+  31:UART_handler.c ****             btBuffer[index++] = byteReceived;
+  75              		.loc 1 31 0
+  76 0012 394A     		ldr	r2, .L15
   77 0014 591C     		adds	r1, r3, #1
   78 0016 1171     		strb	r1, [r2, #4]
   79 0018 1344     		add	r3, r3, r2
   80 001a 1872     		strb	r0, [r3, #8]
   81              	.L6:
-  31:UART_handler.c ****         }
-  32:UART_handler.c **** 
-  33:UART_handler.c ****         // Message is considered done if we get \n, \r, or if buffer is full
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 3
+  32:UART_handler.c ****         }
+  33:UART_handler.c **** 
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 3
 
 
-  34:UART_handler.c ****         if (byteReceived == '\n' || byteReceived == '\r' || index >= 49)
-  82              		.loc 1 34 0
+  34:UART_handler.c ****         // Message is considered done if we get \n, \r, or if buffer is full
+  35:UART_handler.c ****         if (byteReceived == '\n' || byteReceived == '\r' || index >= sizeof(btBuffer) - 1)
+  82              		.loc 1 35 0
   83 001c 0A28     		cmp	r0, #10
   84 001e 05D0     		beq	.L7
-  85              		.loc 1 34 0 is_stmt 0 discriminator 1
+  85              		.loc 1 35 0 is_stmt 0 discriminator 1
   86 0020 0D28     		cmp	r0, #13
   87 0022 03D0     		beq	.L7
-  88              		.loc 1 34 0 discriminator 2
-  89 0024 2A4B     		ldr	r3, .L13
+  88              		.loc 1 35 0 discriminator 2
+  89 0024 344B     		ldr	r3, .L15
   90 0026 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
   91 0028 302B     		cmp	r3, #48
-  92 002a 3FD9     		bls	.L8
+  92 002a 5ED9     		bls	.L5
   93              	.L7:
-  35:UART_handler.c ****         {
-  36:UART_handler.c ****             btBuffer[index] = '\0';  // Null-terminate the string
-  94              		.loc 1 36 0 is_stmt 1
-  95 002c 2848     		ldr	r0, .L13
+  36:UART_handler.c ****         {
+  37:UART_handler.c ****             btBuffer[index] = '\0';  // Null-terminate the string
+  94              		.loc 1 37 0 is_stmt 1
+  95 002c 3248     		ldr	r0, .L15
   96              	.LVL2:
   97 002e 0379     		ldrb	r3, [r0, #4]	@ zero_extendqisi2
   98 0030 0344     		add	r3, r3, r0
   99 0032 0022     		movs	r2, #0
  100 0034 1A72     		strb	r2, [r3, #8]
-  37:UART_handler.c **** 
-  38:UART_handler.c ****             snprintf(message, sizeof(message), "\r\n[BT Response] %s\r\n", btBuffer);
- 101              		.loc 1 38 0
+  38:UART_handler.c **** 
+  39:UART_handler.c ****             snprintf(message, sizeof(message), "\r\n[BT Response] %s\r\n", btBuffer);
+ 101              		.loc 1 39 0
  102 0036 00F10804 		add	r4, r0, #8
  103 003a 2346     		mov	r3, r4
- 104 003c 254A     		ldr	r2, .L13+4
+ 104 003c 2F4A     		ldr	r2, .L15+4
  105 003e 9621     		movs	r1, #150
  106 0040 03A8     		add	r0, sp, #12
  107 0042 FFF7FEFF 		bl	snprintf
  108              	.LVL3:
-  39:UART_handler.c ****             UART_PC_PutString(message);
- 109              		.loc 1 39 0
+  40:UART_handler.c ****             UART_PC_PutString(message);
+ 109              		.loc 1 40 0
  110 0046 03A8     		add	r0, sp, #12
  111 0048 FFF7FEFF 		bl	UART_PC_PutString
  112              	.LVL4:
-  40:UART_handler.c **** 
-  41:UART_handler.c ****             // Try to parse the format: (e.g.) "-39,45"
-  42:UART_handler.c ****             if (sscanf(btBuffer, "%c,%d,%d,%d", &tempMode, &temp1, &temp2, &tempBool) == 4)
- 113              		.loc 1 42 0
+  41:UART_handler.c **** 
+  42:UART_handler.c ****             // Try to parse the format: <char>,<int>,<int>,<int>
+  43:UART_handler.c ****             if (sscanf(btBuffer, "%c,%d,%d,%d", &tempMode, &temp1, &temp2, &tempBool) == 4)
+ 113              		.loc 1 43 0
  114 004c 29AB     		add	r3, sp, #164
  115 004e 0193     		str	r3, [sp, #4]
  116 0050 2AAB     		add	r3, sp, #168
  117 0052 0093     		str	r3, [sp]
  118 0054 2BAB     		add	r3, sp, #172
  119 0056 0DF1A302 		add	r2, sp, #163
- 120 005a 1F49     		ldr	r1, .L13+8
+ 120 005a 2949     		ldr	r1, .L15+8
  121 005c 2046     		mov	r0, r4
  122 005e FFF7FEFF 		bl	sscanf
  123              	.LVL5:
  124 0062 0428     		cmp	r0, #4
- 125 0064 2BD1     		bne	.L9
-  43:UART_handler.c ****             {
-  44:UART_handler.c ****                 
-  45:UART_handler.c ****                 
-  46:UART_handler.c ****                 if (tempMode == '$'){
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 4
+ 125 0064 21D1     		bne	.L9
+  44:UART_handler.c ****             {
+  45:UART_handler.c ****                 if (tempMode == '$') {
+ 126              		.loc 1 45 0
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 4
 
 
- 126              		.loc 1 46 0
  127 0066 9DF8A330 		ldrb	r3, [sp, #163]	@ zero_extendqisi2
  128 006a 242B     		cmp	r3, #36
- 129 006c 08D1     		bne	.L10
+ 129 006c 09D1     		bne	.L10
  130              	.LVL6:
-  47:UART_handler.c ****                 VAR1 = (int8_t)temp1;
-  48:UART_handler.c ****                 VAR2 = (int8_t)temp2;
- 131              		.loc 1 48 0
+  46:UART_handler.c ****                     VAR1 = (int8_t)temp1;
+  47:UART_handler.c ****                     VAR2 = (int8_t)temp2;
+ 131              		.loc 1 47 0
  132 006e 9DF9A840 		ldrsb	r4, [sp, #168]
  133              	.LVL7:
-  49:UART_handler.c ****                 set_speedA(VAR1);
- 134              		.loc 1 49 0
+  48:UART_handler.c ****                     set_speedA(VAR1);
+ 134              		.loc 1 48 0
  135 0072 9DF9AC00 		ldrsb	r0, [sp, #172]
  136 0076 FFF7FEFF 		bl	set_speedA
  137              	.LVL8:
-  50:UART_handler.c ****                 set_speedB(VAR2);
- 138              		.loc 1 50 0
+  49:UART_handler.c ****                     set_speedB(VAR2);
+ 138              		.loc 1 49 0
  139 007a 2046     		mov	r0, r4
  140 007c FFF7FEFF 		bl	set_speedB
  141              	.LVL9:
- 142              	.L10:
-  51:UART_handler.c ****                     
-  52:UART_handler.c ****                 }
-  53:UART_handler.c ****                 if (tempMode == '@' && shootRef != NULL) {
- 143              		.loc 1 53 0
- 144 0080 9DF8A330 		ldrb	r3, [sp, #163]	@ zero_extendqisi2
- 145 0084 402B     		cmp	r3, #64
- 146 0086 1AD1     		bne	.L9
- 147              		.loc 1 53 0 is_stmt 0 discriminator 1
- 148 0088 114B     		ldr	r3, .L13
- 149 008a 1B68     		ldr	r3, [r3]
- 150 008c BBB1     		cbz	r3, .L9
-  54:UART_handler.c ****                     set_speedA(0);
- 151              		.loc 1 54 0 is_stmt 1
- 152 008e 0020     		movs	r0, #0
- 153 0090 FFF7FEFF 		bl	set_speedA
- 154              	.LVL10:
-  55:UART_handler.c ****                     set_speedB(0);
- 155              		.loc 1 55 0
- 156 0094 0020     		movs	r0, #0
- 157 0096 FFF7FEFF 		bl	set_speedB
- 158              	.LVL11:
-  56:UART_handler.c **** 
-  57:UART_handler.c ****                     shootRef->desiredPos1 = temp1;
- 159              		.loc 1 57 0
- 160 009a 0D4B     		ldr	r3, .L13
- 161 009c 1B68     		ldr	r3, [r3]
- 162 009e 2B9A     		ldr	r2, [sp, #172]
- 163 00a0 1A60     		str	r2, [r3]
-  58:UART_handler.c ****                     shootRef->desiredPos2 = temp2;
- 164              		.loc 1 58 0
- 165 00a2 2A9A     		ldr	r2, [sp, #168]
- 166 00a4 5A60     		str	r2, [r3, #4]
-  59:UART_handler.c ****                     shootRef->shootMode = tempBool;
- 167              		.loc 1 59 0
- 168 00a6 299A     		ldr	r2, [sp, #164]
- 169 00a8 9A60     		str	r2, [r3, #8]
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 5
+ 142 0080 2CE0     		b	.L11
+ 143              	.LVL10:
+ 144              	.L10:
+  50:UART_handler.c ****                 }
+  51:UART_handler.c ****                 else if (tempMode == '@' && shootRef != NULL) {
+ 145              		.loc 1 51 0
+ 146 0082 402B     		cmp	r3, #64
+ 147 0084 2AD1     		bne	.L11
+ 148              		.loc 1 51 0 is_stmt 0 discriminator 1
+ 149 0086 1C4B     		ldr	r3, .L15
+ 150 0088 1B68     		ldr	r3, [r3]
+ 151 008a 3BB3     		cbz	r3, .L11
+  52:UART_handler.c ****                     set_speedA(0);
+ 152              		.loc 1 52 0 is_stmt 1
+ 153 008c 0020     		movs	r0, #0
+ 154 008e FFF7FEFF 		bl	set_speedA
+ 155              	.LVL11:
+  53:UART_handler.c ****                     set_speedB(0);
+ 156              		.loc 1 53 0
+ 157 0092 0020     		movs	r0, #0
+ 158 0094 FFF7FEFF 		bl	set_speedB
+ 159              	.LVL12:
+  54:UART_handler.c **** 
+  55:UART_handler.c ****                     shootRef->desiredPos1 = temp1;
+ 160              		.loc 1 55 0
+ 161 0098 174B     		ldr	r3, .L15
+ 162 009a 1B68     		ldr	r3, [r3]
+ 163 009c 2B9A     		ldr	r2, [sp, #172]
+ 164 009e 1A60     		str	r2, [r3]
+  56:UART_handler.c ****                     shootRef->desiredPos2 = temp2;
+ 165              		.loc 1 56 0
+ 166 00a0 2A9A     		ldr	r2, [sp, #168]
+ 167 00a2 5A60     		str	r2, [r3, #4]
+  57:UART_handler.c ****                     shootRef->shootMode = tempBool;
+ 168              		.loc 1 57 0
+ 169 00a4 299A     		ldr	r2, [sp, #164]
+ 170 00a6 9A60     		str	r2, [r3, #8]
+ 171 00a8 18E0     		b	.L11
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 5
 
 
- 170 00aa 08E0     		b	.L9
- 171              	.LVL12:
- 172              	.L8:
-  60:UART_handler.c ****                 }
-  61:UART_handler.c ****                 
-  62:UART_handler.c ****                     
-  63:UART_handler.c ****             }
-  64:UART_handler.c ****                 
-  65:UART_handler.c ****                 
-  66:UART_handler.c ****                 
-  67:UART_handler.c ****         }
-  68:UART_handler.c ****             else
-  69:UART_handler.c ****             {
-  70:UART_handler.c ****                 // Combine parse error message into one formatted string
-  71:UART_handler.c ****                 snprintf(message, sizeof(message), "\r\nParse error. Content of BT buffer: %s\r\n",
- 173              		.loc 1 71 0
- 174 00ac 0B4B     		ldr	r3, .L13+12
- 175 00ae 0C4A     		ldr	r2, .L13+16
- 176 00b0 9621     		movs	r1, #150
- 177 00b2 03A8     		add	r0, sp, #12
+ 172              	.L9:
+  58:UART_handler.c ****                 }
+  59:UART_handler.c ****             }
+  60:UART_handler.c ****             else if (strncmp(btBuffer, "AT+", 3) == 0)
+ 173              		.loc 1 60 0
+ 174 00aa 0322     		movs	r2, #3
+ 175 00ac 1549     		ldr	r1, .L15+12
+ 176 00ae 1648     		ldr	r0, .L15+16
+ 177 00b0 FFF7FEFF 		bl	strncmp
  178              	.LVL13:
- 179 00b4 FFF7FEFF 		bl	snprintf
- 180              	.LVL14:
-  72:UART_handler.c ****                 UART_PC_PutString(message);
- 181              		.loc 1 72 0
- 182 00b8 03A8     		add	r0, sp, #12
- 183 00ba FFF7FEFF 		bl	UART_PC_PutString
- 184              	.LVL15:
- 185              	.L9:
-  73:UART_handler.c ****             }
-  74:UART_handler.c **** 
-  75:UART_handler.c ****             index = 0; // Reset buffer for next message
- 186              		.loc 1 75 0
- 187 00be 0022     		movs	r2, #0
- 188 00c0 034B     		ldr	r3, .L13
- 189 00c2 1A71     		strb	r2, [r3, #4]
- 190              	.L5:
- 191              	.LBE2:
-  23:UART_handler.c ****     {
- 192              		.loc 1 23 0
- 193 00c4 FFF7FEFF 		bl	UART_BT_GetRxBufferSize
- 194              	.LVL16:
- 195 00c8 0028     		cmp	r0, #0
- 196 00ca 9CD1     		bne	.L11
-  76:UART_handler.c ****         }
-  77:UART_handler.c **** }
- 197              		.loc 1 77 0
- 198 00cc 2CB0     		add	sp, sp, #176
- 199              		.cfi_def_cfa_offset 8
- 200              		@ sp needed
- 201 00ce 10BD     		pop	{r4, pc}
- 202              	.L14:
- 203              		.align	2
- 204              	.L13:
- 205 00d0 00000000 		.word	.LANCHOR0
- 206 00d4 00000000 		.word	.LC0
- 207 00d8 18000000 		.word	.LC1
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 6
+ 179 00b4 48B9     		cbnz	r0, .L12
+  61:UART_handler.c ****             {
+  62:UART_handler.c ****                 // It's a valid AT command or response — not a motor command
+  63:UART_handler.c ****                 snprintf(message, sizeof(message), "\r\n[BT Info] AT Command or response received: 
+ 180              		.loc 1 63 0
+ 181 00b6 144B     		ldr	r3, .L15+16
+ 182 00b8 144A     		ldr	r2, .L15+20
+ 183 00ba 9621     		movs	r1, #150
+ 184 00bc 03A8     		add	r0, sp, #12
+ 185 00be FFF7FEFF 		bl	snprintf
+ 186              	.LVL14:
+  64:UART_handler.c ****                 UART_PC_PutString(message);
+ 187              		.loc 1 64 0
+ 188 00c2 03A8     		add	r0, sp, #12
+ 189 00c4 FFF7FEFF 		bl	UART_PC_PutString
+ 190              	.LVL15:
+ 191 00c8 08E0     		b	.L11
+ 192              	.L12:
+  65:UART_handler.c ****             }
+  66:UART_handler.c ****             else
+  67:UART_handler.c ****             {
+  68:UART_handler.c ****                 snprintf(message, sizeof(message), "\r\nParse error. Content of BT buffer: %s\r\n",
+ 193              		.loc 1 68 0
+ 194 00ca 0F4B     		ldr	r3, .L15+16
+ 195 00cc 104A     		ldr	r2, .L15+24
+ 196 00ce 9621     		movs	r1, #150
+ 197 00d0 03A8     		add	r0, sp, #12
+ 198 00d2 FFF7FEFF 		bl	snprintf
+ 199              	.LVL16:
+  69:UART_handler.c ****                 UART_PC_PutString(message);
+ 200              		.loc 1 69 0
+ 201 00d6 03A8     		add	r0, sp, #12
+ 202 00d8 FFF7FEFF 		bl	UART_PC_PutString
+ 203              	.LVL17:
+ 204              	.L11:
+  70:UART_handler.c ****             }
+  71:UART_handler.c **** 
+  72:UART_handler.c ****             index = 0; // Reset buffer for next message
+ 205              		.loc 1 72 0
+ 206 00dc 0648     		ldr	r0, .L15
+ 207 00de 0021     		movs	r1, #0
+ 208 00e0 0171     		strb	r1, [r0, #4]
+  73:UART_handler.c ****             memset(btBuffer, 0, sizeof(btBuffer));
+ 209              		.loc 1 73 0
+ 210 00e2 3222     		movs	r2, #50
+ 211 00e4 0830     		adds	r0, r0, #8
+ 212 00e6 FFF7FEFF 		bl	memset
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 6
 
 
- 208 00dc 08000000 		.word	.LANCHOR0+8
- 209 00e0 24000000 		.word	.LC2
- 210              		.cfi_endproc
- 211              	.LFE65:
- 212              		.size	ISR_UART_rx_handler_BT, .-ISR_UART_rx_handler_BT
- 213              		.section	.text.handleByteReceived,"ax",%progbits
- 214              		.align	2
- 215              		.global	handleByteReceived
- 216              		.thumb
- 217              		.thumb_func
- 218              		.type	handleByteReceived, %function
- 219              	handleByteReceived:
- 220              	.LFB67:
+ 213              	.LVL18:
+ 214              	.L5:
+ 215              	.LBE2:
+  24:UART_handler.c ****     {
+ 216              		.loc 1 24 0
+ 217 00ea FFF7FEFF 		bl	UART_BT_GetRxBufferSize
+ 218              	.LVL19:
+ 219 00ee 0028     		cmp	r0, #0
+ 220 00f0 89D1     		bne	.L13
+  74:UART_handler.c ****         }
+  75:UART_handler.c ****     }
+  76:UART_handler.c **** }
+ 221              		.loc 1 76 0
+ 222 00f2 2CB0     		add	sp, sp, #176
+ 223              		.cfi_def_cfa_offset 8
+ 224              		@ sp needed
+ 225 00f4 10BD     		pop	{r4, pc}
+ 226              	.L16:
+ 227 00f6 00BF     		.align	2
+ 228              	.L15:
+ 229 00f8 00000000 		.word	.LANCHOR0
+ 230 00fc 00000000 		.word	.LC0
+ 231 0100 18000000 		.word	.LC1
+ 232 0104 24000000 		.word	.LC2
+ 233 0108 08000000 		.word	.LANCHOR0+8
+ 234 010c 28000000 		.word	.LC3
+ 235 0110 5C000000 		.word	.LC4
+ 236              		.cfi_endproc
+ 237              	.LFE65:
+ 238              		.size	ISR_UART_rx_handler_BT, .-ISR_UART_rx_handler_BT
+ 239              		.section	.text.handleByteReceived,"ax",%progbits
+ 240              		.align	2
+ 241              		.global	handleByteReceived
+ 242              		.thumb
+ 243              		.thumb_func
+ 244              		.type	handleByteReceived, %function
+ 245              	handleByteReceived:
+ 246              	.LFB67:
+  77:UART_handler.c **** 
   78:UART_handler.c **** 
   79:UART_handler.c **** 
   80:UART_handler.c **** 
@@ -332,2140 +358,2265 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 1
   93:UART_handler.c ****     }
   94:UART_handler.c **** }
   95:UART_handler.c **** 
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 7
+
+
   96:UART_handler.c **** void handleByteReceived(uint8_t byteReceived)
   97:UART_handler.c **** {
- 221              		.loc 1 97 0
- 222              		.cfi_startproc
- 223              		@ args = 0, pretend = 0, frame = 40
- 224              		@ frame_needed = 0, uses_anonymous_args = 0
- 225              	.LVL17:
- 226 0000 10B5     		push	{r4, lr}
- 227              		.cfi_def_cfa_offset 8
- 228              		.cfi_offset 4, -8
- 229              		.cfi_offset 14, -4
- 230 0002 8AB0     		sub	sp, sp, #40
- 231              		.cfi_def_cfa_offset 48
- 232 0004 0446     		mov	r4, r0
+ 247              		.loc 1 97 0
+ 248              		.cfi_startproc
+ 249              		@ args = 0, pretend = 0, frame = 40
+ 250              		@ frame_needed = 0, uses_anonymous_args = 0
+ 251              	.LVL20:
+ 252 0000 10B5     		push	{r4, lr}
+ 253              		.cfi_def_cfa_offset 8
+ 254              		.cfi_offset 4, -8
+ 255              		.cfi_offset 14, -4
+ 256 0002 8AB0     		sub	sp, sp, #40
+ 257              		.cfi_def_cfa_offset 48
+ 258 0004 0446     		mov	r4, r0
   98:UART_handler.c ****     // A static variable to keep track of the current speed.
   99:UART_handler.c ****     // Valid range is from -PWM_MAX_DUTY to PWM_MAX_DUTY.
  100:UART_handler.c ****     static int8_t currentSpeed = 0;
  101:UART_handler.c ****     char command_address[] = "AT+MAC\r\n";
- 233              		.loc 1 101 0
- 234 0006 5A4A     		ldr	r2, .L30
- 235 0008 07AB     		add	r3, sp, #28
- 236 000a 07CA     		ldmia	r2, {r0, r1, r2}
- 237              	.LVL18:
- 238 000c 03C3     		stmia	r3!, {r0, r1}
- 239 000e 1A70     		strb	r2, [r3]
+ 259              		.loc 1 101 0
+ 260 0006 5A4A     		ldr	r2, .L32
+ 261 0008 07AB     		add	r3, sp, #28
+ 262 000a 07CA     		ldmia	r2, {r0, r1, r2}
+ 263              	.LVL21:
+ 264 000c 03C3     		stmia	r3!, {r0, r1}
+ 265 000e 1A70     		strb	r2, [r3]
  102:UART_handler.c ****     char command_baud[] = "AT+BAUD\r\n";
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 7
-
-
- 240              		.loc 1 102 0
- 241 0010 584A     		ldr	r2, .L30+4
- 242 0012 04AB     		add	r3, sp, #16
- 243 0014 07CA     		ldmia	r2, {r0, r1, r2}
- 244 0016 03C3     		stmia	r3!, {r0, r1}
- 245 0018 1A80     		strh	r2, [r3]	@ movhi
+ 266              		.loc 1 102 0
+ 267 0010 584A     		ldr	r2, .L32+4
+ 268 0012 04AB     		add	r3, sp, #16
+ 269 0014 07CA     		ldmia	r2, {r0, r1, r2}
+ 270 0016 03C3     		stmia	r3!, {r0, r1}
+ 271 0018 1A80     		strh	r2, [r3]	@ movhi
  103:UART_handler.c ****     char command_status[] = "AT+STAT\r\n";
- 246              		.loc 1 103 0
- 247 001a 574A     		ldr	r2, .L30+8
- 248 001c 01AB     		add	r3, sp, #4
- 249 001e 07CA     		ldmia	r2, {r0, r1, r2}
- 250 0020 03C3     		stmia	r3!, {r0, r1}
- 251 0022 1A80     		strh	r2, [r3]	@ movhi
+ 272              		.loc 1 103 0
+ 273 001a 574A     		ldr	r2, .L32+8
+ 274 001c 01AB     		add	r3, sp, #4
+ 275 001e 07CA     		ldmia	r2, {r0, r1, r2}
+ 276 0020 03C3     		stmia	r3!, {r0, r1}
+ 277 0022 1A80     		strh	r2, [r3]	@ movhi
  104:UART_handler.c ****     
  105:UART_handler.c ****     switch(byteReceived)
- 252              		.loc 1 105 0
- 253 0024 A4F13000 		sub	r0, r4, #48
- 254 0028 4428     		cmp	r0, #68
- 255 002a 00F29E80 		bhi	.L15
- 256 002e DFE800F0 		tbb	[pc, r0]
- 257              	.L18:
- 258 0032 7A       		.byte	(.L17-.L18)/2
- 259 0033 23       		.byte	(.L19-.L18)/2
- 260 0034 4D       		.byte	(.L20-.L18)/2
- 261 0035 9C       		.byte	(.L15-.L18)/2
- 262 0036 9C       		.byte	(.L15-.L18)/2
- 263 0037 9C       		.byte	(.L15-.L18)/2
- 264 0038 9C       		.byte	(.L15-.L18)/2
- 265 0039 9C       		.byte	(.L15-.L18)/2
- 266 003a 9C       		.byte	(.L15-.L18)/2
- 267 003b 9C       		.byte	(.L15-.L18)/2
- 268 003c 9C       		.byte	(.L15-.L18)/2
- 269 003d 9C       		.byte	(.L15-.L18)/2
- 270 003e 9C       		.byte	(.L15-.L18)/2
- 271 003f 9C       		.byte	(.L15-.L18)/2
- 272 0040 9C       		.byte	(.L15-.L18)/2
- 273 0041 9C       		.byte	(.L15-.L18)/2
- 274 0042 9C       		.byte	(.L15-.L18)/2
- 275 0043 9C       		.byte	(.L15-.L18)/2
- 276 0044 9C       		.byte	(.L15-.L18)/2
- 277 0045 9C       		.byte	(.L15-.L18)/2
- 278 0046 9C       		.byte	(.L15-.L18)/2
- 279 0047 9C       		.byte	(.L15-.L18)/2
- 280 0048 9C       		.byte	(.L15-.L18)/2
- 281 0049 9C       		.byte	(.L15-.L18)/2
- 282 004a 9C       		.byte	(.L15-.L18)/2
- 283 004b 9C       		.byte	(.L15-.L18)/2
- 284 004c 9C       		.byte	(.L15-.L18)/2
- 285 004d 9C       		.byte	(.L15-.L18)/2
- 286 004e 9C       		.byte	(.L15-.L18)/2
- 287 004f 9C       		.byte	(.L15-.L18)/2
- 288 0050 9C       		.byte	(.L15-.L18)/2
- 289 0051 9C       		.byte	(.L15-.L18)/2
- 290 0052 9C       		.byte	(.L15-.L18)/2
- 291 0053 9C       		.byte	(.L15-.L18)/2
- 292 0054 9C       		.byte	(.L15-.L18)/2
- 293 0055 9C       		.byte	(.L15-.L18)/2
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 8
+ 278              		.loc 1 105 0
+ 279 0024 A4F13000 		sub	r0, r4, #48
+ 280 0028 4428     		cmp	r0, #68
+ 281 002a 00F29E80 		bhi	.L17
+ 282 002e DFE800F0 		tbb	[pc, r0]
+ 283              	.L20:
+ 284 0032 7A       		.byte	(.L19-.L20)/2
+ 285 0033 23       		.byte	(.L21-.L20)/2
+ 286 0034 4D       		.byte	(.L22-.L20)/2
+ 287 0035 9C       		.byte	(.L17-.L20)/2
+ 288 0036 9C       		.byte	(.L17-.L20)/2
+ 289 0037 9C       		.byte	(.L17-.L20)/2
+ 290 0038 9C       		.byte	(.L17-.L20)/2
+ 291 0039 9C       		.byte	(.L17-.L20)/2
+ 292 003a 9C       		.byte	(.L17-.L20)/2
+ 293 003b 9C       		.byte	(.L17-.L20)/2
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 8
 
 
- 294 0056 9C       		.byte	(.L15-.L18)/2
- 295 0057 9C       		.byte	(.L15-.L18)/2
- 296 0058 9C       		.byte	(.L15-.L18)/2
- 297 0059 9C       		.byte	(.L15-.L18)/2
- 298 005a 9C       		.byte	(.L15-.L18)/2
- 299 005b 9C       		.byte	(.L15-.L18)/2
- 300 005c 9C       		.byte	(.L15-.L18)/2
- 301 005d 9C       		.byte	(.L15-.L18)/2
- 302 005e 9C       		.byte	(.L15-.L18)/2
- 303 005f 9C       		.byte	(.L15-.L18)/2
- 304 0060 9C       		.byte	(.L15-.L18)/2
- 305 0061 9C       		.byte	(.L15-.L18)/2
- 306 0062 9C       		.byte	(.L15-.L18)/2
- 307 0063 81       		.byte	(.L21-.L18)/2
- 308 0064 88       		.byte	(.L22-.L18)/2
- 309 0065 9C       		.byte	(.L15-.L18)/2
- 310 0066 9C       		.byte	(.L15-.L18)/2
- 311 0067 9C       		.byte	(.L15-.L18)/2
- 312 0068 9C       		.byte	(.L15-.L18)/2
- 313 0069 9C       		.byte	(.L15-.L18)/2
- 314 006a 9C       		.byte	(.L15-.L18)/2
- 315 006b 9C       		.byte	(.L15-.L18)/2
- 316 006c 9C       		.byte	(.L15-.L18)/2
- 317 006d 9C       		.byte	(.L15-.L18)/2
- 318 006e 9C       		.byte	(.L15-.L18)/2
- 319 006f 9C       		.byte	(.L15-.L18)/2
- 320 0070 9C       		.byte	(.L15-.L18)/2
- 321 0071 9C       		.byte	(.L15-.L18)/2
- 322 0072 9C       		.byte	(.L15-.L18)/2
- 323 0073 9C       		.byte	(.L15-.L18)/2
- 324 0074 9C       		.byte	(.L15-.L18)/2
- 325 0075 8F       		.byte	(.L23-.L18)/2
- 326 0076 96       		.byte	(.L24-.L18)/2
- 327 0077 00       		.p2align 1
- 328              	.L19:
+ 294 003c 9C       		.byte	(.L17-.L20)/2
+ 295 003d 9C       		.byte	(.L17-.L20)/2
+ 296 003e 9C       		.byte	(.L17-.L20)/2
+ 297 003f 9C       		.byte	(.L17-.L20)/2
+ 298 0040 9C       		.byte	(.L17-.L20)/2
+ 299 0041 9C       		.byte	(.L17-.L20)/2
+ 300 0042 9C       		.byte	(.L17-.L20)/2
+ 301 0043 9C       		.byte	(.L17-.L20)/2
+ 302 0044 9C       		.byte	(.L17-.L20)/2
+ 303 0045 9C       		.byte	(.L17-.L20)/2
+ 304 0046 9C       		.byte	(.L17-.L20)/2
+ 305 0047 9C       		.byte	(.L17-.L20)/2
+ 306 0048 9C       		.byte	(.L17-.L20)/2
+ 307 0049 9C       		.byte	(.L17-.L20)/2
+ 308 004a 9C       		.byte	(.L17-.L20)/2
+ 309 004b 9C       		.byte	(.L17-.L20)/2
+ 310 004c 9C       		.byte	(.L17-.L20)/2
+ 311 004d 9C       		.byte	(.L17-.L20)/2
+ 312 004e 9C       		.byte	(.L17-.L20)/2
+ 313 004f 9C       		.byte	(.L17-.L20)/2
+ 314 0050 9C       		.byte	(.L17-.L20)/2
+ 315 0051 9C       		.byte	(.L17-.L20)/2
+ 316 0052 9C       		.byte	(.L17-.L20)/2
+ 317 0053 9C       		.byte	(.L17-.L20)/2
+ 318 0054 9C       		.byte	(.L17-.L20)/2
+ 319 0055 9C       		.byte	(.L17-.L20)/2
+ 320 0056 9C       		.byte	(.L17-.L20)/2
+ 321 0057 9C       		.byte	(.L17-.L20)/2
+ 322 0058 9C       		.byte	(.L17-.L20)/2
+ 323 0059 9C       		.byte	(.L17-.L20)/2
+ 324 005a 9C       		.byte	(.L17-.L20)/2
+ 325 005b 9C       		.byte	(.L17-.L20)/2
+ 326 005c 9C       		.byte	(.L17-.L20)/2
+ 327 005d 9C       		.byte	(.L17-.L20)/2
+ 328 005e 9C       		.byte	(.L17-.L20)/2
+ 329 005f 9C       		.byte	(.L17-.L20)/2
+ 330 0060 9C       		.byte	(.L17-.L20)/2
+ 331 0061 9C       		.byte	(.L17-.L20)/2
+ 332 0062 9C       		.byte	(.L17-.L20)/2
+ 333 0063 81       		.byte	(.L23-.L20)/2
+ 334 0064 88       		.byte	(.L24-.L20)/2
+ 335 0065 9C       		.byte	(.L17-.L20)/2
+ 336 0066 9C       		.byte	(.L17-.L20)/2
+ 337 0067 9C       		.byte	(.L17-.L20)/2
+ 338 0068 9C       		.byte	(.L17-.L20)/2
+ 339 0069 9C       		.byte	(.L17-.L20)/2
+ 340 006a 9C       		.byte	(.L17-.L20)/2
+ 341 006b 9C       		.byte	(.L17-.L20)/2
+ 342 006c 9C       		.byte	(.L17-.L20)/2
+ 343 006d 9C       		.byte	(.L17-.L20)/2
+ 344 006e 9C       		.byte	(.L17-.L20)/2
+ 345 006f 9C       		.byte	(.L17-.L20)/2
+ 346 0070 9C       		.byte	(.L17-.L20)/2
+ 347 0071 9C       		.byte	(.L17-.L20)/2
+ 348 0072 9C       		.byte	(.L17-.L20)/2
+ 349 0073 9C       		.byte	(.L17-.L20)/2
+ 350 0074 9C       		.byte	(.L17-.L20)/2
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 9
+
+
+ 351 0075 8F       		.byte	(.L25-.L20)/2
+ 352 0076 96       		.byte	(.L26-.L20)/2
+ 353 0077 00       		.p2align 1
+ 354              	.L21:
  106:UART_handler.c ****     {
  107:UART_handler.c ****         case '1':
  108:UART_handler.c ****             // Increase speed by 5, ensuring we do not exceed PWM_MAX_DUTY.
  109:UART_handler.c ****             if (currentSpeed < PWM_MAX_DUTY)
- 329              		.loc 1 109 0
- 330 0078 404B     		ldr	r3, .L30+12
- 331 007a 93F93A30 		ldrsb	r3, [r3, #58]
- 332 007e 312B     		cmp	r3, #49
- 333 0080 20DC     		bgt	.L25
+ 355              		.loc 1 109 0
+ 356 0078 404B     		ldr	r3, .L32+12
+ 357 007a 93F93A30 		ldrsb	r3, [r3, #58]
+ 358 007e 312B     		cmp	r3, #49
+ 359 0080 20DC     		bgt	.L27
  110:UART_handler.c ****             {
  111:UART_handler.c ****                 UART_PC_PutString("Increase speed\r\n");
- 334              		.loc 1 111 0
- 335 0082 3F48     		ldr	r0, .L30+16
- 336 0084 FFF7FEFF 		bl	UART_PC_PutString
- 337              	.LVL19:
+ 360              		.loc 1 111 0
+ 361 0082 3F48     		ldr	r0, .L32+16
+ 362 0084 FFF7FEFF 		bl	UART_PC_PutString
+ 363              	.LVL22:
  112:UART_handler.c ****                 currentSpeed += 5;
- 338              		.loc 1 112 0
- 339 0088 3C4A     		ldr	r2, .L30+12
- 340 008a 92F83A30 		ldrb	r3, [r2, #58]	@ zero_extendqisi2
- 341 008e 0533     		adds	r3, r3, #5
- 342 0090 5BB2     		sxtb	r3, r3
- 343 0092 82F83A30 		strb	r3, [r2, #58]
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 9
-
-
+ 364              		.loc 1 112 0
+ 365 0088 3C4A     		ldr	r2, .L32+12
+ 366 008a 92F83A30 		ldrb	r3, [r2, #58]	@ zero_extendqisi2
+ 367 008e 0533     		adds	r3, r3, #5
+ 368 0090 5BB2     		sxtb	r3, r3
+ 369 0092 82F83A30 		strb	r3, [r2, #58]
  113:UART_handler.c ****                 if (currentSpeed > PWM_MAX_DUTY)
- 344              		.loc 1 113 0
- 345 0096 322B     		cmp	r3, #50
- 346 0098 03DD     		ble	.L26
+ 370              		.loc 1 113 0
+ 371 0096 322B     		cmp	r3, #50
+ 372 0098 03DD     		ble	.L28
  114:UART_handler.c ****                 {
  115:UART_handler.c ****                     currentSpeed = PWM_MAX_DUTY;
- 347              		.loc 1 115 0
- 348 009a 3222     		movs	r2, #50
- 349 009c 374B     		ldr	r3, .L30+12
- 350 009e 83F83A20 		strb	r2, [r3, #58]
- 351              	.L26:
+ 373              		.loc 1 115 0
+ 374 009a 3222     		movs	r2, #50
+ 375 009c 374B     		ldr	r3, .L32+12
+ 376 009e 83F83A20 		strb	r2, [r3, #58]
+ 377              	.L28:
  116:UART_handler.c ****                 }
  117:UART_handler.c ****                 set_speedA(currentSpeed);
- 352              		.loc 1 117 0
- 353 00a2 364C     		ldr	r4, .L30+12
- 354 00a4 94F93A00 		ldrsb	r0, [r4, #58]
- 355 00a8 FFF7FEFF 		bl	set_speedA
- 356              	.LVL20:
+ 378              		.loc 1 117 0
+ 379 00a2 364C     		ldr	r4, .L32+12
+ 380 00a4 94F93A00 		ldrsb	r0, [r4, #58]
+ 381 00a8 FFF7FEFF 		bl	set_speedA
+ 382              	.LVL23:
  118:UART_handler.c ****                 set_speedB(currentSpeed);
- 357              		.loc 1 118 0
- 358 00ac 94F93A00 		ldrsb	r0, [r4, #58]
- 359 00b0 FFF7FEFF 		bl	set_speedB
- 360              	.LVL21:
+ 383              		.loc 1 118 0
+ 384 00ac 94F93A00 		ldrsb	r0, [r4, #58]
+ 385 00b0 FFF7FEFF 		bl	set_speedB
+ 386              	.LVL24:
  119:UART_handler.c ****                 if (currentSpeed == PWM_MAX_DUTY)
- 361              		.loc 1 119 0
- 362 00b4 94F93A30 		ldrsb	r3, [r4, #58]
- 363 00b8 322B     		cmp	r3, #50
- 364 00ba 56D1     		bne	.L15
+ 387              		.loc 1 119 0
+ 388 00b4 94F93A30 		ldrsb	r3, [r4, #58]
+ 389 00b8 322B     		cmp	r3, #50
+ 390 00ba 56D1     		bne	.L17
  120:UART_handler.c ****                 {
  121:UART_handler.c ****                     UART_PC_PutString("Max forward speed reached\r\n");
- 365              		.loc 1 121 0
- 366 00bc 3148     		ldr	r0, .L30+20
- 367 00be FFF7FEFF 		bl	UART_PC_PutString
- 368              	.LVL22:
- 369 00c2 52E0     		b	.L15
- 370              	.L25:
+ 391              		.loc 1 121 0
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 10
+
+
+ 392 00bc 3148     		ldr	r0, .L32+20
+ 393 00be FFF7FEFF 		bl	UART_PC_PutString
+ 394              	.LVL25:
+ 395 00c2 52E0     		b	.L17
+ 396              	.L27:
  122:UART_handler.c ****                 }
  123:UART_handler.c ****             }
  124:UART_handler.c ****             else
  125:UART_handler.c ****             {
  126:UART_handler.c ****                 UART_PC_PutString("Already at max forward speed\r\n");
- 371              		.loc 1 126 0
- 372 00c4 3048     		ldr	r0, .L30+24
- 373 00c6 FFF7FEFF 		bl	UART_PC_PutString
- 374              	.LVL23:
- 375 00ca 4EE0     		b	.L15
- 376              	.L20:
+ 397              		.loc 1 126 0
+ 398 00c4 3048     		ldr	r0, .L32+24
+ 399 00c6 FFF7FEFF 		bl	UART_PC_PutString
+ 400              	.LVL26:
+ 401 00ca 4EE0     		b	.L17
+ 402              	.L22:
  127:UART_handler.c ****             }
  128:UART_handler.c ****             break;
  129:UART_handler.c ****             
  130:UART_handler.c ****         case '2':
  131:UART_handler.c ****             // Decrease speed by 5, ensuring we do not drop below -PWM_MAX_DUTY.
  132:UART_handler.c ****             if (currentSpeed > -PWM_MAX_DUTY)
- 377              		.loc 1 132 0
- 378 00cc 2B4B     		ldr	r3, .L30+12
- 379 00ce 93F93A30 		ldrsb	r3, [r3, #58]
- 380 00d2 13F1310F 		cmn	r3, #49
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 10
-
-
- 381 00d6 22DB     		blt	.L27
+ 403              		.loc 1 132 0
+ 404 00cc 2B4B     		ldr	r3, .L32+12
+ 405 00ce 93F93A30 		ldrsb	r3, [r3, #58]
+ 406 00d2 13F1310F 		cmn	r3, #49
+ 407 00d6 22DB     		blt	.L29
  133:UART_handler.c ****             {
  134:UART_handler.c ****                 UART_PC_PutString("Decrease speed\r\n");
- 382              		.loc 1 134 0
- 383 00d8 2C48     		ldr	r0, .L30+28
- 384 00da FFF7FEFF 		bl	UART_PC_PutString
- 385              	.LVL24:
+ 408              		.loc 1 134 0
+ 409 00d8 2C48     		ldr	r0, .L32+28
+ 410 00da FFF7FEFF 		bl	UART_PC_PutString
+ 411              	.LVL27:
  135:UART_handler.c ****                 currentSpeed -= 5;
- 386              		.loc 1 135 0
- 387 00de 274A     		ldr	r2, .L30+12
- 388 00e0 92F83A30 		ldrb	r3, [r2, #58]	@ zero_extendqisi2
- 389 00e4 053B     		subs	r3, r3, #5
- 390 00e6 5BB2     		sxtb	r3, r3
- 391 00e8 82F83A30 		strb	r3, [r2, #58]
+ 412              		.loc 1 135 0
+ 413 00de 274A     		ldr	r2, .L32+12
+ 414 00e0 92F83A30 		ldrb	r3, [r2, #58]	@ zero_extendqisi2
+ 415 00e4 053B     		subs	r3, r3, #5
+ 416 00e6 5BB2     		sxtb	r3, r3
+ 417 00e8 82F83A30 		strb	r3, [r2, #58]
  136:UART_handler.c ****                 if (currentSpeed < -PWM_MAX_DUTY)
- 392              		.loc 1 136 0
- 393 00ec 13F1320F 		cmn	r3, #50
- 394 00f0 03DA     		bge	.L28
+ 418              		.loc 1 136 0
+ 419 00ec 13F1320F 		cmn	r3, #50
+ 420 00f0 03DA     		bge	.L30
  137:UART_handler.c ****                 {
  138:UART_handler.c ****                     currentSpeed = -PWM_MAX_DUTY;
- 395              		.loc 1 138 0
- 396 00f2 CE22     		movs	r2, #206
- 397 00f4 214B     		ldr	r3, .L30+12
- 398 00f6 83F83A20 		strb	r2, [r3, #58]
- 399              	.L28:
+ 421              		.loc 1 138 0
+ 422 00f2 CE22     		movs	r2, #206
+ 423 00f4 214B     		ldr	r3, .L32+12
+ 424 00f6 83F83A20 		strb	r2, [r3, #58]
+ 425              	.L30:
  139:UART_handler.c ****                 }
  140:UART_handler.c ****                 set_speedA(currentSpeed);
- 400              		.loc 1 140 0
- 401 00fa 204C     		ldr	r4, .L30+12
- 402 00fc 94F93A00 		ldrsb	r0, [r4, #58]
- 403 0100 FFF7FEFF 		bl	set_speedA
- 404              	.LVL25:
+ 426              		.loc 1 140 0
+ 427 00fa 204C     		ldr	r4, .L32+12
+ 428 00fc 94F93A00 		ldrsb	r0, [r4, #58]
+ 429 0100 FFF7FEFF 		bl	set_speedA
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 11
+
+
+ 430              	.LVL28:
  141:UART_handler.c ****                 set_speedB(currentSpeed);
- 405              		.loc 1 141 0
- 406 0104 94F93A00 		ldrsb	r0, [r4, #58]
- 407 0108 FFF7FEFF 		bl	set_speedB
- 408              	.LVL26:
+ 431              		.loc 1 141 0
+ 432 0104 94F93A00 		ldrsb	r0, [r4, #58]
+ 433 0108 FFF7FEFF 		bl	set_speedB
+ 434              	.LVL29:
  142:UART_handler.c ****                 if (currentSpeed == -PWM_MAX_DUTY)
- 409              		.loc 1 142 0
- 410 010c 94F93A30 		ldrsb	r3, [r4, #58]
- 411 0110 13F1320F 		cmn	r3, #50
- 412 0114 29D1     		bne	.L15
+ 435              		.loc 1 142 0
+ 436 010c 94F93A30 		ldrsb	r3, [r4, #58]
+ 437 0110 13F1320F 		cmn	r3, #50
+ 438 0114 29D1     		bne	.L17
  143:UART_handler.c ****                 {
  144:UART_handler.c ****                     UART_PC_PutString("Max reverse speed reached\r\n");
- 413              		.loc 1 144 0
- 414 0116 1E48     		ldr	r0, .L30+32
- 415 0118 FFF7FEFF 		bl	UART_PC_PutString
- 416              	.LVL27:
- 417 011c 25E0     		b	.L15
- 418              	.L27:
+ 439              		.loc 1 144 0
+ 440 0116 1E48     		ldr	r0, .L32+32
+ 441 0118 FFF7FEFF 		bl	UART_PC_PutString
+ 442              	.LVL30:
+ 443 011c 25E0     		b	.L17
+ 444              	.L29:
  145:UART_handler.c ****                 }
  146:UART_handler.c ****             }
  147:UART_handler.c ****             else
  148:UART_handler.c ****             {
  149:UART_handler.c ****                 UART_PC_PutString("Already at max reverse speed\r\n");
- 419              		.loc 1 149 0
- 420 011e 1D48     		ldr	r0, .L30+36
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 11
-
-
- 421 0120 FFF7FEFF 		bl	UART_PC_PutString
- 422              	.LVL28:
- 423 0124 21E0     		b	.L15
- 424              	.L17:
+ 445              		.loc 1 149 0
+ 446 011e 1D48     		ldr	r0, .L32+36
+ 447 0120 FFF7FEFF 		bl	UART_PC_PutString
+ 448              	.LVL31:
+ 449 0124 21E0     		b	.L17
+ 450              	.L19:
  150:UART_handler.c ****             }
  151:UART_handler.c ****             break;
  152:UART_handler.c ****             
  153:UART_handler.c ****         case '0':
  154:UART_handler.c ****             // Stop the motors by setting current speed to 0.
  155:UART_handler.c ****             currentSpeed = 0;
- 425              		.loc 1 155 0
- 426 0126 0022     		movs	r2, #0
- 427 0128 144B     		ldr	r3, .L30+12
- 428 012a 83F83A20 		strb	r2, [r3, #58]
+ 451              		.loc 1 155 0
+ 452 0126 0022     		movs	r2, #0
+ 453 0128 144B     		ldr	r3, .L32+12
+ 454 012a 83F83A20 		strb	r2, [r3, #58]
  156:UART_handler.c ****             stop();
- 429              		.loc 1 156 0
- 430 012e FFF7FEFF 		bl	stop
- 431              	.LVL29:
+ 455              		.loc 1 156 0
+ 456 012e FFF7FEFF 		bl	stop
+ 457              	.LVL32:
  157:UART_handler.c ****             break;
- 432              		.loc 1 157 0
- 433 0132 1AE0     		b	.L15
- 434              	.L21:
+ 458              		.loc 1 157 0
+ 459 0132 1AE0     		b	.L17
+ 460              	.L23:
  158:UART_handler.c ****         
  159:UART_handler.c ****         case 'a':
  160:UART_handler.c ****            // Sends
  161:UART_handler.c ****             UART_PC_PutString("Sending GetMACAddress command to Bluetooth module\r\n");
- 435              		.loc 1 161 0
- 436 0134 1848     		ldr	r0, .L30+40
- 437 0136 FFF7FEFF 		bl	UART_PC_PutString
- 438              	.LVL30:
+ 461              		.loc 1 161 0
+ 462 0134 1848     		ldr	r0, .L32+40
+ 463 0136 FFF7FEFF 		bl	UART_PC_PutString
+ 464              	.LVL33:
  162:UART_handler.c ****             UART_BT_PutString(command_address);
- 439              		.loc 1 162 0
- 440 013a 07A8     		add	r0, sp, #28
- 441 013c FFF7FEFF 		bl	UART_BT_PutString
- 442              	.LVL31:
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 12
+
+
+ 465              		.loc 1 162 0
+ 466 013a 07A8     		add	r0, sp, #28
+ 467 013c FFF7FEFF 		bl	UART_BT_PutString
+ 468              	.LVL34:
  163:UART_handler.c ****             break;
- 443              		.loc 1 163 0
- 444 0140 13E0     		b	.L15
- 445              	.L22:
+ 469              		.loc 1 163 0
+ 470 0140 13E0     		b	.L17
+ 471              	.L24:
  164:UART_handler.c ****          
  165:UART_handler.c ****         case 'b':
  166:UART_handler.c ****            // Sends
  167:UART_handler.c ****             UART_PC_PutString("Sending GetBAUDRate command to Bluetooth module\r\n");
- 446              		.loc 1 167 0
- 447 0142 1648     		ldr	r0, .L30+44
- 448 0144 FFF7FEFF 		bl	UART_PC_PutString
- 449              	.LVL32:
+ 472              		.loc 1 167 0
+ 473 0142 1648     		ldr	r0, .L32+44
+ 474 0144 FFF7FEFF 		bl	UART_PC_PutString
+ 475              	.LVL35:
  168:UART_handler.c ****             UART_BT_PutString(command_baud);
- 450              		.loc 1 168 0
- 451 0148 04A8     		add	r0, sp, #16
- 452 014a FFF7FEFF 		bl	UART_BT_PutString
- 453              	.LVL33:
+ 476              		.loc 1 168 0
+ 477 0148 04A8     		add	r0, sp, #16
+ 478 014a FFF7FEFF 		bl	UART_BT_PutString
+ 479              	.LVL36:
  169:UART_handler.c ****             break;
- 454              		.loc 1 169 0
- 455 014e 0CE0     		b	.L15
- 456              	.L23:
+ 480              		.loc 1 169 0
+ 481 014e 0CE0     		b	.L17
+ 482              	.L25:
  170:UART_handler.c ****             
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 12
-
-
  171:UART_handler.c ****         case 's':
  172:UART_handler.c ****             UART_PC_PutString("Sending GetStatus command to Bluetooth module\r\n");
- 457              		.loc 1 172 0
- 458 0150 1348     		ldr	r0, .L30+48
- 459 0152 FFF7FEFF 		bl	UART_PC_PutString
- 460              	.LVL34:
+ 483              		.loc 1 172 0
+ 484 0150 1348     		ldr	r0, .L32+48
+ 485 0152 FFF7FEFF 		bl	UART_PC_PutString
+ 486              	.LVL37:
  173:UART_handler.c ****             UART_BT_PutString(command_status);
- 461              		.loc 1 173 0
- 462 0156 01A8     		add	r0, sp, #4
- 463 0158 FFF7FEFF 		bl	UART_BT_PutString
- 464              	.LVL35:
+ 487              		.loc 1 173 0
+ 488 0156 01A8     		add	r0, sp, #4
+ 489 0158 FFF7FEFF 		bl	UART_BT_PutString
+ 490              	.LVL38:
  174:UART_handler.c ****             break;
- 465              		.loc 1 174 0
- 466 015c 05E0     		b	.L15
- 467              	.L24:
+ 491              		.loc 1 174 0
+ 492 015c 05E0     		b	.L17
+ 493              	.L26:
  175:UART_handler.c ****         
  176:UART_handler.c ****         case 't':
  177:UART_handler.c ****             // Test
  178:UART_handler.c ****             UART_PC_PutString("Testing for response from BT module\r\n");
- 468              		.loc 1 178 0
- 469 015e 1148     		ldr	r0, .L30+52
- 470 0160 FFF7FEFF 		bl	UART_PC_PutString
- 471              	.LVL36:
+ 494              		.loc 1 178 0
+ 495 015e 1148     		ldr	r0, .L32+52
+ 496 0160 FFF7FEFF 		bl	UART_PC_PutString
+ 497              	.LVL39:
  179:UART_handler.c ****             UART_BT_PutString("AT+VER\r\n");
- 472              		.loc 1 179 0
- 473 0164 1048     		ldr	r0, .L30+56
- 474 0166 FFF7FEFF 		bl	UART_BT_PutString
- 475              	.LVL37:
- 476              	.L15:
+ 498              		.loc 1 179 0
+ 499 0164 1048     		ldr	r0, .L32+56
+ 500 0166 FFF7FEFF 		bl	UART_BT_PutString
+ 501              	.LVL40:
+ 502              	.L17:
  180:UART_handler.c ****             break;
  181:UART_handler.c ****             
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 13
+
+
  182:UART_handler.c ****         default:
  183:UART_handler.c ****             // Do nothing for unrecognized commands.
  184:UART_handler.c ****             break;
  185:UART_handler.c ****     }
  186:UART_handler.c **** }
- 477              		.loc 1 186 0
- 478 016a 0AB0     		add	sp, sp, #40
- 479              		.cfi_def_cfa_offset 8
- 480              		@ sp needed
- 481 016c 10BD     		pop	{r4, pc}
- 482              	.L31:
- 483 016e 00BF     		.align	2
- 484              	.L30:
- 485 0170 BC010000 		.word	.LC3
- 486 0174 C8010000 		.word	.LC4
- 487 0178 D4010000 		.word	.LC5
- 488 017c 00000000 		.word	.LANCHOR0
- 489 0180 50000000 		.word	.LC6
- 490 0184 64000000 		.word	.LC7
- 491 0188 80000000 		.word	.LC8
- 492 018c A0000000 		.word	.LC9
- 493 0190 B4000000 		.word	.LC10
- 494 0194 D0000000 		.word	.LC11
- 495 0198 F0000000 		.word	.LC12
- 496 019c 24010000 		.word	.LC13
- 497 01a0 58010000 		.word	.LC14
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 13
-
-
- 498 01a4 88010000 		.word	.LC15
- 499 01a8 B0010000 		.word	.LC16
- 500              		.cfi_endproc
- 501              	.LFE67:
- 502              		.size	handleByteReceived, .-handleByteReceived
- 503              		.section	.text.ISR_UART_rx_handler_PC,"ax",%progbits
- 504              		.align	2
- 505              		.global	ISR_UART_rx_handler_PC
- 506              		.thumb
- 507              		.thumb_func
- 508              		.type	ISR_UART_rx_handler_PC, %function
- 509              	ISR_UART_rx_handler_PC:
- 510              	.LFB66:
+ 503              		.loc 1 186 0
+ 504 016a 0AB0     		add	sp, sp, #40
+ 505              		.cfi_def_cfa_offset 8
+ 506              		@ sp needed
+ 507 016c 10BD     		pop	{r4, pc}
+ 508              	.L33:
+ 509 016e 00BF     		.align	2
+ 510              	.L32:
+ 511 0170 F4010000 		.word	.LC5
+ 512 0174 00020000 		.word	.LC6
+ 513 0178 0C020000 		.word	.LC7
+ 514 017c 00000000 		.word	.LANCHOR0
+ 515 0180 88000000 		.word	.LC8
+ 516 0184 9C000000 		.word	.LC9
+ 517 0188 B8000000 		.word	.LC10
+ 518 018c D8000000 		.word	.LC11
+ 519 0190 EC000000 		.word	.LC12
+ 520 0194 08010000 		.word	.LC13
+ 521 0198 28010000 		.word	.LC14
+ 522 019c 5C010000 		.word	.LC15
+ 523 01a0 90010000 		.word	.LC16
+ 524 01a4 C0010000 		.word	.LC17
+ 525 01a8 E8010000 		.word	.LC18
+ 526              		.cfi_endproc
+ 527              	.LFE67:
+ 528              		.size	handleByteReceived, .-handleByteReceived
+ 529              		.section	.text.ISR_UART_rx_handler_PC,"ax",%progbits
+ 530              		.align	2
+ 531              		.global	ISR_UART_rx_handler_PC
+ 532              		.thumb
+ 533              		.thumb_func
+ 534              		.type	ISR_UART_rx_handler_PC, %function
+ 535              	ISR_UART_rx_handler_PC:
+ 536              	.LFB66:
   83:UART_handler.c ****     uint8_t bytesToRead = UART_PC_GetRxBufferSize();
- 511              		.loc 1 83 0
- 512              		.cfi_startproc
- 513              		@ args = 0, pretend = 0, frame = 0
- 514              		@ frame_needed = 0, uses_anonymous_args = 0
- 515 0000 38B5     		push	{r3, r4, r5, lr}
- 516              		.cfi_def_cfa_offset 16
- 517              		.cfi_offset 3, -16
- 518              		.cfi_offset 4, -12
- 519              		.cfi_offset 5, -8
- 520              		.cfi_offset 14, -4
+ 537              		.loc 1 83 0
+ 538              		.cfi_startproc
+ 539              		@ args = 0, pretend = 0, frame = 0
+ 540              		@ frame_needed = 0, uses_anonymous_args = 0
+ 541 0000 38B5     		push	{r3, r4, r5, lr}
+ 542              		.cfi_def_cfa_offset 16
+ 543              		.cfi_offset 3, -16
+ 544              		.cfi_offset 4, -12
+ 545              		.cfi_offset 5, -8
+ 546              		.cfi_offset 14, -4
   84:UART_handler.c ****     while (bytesToRead > 0)
- 521              		.loc 1 84 0
- 522 0002 FFF7FEFF 		bl	UART_PC_GetRxBufferSize
- 523              	.LVL38:
- 524 0006 0446     		mov	r4, r0
- 525              	.LVL39:
+ 547              		.loc 1 84 0
+ 548 0002 FFF7FEFF 		bl	UART_PC_GetRxBufferSize
+ 549              	.LVL41:
+ 550 0006 0446     		mov	r4, r0
+ 551              	.LVL42:
   85:UART_handler.c ****     {
- 526              		.loc 1 85 0
- 527 0008 09E0     		b	.L33
- 528              	.L34:
- 529              	.LBB3:
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 14
+
+
+ 552              		.loc 1 85 0
+ 553 0008 09E0     		b	.L35
+ 554              	.L36:
+ 555              	.LBB3:
   87:UART_handler.c ****         UART_PC_WriteTxData(byteReceived); // Echo back the received byte
- 530              		.loc 1 87 0
- 531 000a FFF7FEFF 		bl	UART_PC_ReadRxData
- 532              	.LVL40:
- 533 000e 0546     		mov	r5, r0
- 534              	.LVL41:
+ 556              		.loc 1 87 0
+ 557 000a FFF7FEFF 		bl	UART_PC_ReadRxData
+ 558              	.LVL43:
+ 559 000e 0546     		mov	r5, r0
+ 560              	.LVL44:
   88:UART_handler.c **** 
- 535              		.loc 1 88 0
- 536 0010 FFF7FEFF 		bl	UART_PC_WriteTxData
- 537              	.LVL42:
+ 561              		.loc 1 88 0
+ 562 0010 FFF7FEFF 		bl	UART_PC_WriteTxData
+ 563              	.LVL45:
   90:UART_handler.c ****         
- 538              		.loc 1 90 0
- 539 0014 2846     		mov	r0, r5
- 540 0016 FFF7FEFF 		bl	handleByteReceived
- 541              	.LVL43:
+ 564              		.loc 1 90 0
+ 565 0014 2846     		mov	r0, r5
+ 566 0016 FFF7FEFF 		bl	handleByteReceived
+ 567              	.LVL46:
   92:UART_handler.c ****     }
- 542              		.loc 1 92 0
- 543 001a 013C     		subs	r4, r4, #1
- 544              	.LVL44:
- 545 001c E4B2     		uxtb	r4, r4
- 546              	.LVL45:
- 547              	.L33:
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 14
-
-
- 548              	.LBE3:
+ 568              		.loc 1 92 0
+ 569 001a 013C     		subs	r4, r4, #1
+ 570              	.LVL47:
+ 571 001c E4B2     		uxtb	r4, r4
+ 572              	.LVL48:
+ 573              	.L35:
+ 574              	.LBE3:
   85:UART_handler.c ****     {
- 549              		.loc 1 85 0
- 550 001e 002C     		cmp	r4, #0
- 551 0020 F3D1     		bne	.L34
+ 575              		.loc 1 85 0
+ 576 001e 002C     		cmp	r4, #0
+ 577 0020 F3D1     		bne	.L36
   94:UART_handler.c **** 
- 552              		.loc 1 94 0
- 553 0022 38BD     		pop	{r3, r4, r5, pc}
- 554              		.cfi_endproc
- 555              	.LFE66:
- 556              		.size	ISR_UART_rx_handler_PC, .-ISR_UART_rx_handler_PC
- 557              		.section	.rodata.str1.4,"aMS",%progbits,1
- 558              		.align	2
- 559              	.LC0:
- 560 0000 0D0A5B42 		.ascii	"\015\012[BT Response] %s\015\012\000"
- 560      54205265 
- 560      73706F6E 
- 560      73655D20 
- 560      25730D0A 
- 561 0015 000000   		.space	3
- 562              	.LC1:
- 563 0018 25632C25 		.ascii	"%c,%d,%d,%d\000"
- 563      642C2564 
- 563      2C256400 
- 564              	.LC2:
- 565 0024 0D0A5061 		.ascii	"\015\012Parse error. Content of BT buffer: %s\015\012"
- 565      72736520 
- 565      6572726F 
- 565      722E2043 
- 565      6F6E7465 
- 566 004d 00       		.ascii	"\000"
- 567 004e 0000     		.space	2
- 568              	.LC6:
- 569 0050 496E6372 		.ascii	"Increase speed\015\012\000"
- 569      65617365 
- 569      20737065 
- 569      65640D0A 
- 569      00
- 570 0061 000000   		.space	3
- 571              	.LC7:
- 572 0064 4D617820 		.ascii	"Max forward speed reached\015\012\000"
- 572      666F7277 
- 572      61726420 
- 572      73706565 
- 572      64207265 
- 573              	.LC8:
- 574 0080 416C7265 		.ascii	"Already at max forward speed\015\012\000"
- 574      61647920 
- 574      6174206D 
- 574      61782066 
- 574      6F727761 
- 575 009f 00       		.space	1
- 576              	.LC9:
- 577 00a0 44656372 		.ascii	"Decrease speed\015\012\000"
- 577      65617365 
- 577      20737065 
- 577      65640D0A 
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 15
+ 578              		.loc 1 94 0
+ 579 0022 38BD     		pop	{r3, r4, r5, pc}
+ 580              		.cfi_endproc
+ 581              	.LFE66:
+ 582              		.size	ISR_UART_rx_handler_PC, .-ISR_UART_rx_handler_PC
+ 583              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 584              		.align	2
+ 585              	.LC0:
+ 586 0000 0D0A5B42 		.ascii	"\015\012[BT Response] %s\015\012\000"
+ 586      54205265 
+ 586      73706F6E 
+ 586      73655D20 
+ 586      25730D0A 
+ 587 0015 000000   		.space	3
+ 588              	.LC1:
+ 589 0018 25632C25 		.ascii	"%c,%d,%d,%d\000"
+ 589      642C2564 
+ 589      2C256400 
+ 590              	.LC2:
+ 591 0024 41542B00 		.ascii	"AT+\000"
+ 592              	.LC3:
+ 593 0028 0D0A5B42 		.ascii	"\015\012[BT Info] AT Command or response received: "
+ 593      5420496E 
+ 593      666F5D20 
+ 593      41542043 
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 15
 
 
- 577      00
- 578 00b1 000000   		.space	3
- 579              	.LC10:
- 580 00b4 4D617820 		.ascii	"Max reverse speed reached\015\012\000"
- 580      72657665 
- 580      72736520 
- 580      73706565 
- 580      64207265 
- 581              	.LC11:
- 582 00d0 416C7265 		.ascii	"Already at max reverse speed\015\012\000"
- 582      61647920 
- 582      6174206D 
- 582      61782072 
- 582      65766572 
- 583 00ef 00       		.space	1
- 584              	.LC12:
- 585 00f0 53656E64 		.ascii	"Sending GetMACAddress command to Bluetooth module\015"
- 585      696E6720 
- 585      4765744D 
- 585      41434164 
- 585      64726573 
- 586 0122 0A00     		.ascii	"\012\000"
- 587              	.LC13:
- 588 0124 53656E64 		.ascii	"Sending GetBAUDRate command to Bluetooth module\015"
- 588      696E6720 
- 588      47657442 
- 588      41554452 
- 588      61746520 
- 589 0154 0A00     		.ascii	"\012\000"
- 590 0156 0000     		.space	2
- 591              	.LC14:
- 592 0158 53656E64 		.ascii	"Sending GetStatus command to Bluetooth module\015\012"
- 592      696E6720 
- 592      47657453 
- 592      74617475 
- 592      7320636F 
- 593 0187 00       		.ascii	"\000"
- 594              	.LC15:
- 595 0188 54657374 		.ascii	"Testing for response from BT module\015\012\000"
- 595      696E6720 
- 595      666F7220 
- 595      72657370 
- 595      6F6E7365 
- 596 01ae 0000     		.space	2
- 597              	.LC16:
- 598 01b0 41542B56 		.ascii	"AT+VER\015\012\000"
- 598      45520D0A 
- 598      00
- 599 01b9 000000   		.space	3
- 600              	.LC3:
- 601 01bc 41542B4D 		.ascii	"AT+MAC\015\012\000"
- 601      41430D0A 
+ 593      6F6D6D61 
+ 594 0055 25730D0A 		.ascii	"%s\015\012\000"
+ 594      00
+ 595 005a 0000     		.space	2
+ 596              	.LC4:
+ 597 005c 0D0A5061 		.ascii	"\015\012Parse error. Content of BT buffer: %s\015\012"
+ 597      72736520 
+ 597      6572726F 
+ 597      722E2043 
+ 597      6F6E7465 
+ 598 0085 00       		.ascii	"\000"
+ 599 0086 0000     		.space	2
+ 600              	.LC8:
+ 601 0088 496E6372 		.ascii	"Increase speed\015\012\000"
+ 601      65617365 
+ 601      20737065 
+ 601      65640D0A 
  601      00
- 602 01c5 000000   		.space	3
- 603              	.LC4:
- 604 01c8 41542B42 		.ascii	"AT+BAUD\015\012\000"
- 604      4155440D 
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 16
+ 602 0099 000000   		.space	3
+ 603              	.LC9:
+ 604 009c 4D617820 		.ascii	"Max forward speed reached\015\012\000"
+ 604      666F7277 
+ 604      61726420 
+ 604      73706565 
+ 604      64207265 
+ 605              	.LC10:
+ 606 00b8 416C7265 		.ascii	"Already at max forward speed\015\012\000"
+ 606      61647920 
+ 606      6174206D 
+ 606      61782066 
+ 606      6F727761 
+ 607 00d7 00       		.space	1
+ 608              	.LC11:
+ 609 00d8 44656372 		.ascii	"Decrease speed\015\012\000"
+ 609      65617365 
+ 609      20737065 
+ 609      65640D0A 
+ 609      00
+ 610 00e9 000000   		.space	3
+ 611              	.LC12:
+ 612 00ec 4D617820 		.ascii	"Max reverse speed reached\015\012\000"
+ 612      72657665 
+ 612      72736520 
+ 612      73706565 
+ 612      64207265 
+ 613              	.LC13:
+ 614 0108 416C7265 		.ascii	"Already at max reverse speed\015\012\000"
+ 614      61647920 
+ 614      6174206D 
+ 614      61782072 
+ 614      65766572 
+ 615 0127 00       		.space	1
+ 616              	.LC14:
+ 617 0128 53656E64 		.ascii	"Sending GetMACAddress command to Bluetooth module\015"
+ 617      696E6720 
+ 617      4765744D 
+ 617      41434164 
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 16
 
 
- 604      0A00
- 605 01d2 0000     		.space	2
- 606              	.LC5:
- 607 01d4 41542B53 		.ascii	"AT+STAT\015\012\000"
- 607      5441540D 
- 607      0A00
- 608              		.bss
- 609              		.align	2
- 610              		.set	.LANCHOR0,. + 0
- 611              		.type	shootRef, %object
- 612              		.size	shootRef, 4
- 613              	shootRef:
- 614 0000 00000000 		.space	4
- 615              		.type	index.6775, %object
- 616              		.size	index.6775, 1
- 617              	index.6775:
- 618 0004 00       		.space	1
- 619 0005 000000   		.space	3
- 620              		.type	btBuffer.6774, %object
- 621              		.size	btBuffer.6774, 50
- 622              	btBuffer.6774:
- 623 0008 00000000 		.space	50
- 623      00000000 
- 623      00000000 
- 623      00000000 
- 623      00000000 
- 624              		.type	currentSpeed.6798, %object
- 625              		.size	currentSpeed.6798, 1
- 626              	currentSpeed.6798:
- 627 003a 00       		.space	1
- 628              		.text
- 629              	.Letext0:
- 630              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 631              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 632              		.file 4 "shootVarHandler.h"
- 633              		.file 5 "Generated_Source\\PSoC5/UART_BT.h"
- 634              		.file 6 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 635              		.file 7 "Generated_Source\\PSoC5/UART_PC.h"
- 636              		.file 8 "motor_control.h"
- 637              		.file 9 "Generated_Source\\PSoC5/core_cm3.h"
- 638              		.section	.debug_info,"",%progbits
- 639              	.Ldebug_info0:
- 640 0000 11060000 		.4byte	0x611
- 641 0004 0400     		.2byte	0x4
- 642 0006 00000000 		.4byte	.Ldebug_abbrev0
- 643 000a 04       		.byte	0x4
- 644 000b 01       		.uleb128 0x1
- 645 000c 49010000 		.4byte	.LASF57
- 646 0010 0C       		.byte	0xc
- 647 0011 D7010000 		.4byte	.LASF58
- 648 0015 AF000000 		.4byte	.LASF59
- 649 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 650 001d 00000000 		.4byte	0
- 651 0021 00000000 		.4byte	.Ldebug_line0
- 652 0025 02       		.uleb128 0x2
- 653 0026 1C000000 		.4byte	.LASF0
- 654 002a 02       		.byte	0x2
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 17
+ 617      64726573 
+ 618 015a 0A00     		.ascii	"\012\000"
+ 619              	.LC15:
+ 620 015c 53656E64 		.ascii	"Sending GetBAUDRate command to Bluetooth module\015"
+ 620      696E6720 
+ 620      47657442 
+ 620      41554452 
+ 620      61746520 
+ 621 018c 0A00     		.ascii	"\012\000"
+ 622 018e 0000     		.space	2
+ 623              	.LC16:
+ 624 0190 53656E64 		.ascii	"Sending GetStatus command to Bluetooth module\015\012"
+ 624      696E6720 
+ 624      47657453 
+ 624      74617475 
+ 624      7320636F 
+ 625 01bf 00       		.ascii	"\000"
+ 626              	.LC17:
+ 627 01c0 54657374 		.ascii	"Testing for response from BT module\015\012\000"
+ 627      696E6720 
+ 627      666F7220 
+ 627      72657370 
+ 627      6F6E7365 
+ 628 01e6 0000     		.space	2
+ 629              	.LC18:
+ 630 01e8 41542B56 		.ascii	"AT+VER\015\012\000"
+ 630      45520D0A 
+ 630      00
+ 631 01f1 000000   		.space	3
+ 632              	.LC5:
+ 633 01f4 41542B4D 		.ascii	"AT+MAC\015\012\000"
+ 633      41430D0A 
+ 633      00
+ 634 01fd 000000   		.space	3
+ 635              	.LC6:
+ 636 0200 41542B42 		.ascii	"AT+BAUD\015\012\000"
+ 636      4155440D 
+ 636      0A00
+ 637 020a 0000     		.space	2
+ 638              	.LC7:
+ 639 020c 41542B53 		.ascii	"AT+STAT\015\012\000"
+ 639      5441540D 
+ 639      0A00
+ 640              		.bss
+ 641              		.align	2
+ 642              		.set	.LANCHOR0,. + 0
+ 643              		.type	shootRef, %object
+ 644              		.size	shootRef, 4
+ 645              	shootRef:
+ 646 0000 00000000 		.space	4
+ 647              		.type	index.6801, %object
+ 648              		.size	index.6801, 1
+ 649              	index.6801:
+ 650 0004 00       		.space	1
+ 651 0005 000000   		.space	3
+ 652              		.type	btBuffer.6800, %object
+ 653              		.size	btBuffer.6800, 50
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 17
 
 
- 655 002b 1B       		.byte	0x1b
- 656 002c 30000000 		.4byte	0x30
- 657 0030 03       		.uleb128 0x3
- 658 0031 01       		.byte	0x1
- 659 0032 06       		.byte	0x6
- 660 0033 77030000 		.4byte	.LASF2
- 661 0037 02       		.uleb128 0x2
- 662 0038 25000000 		.4byte	.LASF1
- 663 003c 02       		.byte	0x2
- 664 003d 1D       		.byte	0x1d
- 665 003e 42000000 		.4byte	0x42
- 666 0042 03       		.uleb128 0x3
- 667 0043 01       		.byte	0x1
- 668 0044 08       		.byte	0x8
- 669 0045 3B010000 		.4byte	.LASF3
- 670 0049 03       		.uleb128 0x3
- 671 004a 02       		.byte	0x2
- 672 004b 05       		.byte	0x5
- 673 004c 31030000 		.4byte	.LASF4
- 674 0050 03       		.uleb128 0x3
- 675 0051 02       		.byte	0x2
- 676 0052 07       		.byte	0x7
- 677 0053 77000000 		.4byte	.LASF5
- 678 0057 02       		.uleb128 0x2
- 679 0058 5A000000 		.4byte	.LASF6
- 680 005c 02       		.byte	0x2
- 681 005d 3F       		.byte	0x3f
- 682 005e 62000000 		.4byte	0x62
- 683 0062 03       		.uleb128 0x3
- 684 0063 04       		.byte	0x4
- 685 0064 05       		.byte	0x5
- 686 0065 64030000 		.4byte	.LASF7
- 687 0069 03       		.uleb128 0x3
- 688 006a 04       		.byte	0x4
- 689 006b 07       		.byte	0x7
- 690 006c E6010000 		.4byte	.LASF8
- 691 0070 03       		.uleb128 0x3
- 692 0071 08       		.byte	0x8
- 693 0072 05       		.byte	0x5
- 694 0073 F1020000 		.4byte	.LASF9
- 695 0077 03       		.uleb128 0x3
- 696 0078 08       		.byte	0x8
- 697 0079 07       		.byte	0x7
- 698 007a 9C020000 		.4byte	.LASF10
- 699 007e 04       		.uleb128 0x4
- 700 007f 04       		.byte	0x4
- 701 0080 05       		.byte	0x5
- 702 0081 696E7400 		.ascii	"int\000"
- 703 0085 03       		.uleb128 0x3
- 704 0086 04       		.byte	0x4
- 705 0087 07       		.byte	0x7
- 706 0088 5E020000 		.4byte	.LASF11
- 707 008c 02       		.uleb128 0x2
- 708 008d A8000000 		.4byte	.LASF12
- 709 0091 03       		.byte	0x3
- 710 0092 14       		.byte	0x14
- 711 0093 25000000 		.4byte	0x25
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 18
+ 654              	btBuffer.6800:
+ 655 0008 00000000 		.space	50
+ 655      00000000 
+ 655      00000000 
+ 655      00000000 
+ 655      00000000 
+ 656              		.type	currentSpeed.6824, %object
+ 657              		.size	currentSpeed.6824, 1
+ 658              	currentSpeed.6824:
+ 659 003a 00       		.space	1
+ 660              		.text
+ 661              	.Letext0:
+ 662              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 663              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 664              		.file 4 "shootVarHandler.h"
+ 665              		.file 5 "Generated_Source\\PSoC5/UART_BT.h"
+ 666              		.file 6 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 667              		.file 7 "Generated_Source\\PSoC5/UART_PC.h"
+ 668              		.file 8 "motor_control.h"
+ 669              		.file 9 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 670              		.file 10 "Generated_Source\\PSoC5/core_cm3.h"
+ 671              		.section	.debug_info,"",%progbits
+ 672              	.Ldebug_info0:
+ 673 0000 AE060000 		.4byte	0x6ae
+ 674 0004 0400     		.2byte	0x4
+ 675 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 676 000a 04       		.byte	0x4
+ 677 000b 01       		.uleb128 0x1
+ 678 000c 29030000 		.4byte	.LASF58
+ 679 0010 0C       		.byte	0xc
+ 680 0011 CF010000 		.4byte	.LASF59
+ 681 0015 8F000000 		.4byte	.LASF60
+ 682 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 683 001d 00000000 		.4byte	0
+ 684 0021 00000000 		.4byte	.Ldebug_line0
+ 685 0025 02       		.uleb128 0x2
+ 686 0026 30020000 		.4byte	.LASF0
+ 687 002a 02       		.byte	0x2
+ 688 002b 1B       		.byte	0x1b
+ 689 002c 30000000 		.4byte	0x30
+ 690 0030 03       		.uleb128 0x3
+ 691 0031 01       		.byte	0x1
+ 692 0032 06       		.byte	0x6
+ 693 0033 CF000000 		.4byte	.LASF2
+ 694 0037 02       		.uleb128 0x2
+ 695 0038 3E010000 		.4byte	.LASF1
+ 696 003c 02       		.byte	0x2
+ 697 003d 1D       		.byte	0x1d
+ 698 003e 42000000 		.4byte	0x42
+ 699 0042 03       		.uleb128 0x3
+ 700 0043 01       		.byte	0x1
+ 701 0044 08       		.byte	0x8
+ 702 0045 AE010000 		.4byte	.LASF3
+ 703 0049 03       		.uleb128 0x3
+ 704 004a 02       		.byte	0x2
+ 705 004b 05       		.byte	0x5
+ 706 004c 68000000 		.4byte	.LASF4
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 18
 
 
- 712 0097 02       		.uleb128 0x2
- 713 0098 B3020000 		.4byte	.LASF13
- 714 009c 03       		.byte	0x3
- 715 009d 18       		.byte	0x18
- 716 009e 37000000 		.4byte	0x37
- 717 00a2 02       		.uleb128 0x2
- 718 00a3 29030000 		.4byte	.LASF14
- 719 00a7 03       		.byte	0x3
- 720 00a8 2C       		.byte	0x2c
- 721 00a9 57000000 		.4byte	0x57
- 722 00ad 03       		.uleb128 0x3
- 723 00ae 04       		.byte	0x4
- 724 00af 04       		.byte	0x4
- 725 00b0 01010000 		.4byte	.LASF15
- 726 00b4 03       		.uleb128 0x3
- 727 00b5 08       		.byte	0x8
- 728 00b6 04       		.byte	0x4
- 729 00b7 1D020000 		.4byte	.LASF16
- 730 00bb 03       		.uleb128 0x3
- 731 00bc 01       		.byte	0x1
- 732 00bd 08       		.byte	0x8
- 733 00be 12030000 		.4byte	.LASF17
- 734 00c2 03       		.uleb128 0x3
- 735 00c3 08       		.byte	0x8
- 736 00c4 04       		.byte	0x4
- 737 00c5 24020000 		.4byte	.LASF18
- 738 00c9 03       		.uleb128 0x3
- 739 00ca 04       		.byte	0x4
- 740 00cb 07       		.byte	0x7
- 741 00cc E8020000 		.4byte	.LASF19
- 742 00d0 05       		.uleb128 0x5
- 743 00d1 0C       		.byte	0xc
- 744 00d2 04       		.byte	0x4
- 745 00d3 05       		.byte	0x5
- 746 00d4 FD000000 		.4byte	0xfd
- 747 00d8 06       		.uleb128 0x6
- 748 00d9 83030000 		.4byte	.LASF20
- 749 00dd 04       		.byte	0x4
- 750 00de 06       		.byte	0x6
- 751 00df 7E000000 		.4byte	0x7e
- 752 00e3 00       		.byte	0
- 753 00e4 06       		.uleb128 0x6
- 754 00e5 8F030000 		.4byte	.LASF21
- 755 00e9 04       		.byte	0x4
- 756 00ea 07       		.byte	0x7
- 757 00eb 7E000000 		.4byte	0x7e
- 758 00ef 04       		.byte	0x4
- 759 00f0 06       		.uleb128 0x6
- 760 00f1 64000000 		.4byte	.LASF22
- 761 00f5 04       		.byte	0x4
- 762 00f6 08       		.byte	0x8
- 763 00f7 7E000000 		.4byte	0x7e
- 764 00fb 08       		.byte	0x8
- 765 00fc 00       		.byte	0
- 766 00fd 02       		.uleb128 0x2
- 767 00fe 8C020000 		.4byte	.LASF23
- 768 0102 04       		.byte	0x4
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 19
+ 707 0050 03       		.uleb128 0x3
+ 708 0051 02       		.byte	0x2
+ 709 0052 07       		.byte	0x7
+ 710 0053 1D020000 		.4byte	.LASF5
+ 711 0057 02       		.uleb128 0x2
+ 712 0058 F5020000 		.4byte	.LASF6
+ 713 005c 02       		.byte	0x2
+ 714 005d 3F       		.byte	0x3f
+ 715 005e 62000000 		.4byte	0x62
+ 716 0062 03       		.uleb128 0x3
+ 717 0063 04       		.byte	0x4
+ 718 0064 05       		.byte	0x5
+ 719 0065 1F010000 		.4byte	.LASF7
+ 720 0069 03       		.uleb128 0x3
+ 721 006a 04       		.byte	0x4
+ 722 006b 07       		.byte	0x7
+ 723 006c 02020000 		.4byte	.LASF8
+ 724 0070 03       		.uleb128 0x3
+ 725 0071 08       		.byte	0x8
+ 726 0072 05       		.byte	0x5
+ 727 0073 EE000000 		.4byte	.LASF9
+ 728 0077 03       		.uleb128 0x3
+ 729 0078 08       		.byte	0x8
+ 730 0079 07       		.byte	0x7
+ 731 007a DE010000 		.4byte	.LASF10
+ 732 007e 04       		.uleb128 0x4
+ 733 007f 04       		.byte	0x4
+ 734 0080 05       		.byte	0x5
+ 735 0081 696E7400 		.ascii	"int\000"
+ 736 0085 03       		.uleb128 0x3
+ 737 0086 04       		.byte	0x4
+ 738 0087 07       		.byte	0x7
+ 739 0088 F5010000 		.4byte	.LASF11
+ 740 008c 02       		.uleb128 0x2
+ 741 008d 30000000 		.4byte	.LASF12
+ 742 0091 03       		.byte	0x3
+ 743 0092 14       		.byte	0x14
+ 744 0093 25000000 		.4byte	0x25
+ 745 0097 02       		.uleb128 0x2
+ 746 0098 FF020000 		.4byte	.LASF13
+ 747 009c 03       		.byte	0x3
+ 748 009d 18       		.byte	0x18
+ 749 009e 37000000 		.4byte	0x37
+ 750 00a2 02       		.uleb128 0x2
+ 751 00a3 56020000 		.4byte	.LASF14
+ 752 00a7 03       		.byte	0x3
+ 753 00a8 2C       		.byte	0x2c
+ 754 00a9 57000000 		.4byte	0x57
+ 755 00ad 03       		.uleb128 0x3
+ 756 00ae 04       		.byte	0x4
+ 757 00af 04       		.byte	0x4
+ 758 00b0 E8000000 		.4byte	.LASF15
+ 759 00b4 03       		.uleb128 0x3
+ 760 00b5 08       		.byte	0x8
+ 761 00b6 04       		.byte	0x4
+ 762 00b7 C3020000 		.4byte	.LASF16
+ 763 00bb 03       		.uleb128 0x3
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 19
 
 
- 769 0103 09       		.byte	0x9
- 770 0104 D0000000 		.4byte	0xd0
- 771 0108 07       		.uleb128 0x7
- 772 0109 7B020000 		.4byte	.LASF24
- 773 010d 01       		.byte	0x1
- 774 010e 09       		.byte	0x9
- 775 010f 00000000 		.4byte	.LFB64
- 776 0113 0C000000 		.4byte	.LFE64-.LFB64
- 777 0117 01       		.uleb128 0x1
- 778 0118 9C       		.byte	0x9c
- 779 0119 2B010000 		.4byte	0x12b
- 780 011d 08       		.uleb128 0x8
- 781 011e E0020000 		.4byte	.LASF37
- 782 0122 01       		.byte	0x1
- 783 0123 09       		.byte	0x9
- 784 0124 2B010000 		.4byte	0x12b
- 785 0128 01       		.uleb128 0x1
- 786 0129 50       		.byte	0x50
- 787 012a 00       		.byte	0
- 788 012b 09       		.uleb128 0x9
- 789 012c 04       		.byte	0x4
- 790 012d FD000000 		.4byte	0xfd
- 791 0131 07       		.uleb128 0x7
- 792 0132 4D030000 		.4byte	.LASF25
- 793 0136 01       		.byte	0x1
- 794 0137 0D       		.byte	0xd
- 795 0138 00000000 		.4byte	.LFB65
- 796 013c E4000000 		.4byte	.LFE65-.LFB65
- 797 0140 01       		.uleb128 0x1
- 798 0141 9C       		.byte	0x9c
- 799 0142 F4020000 		.4byte	0x2f4
- 800 0146 0A       		.uleb128 0xa
- 801 0147 07010000 		.4byte	.LASF26
- 802 014b 01       		.byte	0x1
- 803 014c 0F       		.byte	0xf
- 804 014d F4020000 		.4byte	0x2f4
- 805 0151 05       		.uleb128 0x5
- 806 0152 03       		.byte	0x3
- 807 0153 08000000 		.4byte	btBuffer.6774
- 808 0157 0A       		.uleb128 0xa
- 809 0158 17030000 		.4byte	.LASF27
- 810 015c 01       		.byte	0x1
- 811 015d 10       		.byte	0x10
- 812 015e 97000000 		.4byte	0x97
- 813 0162 05       		.uleb128 0x5
- 814 0163 03       		.byte	0x3
- 815 0164 04000000 		.4byte	index.6775
- 816 0168 0A       		.uleb128 0xa
- 817 0169 1D030000 		.4byte	.LASF28
- 818 016d 01       		.byte	0x1
- 819 016e 11       		.byte	0x11
- 820 016f 7E000000 		.4byte	0x7e
- 821 0173 02       		.uleb128 0x2
- 822 0174 91       		.byte	0x91
- 823 0175 74       		.sleb128 -12
- 824 0176 0A       		.uleb128 0xa
- 825 0177 23030000 		.4byte	.LASF29
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 20
+ 764 00bc 01       		.byte	0x1
+ 765 00bd 08       		.byte	0x8
+ 766 00be 51020000 		.4byte	.LASF17
+ 767 00c2 03       		.uleb128 0x3
+ 768 00c3 08       		.byte	0x8
+ 769 00c4 04       		.byte	0x4
+ 770 00c5 8A010000 		.4byte	.LASF18
+ 771 00c9 03       		.uleb128 0x3
+ 772 00ca 04       		.byte	0x4
+ 773 00cb 07       		.byte	0x7
+ 774 00cc 07030000 		.4byte	.LASF19
+ 775 00d0 05       		.uleb128 0x5
+ 776 00d1 0C       		.byte	0xc
+ 777 00d2 04       		.byte	0x4
+ 778 00d3 05       		.byte	0x5
+ 779 00d4 FD000000 		.4byte	0xfd
+ 780 00d8 06       		.uleb128 0x6
+ 781 00d9 DD020000 		.4byte	.LASF20
+ 782 00dd 04       		.byte	0x4
+ 783 00de 06       		.byte	0x6
+ 784 00df 7E000000 		.4byte	0x7e
+ 785 00e3 00       		.byte	0
+ 786 00e4 06       		.uleb128 0x6
+ 787 00e5 E9020000 		.4byte	.LASF21
+ 788 00e9 04       		.byte	0x4
+ 789 00ea 07       		.byte	0x7
+ 790 00eb 7E000000 		.4byte	0x7e
+ 791 00ef 04       		.byte	0x4
+ 792 00f0 06       		.uleb128 0x6
+ 793 00f1 0E010000 		.4byte	.LASF22
+ 794 00f5 04       		.byte	0x4
+ 795 00f6 08       		.byte	0x8
+ 796 00f7 7E000000 		.4byte	0x7e
+ 797 00fb 08       		.byte	0x8
+ 798 00fc 00       		.byte	0
+ 799 00fd 02       		.uleb128 0x2
+ 800 00fe 5E020000 		.4byte	.LASF23
+ 801 0102 04       		.byte	0x4
+ 802 0103 09       		.byte	0x9
+ 803 0104 D0000000 		.4byte	0xd0
+ 804 0108 07       		.uleb128 0x7
+ 805 0109 00000000 		.4byte	.LASF24
+ 806 010d 01       		.byte	0x1
+ 807 010e 09       		.byte	0x9
+ 808 010f 00000000 		.4byte	.LFB64
+ 809 0113 0C000000 		.4byte	.LFE64-.LFB64
+ 810 0117 01       		.uleb128 0x1
+ 811 0118 9C       		.byte	0x9c
+ 812 0119 2B010000 		.4byte	0x12b
+ 813 011d 08       		.uleb128 0x8
+ 814 011e 6E020000 		.4byte	.LASF37
+ 815 0122 01       		.byte	0x1
+ 816 0123 09       		.byte	0x9
+ 817 0124 2B010000 		.4byte	0x12b
+ 818 0128 01       		.uleb128 0x1
+ 819 0129 50       		.byte	0x50
+ 820 012a 00       		.byte	0
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 20
 
 
- 826 017b 01       		.byte	0x1
- 827 017c 11       		.byte	0x11
- 828 017d 7E000000 		.4byte	0x7e
- 829 0181 02       		.uleb128 0x2
- 830 0182 91       		.byte	0x91
- 831 0183 70       		.sleb128 -16
- 832 0184 0A       		.uleb128 0xa
- 833 0185 8A000000 		.4byte	.LASF30
- 834 0189 01       		.byte	0x1
- 835 018a 11       		.byte	0x11
- 836 018b 7E000000 		.4byte	0x7e
- 837 018f 02       		.uleb128 0x2
- 838 0190 91       		.byte	0x91
- 839 0191 6C       		.sleb128 -20
- 840 0192 0A       		.uleb128 0xa
- 841 0193 BB020000 		.4byte	.LASF31
- 842 0197 01       		.byte	0x1
- 843 0198 12       		.byte	0x12
- 844 0199 BB000000 		.4byte	0xbb
- 845 019d 02       		.uleb128 0x2
- 846 019e 91       		.byte	0x91
- 847 019f 6B       		.sleb128 -21
- 848 01a0 0A       		.uleb128 0xa
- 849 01a1 00000000 		.4byte	.LASF32
- 850 01a5 01       		.byte	0x1
- 851 01a6 13       		.byte	0x13
- 852 01a7 04030000 		.4byte	0x304
- 853 01ab 03       		.uleb128 0x3
- 854 01ac 91       		.byte	0x91
- 855 01ad D47E     		.sleb128 -172
- 856 01af 0B       		.uleb128 0xb
- 857 01b0 6D030000 		.4byte	.LASF33
- 858 01b4 01       		.byte	0x1
- 859 01b5 15       		.byte	0x15
- 860 01b6 8C000000 		.4byte	0x8c
- 861 01ba 00000000 		.4byte	.LLST0
- 862 01be 0B       		.uleb128 0xb
- 863 01bf 72030000 		.4byte	.LASF34
- 864 01c3 01       		.byte	0x1
- 865 01c4 15       		.byte	0x15
- 866 01c5 8C000000 		.4byte	0x8c
- 867 01c9 14000000 		.4byte	.LLST1
- 868 01cd 0C       		.uleb128 0xc
- 869 01ce 06000000 		.4byte	.LBB2
- 870 01d2 BE000000 		.4byte	.LBE2-.LBB2
- 871 01d6 EA020000 		.4byte	0x2ea
- 872 01da 0B       		.uleb128 0xb
- 873 01db 9B030000 		.4byte	.LASF35
- 874 01df 01       		.byte	0x1
- 875 01e0 19       		.byte	0x19
- 876 01e1 BB000000 		.4byte	0xbb
- 877 01e5 27000000 		.4byte	.LLST2
- 878 01e9 0D       		.uleb128 0xd
- 879 01ea 0A000000 		.4byte	.LVL1
- 880 01ee 90050000 		.4byte	0x590
- 881 01f2 0E       		.uleb128 0xe
- 882 01f3 46000000 		.4byte	.LVL3
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 21
+ 821 012b 09       		.uleb128 0x9
+ 822 012c 04       		.byte	0x4
+ 823 012d FD000000 		.4byte	0xfd
+ 824 0131 07       		.uleb128 0x7
+ 825 0132 7F020000 		.4byte	.LASF25
+ 826 0136 01       		.byte	0x1
+ 827 0137 0E       		.byte	0xe
+ 828 0138 00000000 		.4byte	.LFB65
+ 829 013c 14010000 		.4byte	.LFE65-.LFB65
+ 830 0140 01       		.uleb128 0x1
+ 831 0141 9C       		.byte	0x9c
+ 832 0142 7D030000 		.4byte	0x37d
+ 833 0146 0A       		.uleb128 0xa
+ 834 0147 BC010000 		.4byte	.LASF26
+ 835 014b 01       		.byte	0x1
+ 836 014c 10       		.byte	0x10
+ 837 014d 7D030000 		.4byte	0x37d
+ 838 0151 05       		.uleb128 0x5
+ 839 0152 03       		.byte	0x3
+ 840 0153 08000000 		.4byte	btBuffer.6800
+ 841 0157 0A       		.uleb128 0xa
+ 842 0158 72000000 		.4byte	.LASF27
+ 843 015c 01       		.byte	0x1
+ 844 015d 11       		.byte	0x11
+ 845 015e 97000000 		.4byte	0x97
+ 846 0162 05       		.uleb128 0x5
+ 847 0163 03       		.byte	0x3
+ 848 0164 04000000 		.4byte	index.6801
+ 849 0168 0A       		.uleb128 0xa
+ 850 0169 10030000 		.4byte	.LASF28
+ 851 016d 01       		.byte	0x1
+ 852 016e 12       		.byte	0x12
+ 853 016f 7E000000 		.4byte	0x7e
+ 854 0173 02       		.uleb128 0x2
+ 855 0174 91       		.byte	0x91
+ 856 0175 74       		.sleb128 -12
+ 857 0176 0A       		.uleb128 0xa
+ 858 0177 16030000 		.4byte	.LASF29
+ 859 017b 01       		.byte	0x1
+ 860 017c 12       		.byte	0x12
+ 861 017d 7E000000 		.4byte	0x7e
+ 862 0181 02       		.uleb128 0x2
+ 863 0182 91       		.byte	0x91
+ 864 0183 70       		.sleb128 -16
+ 865 0184 0A       		.uleb128 0xa
+ 866 0185 76020000 		.4byte	.LASF30
+ 867 0189 01       		.byte	0x1
+ 868 018a 12       		.byte	0x12
+ 869 018b 7E000000 		.4byte	0x7e
+ 870 018f 02       		.uleb128 0x2
+ 871 0190 91       		.byte	0x91
+ 872 0191 6C       		.sleb128 -20
+ 873 0192 0A       		.uleb128 0xa
+ 874 0193 14020000 		.4byte	.LASF31
+ 875 0197 01       		.byte	0x1
+ 876 0198 13       		.byte	0x13
+ 877 0199 BB000000 		.4byte	0xbb
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 21
 
 
- 883 01f7 9B050000 		.4byte	0x59b
- 884 01fb 1C020000 		.4byte	0x21c
- 885 01ff 0F       		.uleb128 0xf
- 886 0200 01       		.uleb128 0x1
- 887 0201 50       		.byte	0x50
- 888 0202 03       		.uleb128 0x3
- 889 0203 91       		.byte	0x91
- 890 0204 D47E     		.sleb128 -172
- 891 0206 0F       		.uleb128 0xf
- 892 0207 01       		.uleb128 0x1
- 893 0208 51       		.byte	0x51
- 894 0209 02       		.uleb128 0x2
- 895 020a 08       		.byte	0x8
- 896 020b 96       		.byte	0x96
- 897 020c 0F       		.uleb128 0xf
- 898 020d 01       		.uleb128 0x1
- 899 020e 52       		.byte	0x52
- 900 020f 05       		.uleb128 0x5
- 901 0210 03       		.byte	0x3
- 902 0211 00000000 		.4byte	.LC0
- 903 0215 0F       		.uleb128 0xf
- 904 0216 01       		.uleb128 0x1
- 905 0217 53       		.byte	0x53
- 906 0218 02       		.uleb128 0x2
- 907 0219 74       		.byte	0x74
- 908 021a 00       		.sleb128 0
- 909 021b 00       		.byte	0
- 910 021c 0E       		.uleb128 0xe
- 911 021d 4C000000 		.4byte	.LVL4
- 912 0221 A6050000 		.4byte	0x5a6
- 913 0225 31020000 		.4byte	0x231
- 914 0229 0F       		.uleb128 0xf
- 915 022a 01       		.uleb128 0x1
- 916 022b 50       		.byte	0x50
- 917 022c 03       		.uleb128 0x3
- 918 022d 91       		.byte	0x91
- 919 022e D47E     		.sleb128 -172
- 920 0230 00       		.byte	0
- 921 0231 0E       		.uleb128 0xe
- 922 0232 62000000 		.4byte	.LVL5
- 923 0236 B1050000 		.4byte	0x5b1
- 924 023a 68020000 		.4byte	0x268
- 925 023e 0F       		.uleb128 0xf
- 926 023f 01       		.uleb128 0x1
- 927 0240 50       		.byte	0x50
- 928 0241 02       		.uleb128 0x2
- 929 0242 74       		.byte	0x74
- 930 0243 00       		.sleb128 0
- 931 0244 0F       		.uleb128 0xf
- 932 0245 01       		.uleb128 0x1
- 933 0246 51       		.byte	0x51
- 934 0247 05       		.uleb128 0x5
- 935 0248 03       		.byte	0x3
- 936 0249 18000000 		.4byte	.LC1
- 937 024d 0F       		.uleb128 0xf
- 938 024e 01       		.uleb128 0x1
- 939 024f 52       		.byte	0x52
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 22
+ 878 019d 02       		.uleb128 0x2
+ 879 019e 91       		.byte	0x91
+ 880 019f 6B       		.sleb128 -21
+ 881 01a0 0A       		.uleb128 0xa
+ 882 01a1 AF020000 		.4byte	.LASF32
+ 883 01a5 01       		.byte	0x1
+ 884 01a6 14       		.byte	0x14
+ 885 01a7 8D030000 		.4byte	0x38d
+ 886 01ab 03       		.uleb128 0x3
+ 887 01ac 91       		.byte	0x91
+ 888 01ad D47E     		.sleb128 -172
+ 889 01af 0B       		.uleb128 0xb
+ 890 01b0 C5010000 		.4byte	.LASF33
+ 891 01b4 01       		.byte	0x1
+ 892 01b5 16       		.byte	0x16
+ 893 01b6 8C000000 		.4byte	0x8c
+ 894 01ba 00000000 		.4byte	.LLST0
+ 895 01be 0B       		.uleb128 0xb
+ 896 01bf CA010000 		.4byte	.LASF34
+ 897 01c3 01       		.byte	0x1
+ 898 01c4 16       		.byte	0x16
+ 899 01c5 8C000000 		.4byte	0x8c
+ 900 01c9 14000000 		.4byte	.LLST1
+ 901 01cd 0C       		.uleb128 0xc
+ 902 01ce 06000000 		.4byte	.LBB2
+ 903 01d2 E4000000 		.4byte	.LBE2-.LBB2
+ 904 01d6 73030000 		.4byte	0x373
+ 905 01da 0B       		.uleb128 0xb
+ 906 01db DB000000 		.4byte	.LASF35
+ 907 01df 01       		.byte	0x1
+ 908 01e0 1A       		.byte	0x1a
+ 909 01e1 BB000000 		.4byte	0xbb
+ 910 01e5 27000000 		.4byte	.LLST2
+ 911 01e9 0D       		.uleb128 0xd
+ 912 01ea 0A000000 		.4byte	.LVL1
+ 913 01ee 19060000 		.4byte	0x619
+ 914 01f2 0E       		.uleb128 0xe
+ 915 01f3 46000000 		.4byte	.LVL3
+ 916 01f7 24060000 		.4byte	0x624
+ 917 01fb 1C020000 		.4byte	0x21c
+ 918 01ff 0F       		.uleb128 0xf
+ 919 0200 01       		.uleb128 0x1
+ 920 0201 50       		.byte	0x50
+ 921 0202 03       		.uleb128 0x3
+ 922 0203 91       		.byte	0x91
+ 923 0204 D47E     		.sleb128 -172
+ 924 0206 0F       		.uleb128 0xf
+ 925 0207 01       		.uleb128 0x1
+ 926 0208 51       		.byte	0x51
+ 927 0209 02       		.uleb128 0x2
+ 928 020a 08       		.byte	0x8
+ 929 020b 96       		.byte	0x96
+ 930 020c 0F       		.uleb128 0xf
+ 931 020d 01       		.uleb128 0x1
+ 932 020e 52       		.byte	0x52
+ 933 020f 05       		.uleb128 0x5
+ 934 0210 03       		.byte	0x3
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 22
 
 
- 940 0250 02       		.uleb128 0x2
- 941 0251 91       		.byte	0x91
- 942 0252 6B       		.sleb128 -21
- 943 0253 0F       		.uleb128 0xf
- 944 0254 01       		.uleb128 0x1
- 945 0255 53       		.byte	0x53
- 946 0256 02       		.uleb128 0x2
- 947 0257 91       		.byte	0x91
- 948 0258 74       		.sleb128 -12
- 949 0259 0F       		.uleb128 0xf
- 950 025a 02       		.uleb128 0x2
- 951 025b 7D       		.byte	0x7d
- 952 025c 00       		.sleb128 0
- 953 025d 02       		.uleb128 0x2
- 954 025e 91       		.byte	0x91
- 955 025f 70       		.sleb128 -16
- 956 0260 0F       		.uleb128 0xf
- 957 0261 02       		.uleb128 0x2
- 958 0262 7D       		.byte	0x7d
- 959 0263 04       		.sleb128 4
- 960 0264 02       		.uleb128 0x2
- 961 0265 91       		.byte	0x91
- 962 0266 6C       		.sleb128 -20
- 963 0267 00       		.byte	0
- 964 0268 0D       		.uleb128 0xd
- 965 0269 7A000000 		.4byte	.LVL8
- 966 026d BC050000 		.4byte	0x5bc
- 967 0271 0E       		.uleb128 0xe
- 968 0272 80000000 		.4byte	.LVL9
- 969 0276 C7050000 		.4byte	0x5c7
- 970 027a 85020000 		.4byte	0x285
- 971 027e 0F       		.uleb128 0xf
- 972 027f 01       		.uleb128 0x1
- 973 0280 50       		.byte	0x50
- 974 0281 02       		.uleb128 0x2
- 975 0282 74       		.byte	0x74
- 976 0283 00       		.sleb128 0
- 977 0284 00       		.byte	0
- 978 0285 0E       		.uleb128 0xe
- 979 0286 94000000 		.4byte	.LVL10
- 980 028a BC050000 		.4byte	0x5bc
- 981 028e 98020000 		.4byte	0x298
- 982 0292 0F       		.uleb128 0xf
- 983 0293 01       		.uleb128 0x1
- 984 0294 50       		.byte	0x50
- 985 0295 01       		.uleb128 0x1
- 986 0296 30       		.byte	0x30
- 987 0297 00       		.byte	0
- 988 0298 0E       		.uleb128 0xe
- 989 0299 9A000000 		.4byte	.LVL11
- 990 029d C7050000 		.4byte	0x5c7
- 991 02a1 AB020000 		.4byte	0x2ab
- 992 02a5 0F       		.uleb128 0xf
- 993 02a6 01       		.uleb128 0x1
- 994 02a7 50       		.byte	0x50
- 995 02a8 01       		.uleb128 0x1
- 996 02a9 30       		.byte	0x30
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 23
+ 935 0211 00000000 		.4byte	.LC0
+ 936 0215 0F       		.uleb128 0xf
+ 937 0216 01       		.uleb128 0x1
+ 938 0217 53       		.byte	0x53
+ 939 0218 02       		.uleb128 0x2
+ 940 0219 74       		.byte	0x74
+ 941 021a 00       		.sleb128 0
+ 942 021b 00       		.byte	0
+ 943 021c 0E       		.uleb128 0xe
+ 944 021d 4C000000 		.4byte	.LVL4
+ 945 0221 2F060000 		.4byte	0x62f
+ 946 0225 31020000 		.4byte	0x231
+ 947 0229 0F       		.uleb128 0xf
+ 948 022a 01       		.uleb128 0x1
+ 949 022b 50       		.byte	0x50
+ 950 022c 03       		.uleb128 0x3
+ 951 022d 91       		.byte	0x91
+ 952 022e D47E     		.sleb128 -172
+ 953 0230 00       		.byte	0
+ 954 0231 0E       		.uleb128 0xe
+ 955 0232 62000000 		.4byte	.LVL5
+ 956 0236 3A060000 		.4byte	0x63a
+ 957 023a 68020000 		.4byte	0x268
+ 958 023e 0F       		.uleb128 0xf
+ 959 023f 01       		.uleb128 0x1
+ 960 0240 50       		.byte	0x50
+ 961 0241 02       		.uleb128 0x2
+ 962 0242 74       		.byte	0x74
+ 963 0243 00       		.sleb128 0
+ 964 0244 0F       		.uleb128 0xf
+ 965 0245 01       		.uleb128 0x1
+ 966 0246 51       		.byte	0x51
+ 967 0247 05       		.uleb128 0x5
+ 968 0248 03       		.byte	0x3
+ 969 0249 18000000 		.4byte	.LC1
+ 970 024d 0F       		.uleb128 0xf
+ 971 024e 01       		.uleb128 0x1
+ 972 024f 52       		.byte	0x52
+ 973 0250 02       		.uleb128 0x2
+ 974 0251 91       		.byte	0x91
+ 975 0252 6B       		.sleb128 -21
+ 976 0253 0F       		.uleb128 0xf
+ 977 0254 01       		.uleb128 0x1
+ 978 0255 53       		.byte	0x53
+ 979 0256 02       		.uleb128 0x2
+ 980 0257 91       		.byte	0x91
+ 981 0258 74       		.sleb128 -12
+ 982 0259 0F       		.uleb128 0xf
+ 983 025a 02       		.uleb128 0x2
+ 984 025b 7D       		.byte	0x7d
+ 985 025c 00       		.sleb128 0
+ 986 025d 02       		.uleb128 0x2
+ 987 025e 91       		.byte	0x91
+ 988 025f 70       		.sleb128 -16
+ 989 0260 0F       		.uleb128 0xf
+ 990 0261 02       		.uleb128 0x2
+ 991 0262 7D       		.byte	0x7d
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 23
 
 
- 997 02aa 00       		.byte	0
- 998 02ab 0E       		.uleb128 0xe
- 999 02ac B8000000 		.4byte	.LVL14
- 1000 02b0 9B050000 		.4byte	0x59b
- 1001 02b4 D8020000 		.4byte	0x2d8
- 1002 02b8 0F       		.uleb128 0xf
- 1003 02b9 01       		.uleb128 0x1
- 1004 02ba 50       		.byte	0x50
- 1005 02bb 03       		.uleb128 0x3
- 1006 02bc 91       		.byte	0x91
- 1007 02bd D47E     		.sleb128 -172
- 1008 02bf 0F       		.uleb128 0xf
- 1009 02c0 01       		.uleb128 0x1
- 1010 02c1 51       		.byte	0x51
- 1011 02c2 02       		.uleb128 0x2
- 1012 02c3 08       		.byte	0x8
- 1013 02c4 96       		.byte	0x96
- 1014 02c5 0F       		.uleb128 0xf
- 1015 02c6 01       		.uleb128 0x1
- 1016 02c7 52       		.byte	0x52
- 1017 02c8 05       		.uleb128 0x5
- 1018 02c9 03       		.byte	0x3
- 1019 02ca 24000000 		.4byte	.LC2
- 1020 02ce 0F       		.uleb128 0xf
- 1021 02cf 01       		.uleb128 0x1
- 1022 02d0 53       		.byte	0x53
- 1023 02d1 05       		.uleb128 0x5
- 1024 02d2 03       		.byte	0x3
- 1025 02d3 08000000 		.4byte	.LANCHOR0+8
- 1026 02d7 00       		.byte	0
- 1027 02d8 10       		.uleb128 0x10
- 1028 02d9 BE000000 		.4byte	.LVL15
- 1029 02dd A6050000 		.4byte	0x5a6
- 1030 02e1 0F       		.uleb128 0xf
- 1031 02e2 01       		.uleb128 0x1
- 1032 02e3 50       		.byte	0x50
- 1033 02e4 03       		.uleb128 0x3
- 1034 02e5 91       		.byte	0x91
- 1035 02e6 D47E     		.sleb128 -172
- 1036 02e8 00       		.byte	0
- 1037 02e9 00       		.byte	0
- 1038 02ea 0D       		.uleb128 0xd
- 1039 02eb C8000000 		.4byte	.LVL16
- 1040 02ef D2050000 		.4byte	0x5d2
- 1041 02f3 00       		.byte	0
- 1042 02f4 11       		.uleb128 0x11
- 1043 02f5 BB000000 		.4byte	0xbb
- 1044 02f9 04030000 		.4byte	0x304
- 1045 02fd 12       		.uleb128 0x12
- 1046 02fe C9000000 		.4byte	0xc9
- 1047 0302 31       		.byte	0x31
- 1048 0303 00       		.byte	0
- 1049 0304 11       		.uleb128 0x11
- 1050 0305 BB000000 		.4byte	0xbb
- 1051 0309 14030000 		.4byte	0x314
- 1052 030d 12       		.uleb128 0x12
- 1053 030e C9000000 		.4byte	0xc9
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 24
+ 992 0263 04       		.sleb128 4
+ 993 0264 02       		.uleb128 0x2
+ 994 0265 91       		.byte	0x91
+ 995 0266 6C       		.sleb128 -20
+ 996 0267 00       		.byte	0
+ 997 0268 0D       		.uleb128 0xd
+ 998 0269 7A000000 		.4byte	.LVL8
+ 999 026d 45060000 		.4byte	0x645
+ 1000 0271 0E       		.uleb128 0xe
+ 1001 0272 80000000 		.4byte	.LVL9
+ 1002 0276 50060000 		.4byte	0x650
+ 1003 027a 85020000 		.4byte	0x285
+ 1004 027e 0F       		.uleb128 0xf
+ 1005 027f 01       		.uleb128 0x1
+ 1006 0280 50       		.byte	0x50
+ 1007 0281 02       		.uleb128 0x2
+ 1008 0282 74       		.byte	0x74
+ 1009 0283 00       		.sleb128 0
+ 1010 0284 00       		.byte	0
+ 1011 0285 0E       		.uleb128 0xe
+ 1012 0286 92000000 		.4byte	.LVL11
+ 1013 028a 45060000 		.4byte	0x645
+ 1014 028e 98020000 		.4byte	0x298
+ 1015 0292 0F       		.uleb128 0xf
+ 1016 0293 01       		.uleb128 0x1
+ 1017 0294 50       		.byte	0x50
+ 1018 0295 01       		.uleb128 0x1
+ 1019 0296 30       		.byte	0x30
+ 1020 0297 00       		.byte	0
+ 1021 0298 0E       		.uleb128 0xe
+ 1022 0299 98000000 		.4byte	.LVL12
+ 1023 029d 50060000 		.4byte	0x650
+ 1024 02a1 AB020000 		.4byte	0x2ab
+ 1025 02a5 0F       		.uleb128 0xf
+ 1026 02a6 01       		.uleb128 0x1
+ 1027 02a7 50       		.byte	0x50
+ 1028 02a8 01       		.uleb128 0x1
+ 1029 02a9 30       		.byte	0x30
+ 1030 02aa 00       		.byte	0
+ 1031 02ab 0E       		.uleb128 0xe
+ 1032 02ac B4000000 		.4byte	.LVL13
+ 1033 02b0 5B060000 		.4byte	0x65b
+ 1034 02b4 D0020000 		.4byte	0x2d0
+ 1035 02b8 0F       		.uleb128 0xf
+ 1036 02b9 01       		.uleb128 0x1
+ 1037 02ba 50       		.byte	0x50
+ 1038 02bb 05       		.uleb128 0x5
+ 1039 02bc 03       		.byte	0x3
+ 1040 02bd 08000000 		.4byte	.LANCHOR0+8
+ 1041 02c1 0F       		.uleb128 0xf
+ 1042 02c2 01       		.uleb128 0x1
+ 1043 02c3 51       		.byte	0x51
+ 1044 02c4 05       		.uleb128 0x5
+ 1045 02c5 03       		.byte	0x3
+ 1046 02c6 24000000 		.4byte	.LC2
+ 1047 02ca 0F       		.uleb128 0xf
+ 1048 02cb 01       		.uleb128 0x1
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 24
 
 
- 1054 0312 95       		.byte	0x95
- 1055 0313 00       		.byte	0
- 1056 0314 07       		.uleb128 0x7
- 1057 0315 F8010000 		.4byte	.LASF36
- 1058 0319 01       		.byte	0x1
- 1059 031a 60       		.byte	0x60
- 1060 031b 00000000 		.4byte	.LFB67
- 1061 031f AC010000 		.4byte	.LFE67-.LFB67
- 1062 0323 01       		.uleb128 0x1
- 1063 0324 9C       		.byte	0x9c
- 1064 0325 D6040000 		.4byte	0x4d6
- 1065 0329 13       		.uleb128 0x13
- 1066 032a 9B030000 		.4byte	.LASF35
- 1067 032e 01       		.byte	0x1
- 1068 032f 60       		.byte	0x60
- 1069 0330 97000000 		.4byte	0x97
- 1070 0334 45000000 		.4byte	.LLST3
- 1071 0338 0A       		.uleb128 0xa
- 1072 0339 D3020000 		.4byte	.LASF38
- 1073 033d 01       		.byte	0x1
- 1074 033e 64       		.byte	0x64
- 1075 033f 8C000000 		.4byte	0x8c
- 1076 0343 05       		.uleb128 0x5
- 1077 0344 03       		.byte	0x3
- 1078 0345 3A000000 		.4byte	currentSpeed.6798
- 1079 0349 0A       		.uleb128 0xa
- 1080 034a 6B020000 		.4byte	.LASF39
- 1081 034e 01       		.byte	0x1
- 1082 034f 65       		.byte	0x65
- 1083 0350 D6040000 		.4byte	0x4d6
- 1084 0354 02       		.uleb128 0x2
- 1085 0355 91       		.byte	0x91
- 1086 0356 6C       		.sleb128 -20
- 1087 0357 0A       		.uleb128 0xa
- 1088 0358 0F000000 		.4byte	.LASF40
- 1089 035c 01       		.byte	0x1
- 1090 035d 66       		.byte	0x66
- 1091 035e E6040000 		.4byte	0x4e6
- 1092 0362 02       		.uleb128 0x2
- 1093 0363 91       		.byte	0x91
- 1094 0364 60       		.sleb128 -32
- 1095 0365 0A       		.uleb128 0xa
- 1096 0366 C4020000 		.4byte	.LASF41
- 1097 036a 01       		.byte	0x1
- 1098 036b 67       		.byte	0x67
- 1099 036c E6040000 		.4byte	0x4e6
- 1100 0370 02       		.uleb128 0x2
- 1101 0371 91       		.byte	0x91
- 1102 0372 54       		.sleb128 -44
- 1103 0373 0E       		.uleb128 0xe
- 1104 0374 88000000 		.4byte	.LVL19
- 1105 0378 A6050000 		.4byte	0x5a6
- 1106 037c 8A030000 		.4byte	0x38a
- 1107 0380 0F       		.uleb128 0xf
- 1108 0381 01       		.uleb128 0x1
- 1109 0382 50       		.byte	0x50
- 1110 0383 05       		.uleb128 0x5
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 25
+ 1049 02cc 52       		.byte	0x52
+ 1050 02cd 01       		.uleb128 0x1
+ 1051 02ce 33       		.byte	0x33
+ 1052 02cf 00       		.byte	0
+ 1053 02d0 0E       		.uleb128 0xe
+ 1054 02d1 C2000000 		.4byte	.LVL14
+ 1055 02d5 24060000 		.4byte	0x624
+ 1056 02d9 FD020000 		.4byte	0x2fd
+ 1057 02dd 0F       		.uleb128 0xf
+ 1058 02de 01       		.uleb128 0x1
+ 1059 02df 50       		.byte	0x50
+ 1060 02e0 03       		.uleb128 0x3
+ 1061 02e1 91       		.byte	0x91
+ 1062 02e2 D47E     		.sleb128 -172
+ 1063 02e4 0F       		.uleb128 0xf
+ 1064 02e5 01       		.uleb128 0x1
+ 1065 02e6 51       		.byte	0x51
+ 1066 02e7 02       		.uleb128 0x2
+ 1067 02e8 08       		.byte	0x8
+ 1068 02e9 96       		.byte	0x96
+ 1069 02ea 0F       		.uleb128 0xf
+ 1070 02eb 01       		.uleb128 0x1
+ 1071 02ec 52       		.byte	0x52
+ 1072 02ed 05       		.uleb128 0x5
+ 1073 02ee 03       		.byte	0x3
+ 1074 02ef 28000000 		.4byte	.LC3
+ 1075 02f3 0F       		.uleb128 0xf
+ 1076 02f4 01       		.uleb128 0x1
+ 1077 02f5 53       		.byte	0x53
+ 1078 02f6 05       		.uleb128 0x5
+ 1079 02f7 03       		.byte	0x3
+ 1080 02f8 08000000 		.4byte	.LANCHOR0+8
+ 1081 02fc 00       		.byte	0
+ 1082 02fd 0E       		.uleb128 0xe
+ 1083 02fe C8000000 		.4byte	.LVL15
+ 1084 0302 2F060000 		.4byte	0x62f
+ 1085 0306 12030000 		.4byte	0x312
+ 1086 030a 0F       		.uleb128 0xf
+ 1087 030b 01       		.uleb128 0x1
+ 1088 030c 50       		.byte	0x50
+ 1089 030d 03       		.uleb128 0x3
+ 1090 030e 91       		.byte	0x91
+ 1091 030f D47E     		.sleb128 -172
+ 1092 0311 00       		.byte	0
+ 1093 0312 0E       		.uleb128 0xe
+ 1094 0313 D6000000 		.4byte	.LVL16
+ 1095 0317 24060000 		.4byte	0x624
+ 1096 031b 3F030000 		.4byte	0x33f
+ 1097 031f 0F       		.uleb128 0xf
+ 1098 0320 01       		.uleb128 0x1
+ 1099 0321 50       		.byte	0x50
+ 1100 0322 03       		.uleb128 0x3
+ 1101 0323 91       		.byte	0x91
+ 1102 0324 D47E     		.sleb128 -172
+ 1103 0326 0F       		.uleb128 0xf
+ 1104 0327 01       		.uleb128 0x1
+ 1105 0328 51       		.byte	0x51
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 25
 
 
- 1111 0384 03       		.byte	0x3
- 1112 0385 50000000 		.4byte	.LC6
- 1113 0389 00       		.byte	0
- 1114 038a 0D       		.uleb128 0xd
- 1115 038b AC000000 		.4byte	.LVL20
- 1116 038f BC050000 		.4byte	0x5bc
- 1117 0393 0D       		.uleb128 0xd
- 1118 0394 B4000000 		.4byte	.LVL21
- 1119 0398 C7050000 		.4byte	0x5c7
- 1120 039c 0E       		.uleb128 0xe
- 1121 039d C2000000 		.4byte	.LVL22
- 1122 03a1 A6050000 		.4byte	0x5a6
- 1123 03a5 B3030000 		.4byte	0x3b3
- 1124 03a9 0F       		.uleb128 0xf
- 1125 03aa 01       		.uleb128 0x1
- 1126 03ab 50       		.byte	0x50
- 1127 03ac 05       		.uleb128 0x5
- 1128 03ad 03       		.byte	0x3
- 1129 03ae 64000000 		.4byte	.LC7
- 1130 03b2 00       		.byte	0
- 1131 03b3 0E       		.uleb128 0xe
- 1132 03b4 CA000000 		.4byte	.LVL23
- 1133 03b8 A6050000 		.4byte	0x5a6
- 1134 03bc CA030000 		.4byte	0x3ca
- 1135 03c0 0F       		.uleb128 0xf
- 1136 03c1 01       		.uleb128 0x1
- 1137 03c2 50       		.byte	0x50
- 1138 03c3 05       		.uleb128 0x5
- 1139 03c4 03       		.byte	0x3
- 1140 03c5 80000000 		.4byte	.LC8
- 1141 03c9 00       		.byte	0
- 1142 03ca 0E       		.uleb128 0xe
- 1143 03cb DE000000 		.4byte	.LVL24
- 1144 03cf A6050000 		.4byte	0x5a6
- 1145 03d3 E1030000 		.4byte	0x3e1
- 1146 03d7 0F       		.uleb128 0xf
- 1147 03d8 01       		.uleb128 0x1
- 1148 03d9 50       		.byte	0x50
- 1149 03da 05       		.uleb128 0x5
- 1150 03db 03       		.byte	0x3
- 1151 03dc A0000000 		.4byte	.LC9
- 1152 03e0 00       		.byte	0
- 1153 03e1 0D       		.uleb128 0xd
- 1154 03e2 04010000 		.4byte	.LVL25
- 1155 03e6 BC050000 		.4byte	0x5bc
- 1156 03ea 0D       		.uleb128 0xd
- 1157 03eb 0C010000 		.4byte	.LVL26
- 1158 03ef C7050000 		.4byte	0x5c7
- 1159 03f3 0E       		.uleb128 0xe
- 1160 03f4 1C010000 		.4byte	.LVL27
- 1161 03f8 A6050000 		.4byte	0x5a6
- 1162 03fc 0A040000 		.4byte	0x40a
- 1163 0400 0F       		.uleb128 0xf
- 1164 0401 01       		.uleb128 0x1
- 1165 0402 50       		.byte	0x50
- 1166 0403 05       		.uleb128 0x5
- 1167 0404 03       		.byte	0x3
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 26
+ 1106 0329 02       		.uleb128 0x2
+ 1107 032a 08       		.byte	0x8
+ 1108 032b 96       		.byte	0x96
+ 1109 032c 0F       		.uleb128 0xf
+ 1110 032d 01       		.uleb128 0x1
+ 1111 032e 52       		.byte	0x52
+ 1112 032f 05       		.uleb128 0x5
+ 1113 0330 03       		.byte	0x3
+ 1114 0331 5C000000 		.4byte	.LC4
+ 1115 0335 0F       		.uleb128 0xf
+ 1116 0336 01       		.uleb128 0x1
+ 1117 0337 53       		.byte	0x53
+ 1118 0338 05       		.uleb128 0x5
+ 1119 0339 03       		.byte	0x3
+ 1120 033a 08000000 		.4byte	.LANCHOR0+8
+ 1121 033e 00       		.byte	0
+ 1122 033f 0E       		.uleb128 0xe
+ 1123 0340 DC000000 		.4byte	.LVL17
+ 1124 0344 2F060000 		.4byte	0x62f
+ 1125 0348 54030000 		.4byte	0x354
+ 1126 034c 0F       		.uleb128 0xf
+ 1127 034d 01       		.uleb128 0x1
+ 1128 034e 50       		.byte	0x50
+ 1129 034f 03       		.uleb128 0x3
+ 1130 0350 91       		.byte	0x91
+ 1131 0351 D47E     		.sleb128 -172
+ 1132 0353 00       		.byte	0
+ 1133 0354 10       		.uleb128 0x10
+ 1134 0355 EA000000 		.4byte	.LVL18
+ 1135 0359 66060000 		.4byte	0x666
+ 1136 035d 0F       		.uleb128 0xf
+ 1137 035e 01       		.uleb128 0x1
+ 1138 035f 50       		.byte	0x50
+ 1139 0360 05       		.uleb128 0x5
+ 1140 0361 03       		.byte	0x3
+ 1141 0362 08000000 		.4byte	.LANCHOR0+8
+ 1142 0366 0F       		.uleb128 0xf
+ 1143 0367 01       		.uleb128 0x1
+ 1144 0368 51       		.byte	0x51
+ 1145 0369 01       		.uleb128 0x1
+ 1146 036a 30       		.byte	0x30
+ 1147 036b 0F       		.uleb128 0xf
+ 1148 036c 01       		.uleb128 0x1
+ 1149 036d 52       		.byte	0x52
+ 1150 036e 02       		.uleb128 0x2
+ 1151 036f 08       		.byte	0x8
+ 1152 0370 32       		.byte	0x32
+ 1153 0371 00       		.byte	0
+ 1154 0372 00       		.byte	0
+ 1155 0373 0D       		.uleb128 0xd
+ 1156 0374 EE000000 		.4byte	.LVL19
+ 1157 0378 6F060000 		.4byte	0x66f
+ 1158 037c 00       		.byte	0
+ 1159 037d 11       		.uleb128 0x11
+ 1160 037e BB000000 		.4byte	0xbb
+ 1161 0382 8D030000 		.4byte	0x38d
+ 1162 0386 12       		.uleb128 0x12
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 26
 
 
- 1168 0405 B4000000 		.4byte	.LC10
- 1169 0409 00       		.byte	0
- 1170 040a 0E       		.uleb128 0xe
- 1171 040b 24010000 		.4byte	.LVL28
- 1172 040f A6050000 		.4byte	0x5a6
- 1173 0413 21040000 		.4byte	0x421
- 1174 0417 0F       		.uleb128 0xf
- 1175 0418 01       		.uleb128 0x1
- 1176 0419 50       		.byte	0x50
- 1177 041a 05       		.uleb128 0x5
- 1178 041b 03       		.byte	0x3
- 1179 041c D0000000 		.4byte	.LC11
- 1180 0420 00       		.byte	0
- 1181 0421 0D       		.uleb128 0xd
- 1182 0422 32010000 		.4byte	.LVL29
- 1183 0426 DD050000 		.4byte	0x5dd
- 1184 042a 0E       		.uleb128 0xe
- 1185 042b 3A010000 		.4byte	.LVL30
- 1186 042f A6050000 		.4byte	0x5a6
- 1187 0433 41040000 		.4byte	0x441
- 1188 0437 0F       		.uleb128 0xf
- 1189 0438 01       		.uleb128 0x1
- 1190 0439 50       		.byte	0x50
- 1191 043a 05       		.uleb128 0x5
- 1192 043b 03       		.byte	0x3
- 1193 043c F0000000 		.4byte	.LC12
- 1194 0440 00       		.byte	0
- 1195 0441 0E       		.uleb128 0xe
- 1196 0442 40010000 		.4byte	.LVL31
- 1197 0446 E8050000 		.4byte	0x5e8
- 1198 044a 55040000 		.4byte	0x455
- 1199 044e 0F       		.uleb128 0xf
- 1200 044f 01       		.uleb128 0x1
- 1201 0450 50       		.byte	0x50
- 1202 0451 02       		.uleb128 0x2
- 1203 0452 91       		.byte	0x91
- 1204 0453 6C       		.sleb128 -20
- 1205 0454 00       		.byte	0
- 1206 0455 0E       		.uleb128 0xe
- 1207 0456 48010000 		.4byte	.LVL32
- 1208 045a A6050000 		.4byte	0x5a6
- 1209 045e 6C040000 		.4byte	0x46c
- 1210 0462 0F       		.uleb128 0xf
- 1211 0463 01       		.uleb128 0x1
- 1212 0464 50       		.byte	0x50
- 1213 0465 05       		.uleb128 0x5
- 1214 0466 03       		.byte	0x3
- 1215 0467 24010000 		.4byte	.LC13
- 1216 046b 00       		.byte	0
- 1217 046c 0E       		.uleb128 0xe
- 1218 046d 4E010000 		.4byte	.LVL33
- 1219 0471 E8050000 		.4byte	0x5e8
- 1220 0475 80040000 		.4byte	0x480
- 1221 0479 0F       		.uleb128 0xf
- 1222 047a 01       		.uleb128 0x1
- 1223 047b 50       		.byte	0x50
- 1224 047c 02       		.uleb128 0x2
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 27
+ 1163 0387 C9000000 		.4byte	0xc9
+ 1164 038b 31       		.byte	0x31
+ 1165 038c 00       		.byte	0
+ 1166 038d 11       		.uleb128 0x11
+ 1167 038e BB000000 		.4byte	0xbb
+ 1168 0392 9D030000 		.4byte	0x39d
+ 1169 0396 12       		.uleb128 0x12
+ 1170 0397 C9000000 		.4byte	0xc9
+ 1171 039b 95       		.byte	0x95
+ 1172 039c 00       		.byte	0
+ 1173 039d 07       		.uleb128 0x7
+ 1174 039e 5C010000 		.4byte	.LASF36
+ 1175 03a2 01       		.byte	0x1
+ 1176 03a3 60       		.byte	0x60
+ 1177 03a4 00000000 		.4byte	.LFB67
+ 1178 03a8 AC010000 		.4byte	.LFE67-.LFB67
+ 1179 03ac 01       		.uleb128 0x1
+ 1180 03ad 9C       		.byte	0x9c
+ 1181 03ae 5F050000 		.4byte	0x55f
+ 1182 03b2 13       		.uleb128 0x13
+ 1183 03b3 DB000000 		.4byte	.LASF35
+ 1184 03b7 01       		.byte	0x1
+ 1185 03b8 60       		.byte	0x60
+ 1186 03b9 97000000 		.4byte	0x97
+ 1187 03bd 3A000000 		.4byte	.LLST3
+ 1188 03c1 0A       		.uleb128 0xa
+ 1189 03c2 53000000 		.4byte	.LASF38
+ 1190 03c6 01       		.byte	0x1
+ 1191 03c7 64       		.byte	0x64
+ 1192 03c8 8C000000 		.4byte	0x8c
+ 1193 03cc 05       		.uleb128 0x5
+ 1194 03cd 03       		.byte	0x3
+ 1195 03ce 3A000000 		.4byte	currentSpeed.6824
+ 1196 03d2 0A       		.uleb128 0xa
+ 1197 03d3 9F020000 		.4byte	.LASF39
+ 1198 03d7 01       		.byte	0x1
+ 1199 03d8 65       		.byte	0x65
+ 1200 03d9 5F050000 		.4byte	0x55f
+ 1201 03dd 02       		.uleb128 0x2
+ 1202 03de 91       		.byte	0x91
+ 1203 03df 6C       		.sleb128 -20
+ 1204 03e0 0A       		.uleb128 0xa
+ 1205 03e1 37000000 		.4byte	.LASF40
+ 1206 03e5 01       		.byte	0x1
+ 1207 03e6 66       		.byte	0x66
+ 1208 03e7 6F050000 		.4byte	0x56f
+ 1209 03eb 02       		.uleb128 0x2
+ 1210 03ec 91       		.byte	0x91
+ 1211 03ed 60       		.sleb128 -32
+ 1212 03ee 0A       		.uleb128 0xa
+ 1213 03ef 44000000 		.4byte	.LASF41
+ 1214 03f3 01       		.byte	0x1
+ 1215 03f4 67       		.byte	0x67
+ 1216 03f5 6F050000 		.4byte	0x56f
+ 1217 03f9 02       		.uleb128 0x2
+ 1218 03fa 91       		.byte	0x91
+ 1219 03fb 54       		.sleb128 -44
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 27
 
 
- 1225 047d 91       		.byte	0x91
- 1226 047e 60       		.sleb128 -32
- 1227 047f 00       		.byte	0
- 1228 0480 0E       		.uleb128 0xe
- 1229 0481 56010000 		.4byte	.LVL34
- 1230 0485 A6050000 		.4byte	0x5a6
- 1231 0489 97040000 		.4byte	0x497
- 1232 048d 0F       		.uleb128 0xf
- 1233 048e 01       		.uleb128 0x1
- 1234 048f 50       		.byte	0x50
- 1235 0490 05       		.uleb128 0x5
- 1236 0491 03       		.byte	0x3
- 1237 0492 58010000 		.4byte	.LC14
- 1238 0496 00       		.byte	0
- 1239 0497 0E       		.uleb128 0xe
- 1240 0498 5C010000 		.4byte	.LVL35
- 1241 049c E8050000 		.4byte	0x5e8
- 1242 04a0 AB040000 		.4byte	0x4ab
- 1243 04a4 0F       		.uleb128 0xf
- 1244 04a5 01       		.uleb128 0x1
- 1245 04a6 50       		.byte	0x50
- 1246 04a7 02       		.uleb128 0x2
- 1247 04a8 91       		.byte	0x91
- 1248 04a9 54       		.sleb128 -44
- 1249 04aa 00       		.byte	0
- 1250 04ab 0E       		.uleb128 0xe
- 1251 04ac 64010000 		.4byte	.LVL36
- 1252 04b0 A6050000 		.4byte	0x5a6
- 1253 04b4 C2040000 		.4byte	0x4c2
- 1254 04b8 0F       		.uleb128 0xf
- 1255 04b9 01       		.uleb128 0x1
- 1256 04ba 50       		.byte	0x50
- 1257 04bb 05       		.uleb128 0x5
- 1258 04bc 03       		.byte	0x3
- 1259 04bd 88010000 		.4byte	.LC15
- 1260 04c1 00       		.byte	0
- 1261 04c2 10       		.uleb128 0x10
- 1262 04c3 6A010000 		.4byte	.LVL37
- 1263 04c7 E8050000 		.4byte	0x5e8
- 1264 04cb 0F       		.uleb128 0xf
- 1265 04cc 01       		.uleb128 0x1
- 1266 04cd 50       		.byte	0x50
- 1267 04ce 05       		.uleb128 0x5
- 1268 04cf 03       		.byte	0x3
- 1269 04d0 B0010000 		.4byte	.LC16
- 1270 04d4 00       		.byte	0
- 1271 04d5 00       		.byte	0
- 1272 04d6 11       		.uleb128 0x11
- 1273 04d7 BB000000 		.4byte	0xbb
- 1274 04db E6040000 		.4byte	0x4e6
- 1275 04df 12       		.uleb128 0x12
- 1276 04e0 C9000000 		.4byte	0xc9
- 1277 04e4 08       		.byte	0x8
- 1278 04e5 00       		.byte	0
- 1279 04e6 11       		.uleb128 0x11
- 1280 04e7 BB000000 		.4byte	0xbb
- 1281 04eb F6040000 		.4byte	0x4f6
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 28
+ 1220 03fc 0E       		.uleb128 0xe
+ 1221 03fd 88000000 		.4byte	.LVL22
+ 1222 0401 2F060000 		.4byte	0x62f
+ 1223 0405 13040000 		.4byte	0x413
+ 1224 0409 0F       		.uleb128 0xf
+ 1225 040a 01       		.uleb128 0x1
+ 1226 040b 50       		.byte	0x50
+ 1227 040c 05       		.uleb128 0x5
+ 1228 040d 03       		.byte	0x3
+ 1229 040e 88000000 		.4byte	.LC8
+ 1230 0412 00       		.byte	0
+ 1231 0413 0D       		.uleb128 0xd
+ 1232 0414 AC000000 		.4byte	.LVL23
+ 1233 0418 45060000 		.4byte	0x645
+ 1234 041c 0D       		.uleb128 0xd
+ 1235 041d B4000000 		.4byte	.LVL24
+ 1236 0421 50060000 		.4byte	0x650
+ 1237 0425 0E       		.uleb128 0xe
+ 1238 0426 C2000000 		.4byte	.LVL25
+ 1239 042a 2F060000 		.4byte	0x62f
+ 1240 042e 3C040000 		.4byte	0x43c
+ 1241 0432 0F       		.uleb128 0xf
+ 1242 0433 01       		.uleb128 0x1
+ 1243 0434 50       		.byte	0x50
+ 1244 0435 05       		.uleb128 0x5
+ 1245 0436 03       		.byte	0x3
+ 1246 0437 9C000000 		.4byte	.LC9
+ 1247 043b 00       		.byte	0
+ 1248 043c 0E       		.uleb128 0xe
+ 1249 043d CA000000 		.4byte	.LVL26
+ 1250 0441 2F060000 		.4byte	0x62f
+ 1251 0445 53040000 		.4byte	0x453
+ 1252 0449 0F       		.uleb128 0xf
+ 1253 044a 01       		.uleb128 0x1
+ 1254 044b 50       		.byte	0x50
+ 1255 044c 05       		.uleb128 0x5
+ 1256 044d 03       		.byte	0x3
+ 1257 044e B8000000 		.4byte	.LC10
+ 1258 0452 00       		.byte	0
+ 1259 0453 0E       		.uleb128 0xe
+ 1260 0454 DE000000 		.4byte	.LVL27
+ 1261 0458 2F060000 		.4byte	0x62f
+ 1262 045c 6A040000 		.4byte	0x46a
+ 1263 0460 0F       		.uleb128 0xf
+ 1264 0461 01       		.uleb128 0x1
+ 1265 0462 50       		.byte	0x50
+ 1266 0463 05       		.uleb128 0x5
+ 1267 0464 03       		.byte	0x3
+ 1268 0465 D8000000 		.4byte	.LC11
+ 1269 0469 00       		.byte	0
+ 1270 046a 0D       		.uleb128 0xd
+ 1271 046b 04010000 		.4byte	.LVL28
+ 1272 046f 45060000 		.4byte	0x645
+ 1273 0473 0D       		.uleb128 0xd
+ 1274 0474 0C010000 		.4byte	.LVL29
+ 1275 0478 50060000 		.4byte	0x650
+ 1276 047c 0E       		.uleb128 0xe
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 28
 
 
- 1282 04ef 12       		.uleb128 0x12
- 1283 04f0 C9000000 		.4byte	0xc9
- 1284 04f4 09       		.byte	0x9
- 1285 04f5 00       		.byte	0
- 1286 04f6 07       		.uleb128 0x7
- 1287 04f7 43000000 		.4byte	.LASF42
- 1288 04fb 01       		.byte	0x1
- 1289 04fc 52       		.byte	0x52
- 1290 04fd 00000000 		.4byte	.LFB66
- 1291 0501 24000000 		.4byte	.LFE66-.LFB66
- 1292 0505 01       		.uleb128 0x1
- 1293 0506 9C       		.byte	0x9c
- 1294 0507 6E050000 		.4byte	0x56e
- 1295 050b 0B       		.uleb128 0xb
- 1296 050c 93000000 		.4byte	.LASF43
- 1297 0510 01       		.byte	0x1
- 1298 0511 54       		.byte	0x54
- 1299 0512 97000000 		.4byte	0x97
- 1300 0516 66000000 		.4byte	.LLST4
- 1301 051a 0C       		.uleb128 0xc
- 1302 051b 0A000000 		.4byte	.LBB3
- 1303 051f 14000000 		.4byte	.LBE3-.LBB3
- 1304 0523 64050000 		.4byte	0x564
- 1305 0527 0B       		.uleb128 0xb
- 1306 0528 9B030000 		.4byte	.LASF35
- 1307 052c 01       		.byte	0x1
- 1308 052d 57       		.byte	0x57
- 1309 052e 97000000 		.4byte	0x97
- 1310 0532 84000000 		.4byte	.LLST5
- 1311 0536 0D       		.uleb128 0xd
- 1312 0537 0E000000 		.4byte	.LVL40
- 1313 053b F3050000 		.4byte	0x5f3
- 1314 053f 0E       		.uleb128 0xe
- 1315 0540 14000000 		.4byte	.LVL42
- 1316 0544 FE050000 		.4byte	0x5fe
- 1317 0548 53050000 		.4byte	0x553
- 1318 054c 0F       		.uleb128 0xf
- 1319 054d 01       		.uleb128 0x1
- 1320 054e 50       		.byte	0x50
- 1321 054f 02       		.uleb128 0x2
- 1322 0550 75       		.byte	0x75
- 1323 0551 00       		.sleb128 0
- 1324 0552 00       		.byte	0
- 1325 0553 10       		.uleb128 0x10
- 1326 0554 1A000000 		.4byte	.LVL43
- 1327 0558 14030000 		.4byte	0x314
- 1328 055c 0F       		.uleb128 0xf
- 1329 055d 01       		.uleb128 0x1
- 1330 055e 50       		.byte	0x50
- 1331 055f 02       		.uleb128 0x2
- 1332 0560 75       		.byte	0x75
- 1333 0561 00       		.sleb128 0
- 1334 0562 00       		.byte	0
- 1335 0563 00       		.byte	0
- 1336 0564 0D       		.uleb128 0xd
- 1337 0565 06000000 		.4byte	.LVL38
- 1338 0569 09060000 		.4byte	0x609
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 29
+ 1277 047d 1C010000 		.4byte	.LVL30
+ 1278 0481 2F060000 		.4byte	0x62f
+ 1279 0485 93040000 		.4byte	0x493
+ 1280 0489 0F       		.uleb128 0xf
+ 1281 048a 01       		.uleb128 0x1
+ 1282 048b 50       		.byte	0x50
+ 1283 048c 05       		.uleb128 0x5
+ 1284 048d 03       		.byte	0x3
+ 1285 048e EC000000 		.4byte	.LC12
+ 1286 0492 00       		.byte	0
+ 1287 0493 0E       		.uleb128 0xe
+ 1288 0494 24010000 		.4byte	.LVL31
+ 1289 0498 2F060000 		.4byte	0x62f
+ 1290 049c AA040000 		.4byte	0x4aa
+ 1291 04a0 0F       		.uleb128 0xf
+ 1292 04a1 01       		.uleb128 0x1
+ 1293 04a2 50       		.byte	0x50
+ 1294 04a3 05       		.uleb128 0x5
+ 1295 04a4 03       		.byte	0x3
+ 1296 04a5 08010000 		.4byte	.LC13
+ 1297 04a9 00       		.byte	0
+ 1298 04aa 0D       		.uleb128 0xd
+ 1299 04ab 32010000 		.4byte	.LVL32
+ 1300 04af 7A060000 		.4byte	0x67a
+ 1301 04b3 0E       		.uleb128 0xe
+ 1302 04b4 3A010000 		.4byte	.LVL33
+ 1303 04b8 2F060000 		.4byte	0x62f
+ 1304 04bc CA040000 		.4byte	0x4ca
+ 1305 04c0 0F       		.uleb128 0xf
+ 1306 04c1 01       		.uleb128 0x1
+ 1307 04c2 50       		.byte	0x50
+ 1308 04c3 05       		.uleb128 0x5
+ 1309 04c4 03       		.byte	0x3
+ 1310 04c5 28010000 		.4byte	.LC14
+ 1311 04c9 00       		.byte	0
+ 1312 04ca 0E       		.uleb128 0xe
+ 1313 04cb 40010000 		.4byte	.LVL34
+ 1314 04cf 85060000 		.4byte	0x685
+ 1315 04d3 DE040000 		.4byte	0x4de
+ 1316 04d7 0F       		.uleb128 0xf
+ 1317 04d8 01       		.uleb128 0x1
+ 1318 04d9 50       		.byte	0x50
+ 1319 04da 02       		.uleb128 0x2
+ 1320 04db 91       		.byte	0x91
+ 1321 04dc 6C       		.sleb128 -20
+ 1322 04dd 00       		.byte	0
+ 1323 04de 0E       		.uleb128 0xe
+ 1324 04df 48010000 		.4byte	.LVL35
+ 1325 04e3 2F060000 		.4byte	0x62f
+ 1326 04e7 F5040000 		.4byte	0x4f5
+ 1327 04eb 0F       		.uleb128 0xf
+ 1328 04ec 01       		.uleb128 0x1
+ 1329 04ed 50       		.byte	0x50
+ 1330 04ee 05       		.uleb128 0x5
+ 1331 04ef 03       		.byte	0x3
+ 1332 04f0 5C010000 		.4byte	.LC15
+ 1333 04f4 00       		.byte	0
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 29
 
 
- 1339 056d 00       		.byte	0
- 1340 056e 0A       		.uleb128 0xa
- 1341 056f 9F000000 		.4byte	.LASF44
- 1342 0573 01       		.byte	0x1
- 1343 0574 07       		.byte	0x7
- 1344 0575 2B010000 		.4byte	0x12b
- 1345 0579 05       		.uleb128 0x5
- 1346 057a 03       		.byte	0x3
- 1347 057b 00000000 		.4byte	shootRef
- 1348 057f 14       		.uleb128 0x14
- 1349 0580 10020000 		.4byte	.LASF60
- 1350 0584 09       		.byte	0x9
- 1351 0585 1207     		.2byte	0x712
- 1352 0587 8B050000 		.4byte	0x58b
- 1353 058b 15       		.uleb128 0x15
- 1354 058c A2000000 		.4byte	0xa2
- 1355 0590 16       		.uleb128 0x16
- 1356 0591 FF020000 		.4byte	.LASF45
- 1357 0595 FF020000 		.4byte	.LASF45
- 1358 0599 05       		.byte	0x5
- 1359 059a 6F       		.byte	0x6f
- 1360 059b 16       		.uleb128 0x16
- 1361 059c 6E000000 		.4byte	.LASF46
- 1362 05a0 6E000000 		.4byte	.LASF46
- 1363 05a4 06       		.byte	0x6
- 1364 05a5 FD       		.byte	0xfd
- 1365 05a6 16       		.uleb128 0x16
- 1366 05a7 EF000000 		.4byte	.LASF47
- 1367 05ab EF000000 		.4byte	.LASF47
- 1368 05af 07       		.byte	0x7
- 1369 05b0 8B       		.byte	0x8b
- 1370 05b1 16       		.uleb128 0x16
- 1371 05b2 08000000 		.4byte	.LASF48
- 1372 05b6 08000000 		.4byte	.LASF48
- 1373 05ba 06       		.byte	0x6
- 1374 05bb BF       		.byte	0xbf
- 1375 05bc 16       		.uleb128 0x16
- 1376 05bd 30020000 		.4byte	.LASF49
- 1377 05c1 30020000 		.4byte	.LASF49
- 1378 05c5 08       		.byte	0x8
- 1379 05c6 0A       		.byte	0xa
- 1380 05c7 16       		.uleb128 0x16
- 1381 05c8 3B020000 		.4byte	.LASF50
- 1382 05cc 3B020000 		.4byte	.LASF50
- 1383 05d0 08       		.byte	0x8
- 1384 05d1 0B       		.byte	0xb
- 1385 05d2 16       		.uleb128 0x16
- 1386 05d3 46020000 		.4byte	.LASF51
- 1387 05d7 46020000 		.4byte	.LASF51
- 1388 05db 05       		.byte	0x5
- 1389 05dc 73       		.byte	0x73
- 1390 05dd 16       		.uleb128 0x16
- 1391 05de 0B020000 		.4byte	.LASF52
- 1392 05e2 0B020000 		.4byte	.LASF52
- 1393 05e6 08       		.byte	0x8
- 1394 05e7 0E       		.byte	0xe
- 1395 05e8 16       		.uleb128 0x16
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 30
+ 1334 04f5 0E       		.uleb128 0xe
+ 1335 04f6 4E010000 		.4byte	.LVL36
+ 1336 04fa 85060000 		.4byte	0x685
+ 1337 04fe 09050000 		.4byte	0x509
+ 1338 0502 0F       		.uleb128 0xf
+ 1339 0503 01       		.uleb128 0x1
+ 1340 0504 50       		.byte	0x50
+ 1341 0505 02       		.uleb128 0x2
+ 1342 0506 91       		.byte	0x91
+ 1343 0507 60       		.sleb128 -32
+ 1344 0508 00       		.byte	0
+ 1345 0509 0E       		.uleb128 0xe
+ 1346 050a 56010000 		.4byte	.LVL37
+ 1347 050e 2F060000 		.4byte	0x62f
+ 1348 0512 20050000 		.4byte	0x520
+ 1349 0516 0F       		.uleb128 0xf
+ 1350 0517 01       		.uleb128 0x1
+ 1351 0518 50       		.byte	0x50
+ 1352 0519 05       		.uleb128 0x5
+ 1353 051a 03       		.byte	0x3
+ 1354 051b 90010000 		.4byte	.LC16
+ 1355 051f 00       		.byte	0
+ 1356 0520 0E       		.uleb128 0xe
+ 1357 0521 5C010000 		.4byte	.LVL38
+ 1358 0525 85060000 		.4byte	0x685
+ 1359 0529 34050000 		.4byte	0x534
+ 1360 052d 0F       		.uleb128 0xf
+ 1361 052e 01       		.uleb128 0x1
+ 1362 052f 50       		.byte	0x50
+ 1363 0530 02       		.uleb128 0x2
+ 1364 0531 91       		.byte	0x91
+ 1365 0532 54       		.sleb128 -44
+ 1366 0533 00       		.byte	0
+ 1367 0534 0E       		.uleb128 0xe
+ 1368 0535 64010000 		.4byte	.LVL39
+ 1369 0539 2F060000 		.4byte	0x62f
+ 1370 053d 4B050000 		.4byte	0x54b
+ 1371 0541 0F       		.uleb128 0xf
+ 1372 0542 01       		.uleb128 0x1
+ 1373 0543 50       		.byte	0x50
+ 1374 0544 05       		.uleb128 0x5
+ 1375 0545 03       		.byte	0x3
+ 1376 0546 C0010000 		.4byte	.LC17
+ 1377 054a 00       		.byte	0
+ 1378 054b 10       		.uleb128 0x10
+ 1379 054c 6A010000 		.4byte	.LVL40
+ 1380 0550 85060000 		.4byte	0x685
+ 1381 0554 0F       		.uleb128 0xf
+ 1382 0555 01       		.uleb128 0x1
+ 1383 0556 50       		.byte	0x50
+ 1384 0557 05       		.uleb128 0x5
+ 1385 0558 03       		.byte	0x3
+ 1386 0559 E8010000 		.4byte	.LC18
+ 1387 055d 00       		.byte	0
+ 1388 055e 00       		.byte	0
+ 1389 055f 11       		.uleb128 0x11
+ 1390 0560 BB000000 		.4byte	0xbb
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 30
 
 
- 1396 05e9 3B030000 		.4byte	.LASF53
- 1397 05ed 3B030000 		.4byte	.LASF53
- 1398 05f1 05       		.byte	0x5
- 1399 05f2 8B       		.byte	0x8b
- 1400 05f3 16       		.uleb128 0x16
- 1401 05f4 10010000 		.4byte	.LASF54
- 1402 05f8 10010000 		.4byte	.LASF54
- 1403 05fc 07       		.byte	0x7
- 1404 05fd 6F       		.byte	0x6f
- 1405 05fe 16       		.uleb128 0x16
- 1406 05ff 2F000000 		.4byte	.LASF55
- 1407 0603 2F000000 		.4byte	.LASF55
- 1408 0607 07       		.byte	0x7
- 1409 0608 88       		.byte	0x88
- 1410 0609 16       		.uleb128 0x16
- 1411 060a 23010000 		.4byte	.LASF56
- 1412 060e 23010000 		.4byte	.LASF56
- 1413 0612 07       		.byte	0x7
- 1414 0613 73       		.byte	0x73
- 1415 0614 00       		.byte	0
- 1416              		.section	.debug_abbrev,"",%progbits
- 1417              	.Ldebug_abbrev0:
- 1418 0000 01       		.uleb128 0x1
- 1419 0001 11       		.uleb128 0x11
- 1420 0002 01       		.byte	0x1
- 1421 0003 25       		.uleb128 0x25
- 1422 0004 0E       		.uleb128 0xe
- 1423 0005 13       		.uleb128 0x13
- 1424 0006 0B       		.uleb128 0xb
- 1425 0007 03       		.uleb128 0x3
- 1426 0008 0E       		.uleb128 0xe
- 1427 0009 1B       		.uleb128 0x1b
- 1428 000a 0E       		.uleb128 0xe
- 1429 000b 55       		.uleb128 0x55
- 1430 000c 17       		.uleb128 0x17
- 1431 000d 11       		.uleb128 0x11
- 1432 000e 01       		.uleb128 0x1
- 1433 000f 10       		.uleb128 0x10
- 1434 0010 17       		.uleb128 0x17
- 1435 0011 00       		.byte	0
- 1436 0012 00       		.byte	0
- 1437 0013 02       		.uleb128 0x2
- 1438 0014 16       		.uleb128 0x16
- 1439 0015 00       		.byte	0
- 1440 0016 03       		.uleb128 0x3
- 1441 0017 0E       		.uleb128 0xe
- 1442 0018 3A       		.uleb128 0x3a
- 1443 0019 0B       		.uleb128 0xb
- 1444 001a 3B       		.uleb128 0x3b
- 1445 001b 0B       		.uleb128 0xb
- 1446 001c 49       		.uleb128 0x49
- 1447 001d 13       		.uleb128 0x13
- 1448 001e 00       		.byte	0
- 1449 001f 00       		.byte	0
- 1450 0020 03       		.uleb128 0x3
- 1451 0021 24       		.uleb128 0x24
- 1452 0022 00       		.byte	0
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 31
+ 1391 0564 6F050000 		.4byte	0x56f
+ 1392 0568 12       		.uleb128 0x12
+ 1393 0569 C9000000 		.4byte	0xc9
+ 1394 056d 08       		.byte	0x8
+ 1395 056e 00       		.byte	0
+ 1396 056f 11       		.uleb128 0x11
+ 1397 0570 BB000000 		.4byte	0xbb
+ 1398 0574 7F050000 		.4byte	0x57f
+ 1399 0578 12       		.uleb128 0x12
+ 1400 0579 C9000000 		.4byte	0xc9
+ 1401 057d 09       		.byte	0x9
+ 1402 057e 00       		.byte	0
+ 1403 057f 07       		.uleb128 0x7
+ 1404 0580 78000000 		.4byte	.LASF42
+ 1405 0584 01       		.byte	0x1
+ 1406 0585 52       		.byte	0x52
+ 1407 0586 00000000 		.4byte	.LFB66
+ 1408 058a 24000000 		.4byte	.LFE66-.LFB66
+ 1409 058e 01       		.uleb128 0x1
+ 1410 058f 9C       		.byte	0x9c
+ 1411 0590 F7050000 		.4byte	0x5f7
+ 1412 0594 0B       		.uleb128 0xb
+ 1413 0595 B7020000 		.4byte	.LASF43
+ 1414 0599 01       		.byte	0x1
+ 1415 059a 54       		.byte	0x54
+ 1416 059b 97000000 		.4byte	0x97
+ 1417 059f 5B000000 		.4byte	.LLST4
+ 1418 05a3 0C       		.uleb128 0xc
+ 1419 05a4 0A000000 		.4byte	.LBB3
+ 1420 05a8 14000000 		.4byte	.LBE3-.LBB3
+ 1421 05ac ED050000 		.4byte	0x5ed
+ 1422 05b0 0B       		.uleb128 0xb
+ 1423 05b1 DB000000 		.4byte	.LASF35
+ 1424 05b5 01       		.byte	0x1
+ 1425 05b6 57       		.byte	0x57
+ 1426 05b7 97000000 		.4byte	0x97
+ 1427 05bb 79000000 		.4byte	.LLST5
+ 1428 05bf 0D       		.uleb128 0xd
+ 1429 05c0 0E000000 		.4byte	.LVL43
+ 1430 05c4 90060000 		.4byte	0x690
+ 1431 05c8 0E       		.uleb128 0xe
+ 1432 05c9 14000000 		.4byte	.LVL45
+ 1433 05cd 9B060000 		.4byte	0x69b
+ 1434 05d1 DC050000 		.4byte	0x5dc
+ 1435 05d5 0F       		.uleb128 0xf
+ 1436 05d6 01       		.uleb128 0x1
+ 1437 05d7 50       		.byte	0x50
+ 1438 05d8 02       		.uleb128 0x2
+ 1439 05d9 75       		.byte	0x75
+ 1440 05da 00       		.sleb128 0
+ 1441 05db 00       		.byte	0
+ 1442 05dc 10       		.uleb128 0x10
+ 1443 05dd 1A000000 		.4byte	.LVL46
+ 1444 05e1 9D030000 		.4byte	0x39d
+ 1445 05e5 0F       		.uleb128 0xf
+ 1446 05e6 01       		.uleb128 0x1
+ 1447 05e7 50       		.byte	0x50
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 31
 
 
- 1453 0023 0B       		.uleb128 0xb
- 1454 0024 0B       		.uleb128 0xb
- 1455 0025 3E       		.uleb128 0x3e
- 1456 0026 0B       		.uleb128 0xb
- 1457 0027 03       		.uleb128 0x3
- 1458 0028 0E       		.uleb128 0xe
- 1459 0029 00       		.byte	0
- 1460 002a 00       		.byte	0
- 1461 002b 04       		.uleb128 0x4
- 1462 002c 24       		.uleb128 0x24
- 1463 002d 00       		.byte	0
- 1464 002e 0B       		.uleb128 0xb
- 1465 002f 0B       		.uleb128 0xb
- 1466 0030 3E       		.uleb128 0x3e
- 1467 0031 0B       		.uleb128 0xb
- 1468 0032 03       		.uleb128 0x3
- 1469 0033 08       		.uleb128 0x8
- 1470 0034 00       		.byte	0
- 1471 0035 00       		.byte	0
- 1472 0036 05       		.uleb128 0x5
- 1473 0037 13       		.uleb128 0x13
- 1474 0038 01       		.byte	0x1
- 1475 0039 0B       		.uleb128 0xb
- 1476 003a 0B       		.uleb128 0xb
- 1477 003b 3A       		.uleb128 0x3a
- 1478 003c 0B       		.uleb128 0xb
- 1479 003d 3B       		.uleb128 0x3b
- 1480 003e 0B       		.uleb128 0xb
- 1481 003f 01       		.uleb128 0x1
- 1482 0040 13       		.uleb128 0x13
- 1483 0041 00       		.byte	0
- 1484 0042 00       		.byte	0
- 1485 0043 06       		.uleb128 0x6
- 1486 0044 0D       		.uleb128 0xd
- 1487 0045 00       		.byte	0
- 1488 0046 03       		.uleb128 0x3
- 1489 0047 0E       		.uleb128 0xe
- 1490 0048 3A       		.uleb128 0x3a
- 1491 0049 0B       		.uleb128 0xb
- 1492 004a 3B       		.uleb128 0x3b
- 1493 004b 0B       		.uleb128 0xb
- 1494 004c 49       		.uleb128 0x49
- 1495 004d 13       		.uleb128 0x13
- 1496 004e 38       		.uleb128 0x38
- 1497 004f 0B       		.uleb128 0xb
- 1498 0050 00       		.byte	0
- 1499 0051 00       		.byte	0
- 1500 0052 07       		.uleb128 0x7
- 1501 0053 2E       		.uleb128 0x2e
- 1502 0054 01       		.byte	0x1
- 1503 0055 3F       		.uleb128 0x3f
- 1504 0056 19       		.uleb128 0x19
- 1505 0057 03       		.uleb128 0x3
- 1506 0058 0E       		.uleb128 0xe
- 1507 0059 3A       		.uleb128 0x3a
- 1508 005a 0B       		.uleb128 0xb
- 1509 005b 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 32
+ 1448 05e8 02       		.uleb128 0x2
+ 1449 05e9 75       		.byte	0x75
+ 1450 05ea 00       		.sleb128 0
+ 1451 05eb 00       		.byte	0
+ 1452 05ec 00       		.byte	0
+ 1453 05ed 0D       		.uleb128 0xd
+ 1454 05ee 06000000 		.4byte	.LVL41
+ 1455 05f2 A6060000 		.4byte	0x6a6
+ 1456 05f6 00       		.byte	0
+ 1457 05f7 0A       		.uleb128 0xa
+ 1458 05f8 96020000 		.4byte	.LASF44
+ 1459 05fc 01       		.byte	0x1
+ 1460 05fd 07       		.byte	0x7
+ 1461 05fe 2B010000 		.4byte	0x12b
+ 1462 0602 05       		.uleb128 0x5
+ 1463 0603 03       		.byte	0x3
+ 1464 0604 00000000 		.4byte	shootRef
+ 1465 0608 14       		.uleb128 0x14
+ 1466 0609 1C030000 		.4byte	.LASF61
+ 1467 060d 0A       		.byte	0xa
+ 1468 060e 1207     		.2byte	0x712
+ 1469 0610 14060000 		.4byte	0x614
+ 1470 0614 15       		.uleb128 0x15
+ 1471 0615 A2000000 		.4byte	0xa2
+ 1472 0619 16       		.uleb128 0x16
+ 1473 061a 39020000 		.4byte	.LASF45
+ 1474 061e 39020000 		.4byte	.LASF45
+ 1475 0622 05       		.byte	0x5
+ 1476 0623 6F       		.byte	0x6f
+ 1477 0624 16       		.uleb128 0x16
+ 1478 0625 6F010000 		.4byte	.LASF46
+ 1479 0629 6F010000 		.4byte	.LASF46
+ 1480 062d 06       		.byte	0x6
+ 1481 062e FD       		.byte	0xfd
+ 1482 062f 16       		.uleb128 0x16
+ 1483 0630 78010000 		.4byte	.LASF47
+ 1484 0634 78010000 		.4byte	.LASF47
+ 1485 0638 07       		.byte	0x7
+ 1486 0639 8B       		.byte	0x8b
+ 1487 063a 16       		.uleb128 0x16
+ 1488 063b 29000000 		.4byte	.LASF48
+ 1489 063f 29000000 		.4byte	.LASF48
+ 1490 0643 06       		.byte	0x6
+ 1491 0644 BF       		.byte	0xbf
+ 1492 0645 16       		.uleb128 0x16
+ 1493 0646 28010000 		.4byte	.LASF49
+ 1494 064a 28010000 		.4byte	.LASF49
+ 1495 064e 08       		.byte	0x8
+ 1496 064f 0A       		.byte	0xa
+ 1497 0650 16       		.uleb128 0x16
+ 1498 0651 33010000 		.4byte	.LASF50
+ 1499 0655 33010000 		.4byte	.LASF50
+ 1500 0659 08       		.byte	0x8
+ 1501 065a 0B       		.byte	0xb
+ 1502 065b 16       		.uleb128 0x16
+ 1503 065c 60000000 		.4byte	.LASF51
+ 1504 0660 60000000 		.4byte	.LASF51
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 32
 
 
- 1510 005c 0B       		.uleb128 0xb
- 1511 005d 27       		.uleb128 0x27
- 1512 005e 19       		.uleb128 0x19
- 1513 005f 11       		.uleb128 0x11
- 1514 0060 01       		.uleb128 0x1
- 1515 0061 12       		.uleb128 0x12
- 1516 0062 06       		.uleb128 0x6
- 1517 0063 40       		.uleb128 0x40
- 1518 0064 18       		.uleb128 0x18
- 1519 0065 9742     		.uleb128 0x2117
- 1520 0067 19       		.uleb128 0x19
- 1521 0068 01       		.uleb128 0x1
- 1522 0069 13       		.uleb128 0x13
- 1523 006a 00       		.byte	0
- 1524 006b 00       		.byte	0
- 1525 006c 08       		.uleb128 0x8
- 1526 006d 05       		.uleb128 0x5
- 1527 006e 00       		.byte	0
- 1528 006f 03       		.uleb128 0x3
- 1529 0070 0E       		.uleb128 0xe
- 1530 0071 3A       		.uleb128 0x3a
- 1531 0072 0B       		.uleb128 0xb
- 1532 0073 3B       		.uleb128 0x3b
- 1533 0074 0B       		.uleb128 0xb
- 1534 0075 49       		.uleb128 0x49
- 1535 0076 13       		.uleb128 0x13
- 1536 0077 02       		.uleb128 0x2
- 1537 0078 18       		.uleb128 0x18
- 1538 0079 00       		.byte	0
- 1539 007a 00       		.byte	0
- 1540 007b 09       		.uleb128 0x9
- 1541 007c 0F       		.uleb128 0xf
- 1542 007d 00       		.byte	0
- 1543 007e 0B       		.uleb128 0xb
- 1544 007f 0B       		.uleb128 0xb
- 1545 0080 49       		.uleb128 0x49
- 1546 0081 13       		.uleb128 0x13
- 1547 0082 00       		.byte	0
- 1548 0083 00       		.byte	0
- 1549 0084 0A       		.uleb128 0xa
- 1550 0085 34       		.uleb128 0x34
- 1551 0086 00       		.byte	0
- 1552 0087 03       		.uleb128 0x3
- 1553 0088 0E       		.uleb128 0xe
- 1554 0089 3A       		.uleb128 0x3a
- 1555 008a 0B       		.uleb128 0xb
- 1556 008b 3B       		.uleb128 0x3b
- 1557 008c 0B       		.uleb128 0xb
- 1558 008d 49       		.uleb128 0x49
- 1559 008e 13       		.uleb128 0x13
- 1560 008f 02       		.uleb128 0x2
- 1561 0090 18       		.uleb128 0x18
- 1562 0091 00       		.byte	0
- 1563 0092 00       		.byte	0
- 1564 0093 0B       		.uleb128 0xb
- 1565 0094 34       		.uleb128 0x34
- 1566 0095 00       		.byte	0
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 33
+ 1505 0664 09       		.byte	0x9
+ 1506 0665 23       		.byte	0x23
+ 1507 0666 17       		.uleb128 0x17
+ 1508 0667 18010000 		.4byte	.LASF62
+ 1509 066b 18010000 		.4byte	.LASF62
+ 1510 066f 16       		.uleb128 0x16
+ 1511 0670 96010000 		.4byte	.LASF52
+ 1512 0674 96010000 		.4byte	.LASF52
+ 1513 0678 05       		.byte	0x5
+ 1514 0679 73       		.byte	0x73
+ 1515 067a 16       		.uleb128 0x16
+ 1516 067b 4C020000 		.4byte	.LASF53
+ 1517 067f 4C020000 		.4byte	.LASF53
+ 1518 0683 08       		.byte	0x8
+ 1519 0684 0E       		.byte	0xe
+ 1520 0685 16       		.uleb128 0x16
+ 1521 0686 FC000000 		.4byte	.LASF54
+ 1522 068a FC000000 		.4byte	.LASF54
+ 1523 068e 05       		.byte	0x5
+ 1524 068f 8B       		.byte	0x8b
+ 1525 0690 16       		.uleb128 0x16
+ 1526 0691 CA020000 		.4byte	.LASF55
+ 1527 0695 CA020000 		.4byte	.LASF55
+ 1528 0699 07       		.byte	0x7
+ 1529 069a 6F       		.byte	0x6f
+ 1530 069b 16       		.uleb128 0x16
+ 1531 069c 48010000 		.4byte	.LASF56
+ 1532 06a0 48010000 		.4byte	.LASF56
+ 1533 06a4 07       		.byte	0x7
+ 1534 06a5 88       		.byte	0x88
+ 1535 06a6 16       		.uleb128 0x16
+ 1536 06a7 11000000 		.4byte	.LASF57
+ 1537 06ab 11000000 		.4byte	.LASF57
+ 1538 06af 07       		.byte	0x7
+ 1539 06b0 73       		.byte	0x73
+ 1540 06b1 00       		.byte	0
+ 1541              		.section	.debug_abbrev,"",%progbits
+ 1542              	.Ldebug_abbrev0:
+ 1543 0000 01       		.uleb128 0x1
+ 1544 0001 11       		.uleb128 0x11
+ 1545 0002 01       		.byte	0x1
+ 1546 0003 25       		.uleb128 0x25
+ 1547 0004 0E       		.uleb128 0xe
+ 1548 0005 13       		.uleb128 0x13
+ 1549 0006 0B       		.uleb128 0xb
+ 1550 0007 03       		.uleb128 0x3
+ 1551 0008 0E       		.uleb128 0xe
+ 1552 0009 1B       		.uleb128 0x1b
+ 1553 000a 0E       		.uleb128 0xe
+ 1554 000b 55       		.uleb128 0x55
+ 1555 000c 17       		.uleb128 0x17
+ 1556 000d 11       		.uleb128 0x11
+ 1557 000e 01       		.uleb128 0x1
+ 1558 000f 10       		.uleb128 0x10
+ 1559 0010 17       		.uleb128 0x17
+ 1560 0011 00       		.byte	0
+ 1561 0012 00       		.byte	0
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 33
 
 
- 1567 0096 03       		.uleb128 0x3
- 1568 0097 0E       		.uleb128 0xe
- 1569 0098 3A       		.uleb128 0x3a
- 1570 0099 0B       		.uleb128 0xb
- 1571 009a 3B       		.uleb128 0x3b
- 1572 009b 0B       		.uleb128 0xb
- 1573 009c 49       		.uleb128 0x49
- 1574 009d 13       		.uleb128 0x13
- 1575 009e 02       		.uleb128 0x2
- 1576 009f 17       		.uleb128 0x17
- 1577 00a0 00       		.byte	0
- 1578 00a1 00       		.byte	0
- 1579 00a2 0C       		.uleb128 0xc
- 1580 00a3 0B       		.uleb128 0xb
- 1581 00a4 01       		.byte	0x1
- 1582 00a5 11       		.uleb128 0x11
- 1583 00a6 01       		.uleb128 0x1
- 1584 00a7 12       		.uleb128 0x12
- 1585 00a8 06       		.uleb128 0x6
- 1586 00a9 01       		.uleb128 0x1
- 1587 00aa 13       		.uleb128 0x13
- 1588 00ab 00       		.byte	0
- 1589 00ac 00       		.byte	0
- 1590 00ad 0D       		.uleb128 0xd
- 1591 00ae 898201   		.uleb128 0x4109
- 1592 00b1 00       		.byte	0
- 1593 00b2 11       		.uleb128 0x11
- 1594 00b3 01       		.uleb128 0x1
- 1595 00b4 31       		.uleb128 0x31
- 1596 00b5 13       		.uleb128 0x13
- 1597 00b6 00       		.byte	0
- 1598 00b7 00       		.byte	0
- 1599 00b8 0E       		.uleb128 0xe
- 1600 00b9 898201   		.uleb128 0x4109
- 1601 00bc 01       		.byte	0x1
- 1602 00bd 11       		.uleb128 0x11
- 1603 00be 01       		.uleb128 0x1
- 1604 00bf 31       		.uleb128 0x31
- 1605 00c0 13       		.uleb128 0x13
- 1606 00c1 01       		.uleb128 0x1
- 1607 00c2 13       		.uleb128 0x13
- 1608 00c3 00       		.byte	0
- 1609 00c4 00       		.byte	0
- 1610 00c5 0F       		.uleb128 0xf
- 1611 00c6 8A8201   		.uleb128 0x410a
- 1612 00c9 00       		.byte	0
- 1613 00ca 02       		.uleb128 0x2
- 1614 00cb 18       		.uleb128 0x18
- 1615 00cc 9142     		.uleb128 0x2111
- 1616 00ce 18       		.uleb128 0x18
- 1617 00cf 00       		.byte	0
- 1618 00d0 00       		.byte	0
- 1619 00d1 10       		.uleb128 0x10
- 1620 00d2 898201   		.uleb128 0x4109
- 1621 00d5 01       		.byte	0x1
- 1622 00d6 11       		.uleb128 0x11
- 1623 00d7 01       		.uleb128 0x1
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 34
+ 1562 0013 02       		.uleb128 0x2
+ 1563 0014 16       		.uleb128 0x16
+ 1564 0015 00       		.byte	0
+ 1565 0016 03       		.uleb128 0x3
+ 1566 0017 0E       		.uleb128 0xe
+ 1567 0018 3A       		.uleb128 0x3a
+ 1568 0019 0B       		.uleb128 0xb
+ 1569 001a 3B       		.uleb128 0x3b
+ 1570 001b 0B       		.uleb128 0xb
+ 1571 001c 49       		.uleb128 0x49
+ 1572 001d 13       		.uleb128 0x13
+ 1573 001e 00       		.byte	0
+ 1574 001f 00       		.byte	0
+ 1575 0020 03       		.uleb128 0x3
+ 1576 0021 24       		.uleb128 0x24
+ 1577 0022 00       		.byte	0
+ 1578 0023 0B       		.uleb128 0xb
+ 1579 0024 0B       		.uleb128 0xb
+ 1580 0025 3E       		.uleb128 0x3e
+ 1581 0026 0B       		.uleb128 0xb
+ 1582 0027 03       		.uleb128 0x3
+ 1583 0028 0E       		.uleb128 0xe
+ 1584 0029 00       		.byte	0
+ 1585 002a 00       		.byte	0
+ 1586 002b 04       		.uleb128 0x4
+ 1587 002c 24       		.uleb128 0x24
+ 1588 002d 00       		.byte	0
+ 1589 002e 0B       		.uleb128 0xb
+ 1590 002f 0B       		.uleb128 0xb
+ 1591 0030 3E       		.uleb128 0x3e
+ 1592 0031 0B       		.uleb128 0xb
+ 1593 0032 03       		.uleb128 0x3
+ 1594 0033 08       		.uleb128 0x8
+ 1595 0034 00       		.byte	0
+ 1596 0035 00       		.byte	0
+ 1597 0036 05       		.uleb128 0x5
+ 1598 0037 13       		.uleb128 0x13
+ 1599 0038 01       		.byte	0x1
+ 1600 0039 0B       		.uleb128 0xb
+ 1601 003a 0B       		.uleb128 0xb
+ 1602 003b 3A       		.uleb128 0x3a
+ 1603 003c 0B       		.uleb128 0xb
+ 1604 003d 3B       		.uleb128 0x3b
+ 1605 003e 0B       		.uleb128 0xb
+ 1606 003f 01       		.uleb128 0x1
+ 1607 0040 13       		.uleb128 0x13
+ 1608 0041 00       		.byte	0
+ 1609 0042 00       		.byte	0
+ 1610 0043 06       		.uleb128 0x6
+ 1611 0044 0D       		.uleb128 0xd
+ 1612 0045 00       		.byte	0
+ 1613 0046 03       		.uleb128 0x3
+ 1614 0047 0E       		.uleb128 0xe
+ 1615 0048 3A       		.uleb128 0x3a
+ 1616 0049 0B       		.uleb128 0xb
+ 1617 004a 3B       		.uleb128 0x3b
+ 1618 004b 0B       		.uleb128 0xb
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 34
 
 
- 1624 00d8 31       		.uleb128 0x31
- 1625 00d9 13       		.uleb128 0x13
- 1626 00da 00       		.byte	0
- 1627 00db 00       		.byte	0
- 1628 00dc 11       		.uleb128 0x11
- 1629 00dd 01       		.uleb128 0x1
- 1630 00de 01       		.byte	0x1
- 1631 00df 49       		.uleb128 0x49
- 1632 00e0 13       		.uleb128 0x13
- 1633 00e1 01       		.uleb128 0x1
- 1634 00e2 13       		.uleb128 0x13
- 1635 00e3 00       		.byte	0
- 1636 00e4 00       		.byte	0
- 1637 00e5 12       		.uleb128 0x12
- 1638 00e6 21       		.uleb128 0x21
- 1639 00e7 00       		.byte	0
- 1640 00e8 49       		.uleb128 0x49
- 1641 00e9 13       		.uleb128 0x13
- 1642 00ea 2F       		.uleb128 0x2f
- 1643 00eb 0B       		.uleb128 0xb
- 1644 00ec 00       		.byte	0
- 1645 00ed 00       		.byte	0
- 1646 00ee 13       		.uleb128 0x13
- 1647 00ef 05       		.uleb128 0x5
- 1648 00f0 00       		.byte	0
- 1649 00f1 03       		.uleb128 0x3
- 1650 00f2 0E       		.uleb128 0xe
- 1651 00f3 3A       		.uleb128 0x3a
- 1652 00f4 0B       		.uleb128 0xb
- 1653 00f5 3B       		.uleb128 0x3b
- 1654 00f6 0B       		.uleb128 0xb
- 1655 00f7 49       		.uleb128 0x49
- 1656 00f8 13       		.uleb128 0x13
- 1657 00f9 02       		.uleb128 0x2
- 1658 00fa 17       		.uleb128 0x17
- 1659 00fb 00       		.byte	0
- 1660 00fc 00       		.byte	0
- 1661 00fd 14       		.uleb128 0x14
- 1662 00fe 34       		.uleb128 0x34
- 1663 00ff 00       		.byte	0
- 1664 0100 03       		.uleb128 0x3
- 1665 0101 0E       		.uleb128 0xe
- 1666 0102 3A       		.uleb128 0x3a
- 1667 0103 0B       		.uleb128 0xb
- 1668 0104 3B       		.uleb128 0x3b
- 1669 0105 05       		.uleb128 0x5
- 1670 0106 49       		.uleb128 0x49
- 1671 0107 13       		.uleb128 0x13
- 1672 0108 3F       		.uleb128 0x3f
- 1673 0109 19       		.uleb128 0x19
- 1674 010a 3C       		.uleb128 0x3c
- 1675 010b 19       		.uleb128 0x19
- 1676 010c 00       		.byte	0
- 1677 010d 00       		.byte	0
- 1678 010e 15       		.uleb128 0x15
- 1679 010f 35       		.uleb128 0x35
- 1680 0110 00       		.byte	0
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 35
+ 1619 004c 49       		.uleb128 0x49
+ 1620 004d 13       		.uleb128 0x13
+ 1621 004e 38       		.uleb128 0x38
+ 1622 004f 0B       		.uleb128 0xb
+ 1623 0050 00       		.byte	0
+ 1624 0051 00       		.byte	0
+ 1625 0052 07       		.uleb128 0x7
+ 1626 0053 2E       		.uleb128 0x2e
+ 1627 0054 01       		.byte	0x1
+ 1628 0055 3F       		.uleb128 0x3f
+ 1629 0056 19       		.uleb128 0x19
+ 1630 0057 03       		.uleb128 0x3
+ 1631 0058 0E       		.uleb128 0xe
+ 1632 0059 3A       		.uleb128 0x3a
+ 1633 005a 0B       		.uleb128 0xb
+ 1634 005b 3B       		.uleb128 0x3b
+ 1635 005c 0B       		.uleb128 0xb
+ 1636 005d 27       		.uleb128 0x27
+ 1637 005e 19       		.uleb128 0x19
+ 1638 005f 11       		.uleb128 0x11
+ 1639 0060 01       		.uleb128 0x1
+ 1640 0061 12       		.uleb128 0x12
+ 1641 0062 06       		.uleb128 0x6
+ 1642 0063 40       		.uleb128 0x40
+ 1643 0064 18       		.uleb128 0x18
+ 1644 0065 9742     		.uleb128 0x2117
+ 1645 0067 19       		.uleb128 0x19
+ 1646 0068 01       		.uleb128 0x1
+ 1647 0069 13       		.uleb128 0x13
+ 1648 006a 00       		.byte	0
+ 1649 006b 00       		.byte	0
+ 1650 006c 08       		.uleb128 0x8
+ 1651 006d 05       		.uleb128 0x5
+ 1652 006e 00       		.byte	0
+ 1653 006f 03       		.uleb128 0x3
+ 1654 0070 0E       		.uleb128 0xe
+ 1655 0071 3A       		.uleb128 0x3a
+ 1656 0072 0B       		.uleb128 0xb
+ 1657 0073 3B       		.uleb128 0x3b
+ 1658 0074 0B       		.uleb128 0xb
+ 1659 0075 49       		.uleb128 0x49
+ 1660 0076 13       		.uleb128 0x13
+ 1661 0077 02       		.uleb128 0x2
+ 1662 0078 18       		.uleb128 0x18
+ 1663 0079 00       		.byte	0
+ 1664 007a 00       		.byte	0
+ 1665 007b 09       		.uleb128 0x9
+ 1666 007c 0F       		.uleb128 0xf
+ 1667 007d 00       		.byte	0
+ 1668 007e 0B       		.uleb128 0xb
+ 1669 007f 0B       		.uleb128 0xb
+ 1670 0080 49       		.uleb128 0x49
+ 1671 0081 13       		.uleb128 0x13
+ 1672 0082 00       		.byte	0
+ 1673 0083 00       		.byte	0
+ 1674 0084 0A       		.uleb128 0xa
+ 1675 0085 34       		.uleb128 0x34
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 35
 
 
- 1681 0111 49       		.uleb128 0x49
- 1682 0112 13       		.uleb128 0x13
- 1683 0113 00       		.byte	0
- 1684 0114 00       		.byte	0
- 1685 0115 16       		.uleb128 0x16
- 1686 0116 2E       		.uleb128 0x2e
- 1687 0117 00       		.byte	0
- 1688 0118 3F       		.uleb128 0x3f
- 1689 0119 19       		.uleb128 0x19
- 1690 011a 3C       		.uleb128 0x3c
- 1691 011b 19       		.uleb128 0x19
- 1692 011c 6E       		.uleb128 0x6e
- 1693 011d 0E       		.uleb128 0xe
- 1694 011e 03       		.uleb128 0x3
- 1695 011f 0E       		.uleb128 0xe
- 1696 0120 3A       		.uleb128 0x3a
- 1697 0121 0B       		.uleb128 0xb
- 1698 0122 3B       		.uleb128 0x3b
- 1699 0123 0B       		.uleb128 0xb
- 1700 0124 00       		.byte	0
- 1701 0125 00       		.byte	0
- 1702 0126 00       		.byte	0
- 1703              		.section	.debug_loc,"",%progbits
- 1704              	.Ldebug_loc0:
- 1705              	.LLST0:
- 1706 0000 6E000000 		.4byte	.LVL6
- 1707 0004 79000000 		.4byte	.LVL8-1
- 1708 0008 0200     		.2byte	0x2
- 1709 000a 91       		.byte	0x91
- 1710 000b 74       		.sleb128 -12
- 1711 000c 00000000 		.4byte	0
- 1712 0010 00000000 		.4byte	0
- 1713              	.LLST1:
- 1714 0014 72000000 		.4byte	.LVL7
- 1715 0018 80000000 		.4byte	.LVL9
- 1716 001c 0100     		.2byte	0x1
- 1717 001e 54       		.byte	0x54
- 1718 001f 00000000 		.4byte	0
- 1719 0023 00000000 		.4byte	0
- 1720              	.LLST2:
- 1721 0027 0A000000 		.4byte	.LVL1
- 1722 002b 2E000000 		.4byte	.LVL2
- 1723 002f 0100     		.2byte	0x1
- 1724 0031 50       		.byte	0x50
- 1725 0032 AC000000 		.4byte	.LVL12
- 1726 0036 B4000000 		.4byte	.LVL13
- 1727 003a 0100     		.2byte	0x1
- 1728 003c 50       		.byte	0x50
- 1729 003d 00000000 		.4byte	0
- 1730 0041 00000000 		.4byte	0
- 1731              	.LLST3:
- 1732 0045 00000000 		.4byte	.LVL17
- 1733 0049 0C000000 		.4byte	.LVL18
- 1734 004d 0100     		.2byte	0x1
- 1735 004f 50       		.byte	0x50
- 1736 0050 0C000000 		.4byte	.LVL18
- 1737 0054 AC010000 		.4byte	.LFE67
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 36
+ 1676 0086 00       		.byte	0
+ 1677 0087 03       		.uleb128 0x3
+ 1678 0088 0E       		.uleb128 0xe
+ 1679 0089 3A       		.uleb128 0x3a
+ 1680 008a 0B       		.uleb128 0xb
+ 1681 008b 3B       		.uleb128 0x3b
+ 1682 008c 0B       		.uleb128 0xb
+ 1683 008d 49       		.uleb128 0x49
+ 1684 008e 13       		.uleb128 0x13
+ 1685 008f 02       		.uleb128 0x2
+ 1686 0090 18       		.uleb128 0x18
+ 1687 0091 00       		.byte	0
+ 1688 0092 00       		.byte	0
+ 1689 0093 0B       		.uleb128 0xb
+ 1690 0094 34       		.uleb128 0x34
+ 1691 0095 00       		.byte	0
+ 1692 0096 03       		.uleb128 0x3
+ 1693 0097 0E       		.uleb128 0xe
+ 1694 0098 3A       		.uleb128 0x3a
+ 1695 0099 0B       		.uleb128 0xb
+ 1696 009a 3B       		.uleb128 0x3b
+ 1697 009b 0B       		.uleb128 0xb
+ 1698 009c 49       		.uleb128 0x49
+ 1699 009d 13       		.uleb128 0x13
+ 1700 009e 02       		.uleb128 0x2
+ 1701 009f 17       		.uleb128 0x17
+ 1702 00a0 00       		.byte	0
+ 1703 00a1 00       		.byte	0
+ 1704 00a2 0C       		.uleb128 0xc
+ 1705 00a3 0B       		.uleb128 0xb
+ 1706 00a4 01       		.byte	0x1
+ 1707 00a5 11       		.uleb128 0x11
+ 1708 00a6 01       		.uleb128 0x1
+ 1709 00a7 12       		.uleb128 0x12
+ 1710 00a8 06       		.uleb128 0x6
+ 1711 00a9 01       		.uleb128 0x1
+ 1712 00aa 13       		.uleb128 0x13
+ 1713 00ab 00       		.byte	0
+ 1714 00ac 00       		.byte	0
+ 1715 00ad 0D       		.uleb128 0xd
+ 1716 00ae 898201   		.uleb128 0x4109
+ 1717 00b1 00       		.byte	0
+ 1718 00b2 11       		.uleb128 0x11
+ 1719 00b3 01       		.uleb128 0x1
+ 1720 00b4 31       		.uleb128 0x31
+ 1721 00b5 13       		.uleb128 0x13
+ 1722 00b6 00       		.byte	0
+ 1723 00b7 00       		.byte	0
+ 1724 00b8 0E       		.uleb128 0xe
+ 1725 00b9 898201   		.uleb128 0x4109
+ 1726 00bc 01       		.byte	0x1
+ 1727 00bd 11       		.uleb128 0x11
+ 1728 00be 01       		.uleb128 0x1
+ 1729 00bf 31       		.uleb128 0x31
+ 1730 00c0 13       		.uleb128 0x13
+ 1731 00c1 01       		.uleb128 0x1
+ 1732 00c2 13       		.uleb128 0x13
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 36
 
 
- 1738 0058 0400     		.2byte	0x4
- 1739 005a F3       		.byte	0xf3
- 1740 005b 01       		.uleb128 0x1
- 1741 005c 50       		.byte	0x50
- 1742 005d 9F       		.byte	0x9f
- 1743 005e 00000000 		.4byte	0
- 1744 0062 00000000 		.4byte	0
- 1745              	.LLST4:
- 1746 0066 08000000 		.4byte	.LVL39
- 1747 006a 1C000000 		.4byte	.LVL44
- 1748 006e 0100     		.2byte	0x1
- 1749 0070 54       		.byte	0x54
- 1750 0071 1E000000 		.4byte	.LVL45
- 1751 0075 24000000 		.4byte	.LFE66
- 1752 0079 0100     		.2byte	0x1
- 1753 007b 54       		.byte	0x54
- 1754 007c 00000000 		.4byte	0
- 1755 0080 00000000 		.4byte	0
- 1756              	.LLST5:
- 1757 0084 10000000 		.4byte	.LVL41
- 1758 0088 1E000000 		.4byte	.LVL45
- 1759 008c 0100     		.2byte	0x1
- 1760 008e 55       		.byte	0x55
- 1761 008f 00000000 		.4byte	0
- 1762 0093 00000000 		.4byte	0
- 1763              		.section	.debug_aranges,"",%progbits
- 1764 0000 34000000 		.4byte	0x34
- 1765 0004 0200     		.2byte	0x2
- 1766 0006 00000000 		.4byte	.Ldebug_info0
- 1767 000a 04       		.byte	0x4
- 1768 000b 00       		.byte	0
- 1769 000c 0000     		.2byte	0
- 1770 000e 0000     		.2byte	0
- 1771 0010 00000000 		.4byte	.LFB64
- 1772 0014 0C000000 		.4byte	.LFE64-.LFB64
- 1773 0018 00000000 		.4byte	.LFB65
- 1774 001c E4000000 		.4byte	.LFE65-.LFB65
- 1775 0020 00000000 		.4byte	.LFB67
- 1776 0024 AC010000 		.4byte	.LFE67-.LFB67
- 1777 0028 00000000 		.4byte	.LFB66
- 1778 002c 24000000 		.4byte	.LFE66-.LFB66
- 1779 0030 00000000 		.4byte	0
- 1780 0034 00000000 		.4byte	0
- 1781              		.section	.debug_ranges,"",%progbits
- 1782              	.Ldebug_ranges0:
- 1783 0000 00000000 		.4byte	.LFB64
- 1784 0004 0C000000 		.4byte	.LFE64
- 1785 0008 00000000 		.4byte	.LFB65
- 1786 000c E4000000 		.4byte	.LFE65
- 1787 0010 00000000 		.4byte	.LFB67
- 1788 0014 AC010000 		.4byte	.LFE67
- 1789 0018 00000000 		.4byte	.LFB66
- 1790 001c 24000000 		.4byte	.LFE66
- 1791 0020 00000000 		.4byte	0
- 1792 0024 00000000 		.4byte	0
- 1793              		.section	.debug_line,"",%progbits
- 1794              	.Ldebug_line0:
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 37
+ 1733 00c3 00       		.byte	0
+ 1734 00c4 00       		.byte	0
+ 1735 00c5 0F       		.uleb128 0xf
+ 1736 00c6 8A8201   		.uleb128 0x410a
+ 1737 00c9 00       		.byte	0
+ 1738 00ca 02       		.uleb128 0x2
+ 1739 00cb 18       		.uleb128 0x18
+ 1740 00cc 9142     		.uleb128 0x2111
+ 1741 00ce 18       		.uleb128 0x18
+ 1742 00cf 00       		.byte	0
+ 1743 00d0 00       		.byte	0
+ 1744 00d1 10       		.uleb128 0x10
+ 1745 00d2 898201   		.uleb128 0x4109
+ 1746 00d5 01       		.byte	0x1
+ 1747 00d6 11       		.uleb128 0x11
+ 1748 00d7 01       		.uleb128 0x1
+ 1749 00d8 31       		.uleb128 0x31
+ 1750 00d9 13       		.uleb128 0x13
+ 1751 00da 00       		.byte	0
+ 1752 00db 00       		.byte	0
+ 1753 00dc 11       		.uleb128 0x11
+ 1754 00dd 01       		.uleb128 0x1
+ 1755 00de 01       		.byte	0x1
+ 1756 00df 49       		.uleb128 0x49
+ 1757 00e0 13       		.uleb128 0x13
+ 1758 00e1 01       		.uleb128 0x1
+ 1759 00e2 13       		.uleb128 0x13
+ 1760 00e3 00       		.byte	0
+ 1761 00e4 00       		.byte	0
+ 1762 00e5 12       		.uleb128 0x12
+ 1763 00e6 21       		.uleb128 0x21
+ 1764 00e7 00       		.byte	0
+ 1765 00e8 49       		.uleb128 0x49
+ 1766 00e9 13       		.uleb128 0x13
+ 1767 00ea 2F       		.uleb128 0x2f
+ 1768 00eb 0B       		.uleb128 0xb
+ 1769 00ec 00       		.byte	0
+ 1770 00ed 00       		.byte	0
+ 1771 00ee 13       		.uleb128 0x13
+ 1772 00ef 05       		.uleb128 0x5
+ 1773 00f0 00       		.byte	0
+ 1774 00f1 03       		.uleb128 0x3
+ 1775 00f2 0E       		.uleb128 0xe
+ 1776 00f3 3A       		.uleb128 0x3a
+ 1777 00f4 0B       		.uleb128 0xb
+ 1778 00f5 3B       		.uleb128 0x3b
+ 1779 00f6 0B       		.uleb128 0xb
+ 1780 00f7 49       		.uleb128 0x49
+ 1781 00f8 13       		.uleb128 0x13
+ 1782 00f9 02       		.uleb128 0x2
+ 1783 00fa 17       		.uleb128 0x17
+ 1784 00fb 00       		.byte	0
+ 1785 00fc 00       		.byte	0
+ 1786 00fd 14       		.uleb128 0x14
+ 1787 00fe 34       		.uleb128 0x34
+ 1788 00ff 00       		.byte	0
+ 1789 0100 03       		.uleb128 0x3
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 37
 
 
- 1795 0000 A7020000 		.section	.debug_str,"MS",%progbits,1
- 1795      0200FC01 
- 1795      00000201 
- 1795      FB0E0D00 
- 1795      01010101 
- 1796              	.LASF32:
- 1797 0000 6D657373 		.ascii	"message\000"
- 1797      61676500 
- 1798              	.LASF48:
- 1799 0008 73736361 		.ascii	"sscanf\000"
- 1799      6E6600
- 1800              	.LASF40:
- 1801 000f 636F6D6D 		.ascii	"command_baud\000"
- 1801      616E645F 
- 1801      62617564 
- 1801      00
- 1802              	.LASF0:
- 1803 001c 5F5F696E 		.ascii	"__int8_t\000"
- 1803      74385F74 
- 1803      00
- 1804              	.LASF1:
- 1805 0025 5F5F7569 		.ascii	"__uint8_t\000"
- 1805      6E74385F 
- 1805      7400
- 1806              	.LASF55:
- 1807 002f 55415254 		.ascii	"UART_PC_WriteTxData\000"
- 1807      5F50435F 
- 1807      57726974 
- 1807      65547844 
- 1807      61746100 
- 1808              	.LASF42:
- 1809 0043 4953525F 		.ascii	"ISR_UART_rx_handler_PC\000"
- 1809      55415254 
- 1809      5F72785F 
- 1809      68616E64 
- 1809      6C65725F 
- 1810              	.LASF6:
- 1811 005a 5F5F696E 		.ascii	"__int32_t\000"
- 1811      7433325F 
- 1811      7400
- 1812              	.LASF22:
- 1813 0064 73686F6F 		.ascii	"shootMode\000"
- 1813      744D6F64 
- 1813      6500
- 1814              	.LASF46:
- 1815 006e 736E7072 		.ascii	"snprintf\000"
- 1815      696E7466 
- 1815      00
- 1816              	.LASF5:
- 1817 0077 73686F72 		.ascii	"short unsigned int\000"
- 1817      7420756E 
- 1817      7369676E 
- 1817      65642069 
- 1817      6E7400
- 1818              	.LASF30:
- 1819 008a 74656D70 		.ascii	"tempBool\000"
- 1819      426F6F6C 
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 38
+ 1790 0101 0E       		.uleb128 0xe
+ 1791 0102 3A       		.uleb128 0x3a
+ 1792 0103 0B       		.uleb128 0xb
+ 1793 0104 3B       		.uleb128 0x3b
+ 1794 0105 05       		.uleb128 0x5
+ 1795 0106 49       		.uleb128 0x49
+ 1796 0107 13       		.uleb128 0x13
+ 1797 0108 3F       		.uleb128 0x3f
+ 1798 0109 19       		.uleb128 0x19
+ 1799 010a 3C       		.uleb128 0x3c
+ 1800 010b 19       		.uleb128 0x19
+ 1801 010c 00       		.byte	0
+ 1802 010d 00       		.byte	0
+ 1803 010e 15       		.uleb128 0x15
+ 1804 010f 35       		.uleb128 0x35
+ 1805 0110 00       		.byte	0
+ 1806 0111 49       		.uleb128 0x49
+ 1807 0112 13       		.uleb128 0x13
+ 1808 0113 00       		.byte	0
+ 1809 0114 00       		.byte	0
+ 1810 0115 16       		.uleb128 0x16
+ 1811 0116 2E       		.uleb128 0x2e
+ 1812 0117 00       		.byte	0
+ 1813 0118 3F       		.uleb128 0x3f
+ 1814 0119 19       		.uleb128 0x19
+ 1815 011a 3C       		.uleb128 0x3c
+ 1816 011b 19       		.uleb128 0x19
+ 1817 011c 6E       		.uleb128 0x6e
+ 1818 011d 0E       		.uleb128 0xe
+ 1819 011e 03       		.uleb128 0x3
+ 1820 011f 0E       		.uleb128 0xe
+ 1821 0120 3A       		.uleb128 0x3a
+ 1822 0121 0B       		.uleb128 0xb
+ 1823 0122 3B       		.uleb128 0x3b
+ 1824 0123 0B       		.uleb128 0xb
+ 1825 0124 00       		.byte	0
+ 1826 0125 00       		.byte	0
+ 1827 0126 17       		.uleb128 0x17
+ 1828 0127 2E       		.uleb128 0x2e
+ 1829 0128 00       		.byte	0
+ 1830 0129 3F       		.uleb128 0x3f
+ 1831 012a 19       		.uleb128 0x19
+ 1832 012b 3C       		.uleb128 0x3c
+ 1833 012c 19       		.uleb128 0x19
+ 1834 012d 6E       		.uleb128 0x6e
+ 1835 012e 0E       		.uleb128 0xe
+ 1836 012f 03       		.uleb128 0x3
+ 1837 0130 0E       		.uleb128 0xe
+ 1838 0131 00       		.byte	0
+ 1839 0132 00       		.byte	0
+ 1840 0133 00       		.byte	0
+ 1841              		.section	.debug_loc,"",%progbits
+ 1842              	.Ldebug_loc0:
+ 1843              	.LLST0:
+ 1844 0000 6E000000 		.4byte	.LVL6
+ 1845 0004 79000000 		.4byte	.LVL8-1
+ 1846 0008 0200     		.2byte	0x2
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 38
 
 
- 1819      00
- 1820              	.LASF43:
- 1821 0093 62797465 		.ascii	"bytesToRead\000"
- 1821      73546F52 
- 1821      65616400 
- 1822              	.LASF44:
- 1823 009f 73686F6F 		.ascii	"shootRef\000"
- 1823      74526566 
- 1823      00
- 1824              	.LASF12:
- 1825 00a8 696E7438 		.ascii	"int8_t\000"
- 1825      5F7400
- 1826              	.LASF59:
- 1827 00af 433A5C55 		.ascii	"C:\\Users\\farpe\\Documents\\GitHub\\PRJ3\\BattleBo"
- 1827      73657273 
- 1827      5C666172 
- 1827      70655C44 
- 1827      6F63756D 
- 1828 00dc 745C4D6F 		.ascii	"t\\Motor_Test.cydsn\000"
- 1828      746F725F 
- 1828      54657374 
- 1828      2E637964 
- 1828      736E00
- 1829              	.LASF47:
- 1830 00ef 55415254 		.ascii	"UART_PC_PutString\000"
- 1830      5F50435F 
- 1830      50757453 
- 1830      7472696E 
- 1830      6700
- 1831              	.LASF15:
- 1832 0101 666C6F61 		.ascii	"float\000"
- 1832      7400
- 1833              	.LASF26:
- 1834 0107 62744275 		.ascii	"btBuffer\000"
- 1834      66666572 
- 1834      00
- 1835              	.LASF54:
- 1836 0110 55415254 		.ascii	"UART_PC_ReadRxData\000"
- 1836      5F50435F 
- 1836      52656164 
- 1836      52784461 
- 1836      746100
- 1837              	.LASF56:
- 1838 0123 55415254 		.ascii	"UART_PC_GetRxBufferSize\000"
- 1838      5F50435F 
- 1838      47657452 
- 1838      78427566 
- 1838      66657253 
- 1839              	.LASF3:
- 1840 013b 756E7369 		.ascii	"unsigned char\000"
- 1840      676E6564 
- 1840      20636861 
- 1840      7200
- 1841              	.LASF57:
- 1842 0149 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1842      43313120 
- 1842      352E342E 
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 39
+ 1847 000a 91       		.byte	0x91
+ 1848 000b 74       		.sleb128 -12
+ 1849 000c 00000000 		.4byte	0
+ 1850 0010 00000000 		.4byte	0
+ 1851              	.LLST1:
+ 1852 0014 72000000 		.4byte	.LVL7
+ 1853 0018 82000000 		.4byte	.LVL10
+ 1854 001c 0100     		.2byte	0x1
+ 1855 001e 54       		.byte	0x54
+ 1856 001f 00000000 		.4byte	0
+ 1857 0023 00000000 		.4byte	0
+ 1858              	.LLST2:
+ 1859 0027 0A000000 		.4byte	.LVL1
+ 1860 002b 2E000000 		.4byte	.LVL2
+ 1861 002f 0100     		.2byte	0x1
+ 1862 0031 50       		.byte	0x50
+ 1863 0032 00000000 		.4byte	0
+ 1864 0036 00000000 		.4byte	0
+ 1865              	.LLST3:
+ 1866 003a 00000000 		.4byte	.LVL20
+ 1867 003e 0C000000 		.4byte	.LVL21
+ 1868 0042 0100     		.2byte	0x1
+ 1869 0044 50       		.byte	0x50
+ 1870 0045 0C000000 		.4byte	.LVL21
+ 1871 0049 AC010000 		.4byte	.LFE67
+ 1872 004d 0400     		.2byte	0x4
+ 1873 004f F3       		.byte	0xf3
+ 1874 0050 01       		.uleb128 0x1
+ 1875 0051 50       		.byte	0x50
+ 1876 0052 9F       		.byte	0x9f
+ 1877 0053 00000000 		.4byte	0
+ 1878 0057 00000000 		.4byte	0
+ 1879              	.LLST4:
+ 1880 005b 08000000 		.4byte	.LVL42
+ 1881 005f 1C000000 		.4byte	.LVL47
+ 1882 0063 0100     		.2byte	0x1
+ 1883 0065 54       		.byte	0x54
+ 1884 0066 1E000000 		.4byte	.LVL48
+ 1885 006a 24000000 		.4byte	.LFE66
+ 1886 006e 0100     		.2byte	0x1
+ 1887 0070 54       		.byte	0x54
+ 1888 0071 00000000 		.4byte	0
+ 1889 0075 00000000 		.4byte	0
+ 1890              	.LLST5:
+ 1891 0079 10000000 		.4byte	.LVL44
+ 1892 007d 1E000000 		.4byte	.LVL48
+ 1893 0081 0100     		.2byte	0x1
+ 1894 0083 55       		.byte	0x55
+ 1895 0084 00000000 		.4byte	0
+ 1896 0088 00000000 		.4byte	0
+ 1897              		.section	.debug_aranges,"",%progbits
+ 1898 0000 34000000 		.4byte	0x34
+ 1899 0004 0200     		.2byte	0x2
+ 1900 0006 00000000 		.4byte	.Ldebug_info0
+ 1901 000a 04       		.byte	0x4
+ 1902 000b 00       		.byte	0
+ 1903 000c 0000     		.2byte	0
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 39
 
 
- 1842      31203230 
- 1842      31363036 
- 1843 017c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1843      20726576 
- 1843      6973696F 
- 1843      6E203233 
- 1843      37373135 
- 1844 01af 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1844      66756E63 
- 1844      74696F6E 
- 1844      2D736563 
- 1844      74696F6E 
- 1845              	.LASF58:
- 1846 01d7 55415254 		.ascii	"UART_handler.c\000"
- 1846      5F68616E 
- 1846      646C6572 
- 1846      2E6300
- 1847              	.LASF8:
- 1848 01e6 6C6F6E67 		.ascii	"long unsigned int\000"
- 1848      20756E73 
- 1848      69676E65 
- 1848      6420696E 
- 1848      7400
- 1849              	.LASF36:
- 1850 01f8 68616E64 		.ascii	"handleByteReceived\000"
- 1850      6C654279 
- 1850      74655265 
- 1850      63656976 
- 1850      656400
- 1851              	.LASF52:
- 1852 020b 73746F70 		.ascii	"stop\000"
- 1852      00
- 1853              	.LASF60:
- 1854 0210 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1854      52784275 
- 1854      66666572 
- 1854      00
- 1855              	.LASF16:
- 1856 021d 646F7562 		.ascii	"double\000"
- 1856      6C6500
- 1857              	.LASF18:
- 1858 0224 6C6F6E67 		.ascii	"long double\000"
- 1858      20646F75 
- 1858      626C6500 
- 1859              	.LASF49:
- 1860 0230 7365745F 		.ascii	"set_speedA\000"
- 1860      73706565 
- 1860      644100
- 1861              	.LASF50:
- 1862 023b 7365745F 		.ascii	"set_speedB\000"
- 1862      73706565 
- 1862      644200
- 1863              	.LASF51:
- 1864 0246 55415254 		.ascii	"UART_BT_GetRxBufferSize\000"
- 1864      5F42545F 
- 1864      47657452 
- 1864      78427566 
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 40
+ 1904 000e 0000     		.2byte	0
+ 1905 0010 00000000 		.4byte	.LFB64
+ 1906 0014 0C000000 		.4byte	.LFE64-.LFB64
+ 1907 0018 00000000 		.4byte	.LFB65
+ 1908 001c 14010000 		.4byte	.LFE65-.LFB65
+ 1909 0020 00000000 		.4byte	.LFB67
+ 1910 0024 AC010000 		.4byte	.LFE67-.LFB67
+ 1911 0028 00000000 		.4byte	.LFB66
+ 1912 002c 24000000 		.4byte	.LFE66-.LFB66
+ 1913 0030 00000000 		.4byte	0
+ 1914 0034 00000000 		.4byte	0
+ 1915              		.section	.debug_ranges,"",%progbits
+ 1916              	.Ldebug_ranges0:
+ 1917 0000 00000000 		.4byte	.LFB64
+ 1918 0004 0C000000 		.4byte	.LFE64
+ 1919 0008 00000000 		.4byte	.LFB65
+ 1920 000c 14010000 		.4byte	.LFE65
+ 1921 0010 00000000 		.4byte	.LFB67
+ 1922 0014 AC010000 		.4byte	.LFE67
+ 1923 0018 00000000 		.4byte	.LFB66
+ 1924 001c 24000000 		.4byte	.LFE66
+ 1925 0020 00000000 		.4byte	0
+ 1926 0024 00000000 		.4byte	0
+ 1927              		.section	.debug_line,"",%progbits
+ 1928              	.Ldebug_line0:
+ 1929 0000 B4020000 		.section	.debug_str,"MS",%progbits,1
+ 1929      02000802 
+ 1929      00000201 
+ 1929      FB0E0D00 
+ 1929      01010101 
+ 1930              	.LASF24:
+ 1931 0000 75617274 		.ascii	"uartHandler_init\000"
+ 1931      48616E64 
+ 1931      6C65725F 
+ 1931      696E6974 
+ 1931      00
+ 1932              	.LASF57:
+ 1933 0011 55415254 		.ascii	"UART_PC_GetRxBufferSize\000"
+ 1933      5F50435F 
+ 1933      47657452 
+ 1933      78427566 
+ 1933      66657253 
+ 1934              	.LASF48:
+ 1935 0029 73736361 		.ascii	"sscanf\000"
+ 1935      6E6600
+ 1936              	.LASF12:
+ 1937 0030 696E7438 		.ascii	"int8_t\000"
+ 1937      5F7400
+ 1938              	.LASF40:
+ 1939 0037 636F6D6D 		.ascii	"command_baud\000"
+ 1939      616E645F 
+ 1939      62617564 
+ 1939      00
+ 1940              	.LASF41:
+ 1941 0044 636F6D6D 		.ascii	"command_status\000"
+ 1941      616E645F 
+ 1941      73746174 
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 40
 
 
- 1864      66657253 
- 1865              	.LASF11:
- 1866 025e 756E7369 		.ascii	"unsigned int\000"
- 1866      676E6564 
- 1866      20696E74 
- 1866      00
- 1867              	.LASF39:
- 1868 026b 636F6D6D 		.ascii	"command_address\000"
- 1868      616E645F 
- 1868      61646472 
- 1868      65737300 
- 1869              	.LASF24:
- 1870 027b 75617274 		.ascii	"uartHandler_init\000"
- 1870      48616E64 
- 1870      6C65725F 
- 1870      696E6974 
- 1870      00
- 1871              	.LASF23:
- 1872 028c 73686F6F 		.ascii	"shootVarHandler\000"
- 1872      74566172 
- 1872      48616E64 
- 1872      6C657200 
- 1873              	.LASF10:
- 1874 029c 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1874      206C6F6E 
- 1874      6720756E 
- 1874      7369676E 
- 1874      65642069 
- 1875              	.LASF13:
- 1876 02b3 75696E74 		.ascii	"uint8_t\000"
- 1876      385F7400 
- 1877              	.LASF31:
- 1878 02bb 74656D70 		.ascii	"tempMode\000"
- 1878      4D6F6465 
- 1878      00
- 1879              	.LASF41:
- 1880 02c4 636F6D6D 		.ascii	"command_status\000"
- 1880      616E645F 
- 1880      73746174 
- 1880      757300
- 1881              	.LASF38:
- 1882 02d3 63757272 		.ascii	"currentSpeed\000"
- 1882      656E7453 
- 1882      70656564 
- 1882      00
- 1883              	.LASF37:
- 1884 02e0 68616E64 		.ascii	"handler\000"
- 1884      6C657200 
- 1885              	.LASF19:
- 1886 02e8 73697A65 		.ascii	"sizetype\000"
- 1886      74797065 
- 1886      00
- 1887              	.LASF9:
- 1888 02f1 6C6F6E67 		.ascii	"long long int\000"
- 1888      206C6F6E 
- 1888      6720696E 
- 1888      7400
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 41
+ 1941      757300
+ 1942              	.LASF38:
+ 1943 0053 63757272 		.ascii	"currentSpeed\000"
+ 1943      656E7453 
+ 1943      70656564 
+ 1943      00
+ 1944              	.LASF51:
+ 1945 0060 7374726E 		.ascii	"strncmp\000"
+ 1945      636D7000 
+ 1946              	.LASF4:
+ 1947 0068 73686F72 		.ascii	"short int\000"
+ 1947      7420696E 
+ 1947      7400
+ 1948              	.LASF27:
+ 1949 0072 696E6465 		.ascii	"index\000"
+ 1949      7800
+ 1950              	.LASF42:
+ 1951 0078 4953525F 		.ascii	"ISR_UART_rx_handler_PC\000"
+ 1951      55415254 
+ 1951      5F72785F 
+ 1951      68616E64 
+ 1951      6C65725F 
+ 1952              	.LASF60:
+ 1953 008f 433A5C55 		.ascii	"C:\\Users\\farpe\\Documents\\GitHub\\PRJ3\\BattleBo"
+ 1953      73657273 
+ 1953      5C666172 
+ 1953      70655C44 
+ 1953      6F63756D 
+ 1954 00bc 745C4D6F 		.ascii	"t\\Motor_Test.cydsn\000"
+ 1954      746F725F 
+ 1954      54657374 
+ 1954      2E637964 
+ 1954      736E00
+ 1955              	.LASF2:
+ 1956 00cf 7369676E 		.ascii	"signed char\000"
+ 1956      65642063 
+ 1956      68617200 
+ 1957              	.LASF35:
+ 1958 00db 62797465 		.ascii	"byteReceived\000"
+ 1958      52656365 
+ 1958      69766564 
+ 1958      00
+ 1959              	.LASF15:
+ 1960 00e8 666C6F61 		.ascii	"float\000"
+ 1960      7400
+ 1961              	.LASF9:
+ 1962 00ee 6C6F6E67 		.ascii	"long long int\000"
+ 1962      206C6F6E 
+ 1962      6720696E 
+ 1962      7400
+ 1963              	.LASF54:
+ 1964 00fc 55415254 		.ascii	"UART_BT_PutString\000"
+ 1964      5F42545F 
+ 1964      50757453 
+ 1964      7472696E 
+ 1964      6700
+ 1965              	.LASF22:
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 41
 
 
- 1889              	.LASF45:
- 1890 02ff 55415254 		.ascii	"UART_BT_ReadRxData\000"
- 1890      5F42545F 
- 1890      52656164 
- 1890      52784461 
- 1890      746100
- 1891              	.LASF17:
- 1892 0312 63686172 		.ascii	"char\000"
- 1892      00
- 1893              	.LASF27:
- 1894 0317 696E6465 		.ascii	"index\000"
- 1894      7800
- 1895              	.LASF28:
- 1896 031d 74656D70 		.ascii	"temp1\000"
- 1896      3100
- 1897              	.LASF29:
- 1898 0323 74656D70 		.ascii	"temp2\000"
- 1898      3200
- 1899              	.LASF14:
- 1900 0329 696E7433 		.ascii	"int32_t\000"
- 1900      325F7400 
- 1901              	.LASF4:
- 1902 0331 73686F72 		.ascii	"short int\000"
- 1902      7420696E 
- 1902      7400
- 1903              	.LASF53:
- 1904 033b 55415254 		.ascii	"UART_BT_PutString\000"
- 1904      5F42545F 
- 1904      50757453 
- 1904      7472696E 
- 1904      6700
- 1905              	.LASF25:
- 1906 034d 4953525F 		.ascii	"ISR_UART_rx_handler_BT\000"
- 1906      55415254 
- 1906      5F72785F 
- 1906      68616E64 
- 1906      6C65725F 
- 1907              	.LASF7:
- 1908 0364 6C6F6E67 		.ascii	"long int\000"
- 1908      20696E74 
- 1908      00
- 1909              	.LASF33:
- 1910 036d 56415231 		.ascii	"VAR1\000"
- 1910      00
- 1911              	.LASF34:
- 1912 0372 56415232 		.ascii	"VAR2\000"
- 1912      00
- 1913              	.LASF2:
- 1914 0377 7369676E 		.ascii	"signed char\000"
- 1914      65642063 
- 1914      68617200 
- 1915              	.LASF20:
- 1916 0383 64657369 		.ascii	"desiredPos1\000"
- 1916      72656450 
- 1916      6F733100 
- 1917              	.LASF21:
- 1918 038f 64657369 		.ascii	"desiredPos2\000"
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccEtsOC1.s 			page 42
+ 1966 010e 73686F6F 		.ascii	"shootMode\000"
+ 1966      744D6F64 
+ 1966      6500
+ 1967              	.LASF62:
+ 1968 0118 6D656D73 		.ascii	"memset\000"
+ 1968      657400
+ 1969              	.LASF7:
+ 1970 011f 6C6F6E67 		.ascii	"long int\000"
+ 1970      20696E74 
+ 1970      00
+ 1971              	.LASF49:
+ 1972 0128 7365745F 		.ascii	"set_speedA\000"
+ 1972      73706565 
+ 1972      644100
+ 1973              	.LASF50:
+ 1974 0133 7365745F 		.ascii	"set_speedB\000"
+ 1974      73706565 
+ 1974      644200
+ 1975              	.LASF1:
+ 1976 013e 5F5F7569 		.ascii	"__uint8_t\000"
+ 1976      6E74385F 
+ 1976      7400
+ 1977              	.LASF56:
+ 1978 0148 55415254 		.ascii	"UART_PC_WriteTxData\000"
+ 1978      5F50435F 
+ 1978      57726974 
+ 1978      65547844 
+ 1978      61746100 
+ 1979              	.LASF36:
+ 1980 015c 68616E64 		.ascii	"handleByteReceived\000"
+ 1980      6C654279 
+ 1980      74655265 
+ 1980      63656976 
+ 1980      656400
+ 1981              	.LASF46:
+ 1982 016f 736E7072 		.ascii	"snprintf\000"
+ 1982      696E7466 
+ 1982      00
+ 1983              	.LASF47:
+ 1984 0178 55415254 		.ascii	"UART_PC_PutString\000"
+ 1984      5F50435F 
+ 1984      50757453 
+ 1984      7472696E 
+ 1984      6700
+ 1985              	.LASF18:
+ 1986 018a 6C6F6E67 		.ascii	"long double\000"
+ 1986      20646F75 
+ 1986      626C6500 
+ 1987              	.LASF52:
+ 1988 0196 55415254 		.ascii	"UART_BT_GetRxBufferSize\000"
+ 1988      5F42545F 
+ 1988      47657452 
+ 1988      78427566 
+ 1988      66657253 
+ 1989              	.LASF3:
+ 1990 01ae 756E7369 		.ascii	"unsigned char\000"
+ 1990      676E6564 
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 42
 
 
- 1918      72656450 
- 1918      6F733200 
- 1919              	.LASF35:
- 1920 039b 62797465 		.ascii	"byteReceived\000"
- 1920      52656365 
- 1920      69766564 
- 1920      00
- 1921              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1990      20636861 
+ 1990      7200
+ 1991              	.LASF26:
+ 1992 01bc 62744275 		.ascii	"btBuffer\000"
+ 1992      66666572 
+ 1992      00
+ 1993              	.LASF33:
+ 1994 01c5 56415231 		.ascii	"VAR1\000"
+ 1994      00
+ 1995              	.LASF34:
+ 1996 01ca 56415232 		.ascii	"VAR2\000"
+ 1996      00
+ 1997              	.LASF59:
+ 1998 01cf 55415254 		.ascii	"UART_handler.c\000"
+ 1998      5F68616E 
+ 1998      646C6572 
+ 1998      2E6300
+ 1999              	.LASF10:
+ 2000 01de 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2000      206C6F6E 
+ 2000      6720756E 
+ 2000      7369676E 
+ 2000      65642069 
+ 2001              	.LASF11:
+ 2002 01f5 756E7369 		.ascii	"unsigned int\000"
+ 2002      676E6564 
+ 2002      20696E74 
+ 2002      00
+ 2003              	.LASF8:
+ 2004 0202 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2004      20756E73 
+ 2004      69676E65 
+ 2004      6420696E 
+ 2004      7400
+ 2005              	.LASF31:
+ 2006 0214 74656D70 		.ascii	"tempMode\000"
+ 2006      4D6F6465 
+ 2006      00
+ 2007              	.LASF5:
+ 2008 021d 73686F72 		.ascii	"short unsigned int\000"
+ 2008      7420756E 
+ 2008      7369676E 
+ 2008      65642069 
+ 2008      6E7400
+ 2009              	.LASF0:
+ 2010 0230 5F5F696E 		.ascii	"__int8_t\000"
+ 2010      74385F74 
+ 2010      00
+ 2011              	.LASF45:
+ 2012 0239 55415254 		.ascii	"UART_BT_ReadRxData\000"
+ 2012      5F42545F 
+ 2012      52656164 
+ 2012      52784461 
+ 2012      746100
+ 2013              	.LASF53:
+ 2014 024c 73746F70 		.ascii	"stop\000"
+ 2014      00
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 43
+
+
+ 2015              	.LASF17:
+ 2016 0251 63686172 		.ascii	"char\000"
+ 2016      00
+ 2017              	.LASF14:
+ 2018 0256 696E7433 		.ascii	"int32_t\000"
+ 2018      325F7400 
+ 2019              	.LASF23:
+ 2020 025e 73686F6F 		.ascii	"shootVarHandler\000"
+ 2020      74566172 
+ 2020      48616E64 
+ 2020      6C657200 
+ 2021              	.LASF37:
+ 2022 026e 68616E64 		.ascii	"handler\000"
+ 2022      6C657200 
+ 2023              	.LASF30:
+ 2024 0276 74656D70 		.ascii	"tempBool\000"
+ 2024      426F6F6C 
+ 2024      00
+ 2025              	.LASF25:
+ 2026 027f 4953525F 		.ascii	"ISR_UART_rx_handler_BT\000"
+ 2026      55415254 
+ 2026      5F72785F 
+ 2026      68616E64 
+ 2026      6C65725F 
+ 2027              	.LASF44:
+ 2028 0296 73686F6F 		.ascii	"shootRef\000"
+ 2028      74526566 
+ 2028      00
+ 2029              	.LASF39:
+ 2030 029f 636F6D6D 		.ascii	"command_address\000"
+ 2030      616E645F 
+ 2030      61646472 
+ 2030      65737300 
+ 2031              	.LASF32:
+ 2032 02af 6D657373 		.ascii	"message\000"
+ 2032      61676500 
+ 2033              	.LASF43:
+ 2034 02b7 62797465 		.ascii	"bytesToRead\000"
+ 2034      73546F52 
+ 2034      65616400 
+ 2035              	.LASF16:
+ 2036 02c3 646F7562 		.ascii	"double\000"
+ 2036      6C6500
+ 2037              	.LASF55:
+ 2038 02ca 55415254 		.ascii	"UART_PC_ReadRxData\000"
+ 2038      5F50435F 
+ 2038      52656164 
+ 2038      52784461 
+ 2038      746100
+ 2039              	.LASF20:
+ 2040 02dd 64657369 		.ascii	"desiredPos1\000"
+ 2040      72656450 
+ 2040      6F733100 
+ 2041              	.LASF21:
+ 2042 02e9 64657369 		.ascii	"desiredPos2\000"
+ 2042      72656450 
+ 2042      6F733200 
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccn5Lafz.s 			page 44
+
+
+ 2043              	.LASF6:
+ 2044 02f5 5F5F696E 		.ascii	"__int32_t\000"
+ 2044      7433325F 
+ 2044      7400
+ 2045              	.LASF13:
+ 2046 02ff 75696E74 		.ascii	"uint8_t\000"
+ 2046      385F7400 
+ 2047              	.LASF19:
+ 2048 0307 73697A65 		.ascii	"sizetype\000"
+ 2048      74797065 
+ 2048      00
+ 2049              	.LASF28:
+ 2050 0310 74656D70 		.ascii	"temp1\000"
+ 2050      3100
+ 2051              	.LASF29:
+ 2052 0316 74656D70 		.ascii	"temp2\000"
+ 2052      3200
+ 2053              	.LASF61:
+ 2054 031c 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2054      52784275 
+ 2054      66666572 
+ 2054      00
+ 2055              	.LASF58:
+ 2056 0329 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2056      43313120 
+ 2056      352E342E 
+ 2056      31203230 
+ 2056      31363036 
+ 2057 035c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2057      20726576 
+ 2057      6973696F 
+ 2057      6E203233 
+ 2057      37373135 
+ 2058 038f 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2058      66756E63 
+ 2058      74696F6E 
+ 2058      2D736563 
+ 2058      74696F6E 
+ 2059              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

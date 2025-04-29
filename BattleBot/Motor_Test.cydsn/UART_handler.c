@@ -9,6 +9,7 @@ static shootVarHandler* shootRef = NULL;  // Pointer to shared object
 void uartHandler_init(shootVarHandler* handler) {
     shootRef = handler;
 }
+
 // UART RX interrupt service routine for Bluetooth
 CY_ISR(ISR_UART_rx_handler_BT)
 {
@@ -31,26 +32,23 @@ CY_ISR(ISR_UART_rx_handler_BT)
         }
 
         // Message is considered done if we get \n, \r, or if buffer is full
-        if (byteReceived == '\n' || byteReceived == '\r' || index >= 49)
+        if (byteReceived == '\n' || byteReceived == '\r' || index >= sizeof(btBuffer) - 1)
         {
             btBuffer[index] = '\0';  // Null-terminate the string
 
             snprintf(message, sizeof(message), "\r\n[BT Response] %s\r\n", btBuffer);
             UART_PC_PutString(message);
 
-            // Try to parse the format: (e.g.) "-39,45"
+            // Try to parse the format: <char>,<int>,<int>,<int>
             if (sscanf(btBuffer, "%c,%d,%d,%d", &tempMode, &temp1, &temp2, &tempBool) == 4)
             {
-                
-                
-                if (tempMode == '$'){
-                VAR1 = (int8_t)temp1;
-                VAR2 = (int8_t)temp2;
-                set_speedA(VAR1);
-                set_speedB(VAR2);
-                    
+                if (tempMode == '$') {
+                    VAR1 = (int8_t)temp1;
+                    VAR2 = (int8_t)temp2;
+                    set_speedA(VAR1);
+                    set_speedB(VAR2);
                 }
-                if (tempMode == '@' && shootRef != NULL) {
+                else if (tempMode == '@' && shootRef != NULL) {
                     set_speedA(0);
                     set_speedB(0);
 
@@ -58,23 +56,25 @@ CY_ISR(ISR_UART_rx_handler_BT)
                     shootRef->desiredPos2 = temp2;
                     shootRef->shootMode = tempBool;
                 }
-                
-                    
             }
-                
-                
-                
-        }
+            else if (strncmp(btBuffer, "AT+", 3) == 0)
+            {
+                // It's a valid AT command or response — not a motor command
+                snprintf(message, sizeof(message), "\r\n[BT Info] AT Command or response received: %s\r\n", btBuffer);
+                UART_PC_PutString(message);
+            }
             else
             {
-                // Combine parse error message into one formatted string
                 snprintf(message, sizeof(message), "\r\nParse error. Content of BT buffer: %s\r\n", btBuffer);
                 UART_PC_PutString(message);
             }
 
             index = 0; // Reset buffer for next message
+            memset(btBuffer, 0, sizeof(btBuffer));
         }
+    }
 }
+
 
 
 

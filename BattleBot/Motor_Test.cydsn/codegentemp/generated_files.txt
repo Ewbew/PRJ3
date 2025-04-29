@@ -54,6 +54,12 @@
   <file name="C:\Users\farpe\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_BOOT.c" value="SOURCE_C;CortexM3;;;;UART_BT" />
   <file name="C:\Users\farpe\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_uart_rx_BT.c" value="SOURCE_C;CortexM3;;;;isr_uart_rx_BT" />
   <file name="C:\Users\farpe\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_uart_rx_BT.h" value="HEADER;;;;;isr_uart_rx_BT" />
+  <file name="C:\Users\farpe\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\DirPin_aliases.h" value="HEADER;;;;;DirPin" />
+  <file name="C:\Users\farpe\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\DirPin.c" value="SOURCE_C;CortexM3;;;;DirPin" />
+  <file name="C:\Users\farpe\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\DirPin.h" value="HEADER;;;;;DirPin" />
+  <file name="C:\Users\farpe\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\StepPin_aliases.h" value="HEADER;;;;;StepPin" />
+  <file name="C:\Users\farpe\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\StepPin.c" value="SOURCE_C;CortexM3;;;;StepPin" />
+  <file name="C:\Users\farpe\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\StepPin.h" value="HEADER;;;;;StepPin" />
   <file name="C:\Users\farpe\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_PC_IntClock" />
   <file name="C:\Users\farpe\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_IntClock.h" value="HEADER;;;;;UART_PC_IntClock" />
   <file name="C:\Users\farpe\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_BT_IntClock" />

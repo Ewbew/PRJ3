@@ -2,6 +2,7 @@
 #include "motor_control.h"
 #include "UART_handler.h"
 #include "shootVarHandler.h"
+#include "stepperMotor.h"
 
 
 int main(void)
@@ -23,6 +24,8 @@ int main(void)
 
     for(;;)
     {
+        shootVarHandler_getDesiredPos1();
+        
         // Place your application code here.
     }
 }

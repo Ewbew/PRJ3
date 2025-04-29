@@ -25,7 +25,7 @@ atomic<bool> keepRunning(true);
 
 int main(int argc, char *argv[]) {
     VarHandler handler;
-    string targetBluetoothAddress = "00:1A:7D:DA:71:13"; // REPLACE WITH MAC ADRESS OF PSOC
+    string targetBluetoothAddress = "98:D3:51:FE:6F:30"; // REPLACE WITH MAC ADRESS OF PSOC
     //THIS IS SUPER IMPORTANT OR IT WILL NOT WORK
 
     // Start Bluetooth sender in its own thread

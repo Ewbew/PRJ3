@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2025-04-29T12:10:34Z")
+ (DATE "2025-04-29T12:52:22Z")
  (DESIGN "Motor_Test")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -420,6 +420,8 @@
     (INTERCONNECT Rx_BT\(0\)_PAD Rx_BT\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT Tx_BT\(0\).pad_out Tx_BT\(0\)_PAD (0.000:0.000:0.000))
     (INTERCONNECT Tx_BT\(0\)_PAD Tx_BT\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT DirPin\(0\)_PAD DirPin\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT StepPin\(0\)_PAD StepPin\(0\).pad_in (0.000:0.000:0.000))
    )
   )
  )

@@ -1,0 +1,1049 @@
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"stepperMotor.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.StepMotor,"ax",%progbits
+  20              		.align	2
+  21              		.global	StepMotor
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	StepMotor, %function
+  25              	StepMotor:
+  26              	.LFB63:
+  27              		.file 1 "stepperMotor.c"
+   1:stepperMotor.c **** #include "project.h"
+   2:stepperMotor.c **** #include "stepperMotor.h"
+   3:stepperMotor.c **** #include <stdlib.h>
+   4:stepperMotor.c **** 
+   5:stepperMotor.c **** #define STEP_PIN_STEP    StepPin_Write(1)
+   6:stepperMotor.c **** #define STEP_PIN_RESET   StepPin_Write(0)
+   7:stepperMotor.c **** #define DIR_PIN_FORWARD  DirPin_Write(1)
+   8:stepperMotor.c **** #define DIR_PIN_BACKWARD DirPin_Write(0)
+   9:stepperMotor.c **** 
+  10:stepperMotor.c **** #define MAX_POSITION 100
+  11:stepperMotor.c **** #define MIN_POSITION -100
+  12:stepperMotor.c **** #define STEPS_PER_REVOLUTION 200
+  13:stepperMotor.c **** 
+  14:stepperMotor.c **** int currentPosition = 0;
+  15:stepperMotor.c **** 
+  16:stepperMotor.c **** void StepMotor(int steps, int direction)
+  17:stepperMotor.c **** {
+  28              		.loc 1 17 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 38B5     		push	{r3, r4, r5, lr}
+  34              		.cfi_def_cfa_offset 16
+  35              		.cfi_offset 3, -16
+  36              		.cfi_offset 4, -12
+  37              		.cfi_offset 5, -8
+  38              		.cfi_offset 14, -4
+  39 0002 0546     		mov	r5, r0
+  18:stepperMotor.c ****     if (direction > 0)
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 2
+
+
+  40              		.loc 1 18 0
+  41 0004 0029     		cmp	r1, #0
+  42 0006 04DD     		ble	.L2
+  19:stepperMotor.c ****         DIR_PIN_FORWARD;
+  43              		.loc 1 19 0
+  44 0008 0120     		movs	r0, #1
+  45              	.LVL1:
+  46 000a FFF7FEFF 		bl	DirPin_Write
+  47              	.LVL2:
+  48              	.L4:
+  17:stepperMotor.c ****     if (direction > 0)
+  49              		.loc 1 17 0 discriminator 1
+  50 000e 0024     		movs	r4, #0
+  51 0010 12E0     		b	.L3
+  52              	.LVL3:
+  53              	.L2:
+  20:stepperMotor.c ****     else
+  21:stepperMotor.c ****         DIR_PIN_BACKWARD;
+  54              		.loc 1 21 0
+  55 0012 0020     		movs	r0, #0
+  56              	.LVL4:
+  57 0014 FFF7FEFF 		bl	DirPin_Write
+  58              	.LVL5:
+  59 0018 F9E7     		b	.L4
+  60              	.LVL6:
+  61              	.L5:
+  62              	.LBB2:
+  22:stepperMotor.c ****     
+  23:stepperMotor.c ****     for (int i = 0; i < steps; i++)
+  24:stepperMotor.c ****     {
+  25:stepperMotor.c ****         STEP_PIN_STEP;
+  63              		.loc 1 25 0 discriminator 3
+  64 001a 0120     		movs	r0, #1
+  65 001c FFF7FEFF 		bl	StepPin_Write
+  66              	.LVL7:
+  26:stepperMotor.c ****         CyDelayUs(1500); // 1500 us HIGH
+  67              		.loc 1 26 0 discriminator 3
+  68 0020 40F2DC50 		movw	r0, #1500
+  69 0024 FFF7FEFF 		bl	CyDelayUs
+  70              	.LVL8:
+  27:stepperMotor.c ****         STEP_PIN_RESET;
+  71              		.loc 1 27 0 discriminator 3
+  72 0028 0020     		movs	r0, #0
+  73 002a FFF7FEFF 		bl	StepPin_Write
+  74              	.LVL9:
+  28:stepperMotor.c ****         CyDelayUs(1500); // 1500 us LOW
+  75              		.loc 1 28 0 discriminator 3
+  76 002e 40F2DC50 		movw	r0, #1500
+  77 0032 FFF7FEFF 		bl	CyDelayUs
+  78              	.LVL10:
+  23:stepperMotor.c ****     {
+  79              		.loc 1 23 0 discriminator 3
+  80 0036 0134     		adds	r4, r4, #1
+  81              	.LVL11:
+  82              	.L3:
+  23:stepperMotor.c ****     {
+  83              		.loc 1 23 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 3
+
+
+  84 0038 AC42     		cmp	r4, r5
+  85 003a EEDB     		blt	.L5
+  86              	.LBE2:
+  29:stepperMotor.c ****     }
+  30:stepperMotor.c **** }
+  87              		.loc 1 30 0 is_stmt 1
+  88 003c 38BD     		pop	{r3, r4, r5, pc}
+  89              		.cfi_endproc
+  90              	.LFE63:
+  91              		.size	StepMotor, .-StepMotor
+  92 003e 00BF     		.section	.text.GoToPosition,"ax",%progbits
+  93              		.align	2
+  94              		.global	GoToPosition
+  95              		.thumb
+  96              		.thumb_func
+  97              		.type	GoToPosition, %function
+  98              	GoToPosition:
+  99              	.LFB64:
+  31:stepperMotor.c **** 
+  32:stepperMotor.c **** void GoToPosition(int targetPosition)
+  33:stepperMotor.c **** {
+ 100              		.loc 1 33 0
+ 101              		.cfi_startproc
+ 102              		@ args = 0, pretend = 0, frame = 0
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104              	.LVL12:
+ 105 0000 10B5     		push	{r4, lr}
+ 106              		.cfi_def_cfa_offset 8
+ 107              		.cfi_offset 4, -8
+ 108              		.cfi_offset 14, -4
+ 109 0002 0446     		mov	r4, r0
+  34:stepperMotor.c ****     if (targetPosition > MAX_POSITION)
+ 110              		.loc 1 34 0
+ 111 0004 6428     		cmp	r0, #100
+ 112 0006 00DD     		ble	.L8
+  35:stepperMotor.c ****         targetPosition = MAX_POSITION;
+ 113              		.loc 1 35 0
+ 114 0008 6424     		movs	r4, #100
+ 115              	.L8:
+ 116              	.LVL13:
+  36:stepperMotor.c ****     if (targetPosition < MIN_POSITION)
+ 117              		.loc 1 36 0
+ 118 000a 14F1640F 		cmn	r4, #100
+ 119 000e 01DA     		bge	.L9
+  37:stepperMotor.c ****         targetPosition = MIN_POSITION;
+ 120              		.loc 1 37 0
+ 121 0010 6FF06304 		mvn	r4, #99
+ 122              	.LVL14:
+ 123              	.L9:
+  38:stepperMotor.c ****     
+  39:stepperMotor.c ****     int stepsToMove = (targetPosition - currentPosition);
+ 124              		.loc 1 39 0
+ 125 0014 074B     		ldr	r3, .L14
+ 126 0016 1868     		ldr	r0, [r3]
+ 127              	.LVL15:
+  40:stepperMotor.c ****     
+  41:stepperMotor.c ****     if (stepsToMove != 0)
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 4
+
+
+ 128              		.loc 1 41 0
+ 129 0018 201A     		subs	r0, r4, r0
+ 130              	.LVL16:
+ 131 001a 0AD0     		beq	.L7
+ 132              	.LVL17:
+ 133              	.LBB3:
+  42:stepperMotor.c ****     {
+  43:stepperMotor.c ****         int direction = (stepsToMove > 0) ? 1 : 0;
+  44:stepperMotor.c ****         StepMotor(abs(stepsToMove), direction);
+ 134              		.loc 1 44 0
+ 135 001c 0028     		cmp	r0, #0
+ 136 001e D4BF     		ite	le
+ 137 0020 0021     		movle	r1, #0
+ 138 0022 0121     		movgt	r1, #1
+ 139 0024 0028     		cmp	r0, #0
+ 140 0026 B8BF     		it	lt
+ 141 0028 4042     		rsblt	r0, r0, #0
+ 142              	.LVL18:
+ 143 002a FFF7FEFF 		bl	StepMotor
+ 144              	.LVL19:
+  45:stepperMotor.c ****         currentPosition = targetPosition;
+ 145              		.loc 1 45 0
+ 146 002e 014B     		ldr	r3, .L14
+ 147 0030 1C60     		str	r4, [r3]
+ 148              	.L7:
+ 149 0032 10BD     		pop	{r4, pc}
+ 150              	.LVL20:
+ 151              	.L15:
+ 152              		.align	2
+ 153              	.L14:
+ 154 0034 00000000 		.word	.LANCHOR0
+ 155              	.LBE3:
+ 156              		.cfi_endproc
+ 157              	.LFE64:
+ 158              		.size	GoToPosition, .-GoToPosition
+ 159              		.global	currentPosition
+ 160              		.bss
+ 161              		.align	2
+ 162              		.set	.LANCHOR0,. + 0
+ 163              		.type	currentPosition, %object
+ 164              		.size	currentPosition, 4
+ 165              	currentPosition:
+ 166 0000 00000000 		.space	4
+ 167              		.text
+ 168              	.Letext0:
+ 169              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 170              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 171              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+ 172              		.file 5 "Generated_Source\\PSoC5/StepPin.h"
+ 173              		.file 6 "Generated_Source\\PSoC5/CyLib.h"
+ 174              		.file 7 "Generated_Source\\PSoC5/DirPin.h"
+ 175              		.section	.debug_info,"",%progbits
+ 176              	.Ldebug_info0:
+ 177 0000 F5010000 		.4byte	0x1f5
+ 178 0004 0400     		.2byte	0x4
+ 179 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 180 000a 04       		.byte	0x4
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 5
+
+
+ 181 000b 01       		.uleb128 0x1
+ 182 000c 99000000 		.4byte	.LASF27
+ 183 0010 0C       		.byte	0xc
+ 184 0011 F6010000 		.4byte	.LASF28
+ 185 0015 39000000 		.4byte	.LASF29
+ 186 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 187 001d 00000000 		.4byte	0
+ 188 0021 00000000 		.4byte	.Ldebug_line0
+ 189 0025 02       		.uleb128 0x2
+ 190 0026 01       		.byte	0x1
+ 191 0027 06       		.byte	0x6
+ 192 0028 7F000000 		.4byte	.LASF0
+ 193 002c 02       		.uleb128 0x2
+ 194 002d 01       		.byte	0x1
+ 195 002e 08       		.byte	0x8
+ 196 002f 8B000000 		.4byte	.LASF1
+ 197 0033 02       		.uleb128 0x2
+ 198 0034 02       		.byte	0x2
+ 199 0035 05       		.byte	0x5
+ 200 0036 D7010000 		.4byte	.LASF2
+ 201 003a 02       		.uleb128 0x2
+ 202 003b 02       		.byte	0x2
+ 203 003c 07       		.byte	0x7
+ 204 003d 43010000 		.4byte	.LASF3
+ 205 0041 03       		.uleb128 0x3
+ 206 0042 10000000 		.4byte	.LASF9
+ 207 0046 02       		.byte	0x2
+ 208 0047 3F       		.byte	0x3f
+ 209 0048 4C000000 		.4byte	0x4c
+ 210 004c 02       		.uleb128 0x2
+ 211 004d 04       		.byte	0x4
+ 212 004e 05       		.byte	0x5
+ 213 004f ED010000 		.4byte	.LASF4
+ 214 0053 02       		.uleb128 0x2
+ 215 0054 04       		.byte	0x4
+ 216 0055 07       		.byte	0x7
+ 217 0056 31010000 		.4byte	.LASF5
+ 218 005a 02       		.uleb128 0x2
+ 219 005b 08       		.byte	0x8
+ 220 005c 05       		.byte	0x5
+ 221 005d BC010000 		.4byte	.LASF6
+ 222 0061 02       		.uleb128 0x2
+ 223 0062 08       		.byte	0x8
+ 224 0063 07       		.byte	0x7
+ 225 0064 80010000 		.4byte	.LASF7
+ 226 0068 04       		.uleb128 0x4
+ 227 0069 04       		.byte	0x4
+ 228 006a 05       		.byte	0x5
+ 229 006b 696E7400 		.ascii	"int\000"
+ 230 006f 02       		.uleb128 0x2
+ 231 0070 04       		.byte	0x4
+ 232 0071 07       		.byte	0x7
+ 233 0072 73010000 		.4byte	.LASF8
+ 234 0076 03       		.uleb128 0x3
+ 235 0077 CF010000 		.4byte	.LASF10
+ 236 007b 03       		.byte	0x3
+ 237 007c 2C       		.byte	0x2c
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 6
+
+
+ 238 007d 41000000 		.4byte	0x41
+ 239 0081 02       		.uleb128 0x2
+ 240 0082 04       		.byte	0x4
+ 241 0083 04       		.byte	0x4
+ 242 0084 79000000 		.4byte	.LASF11
+ 243 0088 02       		.uleb128 0x2
+ 244 0089 08       		.byte	0x8
+ 245 008a 04       		.byte	0x4
+ 246 008b 1A000000 		.4byte	.LASF12
+ 247 008f 02       		.uleb128 0x2
+ 248 0090 01       		.byte	0x1
+ 249 0091 08       		.byte	0x8
+ 250 0092 CA010000 		.4byte	.LASF13
+ 251 0096 02       		.uleb128 0x2
+ 252 0097 08       		.byte	0x8
+ 253 0098 04       		.byte	0x4
+ 254 0099 05020000 		.4byte	.LASF14
+ 255 009d 02       		.uleb128 0x2
+ 256 009e 04       		.byte	0x4
+ 257 009f 07       		.byte	0x7
+ 258 00a0 A4010000 		.4byte	.LASF15
+ 259 00a4 05       		.uleb128 0x5
+ 260 00a5 27010000 		.4byte	.LASF18
+ 261 00a9 01       		.byte	0x1
+ 262 00aa 10       		.byte	0x10
+ 263 00ab 00000000 		.4byte	.LFB63
+ 264 00af 3E000000 		.4byte	.LFE63-.LFB63
+ 265 00b3 01       		.uleb128 0x1
+ 266 00b4 9C       		.byte	0x9c
+ 267 00b5 5F010000 		.4byte	0x15f
+ 268 00b9 06       		.uleb128 0x6
+ 269 00ba 63010000 		.4byte	.LASF16
+ 270 00be 01       		.byte	0x1
+ 271 00bf 10       		.byte	0x10
+ 272 00c0 68000000 		.4byte	0x68
+ 273 00c4 00000000 		.4byte	.LLST0
+ 274 00c8 06       		.uleb128 0x6
+ 275 00c9 21000000 		.4byte	.LASF17
+ 276 00cd 01       		.byte	0x1
+ 277 00ce 10       		.byte	0x10
+ 278 00cf 68000000 		.4byte	0x68
+ 279 00d3 34000000 		.4byte	.LLST1
+ 280 00d7 07       		.uleb128 0x7
+ 281 00d8 1A000000 		.4byte	.LBB2
+ 282 00dc 22000000 		.4byte	.LBE2-.LBB2
+ 283 00e0 3C010000 		.4byte	0x13c
+ 284 00e4 08       		.uleb128 0x8
+ 285 00e5 6900     		.ascii	"i\000"
+ 286 00e7 01       		.byte	0x1
+ 287 00e8 17       		.byte	0x17
+ 288 00e9 68000000 		.4byte	0x68
+ 289 00ed 01       		.uleb128 0x1
+ 290 00ee 54       		.byte	0x54
+ 291 00ef 09       		.uleb128 0x9
+ 292 00f0 20000000 		.4byte	.LVL7
+ 293 00f4 D7010000 		.4byte	0x1d7
+ 294 00f8 02010000 		.4byte	0x102
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 7
+
+
+ 295 00fc 0A       		.uleb128 0xa
+ 296 00fd 01       		.uleb128 0x1
+ 297 00fe 50       		.byte	0x50
+ 298 00ff 01       		.uleb128 0x1
+ 299 0100 31       		.byte	0x31
+ 300 0101 00       		.byte	0
+ 301 0102 09       		.uleb128 0x9
+ 302 0103 28000000 		.4byte	.LVL8
+ 303 0107 E2010000 		.4byte	0x1e2
+ 304 010b 17010000 		.4byte	0x117
+ 305 010f 0A       		.uleb128 0xa
+ 306 0110 01       		.uleb128 0x1
+ 307 0111 50       		.byte	0x50
+ 308 0112 03       		.uleb128 0x3
+ 309 0113 0A       		.byte	0xa
+ 310 0114 DC05     		.2byte	0x5dc
+ 311 0116 00       		.byte	0
+ 312 0117 09       		.uleb128 0x9
+ 313 0118 2E000000 		.4byte	.LVL9
+ 314 011c D7010000 		.4byte	0x1d7
+ 315 0120 2A010000 		.4byte	0x12a
+ 316 0124 0A       		.uleb128 0xa
+ 317 0125 01       		.uleb128 0x1
+ 318 0126 50       		.byte	0x50
+ 319 0127 01       		.uleb128 0x1
+ 320 0128 30       		.byte	0x30
+ 321 0129 00       		.byte	0
+ 322 012a 0B       		.uleb128 0xb
+ 323 012b 36000000 		.4byte	.LVL10
+ 324 012f E2010000 		.4byte	0x1e2
+ 325 0133 0A       		.uleb128 0xa
+ 326 0134 01       		.uleb128 0x1
+ 327 0135 50       		.byte	0x50
+ 328 0136 03       		.uleb128 0x3
+ 329 0137 0A       		.byte	0xa
+ 330 0138 DC05     		.2byte	0x5dc
+ 331 013a 00       		.byte	0
+ 332 013b 00       		.byte	0
+ 333 013c 09       		.uleb128 0x9
+ 334 013d 0E000000 		.4byte	.LVL2
+ 335 0141 ED010000 		.4byte	0x1ed
+ 336 0145 4F010000 		.4byte	0x14f
+ 337 0149 0A       		.uleb128 0xa
+ 338 014a 01       		.uleb128 0x1
+ 339 014b 50       		.byte	0x50
+ 340 014c 01       		.uleb128 0x1
+ 341 014d 31       		.byte	0x31
+ 342 014e 00       		.byte	0
+ 343 014f 0B       		.uleb128 0xb
+ 344 0150 18000000 		.4byte	.LVL5
+ 345 0154 ED010000 		.4byte	0x1ed
+ 346 0158 0A       		.uleb128 0xa
+ 347 0159 01       		.uleb128 0x1
+ 348 015a 50       		.byte	0x50
+ 349 015b 01       		.uleb128 0x1
+ 350 015c 30       		.byte	0x30
+ 351 015d 00       		.byte	0
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 8
+
+
+ 352 015e 00       		.byte	0
+ 353 015f 05       		.uleb128 0x5
+ 354 0160 97010000 		.4byte	.LASF19
+ 355 0164 01       		.byte	0x1
+ 356 0165 20       		.byte	0x20
+ 357 0166 00000000 		.4byte	.LFB64
+ 358 016a 38000000 		.4byte	.LFE64-.LFB64
+ 359 016e 01       		.uleb128 0x1
+ 360 016f 9C       		.byte	0x9c
+ 361 0170 B5010000 		.4byte	0x1b5
+ 362 0174 06       		.uleb128 0x6
+ 363 0175 AD010000 		.4byte	.LASF20
+ 364 0179 01       		.byte	0x1
+ 365 017a 20       		.byte	0x20
+ 366 017b 68000000 		.4byte	0x68
+ 367 017f 6E000000 		.4byte	.LLST2
+ 368 0183 0C       		.uleb128 0xc
+ 369 0184 E1010000 		.4byte	.LASF21
+ 370 0188 01       		.byte	0x1
+ 371 0189 27       		.byte	0x27
+ 372 018a 68000000 		.4byte	0x68
+ 373 018e 8C000000 		.4byte	.LLST3
+ 374 0192 0D       		.uleb128 0xd
+ 375 0193 1C000000 		.4byte	.LBB3
+ 376 0197 1C000000 		.4byte	.LBE3-.LBB3
+ 377 019b 0C       		.uleb128 0xc
+ 378 019c 21000000 		.4byte	.LASF17
+ 379 01a0 01       		.byte	0x1
+ 380 01a1 2B       		.byte	0x2b
+ 381 01a2 68000000 		.4byte	0x68
+ 382 01a6 C3000000 		.4byte	.LLST4
+ 383 01aa 0E       		.uleb128 0xe
+ 384 01ab 2E000000 		.4byte	.LVL19
+ 385 01af A4000000 		.4byte	0xa4
+ 386 01b3 00       		.byte	0
+ 387 01b4 00       		.byte	0
+ 388 01b5 0F       		.uleb128 0xf
+ 389 01b6 56010000 		.4byte	.LASF22
+ 390 01ba 04       		.byte	0x4
+ 391 01bb 1207     		.2byte	0x712
+ 392 01bd C1010000 		.4byte	0x1c1
+ 393 01c1 10       		.uleb128 0x10
+ 394 01c2 76000000 		.4byte	0x76
+ 395 01c6 11       		.uleb128 0x11
+ 396 01c7 00000000 		.4byte	.LASF23
+ 397 01cb 01       		.byte	0x1
+ 398 01cc 0E       		.byte	0xe
+ 399 01cd 68000000 		.4byte	0x68
+ 400 01d1 05       		.uleb128 0x5
+ 401 01d2 03       		.byte	0x3
+ 402 01d3 00000000 		.4byte	currentPosition
+ 403 01d7 12       		.uleb128 0x12
+ 404 01d8 2B000000 		.4byte	.LASF24
+ 405 01dc 2B000000 		.4byte	.LASF24
+ 406 01e0 05       		.byte	0x5
+ 407 01e1 26       		.byte	0x26
+ 408 01e2 12       		.uleb128 0x12
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 9
+
+
+ 409 01e3 69010000 		.4byte	.LASF25
+ 410 01e7 69010000 		.4byte	.LASF25
+ 411 01eb 06       		.byte	0x6
+ 412 01ec 77       		.byte	0x77
+ 413 01ed 12       		.uleb128 0x12
+ 414 01ee 11020000 		.4byte	.LASF26
+ 415 01f2 11020000 		.4byte	.LASF26
+ 416 01f6 07       		.byte	0x7
+ 417 01f7 26       		.byte	0x26
+ 418 01f8 00       		.byte	0
+ 419              		.section	.debug_abbrev,"",%progbits
+ 420              	.Ldebug_abbrev0:
+ 421 0000 01       		.uleb128 0x1
+ 422 0001 11       		.uleb128 0x11
+ 423 0002 01       		.byte	0x1
+ 424 0003 25       		.uleb128 0x25
+ 425 0004 0E       		.uleb128 0xe
+ 426 0005 13       		.uleb128 0x13
+ 427 0006 0B       		.uleb128 0xb
+ 428 0007 03       		.uleb128 0x3
+ 429 0008 0E       		.uleb128 0xe
+ 430 0009 1B       		.uleb128 0x1b
+ 431 000a 0E       		.uleb128 0xe
+ 432 000b 55       		.uleb128 0x55
+ 433 000c 17       		.uleb128 0x17
+ 434 000d 11       		.uleb128 0x11
+ 435 000e 01       		.uleb128 0x1
+ 436 000f 10       		.uleb128 0x10
+ 437 0010 17       		.uleb128 0x17
+ 438 0011 00       		.byte	0
+ 439 0012 00       		.byte	0
+ 440 0013 02       		.uleb128 0x2
+ 441 0014 24       		.uleb128 0x24
+ 442 0015 00       		.byte	0
+ 443 0016 0B       		.uleb128 0xb
+ 444 0017 0B       		.uleb128 0xb
+ 445 0018 3E       		.uleb128 0x3e
+ 446 0019 0B       		.uleb128 0xb
+ 447 001a 03       		.uleb128 0x3
+ 448 001b 0E       		.uleb128 0xe
+ 449 001c 00       		.byte	0
+ 450 001d 00       		.byte	0
+ 451 001e 03       		.uleb128 0x3
+ 452 001f 16       		.uleb128 0x16
+ 453 0020 00       		.byte	0
+ 454 0021 03       		.uleb128 0x3
+ 455 0022 0E       		.uleb128 0xe
+ 456 0023 3A       		.uleb128 0x3a
+ 457 0024 0B       		.uleb128 0xb
+ 458 0025 3B       		.uleb128 0x3b
+ 459 0026 0B       		.uleb128 0xb
+ 460 0027 49       		.uleb128 0x49
+ 461 0028 13       		.uleb128 0x13
+ 462 0029 00       		.byte	0
+ 463 002a 00       		.byte	0
+ 464 002b 04       		.uleb128 0x4
+ 465 002c 24       		.uleb128 0x24
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 10
+
+
+ 466 002d 00       		.byte	0
+ 467 002e 0B       		.uleb128 0xb
+ 468 002f 0B       		.uleb128 0xb
+ 469 0030 3E       		.uleb128 0x3e
+ 470 0031 0B       		.uleb128 0xb
+ 471 0032 03       		.uleb128 0x3
+ 472 0033 08       		.uleb128 0x8
+ 473 0034 00       		.byte	0
+ 474 0035 00       		.byte	0
+ 475 0036 05       		.uleb128 0x5
+ 476 0037 2E       		.uleb128 0x2e
+ 477 0038 01       		.byte	0x1
+ 478 0039 3F       		.uleb128 0x3f
+ 479 003a 19       		.uleb128 0x19
+ 480 003b 03       		.uleb128 0x3
+ 481 003c 0E       		.uleb128 0xe
+ 482 003d 3A       		.uleb128 0x3a
+ 483 003e 0B       		.uleb128 0xb
+ 484 003f 3B       		.uleb128 0x3b
+ 485 0040 0B       		.uleb128 0xb
+ 486 0041 27       		.uleb128 0x27
+ 487 0042 19       		.uleb128 0x19
+ 488 0043 11       		.uleb128 0x11
+ 489 0044 01       		.uleb128 0x1
+ 490 0045 12       		.uleb128 0x12
+ 491 0046 06       		.uleb128 0x6
+ 492 0047 40       		.uleb128 0x40
+ 493 0048 18       		.uleb128 0x18
+ 494 0049 9742     		.uleb128 0x2117
+ 495 004b 19       		.uleb128 0x19
+ 496 004c 01       		.uleb128 0x1
+ 497 004d 13       		.uleb128 0x13
+ 498 004e 00       		.byte	0
+ 499 004f 00       		.byte	0
+ 500 0050 06       		.uleb128 0x6
+ 501 0051 05       		.uleb128 0x5
+ 502 0052 00       		.byte	0
+ 503 0053 03       		.uleb128 0x3
+ 504 0054 0E       		.uleb128 0xe
+ 505 0055 3A       		.uleb128 0x3a
+ 506 0056 0B       		.uleb128 0xb
+ 507 0057 3B       		.uleb128 0x3b
+ 508 0058 0B       		.uleb128 0xb
+ 509 0059 49       		.uleb128 0x49
+ 510 005a 13       		.uleb128 0x13
+ 511 005b 02       		.uleb128 0x2
+ 512 005c 17       		.uleb128 0x17
+ 513 005d 00       		.byte	0
+ 514 005e 00       		.byte	0
+ 515 005f 07       		.uleb128 0x7
+ 516 0060 0B       		.uleb128 0xb
+ 517 0061 01       		.byte	0x1
+ 518 0062 11       		.uleb128 0x11
+ 519 0063 01       		.uleb128 0x1
+ 520 0064 12       		.uleb128 0x12
+ 521 0065 06       		.uleb128 0x6
+ 522 0066 01       		.uleb128 0x1
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 11
+
+
+ 523 0067 13       		.uleb128 0x13
+ 524 0068 00       		.byte	0
+ 525 0069 00       		.byte	0
+ 526 006a 08       		.uleb128 0x8
+ 527 006b 34       		.uleb128 0x34
+ 528 006c 00       		.byte	0
+ 529 006d 03       		.uleb128 0x3
+ 530 006e 08       		.uleb128 0x8
+ 531 006f 3A       		.uleb128 0x3a
+ 532 0070 0B       		.uleb128 0xb
+ 533 0071 3B       		.uleb128 0x3b
+ 534 0072 0B       		.uleb128 0xb
+ 535 0073 49       		.uleb128 0x49
+ 536 0074 13       		.uleb128 0x13
+ 537 0075 02       		.uleb128 0x2
+ 538 0076 18       		.uleb128 0x18
+ 539 0077 00       		.byte	0
+ 540 0078 00       		.byte	0
+ 541 0079 09       		.uleb128 0x9
+ 542 007a 898201   		.uleb128 0x4109
+ 543 007d 01       		.byte	0x1
+ 544 007e 11       		.uleb128 0x11
+ 545 007f 01       		.uleb128 0x1
+ 546 0080 31       		.uleb128 0x31
+ 547 0081 13       		.uleb128 0x13
+ 548 0082 01       		.uleb128 0x1
+ 549 0083 13       		.uleb128 0x13
+ 550 0084 00       		.byte	0
+ 551 0085 00       		.byte	0
+ 552 0086 0A       		.uleb128 0xa
+ 553 0087 8A8201   		.uleb128 0x410a
+ 554 008a 00       		.byte	0
+ 555 008b 02       		.uleb128 0x2
+ 556 008c 18       		.uleb128 0x18
+ 557 008d 9142     		.uleb128 0x2111
+ 558 008f 18       		.uleb128 0x18
+ 559 0090 00       		.byte	0
+ 560 0091 00       		.byte	0
+ 561 0092 0B       		.uleb128 0xb
+ 562 0093 898201   		.uleb128 0x4109
+ 563 0096 01       		.byte	0x1
+ 564 0097 11       		.uleb128 0x11
+ 565 0098 01       		.uleb128 0x1
+ 566 0099 31       		.uleb128 0x31
+ 567 009a 13       		.uleb128 0x13
+ 568 009b 00       		.byte	0
+ 569 009c 00       		.byte	0
+ 570 009d 0C       		.uleb128 0xc
+ 571 009e 34       		.uleb128 0x34
+ 572 009f 00       		.byte	0
+ 573 00a0 03       		.uleb128 0x3
+ 574 00a1 0E       		.uleb128 0xe
+ 575 00a2 3A       		.uleb128 0x3a
+ 576 00a3 0B       		.uleb128 0xb
+ 577 00a4 3B       		.uleb128 0x3b
+ 578 00a5 0B       		.uleb128 0xb
+ 579 00a6 49       		.uleb128 0x49
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 12
+
+
+ 580 00a7 13       		.uleb128 0x13
+ 581 00a8 02       		.uleb128 0x2
+ 582 00a9 17       		.uleb128 0x17
+ 583 00aa 00       		.byte	0
+ 584 00ab 00       		.byte	0
+ 585 00ac 0D       		.uleb128 0xd
+ 586 00ad 0B       		.uleb128 0xb
+ 587 00ae 01       		.byte	0x1
+ 588 00af 11       		.uleb128 0x11
+ 589 00b0 01       		.uleb128 0x1
+ 590 00b1 12       		.uleb128 0x12
+ 591 00b2 06       		.uleb128 0x6
+ 592 00b3 00       		.byte	0
+ 593 00b4 00       		.byte	0
+ 594 00b5 0E       		.uleb128 0xe
+ 595 00b6 898201   		.uleb128 0x4109
+ 596 00b9 00       		.byte	0
+ 597 00ba 11       		.uleb128 0x11
+ 598 00bb 01       		.uleb128 0x1
+ 599 00bc 31       		.uleb128 0x31
+ 600 00bd 13       		.uleb128 0x13
+ 601 00be 00       		.byte	0
+ 602 00bf 00       		.byte	0
+ 603 00c0 0F       		.uleb128 0xf
+ 604 00c1 34       		.uleb128 0x34
+ 605 00c2 00       		.byte	0
+ 606 00c3 03       		.uleb128 0x3
+ 607 00c4 0E       		.uleb128 0xe
+ 608 00c5 3A       		.uleb128 0x3a
+ 609 00c6 0B       		.uleb128 0xb
+ 610 00c7 3B       		.uleb128 0x3b
+ 611 00c8 05       		.uleb128 0x5
+ 612 00c9 49       		.uleb128 0x49
+ 613 00ca 13       		.uleb128 0x13
+ 614 00cb 3F       		.uleb128 0x3f
+ 615 00cc 19       		.uleb128 0x19
+ 616 00cd 3C       		.uleb128 0x3c
+ 617 00ce 19       		.uleb128 0x19
+ 618 00cf 00       		.byte	0
+ 619 00d0 00       		.byte	0
+ 620 00d1 10       		.uleb128 0x10
+ 621 00d2 35       		.uleb128 0x35
+ 622 00d3 00       		.byte	0
+ 623 00d4 49       		.uleb128 0x49
+ 624 00d5 13       		.uleb128 0x13
+ 625 00d6 00       		.byte	0
+ 626 00d7 00       		.byte	0
+ 627 00d8 11       		.uleb128 0x11
+ 628 00d9 34       		.uleb128 0x34
+ 629 00da 00       		.byte	0
+ 630 00db 03       		.uleb128 0x3
+ 631 00dc 0E       		.uleb128 0xe
+ 632 00dd 3A       		.uleb128 0x3a
+ 633 00de 0B       		.uleb128 0xb
+ 634 00df 3B       		.uleb128 0x3b
+ 635 00e0 0B       		.uleb128 0xb
+ 636 00e1 49       		.uleb128 0x49
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 13
+
+
+ 637 00e2 13       		.uleb128 0x13
+ 638 00e3 3F       		.uleb128 0x3f
+ 639 00e4 19       		.uleb128 0x19
+ 640 00e5 02       		.uleb128 0x2
+ 641 00e6 18       		.uleb128 0x18
+ 642 00e7 00       		.byte	0
+ 643 00e8 00       		.byte	0
+ 644 00e9 12       		.uleb128 0x12
+ 645 00ea 2E       		.uleb128 0x2e
+ 646 00eb 00       		.byte	0
+ 647 00ec 3F       		.uleb128 0x3f
+ 648 00ed 19       		.uleb128 0x19
+ 649 00ee 3C       		.uleb128 0x3c
+ 650 00ef 19       		.uleb128 0x19
+ 651 00f0 6E       		.uleb128 0x6e
+ 652 00f1 0E       		.uleb128 0xe
+ 653 00f2 03       		.uleb128 0x3
+ 654 00f3 0E       		.uleb128 0xe
+ 655 00f4 3A       		.uleb128 0x3a
+ 656 00f5 0B       		.uleb128 0xb
+ 657 00f6 3B       		.uleb128 0x3b
+ 658 00f7 0B       		.uleb128 0xb
+ 659 00f8 00       		.byte	0
+ 660 00f9 00       		.byte	0
+ 661 00fa 00       		.byte	0
+ 662              		.section	.debug_loc,"",%progbits
+ 663              	.Ldebug_loc0:
+ 664              	.LLST0:
+ 665 0000 00000000 		.4byte	.LVL0
+ 666 0004 0A000000 		.4byte	.LVL1
+ 667 0008 0100     		.2byte	0x1
+ 668 000a 50       		.byte	0x50
+ 669 000b 0A000000 		.4byte	.LVL1
+ 670 000f 12000000 		.4byte	.LVL3
+ 671 0013 0100     		.2byte	0x1
+ 672 0015 55       		.byte	0x55
+ 673 0016 12000000 		.4byte	.LVL3
+ 674 001a 14000000 		.4byte	.LVL4
+ 675 001e 0100     		.2byte	0x1
+ 676 0020 50       		.byte	0x50
+ 677 0021 14000000 		.4byte	.LVL4
+ 678 0025 3E000000 		.4byte	.LFE63
+ 679 0029 0100     		.2byte	0x1
+ 680 002b 55       		.byte	0x55
+ 681 002c 00000000 		.4byte	0
+ 682 0030 00000000 		.4byte	0
+ 683              	.LLST1:
+ 684 0034 00000000 		.4byte	.LVL0
+ 685 0038 0D000000 		.4byte	.LVL2-1
+ 686 003c 0100     		.2byte	0x1
+ 687 003e 51       		.byte	0x51
+ 688 003f 0D000000 		.4byte	.LVL2-1
+ 689 0043 12000000 		.4byte	.LVL3
+ 690 0047 0400     		.2byte	0x4
+ 691 0049 F3       		.byte	0xf3
+ 692 004a 01       		.uleb128 0x1
+ 693 004b 51       		.byte	0x51
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 14
+
+
+ 694 004c 9F       		.byte	0x9f
+ 695 004d 12000000 		.4byte	.LVL3
+ 696 0051 17000000 		.4byte	.LVL5-1
+ 697 0055 0100     		.2byte	0x1
+ 698 0057 51       		.byte	0x51
+ 699 0058 17000000 		.4byte	.LVL5-1
+ 700 005c 3E000000 		.4byte	.LFE63
+ 701 0060 0400     		.2byte	0x4
+ 702 0062 F3       		.byte	0xf3
+ 703 0063 01       		.uleb128 0x1
+ 704 0064 51       		.byte	0x51
+ 705 0065 9F       		.byte	0x9f
+ 706 0066 00000000 		.4byte	0
+ 707 006a 00000000 		.4byte	0
+ 708              	.LLST2:
+ 709 006e 00000000 		.4byte	.LVL12
+ 710 0072 0A000000 		.4byte	.LVL13
+ 711 0076 0100     		.2byte	0x1
+ 712 0078 50       		.byte	0x50
+ 713 0079 0A000000 		.4byte	.LVL13
+ 714 007d 34000000 		.4byte	.LVL20
+ 715 0081 0100     		.2byte	0x1
+ 716 0083 54       		.byte	0x54
+ 717 0084 00000000 		.4byte	0
+ 718 0088 00000000 		.4byte	0
+ 719              	.LLST3:
+ 720 008c 18000000 		.4byte	.LVL15
+ 721 0090 1A000000 		.4byte	.LVL16
+ 722 0094 0600     		.2byte	0x6
+ 723 0096 74       		.byte	0x74
+ 724 0097 00       		.sleb128 0
+ 725 0098 70       		.byte	0x70
+ 726 0099 00       		.sleb128 0
+ 727 009a 1C       		.byte	0x1c
+ 728 009b 9F       		.byte	0x9f
+ 729 009c 1A000000 		.4byte	.LVL16
+ 730 00a0 2A000000 		.4byte	.LVL18
+ 731 00a4 0100     		.2byte	0x1
+ 732 00a6 50       		.byte	0x50
+ 733 00a7 2A000000 		.4byte	.LVL18
+ 734 00ab 2D000000 		.4byte	.LVL19-1
+ 735 00af 0A00     		.2byte	0xa
+ 736 00b1 74       		.byte	0x74
+ 737 00b2 00       		.sleb128 0
+ 738 00b3 03       		.byte	0x3
+ 739 00b4 00000000 		.4byte	currentPosition
+ 740 00b8 06       		.byte	0x6
+ 741 00b9 1C       		.byte	0x1c
+ 742 00ba 9F       		.byte	0x9f
+ 743 00bb 00000000 		.4byte	0
+ 744 00bf 00000000 		.4byte	0
+ 745              	.LLST4:
+ 746 00c3 1C000000 		.4byte	.LVL17
+ 747 00c7 2A000000 		.4byte	.LVL18
+ 748 00cb 0500     		.2byte	0x5
+ 749 00cd 70       		.byte	0x70
+ 750 00ce 00       		.sleb128 0
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 15
+
+
+ 751 00cf 30       		.byte	0x30
+ 752 00d0 2B       		.byte	0x2b
+ 753 00d1 9F       		.byte	0x9f
+ 754 00d2 2A000000 		.4byte	.LVL18
+ 755 00d6 2D000000 		.4byte	.LVL19-1
+ 756 00da 0C00     		.2byte	0xc
+ 757 00dc 74       		.byte	0x74
+ 758 00dd 00       		.sleb128 0
+ 759 00de 03       		.byte	0x3
+ 760 00df 00000000 		.4byte	currentPosition
+ 761 00e3 06       		.byte	0x6
+ 762 00e4 1C       		.byte	0x1c
+ 763 00e5 30       		.byte	0x30
+ 764 00e6 2B       		.byte	0x2b
+ 765 00e7 9F       		.byte	0x9f
+ 766 00e8 00000000 		.4byte	0
+ 767 00ec 00000000 		.4byte	0
+ 768              		.section	.debug_aranges,"",%progbits
+ 769 0000 24000000 		.4byte	0x24
+ 770 0004 0200     		.2byte	0x2
+ 771 0006 00000000 		.4byte	.Ldebug_info0
+ 772 000a 04       		.byte	0x4
+ 773 000b 00       		.byte	0
+ 774 000c 0000     		.2byte	0
+ 775 000e 0000     		.2byte	0
+ 776 0010 00000000 		.4byte	.LFB63
+ 777 0014 3E000000 		.4byte	.LFE63-.LFB63
+ 778 0018 00000000 		.4byte	.LFB64
+ 779 001c 38000000 		.4byte	.LFE64-.LFB64
+ 780 0020 00000000 		.4byte	0
+ 781 0024 00000000 		.4byte	0
+ 782              		.section	.debug_ranges,"",%progbits
+ 783              	.Ldebug_ranges0:
+ 784 0000 00000000 		.4byte	.LFB63
+ 785 0004 3E000000 		.4byte	.LFE63
+ 786 0008 00000000 		.4byte	.LFB64
+ 787 000c 38000000 		.4byte	.LFE64
+ 788 0010 00000000 		.4byte	0
+ 789 0014 00000000 		.4byte	0
+ 790              		.section	.debug_line,"",%progbits
+ 791              	.Ldebug_line0:
+ 792 0000 C0010000 		.section	.debug_str,"MS",%progbits,1
+ 792      02006B01 
+ 792      00000201 
+ 792      FB0E0D00 
+ 792      01010101 
+ 793              	.LASF23:
+ 794 0000 63757272 		.ascii	"currentPosition\000"
+ 794      656E7450 
+ 794      6F736974 
+ 794      696F6E00 
+ 795              	.LASF9:
+ 796 0010 5F5F696E 		.ascii	"__int32_t\000"
+ 796      7433325F 
+ 796      7400
+ 797              	.LASF12:
+ 798 001a 646F7562 		.ascii	"double\000"
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 16
+
+
+ 798      6C6500
+ 799              	.LASF17:
+ 800 0021 64697265 		.ascii	"direction\000"
+ 800      6374696F 
+ 800      6E00
+ 801              	.LASF24:
+ 802 002b 53746570 		.ascii	"StepPin_Write\000"
+ 802      50696E5F 
+ 802      57726974 
+ 802      6500
+ 803              	.LASF29:
+ 804 0039 433A5C55 		.ascii	"C:\\Users\\farpe\\Documents\\GitHub\\PRJ3\\BattleBo"
+ 804      73657273 
+ 804      5C666172 
+ 804      70655C44 
+ 804      6F63756D 
+ 805 0066 745C4D6F 		.ascii	"t\\Motor_Test.cydsn\000"
+ 805      746F725F 
+ 805      54657374 
+ 805      2E637964 
+ 805      736E00
+ 806              	.LASF11:
+ 807 0079 666C6F61 		.ascii	"float\000"
+ 807      7400
+ 808              	.LASF0:
+ 809 007f 7369676E 		.ascii	"signed char\000"
+ 809      65642063 
+ 809      68617200 
+ 810              	.LASF1:
+ 811 008b 756E7369 		.ascii	"unsigned char\000"
+ 811      676E6564 
+ 811      20636861 
+ 811      7200
+ 812              	.LASF27:
+ 813 0099 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 813      43313120 
+ 813      352E342E 
+ 813      31203230 
+ 813      31363036 
+ 814 00cc 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 814      20726576 
+ 814      6973696F 
+ 814      6E203233 
+ 814      37373135 
+ 815 00ff 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 815      66756E63 
+ 815      74696F6E 
+ 815      2D736563 
+ 815      74696F6E 
+ 816              	.LASF18:
+ 817 0127 53746570 		.ascii	"StepMotor\000"
+ 817      4D6F746F 
+ 817      7200
+ 818              	.LASF5:
+ 819 0131 6C6F6E67 		.ascii	"long unsigned int\000"
+ 819      20756E73 
+ 819      69676E65 
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 17
+
+
+ 819      6420696E 
+ 819      7400
+ 820              	.LASF3:
+ 821 0143 73686F72 		.ascii	"short unsigned int\000"
+ 821      7420756E 
+ 821      7369676E 
+ 821      65642069 
+ 821      6E7400
+ 822              	.LASF22:
+ 823 0156 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 823      52784275 
+ 823      66666572 
+ 823      00
+ 824              	.LASF16:
+ 825 0163 73746570 		.ascii	"steps\000"
+ 825      7300
+ 826              	.LASF25:
+ 827 0169 43794465 		.ascii	"CyDelayUs\000"
+ 827      6C617955 
+ 827      7300
+ 828              	.LASF8:
+ 829 0173 756E7369 		.ascii	"unsigned int\000"
+ 829      676E6564 
+ 829      20696E74 
+ 829      00
+ 830              	.LASF7:
+ 831 0180 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 831      206C6F6E 
+ 831      6720756E 
+ 831      7369676E 
+ 831      65642069 
+ 832              	.LASF19:
+ 833 0197 476F546F 		.ascii	"GoToPosition\000"
+ 833      506F7369 
+ 833      74696F6E 
+ 833      00
+ 834              	.LASF15:
+ 835 01a4 73697A65 		.ascii	"sizetype\000"
+ 835      74797065 
+ 835      00
+ 836              	.LASF20:
+ 837 01ad 74617267 		.ascii	"targetPosition\000"
+ 837      6574506F 
+ 837      73697469 
+ 837      6F6E00
+ 838              	.LASF6:
+ 839 01bc 6C6F6E67 		.ascii	"long long int\000"
+ 839      206C6F6E 
+ 839      6720696E 
+ 839      7400
+ 840              	.LASF13:
+ 841 01ca 63686172 		.ascii	"char\000"
+ 841      00
+ 842              	.LASF10:
+ 843 01cf 696E7433 		.ascii	"int32_t\000"
+ 843      325F7400 
+ 844              	.LASF2:
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccYQ15UH.s 			page 18
+
+
+ 845 01d7 73686F72 		.ascii	"short int\000"
+ 845      7420696E 
+ 845      7400
+ 846              	.LASF21:
+ 847 01e1 73746570 		.ascii	"stepsToMove\000"
+ 847      73546F4D 
+ 847      6F766500 
+ 848              	.LASF4:
+ 849 01ed 6C6F6E67 		.ascii	"long int\000"
+ 849      20696E74 
+ 849      00
+ 850              	.LASF28:
+ 851 01f6 73746570 		.ascii	"stepperMotor.c\000"
+ 851      7065724D 
+ 851      6F746F72 
+ 851      2E6300
+ 852              	.LASF14:
+ 853 0205 6C6F6E67 		.ascii	"long double\000"
+ 853      20646F75 
+ 853      626C6500 
+ 854              	.LASF26:
+ 855 0211 44697250 		.ascii	"DirPin_Write\000"
+ 855      696E5F57 
+ 855      72697465 
+ 855      00
+ 856              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
