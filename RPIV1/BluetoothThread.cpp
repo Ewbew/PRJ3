@@ -36,9 +36,8 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
     cout << "Connected to " << destAddr << " - starting send loop." << endl;
 
     while (keepRunning) {
-        string dataToSend1 = to_string(handler->getVar1());
-        string dataToSend2 = to_string(handler->getVar2());
-        string dataToSendCombined = "VAR1_"+to_string(handler->getVar1())+"VAR2_"+to_string(handler->getVar2());
+        
+        string dataToSendCombined = handler->getMessage();
 
         int status = write(s, dataToSendCombined.c_str(), dataToSendCombined.length());
         if (status < 0) {
