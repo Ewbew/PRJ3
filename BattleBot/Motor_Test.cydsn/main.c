@@ -1,14 +1,15 @@
 #include "project.h"
 #include "motor_control.h"
 #include "UART_handler.h"
-// Hej fra Jonas
+#include "shootVarHandler.h"
 
 
 int main(void)
 {
     CyGlobalIntEnable;  /* Enable global interrupts. */
-
+    shootVarHandler shootVarObject;
     // Start the UART RX ISR and UART component
+    uartHandler_init(&shootVarObject);
     isr_uart_rx_PC_StartEx(ISR_UART_rx_handler_PC);
     isr_uart_rx_BT_StartEx(ISR_UART_rx_handler_BT);
     UART_PC_Start();

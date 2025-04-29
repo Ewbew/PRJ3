@@ -4,6 +4,10 @@
 #include "project.h"  // Include your PSoC project header
 #include "motor_control.h"
 
+#include <project.h>
+#include "shootVarHandler.h"
+
+void uartHandler_init(shootVarHandler* handler);  // Declare init function
 // Prototype for the UART RX interrupt service routine for both UART to PC and to Bluetooth
 CY_ISR_PROTO(ISR_UART_rx_handler_PC);
 CY_ISR_PROTO(ISR_UART_rx_handler_BT);

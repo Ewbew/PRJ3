@@ -1,0 +1,675 @@
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccGCf0af.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"shootVarHandler.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.shootVarHandler_getDesiredPos1,"ax",%progbits
+  20              		.align	2
+  21              		.global	shootVarHandler_getDesiredPos1
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	shootVarHandler_getDesiredPos1, %function
+  25              	shootVarHandler_getDesiredPos1:
+  26              	.LFB0:
+  27              		.file 1 "shootVarHandler.c"
+   1:shootVarHandler.c **** #include "shootVarHandler.h"
+   2:shootVarHandler.c **** 
+   3:shootVarHandler.c **** 
+   4:shootVarHandler.c **** static shootVarHandler handler = {0, 0, 0};
+   5:shootVarHandler.c **** 
+   6:shootVarHandler.c **** // Getter-funktioner
+   7:shootVarHandler.c **** int shootVarHandler_getDesiredPos1(void) {
+  28              		.loc 1 7 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+   8:shootVarHandler.c ****     return handler.desiredPos1;
+   9:shootVarHandler.c **** }
+  33              		.loc 1 9 0
+  34 0000 014B     		ldr	r3, .L2
+  35 0002 1868     		ldr	r0, [r3]
+  36 0004 7047     		bx	lr
+  37              	.L3:
+  38 0006 00BF     		.align	2
+  39              	.L2:
+  40 0008 00000000 		.word	.LANCHOR0
+  41              		.cfi_endproc
+  42              	.LFE0:
+  43              		.size	shootVarHandler_getDesiredPos1, .-shootVarHandler_getDesiredPos1
+  44              		.section	.text.shootVarHandler_getDesiredPos2,"ax",%progbits
+  45              		.align	2
+  46              		.global	shootVarHandler_getDesiredPos2
+  47              		.thumb
+  48              		.thumb_func
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccGCf0af.s 			page 2
+
+
+  49              		.type	shootVarHandler_getDesiredPos2, %function
+  50              	shootVarHandler_getDesiredPos2:
+  51              	.LFB1:
+  10:shootVarHandler.c **** 
+  11:shootVarHandler.c **** int shootVarHandler_getDesiredPos2(void) {
+  52              		.loc 1 11 0
+  53              		.cfi_startproc
+  54              		@ args = 0, pretend = 0, frame = 0
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56              		@ link register save eliminated.
+  12:shootVarHandler.c ****     return handler.desiredPos2;
+  13:shootVarHandler.c **** }
+  57              		.loc 1 13 0
+  58 0000 014B     		ldr	r3, .L5
+  59 0002 5868     		ldr	r0, [r3, #4]
+  60 0004 7047     		bx	lr
+  61              	.L6:
+  62 0006 00BF     		.align	2
+  63              	.L5:
+  64 0008 00000000 		.word	.LANCHOR0
+  65              		.cfi_endproc
+  66              	.LFE1:
+  67              		.size	shootVarHandler_getDesiredPos2, .-shootVarHandler_getDesiredPos2
+  68              		.section	.text.shootVarHandler_getShootMode,"ax",%progbits
+  69              		.align	2
+  70              		.global	shootVarHandler_getShootMode
+  71              		.thumb
+  72              		.thumb_func
+  73              		.type	shootVarHandler_getShootMode, %function
+  74              	shootVarHandler_getShootMode:
+  75              	.LFB2:
+  14:shootVarHandler.c **** 
+  15:shootVarHandler.c **** int shootVarHandler_getShootMode(void) {
+  76              		.loc 1 15 0
+  77              		.cfi_startproc
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80              		@ link register save eliminated.
+  16:shootVarHandler.c ****     return handler.shootMode;
+  17:shootVarHandler.c **** }
+  81              		.loc 1 17 0
+  82 0000 014B     		ldr	r3, .L8
+  83 0002 9868     		ldr	r0, [r3, #8]
+  84 0004 7047     		bx	lr
+  85              	.L9:
+  86 0006 00BF     		.align	2
+  87              	.L8:
+  88 0008 00000000 		.word	.LANCHOR0
+  89              		.cfi_endproc
+  90              	.LFE2:
+  91              		.size	shootVarHandler_getShootMode, .-shootVarHandler_getShootMode
+  92              		.section	.text.shootVarHandler_setDesiredPos1,"ax",%progbits
+  93              		.align	2
+  94              		.global	shootVarHandler_setDesiredPos1
+  95              		.thumb
+  96              		.thumb_func
+  97              		.type	shootVarHandler_setDesiredPos1, %function
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccGCf0af.s 			page 3
+
+
+  98              	shootVarHandler_setDesiredPos1:
+  99              	.LFB3:
+  18:shootVarHandler.c **** 
+  19:shootVarHandler.c **** // Setter-funktioner
+  20:shootVarHandler.c **** void shootVarHandler_setDesiredPos1(int newPos1) {
+ 100              		.loc 1 20 0
+ 101              		.cfi_startproc
+ 102              		@ args = 0, pretend = 0, frame = 0
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104              		@ link register save eliminated.
+ 105              	.LVL0:
+  21:shootVarHandler.c ****     handler.desiredPos1 = newPos1;
+ 106              		.loc 1 21 0
+ 107 0000 014B     		ldr	r3, .L11
+ 108 0002 1860     		str	r0, [r3]
+ 109 0004 7047     		bx	lr
+ 110              	.L12:
+ 111 0006 00BF     		.align	2
+ 112              	.L11:
+ 113 0008 00000000 		.word	.LANCHOR0
+ 114              		.cfi_endproc
+ 115              	.LFE3:
+ 116              		.size	shootVarHandler_setDesiredPos1, .-shootVarHandler_setDesiredPos1
+ 117              		.section	.text.shootVarHandler_setDesiredPos2,"ax",%progbits
+ 118              		.align	2
+ 119              		.global	shootVarHandler_setDesiredPos2
+ 120              		.thumb
+ 121              		.thumb_func
+ 122              		.type	shootVarHandler_setDesiredPos2, %function
+ 123              	shootVarHandler_setDesiredPos2:
+ 124              	.LFB4:
+  22:shootVarHandler.c **** }
+  23:shootVarHandler.c **** 
+  24:shootVarHandler.c **** void shootVarHandler_setDesiredPos2(int newPos2) {
+ 125              		.loc 1 24 0
+ 126              		.cfi_startproc
+ 127              		@ args = 0, pretend = 0, frame = 0
+ 128              		@ frame_needed = 0, uses_anonymous_args = 0
+ 129              		@ link register save eliminated.
+ 130              	.LVL1:
+  25:shootVarHandler.c ****     handler.desiredPos2 = newPos2;
+ 131              		.loc 1 25 0
+ 132 0000 014B     		ldr	r3, .L14
+ 133 0002 5860     		str	r0, [r3, #4]
+ 134 0004 7047     		bx	lr
+ 135              	.L15:
+ 136 0006 00BF     		.align	2
+ 137              	.L14:
+ 138 0008 00000000 		.word	.LANCHOR0
+ 139              		.cfi_endproc
+ 140              	.LFE4:
+ 141              		.size	shootVarHandler_setDesiredPos2, .-shootVarHandler_setDesiredPos2
+ 142              		.section	.text.shootVarHandler_setShootMode,"ax",%progbits
+ 143              		.align	2
+ 144              		.global	shootVarHandler_setShootMode
+ 145              		.thumb
+ 146              		.thumb_func
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccGCf0af.s 			page 4
+
+
+ 147              		.type	shootVarHandler_setShootMode, %function
+ 148              	shootVarHandler_setShootMode:
+ 149              	.LFB5:
+  26:shootVarHandler.c **** }
+  27:shootVarHandler.c **** 
+  28:shootVarHandler.c **** void shootVarHandler_setShootMode(int newMode) {
+ 150              		.loc 1 28 0
+ 151              		.cfi_startproc
+ 152              		@ args = 0, pretend = 0, frame = 0
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154              		@ link register save eliminated.
+ 155              	.LVL2:
+  29:shootVarHandler.c ****     handler.shootMode = newMode;
+ 156              		.loc 1 29 0
+ 157 0000 014B     		ldr	r3, .L17
+ 158 0002 9860     		str	r0, [r3, #8]
+ 159 0004 7047     		bx	lr
+ 160              	.L18:
+ 161 0006 00BF     		.align	2
+ 162              	.L17:
+ 163 0008 00000000 		.word	.LANCHOR0
+ 164              		.cfi_endproc
+ 165              	.LFE5:
+ 166              		.size	shootVarHandler_setShootMode, .-shootVarHandler_setShootMode
+ 167              		.bss
+ 168              		.align	2
+ 169              		.set	.LANCHOR0,. + 0
+ 170              		.type	handler, %object
+ 171              		.size	handler, 12
+ 172              	handler:
+ 173 0000 00000000 		.space	12
+ 173      00000000 
+ 173      00000000 
+ 174              		.text
+ 175              	.Letext0:
+ 176              		.file 2 "shootVarHandler.h"
+ 177              		.section	.debug_info,"",%progbits
+ 178              	.Ldebug_info0:
+ 179 0000 1A010000 		.4byte	0x11a
+ 180 0004 0400     		.2byte	0x4
+ 181 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 182 000a 04       		.byte	0x4
+ 183 000b 01       		.uleb128 0x1
+ 184 000c FB000000 		.4byte	.LASF12
+ 185 0010 0C       		.byte	0xc
+ 186 0011 CC000000 		.4byte	.LASF13
+ 187 0015 A8010000 		.4byte	.LASF14
+ 188 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 189 001d 00000000 		.4byte	0
+ 190 0021 00000000 		.4byte	.Ldebug_line0
+ 191 0025 02       		.uleb128 0x2
+ 192 0026 0C       		.byte	0xc
+ 193 0027 02       		.byte	0x2
+ 194 0028 05       		.byte	0x5
+ 195 0029 52000000 		.4byte	0x52
+ 196 002d 03       		.uleb128 0x3
+ 197 002e 1A000000 		.4byte	.LASF0
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccGCf0af.s 			page 5
+
+
+ 198 0032 02       		.byte	0x2
+ 199 0033 06       		.byte	0x6
+ 200 0034 52000000 		.4byte	0x52
+ 201 0038 00       		.byte	0
+ 202 0039 03       		.uleb128 0x3
+ 203 003a 26000000 		.4byte	.LASF1
+ 204 003e 02       		.byte	0x2
+ 205 003f 07       		.byte	0x7
+ 206 0040 52000000 		.4byte	0x52
+ 207 0044 04       		.byte	0x4
+ 208 0045 03       		.uleb128 0x3
+ 209 0046 10000000 		.4byte	.LASF2
+ 210 004a 02       		.byte	0x2
+ 211 004b 08       		.byte	0x8
+ 212 004c 52000000 		.4byte	0x52
+ 213 0050 08       		.byte	0x8
+ 214 0051 00       		.byte	0
+ 215 0052 04       		.uleb128 0x4
+ 216 0053 04       		.byte	0x4
+ 217 0054 05       		.byte	0x5
+ 218 0055 696E7400 		.ascii	"int\000"
+ 219 0059 05       		.uleb128 0x5
+ 220 005a 9D000000 		.4byte	.LASF15
+ 221 005e 02       		.byte	0x2
+ 222 005f 09       		.byte	0x9
+ 223 0060 25000000 		.4byte	0x25
+ 224 0064 06       		.uleb128 0x6
+ 225 0065 32000000 		.4byte	.LASF3
+ 226 0069 01       		.byte	0x1
+ 227 006a 07       		.byte	0x7
+ 228 006b 52000000 		.4byte	0x52
+ 229 006f 00000000 		.4byte	.LFB0
+ 230 0073 0C000000 		.4byte	.LFE0-.LFB0
+ 231 0077 01       		.uleb128 0x1
+ 232 0078 9C       		.byte	0x9c
+ 233 0079 06       		.uleb128 0x6
+ 234 007a 51000000 		.4byte	.LASF4
+ 235 007e 01       		.byte	0x1
+ 236 007f 0B       		.byte	0xb
+ 237 0080 52000000 		.4byte	0x52
+ 238 0084 00000000 		.4byte	.LFB1
+ 239 0088 0C000000 		.4byte	.LFE1-.LFB1
+ 240 008c 01       		.uleb128 0x1
+ 241 008d 9C       		.byte	0x9c
+ 242 008e 06       		.uleb128 0x6
+ 243 008f 78000000 		.4byte	.LASF5
+ 244 0093 01       		.byte	0x1
+ 245 0094 0F       		.byte	0xf
+ 246 0095 52000000 		.4byte	0x52
+ 247 0099 00000000 		.4byte	.LFB2
+ 248 009d 0C000000 		.4byte	.LFE2-.LFB2
+ 249 00a1 01       		.uleb128 0x1
+ 250 00a2 9C       		.byte	0x9c
+ 251 00a3 07       		.uleb128 0x7
+ 252 00a4 AD000000 		.4byte	.LASF6
+ 253 00a8 01       		.byte	0x1
+ 254 00a9 14       		.byte	0x14
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccGCf0af.s 			page 6
+
+
+ 255 00aa 00000000 		.4byte	.LFB3
+ 256 00ae 0C000000 		.4byte	.LFE3-.LFB3
+ 257 00b2 01       		.uleb128 0x1
+ 258 00b3 9C       		.byte	0x9c
+ 259 00b4 C6000000 		.4byte	0xc6
+ 260 00b8 08       		.uleb128 0x8
+ 261 00b9 08000000 		.4byte	.LASF8
+ 262 00bd 01       		.byte	0x1
+ 263 00be 14       		.byte	0x14
+ 264 00bf 52000000 		.4byte	0x52
+ 265 00c3 01       		.uleb128 0x1
+ 266 00c4 50       		.byte	0x50
+ 267 00c5 00       		.byte	0
+ 268 00c6 07       		.uleb128 0x7
+ 269 00c7 89010000 		.4byte	.LASF7
+ 270 00cb 01       		.byte	0x1
+ 271 00cc 18       		.byte	0x18
+ 272 00cd 00000000 		.4byte	.LFB4
+ 273 00d1 0C000000 		.4byte	.LFE4-.LFB4
+ 274 00d5 01       		.uleb128 0x1
+ 275 00d6 9C       		.byte	0x9c
+ 276 00d7 E9000000 		.4byte	0xe9
+ 277 00db 08       		.uleb128 0x8
+ 278 00dc 70000000 		.4byte	.LASF9
+ 279 00e0 01       		.byte	0x1
+ 280 00e1 18       		.byte	0x18
+ 281 00e2 52000000 		.4byte	0x52
+ 282 00e6 01       		.uleb128 0x1
+ 283 00e7 50       		.byte	0x50
+ 284 00e8 00       		.byte	0
+ 285 00e9 07       		.uleb128 0x7
+ 286 00ea DE000000 		.4byte	.LASF10
+ 287 00ee 01       		.byte	0x1
+ 288 00ef 1C       		.byte	0x1c
+ 289 00f0 00000000 		.4byte	.LFB5
+ 290 00f4 0C000000 		.4byte	.LFE5-.LFB5
+ 291 00f8 01       		.uleb128 0x1
+ 292 00f9 9C       		.byte	0x9c
+ 293 00fa 0C010000 		.4byte	0x10c
+ 294 00fe 08       		.uleb128 0x8
+ 295 00ff 95000000 		.4byte	.LASF11
+ 296 0103 01       		.byte	0x1
+ 297 0104 1C       		.byte	0x1c
+ 298 0105 52000000 		.4byte	0x52
+ 299 0109 01       		.uleb128 0x1
+ 300 010a 50       		.byte	0x50
+ 301 010b 00       		.byte	0
+ 302 010c 09       		.uleb128 0x9
+ 303 010d 00000000 		.4byte	.LASF16
+ 304 0111 01       		.byte	0x1
+ 305 0112 04       		.byte	0x4
+ 306 0113 59000000 		.4byte	0x59
+ 307 0117 05       		.uleb128 0x5
+ 308 0118 03       		.byte	0x3
+ 309 0119 00000000 		.4byte	handler
+ 310 011d 00       		.byte	0
+ 311              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccGCf0af.s 			page 7
+
+
+ 312              	.Ldebug_abbrev0:
+ 313 0000 01       		.uleb128 0x1
+ 314 0001 11       		.uleb128 0x11
+ 315 0002 01       		.byte	0x1
+ 316 0003 25       		.uleb128 0x25
+ 317 0004 0E       		.uleb128 0xe
+ 318 0005 13       		.uleb128 0x13
+ 319 0006 0B       		.uleb128 0xb
+ 320 0007 03       		.uleb128 0x3
+ 321 0008 0E       		.uleb128 0xe
+ 322 0009 1B       		.uleb128 0x1b
+ 323 000a 0E       		.uleb128 0xe
+ 324 000b 55       		.uleb128 0x55
+ 325 000c 17       		.uleb128 0x17
+ 326 000d 11       		.uleb128 0x11
+ 327 000e 01       		.uleb128 0x1
+ 328 000f 10       		.uleb128 0x10
+ 329 0010 17       		.uleb128 0x17
+ 330 0011 00       		.byte	0
+ 331 0012 00       		.byte	0
+ 332 0013 02       		.uleb128 0x2
+ 333 0014 13       		.uleb128 0x13
+ 334 0015 01       		.byte	0x1
+ 335 0016 0B       		.uleb128 0xb
+ 336 0017 0B       		.uleb128 0xb
+ 337 0018 3A       		.uleb128 0x3a
+ 338 0019 0B       		.uleb128 0xb
+ 339 001a 3B       		.uleb128 0x3b
+ 340 001b 0B       		.uleb128 0xb
+ 341 001c 01       		.uleb128 0x1
+ 342 001d 13       		.uleb128 0x13
+ 343 001e 00       		.byte	0
+ 344 001f 00       		.byte	0
+ 345 0020 03       		.uleb128 0x3
+ 346 0021 0D       		.uleb128 0xd
+ 347 0022 00       		.byte	0
+ 348 0023 03       		.uleb128 0x3
+ 349 0024 0E       		.uleb128 0xe
+ 350 0025 3A       		.uleb128 0x3a
+ 351 0026 0B       		.uleb128 0xb
+ 352 0027 3B       		.uleb128 0x3b
+ 353 0028 0B       		.uleb128 0xb
+ 354 0029 49       		.uleb128 0x49
+ 355 002a 13       		.uleb128 0x13
+ 356 002b 38       		.uleb128 0x38
+ 357 002c 0B       		.uleb128 0xb
+ 358 002d 00       		.byte	0
+ 359 002e 00       		.byte	0
+ 360 002f 04       		.uleb128 0x4
+ 361 0030 24       		.uleb128 0x24
+ 362 0031 00       		.byte	0
+ 363 0032 0B       		.uleb128 0xb
+ 364 0033 0B       		.uleb128 0xb
+ 365 0034 3E       		.uleb128 0x3e
+ 366 0035 0B       		.uleb128 0xb
+ 367 0036 03       		.uleb128 0x3
+ 368 0037 08       		.uleb128 0x8
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccGCf0af.s 			page 8
+
+
+ 369 0038 00       		.byte	0
+ 370 0039 00       		.byte	0
+ 371 003a 05       		.uleb128 0x5
+ 372 003b 16       		.uleb128 0x16
+ 373 003c 00       		.byte	0
+ 374 003d 03       		.uleb128 0x3
+ 375 003e 0E       		.uleb128 0xe
+ 376 003f 3A       		.uleb128 0x3a
+ 377 0040 0B       		.uleb128 0xb
+ 378 0041 3B       		.uleb128 0x3b
+ 379 0042 0B       		.uleb128 0xb
+ 380 0043 49       		.uleb128 0x49
+ 381 0044 13       		.uleb128 0x13
+ 382 0045 00       		.byte	0
+ 383 0046 00       		.byte	0
+ 384 0047 06       		.uleb128 0x6
+ 385 0048 2E       		.uleb128 0x2e
+ 386 0049 00       		.byte	0
+ 387 004a 3F       		.uleb128 0x3f
+ 388 004b 19       		.uleb128 0x19
+ 389 004c 03       		.uleb128 0x3
+ 390 004d 0E       		.uleb128 0xe
+ 391 004e 3A       		.uleb128 0x3a
+ 392 004f 0B       		.uleb128 0xb
+ 393 0050 3B       		.uleb128 0x3b
+ 394 0051 0B       		.uleb128 0xb
+ 395 0052 27       		.uleb128 0x27
+ 396 0053 19       		.uleb128 0x19
+ 397 0054 49       		.uleb128 0x49
+ 398 0055 13       		.uleb128 0x13
+ 399 0056 11       		.uleb128 0x11
+ 400 0057 01       		.uleb128 0x1
+ 401 0058 12       		.uleb128 0x12
+ 402 0059 06       		.uleb128 0x6
+ 403 005a 40       		.uleb128 0x40
+ 404 005b 18       		.uleb128 0x18
+ 405 005c 9742     		.uleb128 0x2117
+ 406 005e 19       		.uleb128 0x19
+ 407 005f 00       		.byte	0
+ 408 0060 00       		.byte	0
+ 409 0061 07       		.uleb128 0x7
+ 410 0062 2E       		.uleb128 0x2e
+ 411 0063 01       		.byte	0x1
+ 412 0064 3F       		.uleb128 0x3f
+ 413 0065 19       		.uleb128 0x19
+ 414 0066 03       		.uleb128 0x3
+ 415 0067 0E       		.uleb128 0xe
+ 416 0068 3A       		.uleb128 0x3a
+ 417 0069 0B       		.uleb128 0xb
+ 418 006a 3B       		.uleb128 0x3b
+ 419 006b 0B       		.uleb128 0xb
+ 420 006c 27       		.uleb128 0x27
+ 421 006d 19       		.uleb128 0x19
+ 422 006e 11       		.uleb128 0x11
+ 423 006f 01       		.uleb128 0x1
+ 424 0070 12       		.uleb128 0x12
+ 425 0071 06       		.uleb128 0x6
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccGCf0af.s 			page 9
+
+
+ 426 0072 40       		.uleb128 0x40
+ 427 0073 18       		.uleb128 0x18
+ 428 0074 9742     		.uleb128 0x2117
+ 429 0076 19       		.uleb128 0x19
+ 430 0077 01       		.uleb128 0x1
+ 431 0078 13       		.uleb128 0x13
+ 432 0079 00       		.byte	0
+ 433 007a 00       		.byte	0
+ 434 007b 08       		.uleb128 0x8
+ 435 007c 05       		.uleb128 0x5
+ 436 007d 00       		.byte	0
+ 437 007e 03       		.uleb128 0x3
+ 438 007f 0E       		.uleb128 0xe
+ 439 0080 3A       		.uleb128 0x3a
+ 440 0081 0B       		.uleb128 0xb
+ 441 0082 3B       		.uleb128 0x3b
+ 442 0083 0B       		.uleb128 0xb
+ 443 0084 49       		.uleb128 0x49
+ 444 0085 13       		.uleb128 0x13
+ 445 0086 02       		.uleb128 0x2
+ 446 0087 18       		.uleb128 0x18
+ 447 0088 00       		.byte	0
+ 448 0089 00       		.byte	0
+ 449 008a 09       		.uleb128 0x9
+ 450 008b 34       		.uleb128 0x34
+ 451 008c 00       		.byte	0
+ 452 008d 03       		.uleb128 0x3
+ 453 008e 0E       		.uleb128 0xe
+ 454 008f 3A       		.uleb128 0x3a
+ 455 0090 0B       		.uleb128 0xb
+ 456 0091 3B       		.uleb128 0x3b
+ 457 0092 0B       		.uleb128 0xb
+ 458 0093 49       		.uleb128 0x49
+ 459 0094 13       		.uleb128 0x13
+ 460 0095 02       		.uleb128 0x2
+ 461 0096 18       		.uleb128 0x18
+ 462 0097 00       		.byte	0
+ 463 0098 00       		.byte	0
+ 464 0099 00       		.byte	0
+ 465              		.section	.debug_aranges,"",%progbits
+ 466 0000 44000000 		.4byte	0x44
+ 467 0004 0200     		.2byte	0x2
+ 468 0006 00000000 		.4byte	.Ldebug_info0
+ 469 000a 04       		.byte	0x4
+ 470 000b 00       		.byte	0
+ 471 000c 0000     		.2byte	0
+ 472 000e 0000     		.2byte	0
+ 473 0010 00000000 		.4byte	.LFB0
+ 474 0014 0C000000 		.4byte	.LFE0-.LFB0
+ 475 0018 00000000 		.4byte	.LFB1
+ 476 001c 0C000000 		.4byte	.LFE1-.LFB1
+ 477 0020 00000000 		.4byte	.LFB2
+ 478 0024 0C000000 		.4byte	.LFE2-.LFB2
+ 479 0028 00000000 		.4byte	.LFB3
+ 480 002c 0C000000 		.4byte	.LFE3-.LFB3
+ 481 0030 00000000 		.4byte	.LFB4
+ 482 0034 0C000000 		.4byte	.LFE4-.LFB4
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccGCf0af.s 			page 10
+
+
+ 483 0038 00000000 		.4byte	.LFB5
+ 484 003c 0C000000 		.4byte	.LFE5-.LFB5
+ 485 0040 00000000 		.4byte	0
+ 486 0044 00000000 		.4byte	0
+ 487              		.section	.debug_ranges,"",%progbits
+ 488              	.Ldebug_ranges0:
+ 489 0000 00000000 		.4byte	.LFB0
+ 490 0004 0C000000 		.4byte	.LFE0
+ 491 0008 00000000 		.4byte	.LFB1
+ 492 000c 0C000000 		.4byte	.LFE1
+ 493 0010 00000000 		.4byte	.LFB2
+ 494 0014 0C000000 		.4byte	.LFE2
+ 495 0018 00000000 		.4byte	.LFB3
+ 496 001c 0C000000 		.4byte	.LFE3
+ 497 0020 00000000 		.4byte	.LFB4
+ 498 0024 0C000000 		.4byte	.LFE4
+ 499 0028 00000000 		.4byte	.LFB5
+ 500 002c 0C000000 		.4byte	.LFE5
+ 501 0030 00000000 		.4byte	0
+ 502 0034 00000000 		.4byte	0
+ 503              		.section	.debug_line,"",%progbits
+ 504              	.Ldebug_line0:
+ 505 0000 A1000000 		.section	.debug_str,"MS",%progbits,1
+ 505      02003D00 
+ 505      00000201 
+ 505      FB0E0D00 
+ 505      01010101 
+ 506              	.LASF16:
+ 507 0000 68616E64 		.ascii	"handler\000"
+ 507      6C657200 
+ 508              	.LASF8:
+ 509 0008 6E657750 		.ascii	"newPos1\000"
+ 509      6F733100 
+ 510              	.LASF2:
+ 511 0010 73686F6F 		.ascii	"shootMode\000"
+ 511      744D6F64 
+ 511      6500
+ 512              	.LASF0:
+ 513 001a 64657369 		.ascii	"desiredPos1\000"
+ 513      72656450 
+ 513      6F733100 
+ 514              	.LASF1:
+ 515 0026 64657369 		.ascii	"desiredPos2\000"
+ 515      72656450 
+ 515      6F733200 
+ 516              	.LASF3:
+ 517 0032 73686F6F 		.ascii	"shootVarHandler_getDesiredPos1\000"
+ 517      74566172 
+ 517      48616E64 
+ 517      6C65725F 
+ 517      67657444 
+ 518              	.LASF4:
+ 519 0051 73686F6F 		.ascii	"shootVarHandler_getDesiredPos2\000"
+ 519      74566172 
+ 519      48616E64 
+ 519      6C65725F 
+ 519      67657444 
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccGCf0af.s 			page 11
+
+
+ 520              	.LASF9:
+ 521 0070 6E657750 		.ascii	"newPos2\000"
+ 521      6F733200 
+ 522              	.LASF5:
+ 523 0078 73686F6F 		.ascii	"shootVarHandler_getShootMode\000"
+ 523      74566172 
+ 523      48616E64 
+ 523      6C65725F 
+ 523      67657453 
+ 524              	.LASF11:
+ 525 0095 6E65774D 		.ascii	"newMode\000"
+ 525      6F646500 
+ 526              	.LASF15:
+ 527 009d 73686F6F 		.ascii	"shootVarHandler\000"
+ 527      74566172 
+ 527      48616E64 
+ 527      6C657200 
+ 528              	.LASF6:
+ 529 00ad 73686F6F 		.ascii	"shootVarHandler_setDesiredPos1\000"
+ 529      74566172 
+ 529      48616E64 
+ 529      6C65725F 
+ 529      73657444 
+ 530              	.LASF13:
+ 531 00cc 73686F6F 		.ascii	"shootVarHandler.c\000"
+ 531      74566172 
+ 531      48616E64 
+ 531      6C65722E 
+ 531      6300
+ 532              	.LASF10:
+ 533 00de 73686F6F 		.ascii	"shootVarHandler_setShootMode\000"
+ 533      74566172 
+ 533      48616E64 
+ 533      6C65725F 
+ 533      73657453 
+ 534              	.LASF12:
+ 535 00fb 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 535      43313120 
+ 535      352E342E 
+ 535      31203230 
+ 535      31363036 
+ 536 012e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 536      20726576 
+ 536      6973696F 
+ 536      6E203233 
+ 536      37373135 
+ 537 0161 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 537      66756E63 
+ 537      74696F6E 
+ 537      2D736563 
+ 537      74696F6E 
+ 538              	.LASF7:
+ 539 0189 73686F6F 		.ascii	"shootVarHandler_setDesiredPos2\000"
+ 539      74566172 
+ 539      48616E64 
+ 539      6C65725F 
+ 539      73657444 
+ARM GAS  C:\Users\farpe\AppData\Local\Temp\ccGCf0af.s 			page 12
+
+
+ 540              	.LASF14:
+ 541 01a8 433A5C55 		.ascii	"C:\\Users\\farpe\\Documents\\GitHub\\PRJ3\\BattleBo"
+ 541      73657273 
+ 541      5C666172 
+ 541      70655C44 
+ 541      6F63756D 
+ 542 01d5 745C4D6F 		.ascii	"t\\Motor_Test.cydsn\000"
+ 542      746F725F 
+ 542      54657374 
+ 542      2E637964 
+ 542      736E00
+ 543              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

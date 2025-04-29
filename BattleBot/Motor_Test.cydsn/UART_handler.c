@@ -1,13 +1,23 @@
 #include "UART_handler.h"
 #include "motor_control.h"
+#include "shootVarHandler.h"
 #include <stdio.h>
+#include <string.h>
 
+static shootVarHandler* shootRef = NULL;  // Pointer to shared object
+
+void uartHandler_init(shootVarHandler* handler) {
+    shootRef = handler;
+}
 // UART RX interrupt service routine for Bluetooth
 CY_ISR(ISR_UART_rx_handler_BT)
 {
     static char btBuffer[50];     // Buffer for the incoming string
     static uint8_t index = 0;
-    int temp1, temp2;
+    int temp1, temp2, tempBool;
+    char tempMode;
+    char message[150];
+    
     int8_t VAR1, VAR2;
 
     while (UART_BT_GetRxBufferSize() > 0)
@@ -25,18 +35,36 @@ CY_ISR(ISR_UART_rx_handler_BT)
         {
             btBuffer[index] = '\0';  // Null-terminate the string
 
-            char message[150];
             snprintf(message, sizeof(message), "\r\n[BT Response] %s\r\n", btBuffer);
             UART_PC_PutString(message);
 
             // Try to parse the format: (e.g.) "-39,45"
-            if (sscanf(btBuffer, "%d,%d", &temp1, &temp2) == 2)
+            if (sscanf(btBuffer, "%c,%d,%d,%d", &tempMode, &temp1, &temp2, &tempBool) == 4)
             {
+                
+                
+                if (tempMode == '$'){
                 VAR1 = (int8_t)temp1;
                 VAR2 = (int8_t)temp2;
                 set_speedA(VAR1);
                 set_speedB(VAR2);
+                    
+                }
+                if (tempMode == '@' && shootRef != NULL) {
+                    set_speedA(0);
+                    set_speedB(0);
+
+                    shootRef->desiredPos1 = temp1;
+                    shootRef->desiredPos2 = temp2;
+                    shootRef->shootMode = tempBool;
+                }
+                
+                    
             }
+                
+                
+                
+        }
             else
             {
                 // Combine parse error message into one formatted string
@@ -46,8 +74,8 @@ CY_ISR(ISR_UART_rx_handler_BT)
 
             index = 0; // Reset buffer for next message
         }
-    }
 }
+
 
 
 // UART RX interrupt service routine for PC

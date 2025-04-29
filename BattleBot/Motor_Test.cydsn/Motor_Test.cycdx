@@ -78,8 +78,8 @@
   </block>
   <block name="IN2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Rx_BT" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Em_EEPROM_Dynamic" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Tx_BT" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="isr_uart_rx_BT" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Tx_PC" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />

@@ -1,6 +1,6 @@
 -- Project:   Motor_Test
--- Generated: 04/21/2025 22:09:32
--- PSoC Creator  4.4
+-- Generated: 04/29/2025 14:10:29
+-- PSoC Creator  4.2
 
 ENTITY Motor_Test IS
     PORT(
