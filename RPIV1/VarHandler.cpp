@@ -71,11 +71,11 @@ int VarHandler::getControlMode() const {
 string VarHandler::getMessage(){
 
     if(controlMode==2){
-        return "$"+to_string(getVar1DriveMode())+","+to_string(getVar2DriveMode());
+        return "$,"+to_string(getVar1DriveMode())+","+to_string(getVar2DriveMode());
 
     }
     if(controlMode==3){
-        return "€"+to_string(getVar1ShootMode())+","+to_string(getVar2ShootMode())+to_string(static_cast<int>(getShootState()));
+        return "€,"+to_string(getVar1ShootMode())+","+to_string(getVar2ShootMode())+to_string(static_cast<int>(getShootState()));
 
     }
     else{
