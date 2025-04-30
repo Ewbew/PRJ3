@@ -72,14 +72,15 @@ string VarHandler::getMessage(){
 
     // Drive mode
     if(controlMode==2){
-        return "$,"+to_string(getVar1DriveMode())+","+to_string(getVar2DriveMode())+",0"; // End with 0, since it represents shooting 
+        return "$,"+to_string(getVar1DriveMode())+","+to_string(getVar2DriveMode())+",0X"; // End with 0, since it represents shooting 
                                                                                         // mode, which is always 0 (false) in drive mode
+                                                                                        // 'X' is the end char
 
     }
     // Shoot mode
     if(controlMode==3){
-        return "@,"+to_string(getVar1ShootMode())+","+to_string(getVar2ShootMode())+","+to_string(static_cast<int>(getShootState()));
-
+        return "@,"+to_string(getVar1ShootMode())+","+to_string(getVar2ShootMode())+","+to_string(static_cast<int>(getShootState()))+ "X"; 
+                                                                                                                             // 'X' is the end char
     }
     else{
         cout<< "Get Message Failed";
