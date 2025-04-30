@@ -26,27 +26,30 @@ CY_ISR(ISR_UART_rx_handler_BT)
         char byteReceived = UART_BT_ReadRxData();
 
         // Store the byte if we have room
-        if (index < sizeof(btBuffer) - 1)
+        if ((index < sizeof(btBuffer) - 1) && byteReceived != 'X')
         {
             btBuffer[index++] = byteReceived;
         }
 
         // Message is considered done if we get \n, \r, or if buffer is full
-        if (byteReceived == '\n' || byteReceived == '\r' || index >= sizeof(btBuffer) - 1)
+        if (byteReceived == 'X' || index >= sizeof(btBuffer) - 1)
         {
             btBuffer[index] = '\0';  // Null-terminate the string
 
-            snprintf(message, sizeof(message), "\r\n[BT Response] %s\r\n", btBuffer);
+            snprintf(message, sizeof(message), "[BT Response] %s\r\n", btBuffer);
             UART_PC_PutString(message);
 
             // Try to parse the format: <char>,<int>,<int>,<int>
             if (sscanf(btBuffer, "%c,%d,%d,%d", &tempMode, &temp1, &temp2, &tempBool) == 4)
             {
+                snprintf(message, sizeof(message), "The tempMode variable is %c\r\n", tempMode);
+                UART_PC_PutString(message);
                 if (tempMode == '$') {
                     VAR1 = (int8_t)temp1;
                     VAR2 = (int8_t)temp2;
                     set_speedA(VAR1);
                     set_speedB(VAR2);
+                    UART_PC_PutString("Speed successfully set\r\n");
                 }
                 else if (tempMode == '@' && shootRef != NULL) {
                     set_speedA(0);
@@ -55,18 +58,18 @@ CY_ISR(ISR_UART_rx_handler_BT)
                     shootRef->desiredPos1 = temp1;
                     shootRef->desiredPos2 = temp2;
                     shootRef->shootMode = tempBool;
+                    UART_PC_PutString("Turret direction and shoot mode successfully set\r\n");
                 }
             }
             else if (strncmp(btBuffer, "AT+", 3) == 0)
             {
-                // It's a valid AT command or response — not a motor command
-                snprintf(message, sizeof(message), "\r\n[BT Info] AT Command or response received: %s\r\n", btBuffer);
+                // It's a valid AT command or response — not a control command (used for debugging)
+                snprintf(message, sizeof(message), "[BT Info] AT Command or response received: %s\r\n", btBuffer);
                 UART_PC_PutString(message);
             }
             else
-            {
-                snprintf(message, sizeof(message), "\r\nParse error. Content of BT buffer: %s\r\n", btBuffer);
-                UART_PC_PutString(message);
+            {       
+                UART_PC_PutString("Parsing error\r\n");
             }
 
             index = 0; // Reset buffer for next message
@@ -98,9 +101,9 @@ void handleByteReceived(uint8_t byteReceived)
     // A static variable to keep track of the current speed.
     // Valid range is from -PWM_MAX_DUTY to PWM_MAX_DUTY.
     static int8_t currentSpeed = 0;
-    char command_address[] = "AT+MAC\r\n";
-    char command_baud[] = "AT+BAUD\r\n";
-    char command_status[] = "AT+STAT\r\n";
+    char command_ACK[] = "AT\r\n";
+    char command_addr[] = "AT+ADDR?\r\n";
+    char command_UART[] = "AT+UART?\r\n";
     
     switch(byteReceived)
     {
@@ -157,26 +160,20 @@ void handleByteReceived(uint8_t byteReceived)
             break;
         
         case 'a':
-           // Sends
-            UART_PC_PutString("Sending GetMACAddress command to Bluetooth module\r\n");
-            UART_BT_PutString(command_address);
-            break;
-         
-        case 'b':
-           // Sends
-            UART_PC_PutString("Sending GetBAUDRate command to Bluetooth module\r\n");
-            UART_BT_PutString(command_baud);
+           // Asks for the address (IT SHOULD BE 98d3:51:fe6f30)
+            UART_PC_PutString("Fetching MAC address of Bluetooth module\r\n");
+            UART_BT_PutString(command_addr);
             break;
             
-        case 's':
-            UART_PC_PutString("Sending GetStatus command to Bluetooth module\r\n");
-            UART_BT_PutString(command_status);
+        case 'u':
+            UART_PC_PutString("Fecthing UART info from Bluetooth module\r\n");
+            UART_BT_PutString(command_UART);
             break;
         
         case 't':
             // Test
             UART_PC_PutString("Testing for response from BT module\r\n");
-            UART_BT_PutString("AT+VER\r\n");
+            UART_BT_PutString(command_ACK);
             break;
             
         default:
