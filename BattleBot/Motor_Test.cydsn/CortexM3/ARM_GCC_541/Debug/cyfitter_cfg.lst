@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
   29:Generated_Source\PSoC5/cyfitter_cfg.c **** 
   30:Generated_Source\PSoC5/cyfitter_cfg.c **** #if defined(__GNUC__) || defined(__ARMCC_VERSION)
   31:Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CYPACKED 
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 2
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 2
 
 
   32:Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CYPACKED_ATTR __attribute__ ((packed))
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
   86:Generated_Source\PSoC5/cyfitter_cfg.c **** 	(void)memcpy(dest, src, n);
   87:Generated_Source\PSoC5/cyfitter_cfg.c **** }
   88:Generated_Source\PSoC5/cyfitter_cfg.c **** CY_CFG_UNUSED
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 3
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 3
 
 
   89:Generated_Source\PSoC5/cyfitter_cfg.c **** static void CYCONFIGCPYCODE(void *dest, const void *src, size_t n);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
   41              		.thumb
   42              		.thumb_func
   43              		.type	cfg_write_bytes32, %function
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 4
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 4
 
 
   44              	cfg_write_bytes32:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  181:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  182:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  183:Generated_Source\PSoC5/cyfitter_cfg.c **** /*******************************************************************************
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 5
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 5
 
 
  184:Generated_Source\PSoC5/cyfitter_cfg.c **** * Function Name: cfg_write_bytes32
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  207:Generated_Source\PSoC5/cyfitter_cfg.c **** 		while (count != 0u)
   77              		.loc 1 207 0
   78 0012 08E0     		b	.L5
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 6
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 6
 
 
   79              	.L6:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  123              	.LFB6:
  215:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  216:Generated_Source\PSoC5/cyfitter_cfg.c **** /*******************************************************************************
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 7
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 7
 
 
  217:Generated_Source\PSoC5/cyfitter_cfg.c **** * Function Name: ClockSetup
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  271:Generated_Source\PSoC5/cyfitter_cfg.c **** 	}
  272:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  273:Generated_Source\PSoC5/cyfitter_cfg.c **** 	/* Configure Bus/Master Clock based on settings from Clock DWR */
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 8
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 8
 
 
  274:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG16((void CYFAR *)(CYREG_CLKDIST_MSTR0), 0x0100u);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  309:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)CYREG_PUMP_CR0, 0x44u);
  143              		.loc 1 309 0
  144 0014 4422     		movs	r2, #68
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 9
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 9
 
 
  145 0016 034B     		ldr	r3, .L10+8
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  196              		.cfi_offset 3, -16
  197              		.cfi_offset 4, -12
  198              		.cfi_offset 5, -8
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 10
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 10
 
 
  199              		.cfi_offset 14, -4
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  241 0044 204B     		ldr	r3, .L20+20
  242 0046 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  243 0048 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 11
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 11
 
 
  244 004a 2049     		ldr	r1, .L20+24
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  287 0084 FFF7FEFF 		bl	CyClockStartupError
  288              	.LVL23:
  289              	.L18:
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 12
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 12
 
 
  274:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_MSTR0), 0x07u);
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  337              		.align	2
  338              		.thumb
  339              		.thumb_func
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 13
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 13
 
 
  340              		.type	CYCONFIGCPY, %function
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  370              		@ frame_needed = 0, uses_anonymous_args = 0
  371              		@ link register save eliminated.
  372              	.LVL27:
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 14
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 14
 
 
  332:Generated_Source\PSoC5/cyfitter_cfg.c **** 	uint8 regValue = CY_GET_XTND_REG8((void CYFAR *)CYREG_PUMP_CR0);
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  363:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  364:Generated_Source\PSoC5/cyfitter_cfg.c **** void cyfitter_cfg(void)
  365:Generated_Source\PSoC5/cyfitter_cfg.c **** {
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 15
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 15
 
 
  396              		.loc 1 365 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  396:Generated_Source\PSoC5/cyfitter_cfg.c **** 			{(void CYFAR *)(CYDEV_UCFG_DSI0_BASE), 2560u},
  397:Generated_Source\PSoC5/cyfitter_cfg.c **** 			{(void CYFAR *)(CYDEV_UCFG_DSI12_BASE), 512u},
  398:Generated_Source\PSoC5/cyfitter_cfg.c **** 			{(void CYFAR *)(CYREG_BCTL0_MDCLK_EN), 32u},
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 16
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 16
 
 
  399:Generated_Source\PSoC5/cyfitter_cfg.c **** 		};
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  417:Generated_Source\PSoC5/cyfitter_cfg.c **** 		for (i = 0u; i < (sizeof(cfg_memcpy_list)/sizeof(cfg_memcpy_list[0])); i++)
  418:Generated_Source\PSoC5/cyfitter_cfg.c **** 		{
  419:Generated_Source\PSoC5/cyfitter_cfg.c **** 			const cfg_memcpy_t CYCODE * CYDATA mc = &cfg_memcpy_list[i];
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 17
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 17
 
 
  420:Generated_Source\PSoC5/cyfitter_cfg.c **** 			void * CYDATA destPtr = mc->dest;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  432:Generated_Source\PSoC5/cyfitter_cfg.c **** 		/* Enable UDB array */
  433:Generated_Source\PSoC5/cyfitter_cfg.c **** 		CY_SET_XTND_REG8((void CYFAR *)CYREG_PM_ACT_CFG0, CY_GET_XTND_REG8((void CYFAR *)CYREG_PM_ACT_CFG
  494              		.loc 1 433 0
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 18
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 18
 
 
  495 0070 214C     		ldr	r4, .L33+16
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  537              		.loc 1 445 0
  538 00ba 1A4A     		ldr	r2, .L33+60
  539 00bc 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 19
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 19
 
 
  540 00be 43F00803 		orr	r3, r3, #8
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  580 0114 60070048 		.word	1207961440
  581 0118 22510040 		.word	1073762594
  582 011c 68070048 		.word	1207961448
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 20
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 20
 
 
  583 0120 32510040 		.word	1073762610
@@ -1195,13 +1195,13 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  634 0006 00000000 		.4byte	.Ldebug_abbrev0
  635 000a 04       		.byte	0x4
  636 000b 01       		.uleb128 0x1
- 637 000c 0A020000 		.4byte	.LASF52
+ 637 000c 1D020000 		.4byte	.LASF52
  638 0010 0C       		.byte	0xc
- 639 0011 F7020000 		.4byte	.LASF53
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 21
+ 639 0011 0A030000 		.4byte	.LASF53
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 21
 
 
- 640 0015 48010000 		.4byte	.LASF54
+ 640 0015 D3000000 		.4byte	.LASF54
  641 0019 00000000 		.4byte	.Ldebug_ranges0+0
  642 001d 00000000 		.4byte	0
  643 0021 00000000 		.4byte	.Ldebug_line0
@@ -1217,7 +1217,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  653 0037 04       		.uleb128 0x4
  654 0038 04       		.byte	0x4
  655 0039 07       		.byte	0x7
- 656 003a F3000000 		.4byte	.LASF0
+ 656 003a 46010000 		.4byte	.LASF0
  657 003e 04       		.uleb128 0x4
  658 003f 08       		.byte	0x8
  659 0040 05       		.byte	0x5
@@ -1225,7 +1225,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  661 0045 04       		.uleb128 0x4
  662 0046 08       		.byte	0x8
  663 0047 04       		.byte	0x4
- 664 0048 91010000 		.4byte	.LASF2
+ 664 0048 A4010000 		.4byte	.LASF2
  665 004c 04       		.uleb128 0x4
  666 004d 01       		.byte	0x1
  667 004e 06       		.byte	0x6
@@ -1233,15 +1233,15 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  669 0053 04       		.uleb128 0x4
  670 0054 01       		.byte	0x1
  671 0055 08       		.byte	0x8
- 672 0056 F2010000 		.4byte	.LASF4
+ 672 0056 05020000 		.4byte	.LASF4
  673 005a 04       		.uleb128 0x4
  674 005b 02       		.byte	0x2
  675 005c 05       		.byte	0x5
- 676 005d 00020000 		.4byte	.LASF5
+ 676 005d 13020000 		.4byte	.LASF5
  677 0061 04       		.uleb128 0x4
  678 0062 02       		.byte	0x2
  679 0063 07       		.byte	0x7
- 680 0064 35010000 		.4byte	.LASF6
+ 680 0064 88010000 		.4byte	.LASF6
  681 0068 04       		.uleb128 0x4
  682 0069 04       		.byte	0x4
  683 006a 05       		.byte	0x5
@@ -1249,7 +1249,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  685 006f 04       		.uleb128 0x4
  686 0070 04       		.byte	0x4
  687 0071 07       		.byte	0x7
- 688 0072 09010000 		.4byte	.LASF8
+ 688 0072 5C010000 		.4byte	.LASF8
  689 0076 04       		.uleb128 0x4
  690 0077 08       		.byte	0x8
  691 0078 07       		.byte	0x7
@@ -1257,8 +1257,8 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  693 007d 04       		.uleb128 0x4
  694 007e 04       		.byte	0x4
  695 007f 07       		.byte	0x7
- 696 0080 88010000 		.4byte	.LASF10
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 22
+ 696 0080 9B010000 		.4byte	.LASF10
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 22
 
 
  697 0084 05       		.uleb128 0x5
@@ -1266,7 +1266,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  699 0086 04       		.uleb128 0x4
  700 0087 01       		.byte	0x1
  701 0088 08       		.byte	0x8
- 702 0089 B3020000 		.4byte	.LASF11
+ 702 0089 C6020000 		.4byte	.LASF11
  703 008d 06       		.uleb128 0x6
  704 008e C6000000 		.4byte	.LASF13
  705 0092 03       		.byte	0x3
@@ -1278,20 +1278,20 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  711 009f E801     		.2byte	0x1e8
  712 00a1 61000000 		.4byte	0x61
  713 00a5 06       		.uleb128 0x6
- 714 00a6 DD000000 		.4byte	.LASF15
+ 714 00a6 30010000 		.4byte	.LASF15
  715 00aa 03       		.byte	0x3
  716 00ab E901     		.2byte	0x1e9
  717 00ad 6F000000 		.4byte	0x6f
  718 00b1 04       		.uleb128 0x4
  719 00b2 04       		.byte	0x4
  720 00b3 04       		.byte	0x4
- 721 00b4 D1010000 		.4byte	.LASF16
+ 721 00b4 E4010000 		.4byte	.LASF16
  722 00b8 04       		.uleb128 0x4
  723 00b9 08       		.byte	0x8
  724 00ba 04       		.byte	0x4
  725 00bb CC000000 		.4byte	.LASF17
  726 00bf 06       		.uleb128 0x6
- 727 00c0 ED010000 		.4byte	.LASF18
+ 727 00c0 00020000 		.4byte	.LASF18
  728 00c4 03       		.byte	0x3
  729 00c5 9102     		.2byte	0x291
  730 00c7 CB000000 		.4byte	0xcb
@@ -1310,15 +1310,15 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  743 00e4 98       		.byte	0x98
  744 00e5 02010000 		.4byte	0x102
  745 00e9 09       		.uleb128 0x9
- 746 00ea D5020000 		.4byte	.LASF20
+ 746 00ea E8020000 		.4byte	.LASF20
  747 00ee 01       		.byte	0x1
  748 00ef 9A       		.byte	0x9a
  749 00f0 8D000000 		.4byte	0x8d
  750 00f4 00       		.byte	0
  751 00f5 09       		.uleb128 0x9
- 752 00f6 ED000000 		.4byte	.LASF21
+ 752 00f6 40010000 		.4byte	.LASF21
  753 00fa 01       		.byte	0x1
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 23
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 23
 
 
  754 00fb 9B       		.byte	0x9b
@@ -1326,7 +1326,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  756 0100 01       		.byte	0x1
  757 0101 00       		.byte	0
  758 0102 03       		.uleb128 0x3
- 759 0103 A0020000 		.4byte	.LASF22
+ 759 0103 B3020000 		.4byte	.LASF22
  760 0107 01       		.byte	0x1
  761 0108 9C       		.byte	0x9c
  762 0109 E1000000 		.4byte	0xe1
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  808 0168 00000000 		.4byte	.LLST0
  809 016c 0D       		.uleb128 0xd
  810 016d 6A00     		.ascii	"j\000"
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 24
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 24
 
 
  811 016f 01       		.byte	0x1
@@ -1422,14 +1422,14 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  849 01c9 9C       		.byte	0x9c
  850 01ca DF010000 		.4byte	0x1df
  851 01ce 13       		.uleb128 0x13
- 852 01cf 9D010000 		.4byte	.LASF30
+ 852 01cf B0010000 		.4byte	.LASF30
  853 01d3 01       		.byte	0x1
  854 01d4 3201     		.2byte	0x132
  855 01d6 8D000000 		.4byte	0x8d
  856 01da 6F000000 		.4byte	.LLST4
  857 01de 00       		.byte	0
  858 01df 0C       		.uleb128 0xc
- 859 01e0 D3000000 		.4byte	.LASF31
+ 859 01e0 26010000 		.4byte	.LASF31
  860 01e4 01       		.byte	0x1
  861 01e5 4D       		.byte	0x4d
  862 01e6 00000000 		.4byte	.LFB0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  865 01ef 9C       		.byte	0x9c
  866 01f0 2C020000 		.4byte	0x22c
  867 01f4 14       		.uleb128 0x14
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 25
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 25
 
 
  868 01f5 7300     		.ascii	"s\000"
@@ -1486,19 +1486,19 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  910 023c 9C       		.byte	0x9c
  911 023d 84020000 		.4byte	0x284
  912 0241 0F       		.uleb128 0xf
- 913 0242 1B010000 		.4byte	.LASF33
+ 913 0242 6E010000 		.4byte	.LASF33
  914 0246 01       		.byte	0x1
  915 0247 EB       		.byte	0xeb
  916 0248 A5000000 		.4byte	0xa5
  917 024c CF000000 		.4byte	.LLST7
  918 0250 0F       		.uleb128 0xf
- 919 0251 98020000 		.4byte	.LASF34
+ 919 0251 AB020000 		.4byte	.LASF34
  920 0255 01       		.byte	0x1
  921 0256 EC       		.byte	0xec
  922 0257 8D000000 		.4byte	0x8d
  923 025b EE000000 		.4byte	.LLST8
  924 025f 17       		.uleb128 0x17
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 26
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 26
 
 
  925 0260 78000000 		.4byte	.LVL21
@@ -1522,7 +1522,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  943 0282 00       		.byte	0
  944 0283 00       		.byte	0
  945 0284 0C       		.uleb128 0xc
- 946 0285 EB020000 		.4byte	.LASF35
+ 946 0285 FE020000 		.4byte	.LASF35
  947 0289 01       		.byte	0x1
  948 028a 54       		.byte	0x54
  949 028b 00000000 		.4byte	.LFB1
@@ -1531,7 +1531,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  952 0294 9C       		.byte	0x9c
  953 0295 E4020000 		.4byte	0x2e4
  954 0299 18       		.uleb128 0x18
- 955 029a CC010000 		.4byte	.LASF36
+ 955 029a DF010000 		.4byte	.LASF36
  956 029e 01       		.byte	0x1
  957 029f 54       		.byte	0x54
  958 02a0 84000000 		.4byte	0x84
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  979 02d1 F3       		.byte	0xf3
  980 02d2 01       		.uleb128 0x1
  981 02d3 50       		.byte	0x50
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 27
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 27
 
 
  982 02d4 16       		.uleb128 0x16
@@ -1582,7 +1582,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1000 02e6 EA020000 		.4byte	0x2ea
  1001 02ea 19       		.uleb128 0x19
  1002 02eb 1A       		.uleb128 0x1a
- 1003 02ec BF020000 		.4byte	.LASF39
+ 1003 02ec D2020000 		.4byte	.LASF39
  1004 02f0 01       		.byte	0x1
  1005 02f1 4A01     		.2byte	0x14a
  1006 02f3 00000000 		.4byte	.LFB7
@@ -1591,14 +1591,14 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1009 02fc 9C       		.byte	0x9c
  1010 02fd 1E030000 		.4byte	0x31e
  1011 0301 1B       		.uleb128 0x1b
- 1012 0302 DC020000 		.4byte	.LASF37
+ 1012 0302 EF020000 		.4byte	.LASF37
  1013 0306 01       		.byte	0x1
  1014 0307 4A01     		.2byte	0x14a
  1015 0309 8D000000 		.4byte	0x8d
  1016 030d 01       		.uleb128 0x1
  1017 030e 50       		.byte	0x50
  1018 030f 1C       		.uleb128 0x1c
- 1019 0310 E4000000 		.4byte	.LASF38
+ 1019 0310 37010000 		.4byte	.LASF38
  1020 0314 01       		.byte	0x1
  1021 0315 4C01     		.2byte	0x14c
  1022 0317 8D000000 		.4byte	0x8d
@@ -1606,7 +1606,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1024 031c 53       		.byte	0x53
  1025 031d 00       		.byte	0
  1026 031e 1A       		.uleb128 0x1a
- 1027 031f 35030000 		.4byte	.LASF40
+ 1027 031f 48030000 		.4byte	.LASF40
  1028 0323 01       		.byte	0x1
  1029 0324 6C01     		.2byte	0x16c
  1030 0326 00000000 		.4byte	.LFB8
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1036 0335 0E000000 		.4byte	.LBB3
  1037 0339 7A000000 		.4byte	.LBE3-.LBB3
  1038 033d EA040000 		.4byte	0x4ea
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 28
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 28
 
 
  1039 0341 1E       		.uleb128 0x1e
@@ -1627,20 +1627,20 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1042 0344 7801     		.2byte	0x178
  1043 0346 65030000 		.4byte	0x365
  1044 034a 1F       		.uleb128 0x1f
- 1045 034b 1D030000 		.4byte	.LASF41
+ 1045 034b 30030000 		.4byte	.LASF41
  1046 034f 01       		.byte	0x1
  1047 0350 7901     		.2byte	0x179
  1048 0352 84000000 		.4byte	0x84
  1049 0356 00       		.byte	0
  1050 0357 1F       		.uleb128 0x1f
- 1051 0358 30010000 		.4byte	.LASF42
+ 1051 0358 83010000 		.4byte	.LASF42
  1052 035c 01       		.byte	0x1
  1053 035d 7A01     		.2byte	0x17a
  1054 035f 99000000 		.4byte	0x99
  1055 0363 04       		.byte	0x4
  1056 0364 00       		.byte	0
  1057 0365 06       		.uleb128 0x6
- 1058 0366 AF010000 		.4byte	.LASF43
+ 1058 0366 C2010000 		.4byte	.LASF43
  1059 036a 01       		.byte	0x1
  1060 036b 7B01     		.2byte	0x17b
  1061 036d 41030000 		.4byte	0x341
@@ -1650,7 +1650,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1065 0374 7E01     		.2byte	0x17e
  1066 0376 A2030000 		.4byte	0x3a2
  1067 037a 1F       		.uleb128 0x1f
- 1068 037b CC010000 		.4byte	.LASF36
+ 1068 037b DF010000 		.4byte	.LASF36
  1069 037f 01       		.byte	0x1
  1070 0380 7F01     		.2byte	0x17f
  1071 0382 84000000 		.4byte	0x84
@@ -1662,14 +1662,14 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1077 038f E4020000 		.4byte	0x2e4
  1078 0393 04       		.byte	0x4
  1079 0394 1F       		.uleb128 0x1f
- 1080 0395 30010000 		.4byte	.LASF42
+ 1080 0395 83010000 		.4byte	.LASF42
  1081 0399 01       		.byte	0x1
  1082 039a 8101     		.2byte	0x181
  1083 039c 99000000 		.4byte	0x99
  1084 03a0 08       		.byte	0x8
  1085 03a1 00       		.byte	0
  1086 03a2 06       		.uleb128 0x6
- 1087 03a3 23010000 		.4byte	.LASF44
+ 1087 03a3 76010000 		.4byte	.LASF44
  1088 03a7 01       		.byte	0x1
  1089 03a8 8201     		.2byte	0x182
  1090 03aa 71030000 		.4byte	0x371
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1093 03b3 BE030000 		.4byte	0x3be
  1094 03b7 22       		.uleb128 0x22
  1095 03b8 7D000000 		.4byte	0x7d
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 29
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 29
 
 
  1096 03bc 08       		.byte	0x8
@@ -1686,7 +1686,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1098 03be 11       		.uleb128 0x11
  1099 03bf 65030000 		.4byte	0x365
  1100 03c3 1C       		.uleb128 0x1c
- 1101 03c4 BC010000 		.4byte	.LASF45
+ 1101 03c4 CF010000 		.4byte	.LASF45
  1102 03c8 01       		.byte	0x1
  1103 03c9 8401     		.2byte	0x184
  1104 03cb D5030000 		.4byte	0x3d5
@@ -1705,7 +1705,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1117 03ea 11       		.uleb128 0x11
  1118 03eb A2030000 		.4byte	0x3a2
  1119 03ef 1C       		.uleb128 0x1c
- 1120 03f0 25030000 		.4byte	.LASF46
+ 1120 03f0 38030000 		.4byte	.LASF46
  1121 03f4 01       		.byte	0x1
  1122 03f5 9101     		.2byte	0x191
  1123 03f7 01040000 		.4byte	0x401
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1150 043b DF010000 		.4byte	0x1df
  1151 043f 16       		.uleb128 0x16
  1152 0440 01       		.uleb128 0x1
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 30
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 30
 
 
  1153 0441 51       		.byte	0x51
@@ -1778,19 +1778,19 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1187 0476 04       		.byte	0x4
  1188 0477 EA030000 		.4byte	0x3ea
  1189 047b 13       		.uleb128 0x13
- 1190 047c E5010000 		.4byte	.LASF47
+ 1190 047c F8010000 		.4byte	.LASF47
  1191 0480 01       		.byte	0x1
  1192 0481 A401     		.2byte	0x1a4
  1193 0483 84000000 		.4byte	0x84
  1194 0487 1F020000 		.4byte	.LLST15
  1195 048b 13       		.uleb128 0x13
- 1196 048c B8020000 		.4byte	.LASF48
+ 1196 048c CB020000 		.4byte	.LASF48
  1197 0490 01       		.byte	0x1
  1198 0491 A501     		.2byte	0x1a5
  1199 0493 E4020000 		.4byte	0x2e4
  1200 0497 32020000 		.4byte	.LLST16
  1201 049b 13       		.uleb128 0x13
- 1202 049c 00010000 		.4byte	.LASF49
+ 1202 049c 53010000 		.4byte	.LASF49
  1203 04a0 01       		.byte	0x1
  1204 04a1 A601     		.2byte	0x1a6
  1205 04a3 99000000 		.4byte	0x99
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1207 04ab 15       		.uleb128 0x15
  1208 04ac 4A000000 		.4byte	.LVL39
  1209 04b0 84020000 		.4byte	0x284
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 31
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 31
 
 
  1210 04b4 16       		.uleb128 0x16
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1264 0503 05       		.uleb128 0x5
  1265 0504 0C       		.byte	0xc
  1266 0505 40070048 		.4byte	0x48000740
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 32
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 32
 
 
  1267 0509 16       		.uleb128 0x16
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1321 0566 16       		.uleb128 0x16
  1322 0567 01       		.uleb128 0x1
  1323 0568 50       		.byte	0x50
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 33
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 33
 
 
  1324 0569 05       		.uleb128 0x5
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1378 05c9 51       		.byte	0x51
  1379 05ca 02       		.uleb128 0x2
  1380 05cb 74       		.byte	0x74
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 34
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 34
 
 
  1381 05cc 00       		.sleb128 0
@@ -1990,11 +1990,11 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1387 05d2 00       		.byte	0
  1388 05d3 00       		.byte	0
  1389 05d4 25       		.uleb128 0x25
- 1390 05d5 E4020000 		.4byte	.LASF50
- 1391 05d9 E4020000 		.4byte	.LASF50
+ 1390 05d5 F7020000 		.4byte	.LASF50
+ 1391 05d9 F7020000 		.4byte	.LASF50
  1392 05dd 26       		.uleb128 0x26
- 1393 05de D7010000 		.4byte	.LASF56
- 1394 05e2 D7010000 		.4byte	.LASF56
+ 1393 05de EA010000 		.4byte	.LASF56
+ 1394 05e2 EA010000 		.4byte	.LASF56
  1395 05e6 04       		.byte	0x4
  1396 05e7 79       		.byte	0x79
  1397 05e8 25       		.uleb128 0x25
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1435 0020 00       		.byte	0
  1436 0021 03       		.uleb128 0x3
  1437 0022 0E       		.uleb128 0xe
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 35
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 35
 
 
  1438 0023 3A       		.uleb128 0x3a
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1492 0059 0B       		.uleb128 0xb
  1493 005a 01       		.uleb128 0x1
  1494 005b 13       		.uleb128 0x13
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 36
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 36
 
 
  1495 005c 00       		.byte	0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1549 0094 18       		.uleb128 0x18
  1550 0095 00       		.byte	0
  1551 0096 00       		.byte	0
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 37
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 37
 
 
  1552 0097 0C       		.uleb128 0xc
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1606 00ce 3B       		.uleb128 0x3b
  1607 00cf 0B       		.uleb128 0xb
  1608 00d0 49       		.uleb128 0x49
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 38
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 38
 
 
  1609 00d1 13       		.uleb128 0x13
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1663 0108 13       		.uleb128 0x13
  1664 0109 02       		.uleb128 0x2
  1665 010a 17       		.uleb128 0x17
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 39
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 39
 
 
  1666 010b 00       		.byte	0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1720 0148 0B       		.uleb128 0xb
  1721 0149 49       		.uleb128 0x49
  1722 014a 13       		.uleb128 0x13
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 40
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 40
 
 
  1723 014b 02       		.uleb128 0x2
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1777 0182 3A       		.uleb128 0x3a
  1778 0183 0B       		.uleb128 0xb
  1779 0184 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 41
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 41
 
 
  1780 0185 05       		.uleb128 0x5
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1834 01bb 05       		.uleb128 0x5
  1835 01bc 49       		.uleb128 0x49
  1836 01bd 13       		.uleb128 0x13
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 42
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 42
 
 
  1837 01be 38       		.uleb128 0x38
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1891 01f6 0E       		.uleb128 0xe
  1892 01f7 03       		.uleb128 0x3
  1893 01f8 0E       		.uleb128 0xe
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 43
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 43
 
 
  1894 01f9 00       		.byte	0
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  1948 0051 0E000000 		.4byte	.LVL5
  1949 0055 24000000 		.4byte	.LVL8
  1950 0059 0100     		.2byte	0x1
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 44
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 44
 
 
  1951 005b 53       		.byte	0x53
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  2005 00e3 0100     		.2byte	0x1
  2006 00e5 55       		.byte	0x55
  2007 00e6 00000000 		.4byte	0
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 45
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 45
 
 
  2008 00ea 00000000 		.4byte	0
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  2062 0170 01       		.uleb128 0x1
  2063 0171 52       		.byte	0x52
  2064 0172 9F       		.byte	0x9f
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 46
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 46
 
 
  2065 0173 00000000 		.4byte	0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  2119 01f5 0B00     		.2byte	0xb
  2120 01f7 74       		.byte	0x74
  2121 01f8 00       		.sleb128 0
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 47
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 47
 
 
  2122 01f9 3A       		.byte	0x3a
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  2176 026b 4C000000 		.4byte	.LVL40
  2177 026f 4E000000 		.4byte	.LVL41
  2178 0273 0C00     		.2byte	0xc
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 48
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 48
 
 
  2179 0275 74       		.byte	0x74
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  2233 003c 34010000 		.4byte	.LFE8
  2234 0040 00000000 		.4byte	0
  2235 0044 00000000 		.4byte	0
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 49
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 49
 
 
  2236              		.section	.debug_line,"",%progbits
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  2260      68617200 
  2261              	.LASF28:
  2262 0089 6366675F 		.ascii	"cfg_write_bytes32\000"
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 50
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 50
 
 
  2262      77726974 
@@ -2969,188 +2969,188 @@ ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 1
  2275              	.LASF17:
  2276 00cc 646F7562 		.ascii	"double\000"
  2276      6C6500
- 2277              	.LASF31:
- 2278 00d3 43594D45 		.ascii	"CYMEMZERO\000"
- 2278      4D5A4552 
- 2278      4F00
- 2279              	.LASF15:
- 2280 00dd 75696E74 		.ascii	"uint32\000"
- 2280      333200
- 2281              	.LASF38:
- 2282 00e4 72656756 		.ascii	"regValue\000"
- 2282      616C7565 
- 2282      00
- 2283              	.LASF21:
- 2284 00ed 76616C75 		.ascii	"value\000"
- 2284      6500
- 2285              	.LASF0:
- 2286 00f3 756E7369 		.ascii	"unsigned int\000"
- 2286      676E6564 
- 2286      20696E74 
- 2286      00
- 2287              	.LASF49:
- 2288 0100 6E756D42 		.ascii	"numBytes\000"
- 2288      79746573 
- 2288      00
- 2289              	.LASF8:
- 2290 0109 6C6F6E67 		.ascii	"long unsigned int\000"
- 2290      20756E73 
- 2290      69676E65 
- 2290      6420696E 
- 2290      7400
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 51
+ 2277              	.LASF54:
+ 2278 00d3 433A5C55 		.ascii	"C:\\Users\\Totos\\Desktop\\elektronik_ingenioer\\PR"
+ 2278      73657273 
+ 2278      5C546F74 
+ 2278      6F735C44 
+ 2278      65736B74 
+ 2279 0101 4A335C47 		.ascii	"J3\\Github\\BattleBot\\Motor_Test.cydsn\000"
+ 2279      69746875 
+ 2279      625C4261 
+ 2279      74746C65 
+ 2279      426F745C 
+ 2280              	.LASF31:
+ 2281 0126 43594D45 		.ascii	"CYMEMZERO\000"
+ 2281      4D5A4552 
+ 2281      4F00
+ 2282              	.LASF15:
+ 2283 0130 75696E74 		.ascii	"uint32\000"
+ 2283      333200
+ 2284              	.LASF38:
+ 2285 0137 72656756 		.ascii	"regValue\000"
+ 2285      616C7565 
+ 2285      00
+ 2286              	.LASF21:
+ 2287 0140 76616C75 		.ascii	"value\000"
+ 2287      6500
+ 2288              	.LASF0:
+ 2289 0146 756E7369 		.ascii	"unsigned int\000"
+ 2289      676E6564 
+ 2289      20696E74 
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 51
 
 
- 2291              	.LASF33:
- 2292 011b 74696D65 		.ascii	"timeout\000"
- 2292      6F757400 
- 2293              	.LASF44:
- 2294 0123 6366675F 		.ascii	"cfg_memcpy_t\000"
- 2294      6D656D63 
- 2294      70795F74 
- 2294      00
- 2295              	.LASF42:
- 2296 0130 73697A65 		.ascii	"size\000"
- 2296      00
- 2297              	.LASF6:
- 2298 0135 73686F72 		.ascii	"short unsigned int\000"
- 2298      7420756E 
- 2298      7369676E 
- 2298      65642069 
- 2298      6E7400
- 2299              	.LASF54:
- 2300 0148 433A5C55 		.ascii	"C:\\Users\\farpe\\Documents\\GitHub\\PRJ3\\BattleBo"
- 2300      73657273 
- 2300      5C666172 
- 2300      70655C44 
- 2300      6F63756D 
- 2301 0175 745C4D6F 		.ascii	"t\\Motor_Test.cydsn\000"
- 2301      746F725F 
- 2301      54657374 
- 2301      2E637964 
- 2301      736E00
+ 2289      00
+ 2290              	.LASF49:
+ 2291 0153 6E756D42 		.ascii	"numBytes\000"
+ 2291      79746573 
+ 2291      00
+ 2292              	.LASF8:
+ 2293 015c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2293      20756E73 
+ 2293      69676E65 
+ 2293      6420696E 
+ 2293      7400
+ 2294              	.LASF33:
+ 2295 016e 74696D65 		.ascii	"timeout\000"
+ 2295      6F757400 
+ 2296              	.LASF44:
+ 2297 0176 6366675F 		.ascii	"cfg_memcpy_t\000"
+ 2297      6D656D63 
+ 2297      70795F74 
+ 2297      00
+ 2298              	.LASF42:
+ 2299 0183 73697A65 		.ascii	"size\000"
+ 2299      00
+ 2300              	.LASF6:
+ 2301 0188 73686F72 		.ascii	"short unsigned int\000"
+ 2301      7420756E 
+ 2301      7369676E 
+ 2301      65642069 
+ 2301      6E7400
  2302              	.LASF10:
- 2303 0188 73697A65 		.ascii	"sizetype\000"
+ 2303 019b 73697A65 		.ascii	"sizetype\000"
  2303      74797065 
  2303      00
  2304              	.LASF2:
- 2305 0191 6C6F6E67 		.ascii	"long double\000"
+ 2305 01a4 6C6F6E67 		.ascii	"long double\000"
  2305      20646F75 
  2305      626C6500 
  2306              	.LASF30:
- 2307 019d 62675F78 		.ascii	"bg_xover_inl_trim\000"
+ 2307 01b0 62675F78 		.ascii	"bg_xover_inl_trim\000"
  2307      6F766572 
  2307      5F696E6C 
  2307      5F747269 
  2307      6D00
  2308              	.LASF43:
- 2309 01af 6366675F 		.ascii	"cfg_memset_t\000"
+ 2309 01c2 6366675F 		.ascii	"cfg_memset_t\000"
  2309      6D656D73 
  2309      65745F74 
  2309      00
  2310              	.LASF45:
- 2311 01bc 6366675F 		.ascii	"cfg_memset_list\000"
+ 2311 01cf 6366675F 		.ascii	"cfg_memset_list\000"
  2311      6D656D73 
  2311      65745F6C 
  2311      69737400 
  2312              	.LASF36:
- 2313 01cc 64657374 		.ascii	"dest\000"
+ 2313 01df 64657374 		.ascii	"dest\000"
  2313      00
  2314              	.LASF16:
- 2315 01d1 666C6F61 		.ascii	"float\000"
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 52
+ 2315 01e4 666C6F61 		.ascii	"float\000"
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 52
 
 
  2315      7400
  2316              	.LASF56:
- 2317 01d7 43794465 		.ascii	"CyDelayCycles\000"
+ 2317 01ea 43794465 		.ascii	"CyDelayCycles\000"
  2317      6C617943 
  2317      79636C65 
  2317      7300
  2318              	.LASF47:
- 2319 01e5 64657374 		.ascii	"destPtr\000"
+ 2319 01f8 64657374 		.ascii	"destPtr\000"
  2319      50747200 
  2320              	.LASF18:
- 2321 01ed 72656738 		.ascii	"reg8\000"
+ 2321 0200 72656738 		.ascii	"reg8\000"
  2321      00
  2322              	.LASF4:
- 2323 01f2 756E7369 		.ascii	"unsigned char\000"
+ 2323 0205 756E7369 		.ascii	"unsigned char\000"
  2323      676E6564 
  2323      20636861 
  2323      7200
  2324              	.LASF5:
- 2325 0200 73686F72 		.ascii	"short int\000"
+ 2325 0213 73686F72 		.ascii	"short int\000"
  2325      7420696E 
  2325      7400
  2326              	.LASF52:
- 2327 020a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2327 021d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  2327      43313120 
  2327      352E342E 
  2327      31203230 
  2327      31363036 
- 2328 023d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2328 0250 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  2328      20726576 
  2328      6973696F 
  2328      6E203233 
  2328      37373135 
- 2329 0270 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2329 0283 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  2329      66756E63 
  2329      74696F6E 
  2329      2D736563 
  2329      74696F6E 
  2330              	.LASF34:
- 2331 0298 706C6C4C 		.ascii	"pllLock\000"
+ 2331 02ab 706C6C4C 		.ascii	"pllLock\000"
  2331      6F636B00 
  2332              	.LASF22:
- 2333 02a0 63795F63 		.ascii	"cy_cfg_addrvalue_t\000"
+ 2333 02b3 63795F63 		.ascii	"cy_cfg_addrvalue_t\000"
  2333      66675F61 
  2333      64647276 
  2333      616C7565 
  2333      5F7400
  2334              	.LASF11:
- 2335 02b3 63686172 		.ascii	"char\000"
+ 2335 02c6 63686172 		.ascii	"char\000"
  2335      00
  2336              	.LASF48:
- 2337 02b8 73726350 		.ascii	"srcPtr\000"
+ 2337 02cb 73726350 		.ascii	"srcPtr\000"
  2337      747200
  2338              	.LASF39:
- 2339 02bf 53657441 		.ascii	"SetAnalogRoutingPumps\000"
+ 2339 02d2 53657441 		.ascii	"SetAnalogRoutingPumps\000"
  2339      6E616C6F 
  2339      67526F75 
  2339      74696E67 
-ARM GAS  C:\Users\farpe\AppData\Local\Temp\cc0mFNRd.s 			page 53
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccjjnEAd.s 			page 53
 
 
  2339      50756D70 
  2340              	.LASF20:
- 2341 02d5 6F666673 		.ascii	"offset\000"
+ 2341 02e8 6F666673 		.ascii	"offset\000"
  2341      657400
  2342              	.LASF37:
- 2343 02dc 656E6162 		.ascii	"enabled\000"
+ 2343 02ef 656E6162 		.ascii	"enabled\000"
  2343      6C656400 
  2344              	.LASF50:
- 2345 02e4 6D656D73 		.ascii	"memset\000"
+ 2345 02f7 6D656D73 		.ascii	"memset\000"
  2345      657400
  2346              	.LASF35:
- 2347 02eb 4359434F 		.ascii	"CYCONFIGCPY\000"
+ 2347 02fe 4359434F 		.ascii	"CYCONFIGCPY\000"
  2347      4E464947 
  2347      43505900 
  2348              	.LASF53:
- 2349 02f7 47656E65 		.ascii	"Generated_Source\\PSoC5\\cyfitter_cfg.c\000"
+ 2349 030a 47656E65 		.ascii	"Generated_Source\\PSoC5\\cyfitter_cfg.c\000"
  2349      72617465 
  2349      645F536F 
  2349      75726365 
  2349      5C50536F 
  2350              	.LASF41:
- 2351 031d 61646472 		.ascii	"address\000"
+ 2351 0330 61646472 		.ascii	"address\000"
  2351      65737300 
  2352              	.LASF46:
- 2353 0325 6366675F 		.ascii	"cfg_memcpy_list\000"
+ 2353 0338 6366675F 		.ascii	"cfg_memcpy_list\000"
  2353      6D656D63 
  2353      70795F6C 
  2353      69737400 
  2354              	.LASF40:
- 2355 0335 63796669 		.ascii	"cyfitter_cfg\000"
+ 2355 0348 63796669 		.ascii	"cyfitter_cfg\000"
  2355      74746572 
  2355      5F636667 
  2355      00

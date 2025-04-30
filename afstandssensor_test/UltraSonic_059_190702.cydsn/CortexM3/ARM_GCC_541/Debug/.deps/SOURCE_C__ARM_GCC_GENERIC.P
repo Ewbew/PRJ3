@@ -1,64 +1,64 @@
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/CortexM3/ARM_GCC_541/Debug/main.o : //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Clock_24MHz.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Counter.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Counter_Reset.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyDmac.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyFlash.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyLib.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyScBoostClk.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CySpc.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Echo.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Echo_aliases.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Trigger.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Trigger_aliases.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/UART.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/UART_IntClock.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cmsis_armcc.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cmsis_compiler.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cmsis_gcc.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/core_cm3.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cyPm.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cydevice.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cydevice_trm.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cydisabledsheets.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cyfitter.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cypins.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cytypes.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/isr_echo_int.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/project.h //Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/main.c 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/CortexM3/ARM_GCC_541/Debug/main.o : C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Clock_24MHz.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Counter.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Counter_Reset.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyDmac.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyFlash.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyLib.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyScBoostClk.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CySpc.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Echo.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Echo_aliases.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Trigger.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Trigger_aliases.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/UART.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/UART_IntClock.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cmsis_armcc.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cmsis_compiler.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cmsis_gcc.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/core_cm3.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cyPm.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cydevice.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cydisabledsheets.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cypins.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cytypes.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/isr_echo_int.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/project.h C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/main.c 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Clock_24MHz.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Clock_24MHz.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Counter.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Counter.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Counter_Reset.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Counter_Reset.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyDmac.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyDmac.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyFlash.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyLib.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyLib.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyScBoostClk.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CyScBoostClk.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CySpc.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/CySpc.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Echo.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Echo.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Echo_aliases.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Echo_aliases.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Trigger.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Trigger.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Trigger_aliases.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/Trigger_aliases.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/UART.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/UART.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/UART_IntClock.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/UART_IntClock.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cmsis_compiler.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cmsis_compiler.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/core_cm3.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/core_cm3.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cyPm.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cyPm.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cydevice.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cydevice.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cyfitter.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cypins.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cypins.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cytypes.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/cytypes.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/isr_echo_int.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/isr_echo_int.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/project.h : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/Generated_Source/PSoC5/project.h : 
 
-//Mac/Home/Desktop/Elektronik\ ingenioer/3rd\ semester/PRJ3/PRJ3/afstandssensor_test/UltraSonic_059_190702.cydsn/main.c : 
+C:/Users/Totos/Desktop/elektronik_ingenioer/PRJ3/Github/afstandssensor_test/UltraSonic_059_190702.cydsn/main.c : 
 

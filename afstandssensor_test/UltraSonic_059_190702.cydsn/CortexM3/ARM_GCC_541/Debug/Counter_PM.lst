@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
   28:Generated_Source\PSoC5/Counter_PM.c **** *     Save the current user configuration
   29:Generated_Source\PSoC5/Counter_PM.c **** *
   30:Generated_Source\PSoC5/Counter_PM.c **** * Parameters:  
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 2
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 2
 
 
   31:Generated_Source\PSoC5/Counter_PM.c **** *  void
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
   52:Generated_Source\PSoC5/Counter_PM.c ****     #endif /* (!Counter_UsingFixedFunction) */
   53:Generated_Source\PSoC5/Counter_PM.c **** }
   54:Generated_Source\PSoC5/Counter_PM.c **** 
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 3
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 3
 
 
   55:Generated_Source\PSoC5/Counter_PM.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
   88              		.global	Counter_Sleep
   89              		.thumb
   90              		.thumb_func
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 4
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 4
 
 
   91              		.type	Counter_Sleep, %function
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  114:Generated_Source\PSoC5/Counter_PM.c ****         else
  115:Generated_Source\PSoC5/Counter_PM.c ****         {
  116:Generated_Source\PSoC5/Counter_PM.c ****             /* Counter is disabled */
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 5
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 5
 
 
  117:Generated_Source\PSoC5/Counter_PM.c ****             Counter_backup.CounterEnableState = 0u;
@@ -268,7 +268,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  125              	.L14:
  126              		.align	2
  127              	.L13:
- 128 0024 7D640040 		.word	1073767549
+ 128 0024 73640040 		.word	1073767539
  129 0028 00000000 		.word	.LANCHOR0
  130              		.cfi_endproc
  131              	.LFE2:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  143:Generated_Source\PSoC5/Counter_PM.c **** *  void
  144:Generated_Source\PSoC5/Counter_PM.c **** *
  145:Generated_Source\PSoC5/Counter_PM.c **** * Global variables:
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 6
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 6
 
 
  146:Generated_Source\PSoC5/Counter_PM.c **** *  Counter_backup.enableState:  Is used to restore the enable state of 
@@ -358,30 +358,30 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  182 0000 DF010000 		.4byte	0x1df
  183 0004 0400     		.2byte	0x4
  184 0006 00000000 		.4byte	.Ldebug_abbrev0
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 7
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 7
 
 
  185 000a 04       		.byte	0x4
  186 000b 01       		.uleb128 0x1
- 187 000c A6000000 		.4byte	.LASF31
+ 187 000c F9000000 		.4byte	.LASF31
  188 0010 0C       		.byte	0xc
- 189 0011 94020000 		.4byte	.LASF32
- 190 0015 39010000 		.4byte	.LASF33
+ 189 0011 78020000 		.4byte	.LASF32
+ 190 0015 83000000 		.4byte	.LASF33
  191 0019 00000000 		.4byte	.Ldebug_ranges0+0
  192 001d 00000000 		.4byte	0
  193 0021 00000000 		.4byte	.Ldebug_line0
  194 0025 02       		.uleb128 0x2
  195 0026 01       		.byte	0x1
  196 0027 06       		.byte	0x6
- 197 0028 EF020000 		.4byte	.LASF0
+ 197 0028 D3020000 		.4byte	.LASF0
  198 002c 02       		.uleb128 0x2
  199 002d 01       		.byte	0x1
  200 002e 08       		.byte	0x8
- 201 002f 98000000 		.4byte	.LASF1
+ 201 002f EB000000 		.4byte	.LASF1
  202 0033 02       		.uleb128 0x2
  203 0034 02       		.byte	0x2
  204 0035 05       		.byte	0x5
- 205 0036 8A020000 		.4byte	.LASF2
+ 205 0036 6E020000 		.4byte	.LASF2
  206 003a 02       		.uleb128 0x2
  207 003b 02       		.byte	0x2
  208 003c 07       		.byte	0x7
@@ -389,19 +389,19 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  210 0041 02       		.uleb128 0x2
  211 0042 04       		.byte	0x4
  212 0043 05       		.byte	0x5
- 213 0044 CB020000 		.4byte	.LASF4
+ 213 0044 AF020000 		.4byte	.LASF4
  214 0048 02       		.uleb128 0x2
  215 0049 04       		.byte	0x4
  216 004a 07       		.byte	0x7
- 217 004b A8010000 		.4byte	.LASF5
+ 217 004b 8C010000 		.4byte	.LASF5
  218 004f 02       		.uleb128 0x2
  219 0050 08       		.byte	0x8
  220 0051 05       		.byte	0x5
- 221 0052 61020000 		.4byte	.LASF6
+ 221 0052 45020000 		.4byte	.LASF6
  222 0056 02       		.uleb128 0x2
  223 0057 08       		.byte	0x8
  224 0058 07       		.byte	0x7
- 225 0059 2E020000 		.4byte	.LASF7
+ 225 0059 12020000 		.4byte	.LASF7
  226 005d 03       		.uleb128 0x3
  227 005e 04       		.byte	0x4
  228 005f 05       		.byte	0x5
@@ -409,16 +409,16 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  230 0064 02       		.uleb128 0x2
  231 0065 04       		.byte	0x4
  232 0066 07       		.byte	0x7
- 233 0067 21020000 		.4byte	.LASF8
+ 233 0067 05020000 		.4byte	.LASF8
  234 006b 04       		.uleb128 0x4
- 235 006c BA010000 		.4byte	.LASF9
+ 235 006c 9E010000 		.4byte	.LASF9
  236 0070 02       		.byte	0x2
  237 0071 E401     		.2byte	0x1e4
  238 0073 2C000000 		.4byte	0x2c
  239 0077 04       		.uleb128 0x4
- 240 0078 1A020000 		.4byte	.LASF10
+ 240 0078 FE010000 		.4byte	.LASF10
  241 007c 02       		.byte	0x2
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 8
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 8
 
 
  242 007d E501     		.2byte	0x1e5
@@ -430,13 +430,13 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  248 008a 02       		.uleb128 0x2
  249 008b 08       		.byte	0x8
  250 008c 04       		.byte	0x4
- 251 008d E1010000 		.4byte	.LASF12
+ 251 008d C5010000 		.4byte	.LASF12
  252 0091 02       		.uleb128 0x2
  253 0092 01       		.byte	0x1
  254 0093 08       		.byte	0x8
- 255 0094 85020000 		.4byte	.LASF13
+ 255 0094 69020000 		.4byte	.LASF13
  256 0098 04       		.uleb128 0x4
- 257 0099 34010000 		.4byte	.LASF14
+ 257 0099 87010000 		.4byte	.LASF14
  258 009d 02       		.byte	0x2
  259 009e 8E02     		.2byte	0x28e
  260 00a0 A4000000 		.4byte	0xa4
@@ -445,18 +445,18 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  263 00a9 02       		.uleb128 0x2
  264 00aa 08       		.byte	0x8
  265 00ab 04       		.byte	0x4
- 266 00ac D4020000 		.4byte	.LASF15
+ 266 00ac B8020000 		.4byte	.LASF15
  267 00b0 02       		.uleb128 0x2
  268 00b1 04       		.byte	0x4
  269 00b2 07       		.byte	0x7
- 270 00b3 45020000 		.4byte	.LASF16
+ 270 00b3 29020000 		.4byte	.LASF16
  271 00b7 06       		.uleb128 0x6
  272 00b8 06       		.byte	0x6
  273 00b9 03       		.byte	0x3
  274 00ba 40       		.byte	0x40
  275 00bb E4000000 		.4byte	0xe4
  276 00bf 07       		.uleb128 0x7
- 277 00c0 4E020000 		.4byte	.LASF17
+ 277 00c0 32020000 		.4byte	.LASF17
  278 00c4 03       		.byte	0x3
  279 00c5 42       		.byte	0x42
  280 00c6 6B000000 		.4byte	0x6b
@@ -475,15 +475,15 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  293 00e2 04       		.byte	0x4
  294 00e3 00       		.byte	0
  295 00e4 08       		.uleb128 0x8
- 296 00e5 05020000 		.4byte	.LASF20
+ 296 00e5 E9010000 		.4byte	.LASF20
  297 00e9 03       		.byte	0x3
  298 00ea 49       		.byte	0x49
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 9
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 9
 
 
  299 00eb B7000000 		.4byte	0xb7
  300 00ef 09       		.uleb128 0x9
- 301 00f0 B8020000 		.4byte	.LASF21
+ 301 00f0 9C020000 		.4byte	.LASF21
  302 00f4 01       		.byte	0x1
  303 00f5 2A       		.byte	0x2a
  304 00f6 00000000 		.4byte	.LFB0
@@ -499,7 +499,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  314 0112 AB010000 		.4byte	0x1ab
  315 0116 00       		.byte	0
  316 0117 09       		.uleb128 0x9
- 317 0118 6F020000 		.4byte	.LASF22
+ 317 0118 53020000 		.4byte	.LASF22
  318 011c 01       		.byte	0x1
  319 011d 4A       		.byte	0x4a
  320 011e 00000000 		.4byte	.LFB1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  353 0172 18000000 		.4byte	.LFE3-.LFB3
  354 0176 01       		.uleb128 0x1
  355 0177 9C       		.byte	0x9c
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 10
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 10
 
 
  356 0178 8F010000 		.4byte	0x18f
@@ -550,7 +550,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  362 018a D7010000 		.4byte	0x1d7
  363 018e 00       		.byte	0
  364 018f 0B       		.uleb128 0xb
- 365 0190 E0020000 		.4byte	.LASF34
+ 365 0190 C4020000 		.4byte	.LASF34
  366 0194 01       		.byte	0x1
  367 0195 15       		.byte	0x15
  368 0196 E4000000 		.4byte	0xe4
@@ -558,8 +558,8 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  370 019b 03       		.byte	0x3
  371 019c 00000000 		.4byte	Counter_backup
  372 01a0 0C       		.uleb128 0xc
- 373 01a1 CD010000 		.4byte	.LASF25
- 374 01a5 CD010000 		.4byte	.LASF25
+ 373 01a1 B1010000 		.4byte	.LASF25
+ 374 01a5 B1010000 		.4byte	.LASF25
  375 01a9 03       		.byte	0x3
  376 01aa 5D       		.byte	0x5d
  377 01ab 0C       		.uleb128 0xc
@@ -568,18 +568,18 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  380 01b4 03       		.byte	0x3
  381 01b5 55       		.byte	0x55
  382 01b6 0C       		.uleb128 0xc
- 383 01b7 83000000 		.4byte	.LASF27
- 384 01bb 83000000 		.4byte	.LASF27
+ 383 01b7 DF020000 		.4byte	.LASF27
+ 384 01bb DF020000 		.4byte	.LASF27
  385 01bf 03       		.byte	0x3
  386 01c0 5A       		.byte	0x5a
  387 01c1 0C       		.uleb128 0xc
- 388 01c2 E8010000 		.4byte	.LASF28
- 389 01c6 E8010000 		.4byte	.LASF28
+ 388 01c2 CC010000 		.4byte	.LASF28
+ 389 01c6 CC010000 		.4byte	.LASF28
  390 01ca 03       		.byte	0x3
  391 01cb 56       		.byte	0x56
  392 01cc 0C       		.uleb128 0xc
- 393 01cd C0010000 		.4byte	.LASF29
- 394 01d1 C0010000 		.4byte	.LASF29
+ 393 01cd A4010000 		.4byte	.LASF29
+ 394 01d1 A4010000 		.4byte	.LASF29
  395 01d5 03       		.byte	0x3
  396 01d6 50       		.byte	0x50
  397 01d7 0C       		.uleb128 0xc
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  410 0005 13       		.uleb128 0x13
  411 0006 0B       		.uleb128 0xb
  412 0007 03       		.uleb128 0x3
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 11
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 11
 
 
  413 0008 0E       		.uleb128 0xe
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  467 003e 13       		.uleb128 0x13
  468 003f 01       		.byte	0x1
  469 0040 0B       		.uleb128 0xb
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 12
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 12
 
 
  470 0041 0B       		.uleb128 0xb
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  524 0077 40       		.uleb128 0x40
  525 0078 18       		.uleb128 0x18
  526 0079 9742     		.uleb128 0x2117
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 13
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 13
 
 
  527 007b 19       		.uleb128 0x19
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  581 000e 0000     		.2byte	0
  582 0010 00000000 		.4byte	.LFB0
  583 0014 18000000 		.4byte	.LFE0-.LFB0
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 14
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 14
 
 
  584 0018 00000000 		.4byte	.LFB1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  617              	.LASF18:
  618 005b 436F756E 		.ascii	"CounterUdb\000"
  618      74657255 
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 15
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 15
 
 
  618      646200
@@ -851,162 +851,160 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 1
  621              	.LASF11:
  622 007d 666C6F61 		.ascii	"float\000"
  622      7400
- 623              	.LASF27:
- 624 0083 436F756E 		.ascii	"Counter_WriteCounter\000"
- 624      7465725F 
- 624      57726974 
- 624      65436F75 
- 624      6E746572 
- 625              	.LASF1:
- 626 0098 756E7369 		.ascii	"unsigned char\000"
- 626      676E6564 
- 626      20636861 
- 626      7200
- 627              	.LASF31:
- 628 00a6 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 628      43313120 
- 628      352E342E 
- 628      31203230 
- 628      31363036 
- 629 00d9 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 629      20726576 
- 629      6973696F 
- 629      6E203233 
- 629      37373135 
- 630 010c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 630      66756E63 
- 630      74696F6E 
- 630      2D736563 
- 630      74696F6E 
- 631              	.LASF14:
- 632 0134 72656738 		.ascii	"reg8\000"
- 632      00
- 633              	.LASF33:
- 634 0139 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\Elektronik ingenioer\\3rd s"
- 634      635C486F 
- 634      6D655C44 
- 634      65736B74 
- 634      6F705C45 
- 635 0166 656D6573 		.ascii	"emester\\PRJ3\\PRJ3\\afstandssensor_test\\UltraSoni"
- 635      7465725C 
- 635      50524A33 
- 635      5C50524A 
- 635      335C6166 
- 636 0195 635F3035 		.ascii	"c_059_190702.cydsn\000"
- 636      395F3139 
- 636      30373032 
- 636      2E637964 
- 636      736E00
- 637              	.LASF5:
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 16
+ 623              	.LASF33:
+ 624 0083 433A5C55 		.ascii	"C:\\Users\\Totos\\Desktop\\elektronik_ingenioer\\PR"
+ 624      73657273 
+ 624      5C546F74 
+ 624      6F735C44 
+ 624      65736B74 
+ 625 00b1 4A335C47 		.ascii	"J3\\Github\\afstandssensor_test\\UltraSonic_059_190"
+ 625      69746875 
+ 625      625C6166 
+ 625      7374616E 
+ 625      64737365 
+ 626 00e1 3730322E 		.ascii	"702.cydsn\000"
+ 626      63796473 
+ 626      6E00
+ 627              	.LASF1:
+ 628 00eb 756E7369 		.ascii	"unsigned char\000"
+ 628      676E6564 
+ 628      20636861 
+ 628      7200
+ 629              	.LASF31:
+ 630 00f9 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 630      43313120 
+ 630      352E342E 
+ 630      31203230 
+ 630      31363036 
+ 631 012c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 631      20726576 
+ 631      6973696F 
+ 631      6E203233 
+ 631      37373135 
+ 632 015f 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 632      66756E63 
+ 632      74696F6E 
+ 632      2D736563 
+ 632      74696F6E 
+ 633              	.LASF14:
+ 634 0187 72656738 		.ascii	"reg8\000"
+ 634      00
+ 635              	.LASF5:
+ 636 018c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 636      20756E73 
+ 636      69676E65 
+ 636      6420696E 
+ 636      7400
+ 637              	.LASF9:
+ 638 019e 75696E74 		.ascii	"uint8\000"
+ 638      3800
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 16
 
 
- 638 01a8 6C6F6E67 		.ascii	"long unsigned int\000"
- 638      20756E73 
- 638      69676E65 
- 638      6420696E 
- 638      7400
- 639              	.LASF9:
- 640 01ba 75696E74 		.ascii	"uint8\000"
- 640      3800
- 641              	.LASF29:
- 642 01c0 436F756E 		.ascii	"Counter_Stop\000"
+ 639              	.LASF29:
+ 640 01a4 436F756E 		.ascii	"Counter_Stop\000"
+ 640      7465725F 
+ 640      53746F70 
+ 640      00
+ 641              	.LASF25:
+ 642 01b1 436F756E 		.ascii	"Counter_ReadCounter\000"
  642      7465725F 
- 642      53746F70 
- 642      00
- 643              	.LASF25:
- 644 01cd 436F756E 		.ascii	"Counter_ReadCounter\000"
- 644      7465725F 
- 644      52656164 
- 644      436F756E 
- 644      74657200 
- 645              	.LASF12:
- 646 01e1 646F7562 		.ascii	"double\000"
- 646      6C6500
- 647              	.LASF28:
- 648 01e8 436F756E 		.ascii	"Counter_WriteControlRegister\000"
+ 642      52656164 
+ 642      436F756E 
+ 642      74657200 
+ 643              	.LASF12:
+ 644 01c5 646F7562 		.ascii	"double\000"
+ 644      6C6500
+ 645              	.LASF28:
+ 646 01cc 436F756E 		.ascii	"Counter_WriteControlRegister\000"
+ 646      7465725F 
+ 646      57726974 
+ 646      65436F6E 
+ 646      74726F6C 
+ 647              	.LASF20:
+ 648 01e9 436F756E 		.ascii	"Counter_backupStruct\000"
  648      7465725F 
- 648      57726974 
- 648      65436F6E 
- 648      74726F6C 
- 649              	.LASF20:
- 650 0205 436F756E 		.ascii	"Counter_backupStruct\000"
- 650      7465725F 
- 650      6261636B 
- 650      75705374 
- 650      72756374 
- 651              	.LASF10:
- 652 021a 75696E74 		.ascii	"uint16\000"
- 652      313600
- 653              	.LASF8:
- 654 0221 756E7369 		.ascii	"unsigned int\000"
- 654      676E6564 
- 654      20696E74 
- 654      00
- 655              	.LASF7:
- 656 022e 6C6F6E67 		.ascii	"long long unsigned int\000"
- 656      206C6F6E 
- 656      6720756E 
- 656      7369676E 
- 656      65642069 
- 657              	.LASF16:
- 658 0245 73697A65 		.ascii	"sizetype\000"
- 658      74797065 
- 658      00
- 659              	.LASF17:
- 660 024e 436F756E 		.ascii	"CounterEnableState\000"
- 660      74657245 
- 660      6E61626C 
- 660      65537461 
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccuG2ulV.s 			page 17
+ 648      6261636B 
+ 648      75705374 
+ 648      72756374 
+ 649              	.LASF10:
+ 650 01fe 75696E74 		.ascii	"uint16\000"
+ 650      313600
+ 651              	.LASF8:
+ 652 0205 756E7369 		.ascii	"unsigned int\000"
+ 652      676E6564 
+ 652      20696E74 
+ 652      00
+ 653              	.LASF7:
+ 654 0212 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 654      206C6F6E 
+ 654      6720756E 
+ 654      7369676E 
+ 654      65642069 
+ 655              	.LASF16:
+ 656 0229 73697A65 		.ascii	"sizetype\000"
+ 656      74797065 
+ 656      00
+ 657              	.LASF17:
+ 658 0232 436F756E 		.ascii	"CounterEnableState\000"
+ 658      74657245 
+ 658      6E61626C 
+ 658      65537461 
+ 658      746500
+ 659              	.LASF6:
+ 660 0245 6C6F6E67 		.ascii	"long long int\000"
+ 660      206C6F6E 
+ 660      6720696E 
+ 660      7400
+ 661              	.LASF22:
+ 662 0253 436F756E 		.ascii	"Counter_RestoreConfig\000"
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cchUEvNh.s 			page 17
 
 
- 660      746500
- 661              	.LASF6:
- 662 0261 6C6F6E67 		.ascii	"long long int\000"
- 662      206C6F6E 
- 662      6720696E 
- 662      7400
- 663              	.LASF22:
- 664 026f 436F756E 		.ascii	"Counter_RestoreConfig\000"
- 664      7465725F 
- 664      52657374 
- 664      6F726543 
- 664      6F6E6669 
- 665              	.LASF13:
- 666 0285 63686172 		.ascii	"char\000"
- 666      00
- 667              	.LASF2:
- 668 028a 73686F72 		.ascii	"short int\000"
- 668      7420696E 
- 668      7400
- 669              	.LASF32:
- 670 0294 47656E65 		.ascii	"Generated_Source\\PSoC5\\Counter_PM.c\000"
- 670      72617465 
- 670      645F536F 
- 670      75726365 
- 670      5C50536F 
- 671              	.LASF21:
- 672 02b8 436F756E 		.ascii	"Counter_SaveConfig\000"
- 672      7465725F 
- 672      53617665 
- 672      436F6E66 
- 672      696700
- 673              	.LASF4:
- 674 02cb 6C6F6E67 		.ascii	"long int\000"
- 674      20696E74 
- 674      00
- 675              	.LASF15:
- 676 02d4 6C6F6E67 		.ascii	"long double\000"
- 676      20646F75 
- 676      626C6500 
- 677              	.LASF34:
- 678 02e0 436F756E 		.ascii	"Counter_backup\000"
- 678      7465725F 
- 678      6261636B 
- 678      757000
- 679              	.LASF0:
- 680 02ef 7369676E 		.ascii	"signed char\000"
- 680      65642063 
- 680      68617200 
+ 662      7465725F 
+ 662      52657374 
+ 662      6F726543 
+ 662      6F6E6669 
+ 663              	.LASF13:
+ 664 0269 63686172 		.ascii	"char\000"
+ 664      00
+ 665              	.LASF2:
+ 666 026e 73686F72 		.ascii	"short int\000"
+ 666      7420696E 
+ 666      7400
+ 667              	.LASF32:
+ 668 0278 47656E65 		.ascii	"Generated_Source\\PSoC5\\Counter_PM.c\000"
+ 668      72617465 
+ 668      645F536F 
+ 668      75726365 
+ 668      5C50536F 
+ 669              	.LASF21:
+ 670 029c 436F756E 		.ascii	"Counter_SaveConfig\000"
+ 670      7465725F 
+ 670      53617665 
+ 670      436F6E66 
+ 670      696700
+ 671              	.LASF4:
+ 672 02af 6C6F6E67 		.ascii	"long int\000"
+ 672      20696E74 
+ 672      00
+ 673              	.LASF15:
+ 674 02b8 6C6F6E67 		.ascii	"long double\000"
+ 674      20646F75 
+ 674      626C6500 
+ 675              	.LASF34:
+ 676 02c4 436F756E 		.ascii	"Counter_backup\000"
+ 676      7465725F 
+ 676      6261636B 
+ 676      757000
+ 677              	.LASF0:
+ 678 02d3 7369676E 		.ascii	"signed char\000"
+ 678      65642063 
+ 678      68617200 
+ 679              	.LASF27:
+ 680 02df 436F756E 		.ascii	"Counter_WriteCounter\000"
+ 680      7465725F 
+ 680      57726974 
+ 680      65436F75 
+ 680      6E746572 
  681              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

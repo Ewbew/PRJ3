@@ -2,7 +2,7 @@
 --	Conversion of UltraSonic_059_190702.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Apr 28 20:27:47 2025
+--	Mon Apr 28 20:59:31 2025
 --
 
 USE cypress.cypress.all;
@@ -1143,7 +1143,7 @@ Clock_24MHz:cy_clock_v1_0
 		id=>"b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"1085069444.44444",
+		period=>"2170138888.88889",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>\UART:Net_9\,

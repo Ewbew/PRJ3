@@ -72,13 +72,13 @@ void print_value(uint32_t duration)
     double distance = 0.0 ;
     
     distance = (double)(duration) * MACH / 240000.0 ;
-    sprintf(str, "%d.%02dcm\n", (int)distance, (int)(100 * distance)%100) ;
+    sprintf(str, "%d.%02dcm\r\n", (int)distance, (int)(100 * distance)%100) ;
     UART_PutString(str) ;
 }
 
 void splash(void)
 {
-    sprintf(str, "HC-SR04 Test CY8CKIT-059 (%s %s)\n", __DATE__, __TIME__) ;
+    sprintf(str, "HC-SR04 Test CY8CKIT-059 (%s %s)\r\n", __DATE__, __TIME__) ;
     UART_PutString(str) ;
 }
 
@@ -104,7 +104,7 @@ int main(void)
             echo_flag = 0 ;
             print_value(duration) ;
         } else {
-                UART_PutString("Timeout\n") ;
+                UART_PutString("Timeout\r\n") ;
         }
         CyDelay(1000) ;
     }

@@ -1,6 +1,6 @@
 -- Project:   UltraSonic_059_190702
--- Generated: 04/28/2025 20:27:50
--- PSoC Creator  4.4
+-- Generated: 04/28/2025 20:59:32
+-- PSoC Creator  4.2
 
 ENTITY UltraSonic_059_190702 IS
     PORT(
@@ -146,11 +146,11 @@ ARCHITECTURE __DEFAULT__ OF UltraSonic_059_190702 IS
     SIGNAL \Counter:CounterUDB:sC16:counterdp:u1.sor__sig\ : bit;
     SIGNAL \Counter:CounterUDB:sC16:counterdp:u1.cmsbo__sig\ : bit;
     ATTRIBUTE lib_model OF Trigger(0) : LABEL IS "iocell1";
-    ATTRIBUTE Location OF Trigger(0) : LABEL IS "P2[0]";
+    ATTRIBUTE Location OF Trigger(0) : LABEL IS "P0[6]";
     ATTRIBUTE lib_model OF Rx(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF Rx(0) : LABEL IS "P12[6]";
     ATTRIBUTE lib_model OF Echo(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF Echo(0) : LABEL IS "P2[1]";
+    ATTRIBUTE Location OF Echo(0) : LABEL IS "P0[7]";
     ATTRIBUTE lib_model OF Tx(0) : LABEL IS "iocell4";
     ATTRIBUTE Location OF Tx(0) : LABEL IS "P12[7]";
     ATTRIBUTE lib_model OF Net_104 : LABEL IS "macrocell1";

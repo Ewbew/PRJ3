@@ -1,6 +1,6 @@
-\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\afstandssensor_test\UltraSonic_059_190702.cydsn\UltraSonic_059_190702.cyprj|f3b654e7-47f5-43e8-be9d-70ec73903aad
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|2925818e-1bed-4be3-a565-9a86a0bb4ef5
-C:\Mac\Home\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|f7500327-12b6-4e3f-96d9-2191df1ecd73
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|6097f06a-62df-4d63-b8ff-a4ffff71cb83
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|0af2d7a5-3823-40e4-8b17-47704f72ba40
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|07f7c47c-debf-49a6-af9e-5c03b74e6c8e
+C:\Users\Totos\Desktop\elektronik_ingenioer\PRJ3\Github\afstandssensor_test\UltraSonic_059_190702.cydsn\UltraSonic_059_190702.cyprj|1e477599-b5d7-46ac-afc2-28af6fbf28eb
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|3d3a0030-4f28-4916-af31-bd980f3ea7e3
+C:\Users\Totos\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|d1f6337a-2ce6-4462-b7c7-b6ba5206d34f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|51328445-6f4e-49ec-9d3a-0182a04d555e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|f37f566e-20ce-4c08-b4b5-f62c01fcf148
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|68f91c8c-dc7c-46af-8386-d03efc680598
