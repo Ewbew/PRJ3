@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 1
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 1
 
 
    1              		.syntax unified
@@ -27,2483 +27,2935 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 1
   24              		.section	.cyconfigecc,"a",%progbits
   25              		.align	2
   26              		.type	cy_meta_configecc, %object
-  27              		.size	cy_meta_configecc, 1904
+  27              		.size	cy_meta_configecc, 2332
   28              	cy_meta_configecc:
-  29 0000 05       		.byte	5
+  29 0000 07       		.byte	7
   30 0001 52       		.byte	82
   31 0002 00       		.byte	0
   32 0003 40       		.byte	64
-  33 0004 04       		.byte	4
+  33 0004 06       		.byte	6
   34 0005 64       		.byte	100
   35 0006 00       		.byte	0
   36 0007 40       		.byte	64
-  37 0008 04       		.byte	4
+  37 0008 03       		.byte	3
   38 0009 65       		.byte	101
   39 000a 00       		.byte	0
   40 000b 40       		.byte	64
-  41 000c 17       		.byte	23
-  42 000d 02       		.byte	2
+  41 000c 01       		.byte	1
+  42 000d 01       		.byte	1
   43 000e 01       		.byte	1
   44 000f 40       		.byte	64
-  45 0010 39       		.byte	57
-  46 0011 03       		.byte	3
+  45 0010 67       		.byte	103
+  46 0011 02       		.byte	2
   47 0012 01       		.byte	1
   48 0013 40       		.byte	64
-  49 0014 65       		.byte	101
-  50 0015 04       		.byte	4
+  49 0014 38       		.byte	56
+  50 0015 03       		.byte	3
   51 0016 01       		.byte	1
   52 0017 40       		.byte	64
-  53 0018 46       		.byte	70
-  54 0019 05       		.byte	5
+  53 0018 6E       		.byte	110
+  54 0019 04       		.byte	4
   55 001a 01       		.byte	1
   56 001b 40       		.byte	64
-  57 001c 6B       		.byte	107
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 2
+  57 001c 4E       		.byte	78
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 2
 
 
-  58 001d 06       		.byte	6
+  58 001d 05       		.byte	5
   59 001e 01       		.byte	1
   60 001f 40       		.byte	64
-  61 0020 46       		.byte	70
-  62 0021 07       		.byte	7
+  61 0020 56       		.byte	86
+  62 0021 06       		.byte	6
   63 0022 01       		.byte	1
   64 0023 40       		.byte	64
-  65 0024 01       		.byte	1
-  66 0025 0D       		.byte	13
+  65 0024 40       		.byte	64
+  66 0025 07       		.byte	7
   67 0026 01       		.byte	1
   68 0027 40       		.byte	64
-  69 0028 65       		.byte	101
-  70 0029 14       		.byte	20
+  69 0028 03       		.byte	3
+  70 0029 09       		.byte	9
   71 002a 01       		.byte	1
   72 002b 40       		.byte	64
-  73 002c 46       		.byte	70
-  74 002d 15       		.byte	21
+  73 002c 02       		.byte	2
+  74 002d 0B       		.byte	11
   75 002e 01       		.byte	1
   76 002f 40       		.byte	64
-  77 0030 0F       		.byte	15
-  78 0031 16       		.byte	22
+  77 0030 65       		.byte	101
+  78 0031 0C       		.byte	12
   79 0032 01       		.byte	1
   80 0033 40       		.byte	64
-  81 0034 3D       		.byte	61
-  82 0035 17       		.byte	23
+  81 0034 42       		.byte	66
+  82 0035 0D       		.byte	13
   83 0036 01       		.byte	1
   84 0037 40       		.byte	64
-  85 0038 01       		.byte	1
-  86 0039 19       		.byte	25
+  85 0038 02       		.byte	2
+  86 0039 0F       		.byte	15
   87 003a 01       		.byte	1
   88 003b 40       		.byte	64
-  89 003c 02       		.byte	2
-  90 003d 1B       		.byte	27
+  89 003c 11       		.byte	17
+  90 003d 14       		.byte	20
   91 003e 01       		.byte	1
   92 003f 40       		.byte	64
-  93 0040 03       		.byte	3
-  94 0041 40       		.byte	64
+  93 0040 43       		.byte	67
+  94 0041 15       		.byte	21
   95 0042 01       		.byte	1
   96 0043 40       		.byte	64
-  97 0044 09       		.byte	9
-  98 0045 41       		.byte	65
+  97 0044 65       		.byte	101
+  98 0045 16       		.byte	22
   99 0046 01       		.byte	1
  100 0047 40       		.byte	64
- 101 0048 06       		.byte	6
- 102 0049 42       		.byte	66
+ 101 0048 46       		.byte	70
+ 102 0049 17       		.byte	23
  103 004a 01       		.byte	1
  104 004b 40       		.byte	64
  105 004c 01       		.byte	1
- 106 004d 43       		.byte	67
+ 106 004d 19       		.byte	25
  107 004e 01       		.byte	1
  108 004f 40       		.byte	64
  109 0050 02       		.byte	2
- 110 0051 44       		.byte	68
+ 110 0051 1B       		.byte	27
  111 0052 01       		.byte	1
  112 0053 40       		.byte	64
- 113 0054 02       		.byte	2
- 114 0055 45       		.byte	69
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 3
+ 113 0054 06       		.byte	6
+ 114 0055 40       		.byte	64
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 3
 
 
  115 0056 01       		.byte	1
  116 0057 40       		.byte	64
- 117 0058 03       		.byte	3
- 118 0059 48       		.byte	72
+ 117 0058 0A       		.byte	10
+ 118 0059 41       		.byte	65
  119 005a 01       		.byte	1
  120 005b 40       		.byte	64
- 121 005c 09       		.byte	9
- 122 005d 49       		.byte	73
+ 121 005c 08       		.byte	8
+ 122 005d 42       		.byte	66
  123 005e 01       		.byte	1
  124 005f 40       		.byte	64
- 125 0060 05       		.byte	5
- 126 0061 4C       		.byte	76
+ 125 0060 01       		.byte	1
+ 126 0061 43       		.byte	67
  127 0062 01       		.byte	1
  128 0063 40       		.byte	64
- 129 0064 06       		.byte	6
- 130 0065 4D       		.byte	77
+ 129 0064 02       		.byte	2
+ 130 0065 44       		.byte	68
  131 0066 01       		.byte	1
  132 0067 40       		.byte	64
- 133 0068 05       		.byte	5
- 134 0069 50       		.byte	80
+ 133 0068 06       		.byte	6
+ 134 0069 45       		.byte	69
  135 006a 01       		.byte	1
  136 006b 40       		.byte	64
- 137 006c 01       		.byte	1
- 138 006d 51       		.byte	81
+ 137 006c 04       		.byte	4
+ 138 006d 48       		.byte	72
  139 006e 01       		.byte	1
  140 006f 40       		.byte	64
- 141 0070 04       		.byte	4
- 142 0071 01       		.byte	1
- 143 0072 08       		.byte	8
- 144 0073 20       		.byte	32
- 145 0074 09       		.byte	9
- 146 0075 20       		.byte	32
- 147 0076 19       		.byte	25
- 148 0077 18       		.byte	24
- 149 0078 64       		.byte	100
- 150 0079 40       		.byte	64
- 151 007a 82       		.byte	-126
- 152 007b 72       		.byte	114
- 153 007c 84       		.byte	-124
- 154 007d 38       		.byte	56
- 155 007e 85       		.byte	-123
- 156 007f 0F       		.byte	15
- 157 0080 87       		.byte	-121
- 158 0081 0F       		.byte	15
- 159 0082 84       		.byte	-124
- 160 0083 0F       		.byte	15
- 161 0084 85       		.byte	-123
- 162 0085 38       		.byte	56
- 163 0086 86       		.byte	-122
- 164 0087 0F       		.byte	15
- 165 0088 87       		.byte	-121
- 166 0089 72       		.byte	114
- 167 008a 86       		.byte	-122
- 168 008b 2C       		.byte	44
- 169 008c 88       		.byte	-120
- 170 008d 01       		.byte	1
- 171 008e 8A       		.byte	-118
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 4
+ 141 0070 08       		.byte	8
+ 142 0071 49       		.byte	73
+ 143 0072 01       		.byte	1
+ 144 0073 40       		.byte	64
+ 145 0074 06       		.byte	6
+ 146 0075 4C       		.byte	76
+ 147 0076 01       		.byte	1
+ 148 0077 40       		.byte	64
+ 149 0078 06       		.byte	6
+ 150 0079 4D       		.byte	77
+ 151 007a 01       		.byte	1
+ 152 007b 40       		.byte	64
+ 153 007c 06       		.byte	6
+ 154 007d 50       		.byte	80
+ 155 007e 01       		.byte	1
+ 156 007f 40       		.byte	64
+ 157 0080 02       		.byte	2
+ 158 0081 51       		.byte	81
+ 159 0082 01       		.byte	1
+ 160 0083 40       		.byte	64
+ 161 0084 04       		.byte	4
+ 162 0085 01       		.byte	1
+ 163 0086 08       		.byte	8
+ 164 0087 10       		.byte	16
+ 165 0088 09       		.byte	9
+ 166 0089 10       		.byte	16
+ 167 008a 18       		.byte	24
+ 168 008b 18       		.byte	24
+ 169 008c 19       		.byte	25
+ 170 008d 10       		.byte	16
+ 171 008e 60       		.byte	96
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 4
 
 
- 172 008f 26       		.byte	38
- 173 0090 8E       		.byte	-114
- 174 0091 08       		.byte	8
- 175 0092 90       		.byte	-112
- 176 0093 2C       		.byte	44
- 177 0094 92       		.byte	-110
- 178 0095 03       		.byte	3
- 179 0096 98       		.byte	-104
- 180 0097 01       		.byte	1
- 181 0098 9A       		.byte	-102
- 182 0099 0E       		.byte	14
- 183 009a A2       		.byte	-94
- 184 009b 10       		.byte	16
- 185 009c A3       		.byte	-93
- 186 009d 01       		.byte	1
- 187 009e A6       		.byte	-90
- 188 009f 03       		.byte	3
- 189 00a0 AE       		.byte	-82
- 190 00a1 10       		.byte	16
- 191 00a2 B0       		.byte	-80
+ 172 008f 80       		.byte	-128
+ 173 0090 64       		.byte	100
+ 174 0091 40       		.byte	64
+ 175 0092 82       		.byte	-126
+ 176 0093 38       		.byte	56
+ 177 0094 83       		.byte	-125
+ 178 0095 72       		.byte	114
+ 179 0096 85       		.byte	-123
+ 180 0097 0F       		.byte	15
+ 181 0098 86       		.byte	-122
+ 182 0099 0F       		.byte	15
+ 183 009a 87       		.byte	-121
+ 184 009b 0F       		.byte	15
+ 185 009c 8D       		.byte	-115
+ 186 009d 77       		.byte	119
+ 187 009e 85       		.byte	-123
+ 188 009f 72       		.byte	114
+ 189 00a0 86       		.byte	-122
+ 190 00a1 38       		.byte	56
+ 191 00a2 87       		.byte	-121
  192 00a3 0F       		.byte	15
- 193 00a4 B1       		.byte	-79
- 194 00a5 01       		.byte	1
- 195 00a6 B2       		.byte	-78
- 196 00a7 10       		.byte	16
- 197 00a8 B4       		.byte	-76
- 198 00a9 2A       		.byte	42
- 199 00aa BA       		.byte	-70
- 200 00ab 22       		.byte	34
- 201 00ac BB       		.byte	-69
- 202 00ad 80       		.byte	-128
- 203 00ae BE       		.byte	-66
- 204 00af 04       		.byte	4
- 205 00b0 D8       		.byte	-40
- 206 00b1 04       		.byte	4
- 207 00b2 D9       		.byte	-39
- 208 00b3 04       		.byte	4
- 209 00b4 DC       		.byte	-36
- 210 00b5 10       		.byte	16
- 211 00b6 DF       		.byte	-33
- 212 00b7 01       		.byte	1
- 213 00b8 01       		.byte	1
- 214 00b9 28       		.byte	40
- 215 00ba 03       		.byte	3
- 216 00bb 02       		.byte	2
- 217 00bc 05       		.byte	5
- 218 00bd 41       		.byte	65
- 219 00be 07       		.byte	7
- 220 00bf 10       		.byte	16
- 221 00c0 0A       		.byte	10
- 222 00c1 44       		.byte	68
- 223 00c2 0C       		.byte	12
- 224 00c3 14       		.byte	20
- 225 00c4 0D       		.byte	13
- 226 00c5 2A       		.byte	42
- 227 00c6 0F       		.byte	15
- 228 00c7 02       		.byte	2
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 5
+ 193 00a4 E2       		.byte	-30
+ 194 00a5 20       		.byte	32
+ 195 00a6 03       		.byte	3
+ 196 00a7 4C       		.byte	76
+ 197 00a8 07       		.byte	7
+ 198 00a9 13       		.byte	19
+ 199 00aa 11       		.byte	17
+ 200 00ab 6C       		.byte	108
+ 201 00ac 13       		.byte	19
+ 202 00ad 03       		.byte	3
+ 203 00ae 15       		.byte	21
+ 204 00af 31       		.byte	49
+ 205 00b0 17       		.byte	23
+ 206 00b1 0E       		.byte	14
+ 207 00b2 25       		.byte	37
+ 208 00b3 31       		.byte	49
+ 209 00b4 27       		.byte	39
+ 210 00b5 46       		.byte	70
+ 211 00b6 2B       		.byte	43
+ 212 00b7 08       		.byte	8
+ 213 00b8 33       		.byte	51
+ 214 00b9 30       		.byte	48
+ 215 00ba 35       		.byte	53
+ 216 00bb 4A       		.byte	74
+ 217 00bc 37       		.byte	55
+ 218 00bd 0F       		.byte	15
+ 219 00be 38       		.byte	56
+ 220 00bf 02       		.byte	2
+ 221 00c0 39       		.byte	57
+ 222 00c1 08       		.byte	8
+ 223 00c2 3B       		.byte	59
+ 224 00c3 A0       		.byte	-96
+ 225 00c4 3E       		.byte	62
+ 226 00c5 01       		.byte	1
+ 227 00c6 3F       		.byte	63
+ 228 00c7 04       		.byte	4
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 5
 
 
- 229 00c8 10       		.byte	16
- 230 00c9 A0       		.byte	-96
- 231 00ca 12       		.byte	18
- 232 00cb 02       		.byte	2
- 233 00cc 14       		.byte	20
- 234 00cd 01       		.byte	1
- 235 00ce 15       		.byte	21
- 236 00cf 80       		.byte	-128
- 237 00d0 17       		.byte	23
- 238 00d1 2A       		.byte	42
- 239 00d2 18       		.byte	24
- 240 00d3 88       		.byte	-120
- 241 00d4 19       		.byte	25
- 242 00d5 04       		.byte	4
- 243 00d6 1A       		.byte	26
- 244 00d7 44       		.byte	68
- 245 00d8 1D       		.byte	29
- 246 00d9 41       		.byte	65
- 247 00da 1E       		.byte	30
- 248 00db 18       		.byte	24
- 249 00dc 1F       		.byte	31
- 250 00dd 01       		.byte	1
- 251 00de 21       		.byte	33
- 252 00df 40       		.byte	64
- 253 00e0 22       		.byte	34
- 254 00e1 40       		.byte	64
- 255 00e2 23       		.byte	35
- 256 00e3 80       		.byte	-128
- 257 00e4 25       		.byte	37
+ 229 00c8 40       		.byte	64
+ 230 00c9 02       		.byte	2
+ 231 00ca 47       		.byte	71
+ 232 00cb 04       		.byte	4
+ 233 00cc 49       		.byte	73
+ 234 00cd FF       		.byte	-1
+ 235 00ce 4A       		.byte	74
+ 236 00cf 07       		.byte	7
+ 237 00d0 4B       		.byte	75
+ 238 00d1 FF       		.byte	-1
+ 239 00d2 4C       		.byte	76
+ 240 00d3 40       		.byte	64
+ 241 00d4 4D       		.byte	77
+ 242 00d5 20       		.byte	32
+ 243 00d6 4E       		.byte	78
+ 244 00d7 F0       		.byte	-16
+ 245 00d8 4F       		.byte	79
+ 246 00d9 05       		.byte	5
+ 247 00da 50       		.byte	80
+ 248 00db 08       		.byte	8
+ 249 00dc 54       		.byte	84
+ 250 00dd 18       		.byte	24
+ 251 00de 56       		.byte	86
+ 252 00df 04       		.byte	4
+ 253 00e0 58       		.byte	88
+ 254 00e1 04       		.byte	4
+ 255 00e2 59       		.byte	89
+ 256 00e3 04       		.byte	4
+ 257 00e4 5A       		.byte	90
  258 00e5 04       		.byte	4
- 259 00e6 26       		.byte	38
- 260 00e7 02       		.byte	2
- 261 00e8 27       		.byte	39
- 262 00e9 11       		.byte	17
- 263 00ea 28       		.byte	40
- 264 00eb 40       		.byte	64
- 265 00ec 2C       		.byte	44
- 266 00ed 54       		.byte	84
- 267 00ee 2F       		.byte	47
- 268 00ef 01       		.byte	1
- 269 00f0 34       		.byte	52
- 270 00f1 21       		.byte	33
- 271 00f2 37       		.byte	55
- 272 00f3 88       		.byte	-120
- 273 00f4 3D       		.byte	61
- 274 00f5 08       		.byte	8
- 275 00f6 3E       		.byte	62
- 276 00f7 A2       		.byte	-94
- 277 00f8 44       		.byte	68
- 278 00f9 20       		.byte	32
- 279 00fa 45       		.byte	69
- 280 00fb 82       		.byte	-126
- 281 00fc 46       		.byte	70
- 282 00fd 80       		.byte	-128
- 283 00fe 4C       		.byte	76
- 284 00ff 80       		.byte	-128
- 285 0100 4E       		.byte	78
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 6
+ 259 00e6 5B       		.byte	91
+ 260 00e7 04       		.byte	4
+ 261 00e8 5C       		.byte	92
+ 262 00e9 20       		.byte	32
+ 263 00ea 5D       		.byte	93
+ 264 00eb 22       		.byte	34
+ 265 00ec 5F       		.byte	95
+ 266 00ed 01       		.byte	1
+ 267 00ee 60       		.byte	96
+ 268 00ef 40       		.byte	64
+ 269 00f0 61       		.byte	97
+ 270 00f1 A8       		.byte	-88
+ 271 00f2 62       		.byte	98
+ 272 00f3 40       		.byte	64
+ 273 00f4 63       		.byte	99
+ 274 00f5 20       		.byte	32
+ 275 00f6 83       		.byte	-125
+ 276 00f7 31       		.byte	49
+ 277 00f8 84       		.byte	-124
+ 278 00f9 4F       		.byte	79
+ 279 00fa 85       		.byte	-123
+ 280 00fb 06       		.byte	6
+ 281 00fc 86       		.byte	-122
+ 282 00fd B0       		.byte	-80
+ 283 00fe 88       		.byte	-120
+ 284 00ff F3       		.byte	-13
+ 285 0100 89       		.byte	-119
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 6
 
 
  286 0101 02       		.byte	2
- 287 0102 4F       		.byte	79
- 288 0103 20       		.byte	32
- 289 0104 55       		.byte	85
- 290 0105 40       		.byte	64
- 291 0106 5E       		.byte	94
- 292 0107 08       		.byte	8
- 293 0108 6D       		.byte	109
- 294 0109 54       		.byte	84
- 295 010a 76       		.byte	118
- 296 010b 22       		.byte	34
- 297 010c 77       		.byte	119
- 298 010d 2A       		.byte	42
- 299 010e 82       		.byte	-126
- 300 010f 41       		.byte	65
- 301 0110 83       		.byte	-125
- 302 0111 10       		.byte	16
- 303 0112 84       		.byte	-124
- 304 0113 20       		.byte	32
- 305 0114 85       		.byte	-123
- 306 0115 C0       		.byte	-64
- 307 0116 C0       		.byte	-64
- 308 0117 B7       		.byte	-73
- 309 0118 C2       		.byte	-62
- 310 0119 FA       		.byte	-6
- 311 011a C4       		.byte	-60
- 312 011b FD       		.byte	-3
- 313 011c CA       		.byte	-54
- 314 011d F1       		.byte	-15
- 315 011e CC       		.byte	-52
- 316 011f F0       		.byte	-16
- 317 0120 CE       		.byte	-50
- 318 0121 F0       		.byte	-16
- 319 0122 D0       		.byte	-48
- 320 0123 D0       		.byte	-48
- 321 0124 D2       		.byte	-46
- 322 0125 30       		.byte	48
- 323 0126 D6       		.byte	-42
- 324 0127 40       		.byte	64
- 325 0128 E0       		.byte	-32
- 326 0129 08       		.byte	8
- 327 012a 04       		.byte	4
- 328 012b 53       		.byte	83
- 329 012c 06       		.byte	6
- 330 012d 04       		.byte	4
- 331 012e 0C       		.byte	12
- 332 012f 80       		.byte	-128
- 333 0130 10       		.byte	16
- 334 0131 0A       		.byte	10
- 335 0132 12       		.byte	18
- 336 0133 54       		.byte	84
- 337 0134 16       		.byte	22
- 338 0135 08       		.byte	8
- 339 0136 18       		.byte	24
- 340 0137 53       		.byte	83
- 341 0138 1A       		.byte	26
- 342 0139 0C       		.byte	12
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 7
+ 287 0102 8A       		.byte	-118
+ 288 0103 0C       		.byte	12
+ 289 0104 8C       		.byte	-116
+ 290 0105 FF       		.byte	-1
+ 291 0106 8F       		.byte	-113
+ 292 0107 40       		.byte	64
+ 293 0108 92       		.byte	-110
+ 294 0109 B3       		.byte	-77
+ 295 010a 94       		.byte	-108
+ 296 010b 33       		.byte	51
+ 297 010c 95       		.byte	-107
+ 298 010d 46       		.byte	70
+ 299 010e 97       		.byte	-105
+ 300 010f 29       		.byte	41
+ 301 0110 98       		.byte	-104
+ 302 0111 22       		.byte	34
+ 303 0112 99       		.byte	-103
+ 304 0113 46       		.byte	70
+ 305 0114 9B       		.byte	-101
+ 306 0115 19       		.byte	25
+ 307 0116 9C       		.byte	-100
+ 308 0117 11       		.byte	17
+ 309 0118 9D       		.byte	-99
+ 310 0119 40       		.byte	64
+ 311 011a 9F       		.byte	-97
+ 312 011b 80       		.byte	-128
+ 313 011c A0       		.byte	-96
+ 314 011d 08       		.byte	8
+ 315 011e A1       		.byte	-95
+ 316 011f 04       		.byte	4
+ 317 0120 A4       		.byte	-92
+ 318 0121 04       		.byte	4
+ 319 0122 A8       		.byte	-88
+ 320 0123 0C       		.byte	12
+ 321 0124 A9       		.byte	-87
+ 322 0125 79       		.byte	121
+ 323 0126 AB       		.byte	-85
+ 324 0127 06       		.byte	6
+ 325 0128 AC       		.byte	-84
+ 326 0129 CC       		.byte	-52
+ 327 012a AD       		.byte	-83
+ 328 012b 7F       		.byte	127
+ 329 012c AE       		.byte	-82
+ 330 012d 33       		.byte	51
+ 331 012e B0       		.byte	-80
+ 332 012f 30       		.byte	48
+ 333 0130 B1       		.byte	-79
+ 334 0131 80       		.byte	-128
+ 335 0132 B2       		.byte	-78
+ 336 0133 40       		.byte	64
+ 337 0134 B3       		.byte	-77
+ 338 0135 76       		.byte	118
+ 339 0136 B4       		.byte	-76
+ 340 0137 0F       		.byte	15
+ 341 0138 B5       		.byte	-75
+ 342 0139 07       		.byte	7
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 7
 
 
- 343 013a 1B       		.byte	27
- 344 013b 01       		.byte	1
- 345 013c 24       		.byte	36
- 346 013d 20       		.byte	32
- 347 013e 26       		.byte	38
- 348 013f 45       		.byte	69
- 349 0140 28       		.byte	40
- 350 0141 03       		.byte	3
- 351 0142 2A       		.byte	42
- 352 0143 44       		.byte	68
- 353 0144 30       		.byte	48
- 354 0145 40       		.byte	64
- 355 0146 32       		.byte	50
- 356 0147 30       		.byte	48
- 357 0148 34       		.byte	52
- 358 0149 0F       		.byte	15
- 359 014a 35       		.byte	53
- 360 014b 01       		.byte	1
- 361 014c 36       		.byte	54
- 362 014d 80       		.byte	-128
- 363 014e 38       		.byte	56
- 364 014f 08       		.byte	8
- 365 0150 3A       		.byte	58
- 366 0151 20       		.byte	32
- 367 0152 3E       		.byte	62
- 368 0153 41       		.byte	65
- 369 0154 40       		.byte	64
- 370 0155 02       		.byte	2
- 371 0156 46       		.byte	70
- 372 0157 04       		.byte	4
- 373 0158 49       		.byte	73
- 374 0159 FF       		.byte	-1
- 375 015a 4A       		.byte	74
- 376 015b 07       		.byte	7
- 377 015c 4B       		.byte	75
- 378 015d FF       		.byte	-1
- 379 015e 4C       		.byte	76
- 380 015f 40       		.byte	64
- 381 0160 4D       		.byte	77
- 382 0161 20       		.byte	32
- 383 0162 4E       		.byte	78
- 384 0163 F0       		.byte	-16
- 385 0164 4F       		.byte	79
- 386 0165 05       		.byte	5
- 387 0166 50       		.byte	80
- 388 0167 08       		.byte	8
- 389 0168 54       		.byte	84
- 390 0169 18       		.byte	24
- 391 016a 56       		.byte	86
- 392 016b 04       		.byte	4
- 393 016c 58       		.byte	88
- 394 016d 04       		.byte	4
- 395 016e 59       		.byte	89
- 396 016f 04       		.byte	4
- 397 0170 5A       		.byte	90
- 398 0171 04       		.byte	4
- 399 0172 5B       		.byte	91
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 8
+ 343 013a B6       		.byte	-74
+ 344 013b 8C       		.byte	-116
+ 345 013c B7       		.byte	-73
+ 346 013d 08       		.byte	8
+ 347 013e B9       		.byte	-71
+ 348 013f 80       		.byte	-128
+ 349 0140 BA       		.byte	-70
+ 350 0141 20       		.byte	32
+ 351 0142 BB       		.byte	-69
+ 352 0143 28       		.byte	40
+ 353 0144 BE       		.byte	-66
+ 354 0145 04       		.byte	4
+ 355 0146 C0       		.byte	-64
+ 356 0147 04       		.byte	4
+ 357 0148 C5       		.byte	-59
+ 358 0149 40       		.byte	64
+ 359 014a C9       		.byte	-55
+ 360 014b FF       		.byte	-1
+ 361 014c CA       		.byte	-54
+ 362 014d 07       		.byte	7
+ 363 014e CB       		.byte	-53
+ 364 014f FF       		.byte	-1
+ 365 0150 CC       		.byte	-52
+ 366 0151 40       		.byte	64
+ 367 0152 CD       		.byte	-51
+ 368 0153 20       		.byte	32
+ 369 0154 CE       		.byte	-50
+ 370 0155 F0       		.byte	-16
+ 371 0156 CF       		.byte	-49
+ 372 0157 05       		.byte	5
+ 373 0158 D0       		.byte	-48
+ 374 0159 08       		.byte	8
+ 375 015a D6       		.byte	-42
+ 376 015b 02       		.byte	2
+ 377 015c D7       		.byte	-41
+ 378 015d 12       		.byte	18
+ 379 015e D8       		.byte	-40
+ 380 015f 04       		.byte	4
+ 381 0160 D9       		.byte	-39
+ 382 0161 04       		.byte	4
+ 383 0162 DA       		.byte	-38
+ 384 0163 04       		.byte	4
+ 385 0164 DB       		.byte	-37
+ 386 0165 04       		.byte	4
+ 387 0166 DC       		.byte	-36
+ 388 0167 22       		.byte	34
+ 389 0168 DD       		.byte	-35
+ 390 0169 21       		.byte	33
+ 391 016a DF       		.byte	-33
+ 392 016b 01       		.byte	1
+ 393 016c E0       		.byte	-32
+ 394 016d 40       		.byte	64
+ 395 016e E1       		.byte	-31
+ 396 016f A8       		.byte	-88
+ 397 0170 E2       		.byte	-30
+ 398 0171 40       		.byte	64
+ 399 0172 E3       		.byte	-29
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 8
 
 
- 400 0173 04       		.byte	4
- 401 0174 5D       		.byte	93
- 402 0175 10       		.byte	16
- 403 0176 5F       		.byte	95
- 404 0177 01       		.byte	1
- 405 0178 60       		.byte	96
- 406 0179 40       		.byte	64
- 407 017a 61       		.byte	97
- 408 017b A8       		.byte	-88
- 409 017c 62       		.byte	98
- 410 017d 40       		.byte	64
- 411 017e 63       		.byte	99
- 412 017f 20       		.byte	32
- 413 0180 83       		.byte	-125
- 414 0181 80       		.byte	-128
- 415 0182 87       		.byte	-121
- 416 0183 80       		.byte	-128
- 417 0184 8B       		.byte	-117
- 418 0185 01       		.byte	1
- 419 0186 8F       		.byte	-113
+ 400 0173 20       		.byte	32
+ 401 0174 00       		.byte	0
+ 402 0175 04       		.byte	4
+ 403 0176 01       		.byte	1
+ 404 0177 A0       		.byte	-96
+ 405 0178 02       		.byte	2
+ 406 0179 02       		.byte	2
+ 407 017a 08       		.byte	8
+ 408 017b 40       		.byte	64
+ 409 017c 0A       		.byte	10
+ 410 017d 54       		.byte	84
+ 411 017e 10       		.byte	16
+ 412 017f A1       		.byte	-95
+ 413 0180 13       		.byte	19
+ 414 0181 10       		.byte	16
+ 415 0182 19       		.byte	25
+ 416 0183 2A       		.byte	42
+ 417 0184 1A       		.byte	26
+ 418 0185 02       		.byte	2
+ 419 0186 1F       		.byte	31
  420 0187 01       		.byte	1
- 421 0188 91       		.byte	-111
- 422 0189 12       		.byte	18
- 423 018a 93       		.byte	-109
- 424 018b 20       		.byte	32
- 425 018c 94       		.byte	-108
- 426 018d 01       		.byte	1
- 427 018e 95       		.byte	-107
- 428 018f A0       		.byte	-96
- 429 0190 96       		.byte	-106
- 430 0191 26       		.byte	38
- 431 0192 97       		.byte	-105
- 432 0193 18       		.byte	24
- 433 0194 98       		.byte	-104
- 434 0195 14       		.byte	20
- 435 0196 99       		.byte	-103
- 436 0197 38       		.byte	56
- 437 0198 9A       		.byte	-102
- 438 0199 49       		.byte	73
- 439 019a 9B       		.byte	-101
- 440 019b 84       		.byte	-124
- 441 019c 9C       		.byte	-100
- 442 019d 0A       		.byte	10
- 443 019e 9D       		.byte	-99
- 444 019f 40       		.byte	64
- 445 01a0 9E       		.byte	-98
- 446 01a1 51       		.byte	81
- 447 01a2 9F       		.byte	-97
- 448 01a3 06       		.byte	6
- 449 01a4 A4       		.byte	-92
- 450 01a5 9F       		.byte	-97
- 451 01a6 A5       		.byte	-91
- 452 01a7 20       		.byte	32
- 453 01a8 A8       		.byte	-88
- 454 01a9 9F       		.byte	-97
- 455 01aa A9       		.byte	-87
- 456 01ab 98       		.byte	-104
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 9
+ 421 0188 20       		.byte	32
+ 422 0189 04       		.byte	4
+ 423 018a 21       		.byte	33
+ 424 018b 48       		.byte	72
+ 425 018c 22       		.byte	34
+ 426 018d 10       		.byte	16
+ 427 018e 23       		.byte	35
+ 428 018f 40       		.byte	64
+ 429 0190 27       		.byte	39
+ 430 0191 2D       		.byte	45
+ 431 0192 29       		.byte	41
+ 432 0193 A0       		.byte	-96
+ 433 0194 2A       		.byte	42
+ 434 0195 02       		.byte	2
+ 435 0196 2F       		.byte	47
+ 436 0197 18       		.byte	24
+ 437 0198 30       		.byte	48
+ 438 0199 40       		.byte	64
+ 439 019a 31       		.byte	49
+ 440 019b 08       		.byte	8
+ 441 019c 32       		.byte	50
+ 442 019d 10       		.byte	16
+ 443 019e 37       		.byte	55
+ 444 019f 09       		.byte	9
+ 445 01a0 38       		.byte	56
+ 446 01a1 28       		.byte	40
+ 447 01a2 39       		.byte	57
+ 448 01a3 02       		.byte	2
+ 449 01a4 3B       		.byte	59
+ 450 01a5 40       		.byte	64
+ 451 01a6 3E       		.byte	62
+ 452 01a7 01       		.byte	1
+ 453 01a8 3F       		.byte	63
+ 454 01a9 08       		.byte	8
+ 455 01aa 40       		.byte	64
+ 456 01ab 40       		.byte	64
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 9
 
 
- 457 01ac AB       		.byte	-85
- 458 01ad 22       		.byte	34
- 459 01ae AC       		.byte	-84
- 460 01af 80       		.byte	-128
- 461 01b0 AD       		.byte	-83
- 462 01b1 28       		.byte	40
- 463 01b2 B0       		.byte	-80
- 464 01b3 80       		.byte	-128
- 465 01b4 B1       		.byte	-79
- 466 01b5 3E       		.byte	62
- 467 01b6 B2       		.byte	-78
- 468 01b7 07       		.byte	7
- 469 01b8 B3       		.byte	-77
- 470 01b9 80       		.byte	-128
- 471 01ba B4       		.byte	-76
- 472 01bb 18       		.byte	24
- 473 01bc B5       		.byte	-75
- 474 01bd 01       		.byte	1
- 475 01be B6       		.byte	-74
- 476 01bf 60       		.byte	96
- 477 01c0 B7       		.byte	-73
- 478 01c1 40       		.byte	64
- 479 01c2 BE       		.byte	-66
- 480 01c3 40       		.byte	64
- 481 01c4 BF       		.byte	-65
- 482 01c5 54       		.byte	84
- 483 01c6 C0       		.byte	-64
- 484 01c7 64       		.byte	100
- 485 01c8 C1       		.byte	-63
- 486 01c9 02       		.byte	2
- 487 01ca C5       		.byte	-59
- 488 01cb E0       		.byte	-32
- 489 01cc C7       		.byte	-57
- 490 01cd BC       		.byte	-68
- 491 01ce C8       		.byte	-56
- 492 01cf 32       		.byte	50
- 493 01d0 C9       		.byte	-55
- 494 01d1 FF       		.byte	-1
- 495 01d2 CA       		.byte	-54
- 496 01d3 FF       		.byte	-1
- 497 01d4 CB       		.byte	-53
- 498 01d5 FF       		.byte	-1
- 499 01d6 CE       		.byte	-50
- 500 01d7 F0       		.byte	-16
- 501 01d8 CF       		.byte	-49
- 502 01d9 44       		.byte	68
- 503 01da D0       		.byte	-48
- 504 01db 0C       		.byte	12
- 505 01dc D4       		.byte	-44
- 506 01dd 01       		.byte	1
- 507 01de D6       		.byte	-42
- 508 01df 04       		.byte	4
- 509 01e0 D8       		.byte	-40
- 510 01e1 04       		.byte	4
- 511 01e2 D9       		.byte	-39
- 512 01e3 04       		.byte	4
- 513 01e4 DA       		.byte	-38
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 10
+ 457 01ac 47       		.byte	71
+ 458 01ad 20       		.byte	32
+ 459 01ae 48       		.byte	72
+ 460 01af 40       		.byte	64
+ 461 01b0 4B       		.byte	75
+ 462 01b1 08       		.byte	8
+ 463 01b2 4F       		.byte	79
+ 464 01b3 08       		.byte	8
+ 465 01b4 56       		.byte	86
+ 466 01b5 08       		.byte	8
+ 467 01b6 57       		.byte	87
+ 468 01b7 08       		.byte	8
+ 469 01b8 59       		.byte	89
+ 470 01b9 08       		.byte	8
+ 471 01ba 5D       		.byte	93
+ 472 01bb 02       		.byte	2
+ 473 01bc 66       		.byte	102
+ 474 01bd 81       		.byte	-127
+ 475 01be 67       		.byte	103
+ 476 01bf 84       		.byte	-124
+ 477 01c0 68       		.byte	104
+ 478 01c1 05       		.byte	5
+ 479 01c2 69       		.byte	105
+ 480 01c3 04       		.byte	4
+ 481 01c4 70       		.byte	112
+ 482 01c5 B4       		.byte	-76
+ 483 01c6 72       		.byte	114
+ 484 01c7 02       		.byte	2
+ 485 01c8 73       		.byte	115
+ 486 01c9 10       		.byte	16
+ 487 01ca 79       		.byte	121
+ 488 01cb 10       		.byte	16
+ 489 01cc 7B       		.byte	123
+ 490 01cd 04       		.byte	4
+ 491 01ce 82       		.byte	-126
+ 492 01cf 01       		.byte	1
+ 493 01d0 87       		.byte	-121
+ 494 01d1 40       		.byte	64
+ 495 01d2 C0       		.byte	-64
+ 496 01d3 07       		.byte	7
+ 497 01d4 C2       		.byte	-62
+ 498 01d5 0F       		.byte	15
+ 499 01d6 C4       		.byte	-60
+ 500 01d7 0F       		.byte	15
+ 501 01d8 CA       		.byte	-54
+ 502 01d9 6D       		.byte	109
+ 503 01da CC       		.byte	-52
+ 504 01db CE       		.byte	-50
+ 505 01dc CE       		.byte	-50
+ 506 01dd CF       		.byte	-49
+ 507 01de D0       		.byte	-48
+ 508 01df 21       		.byte	33
+ 509 01e0 D6       		.byte	-42
+ 510 01e1 82       		.byte	-126
+ 511 01e2 D8       		.byte	-40
+ 512 01e3 B0       		.byte	-80
+ 513 01e4 00       		.byte	0
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 10
 
 
- 514 01e5 04       		.byte	4
- 515 01e6 DB       		.byte	-37
- 516 01e7 04       		.byte	4
- 517 01e8 DC       		.byte	-36
- 518 01e9 11       		.byte	17
- 519 01ea DD       		.byte	-35
- 520 01eb 11       		.byte	17
- 521 01ec DF       		.byte	-33
+ 514 01e5 80       		.byte	-128
+ 515 01e6 04       		.byte	4
+ 516 01e7 E7       		.byte	-25
+ 517 01e8 0F       		.byte	15
+ 518 01e9 01       		.byte	1
+ 519 01ea 13       		.byte	19
+ 520 01eb 02       		.byte	2
+ 521 01ec 14       		.byte	20
  522 01ed 01       		.byte	1
- 523 01ee E6       		.byte	-26
- 524 01ef C0       		.byte	-64
- 525 01f0 EA       		.byte	-22
- 526 01f1 40       		.byte	64
- 527 01f2 EB       		.byte	-21
- 528 01f3 02       		.byte	2
- 529 01f4 00       		.byte	0
- 530 01f5 80       		.byte	-128
- 531 01f6 02       		.byte	2
- 532 01f7 10       		.byte	16
- 533 01f8 04       		.byte	4
- 534 01f9 08       		.byte	8
- 535 01fa 06       		.byte	6
- 536 01fb 10       		.byte	16
- 537 01fc 0A       		.byte	10
- 538 01fd 68       		.byte	104
- 539 01fe 0D       		.byte	13
- 540 01ff 28       		.byte	40
- 541 0200 0F       		.byte	15
- 542 0201 02       		.byte	2
- 543 0202 10       		.byte	16
- 544 0203 28       		.byte	40
- 545 0204 15       		.byte	21
- 546 0205 54       		.byte	84
- 547 0206 19       		.byte	25
- 548 0207 AC       		.byte	-84
- 549 0208 1A       		.byte	26
- 550 0209 A8       		.byte	-88
- 551 020a 1D       		.byte	29
- 552 020b AA       		.byte	-86
- 553 020c 20       		.byte	32
- 554 020d 08       		.byte	8
- 555 020e 26       		.byte	38
- 556 020f 24       		.byte	36
- 557 0210 27       		.byte	39
- 558 0211 42       		.byte	66
- 559 0212 2C       		.byte	44
- 560 0213 06       		.byte	6
- 561 0214 2E       		.byte	46
- 562 0215 08       		.byte	8
- 563 0216 2F       		.byte	47
- 564 0217 08       		.byte	8
- 565 0218 30       		.byte	48
- 566 0219 10       		.byte	16
- 567 021a 36       		.byte	54
- 568 021b 09       		.byte	9
- 569 021c 37       		.byte	55
- 570 021d 58       		.byte	88
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 11
+ 523 01ee 16       		.byte	22
+ 524 01ef 0E       		.byte	14
+ 525 01f0 17       		.byte	23
+ 526 01f1 01       		.byte	1
+ 527 01f2 18       		.byte	24
+ 528 01f3 44       		.byte	68
+ 529 01f4 1A       		.byte	26
+ 530 01f5 31       		.byte	49
+ 531 01f6 1C       		.byte	28
+ 532 01f7 22       		.byte	34
+ 533 01f8 1E       		.byte	30
+ 534 01f9 51       		.byte	81
+ 535 01fa 1F       		.byte	31
+ 536 01fb 02       		.byte	2
+ 537 01fc 24       		.byte	36
+ 538 01fd E7       		.byte	-25
+ 539 01fe 30       		.byte	48
+ 540 01ff 80       		.byte	-128
+ 541 0200 32       		.byte	50
+ 542 0201 07       		.byte	7
+ 543 0202 33       		.byte	51
+ 544 0203 02       		.byte	2
+ 545 0204 34       		.byte	52
+ 546 0205 60       		.byte	96
+ 547 0206 35       		.byte	53
+ 548 0207 01       		.byte	1
+ 549 0208 36       		.byte	54
+ 550 0209 18       		.byte	24
+ 551 020a 3B       		.byte	59
+ 552 020b 02       		.byte	2
+ 553 020c 3E       		.byte	62
+ 554 020d 40       		.byte	64
+ 555 020e 3F       		.byte	63
+ 556 020f 14       		.byte	20
+ 557 0210 40       		.byte	64
+ 558 0211 64       		.byte	100
+ 559 0212 41       		.byte	65
+ 560 0213 05       		.byte	5
+ 561 0214 42       		.byte	66
+ 562 0215 03       		.byte	3
+ 563 0216 44       		.byte	68
+ 564 0217 01       		.byte	1
+ 565 0218 45       		.byte	69
+ 566 0219 C0       		.byte	-64
+ 567 021a 47       		.byte	71
+ 568 021b 0E       		.byte	14
+ 569 021c 48       		.byte	72
+ 570 021d 12       		.byte	18
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 11
 
 
- 571 021e 3D       		.byte	61
- 572 021f 8A       		.byte	-118
- 573 0220 3E       		.byte	62
- 574 0221 10       		.byte	16
- 575 0222 41       		.byte	65
- 576 0223 10       		.byte	16
- 577 0224 44       		.byte	68
- 578 0225 24       		.byte	36
- 579 0226 45       		.byte	69
- 580 0227 05       		.byte	5
- 581 0228 4D       		.byte	77
- 582 0229 01       		.byte	1
- 583 022a 4E       		.byte	78
- 584 022b 08       		.byte	8
+ 571 021e 49       		.byte	73
+ 572 021f FF       		.byte	-1
+ 573 0220 4A       		.byte	74
+ 574 0221 FF       		.byte	-1
+ 575 0222 4B       		.byte	75
+ 576 0223 FF       		.byte	-1
+ 577 0224 4C       		.byte	76
+ 578 0225 62       		.byte	98
+ 579 0226 4D       		.byte	77
+ 580 0227 A0       		.byte	-96
+ 581 0228 4E       		.byte	78
+ 582 0229 F0       		.byte	-16
+ 583 022a 4F       		.byte	79
+ 584 022b 41       		.byte	65
  585 022c 50       		.byte	80
- 586 022d B0       		.byte	-80
- 587 022e 54       		.byte	84
- 588 022f 02       		.byte	2
- 589 0230 55       		.byte	85
+ 586 022d 0C       		.byte	12
+ 587 022e 52       		.byte	82
+ 588 022f 80       		.byte	-128
+ 589 0230 58       		.byte	88
  590 0231 04       		.byte	4
- 591 0232 5B       		.byte	91
- 592 0233 01       		.byte	1
- 593 0234 5C       		.byte	92
- 594 0235 60       		.byte	96
- 595 0236 5D       		.byte	93
- 596 0237 01       		.byte	1
- 597 0238 5E       		.byte	94
- 598 0239 04       		.byte	4
- 599 023a 60       		.byte	96
- 600 023b 02       		.byte	2
- 601 023c 62       		.byte	98
- 602 023d 21       		.byte	33
- 603 023e 67       		.byte	103
+ 591 0232 59       		.byte	89
+ 592 0233 04       		.byte	4
+ 593 0234 5A       		.byte	90
+ 594 0235 04       		.byte	4
+ 595 0236 5B       		.byte	91
+ 596 0237 04       		.byte	4
+ 597 0238 5C       		.byte	92
+ 598 0239 22       		.byte	34
+ 599 023a 5D       		.byte	93
+ 600 023b 42       		.byte	66
+ 601 023c 5F       		.byte	95
+ 602 023d 01       		.byte	1
+ 603 023e 66       		.byte	102
  604 023f 40       		.byte	64
- 605 0240 80       		.byte	-128
- 606 0241 C0       		.byte	-64
- 607 0242 82       		.byte	-126
- 608 0243 04       		.byte	4
- 609 0244 83       		.byte	-125
- 610 0245 02       		.byte	2
- 611 0246 87       		.byte	-121
- 612 0247 40       		.byte	64
- 613 0248 8F       		.byte	-113
- 614 0249 02       		.byte	2
- 615 024a 90       		.byte	-112
- 616 024b 88       		.byte	-120
- 617 024c 91       		.byte	-111
- 618 024d 54       		.byte	84
- 619 024e 92       		.byte	-110
- 620 024f 50       		.byte	80
- 621 0250 98       		.byte	-104
- 622 0251 02       		.byte	2
- 623 0252 9B       		.byte	-101
- 624 0253 01       		.byte	1
- 625 0254 9D       		.byte	-99
- 626 0255 A8       		.byte	-88
- 627 0256 9E       		.byte	-98
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 12
+ 605 0240 67       		.byte	103
+ 606 0241 02       		.byte	2
+ 607 0242 69       		.byte	105
+ 608 0243 10       		.byte	16
+ 609 0244 6A       		.byte	106
+ 610 0245 30       		.byte	48
+ 611 0246 6B       		.byte	107
+ 612 0247 10       		.byte	16
+ 613 0248 6D       		.byte	109
+ 614 0249 10       		.byte	16
+ 615 024a 6E       		.byte	110
+ 616 024b 10       		.byte	16
+ 617 024c 6F       		.byte	111
+ 618 024d 12       		.byte	18
+ 619 024e 81       		.byte	-127
+ 620 024f 28       		.byte	40
+ 621 0250 85       		.byte	-123
+ 622 0251 20       		.byte	32
+ 623 0252 88       		.byte	-120
+ 624 0253 33       		.byte	51
+ 625 0254 89       		.byte	-119
+ 626 0255 40       		.byte	64
+ 627 0256 8A       		.byte	-118
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 12
 
 
- 628 0257 01       		.byte	1
- 629 0258 A1       		.byte	-95
- 630 0259 40       		.byte	64
- 631 025a A3       		.byte	-93
- 632 025b 01       		.byte	1
- 633 025c A4       		.byte	-92
- 634 025d 20       		.byte	32
- 635 025e A5       		.byte	-91
- 636 025f AA       		.byte	-86
- 637 0260 A7       		.byte	-89
- 638 0261 02       		.byte	2
- 639 0262 A8       		.byte	-88
- 640 0263 02       		.byte	2
- 641 0264 A9       		.byte	-87
- 642 0265 04       		.byte	4
- 643 0266 AC       		.byte	-84
- 644 0267 40       		.byte	64
- 645 0268 AF       		.byte	-81
- 646 0269 01       		.byte	1
- 647 026a C0       		.byte	-64
- 648 026b 05       		.byte	5
- 649 026c C2       		.byte	-62
- 650 026d EE       		.byte	-18
- 651 026e C4       		.byte	-60
- 652 026f E6       		.byte	-26
- 653 0270 CA       		.byte	-54
- 654 0271 70       		.byte	112
- 655 0272 CC       		.byte	-52
- 656 0273 F4       		.byte	-12
- 657 0274 CE       		.byte	-50
- 658 0275 F0       		.byte	-16
- 659 0276 D0       		.byte	-48
- 660 0277 A4       		.byte	-92
- 661 0278 D2       		.byte	-46
- 662 0279 20       		.byte	32
- 663 027a D6       		.byte	-42
- 664 027b F1       		.byte	-15
- 665 027c D8       		.byte	-40
- 666 027d 8D       		.byte	-115
- 667 027e E2       		.byte	-30
- 668 027f 10       		.byte	16
- 669 0280 03       		.byte	3
- 670 0281 15       		.byte	21
- 671 0282 04       		.byte	4
- 672 0283 1C       		.byte	28
- 673 0284 05       		.byte	5
- 674 0285 03       		.byte	3
- 675 0286 06       		.byte	6
- 676 0287 23       		.byte	35
- 677 0288 07       		.byte	7
- 678 0289 04       		.byte	4
- 679 028a 0A       		.byte	10
- 680 028b 08       		.byte	8
- 681 028c 0E       		.byte	14
- 682 028d 1C       		.byte	28
- 683 028e 13       		.byte	19
- 684 028f 08       		.byte	8
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 13
+ 628 0257 0C       		.byte	12
+ 629 0258 91       		.byte	-111
+ 630 0259 38       		.byte	56
+ 631 025a 93       		.byte	-109
+ 632 025b 04       		.byte	4
+ 633 025c 95       		.byte	-107
+ 634 025d 18       		.byte	24
+ 635 025e 97       		.byte	-105
+ 636 025f 22       		.byte	34
+ 637 0260 98       		.byte	-104
+ 638 0261 03       		.byte	3
+ 639 0262 9A       		.byte	-102
+ 640 0263 14       		.byte	20
+ 641 0264 9D       		.byte	-99
+ 642 0265 01       		.byte	1
+ 643 0266 9E       		.byte	-98
+ 644 0267 08       		.byte	8
+ 645 0268 9F       		.byte	-97
+ 646 0269 06       		.byte	6
+ 647 026a A0       		.byte	-96
+ 648 026b 0A       		.byte	10
+ 649 026c A1       		.byte	-95
+ 650 026d 12       		.byte	18
+ 651 026e A2       		.byte	-94
+ 652 026f 34       		.byte	52
+ 653 0270 A3       		.byte	-93
+ 654 0271 20       		.byte	32
+ 655 0272 A4       		.byte	-92
+ 656 0273 33       		.byte	51
+ 657 0274 A5       		.byte	-91
+ 658 0275 20       		.byte	32
+ 659 0276 A6       		.byte	-90
+ 660 0277 04       		.byte	4
+ 661 0278 A7       		.byte	-89
+ 662 0279 18       		.byte	24
+ 663 027a A8       		.byte	-88
+ 664 027b 40       		.byte	64
+ 665 027c AA       		.byte	-86
+ 666 027d 15       		.byte	21
+ 667 027e B1       		.byte	-79
+ 668 027f 3E       		.byte	62
+ 669 0280 B2       		.byte	-78
+ 670 0281 10       		.byte	16
+ 671 0282 B3       		.byte	-77
+ 672 0283 01       		.byte	1
+ 673 0284 B4       		.byte	-76
+ 674 0285 0F       		.byte	15
+ 675 0286 B5       		.byte	-75
+ 676 0287 40       		.byte	64
+ 677 0288 B6       		.byte	-74
+ 678 0289 60       		.byte	96
+ 679 028a B8       		.byte	-72
+ 680 028b 80       		.byte	-128
+ 681 028c BA       		.byte	-70
+ 682 028d 20       		.byte	32
+ 683 028e BE       		.byte	-66
+ 684 028f 04       		.byte	4
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 13
 
 
- 685 0290 14       		.byte	20
- 686 0291 21       		.byte	33
- 687 0292 15       		.byte	21
- 688 0293 33       		.byte	51
- 689 0294 16       		.byte	22
- 690 0295 0E       		.byte	14
- 691 0296 17       		.byte	23
- 692 0297 0C       		.byte	12
- 693 0298 19       		.byte	25
- 694 0299 33       		.byte	51
- 695 029a 1B       		.byte	27
- 696 029b 04       		.byte	4
- 697 029c 1C       		.byte	28
- 698 029d 40       		.byte	64
- 699 029e 1E       		.byte	30
- 700 029f 03       		.byte	3
- 701 02a0 20       		.byte	32
- 702 02a1 80       		.byte	-128
- 703 02a2 24       		.byte	36
- 704 02a3 21       		.byte	33
- 705 02a4 26       		.byte	38
- 706 02a5 16       		.byte	22
- 707 02a6 2D       		.byte	45
- 708 02a7 2A       		.byte	42
- 709 02a8 2F       		.byte	47
- 710 02a9 04       		.byte	4
- 711 02aa 30       		.byte	48
- 712 02ab 0F       		.byte	15
- 713 02ac 32       		.byte	50
- 714 02ad 1A       		.byte	26
- 715 02ae 33       		.byte	51
- 716 02af 30       		.byte	48
- 717 02b0 34       		.byte	52
- 718 02b1 80       		.byte	-128
- 719 02b2 35       		.byte	53
- 720 02b3 0F       		.byte	15
- 721 02b4 36       		.byte	54
- 722 02b5 60       		.byte	96
- 723 02b6 38       		.byte	56
- 724 02b7 80       		.byte	-128
- 725 02b8 39       		.byte	57
- 726 02b9 08       		.byte	8
- 727 02ba 3A       		.byte	58
- 728 02bb 0A       		.byte	10
- 729 02bc 3B       		.byte	59
- 730 02bd 20       		.byte	32
- 731 02be 3E       		.byte	62
- 732 02bf 10       		.byte	16
- 733 02c0 3F       		.byte	63
- 734 02c1 04       		.byte	4
- 735 02c2 40       		.byte	64
- 736 02c3 02       		.byte	2
- 737 02c4 47       		.byte	71
- 738 02c5 04       		.byte	4
- 739 02c6 49       		.byte	73
- 740 02c7 FF       		.byte	-1
- 741 02c8 4A       		.byte	74
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 14
+ 685 0290 BF       		.byte	-65
+ 686 0291 14       		.byte	20
+ 687 0292 C0       		.byte	-64
+ 688 0293 26       		.byte	38
+ 689 0294 C1       		.byte	-63
+ 690 0295 03       		.byte	3
+ 691 0296 C6       		.byte	-58
+ 692 0297 E0       		.byte	-32
+ 693 0298 C7       		.byte	-57
+ 694 0299 BC       		.byte	-68
+ 695 029a C8       		.byte	-56
+ 696 029b 38       		.byte	56
+ 697 029c C9       		.byte	-55
+ 698 029d FF       		.byte	-1
+ 699 029e CA       		.byte	-54
+ 700 029f FF       		.byte	-1
+ 701 02a0 CB       		.byte	-53
+ 702 02a1 FF       		.byte	-1
+ 703 02a2 CE       		.byte	-50
+ 704 02a3 F0       		.byte	-16
+ 705 02a4 CF       		.byte	-49
+ 706 02a5 44       		.byte	68
+ 707 02a6 D0       		.byte	-48
+ 708 02a7 0C       		.byte	12
+ 709 02a8 D4       		.byte	-44
+ 710 02a9 01       		.byte	1
+ 711 02aa D6       		.byte	-42
+ 712 02ab 04       		.byte	4
+ 713 02ac D8       		.byte	-40
+ 714 02ad 04       		.byte	4
+ 715 02ae D9       		.byte	-39
+ 716 02af 04       		.byte	4
+ 717 02b0 DA       		.byte	-38
+ 718 02b1 04       		.byte	4
+ 719 02b2 DB       		.byte	-37
+ 720 02b3 04       		.byte	4
+ 721 02b4 DC       		.byte	-36
+ 722 02b5 22       		.byte	34
+ 723 02b6 DD       		.byte	-35
+ 724 02b7 22       		.byte	34
+ 725 02b8 DF       		.byte	-33
+ 726 02b9 01       		.byte	1
+ 727 02ba E6       		.byte	-26
+ 728 02bb C0       		.byte	-64
+ 729 02bc EA       		.byte	-22
+ 730 02bd 40       		.byte	64
+ 731 02be EB       		.byte	-21
+ 732 02bf 02       		.byte	2
+ 733 02c0 00       		.byte	0
+ 734 02c1 0A       		.byte	10
+ 735 02c2 05       		.byte	5
+ 736 02c3 10       		.byte	16
+ 737 02c4 08       		.byte	8
+ 738 02c5 40       		.byte	64
+ 739 02c6 0A       		.byte	10
+ 740 02c7 14       		.byte	20
+ 741 02c8 0E       		.byte	14
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 14
 
 
- 742 02c9 07       		.byte	7
- 743 02ca 4B       		.byte	75
- 744 02cb FF       		.byte	-1
- 745 02cc 4C       		.byte	76
- 746 02cd 40       		.byte	64
- 747 02ce 4D       		.byte	77
- 748 02cf 20       		.byte	32
- 749 02d0 4E       		.byte	78
- 750 02d1 F0       		.byte	-16
- 751 02d2 4F       		.byte	79
- 752 02d3 05       		.byte	5
- 753 02d4 50       		.byte	80
- 754 02d5 08       		.byte	8
- 755 02d6 58       		.byte	88
- 756 02d7 04       		.byte	4
- 757 02d8 59       		.byte	89
- 758 02d9 04       		.byte	4
- 759 02da 5A       		.byte	90
- 760 02db 04       		.byte	4
- 761 02dc 5C       		.byte	92
- 762 02dd 11       		.byte	17
- 763 02de 5D       		.byte	93
- 764 02df 01       		.byte	1
- 765 02e0 5F       		.byte	95
- 766 02e1 01       		.byte	1
- 767 02e2 60       		.byte	96
- 768 02e3 40       		.byte	64
- 769 02e4 61       		.byte	97
- 770 02e5 A8       		.byte	-88
- 771 02e6 62       		.byte	98
- 772 02e7 40       		.byte	64
- 773 02e8 63       		.byte	99
- 774 02e9 20       		.byte	32
- 775 02ea 85       		.byte	-123
- 776 02eb 6C       		.byte	108
- 777 02ec 86       		.byte	-122
- 778 02ed 04       		.byte	4
- 779 02ee 87       		.byte	-121
- 780 02ef 11       		.byte	17
- 781 02f0 8B       		.byte	-117
- 782 02f1 20       		.byte	32
- 783 02f2 8C       		.byte	-116
- 784 02f3 1F       		.byte	31
- 785 02f4 8D       		.byte	-115
- 786 02f5 5C       		.byte	92
- 787 02f6 8F       		.byte	-113
+ 742 02c9 01       		.byte	1
+ 743 02ca 0F       		.byte	15
+ 744 02cb 08       		.byte	8
+ 745 02cc 11       		.byte	17
+ 746 02cd 04       		.byte	4
+ 747 02ce 15       		.byte	21
+ 748 02cf 10       		.byte	16
+ 749 02d0 17       		.byte	23
+ 750 02d1 05       		.byte	5
+ 751 02d2 1A       		.byte	26
+ 752 02d3 54       		.byte	84
+ 753 02d4 1B       		.byte	27
+ 754 02d5 80       		.byte	-128
+ 755 02d6 1C       		.byte	28
+ 756 02d7 20       		.byte	32
+ 757 02d8 1D       		.byte	29
+ 758 02d9 30       		.byte	48
+ 759 02da 1E       		.byte	30
+ 760 02db 01       		.byte	1
+ 761 02dc 1F       		.byte	31
+ 762 02dd 10       		.byte	16
+ 763 02de 22       		.byte	34
+ 764 02df 02       		.byte	2
+ 765 02e0 23       		.byte	35
+ 766 02e1 24       		.byte	36
+ 767 02e2 25       		.byte	37
+ 768 02e3 08       		.byte	8
+ 769 02e4 27       		.byte	39
+ 770 02e5 48       		.byte	72
+ 771 02e6 2E       		.byte	46
+ 772 02e7 01       		.byte	1
+ 773 02e8 2F       		.byte	47
+ 774 02e9 10       		.byte	16
+ 775 02ea 30       		.byte	48
+ 776 02eb 80       		.byte	-128
+ 777 02ec 32       		.byte	50
+ 778 02ed 09       		.byte	9
+ 779 02ee 37       		.byte	55
+ 780 02ef 45       		.byte	69
+ 781 02f0 39       		.byte	57
+ 782 02f1 80       		.byte	-128
+ 783 02f2 3D       		.byte	61
+ 784 02f3 20       		.byte	32
+ 785 02f4 3E       		.byte	62
+ 786 02f5 08       		.byte	8
+ 787 02f6 3F       		.byte	63
  788 02f7 02       		.byte	2
- 789 02f8 90       		.byte	-112
- 790 02f9 1C       		.byte	28
- 791 02fa 92       		.byte	-110
- 792 02fb 01       		.byte	1
- 793 02fc 93       		.byte	-109
- 794 02fd 03       		.byte	3
- 795 02fe 94       		.byte	-108
- 796 02ff 18       		.byte	24
- 797 0300 98       		.byte	-104
+ 789 02f8 41       		.byte	65
+ 790 02f9 01       		.byte	1
+ 791 02fa 42       		.byte	66
+ 792 02fb 40       		.byte	64
+ 793 02fc 43       		.byte	67
+ 794 02fd 88       		.byte	-120
+ 795 02fe 45       		.byte	69
+ 796 02ff 20       		.byte	32
+ 797 0300 47       		.byte	71
  798 0301 04       		.byte	4
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 15
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 15
 
 
- 799 0302 99       		.byte	-103
- 800 0303 14       		.byte	20
- 801 0304 9C       		.byte	-100
- 802 0305 10       		.byte	16
- 803 0306 9D       		.byte	-99
- 804 0307 10       		.byte	16
- 805 0308 A0       		.byte	-96
- 806 0309 1C       		.byte	28
- 807 030a A2       		.byte	-94
- 808 030b 02       		.byte	2
- 809 030c A4       		.byte	-92
- 810 030d 08       		.byte	8
- 811 030e A5       		.byte	-91
- 812 030f 09       		.byte	9
- 813 0310 A7       		.byte	-89
- 814 0311 10       		.byte	16
- 815 0312 A8       		.byte	-88
- 816 0313 07       		.byte	7
- 817 0314 A9       		.byte	-87
- 818 0315 70       		.byte	112
- 819 0316 AA       		.byte	-86
- 820 0317 18       		.byte	24
- 821 0318 AB       		.byte	-85
- 822 0319 0C       		.byte	12
- 823 031a AD       		.byte	-83
- 824 031b 80       		.byte	-128
- 825 031c AE       		.byte	-82
- 826 031d 03       		.byte	3
- 827 031e B1       		.byte	-79
- 828 031f 1F       		.byte	31
- 829 0320 B3       		.byte	-77
- 830 0321 80       		.byte	-128
- 831 0322 B5       		.byte	-75
- 832 0323 60       		.byte	96
- 833 0324 B6       		.byte	-74
- 834 0325 1F       		.byte	31
- 835 0326 B9       		.byte	-71
- 836 0327 20       		.byte	32
- 837 0328 BA       		.byte	-70
- 838 0329 82       		.byte	-126
- 839 032a BF       		.byte	-65
- 840 032b 14       		.byte	20
- 841 032c C0       		.byte	-64
- 842 032d 65       		.byte	101
- 843 032e C1       		.byte	-63
- 844 032f 02       		.byte	2
- 845 0330 C5       		.byte	-59
- 846 0331 0B       		.byte	11
- 847 0332 C6       		.byte	-58
- 848 0333 0E       		.byte	14
- 849 0334 C7       		.byte	-57
- 850 0335 0C       		.byte	12
- 851 0336 C8       		.byte	-56
- 852 0337 15       		.byte	21
- 853 0338 C9       		.byte	-55
- 854 0339 FF       		.byte	-1
- 855 033a CA       		.byte	-54
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 16
+ 799 0302 48       		.byte	72
+ 800 0303 80       		.byte	-128
+ 801 0304 49       		.byte	73
+ 802 0305 20       		.byte	32
+ 803 0306 4A       		.byte	74
+ 804 0307 02       		.byte	2
+ 805 0308 4D       		.byte	77
+ 806 0309 10       		.byte	16
+ 807 030a 52       		.byte	82
+ 808 030b 08       		.byte	8
+ 809 030c 55       		.byte	85
+ 810 030d 10       		.byte	16
+ 811 030e 57       		.byte	87
+ 812 030f 05       		.byte	5
+ 813 0310 5C       		.byte	92
+ 814 0311 20       		.byte	32
+ 815 0312 5D       		.byte	93
+ 816 0313 80       		.byte	-128
+ 817 0314 5F       		.byte	95
+ 818 0315 09       		.byte	9
+ 819 0316 66       		.byte	102
+ 820 0317 02       		.byte	2
+ 821 0318 73       		.byte	115
+ 822 0319 40       		.byte	64
+ 823 031a 85       		.byte	-123
+ 824 031b 08       		.byte	8
+ 825 031c 8D       		.byte	-115
+ 826 031d 10       		.byte	16
+ 827 031e 8E       		.byte	-114
+ 828 031f 02       		.byte	2
+ 829 0320 8F       		.byte	-113
+ 830 0321 01       		.byte	1
+ 831 0322 91       		.byte	-111
+ 832 0323 94       		.byte	-108
+ 833 0324 92       		.byte	-110
+ 834 0325 02       		.byte	2
+ 835 0326 93       		.byte	-109
+ 836 0327 08       		.byte	8
+ 837 0328 94       		.byte	-108
+ 838 0329 40       		.byte	64
+ 839 032a 95       		.byte	-107
+ 840 032b 02       		.byte	2
+ 841 032c 96       		.byte	-106
+ 842 032d 55       		.byte	85
+ 843 032e 97       		.byte	-105
+ 844 032f 24       		.byte	36
+ 845 0330 98       		.byte	-104
+ 846 0331 40       		.byte	64
+ 847 0332 99       		.byte	-103
+ 848 0333 20       		.byte	32
+ 849 0334 9A       		.byte	-102
+ 850 0335 08       		.byte	8
+ 851 0336 9B       		.byte	-101
+ 852 0337 05       		.byte	5
+ 853 0338 9E       		.byte	-98
+ 854 0339 80       		.byte	-128
+ 855 033a A0       		.byte	-96
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 16
 
 
- 856 033b FF       		.byte	-1
- 857 033c CB       		.byte	-53
- 858 033d FF       		.byte	-1
- 859 033e CE       		.byte	-50
- 860 033f F0       		.byte	-16
- 861 0340 CF       		.byte	-49
- 862 0341 44       		.byte	68
- 863 0342 D0       		.byte	-48
- 864 0343 0C       		.byte	12
- 865 0344 D4       		.byte	-44
- 866 0345 01       		.byte	1
- 867 0346 D8       		.byte	-40
- 868 0347 04       		.byte	4
- 869 0348 D9       		.byte	-39
- 870 0349 04       		.byte	4
- 871 034a DA       		.byte	-38
- 872 034b 04       		.byte	4
- 873 034c DB       		.byte	-37
- 874 034d 04       		.byte	4
- 875 034e DF       		.byte	-33
- 876 034f 01       		.byte	1
- 877 0350 E6       		.byte	-26
- 878 0351 C0       		.byte	-64
- 879 0352 EA       		.byte	-22
- 880 0353 40       		.byte	64
- 881 0354 EB       		.byte	-21
- 882 0355 02       		.byte	2
- 883 0356 00       		.byte	0
- 884 0357 48       		.byte	72
- 885 0358 05       		.byte	5
+ 856 033b 45       		.byte	69
+ 857 033c A6       		.byte	-90
+ 858 033d 02       		.byte	2
+ 859 033e AB       		.byte	-85
+ 860 033f 01       		.byte	1
+ 861 0340 AC       		.byte	-84
+ 862 0341 41       		.byte	65
+ 863 0342 AD       		.byte	-83
+ 864 0343 08       		.byte	8
+ 865 0344 C0       		.byte	-64
+ 866 0345 4C       		.byte	76
+ 867 0346 C2       		.byte	-62
+ 868 0347 C7       		.byte	-57
+ 869 0348 C4       		.byte	-60
+ 870 0349 74       		.byte	116
+ 871 034a CA       		.byte	-54
+ 872 034b C0       		.byte	-64
+ 873 034c CC       		.byte	-52
+ 874 034d DB       		.byte	-37
+ 875 034e CE       		.byte	-50
+ 876 034f E8       		.byte	-24
+ 877 0350 D0       		.byte	-48
+ 878 0351 6B       		.byte	107
+ 879 0352 D2       		.byte	-46
+ 880 0353 2C       		.byte	44
+ 881 0354 D6       		.byte	-42
+ 882 0355 F0       		.byte	-16
+ 883 0356 D8       		.byte	-40
+ 884 0357 80       		.byte	-128
+ 885 0358 E2       		.byte	-30
  886 0359 40       		.byte	64
- 887 035a 06       		.byte	6
- 888 035b 08       		.byte	8
- 889 035c 07       		.byte	7
- 890 035d 10       		.byte	16
- 891 035e 08       		.byte	8
- 892 035f 10       		.byte	16
+ 887 035a EC       		.byte	-20
+ 888 035b 04       		.byte	4
+ 889 035c 04       		.byte	4
+ 890 035d 01       		.byte	1
+ 891 035e 07       		.byte	7
+ 892 035f 80       		.byte	-128
  893 0360 09       		.byte	9
- 894 0361 88       		.byte	-120
+ 894 0361 A1       		.byte	-95
  895 0362 0B       		.byte	11
- 896 0363 40       		.byte	64
- 897 0364 0E       		.byte	14
- 898 0365 20       		.byte	32
- 899 0366 0F       		.byte	15
- 900 0367 01       		.byte	1
- 901 0368 10       		.byte	16
- 902 0369 40       		.byte	64
- 903 036a 12       		.byte	18
- 904 036b 0A       		.byte	10
- 905 036c 13       		.byte	19
+ 896 0363 0E       		.byte	14
+ 897 0364 0F       		.byte	15
+ 898 0365 08       		.byte	8
+ 899 0366 13       		.byte	19
+ 900 0367 1C       		.byte	28
+ 901 0368 1A       		.byte	26
+ 902 0369 07       		.byte	7
+ 903 036a 21       		.byte	33
+ 904 036b 1C       		.byte	28
+ 905 036c 22       		.byte	34
  906 036d 04       		.byte	4
- 907 036e 15       		.byte	21
- 908 036f 01       		.byte	1
- 909 0370 17       		.byte	23
- 910 0371 08       		.byte	8
- 911 0372 18       		.byte	24
- 912 0373 40       		.byte	64
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 17
+ 907 036e 23       		.byte	35
+ 908 036f A3       		.byte	-93
+ 909 0370 25       		.byte	37
+ 910 0371 A1       		.byte	-95
+ 911 0372 27       		.byte	39
+ 912 0373 16       		.byte	22
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 17
 
 
- 913 0374 1A       		.byte	26
- 914 0375 01       		.byte	1
- 915 0376 1D       		.byte	29
- 916 0377 40       		.byte	64
- 917 0378 1E       		.byte	30
- 918 0379 66       		.byte	102
- 919 037a 1F       		.byte	31
- 920 037b 08       		.byte	8
- 921 037c 20       		.byte	32
- 922 037d 80       		.byte	-128
- 923 037e 21       		.byte	33
- 924 037f 12       		.byte	18
- 925 0380 22       		.byte	34
+ 913 0374 29       		.byte	41
+ 914 0375 40       		.byte	64
+ 915 0376 2B       		.byte	43
+ 916 0377 83       		.byte	-125
+ 917 0378 30       		.byte	48
+ 918 0379 01       		.byte	1
+ 919 037a 31       		.byte	49
+ 920 037b 60       		.byte	96
+ 921 037c 32       		.byte	50
+ 922 037d 02       		.byte	2
+ 923 037e 33       		.byte	51
+ 924 037f 80       		.byte	-128
+ 925 0380 34       		.byte	52
  926 0381 04       		.byte	4
- 927 0382 27       		.byte	39
- 928 0383 28       		.byte	40
- 929 0384 28       		.byte	40
- 930 0385 01       		.byte	1
- 931 0386 29       		.byte	41
- 932 0387 24       		.byte	36
- 933 0388 2A       		.byte	42
- 934 0389 40       		.byte	64
- 935 038a 2C       		.byte	44
- 936 038b 08       		.byte	8
- 937 038c 2E       		.byte	46
- 938 038d 50       		.byte	80
- 939 038e 30       		.byte	48
- 940 038f A0       		.byte	-96
- 941 0390 31       		.byte	49
- 942 0391 02       		.byte	2
- 943 0392 36       		.byte	54
- 944 0393 11       		.byte	17
- 945 0394 37       		.byte	55
- 946 0395 08       		.byte	8
- 947 0396 38       		.byte	56
- 948 0397 AC       		.byte	-84
- 949 0398 3D       		.byte	61
- 950 0399 0A       		.byte	10
- 951 039a 3F       		.byte	63
- 952 039b 01       		.byte	1
- 953 039c 40       		.byte	64
- 954 039d 04       		.byte	4
- 955 039e 47       		.byte	71
- 956 039f 20       		.byte	32
- 957 03a0 48       		.byte	72
- 958 03a1 22       		.byte	34
- 959 03a2 49       		.byte	73
- 960 03a3 20       		.byte	32
- 961 03a4 4F       		.byte	79
- 962 03a5 01       		.byte	1
- 963 03a6 50       		.byte	80
- 964 03a7 08       		.byte	8
- 965 03a8 52       		.byte	82
- 966 03a9 40       		.byte	64
- 967 03aa 56       		.byte	86
- 968 03ab 08       		.byte	8
- 969 03ac 58       		.byte	88
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 18
+ 927 0382 35       		.byte	53
+ 928 0383 1A       		.byte	26
+ 929 0384 37       		.byte	55
+ 930 0385 0F       		.byte	15
+ 931 0386 39       		.byte	57
+ 932 0387 02       		.byte	2
+ 933 0388 3B       		.byte	59
+ 934 0389 A0       		.byte	-96
+ 935 038a 3F       		.byte	63
+ 936 038b 04       		.byte	4
+ 937 038c 54       		.byte	84
+ 938 038d 07       		.byte	7
+ 939 038e 58       		.byte	88
+ 940 038f 04       		.byte	4
+ 941 0390 59       		.byte	89
+ 942 0391 04       		.byte	4
+ 943 0392 5B       		.byte	91
+ 944 0393 04       		.byte	4
+ 945 0394 5C       		.byte	92
+ 946 0395 14       		.byte	20
+ 947 0396 5D       		.byte	93
+ 948 0397 40       		.byte	64
+ 949 0398 5F       		.byte	95
+ 950 0399 01       		.byte	1
+ 951 039a 85       		.byte	-123
+ 952 039b 0C       		.byte	12
+ 953 039c 87       		.byte	-121
+ 954 039d 11       		.byte	17
+ 955 039e 88       		.byte	-120
+ 956 039f 33       		.byte	51
+ 957 03a0 89       		.byte	-119
+ 958 03a1 14       		.byte	20
+ 959 03a2 8A       		.byte	-118
+ 960 03a3 0C       		.byte	12
+ 961 03a4 8D       		.byte	-115
+ 962 03a5 09       		.byte	9
+ 963 03a6 8F       		.byte	-113
+ 964 03a7 10       		.byte	16
+ 965 03a8 92       		.byte	-110
+ 966 03a9 08       		.byte	8
+ 967 03aa 93       		.byte	-109
+ 968 03ab 03       		.byte	3
+ 969 03ac 9A       		.byte	-102
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 18
 
 
- 970 03ad 01       		.byte	1
- 971 03ae 5A       		.byte	90
- 972 03af 98       		.byte	-104
- 973 03b0 80       		.byte	-128
- 974 03b1 12       		.byte	18
- 975 03b2 90       		.byte	-112
- 976 03b3 A8       		.byte	-88
- 977 03b4 91       		.byte	-111
- 978 03b5 01       		.byte	1
- 979 03b6 92       		.byte	-110
- 980 03b7 80       		.byte	-128
- 981 03b8 95       		.byte	-107
- 982 03b9 20       		.byte	32
- 983 03ba 96       		.byte	-106
- 984 03bb 04       		.byte	4
- 985 03bc 99       		.byte	-103
- 986 03bd 24       		.byte	36
- 987 03be 9C       		.byte	-100
- 988 03bf 10       		.byte	16
- 989 03c0 9E       		.byte	-98
- 990 03c1 08       		.byte	8
- 991 03c2 9F       		.byte	-97
- 992 03c3 18       		.byte	24
- 993 03c4 A0       		.byte	-96
- 994 03c5 84       		.byte	-124
- 995 03c6 A1       		.byte	-95
- 996 03c7 04       		.byte	4
- 997 03c8 A4       		.byte	-92
- 998 03c9 48       		.byte	72
- 999 03ca A5       		.byte	-91
- 1000 03cb 01       		.byte	1
- 1001 03cc A6       		.byte	-90
- 1002 03cd 01       		.byte	1
- 1003 03ce A7       		.byte	-89
- 1004 03cf 08       		.byte	8
- 1005 03d0 C0       		.byte	-64
- 1006 03d1 E5       		.byte	-27
- 1007 03d2 C2       		.byte	-62
- 1008 03d3 AF       		.byte	-81
- 1009 03d4 C4       		.byte	-60
- 1010 03d5 3F       		.byte	63
- 1011 03d6 CA       		.byte	-54
- 1012 03d7 1E       		.byte	30
- 1013 03d8 CC       		.byte	-52
- 1014 03d9 ED       		.byte	-19
- 1015 03da CE       		.byte	-50
- 1016 03db CE       		.byte	-50
- 1017 03dc D0       		.byte	-48
- 1018 03dd 24       		.byte	36
- 1019 03de D2       		.byte	-46
+ 970 03ad 15       		.byte	21
+ 971 03ae 9F       		.byte	-97
+ 972 03af 20       		.byte	32
+ 973 03b0 A0       		.byte	-96
+ 974 03b1 2A       		.byte	42
+ 975 03b2 A1       		.byte	-95
+ 976 03b3 1C       		.byte	28
+ 977 03b4 A2       		.byte	-94
+ 978 03b5 04       		.byte	4
+ 979 03b6 A3       		.byte	-93
+ 980 03b7 02       		.byte	2
+ 981 03b8 A4       		.byte	-92
+ 982 03b9 03       		.byte	3
+ 983 03ba A5       		.byte	-91
+ 984 03bb 10       		.byte	16
+ 985 03bc A6       		.byte	-90
+ 986 03bd 04       		.byte	4
+ 987 03be A7       		.byte	-89
+ 988 03bf 0C       		.byte	12
+ 989 03c0 A8       		.byte	-88
+ 990 03c1 33       		.byte	51
+ 991 03c2 A9       		.byte	-87
+ 992 03c3 40       		.byte	64
+ 993 03c4 AA       		.byte	-86
+ 994 03c5 04       		.byte	4
+ 995 03c6 AD       		.byte	-83
+ 996 03c7 10       		.byte	16
+ 997 03c8 B0       		.byte	-80
+ 998 03c9 30       		.byte	48
+ 999 03ca B1       		.byte	-79
+ 1000 03cb 1F       		.byte	31
+ 1001 03cc B2       		.byte	-78
+ 1002 03cd 0F       		.byte	15
+ 1003 03ce B3       		.byte	-77
+ 1004 03cf 40       		.byte	64
+ 1005 03d0 B7       		.byte	-73
+ 1006 03d1 20       		.byte	32
+ 1007 03d2 B8       		.byte	-72
+ 1008 03d3 02       		.byte	2
+ 1009 03d4 BA       		.byte	-70
+ 1010 03d5 08       		.byte	8
+ 1011 03d6 BE       		.byte	-66
+ 1012 03d7 01       		.byte	1
+ 1013 03d8 BF       		.byte	-65
+ 1014 03d9 04       		.byte	4
+ 1015 03da C0       		.byte	-64
+ 1016 03db 63       		.byte	99
+ 1017 03dc C1       		.byte	-63
+ 1018 03dd 02       		.byte	2
+ 1019 03de C5       		.byte	-59
  1020 03df 0C       		.byte	12
- 1021 03e0 D6       		.byte	-42
- 1022 03e1 0F       		.byte	15
- 1023 03e2 E0       		.byte	-32
- 1024 03e3 08       		.byte	8
- 1025 03e4 04       		.byte	4
- 1026 03e5 02       		.byte	2
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 19
+ 1021 03e0 C6       		.byte	-58
+ 1022 03e1 B0       		.byte	-80
+ 1023 03e2 C7       		.byte	-57
+ 1024 03e3 0E       		.byte	14
+ 1025 03e4 C8       		.byte	-56
+ 1026 03e5 19       		.byte	25
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 19
 
 
- 1027 03e6 06       		.byte	6
- 1028 03e7 15       		.byte	21
- 1029 03e8 07       		.byte	7
- 1030 03e9 04       		.byte	4
- 1031 03ea 0B       		.byte	11
- 1032 03eb 02       		.byte	2
- 1033 03ec 0C       		.byte	12
- 1034 03ed 44       		.byte	68
- 1035 03ee 0E       		.byte	14
- 1036 03ef 2A       		.byte	42
- 1037 03f0 0F       		.byte	15
- 1038 03f1 01       		.byte	1
- 1039 03f2 14       		.byte	20
- 1040 03f3 E7       		.byte	-25
- 1041 03f4 17       		.byte	23
- 1042 03f5 08       		.byte	8
- 1043 03f6 18       		.byte	24
- 1044 03f7 21       		.byte	33
- 1045 03f8 1A       		.byte	26
- 1046 03f9 4A       		.byte	74
- 1047 03fa 1B       		.byte	27
- 1048 03fb 0E       		.byte	14
- 1049 03fc 24       		.byte	36
- 1050 03fd E7       		.byte	-25
- 1051 03fe 2C       		.byte	44
- 1052 03ff 80       		.byte	-128
- 1053 0400 30       		.byte	48
- 1054 0401 60       		.byte	96
- 1055 0402 31       		.byte	49
- 1056 0403 02       		.byte	2
- 1057 0404 32       		.byte	50
- 1058 0405 07       		.byte	7
- 1059 0406 33       		.byte	51
- 1060 0407 08       		.byte	8
- 1061 0408 34       		.byte	52
- 1062 0409 18       		.byte	24
- 1063 040a 35       		.byte	53
- 1064 040b 01       		.byte	1
- 1065 040c 36       		.byte	54
- 1066 040d 80       		.byte	-128
- 1067 040e 37       		.byte	55
- 1068 040f 04       		.byte	4
- 1069 0410 3E       		.byte	62
- 1070 0411 10       		.byte	16
- 1071 0412 3F       		.byte	63
- 1072 0413 04       		.byte	4
- 1073 0414 40       		.byte	64
- 1074 0415 20       		.byte	32
- 1075 0416 41       		.byte	65
- 1076 0417 06       		.byte	6
- 1077 0418 45       		.byte	69
- 1078 0419 D5       		.byte	-43
- 1079 041a 46       		.byte	70
- 1080 041b 10       		.byte	16
- 1081 041c 47       		.byte	71
- 1082 041d 02       		.byte	2
- 1083 041e 48       		.byte	72
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 20
+ 1027 03e6 C9       		.byte	-55
+ 1028 03e7 FF       		.byte	-1
+ 1029 03e8 CA       		.byte	-54
+ 1030 03e9 FF       		.byte	-1
+ 1031 03ea CB       		.byte	-53
+ 1032 03eb FF       		.byte	-1
+ 1033 03ec CE       		.byte	-50
+ 1034 03ed F0       		.byte	-16
+ 1035 03ee CF       		.byte	-49
+ 1036 03ef 44       		.byte	68
+ 1037 03f0 D0       		.byte	-48
+ 1038 03f1 0C       		.byte	12
+ 1039 03f2 D4       		.byte	-44
+ 1040 03f3 01       		.byte	1
+ 1041 03f4 D8       		.byte	-40
+ 1042 03f5 04       		.byte	4
+ 1043 03f6 D9       		.byte	-39
+ 1044 03f7 04       		.byte	4
+ 1045 03f8 DA       		.byte	-38
+ 1046 03f9 04       		.byte	4
+ 1047 03fa DB       		.byte	-37
+ 1048 03fb 04       		.byte	4
+ 1049 03fc DC       		.byte	-36
+ 1050 03fd 11       		.byte	17
+ 1051 03fe DD       		.byte	-35
+ 1052 03ff 11       		.byte	17
+ 1053 0400 DF       		.byte	-33
+ 1054 0401 01       		.byte	1
+ 1055 0402 E6       		.byte	-26
+ 1056 0403 C0       		.byte	-64
+ 1057 0404 EA       		.byte	-22
+ 1058 0405 40       		.byte	64
+ 1059 0406 EB       		.byte	-21
+ 1060 0407 02       		.byte	2
+ 1061 0408 00       		.byte	0
+ 1062 0409 10       		.byte	16
+ 1063 040a 05       		.byte	5
+ 1064 040b 04       		.byte	4
+ 1065 040c 08       		.byte	8
+ 1066 040d 20       		.byte	32
+ 1067 040e 09       		.byte	9
+ 1068 040f 01       		.byte	1
+ 1069 0410 0B       		.byte	11
+ 1070 0411 08       		.byte	8
+ 1071 0412 0D       		.byte	13
+ 1072 0413 20       		.byte	32
+ 1073 0414 10       		.byte	16
+ 1074 0415 50       		.byte	80
+ 1075 0416 11       		.byte	17
+ 1076 0417 20       		.byte	32
+ 1077 0418 13       		.byte	19
+ 1078 0419 06       		.byte	6
+ 1079 041a 15       		.byte	21
+ 1080 041b 02       		.byte	2
+ 1081 041c 18       		.byte	24
+ 1082 041d 50       		.byte	80
+ 1083 041e 19       		.byte	25
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 20
 
 
- 1084 041f 1B       		.byte	27
- 1085 0420 49       		.byte	73
- 1086 0421 FF       		.byte	-1
- 1087 0422 4A       		.byte	74
- 1088 0423 FF       		.byte	-1
- 1089 0424 4B       		.byte	75
- 1090 0425 FF       		.byte	-1
- 1091 0426 4D       		.byte	77
- 1092 0427 A0       		.byte	-96
- 1093 0428 4F       		.byte	79
- 1094 0429 04       		.byte	4
- 1095 042a 50       		.byte	80
- 1096 042b 18       		.byte	24
- 1097 042c 52       		.byte	82
- 1098 042d 80       		.byte	-128
- 1099 042e 54       		.byte	84
- 1100 042f 07       		.byte	7
- 1101 0430 58       		.byte	88
- 1102 0431 04       		.byte	4
- 1103 0432 59       		.byte	89
- 1104 0433 04       		.byte	4
- 1105 0434 5A       		.byte	90
- 1106 0435 04       		.byte	4
- 1107 0436 5B       		.byte	91
- 1108 0437 04       		.byte	4
- 1109 0438 5C       		.byte	92
- 1110 0439 20       		.byte	32
- 1111 043a 5D       		.byte	93
- 1112 043b 22       		.byte	34
- 1113 043c 5F       		.byte	95
- 1114 043d 01       		.byte	1
- 1115 043e 60       		.byte	96
- 1116 043f 40       		.byte	64
- 1117 0440 62       		.byte	98
- 1118 0441 C0       		.byte	-64
- 1119 0442 64       		.byte	100
- 1120 0443 40       		.byte	64
- 1121 0444 65       		.byte	101
- 1122 0445 40       		.byte	64
- 1123 0446 66       		.byte	102
- 1124 0447 C0       		.byte	-64
- 1125 0448 68       		.byte	104
- 1126 0449 C0       		.byte	-64
- 1127 044a 6A       		.byte	106
- 1128 044b C0       		.byte	-64
- 1129 044c 6C       		.byte	108
- 1130 044d C0       		.byte	-64
- 1131 044e 6E       		.byte	110
- 1132 044f C0       		.byte	-64
- 1133 0450 87       		.byte	-121
- 1134 0451 0C       		.byte	12
- 1135 0452 88       		.byte	-120
- 1136 0453 01       		.byte	1
- 1137 0454 8B       		.byte	-117
- 1138 0455 07       		.byte	7
- 1139 0456 91       		.byte	-111
- 1140 0457 01       		.byte	1
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 21
+ 1084 041f 08       		.byte	8
+ 1085 0420 1D       		.byte	29
+ 1086 0421 04       		.byte	4
+ 1087 0422 1E       		.byte	30
+ 1088 0423 80       		.byte	-128
+ 1089 0424 1F       		.byte	31
+ 1090 0425 20       		.byte	32
+ 1091 0426 20       		.byte	32
+ 1092 0427 02       		.byte	2
+ 1093 0428 22       		.byte	34
+ 1094 0429 05       		.byte	5
+ 1095 042a 24       		.byte	36
+ 1096 042b 84       		.byte	-124
+ 1097 042c 25       		.byte	37
+ 1098 042d 11       		.byte	17
+ 1099 042e 26       		.byte	38
+ 1100 042f 0A       		.byte	10
+ 1101 0430 27       		.byte	39
+ 1102 0431 02       		.byte	2
+ 1103 0432 28       		.byte	40
+ 1104 0433 40       		.byte	64
+ 1105 0434 29       		.byte	41
+ 1106 0435 08       		.byte	8
+ 1107 0436 2A       		.byte	42
+ 1108 0437 80       		.byte	-128
+ 1109 0438 2B       		.byte	43
+ 1110 0439 08       		.byte	8
+ 1111 043a 2C       		.byte	44
+ 1112 043b 40       		.byte	64
+ 1113 043c 2D       		.byte	45
+ 1114 043d 08       		.byte	8
+ 1115 043e 2F       		.byte	47
+ 1116 043f 14       		.byte	20
+ 1117 0440 30       		.byte	48
+ 1118 0441 80       		.byte	-128
+ 1119 0442 32       		.byte	50
+ 1120 0443 01       		.byte	1
+ 1121 0444 36       		.byte	54
+ 1122 0445 02       		.byte	2
+ 1123 0446 38       		.byte	56
+ 1124 0447 A4       		.byte	-92
+ 1125 0448 3C       		.byte	60
+ 1126 0449 80       		.byte	-128
+ 1127 044a 3D       		.byte	61
+ 1128 044b 20       		.byte	32
+ 1129 044c 3E       		.byte	62
+ 1130 044d 80       		.byte	-128
+ 1131 044e 3F       		.byte	63
+ 1132 044f 04       		.byte	4
+ 1133 0450 40       		.byte	64
+ 1134 0451 24       		.byte	36
+ 1135 0452 4B       		.byte	75
+ 1136 0453 24       		.byte	36
+ 1137 0454 50       		.byte	80
+ 1138 0455 10       		.byte	16
+ 1139 0456 53       		.byte	83
+ 1140 0457 08       		.byte	8
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 21
 
 
- 1141 0458 9A       		.byte	-102
- 1142 0459 09       		.byte	9
- 1143 045a 9C       		.byte	-100
- 1144 045b 04       		.byte	4
- 1145 045c A6       		.byte	-90
- 1146 045d 06       		.byte	6
- 1147 045e AB       		.byte	-85
- 1148 045f 08       		.byte	8
- 1149 0460 B0       		.byte	-80
- 1150 0461 04       		.byte	4
- 1151 0462 B1       		.byte	-79
- 1152 0463 01       		.byte	1
- 1153 0464 B2       		.byte	-78
- 1154 0465 01       		.byte	1
- 1155 0466 B3       		.byte	-77
- 1156 0467 04       		.byte	4
- 1157 0468 B4       		.byte	-76
- 1158 0469 08       		.byte	8
- 1159 046a B5       		.byte	-75
- 1160 046b 08       		.byte	8
- 1161 046c B6       		.byte	-74
- 1162 046d 02       		.byte	2
- 1163 046e B7       		.byte	-73
- 1164 046f 02       		.byte	2
- 1165 0470 BF       		.byte	-65
- 1166 0471 10       		.byte	16
- 1167 0472 C0       		.byte	-64
- 1168 0473 30       		.byte	48
- 1169 0474 C1       		.byte	-63
- 1170 0475 02       		.byte	2
- 1171 0476 C5       		.byte	-59
- 1172 0477 D0       		.byte	-48
- 1173 0478 C6       		.byte	-58
- 1174 0479 10       		.byte	16
- 1175 047a C7       		.byte	-57
- 1176 047b 52       		.byte	82
- 1177 047c C8       		.byte	-56
- 1178 047d 3A       		.byte	58
- 1179 047e C9       		.byte	-55
- 1180 047f FF       		.byte	-1
- 1181 0480 CA       		.byte	-54
- 1182 0481 FF       		.byte	-1
- 1183 0482 CB       		.byte	-53
- 1184 0483 FF       		.byte	-1
- 1185 0484 CD       		.byte	-51
- 1186 0485 A0       		.byte	-96
- 1187 0486 CF       		.byte	-49
- 1188 0487 04       		.byte	4
- 1189 0488 D0       		.byte	-48
- 1190 0489 18       		.byte	24
- 1191 048a D4       		.byte	-44
- 1192 048b 18       		.byte	24
- 1193 048c D6       		.byte	-42
- 1194 048d 04       		.byte	4
- 1195 048e D8       		.byte	-40
- 1196 048f 04       		.byte	4
- 1197 0490 D9       		.byte	-39
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 22
+ 1141 0458 58       		.byte	88
+ 1142 0459 12       		.byte	18
+ 1143 045a 5A       		.byte	90
+ 1144 045b 48       		.byte	72
+ 1145 045c 5D       		.byte	93
+ 1146 045d 21       		.byte	33
+ 1147 045e 5E       		.byte	94
+ 1148 045f 88       		.byte	-120
+ 1149 0460 8A       		.byte	-118
+ 1150 0461 01       		.byte	1
+ 1151 0462 93       		.byte	-109
+ 1152 0463 48       		.byte	72
+ 1153 0464 94       		.byte	-108
+ 1154 0465 40       		.byte	64
+ 1155 0466 A0       		.byte	-96
+ 1156 0467 40       		.byte	64
+ 1157 0468 A8       		.byte	-88
+ 1158 0469 20       		.byte	32
+ 1159 046a AA       		.byte	-86
+ 1160 046b 80       		.byte	-128
+ 1161 046c AB       		.byte	-85
+ 1162 046d 24       		.byte	36
+ 1163 046e AC       		.byte	-84
+ 1164 046f 10       		.byte	16
+ 1165 0470 AD       		.byte	-83
+ 1166 0471 80       		.byte	-128
+ 1167 0472 B2       		.byte	-78
+ 1168 0473 01       		.byte	1
+ 1169 0474 B3       		.byte	-77
+ 1170 0475 08       		.byte	8
+ 1171 0476 C0       		.byte	-64
+ 1172 0477 22       		.byte	34
+ 1173 0478 C2       		.byte	-62
+ 1174 0479 4A       		.byte	74
+ 1175 047a C4       		.byte	-60
+ 1176 047b 1E       		.byte	30
+ 1177 047c CA       		.byte	-54
+ 1178 047d EF       		.byte	-17
+ 1179 047e CC       		.byte	-52
+ 1180 047f 89       		.byte	-119
+ 1181 0480 CE       		.byte	-50
+ 1182 0481 7E       		.byte	126
+ 1183 0482 D0       		.byte	-48
+ 1184 0483 06       		.byte	6
+ 1185 0484 D2       		.byte	-46
+ 1186 0485 04       		.byte	4
+ 1187 0486 D6       		.byte	-42
+ 1188 0487 FF       		.byte	-1
+ 1189 0488 8B       		.byte	-117
+ 1190 0489 10       		.byte	16
+ 1191 048a 97       		.byte	-105
+ 1192 048b 20       		.byte	32
+ 1193 048c E0       		.byte	-32
+ 1194 048d 20       		.byte	32
+ 1195 048e 97       		.byte	-105
+ 1196 048f 20       		.byte	32
+ 1197 0490 A8       		.byte	-88
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 22
 
 
- 1198 0491 04       		.byte	4
- 1199 0492 DA       		.byte	-38
- 1200 0493 04       		.byte	4
- 1201 0494 DB       		.byte	-37
- 1202 0495 04       		.byte	4
- 1203 0496 DC       		.byte	-36
- 1204 0497 32       		.byte	50
- 1205 0498 DD       		.byte	-35
- 1206 0499 03       		.byte	3
- 1207 049a DF       		.byte	-33
- 1208 049b 01       		.byte	1
- 1209 049c E0       		.byte	-32
- 1210 049d 40       		.byte	64
- 1211 049e E2       		.byte	-30
- 1212 049f C0       		.byte	-64
- 1213 04a0 E4       		.byte	-28
- 1214 04a1 40       		.byte	64
- 1215 04a2 E5       		.byte	-27
- 1216 04a3 40       		.byte	64
- 1217 04a4 E6       		.byte	-26
- 1218 04a5 C0       		.byte	-64
- 1219 04a6 E8       		.byte	-24
- 1220 04a7 C0       		.byte	-64
- 1221 04a8 EA       		.byte	-22
- 1222 04a9 C0       		.byte	-64
- 1223 04aa EC       		.byte	-20
- 1224 04ab C0       		.byte	-64
- 1225 04ac EE       		.byte	-18
- 1226 04ad C0       		.byte	-64
- 1227 04ae 00       		.byte	0
- 1228 04af 40       		.byte	64
- 1229 04b0 01       		.byte	1
- 1230 04b1 08       		.byte	8
- 1231 04b2 05       		.byte	5
- 1232 04b3 10       		.byte	16
- 1233 04b4 08       		.byte	8
- 1234 04b5 10       		.byte	16
- 1235 04b6 0A       		.byte	10
- 1236 04b7 20       		.byte	32
- 1237 04b8 0D       		.byte	13
- 1238 04b9 80       		.byte	-128
- 1239 04ba 0F       		.byte	15
- 1240 04bb 04       		.byte	4
- 1241 04bc 10       		.byte	16
- 1242 04bd 20       		.byte	32
- 1243 04be 11       		.byte	17
- 1244 04bf 40       		.byte	64
- 1245 04c0 16       		.byte	22
- 1246 04c1 10       		.byte	16
- 1247 04c2 18       		.byte	24
- 1248 04c3 44       		.byte	68
- 1249 04c4 19       		.byte	25
- 1250 04c5 4C       		.byte	76
- 1251 04c6 1B       		.byte	27
- 1252 04c7 02       		.byte	2
- 1253 04c8 1D       		.byte	29
- 1254 04c9 90       		.byte	-112
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 23
+ 1198 0491 01       		.byte	1
+ 1199 0492 03       		.byte	3
+ 1200 0493 01       		.byte	1
+ 1201 0494 0A       		.byte	10
+ 1202 0495 14       		.byte	20
+ 1203 0496 0C       		.byte	12
+ 1204 0497 6F       		.byte	111
+ 1205 0498 0E       		.byte	14
+ 1206 0499 10       		.byte	16
+ 1207 049a 14       		.byte	20
+ 1208 049b 02       		.byte	2
+ 1209 049c 16       		.byte	22
+ 1210 049d 48       		.byte	72
+ 1211 049e 19       		.byte	25
+ 1212 049f 01       		.byte	1
+ 1213 04a0 1E       		.byte	30
+ 1214 04a1 01       		.byte	1
+ 1215 04a2 23       		.byte	35
+ 1216 04a3 03       		.byte	3
+ 1217 04a4 25       		.byte	37
+ 1218 04a5 04       		.byte	4
+ 1219 04a6 28       		.byte	40
+ 1220 04a7 01       		.byte	1
+ 1221 04a8 2A       		.byte	42
+ 1222 04a9 2E       		.byte	46
+ 1223 04aa 2D       		.byte	45
+ 1224 04ab 01       		.byte	1
+ 1225 04ac 32       		.byte	50
+ 1226 04ad 60       		.byte	96
+ 1227 04ae 33       		.byte	51
+ 1228 04af 01       		.byte	1
+ 1229 04b0 34       		.byte	52
+ 1230 04b1 18       		.byte	24
+ 1231 04b2 35       		.byte	53
+ 1232 04b3 02       		.byte	2
+ 1233 04b4 36       		.byte	54
+ 1234 04b5 07       		.byte	7
+ 1235 04b6 37       		.byte	55
+ 1236 04b7 04       		.byte	4
+ 1237 04b8 3A       		.byte	58
+ 1238 04b9 20       		.byte	32
+ 1239 04ba 3F       		.byte	63
+ 1240 04bb 44       		.byte	68
+ 1241 04bc 40       		.byte	64
+ 1242 04bd 26       		.byte	38
+ 1243 04be 41       		.byte	65
+ 1244 04bf 05       		.byte	5
+ 1245 04c0 42       		.byte	66
+ 1246 04c1 03       		.byte	3
+ 1247 04c2 49       		.byte	73
+ 1248 04c3 FF       		.byte	-1
+ 1249 04c4 4A       		.byte	74
+ 1250 04c5 FF       		.byte	-1
+ 1251 04c6 4B       		.byte	75
+ 1252 04c7 FF       		.byte	-1
+ 1253 04c8 4D       		.byte	77
+ 1254 04c9 A0       		.byte	-96
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 23
 
 
- 1255 04ca 1E       		.byte	30
- 1256 04cb 50       		.byte	80
- 1257 04cc 21       		.byte	33
- 1258 04cd 21       		.byte	33
- 1259 04ce 22       		.byte	34
- 1260 04cf 84       		.byte	-124
- 1261 04d0 27       		.byte	39
- 1262 04d1 A9       		.byte	-87
- 1263 04d2 2F       		.byte	47
- 1264 04d3 08       		.byte	8
- 1265 04d4 31       		.byte	49
- 1266 04d5 20       		.byte	32
- 1267 04d6 32       		.byte	50
- 1268 04d7 08       		.byte	8
- 1269 04d8 37       		.byte	55
+ 1255 04ca 4F       		.byte	79
+ 1256 04cb 01       		.byte	1
+ 1257 04cc 50       		.byte	80
+ 1258 04cd 18       		.byte	24
+ 1259 04ce 52       		.byte	82
+ 1260 04cf 80       		.byte	-128
+ 1261 04d0 58       		.byte	88
+ 1262 04d1 04       		.byte	4
+ 1263 04d2 59       		.byte	89
+ 1264 04d3 04       		.byte	4
+ 1265 04d4 5A       		.byte	90
+ 1266 04d5 04       		.byte	4
+ 1267 04d6 5B       		.byte	91
+ 1268 04d7 04       		.byte	4
+ 1269 04d8 5F       		.byte	95
  1270 04d9 01       		.byte	1
- 1271 04da 3A       		.byte	58
- 1272 04db 10       		.byte	16
- 1273 04dc 3B       		.byte	59
- 1274 04dd 44       		.byte	68
- 1275 04de 3D       		.byte	61
- 1276 04df 08       		.byte	8
- 1277 04e0 3E       		.byte	62
- 1278 04e1 04       		.byte	4
- 1279 04e2 3F       		.byte	63
- 1280 04e3 20       		.byte	32
- 1281 04e4 41       		.byte	65
- 1282 04e5 20       		.byte	32
- 1283 04e6 45       		.byte	69
- 1284 04e7 04       		.byte	4
- 1285 04e8 46       		.byte	70
- 1286 04e9 04       		.byte	4
- 1287 04ea 49       		.byte	73
- 1288 04eb 01       		.byte	1
- 1289 04ec 4A       		.byte	74
- 1290 04ed 08       		.byte	8
- 1291 04ee 4B       		.byte	75
- 1292 04ef 04       		.byte	4
- 1293 04f0 4D       		.byte	77
- 1294 04f1 01       		.byte	1
- 1295 04f2 52       		.byte	82
- 1296 04f3 18       		.byte	24
- 1297 04f4 56       		.byte	86
- 1298 04f5 05       		.byte	5
- 1299 04f6 57       		.byte	87
- 1300 04f7 18       		.byte	24
- 1301 04f8 59       		.byte	89
- 1302 04f9 01       		.byte	1
- 1303 04fa 5A       		.byte	90
- 1304 04fb 58       		.byte	88
- 1305 04fc 5F       		.byte	95
- 1306 04fd 02       		.byte	2
- 1307 04fe 65       		.byte	101
- 1308 04ff A0       		.byte	-96
- 1309 0500 67       		.byte	103
- 1310 0501 80       		.byte	-128
- 1311 0502 73       		.byte	115
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 24
+ 1271 04da 60       		.byte	96
+ 1272 04db 40       		.byte	64
+ 1273 04dc 62       		.byte	98
+ 1274 04dd 80       		.byte	-128
+ 1275 04de 64       		.byte	100
+ 1276 04df 40       		.byte	64
+ 1277 04e0 65       		.byte	101
+ 1278 04e1 40       		.byte	64
+ 1279 04e2 66       		.byte	102
+ 1280 04e3 80       		.byte	-128
+ 1281 04e4 68       		.byte	104
+ 1282 04e5 40       		.byte	64
+ 1283 04e6 6A       		.byte	106
+ 1284 04e7 50       		.byte	80
+ 1285 04e8 6B       		.byte	107
+ 1286 04e9 A8       		.byte	-88
+ 1287 04ea 6C       		.byte	108
+ 1288 04eb 40       		.byte	64
+ 1289 04ec 6D       		.byte	109
+ 1290 04ed 20       		.byte	32
+ 1291 04ee 6E       		.byte	110
+ 1292 04ef 50       		.byte	80
+ 1293 04f0 6F       		.byte	111
+ 1294 04f1 A8       		.byte	-88
+ 1295 04f2 81       		.byte	-127
+ 1296 04f3 04       		.byte	4
+ 1297 04f4 8E       		.byte	-114
+ 1298 04f5 02       		.byte	2
+ 1299 04f6 8F       		.byte	-113
+ 1300 04f7 0C       		.byte	12
+ 1301 04f8 95       		.byte	-107
+ 1302 04f9 03       		.byte	3
+ 1303 04fa 99       		.byte	-103
+ 1304 04fb 01       		.byte	1
+ 1305 04fc 9C       		.byte	-100
+ 1306 04fd 05       		.byte	5
+ 1307 04fe A0       		.byte	-96
+ 1308 04ff 16       		.byte	22
+ 1309 0500 AC       		.byte	-84
+ 1310 0501 10       		.byte	16
+ 1311 0502 AE       		.byte	-82
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 24
 
 
- 1312 0503 40       		.byte	64
- 1313 0504 85       		.byte	-123
- 1314 0505 01       		.byte	1
- 1315 0506 87       		.byte	-121
- 1316 0507 60       		.byte	96
- 1317 0508 88       		.byte	-120
- 1318 0509 10       		.byte	16
- 1319 050a 91       		.byte	-111
- 1320 050b 40       		.byte	64
- 1321 050c 92       		.byte	-110
- 1322 050d 24       		.byte	36
- 1323 050e 94       		.byte	-108
- 1324 050f 04       		.byte	4
- 1325 0510 95       		.byte	-107
- 1326 0511 01       		.byte	1
- 1327 0512 99       		.byte	-103
- 1328 0513 A0       		.byte	-96
- 1329 0514 9B       		.byte	-101
- 1330 0515 02       		.byte	2
- 1331 0516 9C       		.byte	-100
- 1332 0517 10       		.byte	16
- 1333 0518 9D       		.byte	-99
+ 1312 0503 0D       		.byte	13
+ 1313 0504 B0       		.byte	-80
+ 1314 0505 06       		.byte	6
+ 1315 0506 B1       		.byte	-79
+ 1316 0507 08       		.byte	8
+ 1317 0508 B2       		.byte	-78
+ 1318 0509 01       		.byte	1
+ 1319 050a B3       		.byte	-77
+ 1320 050b 01       		.byte	1
+ 1321 050c B4       		.byte	-76
+ 1322 050d 10       		.byte	16
+ 1323 050e B5       		.byte	-75
+ 1324 050f 02       		.byte	2
+ 1325 0510 B6       		.byte	-74
+ 1326 0511 08       		.byte	8
+ 1327 0512 B7       		.byte	-73
+ 1328 0513 04       		.byte	4
+ 1329 0514 B8       		.byte	-72
+ 1330 0515 20       		.byte	32
+ 1331 0516 BE       		.byte	-66
+ 1332 0517 14       		.byte	20
+ 1333 0518 BF       		.byte	-65
  1334 0519 44       		.byte	68
- 1335 051a 9E       		.byte	-98
- 1336 051b 01       		.byte	1
- 1337 051c 9F       		.byte	-97
- 1338 051d 88       		.byte	-120
- 1339 051e A0       		.byte	-96
- 1340 051f 20       		.byte	32
- 1341 0520 A6       		.byte	-90
- 1342 0521 80       		.byte	-128
- 1343 0522 A7       		.byte	-89
- 1344 0523 02       		.byte	2
- 1345 0524 C0       		.byte	-64
- 1346 0525 45       		.byte	69
- 1347 0526 C2       		.byte	-62
- 1348 0527 C6       		.byte	-58
- 1349 0528 C4       		.byte	-60
- 1350 0529 25       		.byte	37
+ 1335 051a C0       		.byte	-64
+ 1336 051b 62       		.byte	98
+ 1337 051c C1       		.byte	-63
+ 1338 051d 05       		.byte	5
+ 1339 051e C2       		.byte	-62
+ 1340 051f 03       		.byte	3
+ 1341 0520 C5       		.byte	-59
+ 1342 0521 02       		.byte	2
+ 1343 0522 C6       		.byte	-58
+ 1344 0523 C4       		.byte	-60
+ 1345 0524 C7       		.byte	-57
+ 1346 0525 0E       		.byte	14
+ 1347 0526 C8       		.byte	-56
+ 1348 0527 3D       		.byte	61
+ 1349 0528 C9       		.byte	-55
+ 1350 0529 FF       		.byte	-1
  1351 052a CA       		.byte	-54
- 1352 052b 20       		.byte	32
- 1353 052c CC       		.byte	-52
- 1354 052d 86       		.byte	-122
- 1355 052e CE       		.byte	-50
- 1356 052f 6E       		.byte	110
- 1357 0530 D0       		.byte	-48
- 1358 0531 64       		.byte	100
- 1359 0532 D2       		.byte	-46
- 1360 0533 04       		.byte	4
- 1361 0534 D6       		.byte	-42
- 1362 0535 8F       		.byte	-113
- 1363 0536 D8       		.byte	-40
- 1364 0537 B0       		.byte	-80
- 1365 0538 E4       		.byte	-28
- 1366 0539 02       		.byte	2
- 1367 053a 0E       		.byte	14
- 1368 053b 07       		.byte	7
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 25
+ 1352 052b FF       		.byte	-1
+ 1353 052c CB       		.byte	-53
+ 1354 052d FF       		.byte	-1
+ 1355 052e CD       		.byte	-51
+ 1356 052f AF       		.byte	-81
+ 1357 0530 CE       		.byte	-50
+ 1358 0531 07       		.byte	7
+ 1359 0532 CF       		.byte	-49
+ 1360 0533 01       		.byte	1
+ 1361 0534 D0       		.byte	-48
+ 1362 0535 18       		.byte	24
+ 1363 0536 D4       		.byte	-44
+ 1364 0537 17       		.byte	23
+ 1365 0538 D6       		.byte	-42
+ 1366 0539 04       		.byte	4
+ 1367 053a D8       		.byte	-40
+ 1368 053b 04       		.byte	4
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 25
 
 
- 1369 053c 10       		.byte	16
- 1370 053d 01       		.byte	1
- 1371 053e 1A       		.byte	26
+ 1369 053c D9       		.byte	-39
+ 1370 053d 04       		.byte	4
+ 1371 053e DA       		.byte	-38
  1372 053f 04       		.byte	4
- 1373 0540 2E       		.byte	46
- 1374 0541 08       		.byte	8
- 1375 0542 30       		.byte	48
- 1376 0543 02       		.byte	2
- 1377 0544 32       		.byte	50
- 1378 0545 01       		.byte	1
- 1379 0546 34       		.byte	52
- 1380 0547 08       		.byte	8
- 1381 0548 36       		.byte	54
- 1382 0549 04       		.byte	4
- 1383 054a 52       		.byte	82
- 1384 054b 80       		.byte	-128
- 1385 054c 54       		.byte	84
- 1386 054d 07       		.byte	7
- 1387 054e 58       		.byte	88
- 1388 054f 04       		.byte	4
- 1389 0550 5B       		.byte	91
- 1390 0551 04       		.byte	4
- 1391 0552 5C       		.byte	92
- 1392 0553 03       		.byte	3
- 1393 0554 5D       		.byte	93
- 1394 0555 30       		.byte	48
- 1395 0556 5F       		.byte	95
- 1396 0557 01       		.byte	1
- 1397 0558 00       		.byte	0
- 1398 0559 40       		.byte	64
- 1399 055a 01       		.byte	1
- 1400 055b 08       		.byte	8
- 1401 055c 06       		.byte	6
- 1402 055d 01       		.byte	1
- 1403 055e 08       		.byte	8
- 1404 055f 40       		.byte	64
- 1405 0560 0A       		.byte	10
- 1406 0561 01       		.byte	1
- 1407 0562 0B       		.byte	11
- 1408 0563 60       		.byte	96
+ 1373 0540 DB       		.byte	-37
+ 1374 0541 04       		.byte	4
+ 1375 0542 DF       		.byte	-33
+ 1376 0543 05       		.byte	5
+ 1377 0544 E0       		.byte	-32
+ 1378 0545 40       		.byte	64
+ 1379 0546 E2       		.byte	-30
+ 1380 0547 80       		.byte	-128
+ 1381 0548 E4       		.byte	-28
+ 1382 0549 40       		.byte	64
+ 1383 054a E5       		.byte	-27
+ 1384 054b 40       		.byte	64
+ 1385 054c E6       		.byte	-26
+ 1386 054d 80       		.byte	-128
+ 1387 054e E8       		.byte	-24
+ 1388 054f 40       		.byte	64
+ 1389 0550 EA       		.byte	-22
+ 1390 0551 50       		.byte	80
+ 1391 0552 EB       		.byte	-21
+ 1392 0553 A8       		.byte	-88
+ 1393 0554 EC       		.byte	-20
+ 1394 0555 40       		.byte	64
+ 1395 0556 ED       		.byte	-19
+ 1396 0557 20       		.byte	32
+ 1397 0558 EE       		.byte	-18
+ 1398 0559 50       		.byte	80
+ 1399 055a EF       		.byte	-17
+ 1400 055b A8       		.byte	-88
+ 1401 055c 03       		.byte	3
+ 1402 055d 02       		.byte	2
+ 1403 055e 05       		.byte	5
+ 1404 055f 10       		.byte	16
+ 1405 0560 07       		.byte	7
+ 1406 0561 02       		.byte	2
+ 1407 0562 0A       		.byte	10
+ 1408 0563 01       		.byte	1
  1409 0564 0E       		.byte	14
- 1410 0565 44       		.byte	68
+ 1410 0565 12       		.byte	18
  1411 0566 10       		.byte	16
- 1412 0567 80       		.byte	-128
- 1413 0568 12       		.byte	18
- 1414 0569 28       		.byte	40
- 1415 056a 17       		.byte	23
- 1416 056b 40       		.byte	64
- 1417 056c 19       		.byte	25
- 1418 056d A9       		.byte	-87
- 1419 056e 1E       		.byte	30
- 1420 056f 56       		.byte	86
- 1421 0570 21       		.byte	33
+ 1412 0567 02       		.byte	2
+ 1413 0568 13       		.byte	19
+ 1414 0569 02       		.byte	2
+ 1415 056a 14       		.byte	20
+ 1416 056b 04       		.byte	4
+ 1417 056c 18       		.byte	24
+ 1418 056d 04       		.byte	4
+ 1419 056e 19       		.byte	25
+ 1420 056f 04       		.byte	4
+ 1421 0570 1A       		.byte	26
  1422 0571 01       		.byte	1
- 1423 0572 22       		.byte	34
- 1424 0573 28       		.byte	40
- 1425 0574 23       		.byte	35
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 26
+ 1423 0572 1B       		.byte	27
+ 1424 0573 12       		.byte	18
+ 1425 0574 1D       		.byte	29
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 26
 
 
- 1426 0575 42       		.byte	66
- 1427 0576 28       		.byte	40
- 1428 0577 40       		.byte	64
- 1429 0578 29       		.byte	41
- 1430 0579 44       		.byte	68
- 1431 057a 30       		.byte	48
- 1432 057b 10       		.byte	16
- 1433 057c 31       		.byte	49
- 1434 057d 80       		.byte	-128
- 1435 057e 32       		.byte	50
- 1436 057f 08       		.byte	8
- 1437 0580 33       		.byte	51
- 1438 0581 02       		.byte	2
- 1439 0582 34       		.byte	52
- 1440 0583 20       		.byte	32
- 1441 0584 36       		.byte	54
- 1442 0585 20       		.byte	32
- 1443 0586 38       		.byte	56
- 1444 0587 68       		.byte	104
- 1445 0588 39       		.byte	57
- 1446 0589 02       		.byte	2
- 1447 058a 40       		.byte	64
- 1448 058b 64       		.byte	100
- 1449 058c 48       		.byte	72
- 1450 058d 80       		.byte	-128
- 1451 058e 49       		.byte	73
- 1452 058f 40       		.byte	64
- 1453 0590 4A       		.byte	74
- 1454 0591 0A       		.byte	10
- 1455 0592 53       		.byte	83
- 1456 0593 10       		.byte	16
- 1457 0594 59       		.byte	89
- 1458 0595 01       		.byte	1
- 1459 0596 5D       		.byte	93
- 1460 0597 01       		.byte	1
- 1461 0598 5E       		.byte	94
- 1462 0599 10       		.byte	16
- 1463 059a 5F       		.byte	95
- 1464 059b 88       		.byte	-120
- 1465 059c 68       		.byte	104
- 1466 059d 20       		.byte	32
- 1467 059e 69       		.byte	105
- 1468 059f 40       		.byte	64
- 1469 05a0 6A       		.byte	106
- 1470 05a1 20       		.byte	32
- 1471 05a2 70       		.byte	112
+ 1426 0575 10       		.byte	16
+ 1427 0576 1E       		.byte	30
+ 1428 0577 12       		.byte	18
+ 1429 0578 1F       		.byte	31
+ 1430 0579 80       		.byte	-128
+ 1431 057a 21       		.byte	33
+ 1432 057b 09       		.byte	9
+ 1433 057c 22       		.byte	34
+ 1434 057d 50       		.byte	80
+ 1435 057e 26       		.byte	38
+ 1436 057f 24       		.byte	36
+ 1437 0580 27       		.byte	39
+ 1438 0581 21       		.byte	33
+ 1439 0582 2F       		.byte	47
+ 1440 0583 92       		.byte	-110
+ 1441 0584 32       		.byte	50
+ 1442 0585 18       		.byte	24
+ 1443 0586 36       		.byte	54
+ 1444 0587 20       		.byte	32
+ 1445 0588 38       		.byte	56
+ 1446 0589 80       		.byte	-128
+ 1447 058a 39       		.byte	57
+ 1448 058b 02       		.byte	2
+ 1449 058c 3C       		.byte	60
+ 1450 058d 02       		.byte	2
+ 1451 058e 40       		.byte	64
+ 1452 058f 04       		.byte	4
+ 1453 0590 41       		.byte	65
+ 1454 0591 08       		.byte	8
+ 1455 0592 45       		.byte	69
+ 1456 0593 08       		.byte	8
+ 1457 0594 47       		.byte	71
+ 1458 0595 20       		.byte	32
+ 1459 0596 49       		.byte	73
+ 1460 0597 80       		.byte	-128
+ 1461 0598 4A       		.byte	74
+ 1462 0599 14       		.byte	20
+ 1463 059a 4C       		.byte	76
+ 1464 059b 01       		.byte	1
+ 1465 059c 4D       		.byte	77
+ 1466 059d 80       		.byte	-128
+ 1467 059e 4F       		.byte	79
+ 1468 059f 20       		.byte	32
+ 1469 05a0 50       		.byte	80
+ 1470 05a1 42       		.byte	66
+ 1471 05a2 52       		.byte	82
  1472 05a3 14       		.byte	20
- 1473 05a4 71       		.byte	113
- 1474 05a5 88       		.byte	-120
- 1475 05a6 73       		.byte	115
+ 1473 05a4 58       		.byte	88
+ 1474 05a5 20       		.byte	32
+ 1475 05a6 59       		.byte	89
  1476 05a7 04       		.byte	4
- 1477 05a8 77       		.byte	119
- 1478 05a9 40       		.byte	64
- 1479 05aa 82       		.byte	-126
- 1480 05ab 01       		.byte	1
- 1481 05ac 86       		.byte	-122
- 1482 05ad 80       		.byte	-128
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 27
+ 1477 05a8 5A       		.byte	90
+ 1478 05a9 80       		.byte	-128
+ 1479 05aa 5C       		.byte	92
+ 1480 05ab 20       		.byte	32
+ 1481 05ac 5E       		.byte	94
+ 1482 05ad 20       		.byte	32
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 27
 
 
- 1483 05ae 90       		.byte	-112
- 1484 05af 40       		.byte	64
- 1485 05b0 92       		.byte	-110
- 1486 05b1 01       		.byte	1
- 1487 05b2 97       		.byte	-105
- 1488 05b3 44       		.byte	68
- 1489 05b4 9C       		.byte	-100
- 1490 05b5 50       		.byte	80
- 1491 05b6 A5       		.byte	-91
- 1492 05b7 88       		.byte	-120
- 1493 05b8 A6       		.byte	-90
- 1494 05b9 0A       		.byte	10
- 1495 05ba AA       		.byte	-86
+ 1483 05ae 60       		.byte	96
+ 1484 05af 01       		.byte	1
+ 1485 05b0 62       		.byte	98
+ 1486 05b1 14       		.byte	20
+ 1487 05b2 63       		.byte	99
+ 1488 05b3 40       		.byte	64
+ 1489 05b4 69       		.byte	105
+ 1490 05b5 40       		.byte	64
+ 1491 05b6 6B       		.byte	107
+ 1492 05b7 02       		.byte	2
+ 1493 05b8 74       		.byte	116
+ 1494 05b9 01       		.byte	1
+ 1495 05ba 79       		.byte	121
  1496 05bb 40       		.byte	64
- 1497 05bc AB       		.byte	-85
- 1498 05bd 10       		.byte	16
- 1499 05be C0       		.byte	-64
- 1500 05bf 85       		.byte	-123
- 1501 05c0 C2       		.byte	-62
- 1502 05c1 5D       		.byte	93
- 1503 05c2 C4       		.byte	-60
- 1504 05c3 8E       		.byte	-114
- 1505 05c4 CA       		.byte	-54
- 1506 05c5 0B       		.byte	11
- 1507 05c6 CC       		.byte	-52
- 1508 05c7 0F       		.byte	15
- 1509 05c8 CE       		.byte	-50
- 1510 05c9 0F       		.byte	15
- 1511 05ca D0       		.byte	-48
- 1512 05cb 07       		.byte	7
- 1513 05cc D2       		.byte	-46
- 1514 05cd 0C       		.byte	12
- 1515 05ce D6       		.byte	-42
- 1516 05cf F1       		.byte	-15
- 1517 05d0 E4       		.byte	-28
- 1518 05d1 08       		.byte	8
- 1519 05d2 E4       		.byte	-28
- 1520 05d3 08       		.byte	8
- 1521 05d4 E2       		.byte	-30
- 1522 05d5 20       		.byte	32
- 1523 05d6 E4       		.byte	-28
- 1524 05d7 02       		.byte	2
- 1525 05d8 33       		.byte	51
- 1526 05d9 12       		.byte	18
- 1527 05da 36       		.byte	54
- 1528 05db 48       		.byte	72
- 1529 05dc CC       		.byte	-52
- 1530 05dd F0       		.byte	-16
- 1531 05de 03       		.byte	3
- 1532 05df 80       		.byte	-128
- 1533 05e0 52       		.byte	82
- 1534 05e1 20       		.byte	32
- 1535 05e2 83       		.byte	-125
- 1536 05e3 12       		.byte	18
- 1537 05e4 9F       		.byte	-97
- 1538 05e5 10       		.byte	16
- 1539 05e6 A6       		.byte	-90
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 28
+ 1497 05bc 80       		.byte	-128
+ 1498 05bd 01       		.byte	1
+ 1499 05be 81       		.byte	-127
+ 1500 05bf 08       		.byte	8
+ 1501 05c0 84       		.byte	-124
+ 1502 05c1 04       		.byte	4
+ 1503 05c2 86       		.byte	-122
+ 1504 05c3 08       		.byte	8
+ 1505 05c4 8B       		.byte	-117
+ 1506 05c5 01       		.byte	1
+ 1507 05c6 97       		.byte	-105
+ 1508 05c7 40       		.byte	64
+ 1509 05c8 C0       		.byte	-64
+ 1510 05c9 C1       		.byte	-63
+ 1511 05ca C2       		.byte	-62
+ 1512 05cb A1       		.byte	-95
+ 1513 05cc C4       		.byte	-60
+ 1514 05cd 49       		.byte	73
+ 1515 05ce CA       		.byte	-54
+ 1516 05cf D0       		.byte	-48
+ 1517 05d0 CC       		.byte	-52
+ 1518 05d1 26       		.byte	38
+ 1519 05d2 CE       		.byte	-50
+ 1520 05d3 89       		.byte	-119
+ 1521 05d4 D0       		.byte	-48
+ 1522 05d5 66       		.byte	102
+ 1523 05d6 D2       		.byte	-46
+ 1524 05d7 3C       		.byte	60
+ 1525 05d8 D6       		.byte	-42
+ 1526 05d9 0E       		.byte	14
+ 1527 05da D8       		.byte	-40
+ 1528 05db 0F       		.byte	15
+ 1529 05dc DE       		.byte	-34
+ 1530 05dd 08       		.byte	8
+ 1531 05de E2       		.byte	-30
+ 1532 05df 08       		.byte	8
+ 1533 05e0 8B       		.byte	-117
+ 1534 05e1 40       		.byte	64
+ 1535 05e2 E2       		.byte	-30
+ 1536 05e3 20       		.byte	32
+ 1537 05e4 03       		.byte	3
+ 1538 05e5 01       		.byte	1
+ 1539 05e6 04       		.byte	4
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 28
 
 
- 1540 05e7 48       		.byte	72
- 1541 05e8 A7       		.byte	-89
- 1542 05e9 02       		.byte	2
- 1543 05ea C0       		.byte	-64
- 1544 05eb 10       		.byte	16
- 1545 05ec D4       		.byte	-44
- 1546 05ed 20       		.byte	32
- 1547 05ee E2       		.byte	-30
- 1548 05ef 20       		.byte	32
- 1549 05f0 86       		.byte	-122
- 1550 05f1 40       		.byte	64
- 1551 05f2 8E       		.byte	-114
- 1552 05f3 20       		.byte	32
- 1553 05f4 A6       		.byte	-90
- 1554 05f5 68       		.byte	104
- 1555 05f6 AF       		.byte	-81
- 1556 05f7 80       		.byte	-128
- 1557 05f8 E6       		.byte	-26
- 1558 05f9 40       		.byte	64
- 1559 05fa EC       		.byte	-20
- 1560 05fb 10       		.byte	16
- 1561 05fc A6       		.byte	-90
- 1562 05fd 08       		.byte	8
- 1563 05fe 70       		.byte	112
- 1564 05ff 02       		.byte	2
- 1565 0600 DC       		.byte	-36
- 1566 0601 01       		.byte	1
- 1567 0602 84       		.byte	-124
- 1568 0603 02       		.byte	2
- 1569 0604 A4       		.byte	-92
- 1570 0605 02       		.byte	2
- 1571 0606 82       		.byte	-126
- 1572 0607 40       		.byte	64
- 1573 0608 A6       		.byte	-90
- 1574 0609 08       		.byte	8
- 1575 060a E6       		.byte	-26
- 1576 060b 80       		.byte	-128
- 1577 060c 5A       		.byte	90
- 1578 060d 80       		.byte	-128
- 1579 060e 63       		.byte	99
- 1580 060f 04       		.byte	4
- 1581 0610 86       		.byte	-122
- 1582 0611 08       		.byte	8
- 1583 0612 87       		.byte	-121
- 1584 0613 04       		.byte	4
- 1585 0614 92       		.byte	-110
- 1586 0615 80       		.byte	-128
- 1587 0616 A6       		.byte	-90
- 1588 0617 08       		.byte	8
- 1589 0618 D4       		.byte	-44
- 1590 0619 80       		.byte	-128
- 1591 061a D8       		.byte	-40
- 1592 061b 40       		.byte	64
- 1593 061c E2       		.byte	-30
- 1594 061d 50       		.byte	80
- 1595 061e 63       		.byte	99
- 1596 061f 02       		.byte	2
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 29
+ 1540 05e7 04       		.byte	4
+ 1541 05e8 12       		.byte	18
+ 1542 05e9 08       		.byte	8
+ 1543 05ea 1E       		.byte	30
+ 1544 05eb 01       		.byte	1
+ 1545 05ec 2E       		.byte	46
+ 1546 05ed 07       		.byte	7
+ 1547 05ee 30       		.byte	48
+ 1548 05ef 01       		.byte	1
+ 1549 05f0 32       		.byte	50
+ 1550 05f1 02       		.byte	2
+ 1551 05f2 33       		.byte	51
+ 1552 05f3 01       		.byte	1
+ 1553 05f4 34       		.byte	52
+ 1554 05f5 04       		.byte	4
+ 1555 05f6 36       		.byte	54
+ 1556 05f7 08       		.byte	8
+ 1557 05f8 52       		.byte	82
+ 1558 05f9 80       		.byte	-128
+ 1559 05fa 58       		.byte	88
+ 1560 05fb 04       		.byte	4
+ 1561 05fc 59       		.byte	89
+ 1562 05fd 04       		.byte	4
+ 1563 05fe 5B       		.byte	91
+ 1564 05ff 04       		.byte	4
+ 1565 0600 5C       		.byte	92
+ 1566 0601 34       		.byte	52
+ 1567 0602 5D       		.byte	93
+ 1568 0603 30       		.byte	48
+ 1569 0604 5F       		.byte	95
+ 1570 0605 01       		.byte	1
+ 1571 0606 01       		.byte	1
+ 1572 0607 08       		.byte	8
+ 1573 0608 04       		.byte	4
+ 1574 0609 40       		.byte	64
+ 1575 060a 05       		.byte	5
+ 1576 060b 04       		.byte	4
+ 1577 060c 07       		.byte	7
+ 1578 060d 54       		.byte	84
+ 1579 060e 0A       		.byte	10
+ 1580 060f 01       		.byte	1
+ 1581 0610 0B       		.byte	11
+ 1582 0611 40       		.byte	64
+ 1583 0612 0C       		.byte	12
+ 1584 0613 95       		.byte	-107
+ 1585 0614 0E       		.byte	14
+ 1586 0615 08       		.byte	8
+ 1587 0616 10       		.byte	16
+ 1588 0617 02       		.byte	2
+ 1589 0618 17       		.byte	23
+ 1590 0619 29       		.byte	41
+ 1591 061a 19       		.byte	25
+ 1592 061b 29       		.byte	41
+ 1593 061c 1A       		.byte	26
+ 1594 061d 01       		.byte	1
+ 1595 061e 1B       		.byte	27
+ 1596 061f 40       		.byte	64
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 29
 
 
- 1597 0620 66       		.byte	102
- 1598 0621 08       		.byte	8
- 1599 0622 87       		.byte	-121
- 1600 0623 01       		.byte	1
- 1601 0624 D6       		.byte	-42
- 1602 0625 02       		.byte	2
- 1603 0626 D8       		.byte	-40
- 1604 0627 01       		.byte	1
- 1605 0628 10       		.byte	16
- 1606 0629 10       		.byte	16
- 1607 062a 86       		.byte	-122
- 1608 062b 08       		.byte	8
- 1609 062c 88       		.byte	-120
- 1610 062d 10       		.byte	16
- 1611 062e 9E       		.byte	-98
- 1612 062f 08       		.byte	8
- 1613 0630 C4       		.byte	-60
- 1614 0631 08       		.byte	8
- 1615 0632 E2       		.byte	-30
- 1616 0633 04       		.byte	4
- 1617 0634 00       		.byte	0
- 1618 0635 03       		.byte	3
- 1619 0636 08       		.byte	8
- 1620 0637 03       		.byte	3
- 1621 0638 0A       		.byte	10
- 1622 0639 03       		.byte	3
- 1623 063a 10       		.byte	16
- 1624 063b 0D       		.byte	13
- 1625 063c 1A       		.byte	26
- 1626 063d 0D       		.byte	13
- 1627 063e 00       		.byte	0
- 1628 063f FF       		.byte	-1
- 1629 0640 1F       		.byte	31
- 1630 0641 10       		.byte	16
- 1631 0642 60       		.byte	96
- 1632 0643 00       		.byte	0
- 1633 0644 1C       		.byte	28
- 1634 0645 3C       		.byte	60
- 1635 0646 63       		.byte	99
- 1636 0647 C2       		.byte	-62
- 1637 0648 00       		.byte	0
- 1638 0649 18       		.byte	24
- 1639 064a 00       		.byte	0
- 1640 064b 00       		.byte	0
- 1641 064c 73       		.byte	115
- 1642 064d 00       		.byte	0
- 1643 064e 0C       		.byte	12
- 1644 064f E3       		.byte	-29
- 1645 0650 00       		.byte	0
- 1646 0651 FF       		.byte	-1
- 1647 0652 23       		.byte	35
- 1648 0653 00       		.byte	0
- 1649 0654 03       		.byte	3
- 1650 0655 08       		.byte	8
- 1651 0656 00       		.byte	0
- 1652 0657 00       		.byte	0
- 1653 0658 02       		.byte	2
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 30
+ 1597 0620 1C       		.byte	28
+ 1598 0621 50       		.byte	80
+ 1599 0622 1D       		.byte	29
+ 1600 0623 40       		.byte	64
+ 1601 0624 1E       		.byte	30
+ 1602 0625 08       		.byte	8
+ 1603 0626 21       		.byte	33
+ 1604 0627 04       		.byte	4
+ 1605 0628 24       		.byte	36
+ 1606 0629 20       		.byte	32
+ 1607 062a 26       		.byte	38
+ 1608 062b 01       		.byte	1
+ 1609 062c 27       		.byte	39
+ 1610 062d 04       		.byte	4
+ 1611 062e 2C       		.byte	44
+ 1612 062f 95       		.byte	-107
+ 1613 0630 37       		.byte	55
+ 1614 0631 55       		.byte	85
+ 1615 0632 38       		.byte	56
+ 1616 0633 02       		.byte	2
+ 1617 0634 39       		.byte	57
+ 1618 0635 04       		.byte	4
+ 1619 0636 3A       		.byte	58
+ 1620 0637 04       		.byte	4
+ 1621 0638 3C       		.byte	60
+ 1622 0639 42       		.byte	66
+ 1623 063a 3E       		.byte	62
+ 1624 063b 28       		.byte	40
+ 1625 063c 46       		.byte	70
+ 1626 063d 04       		.byte	4
+ 1627 063e 4D       		.byte	77
+ 1628 063f 05       		.byte	5
+ 1629 0640 4F       		.byte	79
+ 1630 0641 80       		.byte	-128
+ 1631 0642 54       		.byte	84
+ 1632 0643 02       		.byte	2
+ 1633 0644 55       		.byte	85
+ 1634 0645 20       		.byte	32
+ 1635 0646 5C       		.byte	92
+ 1636 0647 10       		.byte	16
+ 1637 0648 6E       		.byte	110
+ 1638 0649 40       		.byte	64
+ 1639 064a 6F       		.byte	111
+ 1640 064b 28       		.byte	40
+ 1641 064c 70       		.byte	112
+ 1642 064d 01       		.byte	1
+ 1643 064e 76       		.byte	118
+ 1644 064f 28       		.byte	40
+ 1645 0650 77       		.byte	119
+ 1646 0651 29       		.byte	41
+ 1647 0652 88       		.byte	-120
+ 1648 0653 80       		.byte	-128
+ 1649 0654 8D       		.byte	-115
+ 1650 0655 01       		.byte	1
+ 1651 0656 93       		.byte	-109
+ 1652 0657 40       		.byte	64
+ 1653 0658 94       		.byte	-108
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 30
 
 
- 1654 0659 E7       		.byte	-25
- 1655 065a 00       		.byte	0
- 1656 065b 18       		.byte	24
- 1657 065c 01       		.byte	1
- 1658 065d 00       		.byte	0
- 1659 065e 00       		.byte	0
- 1660 065f 04       		.byte	4
- 1661 0660 08       		.byte	8
- 1662 0661 44       		.byte	68
- 1663 0662 00       		.byte	0
- 1664 0663 00       		.byte	0
- 1665 0664 04       		.byte	4
- 1666 0665 80       		.byte	-128
- 1667 0666 00       		.byte	0
- 1668 0667 00       		.byte	0
- 1669 0668 0C       		.byte	12
- 1670 0669 C0       		.byte	-64
- 1671 066a 00       		.byte	0
- 1672 066b 00       		.byte	0
- 1673 066c 7F       		.byte	127
- 1674 066d 1C       		.byte	28
- 1675 066e 00       		.byte	0
- 1676 066f E1       		.byte	-31
- 1677 0670 2C       		.byte	44
- 1678 0671 38       		.byte	56
- 1679 0672 40       		.byte	64
- 1680 0673 1F       		.byte	31
- 1681 0674 10       		.byte	16
- 1682 0675 00       		.byte	0
- 1683 0676 0F       		.byte	15
- 1684 0677 C0       		.byte	-64
- 1685 0678 08       		.byte	8
- 1686 0679 00       		.byte	0
- 1687 067a 82       		.byte	-126
- 1688 067b 08       		.byte	8
- 1689 067c 00       		.byte	0
- 1690 067d 00       		.byte	0
- 1691 067e 10       		.byte	16
- 1692 067f 00       		.byte	0
- 1693 0680 34       		.byte	52
- 1694 0681 06       		.byte	6
- 1695 0682 05       		.byte	5
- 1696 0683 00       		.byte	0
- 1697 0684 01       		.byte	1
- 1698 0685 C0       		.byte	-64
- 1699 0686 0E       		.byte	14
- 1700 0687 00       		.byte	0
- 1701 0688 06       		.byte	6
- 1702 0689 FF       		.byte	-1
- 1703 068a FF       		.byte	-1
- 1704 068b FF       		.byte	-1
- 1705 068c 62       		.byte	98
- 1706 068d A0       		.byte	-96
- 1707 068e F0       		.byte	-16
- 1708 068f 41       		.byte	65
- 1709 0690 0C       		.byte	12
- 1710 0691 00       		.byte	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 31
+ 1654 0659 20       		.byte	32
+ 1655 065a 95       		.byte	-107
+ 1656 065b 0D       		.byte	13
+ 1657 065c 96       		.byte	-106
+ 1658 065d 40       		.byte	64
+ 1659 065e 98       		.byte	-104
+ 1660 065f 05       		.byte	5
+ 1661 0660 99       		.byte	-103
+ 1662 0661 04       		.byte	4
+ 1663 0662 9B       		.byte	-101
+ 1664 0663 40       		.byte	64
+ 1665 0664 9C       		.byte	-100
+ 1666 0665 10       		.byte	16
+ 1667 0666 9D       		.byte	-99
+ 1668 0667 60       		.byte	96
+ 1669 0668 A0       		.byte	-96
+ 1670 0669 01       		.byte	1
+ 1671 066a A4       		.byte	-92
+ 1672 066b 80       		.byte	-128
+ 1673 066c A5       		.byte	-91
+ 1674 066d 20       		.byte	32
+ 1675 066e A6       		.byte	-90
+ 1676 066f 01       		.byte	1
+ 1677 0670 A7       		.byte	-89
+ 1678 0671 68       		.byte	104
+ 1679 0672 AA       		.byte	-86
+ 1680 0673 02       		.byte	2
+ 1681 0674 AC       		.byte	-84
+ 1682 0675 84       		.byte	-124
+ 1683 0676 B2       		.byte	-78
+ 1684 0677 80       		.byte	-128
+ 1685 0678 C0       		.byte	-64
+ 1686 0679 F4       		.byte	-12
+ 1687 067a C2       		.byte	-62
+ 1688 067b F9       		.byte	-7
+ 1689 067c C4       		.byte	-60
+ 1690 067d 71       		.byte	113
+ 1691 067e CA       		.byte	-54
+ 1692 067f F0       		.byte	-16
+ 1693 0680 CC       		.byte	-52
+ 1694 0681 F0       		.byte	-16
+ 1695 0682 CE       		.byte	-50
+ 1696 0683 F1       		.byte	-15
+ 1697 0684 D0       		.byte	-48
+ 1698 0685 20       		.byte	32
+ 1699 0686 D2       		.byte	-46
+ 1700 0687 10       		.byte	16
+ 1701 0688 D6       		.byte	-42
+ 1702 0689 20       		.byte	32
+ 1703 068a E6       		.byte	-26
+ 1704 068b 40       		.byte	64
+ 1705 068c 0A       		.byte	10
+ 1706 068d 02       		.byte	2
+ 1707 068e 0D       		.byte	13
+ 1708 068f 80       		.byte	-128
+ 1709 0690 0E       		.byte	14
+ 1710 0691 01       		.byte	1
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 31
 
 
- 1711 0692 00       		.byte	0
- 1712 0693 00       		.byte	0
- 1713 0694 00       		.byte	0
- 1714 0695 00       		.byte	0
- 1715 0696 02       		.byte	2
- 1716 0697 12       		.byte	18
- 1717 0698 04       		.byte	4
- 1718 0699 04       		.byte	4
- 1719 069a 04       		.byte	4
- 1720 069b 04       		.byte	4
- 1721 069c 11       		.byte	17
- 1722 069d 11       		.byte	17
- 1723 069e 00       		.byte	0
- 1724 069f 01       		.byte	1
- 1725 06a0 00       		.byte	0
- 1726 06a1 00       		.byte	0
- 1727 06a2 00       		.byte	0
- 1728 06a3 00       		.byte	0
- 1729 06a4 00       		.byte	0
- 1730 06a5 00       		.byte	0
- 1731 06a6 40       		.byte	64
- 1732 06a7 02       		.byte	2
- 1733 06a8 00       		.byte	0
- 1734 06a9 10       		.byte	16
+ 1711 0692 11       		.byte	17
+ 1712 0693 02       		.byte	2
+ 1713 0694 12       		.byte	18
+ 1714 0695 04       		.byte	4
+ 1715 0696 13       		.byte	19
+ 1716 0697 15       		.byte	21
+ 1717 0698 15       		.byte	21
+ 1718 0699 44       		.byte	68
+ 1719 069a 17       		.byte	23
+ 1720 069b 2A       		.byte	42
+ 1721 069c 1E       		.byte	30
+ 1722 069d 02       		.byte	2
+ 1723 069e 21       		.byte	33
+ 1724 069f 21       		.byte	33
+ 1725 06a0 23       		.byte	35
+ 1726 06a1 4A       		.byte	74
+ 1727 06a2 25       		.byte	37
+ 1728 06a3 E7       		.byte	-25
+ 1729 06a4 26       		.byte	38
+ 1730 06a5 04       		.byte	4
+ 1731 06a6 29       		.byte	41
+ 1732 06a7 E7       		.byte	-25
+ 1733 06a8 2E       		.byte	46
+ 1734 06a9 01       		.byte	1
  1735 06aa 30       		.byte	48
- 1736 06ab 10       		.byte	16
- 1737 06ac 00       		.byte	0
- 1738 06ad 10       		.byte	16
- 1739 06ae 10       		.byte	16
- 1740 06af 12       		.byte	18
- 1741 06b0 00       		.byte	0
- 1742 06b1 00       		.byte	0
- 1743 06b2 00       		.byte	0
- 1744 06b3 00       		.byte	0
- 1745 06b4 00       		.byte	0
- 1746 06b5 00       		.byte	0
- 1747 06b6 00       		.byte	0
- 1748 06b7 00       		.byte	0
- 1749 06b8 00       		.byte	0
- 1750 06b9 00       		.byte	0
- 1751 06ba 00       		.byte	0
- 1752 06bb 00       		.byte	0
- 1753 06bc 00       		.byte	0
- 1754 06bd 00       		.byte	0
- 1755 06be 00       		.byte	0
- 1756 06bf 00       		.byte	0
- 1757 06c0 00       		.byte	0
- 1758 06c1 0F       		.byte	15
- 1759 06c2 00       		.byte	0
- 1760 06c3 F0       		.byte	-16
- 1761 06c4 00       		.byte	0
- 1762 06c5 0C       		.byte	12
- 1763 06c6 02       		.byte	2
- 1764 06c7 00       		.byte	0
- 1765 06c8 00       		.byte	0
- 1766 06c9 04       		.byte	4
- 1767 06ca 00       		.byte	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 32
+ 1736 06ab 02       		.byte	2
+ 1737 06ac 31       		.byte	49
+ 1738 06ad 80       		.byte	-128
+ 1739 06ae 32       		.byte	50
+ 1740 06af 01       		.byte	1
+ 1741 06b0 33       		.byte	51
+ 1742 06b1 18       		.byte	24
+ 1743 06b2 34       		.byte	52
+ 1744 06b3 04       		.byte	4
+ 1745 06b4 35       		.byte	53
+ 1746 06b5 60       		.byte	96
+ 1747 06b6 37       		.byte	55
+ 1748 06b7 07       		.byte	7
+ 1749 06b8 3A       		.byte	58
+ 1750 06b9 80       		.byte	-128
+ 1751 06ba 3E       		.byte	62
+ 1752 06bb 15       		.byte	21
+ 1753 06bc 3F       		.byte	63
+ 1754 06bd 04       		.byte	4
+ 1755 06be 40       		.byte	64
+ 1756 06bf 35       		.byte	53
+ 1757 06c0 41       		.byte	65
+ 1758 06c1 01       		.byte	1
+ 1759 06c2 42       		.byte	66
+ 1760 06c3 06       		.byte	6
+ 1761 06c4 44       		.byte	68
+ 1762 06c5 02       		.byte	2
+ 1763 06c6 45       		.byte	69
+ 1764 06c7 C0       		.byte	-64
+ 1765 06c8 47       		.byte	71
+ 1766 06c9 E0       		.byte	-32
+ 1767 06ca 48       		.byte	72
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 32
 
 
- 1768 06cb 00       		.byte	0
- 1769 06cc 09       		.byte	9
+ 1768 06cb 22       		.byte	34
+ 1769 06cc 49       		.byte	73
  1770 06cd FF       		.byte	-1
- 1771 06ce 00       		.byte	0
- 1772 06cf 00       		.byte	0
- 1773 06d0 08       		.byte	8
- 1774 06d1 42       		.byte	66
- 1775 06d2 01       		.byte	1
- 1776 06d3 00       		.byte	0
- 1777 06d4 00       		.byte	0
- 1778 06d5 F3       		.byte	-13
- 1779 06d6 02       		.byte	2
- 1780 06d7 0C       		.byte	12
- 1781 06d8 00       		.byte	0
- 1782 06d9 21       		.byte	33
- 1783 06da 00       		.byte	0
- 1784 06db 00       		.byte	0
- 1785 06dc 08       		.byte	8
- 1786 06dd 08       		.byte	8
- 1787 06de 01       		.byte	1
- 1788 06df 00       		.byte	0
- 1789 06e0 00       		.byte	0
- 1790 06e1 1C       		.byte	28
- 1791 06e2 04       		.byte	4
- 1792 06e3 E3       		.byte	-29
- 1793 06e4 00       		.byte	0
- 1794 06e5 63       		.byte	99
- 1795 06e6 04       		.byte	4
- 1796 06e7 00       		.byte	0
- 1797 06e8 09       		.byte	9
- 1798 06e9 00       		.byte	0
- 1799 06ea 00       		.byte	0
- 1800 06eb 00       		.byte	0
- 1801 06ec 00       		.byte	0
- 1802 06ed 00       		.byte	0
- 1803 06ee 00       		.byte	0
- 1804 06ef F3       		.byte	-13
- 1805 06f0 08       		.byte	8
- 1806 06f1 8C       		.byte	-116
- 1807 06f2 01       		.byte	1
- 1808 06f3 0F       		.byte	15
- 1809 06f4 02       		.byte	2
- 1810 06f5 1C       		.byte	28
- 1811 06f6 04       		.byte	4
- 1812 06f7 60       		.byte	96
- 1813 06f8 08       		.byte	8
- 1814 06f9 00       		.byte	0
- 1815 06fa 00       		.byte	0
- 1816 06fb 0A       		.byte	10
- 1817 06fc 00       		.byte	0
- 1818 06fd 00       		.byte	0
- 1819 06fe 51       		.byte	81
- 1820 06ff 00       		.byte	0
- 1821 0700 65       		.byte	101
- 1822 0701 04       		.byte	4
- 1823 0702 03       		.byte	3
- 1824 0703 00       		.byte	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 33
+ 1771 06ce 4A       		.byte	74
+ 1772 06cf FF       		.byte	-1
+ 1773 06d0 4B       		.byte	75
+ 1774 06d1 FF       		.byte	-1
+ 1775 06d2 4C       		.byte	76
+ 1776 06d3 62       		.byte	98
+ 1777 06d4 4D       		.byte	77
+ 1778 06d5 A0       		.byte	-96
+ 1779 06d6 4E       		.byte	78
+ 1780 06d7 F0       		.byte	-16
+ 1781 06d8 4F       		.byte	79
+ 1782 06d9 41       		.byte	65
+ 1783 06da 50       		.byte	80
+ 1784 06db 0C       		.byte	12
+ 1785 06dc 54       		.byte	84
+ 1786 06dd 18       		.byte	24
+ 1787 06de 56       		.byte	86
+ 1788 06df 04       		.byte	4
+ 1789 06e0 58       		.byte	88
+ 1790 06e1 04       		.byte	4
+ 1791 06e2 59       		.byte	89
+ 1792 06e3 04       		.byte	4
+ 1793 06e4 5A       		.byte	90
+ 1794 06e5 04       		.byte	4
+ 1795 06e6 5B       		.byte	91
+ 1796 06e7 04       		.byte	4
+ 1797 06e8 5C       		.byte	92
+ 1798 06e9 11       		.byte	17
+ 1799 06ea 5D       		.byte	93
+ 1800 06eb 11       		.byte	17
+ 1801 06ec 5F       		.byte	95
+ 1802 06ed 01       		.byte	1
+ 1803 06ee 66       		.byte	102
+ 1804 06ef 40       		.byte	64
+ 1805 06f0 67       		.byte	103
+ 1806 06f1 02       		.byte	2
+ 1807 06f2 69       		.byte	105
+ 1808 06f3 10       		.byte	16
+ 1809 06f4 6A       		.byte	106
+ 1810 06f5 30       		.byte	48
+ 1811 06f6 6B       		.byte	107
+ 1812 06f7 10       		.byte	16
+ 1813 06f8 6D       		.byte	109
+ 1814 06f9 10       		.byte	16
+ 1815 06fa 6E       		.byte	110
+ 1816 06fb 10       		.byte	16
+ 1817 06fc 6F       		.byte	111
+ 1818 06fd 12       		.byte	18
+ 1819 06fe 87       		.byte	-121
+ 1820 06ff 09       		.byte	9
+ 1821 0700 88       		.byte	-120
+ 1822 0701 01       		.byte	1
+ 1823 0702 8D       		.byte	-115
+ 1824 0703 04       		.byte	4
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 33
 
 
- 1825 0704 02       		.byte	2
- 1826 0705 C0       		.byte	-64
- 1827 0706 E0       		.byte	-32
- 1828 0707 00       		.byte	0
- 1829 0708 0A       		.byte	10
- 1830 0709 FF       		.byte	-1
- 1831 070a FF       		.byte	-1
- 1832 070b FF       		.byte	-1
- 1833 070c 62       		.byte	98
- 1834 070d A0       		.byte	-96
- 1835 070e F0       		.byte	-16
- 1836 070f 41       		.byte	65
- 1837 0710 0C       		.byte	12
- 1838 0711 00       		.byte	0
- 1839 0712 00       		.byte	0
- 1840 0713 00       		.byte	0
- 1841 0714 00       		.byte	0
- 1842 0715 00       		.byte	0
- 1843 0716 02       		.byte	2
- 1844 0717 13       		.byte	19
- 1845 0718 04       		.byte	4
- 1846 0719 04       		.byte	4
- 1847 071a 04       		.byte	4
+ 1825 0704 96       		.byte	-106
+ 1826 0705 04       		.byte	4
+ 1827 0706 97       		.byte	-105
+ 1828 0707 08       		.byte	8
+ 1829 0708 9B       		.byte	-101
+ 1830 0709 07       		.byte	7
+ 1831 070a A6       		.byte	-90
+ 1832 070b 07       		.byte	7
+ 1833 070c B1       		.byte	-79
+ 1834 070d 02       		.byte	2
+ 1835 070e B2       		.byte	-78
+ 1836 070f 02       		.byte	2
+ 1837 0710 B3       		.byte	-77
+ 1838 0711 08       		.byte	8
+ 1839 0712 B4       		.byte	-76
+ 1840 0713 01       		.byte	1
+ 1841 0714 B5       		.byte	-75
+ 1842 0715 04       		.byte	4
+ 1843 0716 B6       		.byte	-74
+ 1844 0717 04       		.byte	4
+ 1845 0718 B7       		.byte	-73
+ 1846 0719 01       		.byte	1
+ 1847 071a BF       		.byte	-65
  1848 071b 04       		.byte	4
- 1849 071c 00       		.byte	0
- 1850 071d 00       		.byte	0
- 1851 071e 00       		.byte	0
- 1852 071f 01       		.byte	1
- 1853 0720 00       		.byte	0
- 1854 0721 00       		.byte	0
- 1855 0722 00       		.byte	0
- 1856 0723 00       		.byte	0
- 1857 0724 00       		.byte	0
- 1858 0725 00       		.byte	0
- 1859 0726 40       		.byte	64
- 1860 0727 02       		.byte	2
- 1861 0728 00       		.byte	0
- 1862 0729 10       		.byte	16
- 1863 072a 30       		.byte	48
- 1864 072b 10       		.byte	16
- 1865 072c 00       		.byte	0
- 1866 072d 10       		.byte	16
- 1867 072e 10       		.byte	16
- 1868 072f 12       		.byte	18
- 1869 0730 00       		.byte	0
- 1870 0731 00       		.byte	0
- 1871 0732 00       		.byte	0
- 1872 0733 00       		.byte	0
- 1873 0734 00       		.byte	0
- 1874 0735 00       		.byte	0
- 1875 0736 00       		.byte	0
- 1876 0737 00       		.byte	0
- 1877 0738 00       		.byte	0
- 1878 0739 00       		.byte	0
- 1879 073a 00       		.byte	0
- 1880 073b 00       		.byte	0
- 1881 073c 00       		.byte	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 34
+ 1849 071c C0       		.byte	-64
+ 1850 071d 30       		.byte	48
+ 1851 071e C1       		.byte	-63
+ 1852 071f 06       		.byte	6
+ 1853 0720 C5       		.byte	-59
+ 1854 0721 D5       		.byte	-43
+ 1855 0722 C6       		.byte	-58
+ 1856 0723 10       		.byte	16
+ 1857 0724 C7       		.byte	-57
+ 1858 0725 02       		.byte	2
+ 1859 0726 C8       		.byte	-56
+ 1860 0727 1B       		.byte	27
+ 1861 0728 C9       		.byte	-55
+ 1862 0729 FF       		.byte	-1
+ 1863 072a CA       		.byte	-54
+ 1864 072b FF       		.byte	-1
+ 1865 072c CB       		.byte	-53
+ 1866 072d FF       		.byte	-1
+ 1867 072e CD       		.byte	-51
+ 1868 072f A0       		.byte	-96
+ 1869 0730 CF       		.byte	-49
+ 1870 0731 04       		.byte	4
+ 1871 0732 D0       		.byte	-48
+ 1872 0733 18       		.byte	24
+ 1873 0734 D4       		.byte	-44
+ 1874 0735 07       		.byte	7
+ 1875 0736 D8       		.byte	-40
+ 1876 0737 04       		.byte	4
+ 1877 0738 D9       		.byte	-39
+ 1878 0739 04       		.byte	4
+ 1879 073a DA       		.byte	-38
+ 1880 073b 04       		.byte	4
+ 1881 073c DB       		.byte	-37
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 34
 
 
- 1882 073d 00       		.byte	0
- 1883 073e 00       		.byte	0
- 1884 073f 00       		.byte	0
- 1885 0740 02       		.byte	2
- 1886 0741 00       		.byte	0
- 1887 0742 01       		.byte	1
- 1888 0743 02       		.byte	2
- 1889 0744 02       		.byte	2
- 1890 0745 00       		.byte	0
- 1891 0746 02       		.byte	2
- 1892 0747 00       		.byte	0
- 1893 0748 00       		.byte	0
- 1894 0749 00       		.byte	0
- 1895 074a 00       		.byte	0
- 1896 074b 00       		.byte	0
- 1897 074c 80       		.byte	-128
- 1898 074d 00       		.byte	0
- 1899 074e 40       		.byte	64
- 1900 074f 80       		.byte	-128
- 1901 0750 80       		.byte	-128
- 1902 0751 00       		.byte	0
- 1903 0752 80       		.byte	-128
- 1904 0753 00       		.byte	0
- 1905 0754 00       		.byte	0
- 1906 0755 00       		.byte	0
+ 1882 073d 04       		.byte	4
+ 1883 073e DC       		.byte	-36
+ 1884 073f 33       		.byte	51
+ 1885 0740 DD       		.byte	-35
+ 1886 0741 33       		.byte	51
+ 1887 0742 DF       		.byte	-33
+ 1888 0743 01       		.byte	1
+ 1889 0744 E0       		.byte	-32
+ 1890 0745 40       		.byte	64
+ 1891 0746 E2       		.byte	-30
+ 1892 0747 C0       		.byte	-64
+ 1893 0748 E4       		.byte	-28
+ 1894 0749 40       		.byte	64
+ 1895 074a E5       		.byte	-27
+ 1896 074b 40       		.byte	64
+ 1897 074c E6       		.byte	-26
+ 1898 074d C0       		.byte	-64
+ 1899 074e E8       		.byte	-24
+ 1900 074f C0       		.byte	-64
+ 1901 0750 EA       		.byte	-22
+ 1902 0751 C0       		.byte	-64
+ 1903 0752 EC       		.byte	-20
+ 1904 0753 C0       		.byte	-64
+ 1905 0754 EE       		.byte	-18
+ 1906 0755 C0       		.byte	-64
  1907 0756 00       		.byte	0
- 1908 0757 00       		.byte	0
- 1909 0758 00       		.byte	0
- 1910 0759 7B       		.byte	123
- 1911 075a 7B       		.byte	123
- 1912 075b 00       		.byte	0
- 1913 075c 30       		.byte	48
- 1914 075d 00       		.byte	0
- 1915 075e 00       		.byte	0
- 1916 075f 00       		.byte	0
- 1917 0760 00       		.byte	0
- 1918 0761 20       		.byte	32
- 1919 0762 20       		.byte	32
- 1920 0763 00       		.byte	0
- 1921 0764 00       		.byte	0
- 1922 0765 00       		.byte	0
- 1923 0766 00       		.byte	0
- 1924 0767 00       		.byte	0
- 1925 0768 00       		.byte	0
- 1926 0769 18       		.byte	24
- 1927 076a 18       		.byte	24
- 1928 076b 00       		.byte	0
- 1929 076c 18       		.byte	24
- 1930 076d 00       		.byte	0
- 1931 076e 00       		.byte	0
- 1932 076f 00       		.byte	0
- 1933              		.section	.cywolatch,"a",%progbits
- 1934              		.align	2
- 1935              		.type	cy_meta_wonvl, %object
- 1936              		.size	cy_meta_wonvl, 4
- 1937              	cy_meta_wonvl:
- 1938 0000 BC       		.byte	-68
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 35
+ 1908 0757 10       		.byte	16
+ 1909 0758 04       		.byte	4
+ 1910 0759 20       		.byte	32
+ 1911 075a 05       		.byte	5
+ 1912 075b 40       		.byte	64
+ 1913 075c 09       		.byte	9
+ 1914 075d 08       		.byte	8
+ 1915 075e 0D       		.byte	13
+ 1916 075f 01       		.byte	1
+ 1917 0760 0F       		.byte	15
+ 1918 0761 82       		.byte	-126
+ 1919 0762 13       		.byte	19
+ 1920 0763 04       		.byte	4
+ 1921 0764 15       		.byte	21
+ 1922 0765 04       		.byte	4
+ 1923 0766 16       		.byte	22
+ 1924 0767 01       		.byte	1
+ 1925 0768 18       		.byte	24
+ 1926 0769 10       		.byte	16
+ 1927 076a 19       		.byte	25
+ 1928 076b 10       		.byte	16
+ 1929 076c 1B       		.byte	27
+ 1930 076d 80       		.byte	-128
+ 1931 076e 1D       		.byte	29
+ 1932 076f 80       		.byte	-128
+ 1933 0770 1E       		.byte	30
+ 1934 0771 08       		.byte	8
+ 1935 0772 1F       		.byte	31
+ 1936 0773 05       		.byte	5
+ 1937 0774 20       		.byte	32
+ 1938 0775 48       		.byte	72
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 35
 
 
- 1939 0001 90       		.byte	-112
- 1940 0002 AC       		.byte	-84
- 1941 0003 AF       		.byte	-81
- 1942              		.section	.cycustnvl,"a",%progbits
- 1943              		.align	2
- 1944              		.type	cy_meta_custnvl, %object
- 1945              		.size	cy_meta_custnvl, 4
- 1946              	cy_meta_custnvl:
- 1947 0000 00       		.byte	0
- 1948 0001 00       		.byte	0
- 1949 0002 40       		.byte	64
- 1950 0003 05       		.byte	5
- 1951              		.section	.cymeta,"a",%progbits
- 1952              		.align	2
- 1953              		.type	cy_metadata, %object
- 1954              		.size	cy_metadata, 12
- 1955              	cy_metadata:
- 1956 0000 00       		.byte	0
- 1957 0001 01       		.byte	1
- 1958 0002 2E       		.byte	46
- 1959 0003 16       		.byte	22
- 1960 0004 10       		.byte	16
- 1961 0005 69       		.byte	105
- 1962 0006 00       		.byte	0
- 1963 0007 01       		.byte	1
- 1964 0008 00       		.byte	0
- 1965 0009 00       		.byte	0
- 1966 000a 00       		.byte	0
- 1967 000b 00       		.byte	0
- 1968              		.section	.cyflashprotect,"a",%progbits
- 1969              		.align	2
- 1970              		.type	cy_meta_flashprotect, %object
- 1971              		.size	cy_meta_flashprotect, 256
- 1972              	cy_meta_flashprotect:
- 1973 0000 00000000 		.space	256
- 1973      00000000 
- 1973      00000000 
- 1973      00000000 
- 1973      00000000 
- 1974              		.text
- 1975              	.Letext0:
- 1976              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 1977              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 1978              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
- 1979              		.section	.debug_info,"",%progbits
- 1980              	.Ldebug_info0:
- 1981 0000 35010000 		.4byte	0x135
- 1982 0004 0400     		.2byte	0x4
- 1983 0006 00000000 		.4byte	.Ldebug_abbrev0
- 1984 000a 04       		.byte	0x4
- 1985 000b 01       		.uleb128 0x1
- 1986 000c 77000000 		.4byte	.LASF17
- 1987 0010 0C       		.byte	0xc
- 1988 0011 D1010000 		.4byte	.LASF18
- 1989 0015 0A000000 		.4byte	.LASF19
- 1990 0019 00000000 		.4byte	.Ldebug_line0
- 1991 001d 02       		.uleb128 0x2
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 36
+ 1939 0776 22       		.byte	34
+ 1940 0777 84       		.byte	-124
+ 1941 0778 26       		.byte	38
+ 1942 0779 02       		.byte	2
+ 1943 077a 27       		.byte	39
+ 1944 077b 69       		.byte	105
+ 1945 077c 2C       		.byte	44
+ 1946 077d 80       		.byte	-128
+ 1947 077e 2F       		.byte	47
+ 1948 077f 28       		.byte	40
+ 1949 0780 30       		.byte	48
+ 1950 0781 20       		.byte	32
+ 1951 0782 32       		.byte	50
+ 1952 0783 08       		.byte	8
+ 1953 0784 34       		.byte	52
+ 1954 0785 05       		.byte	5
+ 1955 0786 37       		.byte	55
+ 1956 0787 09       		.byte	9
+ 1957 0788 38       		.byte	56
+ 1958 0789 60       		.byte	96
+ 1959 078a 39       		.byte	57
+ 1960 078b 08       		.byte	8
+ 1961 078c 3B       		.byte	59
+ 1962 078d 10       		.byte	16
+ 1963 078e 3E       		.byte	62
+ 1964 078f 40       		.byte	64
+ 1965 0790 41       		.byte	65
+ 1966 0791 0C       		.byte	12
+ 1967 0792 44       		.byte	68
+ 1968 0793 10       		.byte	16
+ 1969 0794 45       		.byte	69
+ 1970 0795 80       		.byte	-128
+ 1971 0796 47       		.byte	71
+ 1972 0797 20       		.byte	32
+ 1973 0798 49       		.byte	73
+ 1974 0799 01       		.byte	1
+ 1975 079a 4A       		.byte	74
+ 1976 079b 08       		.byte	8
+ 1977 079c 4B       		.byte	75
+ 1978 079d 04       		.byte	4
+ 1979 079e 4E       		.byte	78
+ 1980 079f 02       		.byte	2
+ 1981 07a0 4F       		.byte	79
+ 1982 07a1 12       		.byte	18
+ 1983 07a2 50       		.byte	80
+ 1984 07a3 20       		.byte	32
+ 1985 07a4 52       		.byte	82
+ 1986 07a5 08       		.byte	8
+ 1987 07a6 56       		.byte	86
+ 1988 07a7 01       		.byte	1
+ 1989 07a8 58       		.byte	88
+ 1990 07a9 80       		.byte	-128
+ 1991 07aa 59       		.byte	89
+ 1992 07ab 11       		.byte	17
+ 1993 07ac 5A       		.byte	90
+ 1994 07ad 08       		.byte	8
+ 1995 07ae 5E       		.byte	94
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 36
 
 
- 1992 001e 01       		.byte	0x1
- 1993 001f 06       		.byte	0x6
- 1994 0020 C5010000 		.4byte	.LASF0
- 1995 0024 03       		.uleb128 0x3
- 1996 0025 00000000 		.4byte	.LASF9
- 1997 0029 01       		.byte	0x1
- 1998 002a 1D       		.byte	0x1d
- 1999 002b 2F000000 		.4byte	0x2f
- 2000 002f 02       		.uleb128 0x2
- 2001 0030 01       		.byte	0x1
- 2002 0031 08       		.byte	0x8
- 2003 0032 69000000 		.4byte	.LASF1
- 2004 0036 02       		.uleb128 0x2
- 2005 0037 02       		.byte	0x2
- 2006 0038 05       		.byte	0x5
- 2007 0039 B2010000 		.4byte	.LASF2
- 2008 003d 02       		.uleb128 0x2
- 2009 003e 02       		.byte	0x2
- 2010 003f 07       		.byte	0x7
- 2011 0040 17010000 		.4byte	.LASF3
- 2012 0044 02       		.uleb128 0x2
- 2013 0045 04       		.byte	0x4
- 2014 0046 05       		.byte	0x5
- 2015 0047 BC010000 		.4byte	.LASF4
- 2016 004b 02       		.uleb128 0x2
- 2017 004c 04       		.byte	0x4
- 2018 004d 07       		.byte	0x7
- 2019 004e 05010000 		.4byte	.LASF5
- 2020 0052 02       		.uleb128 0x2
- 2021 0053 08       		.byte	0x8
- 2022 0054 05       		.byte	0x5
- 2023 0055 A4010000 		.4byte	.LASF6
- 2024 0059 02       		.uleb128 0x2
- 2025 005a 08       		.byte	0x8
- 2026 005b 07       		.byte	0x7
- 2027 005c 59010000 		.4byte	.LASF7
- 2028 0060 04       		.uleb128 0x4
- 2029 0061 04       		.byte	0x4
- 2030 0062 05       		.byte	0x5
- 2031 0063 696E7400 		.ascii	"int\000"
- 2032 0067 02       		.uleb128 0x2
- 2033 0068 04       		.byte	0x4
- 2034 0069 07       		.byte	0x7
- 2035 006a 4C010000 		.4byte	.LASF8
- 2036 006e 03       		.uleb128 0x3
- 2037 006f 70010000 		.4byte	.LASF10
- 2038 0073 02       		.byte	0x2
- 2039 0074 18       		.byte	0x18
- 2040 0075 24000000 		.4byte	0x24
- 2041 0079 05       		.uleb128 0x5
- 2042 007a 91000000 		.4byte	0x91
- 2043 007e 8A000000 		.4byte	0x8a
- 2044 0082 06       		.uleb128 0x6
- 2045 0083 8A000000 		.4byte	0x8a
- 2046 0087 6F07     		.2byte	0x76f
- 2047 0089 00       		.byte	0
- 2048 008a 02       		.uleb128 0x2
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 37
+ 1996 07af 02       		.byte	2
+ 1997 07b0 66       		.byte	102
+ 1998 07b1 02       		.byte	2
+ 1999 07b2 67       		.byte	103
+ 2000 07b3 0A       		.byte	10
+ 2001 07b4 81       		.byte	-127
+ 2002 07b5 84       		.byte	-124
+ 2003 07b6 8B       		.byte	-117
+ 2004 07b7 80       		.byte	-128
+ 2005 07b8 93       		.byte	-109
+ 2006 07b9 40       		.byte	64
+ 2007 07ba 95       		.byte	-107
+ 2008 07bb 03       		.byte	3
+ 2009 07bc 9D       		.byte	-99
+ 2010 07bd 20       		.byte	32
+ 2011 07be A0       		.byte	-96
+ 2012 07bf 01       		.byte	1
+ 2013 07c0 A4       		.byte	-92
+ 2014 07c1 80       		.byte	-128
+ 2015 07c2 A5       		.byte	-91
+ 2016 07c3 20       		.byte	32
+ 2017 07c4 A6       		.byte	-90
+ 2018 07c5 04       		.byte	4
+ 2019 07c6 A8       		.byte	-88
+ 2020 07c7 02       		.byte	2
+ 2021 07c8 AA       		.byte	-86
+ 2022 07c9 48       		.byte	72
+ 2023 07ca AB       		.byte	-85
+ 2024 07cb 08       		.byte	8
+ 2025 07cc AF       		.byte	-81
+ 2026 07cd 20       		.byte	32
+ 2027 07ce C0       		.byte	-64
+ 2028 07cf C2       		.byte	-62
+ 2029 07d0 C2       		.byte	-62
+ 2030 07d1 94       		.byte	-108
+ 2031 07d2 C4       		.byte	-60
+ 2032 07d3 A4       		.byte	-92
+ 2033 07d4 CA       		.byte	-54
+ 2034 07d5 E0       		.byte	-32
+ 2035 07d6 CC       		.byte	-52
+ 2036 07d7 C6       		.byte	-58
+ 2037 07d8 CE       		.byte	-50
+ 2038 07d9 1A       		.byte	26
+ 2039 07da D0       		.byte	-48
+ 2040 07db 72       		.byte	114
+ 2041 07dc D2       		.byte	-46
+ 2042 07dd 34       		.byte	52
+ 2043 07de D6       		.byte	-42
+ 2044 07df 8F       		.byte	-113
+ 2045 07e0 D8       		.byte	-40
+ 2046 07e1 B0       		.byte	-80
+ 2047 07e2 E0       		.byte	-32
+ 2048 07e3 80       		.byte	-128
+ 2049 07e4 E6       		.byte	-26
+ 2050 07e5 80       		.byte	-128
+ 2051 07e6 E8       		.byte	-24
+ 2052 07e7 80       		.byte	-128
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 37
 
 
- 2049 008b 04       		.byte	0x4
- 2050 008c 07       		.byte	0x7
- 2051 008d 9B010000 		.4byte	.LASF11
- 2052 0091 07       		.uleb128 0x7
- 2053 0092 6E000000 		.4byte	0x6e
- 2054 0096 08       		.uleb128 0x8
- 2055 0097 3A010000 		.4byte	.LASF12
- 2056 009b 03       		.byte	0x3
- 2057 009c 1F       		.byte	0x1f
- 2058 009d A7000000 		.4byte	0xa7
- 2059 00a1 05       		.uleb128 0x5
- 2060 00a2 03       		.byte	0x3
- 2061 00a3 00000000 		.4byte	cy_meta_configecc
- 2062 00a7 07       		.uleb128 0x7
- 2063 00a8 79000000 		.4byte	0x79
- 2064 00ac 05       		.uleb128 0x5
- 2065 00ad 91000000 		.4byte	0x91
- 2066 00b1 BC000000 		.4byte	0xbc
- 2067 00b5 09       		.uleb128 0x9
- 2068 00b6 8A000000 		.4byte	0x8a
- 2069 00ba 03       		.byte	0x3
- 2070 00bb 00       		.byte	0
- 2071 00bc 0A       		.uleb128 0xa
- 2072 00bd 2A010000 		.4byte	.LASF13
- 2073 00c1 03       		.byte	0x3
- 2074 00c2 1A01     		.2byte	0x11a
- 2075 00c4 CE000000 		.4byte	0xce
- 2076 00c8 05       		.uleb128 0x5
- 2077 00c9 03       		.byte	0x3
- 2078 00ca 00000000 		.4byte	cy_meta_custnvl
- 2079 00ce 07       		.uleb128 0x7
- 2080 00cf AC000000 		.4byte	0xac
- 2081 00d3 0A       		.uleb128 0xa
- 2082 00d4 8D010000 		.4byte	.LASF14
- 2083 00d8 03       		.byte	0x3
- 2084 00d9 2801     		.2byte	0x128
- 2085 00db E5000000 		.4byte	0xe5
- 2086 00df 05       		.uleb128 0x5
- 2087 00e0 03       		.byte	0x3
- 2088 00e1 00000000 		.4byte	cy_meta_wonvl
- 2089 00e5 07       		.uleb128 0x7
- 2090 00e6 AC000000 		.4byte	0xac
- 2091 00ea 05       		.uleb128 0x5
- 2092 00eb 91000000 		.4byte	0x91
- 2093 00ef FA000000 		.4byte	0xfa
- 2094 00f3 09       		.uleb128 0x9
- 2095 00f4 8A000000 		.4byte	0x8a
- 2096 00f8 FF       		.byte	0xff
- 2097 00f9 00       		.byte	0
- 2098 00fa 0A       		.uleb128 0xa
- 2099 00fb 78010000 		.4byte	.LASF15
- 2100 00ff 03       		.byte	0x3
- 2101 0100 3601     		.2byte	0x136
- 2102 0102 0C010000 		.4byte	0x10c
- 2103 0106 05       		.uleb128 0x5
- 2104 0107 03       		.byte	0x3
- 2105 0108 00000000 		.4byte	cy_meta_flashprotect
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 38
+ 2053 07e8 33       		.byte	51
+ 2054 07e9 18       		.byte	24
+ 2055 07ea 36       		.byte	54
+ 2056 07eb 88       		.byte	-120
+ 2057 07ec 38       		.byte	56
+ 2058 07ed 40       		.byte	64
+ 2059 07ee 8B       		.byte	-117
+ 2060 07ef 08       		.byte	8
+ 2061 07f0 CC       		.byte	-52
+ 2062 07f1 F0       		.byte	-16
+ 2063 07f2 CE       		.byte	-50
+ 2064 07f3 10       		.byte	16
+ 2065 07f4 03       		.byte	3
+ 2066 07f5 80       		.byte	-128
+ 2067 07f6 51       		.byte	81
+ 2068 07f7 10       		.byte	16
+ 2069 07f8 83       		.byte	-125
+ 2070 07f9 10       		.byte	16
+ 2071 07fa 86       		.byte	-122
+ 2072 07fb 08       		.byte	8
+ 2073 07fc 94       		.byte	-108
+ 2074 07fd 40       		.byte	64
+ 2075 07fe 9F       		.byte	-97
+ 2076 07ff 10       		.byte	16
+ 2077 0800 A6       		.byte	-90
+ 2078 0801 88       		.byte	-120
+ 2079 0802 C0       		.byte	-64
+ 2080 0803 10       		.byte	16
+ 2081 0804 D4       		.byte	-44
+ 2082 0805 20       		.byte	32
+ 2083 0806 E2       		.byte	-30
+ 2084 0807 30       		.byte	48
+ 2085 0808 85       		.byte	-123
+ 2086 0809 10       		.byte	16
+ 2087 080a 8E       		.byte	-114
+ 2088 080b 80       		.byte	-128
+ 2089 080c 94       		.byte	-108
+ 2090 080d 40       		.byte	64
+ 2091 080e 95       		.byte	-107
+ 2092 080f 20       		.byte	32
+ 2093 0810 A6       		.byte	-90
+ 2094 0811 80       		.byte	-128
+ 2095 0812 AF       		.byte	-81
+ 2096 0813 80       		.byte	-128
+ 2097 0814 E2       		.byte	-30
+ 2098 0815 40       		.byte	64
+ 2099 0816 EC       		.byte	-20
+ 2100 0817 10       		.byte	16
+ 2101 0818 94       		.byte	-108
+ 2102 0819 40       		.byte	64
+ 2103 081a 7D       		.byte	125
+ 2104 081b 80       		.byte	-128
+ 2105 081c DE       		.byte	-34
+ 2106 081d 04       		.byte	4
+ 2107 081e 0B       		.byte	11
+ 2108 081f 80       		.byte	-128
+ 2109 0820 87       		.byte	-121
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 38
 
 
- 2106 010c 07       		.uleb128 0x7
- 2107 010d EA000000 		.4byte	0xea
- 2108 0111 05       		.uleb128 0x5
- 2109 0112 91000000 		.4byte	0x91
- 2110 0116 21010000 		.4byte	0x121
- 2111 011a 09       		.uleb128 0x9
- 2112 011b 8A000000 		.4byte	0x8a
- 2113 011f 0B       		.byte	0xb
- 2114 0120 00       		.byte	0
- 2115 0121 0A       		.uleb128 0xa
- 2116 0122 5D000000 		.4byte	.LASF16
- 2117 0126 03       		.byte	0x3
- 2118 0127 6301     		.2byte	0x163
- 2119 0129 33010000 		.4byte	0x133
- 2120 012d 05       		.uleb128 0x5
- 2121 012e 03       		.byte	0x3
- 2122 012f 00000000 		.4byte	cy_metadata
- 2123 0133 07       		.uleb128 0x7
- 2124 0134 11010000 		.4byte	0x111
- 2125 0138 00       		.byte	0
- 2126              		.section	.debug_abbrev,"",%progbits
- 2127              	.Ldebug_abbrev0:
- 2128 0000 01       		.uleb128 0x1
- 2129 0001 11       		.uleb128 0x11
- 2130 0002 01       		.byte	0x1
- 2131 0003 25       		.uleb128 0x25
- 2132 0004 0E       		.uleb128 0xe
- 2133 0005 13       		.uleb128 0x13
- 2134 0006 0B       		.uleb128 0xb
- 2135 0007 03       		.uleb128 0x3
- 2136 0008 0E       		.uleb128 0xe
- 2137 0009 1B       		.uleb128 0x1b
- 2138 000a 0E       		.uleb128 0xe
- 2139 000b 10       		.uleb128 0x10
- 2140 000c 17       		.uleb128 0x17
- 2141 000d 00       		.byte	0
- 2142 000e 00       		.byte	0
- 2143 000f 02       		.uleb128 0x2
- 2144 0010 24       		.uleb128 0x24
- 2145 0011 00       		.byte	0
- 2146 0012 0B       		.uleb128 0xb
- 2147 0013 0B       		.uleb128 0xb
- 2148 0014 3E       		.uleb128 0x3e
- 2149 0015 0B       		.uleb128 0xb
- 2150 0016 03       		.uleb128 0x3
- 2151 0017 0E       		.uleb128 0xe
- 2152 0018 00       		.byte	0
- 2153 0019 00       		.byte	0
- 2154 001a 03       		.uleb128 0x3
- 2155 001b 16       		.uleb128 0x16
- 2156 001c 00       		.byte	0
- 2157 001d 03       		.uleb128 0x3
- 2158 001e 0E       		.uleb128 0xe
- 2159 001f 3A       		.uleb128 0x3a
- 2160 0020 0B       		.uleb128 0xb
- 2161 0021 3B       		.uleb128 0x3b
- 2162 0022 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 39
+ 2110 0821 40       		.byte	64
+ 2111 0822 89       		.byte	-119
+ 2112 0823 40       		.byte	64
+ 2113 0824 A5       		.byte	-91
+ 2114 0825 40       		.byte	64
+ 2115 0826 C2       		.byte	-62
+ 2116 0827 08       		.byte	8
+ 2117 0828 E4       		.byte	-28
+ 2118 0829 04       		.byte	4
+ 2119 082a 93       		.byte	-109
+ 2120 082b 08       		.byte	8
+ 2121 082c 94       		.byte	-108
+ 2122 082d 40       		.byte	64
+ 2123 082e AF       		.byte	-81
+ 2124 082f 04       		.byte	4
+ 2125 0830 EE       		.byte	-18
+ 2126 0831 10       		.byte	16
+ 2127 0832 56       		.byte	86
+ 2128 0833 20       		.byte	32
+ 2129 0834 67       		.byte	103
+ 2130 0835 08       		.byte	8
+ 2131 0836 8E       		.byte	-114
+ 2132 0837 20       		.byte	32
+ 2133 0838 93       		.byte	-109
+ 2134 0839 08       		.byte	8
+ 2135 083a A8       		.byte	-88
+ 2136 083b 40       		.byte	64
+ 2137 083c D4       		.byte	-44
+ 2138 083d 40       		.byte	64
+ 2139 083e D8       		.byte	-40
+ 2140 083f 80       		.byte	-128
+ 2141 0840 EE       		.byte	-18
+ 2142 0841 20       		.byte	32
+ 2143 0842 63       		.byte	99
+ 2144 0843 02       		.byte	2
+ 2145 0844 67       		.byte	103
+ 2146 0845 08       		.byte	8
+ 2147 0846 8B       		.byte	-117
+ 2148 0847 04       		.byte	4
+ 2149 0848 D6       		.byte	-42
+ 2150 0849 02       		.byte	2
+ 2151 084a D8       		.byte	-40
+ 2152 084b 01       		.byte	1
+ 2153 084c E0       		.byte	-32
+ 2154 084d 01       		.byte	1
+ 2155 084e 10       		.byte	16
+ 2156 084f 80       		.byte	-128
+ 2157 0850 88       		.byte	-120
+ 2158 0851 80       		.byte	-128
+ 2159 0852 B3       		.byte	-77
+ 2160 0853 01       		.byte	1
+ 2161 0854 C4       		.byte	-60
+ 2162 0855 08       		.byte	8
+ 2163 0856 E6       		.byte	-26
+ 2164 0857 01       		.byte	1
+ 2165 0858 E8       		.byte	-24
+ 2166 0859 01       		.byte	1
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 39
 
 
- 2163 0023 49       		.uleb128 0x49
- 2164 0024 13       		.uleb128 0x13
- 2165 0025 00       		.byte	0
- 2166 0026 00       		.byte	0
- 2167 0027 04       		.uleb128 0x4
- 2168 0028 24       		.uleb128 0x24
- 2169 0029 00       		.byte	0
- 2170 002a 0B       		.uleb128 0xb
- 2171 002b 0B       		.uleb128 0xb
- 2172 002c 3E       		.uleb128 0x3e
- 2173 002d 0B       		.uleb128 0xb
- 2174 002e 03       		.uleb128 0x3
- 2175 002f 08       		.uleb128 0x8
- 2176 0030 00       		.byte	0
- 2177 0031 00       		.byte	0
- 2178 0032 05       		.uleb128 0x5
- 2179 0033 01       		.uleb128 0x1
- 2180 0034 01       		.byte	0x1
- 2181 0035 49       		.uleb128 0x49
- 2182 0036 13       		.uleb128 0x13
- 2183 0037 01       		.uleb128 0x1
- 2184 0038 13       		.uleb128 0x13
- 2185 0039 00       		.byte	0
- 2186 003a 00       		.byte	0
- 2187 003b 06       		.uleb128 0x6
- 2188 003c 21       		.uleb128 0x21
- 2189 003d 00       		.byte	0
- 2190 003e 49       		.uleb128 0x49
- 2191 003f 13       		.uleb128 0x13
- 2192 0040 2F       		.uleb128 0x2f
- 2193 0041 05       		.uleb128 0x5
- 2194 0042 00       		.byte	0
- 2195 0043 00       		.byte	0
- 2196 0044 07       		.uleb128 0x7
- 2197 0045 26       		.uleb128 0x26
- 2198 0046 00       		.byte	0
- 2199 0047 49       		.uleb128 0x49
- 2200 0048 13       		.uleb128 0x13
- 2201 0049 00       		.byte	0
- 2202 004a 00       		.byte	0
- 2203 004b 08       		.uleb128 0x8
- 2204 004c 34       		.uleb128 0x34
- 2205 004d 00       		.byte	0
- 2206 004e 03       		.uleb128 0x3
- 2207 004f 0E       		.uleb128 0xe
- 2208 0050 3A       		.uleb128 0x3a
- 2209 0051 0B       		.uleb128 0xb
- 2210 0052 3B       		.uleb128 0x3b
- 2211 0053 0B       		.uleb128 0xb
- 2212 0054 49       		.uleb128 0x49
- 2213 0055 13       		.uleb128 0x13
- 2214 0056 3F       		.uleb128 0x3f
- 2215 0057 19       		.uleb128 0x19
- 2216 0058 02       		.uleb128 0x2
- 2217 0059 18       		.uleb128 0x18
- 2218 005a 00       		.byte	0
- 2219 005b 00       		.byte	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 40
+ 2167 085a 00       		.byte	0
+ 2168 085b 17       		.byte	23
+ 2169 085c 08       		.byte	8
+ 2170 085d 06       		.byte	6
+ 2171 085e 0A       		.byte	10
+ 2172 085f 16       		.byte	22
+ 2173 0860 0E       		.byte	14
+ 2174 0861 01       		.byte	1
+ 2175 0862 10       		.byte	16
+ 2176 0863 1A       		.byte	26
+ 2177 0864 1A       		.byte	26
+ 2178 0865 1A       		.byte	26
+ 2179 0866 00       		.byte	0
+ 2180 0867 FF       		.byte	-1
+ 2181 0868 01       		.byte	1
+ 2182 0869 03       		.byte	3
+ 2183 086a 00       		.byte	0
+ 2184 086b 00       		.byte	0
+ 2185 086c 00       		.byte	0
+ 2186 086d 00       		.byte	0
+ 2187 086e 23       		.byte	35
+ 2188 086f 04       		.byte	4
+ 2189 0870 7F       		.byte	127
+ 2190 0871 08       		.byte	8
+ 2191 0872 00       		.byte	0
+ 2192 0873 00       		.byte	0
+ 2193 0874 1C       		.byte	28
+ 2194 0875 18       		.byte	24
+ 2195 0876 63       		.byte	99
+ 2196 0877 00       		.byte	0
+ 2197 0878 1F       		.byte	31
+ 2198 0879 1C       		.byte	28
+ 2199 087a 60       		.byte	96
+ 2200 087b E1       		.byte	-31
+ 2201 087c 03       		.byte	3
+ 2202 087d 10       		.byte	16
+ 2203 087e 00       		.byte	0
+ 2204 087f 00       		.byte	0
+ 2205 0880 02       		.byte	2
+ 2206 0881 3C       		.byte	60
+ 2207 0882 00       		.byte	0
+ 2208 0883 C2       		.byte	-62
+ 2209 0884 73       		.byte	115
+ 2210 0885 FF       		.byte	-1
+ 2211 0886 0C       		.byte	12
+ 2212 0887 00       		.byte	0
+ 2213 0888 01       		.byte	1
+ 2214 0889 00       		.byte	0
+ 2215 088a 00       		.byte	0
+ 2216 088b E3       		.byte	-29
+ 2217 088c 08       		.byte	8
+ 2218 088d 44       		.byte	68
+ 2219 088e 00       		.byte	0
+ 2220 088f 00       		.byte	0
+ 2221 0890 04       		.byte	4
+ 2222 0891 E7       		.byte	-25
+ 2223 0892 00       		.byte	0
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 40
 
 
- 2220 005c 09       		.uleb128 0x9
- 2221 005d 21       		.uleb128 0x21
- 2222 005e 00       		.byte	0
- 2223 005f 49       		.uleb128 0x49
- 2224 0060 13       		.uleb128 0x13
- 2225 0061 2F       		.uleb128 0x2f
- 2226 0062 0B       		.uleb128 0xb
- 2227 0063 00       		.byte	0
- 2228 0064 00       		.byte	0
- 2229 0065 0A       		.uleb128 0xa
- 2230 0066 34       		.uleb128 0x34
- 2231 0067 00       		.byte	0
- 2232 0068 03       		.uleb128 0x3
- 2233 0069 0E       		.uleb128 0xe
- 2234 006a 3A       		.uleb128 0x3a
- 2235 006b 0B       		.uleb128 0xb
- 2236 006c 3B       		.uleb128 0x3b
- 2237 006d 05       		.uleb128 0x5
- 2238 006e 49       		.uleb128 0x49
- 2239 006f 13       		.uleb128 0x13
- 2240 0070 3F       		.uleb128 0x3f
- 2241 0071 19       		.uleb128 0x19
- 2242 0072 02       		.uleb128 0x2
- 2243 0073 18       		.uleb128 0x18
- 2244 0074 00       		.byte	0
- 2245 0075 00       		.byte	0
- 2246 0076 00       		.byte	0
- 2247              		.section	.debug_aranges,"",%progbits
- 2248 0000 14000000 		.4byte	0x14
- 2249 0004 0200     		.2byte	0x2
- 2250 0006 00000000 		.4byte	.Ldebug_info0
- 2251 000a 04       		.byte	0x4
- 2252 000b 00       		.byte	0
- 2253 000c 0000     		.2byte	0
- 2254 000e 0000     		.2byte	0
- 2255 0010 00000000 		.4byte	0
- 2256 0014 00000000 		.4byte	0
- 2257              		.section	.debug_line,"",%progbits
- 2258              	.Ldebug_line0:
- 2259 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
- 2259      02003701 
- 2259      00000201 
- 2259      FB0E0D00 
- 2259      01010101 
- 2260              	.LASF9:
- 2261 0000 5F5F7569 		.ascii	"__uint8_t\000"
- 2261      6E74385F 
- 2261      7400
- 2262              	.LASF19:
- 2263 000a 433A5C55 		.ascii	"C:\\Users\\Totos\\Desktop\\elektronik_ingenioer\\PR"
- 2263      73657273 
- 2263      5C546F74 
- 2263      6F735C44 
- 2263      65736B74 
- 2264 0038 4A335C47 		.ascii	"J3\\Github\\BattleBot\\Motor_Test.cydsn\000"
- 2264      69746875 
- 2264      625C4261 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 41
+ 2224 0893 18       		.byte	24
+ 2225 0894 0C       		.byte	12
+ 2226 0895 80       		.byte	-128
+ 2227 0896 00       		.byte	0
+ 2228 0897 00       		.byte	0
+ 2229 0898 00       		.byte	0
+ 2230 0899 C0       		.byte	-64
+ 2231 089a 00       		.byte	0
+ 2232 089b 00       		.byte	0
+ 2233 089c 2C       		.byte	44
+ 2234 089d C0       		.byte	-64
+ 2235 089e 10       		.byte	16
+ 2236 089f 38       		.byte	56
+ 2237 08a0 0F       		.byte	15
+ 2238 08a1 1F       		.byte	31
+ 2239 08a2 40       		.byte	64
+ 2240 08a3 00       		.byte	0
+ 2241 08a4 80       		.byte	-128
+ 2242 08a5 00       		.byte	0
+ 2243 08a6 22       		.byte	34
+ 2244 08a7 20       		.byte	32
+ 2245 08a8 00       		.byte	0
+ 2246 08a9 00       		.byte	0
+ 2247 08aa 04       		.byte	4
+ 2248 08ab 00       		.byte	0
+ 2249 08ac 50       		.byte	80
+ 2250 08ad 02       		.byte	2
+ 2251 08ae 00       		.byte	0
+ 2252 08af 00       		.byte	0
+ 2253 08b0 00       		.byte	0
+ 2254 08b1 D2       		.byte	-46
+ 2255 08b2 10       		.byte	16
+ 2256 08b3 50       		.byte	80
+ 2257 08b4 2B       		.byte	43
+ 2258 08b5 FF       		.byte	-1
+ 2259 08b6 FF       		.byte	-1
+ 2260 08b7 FF       		.byte	-1
+ 2261 08b8 00       		.byte	0
+ 2262 08b9 A0       		.byte	-96
+ 2263 08ba 00       		.byte	0
+ 2264 08bb 04       		.byte	4
+ 2265 08bc 18       		.byte	24
+ 2266 08bd 00       		.byte	0
+ 2267 08be 00       		.byte	0
+ 2268 08bf 00       		.byte	0
+ 2269 08c0 00       		.byte	0
+ 2270 08c1 00       		.byte	0
+ 2271 08c2 02       		.byte	2
+ 2272 08c3 11       		.byte	17
+ 2273 08c4 04       		.byte	4
+ 2274 08c5 04       		.byte	4
+ 2275 08c6 04       		.byte	4
+ 2276 08c7 04       		.byte	4
+ 2277 08c8 11       		.byte	17
+ 2278 08c9 14       		.byte	20
+ 2279 08ca 00       		.byte	0
+ 2280 08cb 01       		.byte	1
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 41
 
 
- 2264      74746C65 
- 2264      426F745C 
- 2265              	.LASF16:
- 2266 005d 63795F6D 		.ascii	"cy_metadata\000"
- 2266      65746164 
- 2266      61746100 
- 2267              	.LASF1:
- 2268 0069 756E7369 		.ascii	"unsigned char\000"
- 2268      676E6564 
- 2268      20636861 
- 2268      7200
- 2269              	.LASF17:
- 2270 0077 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2270      43313120 
- 2270      352E342E 
- 2270      31203230 
- 2270      31363036 
- 2271 00aa 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 2271      20726576 
- 2271      6973696F 
- 2271      6E203233 
- 2271      37373135 
- 2272 00dd 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2272      66756E63 
- 2272      74696F6E 
- 2272      2D736563 
- 2272      74696F6E 
- 2273              	.LASF5:
- 2274 0105 6C6F6E67 		.ascii	"long unsigned int\000"
- 2274      20756E73 
- 2274      69676E65 
- 2274      6420696E 
- 2274      7400
- 2275              	.LASF3:
- 2276 0117 73686F72 		.ascii	"short unsigned int\000"
- 2276      7420756E 
- 2276      7369676E 
- 2276      65642069 
- 2276      6E7400
- 2277              	.LASF13:
- 2278 012a 63795F6D 		.ascii	"cy_meta_custnvl\000"
- 2278      6574615F 
- 2278      63757374 
- 2278      6E766C00 
- 2279              	.LASF12:
- 2280 013a 63795F6D 		.ascii	"cy_meta_configecc\000"
- 2280      6574615F 
- 2280      636F6E66 
- 2280      69676563 
- 2280      6300
- 2281              	.LASF8:
- 2282 014c 756E7369 		.ascii	"unsigned int\000"
- 2282      676E6564 
- 2282      20696E74 
- 2282      00
- 2283              	.LASF7:
- 2284 0159 6C6F6E67 		.ascii	"long long unsigned int\000"
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccU1u9Wv.s 			page 42
+ 2281 08cc 40       		.byte	64
+ 2282 08cd 00       		.byte	0
+ 2283 08ce C0       		.byte	-64
+ 2284 08cf 00       		.byte	0
+ 2285 08d0 40       		.byte	64
+ 2286 08d1 40       		.byte	64
+ 2287 08d2 C0       		.byte	-64
+ 2288 08d3 00       		.byte	0
+ 2289 08d4 C0       		.byte	-64
+ 2290 08d5 00       		.byte	0
+ 2291 08d6 C0       		.byte	-64
+ 2292 08d7 00       		.byte	0
+ 2293 08d8 C0       		.byte	-64
+ 2294 08d9 00       		.byte	0
+ 2295 08da C0       		.byte	-64
+ 2296 08db 00       		.byte	0
+ 2297 08dc 00       		.byte	0
+ 2298 08dd 00       		.byte	0
+ 2299 08de 00       		.byte	0
+ 2300 08df 00       		.byte	0
+ 2301 08e0 00       		.byte	0
+ 2302 08e1 00       		.byte	0
+ 2303 08e2 00       		.byte	0
+ 2304 08e3 00       		.byte	0
+ 2305 08e4 00       		.byte	0
+ 2306 08e5 00       		.byte	0
+ 2307 08e6 00       		.byte	0
+ 2308 08e7 00       		.byte	0
+ 2309 08e8 00       		.byte	0
+ 2310 08e9 00       		.byte	0
+ 2311 08ea 00       		.byte	0
+ 2312 08eb 00       		.byte	0
+ 2313 08ec 02       		.byte	2
+ 2314 08ed 00       		.byte	0
+ 2315 08ee 01       		.byte	1
+ 2316 08ef 02       		.byte	2
+ 2317 08f0 02       		.byte	2
+ 2318 08f1 00       		.byte	0
+ 2319 08f2 02       		.byte	2
+ 2320 08f3 00       		.byte	0
+ 2321 08f4 00       		.byte	0
+ 2322 08f5 00       		.byte	0
+ 2323 08f6 00       		.byte	0
+ 2324 08f7 00       		.byte	0
+ 2325 08f8 80       		.byte	-128
+ 2326 08f9 00       		.byte	0
+ 2327 08fa 40       		.byte	64
+ 2328 08fb 80       		.byte	-128
+ 2329 08fc 80       		.byte	-128
+ 2330 08fd 00       		.byte	0
+ 2331 08fe 80       		.byte	-128
+ 2332 08ff 00       		.byte	0
+ 2333 0900 00       		.byte	0
+ 2334 0901 00       		.byte	0
+ 2335 0902 00       		.byte	0
+ 2336 0903 00       		.byte	0
+ 2337 0904 00       		.byte	0
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 42
 
 
- 2284      206C6F6E 
- 2284      6720756E 
- 2284      7369676E 
- 2284      65642069 
- 2285              	.LASF10:
- 2286 0170 75696E74 		.ascii	"uint8_t\000"
- 2286      385F7400 
- 2287              	.LASF15:
- 2288 0178 63795F6D 		.ascii	"cy_meta_flashprotect\000"
- 2288      6574615F 
- 2288      666C6173 
- 2288      6870726F 
- 2288      74656374 
- 2289              	.LASF14:
- 2290 018d 63795F6D 		.ascii	"cy_meta_wonvl\000"
- 2290      6574615F 
- 2290      776F6E76 
- 2290      6C00
- 2291              	.LASF11:
- 2292 019b 73697A65 		.ascii	"sizetype\000"
- 2292      74797065 
- 2292      00
- 2293              	.LASF6:
- 2294 01a4 6C6F6E67 		.ascii	"long long int\000"
- 2294      206C6F6E 
- 2294      6720696E 
- 2294      7400
- 2295              	.LASF2:
- 2296 01b2 73686F72 		.ascii	"short int\000"
- 2296      7420696E 
- 2296      7400
- 2297              	.LASF4:
- 2298 01bc 6C6F6E67 		.ascii	"long int\000"
- 2298      20696E74 
- 2298      00
- 2299              	.LASF0:
- 2300 01c5 7369676E 		.ascii	"signed char\000"
- 2300      65642063 
- 2300      68617200 
- 2301              	.LASF18:
- 2302 01d1 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
- 2302      72617465 
- 2302      645F536F 
- 2302      75726365 
- 2302      5C50536F 
- 2303              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 2338 0905 FB       		.byte	-5
+ 2339 0906 FB       		.byte	-5
+ 2340 0907 00       		.byte	0
+ 2341 0908 30       		.byte	48
+ 2342 0909 00       		.byte	0
+ 2343 090a 00       		.byte	0
+ 2344 090b 00       		.byte	0
+ 2345 090c 10       		.byte	16
+ 2346 090d 08       		.byte	8
+ 2347 090e 08       		.byte	8
+ 2348 090f 00       		.byte	0
+ 2349 0910 00       		.byte	0
+ 2350 0911 00       		.byte	0
+ 2351 0912 00       		.byte	0
+ 2352 0913 00       		.byte	0
+ 2353 0914 00       		.byte	0
+ 2354 0915 18       		.byte	24
+ 2355 0916 18       		.byte	24
+ 2356 0917 00       		.byte	0
+ 2357 0918 18       		.byte	24
+ 2358 0919 00       		.byte	0
+ 2359 091a 00       		.byte	0
+ 2360 091b 00       		.byte	0
+ 2361              		.section	.cywolatch,"a",%progbits
+ 2362              		.align	2
+ 2363              		.type	cy_meta_wonvl, %object
+ 2364              		.size	cy_meta_wonvl, 4
+ 2365              	cy_meta_wonvl:
+ 2366 0000 BC       		.byte	-68
+ 2367 0001 90       		.byte	-112
+ 2368 0002 AC       		.byte	-84
+ 2369 0003 AF       		.byte	-81
+ 2370              		.section	.cycustnvl,"a",%progbits
+ 2371              		.align	2
+ 2372              		.type	cy_meta_custnvl, %object
+ 2373              		.size	cy_meta_custnvl, 4
+ 2374              	cy_meta_custnvl:
+ 2375 0000 00       		.byte	0
+ 2376 0001 00       		.byte	0
+ 2377 0002 40       		.byte	64
+ 2378 0003 05       		.byte	5
+ 2379              		.section	.cymeta,"a",%progbits
+ 2380              		.align	2
+ 2381              		.type	cy_metadata, %object
+ 2382              		.size	cy_metadata, 12
+ 2383              	cy_metadata:
+ 2384 0000 00       		.byte	0
+ 2385 0001 01       		.byte	1
+ 2386 0002 2E       		.byte	46
+ 2387 0003 16       		.byte	22
+ 2388 0004 10       		.byte	16
+ 2389 0005 69       		.byte	105
+ 2390 0006 00       		.byte	0
+ 2391 0007 01       		.byte	1
+ 2392 0008 00       		.byte	0
+ 2393 0009 00       		.byte	0
+ 2394 000a 00       		.byte	0
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 43
+
+
+ 2395 000b 00       		.byte	0
+ 2396              		.section	.cyflashprotect,"a",%progbits
+ 2397              		.align	2
+ 2398              		.type	cy_meta_flashprotect, %object
+ 2399              		.size	cy_meta_flashprotect, 256
+ 2400              	cy_meta_flashprotect:
+ 2401 0000 00000000 		.space	256
+ 2401      00000000 
+ 2401      00000000 
+ 2401      00000000 
+ 2401      00000000 
+ 2402              		.text
+ 2403              	.Letext0:
+ 2404              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 2405              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 2406              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
+ 2407              		.section	.debug_info,"",%progbits
+ 2408              	.Ldebug_info0:
+ 2409 0000 35010000 		.4byte	0x135
+ 2410 0004 0400     		.2byte	0x4
+ 2411 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 2412 000a 04       		.byte	0x4
+ 2413 000b 01       		.uleb128 0x1
+ 2414 000c 24000000 		.4byte	.LASF17
+ 2415 0010 0C       		.byte	0xc
+ 2416 0011 D8010000 		.4byte	.LASF18
+ 2417 0015 B2000000 		.4byte	.LASF19
+ 2418 0019 00000000 		.4byte	.Ldebug_line0
+ 2419 001d 02       		.uleb128 0x2
+ 2420 001e 01       		.byte	0x1
+ 2421 001f 06       		.byte	0x6
+ 2422 0020 CC010000 		.4byte	.LASF0
+ 2423 0024 03       		.uleb128 0x3
+ 2424 0025 00000000 		.4byte	.LASF9
+ 2425 0029 01       		.byte	0x1
+ 2426 002a 1D       		.byte	0x1d
+ 2427 002b 2F000000 		.4byte	0x2f
+ 2428 002f 02       		.uleb128 0x2
+ 2429 0030 01       		.byte	0x1
+ 2430 0031 08       		.byte	0x8
+ 2431 0032 16000000 		.4byte	.LASF1
+ 2432 0036 02       		.uleb128 0x2
+ 2433 0037 02       		.byte	0x2
+ 2434 0038 05       		.byte	0x5
+ 2435 0039 B9010000 		.4byte	.LASF2
+ 2436 003d 02       		.uleb128 0x2
+ 2437 003e 02       		.byte	0x2
+ 2438 003f 07       		.byte	0x7
+ 2439 0040 1E010000 		.4byte	.LASF3
+ 2440 0044 02       		.uleb128 0x2
+ 2441 0045 04       		.byte	0x4
+ 2442 0046 05       		.byte	0x5
+ 2443 0047 C3010000 		.4byte	.LASF4
+ 2444 004b 02       		.uleb128 0x2
+ 2445 004c 04       		.byte	0x4
+ 2446 004d 07       		.byte	0x7
+ 2447 004e 0C010000 		.4byte	.LASF5
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 44
+
+
+ 2448 0052 02       		.uleb128 0x2
+ 2449 0053 08       		.byte	0x8
+ 2450 0054 05       		.byte	0x5
+ 2451 0055 AB010000 		.4byte	.LASF6
+ 2452 0059 02       		.uleb128 0x2
+ 2453 005a 08       		.byte	0x8
+ 2454 005b 07       		.byte	0x7
+ 2455 005c 60010000 		.4byte	.LASF7
+ 2456 0060 04       		.uleb128 0x4
+ 2457 0061 04       		.byte	0x4
+ 2458 0062 05       		.byte	0x5
+ 2459 0063 696E7400 		.ascii	"int\000"
+ 2460 0067 02       		.uleb128 0x2
+ 2461 0068 04       		.byte	0x4
+ 2462 0069 07       		.byte	0x7
+ 2463 006a 53010000 		.4byte	.LASF8
+ 2464 006e 03       		.uleb128 0x3
+ 2465 006f 77010000 		.4byte	.LASF10
+ 2466 0073 02       		.byte	0x2
+ 2467 0074 18       		.byte	0x18
+ 2468 0075 24000000 		.4byte	0x24
+ 2469 0079 05       		.uleb128 0x5
+ 2470 007a 91000000 		.4byte	0x91
+ 2471 007e 8A000000 		.4byte	0x8a
+ 2472 0082 06       		.uleb128 0x6
+ 2473 0083 8A000000 		.4byte	0x8a
+ 2474 0087 1B09     		.2byte	0x91b
+ 2475 0089 00       		.byte	0
+ 2476 008a 02       		.uleb128 0x2
+ 2477 008b 04       		.byte	0x4
+ 2478 008c 07       		.byte	0x7
+ 2479 008d A2010000 		.4byte	.LASF11
+ 2480 0091 07       		.uleb128 0x7
+ 2481 0092 6E000000 		.4byte	0x6e
+ 2482 0096 08       		.uleb128 0x8
+ 2483 0097 41010000 		.4byte	.LASF12
+ 2484 009b 03       		.byte	0x3
+ 2485 009c 1F       		.byte	0x1f
+ 2486 009d A7000000 		.4byte	0xa7
+ 2487 00a1 05       		.uleb128 0x5
+ 2488 00a2 03       		.byte	0x3
+ 2489 00a3 00000000 		.4byte	cy_meta_configecc
+ 2490 00a7 07       		.uleb128 0x7
+ 2491 00a8 79000000 		.4byte	0x79
+ 2492 00ac 05       		.uleb128 0x5
+ 2493 00ad 91000000 		.4byte	0x91
+ 2494 00b1 BC000000 		.4byte	0xbc
+ 2495 00b5 09       		.uleb128 0x9
+ 2496 00b6 8A000000 		.4byte	0x8a
+ 2497 00ba 03       		.byte	0x3
+ 2498 00bb 00       		.byte	0
+ 2499 00bc 0A       		.uleb128 0xa
+ 2500 00bd 31010000 		.4byte	.LASF13
+ 2501 00c1 03       		.byte	0x3
+ 2502 00c2 5001     		.2byte	0x150
+ 2503 00c4 CE000000 		.4byte	0xce
+ 2504 00c8 05       		.uleb128 0x5
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 45
+
+
+ 2505 00c9 03       		.byte	0x3
+ 2506 00ca 00000000 		.4byte	cy_meta_custnvl
+ 2507 00ce 07       		.uleb128 0x7
+ 2508 00cf AC000000 		.4byte	0xac
+ 2509 00d3 0A       		.uleb128 0xa
+ 2510 00d4 94010000 		.4byte	.LASF14
+ 2511 00d8 03       		.byte	0x3
+ 2512 00d9 5E01     		.2byte	0x15e
+ 2513 00db E5000000 		.4byte	0xe5
+ 2514 00df 05       		.uleb128 0x5
+ 2515 00e0 03       		.byte	0x3
+ 2516 00e1 00000000 		.4byte	cy_meta_wonvl
+ 2517 00e5 07       		.uleb128 0x7
+ 2518 00e6 AC000000 		.4byte	0xac
+ 2519 00ea 05       		.uleb128 0x5
+ 2520 00eb 91000000 		.4byte	0x91
+ 2521 00ef FA000000 		.4byte	0xfa
+ 2522 00f3 09       		.uleb128 0x9
+ 2523 00f4 8A000000 		.4byte	0x8a
+ 2524 00f8 FF       		.byte	0xff
+ 2525 00f9 00       		.byte	0
+ 2526 00fa 0A       		.uleb128 0xa
+ 2527 00fb 7F010000 		.4byte	.LASF15
+ 2528 00ff 03       		.byte	0x3
+ 2529 0100 6C01     		.2byte	0x16c
+ 2530 0102 0C010000 		.4byte	0x10c
+ 2531 0106 05       		.uleb128 0x5
+ 2532 0107 03       		.byte	0x3
+ 2533 0108 00000000 		.4byte	cy_meta_flashprotect
+ 2534 010c 07       		.uleb128 0x7
+ 2535 010d EA000000 		.4byte	0xea
+ 2536 0111 05       		.uleb128 0x5
+ 2537 0112 91000000 		.4byte	0x91
+ 2538 0116 21010000 		.4byte	0x121
+ 2539 011a 09       		.uleb128 0x9
+ 2540 011b 8A000000 		.4byte	0x8a
+ 2541 011f 0B       		.byte	0xb
+ 2542 0120 00       		.byte	0
+ 2543 0121 0A       		.uleb128 0xa
+ 2544 0122 0A000000 		.4byte	.LASF16
+ 2545 0126 03       		.byte	0x3
+ 2546 0127 9901     		.2byte	0x199
+ 2547 0129 33010000 		.4byte	0x133
+ 2548 012d 05       		.uleb128 0x5
+ 2549 012e 03       		.byte	0x3
+ 2550 012f 00000000 		.4byte	cy_metadata
+ 2551 0133 07       		.uleb128 0x7
+ 2552 0134 11010000 		.4byte	0x111
+ 2553 0138 00       		.byte	0
+ 2554              		.section	.debug_abbrev,"",%progbits
+ 2555              	.Ldebug_abbrev0:
+ 2556 0000 01       		.uleb128 0x1
+ 2557 0001 11       		.uleb128 0x11
+ 2558 0002 01       		.byte	0x1
+ 2559 0003 25       		.uleb128 0x25
+ 2560 0004 0E       		.uleb128 0xe
+ 2561 0005 13       		.uleb128 0x13
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 46
+
+
+ 2562 0006 0B       		.uleb128 0xb
+ 2563 0007 03       		.uleb128 0x3
+ 2564 0008 0E       		.uleb128 0xe
+ 2565 0009 1B       		.uleb128 0x1b
+ 2566 000a 0E       		.uleb128 0xe
+ 2567 000b 10       		.uleb128 0x10
+ 2568 000c 17       		.uleb128 0x17
+ 2569 000d 00       		.byte	0
+ 2570 000e 00       		.byte	0
+ 2571 000f 02       		.uleb128 0x2
+ 2572 0010 24       		.uleb128 0x24
+ 2573 0011 00       		.byte	0
+ 2574 0012 0B       		.uleb128 0xb
+ 2575 0013 0B       		.uleb128 0xb
+ 2576 0014 3E       		.uleb128 0x3e
+ 2577 0015 0B       		.uleb128 0xb
+ 2578 0016 03       		.uleb128 0x3
+ 2579 0017 0E       		.uleb128 0xe
+ 2580 0018 00       		.byte	0
+ 2581 0019 00       		.byte	0
+ 2582 001a 03       		.uleb128 0x3
+ 2583 001b 16       		.uleb128 0x16
+ 2584 001c 00       		.byte	0
+ 2585 001d 03       		.uleb128 0x3
+ 2586 001e 0E       		.uleb128 0xe
+ 2587 001f 3A       		.uleb128 0x3a
+ 2588 0020 0B       		.uleb128 0xb
+ 2589 0021 3B       		.uleb128 0x3b
+ 2590 0022 0B       		.uleb128 0xb
+ 2591 0023 49       		.uleb128 0x49
+ 2592 0024 13       		.uleb128 0x13
+ 2593 0025 00       		.byte	0
+ 2594 0026 00       		.byte	0
+ 2595 0027 04       		.uleb128 0x4
+ 2596 0028 24       		.uleb128 0x24
+ 2597 0029 00       		.byte	0
+ 2598 002a 0B       		.uleb128 0xb
+ 2599 002b 0B       		.uleb128 0xb
+ 2600 002c 3E       		.uleb128 0x3e
+ 2601 002d 0B       		.uleb128 0xb
+ 2602 002e 03       		.uleb128 0x3
+ 2603 002f 08       		.uleb128 0x8
+ 2604 0030 00       		.byte	0
+ 2605 0031 00       		.byte	0
+ 2606 0032 05       		.uleb128 0x5
+ 2607 0033 01       		.uleb128 0x1
+ 2608 0034 01       		.byte	0x1
+ 2609 0035 49       		.uleb128 0x49
+ 2610 0036 13       		.uleb128 0x13
+ 2611 0037 01       		.uleb128 0x1
+ 2612 0038 13       		.uleb128 0x13
+ 2613 0039 00       		.byte	0
+ 2614 003a 00       		.byte	0
+ 2615 003b 06       		.uleb128 0x6
+ 2616 003c 21       		.uleb128 0x21
+ 2617 003d 00       		.byte	0
+ 2618 003e 49       		.uleb128 0x49
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 47
+
+
+ 2619 003f 13       		.uleb128 0x13
+ 2620 0040 2F       		.uleb128 0x2f
+ 2621 0041 05       		.uleb128 0x5
+ 2622 0042 00       		.byte	0
+ 2623 0043 00       		.byte	0
+ 2624 0044 07       		.uleb128 0x7
+ 2625 0045 26       		.uleb128 0x26
+ 2626 0046 00       		.byte	0
+ 2627 0047 49       		.uleb128 0x49
+ 2628 0048 13       		.uleb128 0x13
+ 2629 0049 00       		.byte	0
+ 2630 004a 00       		.byte	0
+ 2631 004b 08       		.uleb128 0x8
+ 2632 004c 34       		.uleb128 0x34
+ 2633 004d 00       		.byte	0
+ 2634 004e 03       		.uleb128 0x3
+ 2635 004f 0E       		.uleb128 0xe
+ 2636 0050 3A       		.uleb128 0x3a
+ 2637 0051 0B       		.uleb128 0xb
+ 2638 0052 3B       		.uleb128 0x3b
+ 2639 0053 0B       		.uleb128 0xb
+ 2640 0054 49       		.uleb128 0x49
+ 2641 0055 13       		.uleb128 0x13
+ 2642 0056 3F       		.uleb128 0x3f
+ 2643 0057 19       		.uleb128 0x19
+ 2644 0058 02       		.uleb128 0x2
+ 2645 0059 18       		.uleb128 0x18
+ 2646 005a 00       		.byte	0
+ 2647 005b 00       		.byte	0
+ 2648 005c 09       		.uleb128 0x9
+ 2649 005d 21       		.uleb128 0x21
+ 2650 005e 00       		.byte	0
+ 2651 005f 49       		.uleb128 0x49
+ 2652 0060 13       		.uleb128 0x13
+ 2653 0061 2F       		.uleb128 0x2f
+ 2654 0062 0B       		.uleb128 0xb
+ 2655 0063 00       		.byte	0
+ 2656 0064 00       		.byte	0
+ 2657 0065 0A       		.uleb128 0xa
+ 2658 0066 34       		.uleb128 0x34
+ 2659 0067 00       		.byte	0
+ 2660 0068 03       		.uleb128 0x3
+ 2661 0069 0E       		.uleb128 0xe
+ 2662 006a 3A       		.uleb128 0x3a
+ 2663 006b 0B       		.uleb128 0xb
+ 2664 006c 3B       		.uleb128 0x3b
+ 2665 006d 05       		.uleb128 0x5
+ 2666 006e 49       		.uleb128 0x49
+ 2667 006f 13       		.uleb128 0x13
+ 2668 0070 3F       		.uleb128 0x3f
+ 2669 0071 19       		.uleb128 0x19
+ 2670 0072 02       		.uleb128 0x2
+ 2671 0073 18       		.uleb128 0x18
+ 2672 0074 00       		.byte	0
+ 2673 0075 00       		.byte	0
+ 2674 0076 00       		.byte	0
+ 2675              		.section	.debug_aranges,"",%progbits
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 48
+
+
+ 2676 0000 14000000 		.4byte	0x14
+ 2677 0004 0200     		.2byte	0x2
+ 2678 0006 00000000 		.4byte	.Ldebug_info0
+ 2679 000a 04       		.byte	0x4
+ 2680 000b 00       		.byte	0
+ 2681 000c 0000     		.2byte	0
+ 2682 000e 0000     		.2byte	0
+ 2683 0010 00000000 		.4byte	0
+ 2684 0014 00000000 		.4byte	0
+ 2685              		.section	.debug_line,"",%progbits
+ 2686              	.Ldebug_line0:
+ 2687 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
+ 2687      02003701 
+ 2687      00000201 
+ 2687      FB0E0D00 
+ 2687      01010101 
+ 2688              	.LASF9:
+ 2689 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 2689      6E74385F 
+ 2689      7400
+ 2690              	.LASF16:
+ 2691 000a 63795F6D 		.ascii	"cy_metadata\000"
+ 2691      65746164 
+ 2691      61746100 
+ 2692              	.LASF1:
+ 2693 0016 756E7369 		.ascii	"unsigned char\000"
+ 2693      676E6564 
+ 2693      20636861 
+ 2693      7200
+ 2694              	.LASF17:
+ 2695 0024 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2695      43313120 
+ 2695      352E342E 
+ 2695      31203230 
+ 2695      31363036 
+ 2696 0057 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2696      20726576 
+ 2696      6973696F 
+ 2696      6E203233 
+ 2696      37373135 
+ 2697 008a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2697      66756E63 
+ 2697      74696F6E 
+ 2697      2D736563 
+ 2697      74696F6E 
+ 2698              	.LASF19:
+ 2699 00b2 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\Elektronik ingenioer\\3rd s"
+ 2699      635C486F 
+ 2699      6D655C44 
+ 2699      65736B74 
+ 2699      6F705C45 
+ 2700 00df 656D6573 		.ascii	"emester\\PRJ3\\PRJ3\\BattleBot\\Motor_Test.cydsn\000"
+ 2700      7465725C 
+ 2700      50524A33 
+ 2700      5C50524A 
+ 2700      335C4261 
+ 2701              	.LASF5:
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 49
+
+
+ 2702 010c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2702      20756E73 
+ 2702      69676E65 
+ 2702      6420696E 
+ 2702      7400
+ 2703              	.LASF3:
+ 2704 011e 73686F72 		.ascii	"short unsigned int\000"
+ 2704      7420756E 
+ 2704      7369676E 
+ 2704      65642069 
+ 2704      6E7400
+ 2705              	.LASF13:
+ 2706 0131 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 2706      6574615F 
+ 2706      63757374 
+ 2706      6E766C00 
+ 2707              	.LASF12:
+ 2708 0141 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 2708      6574615F 
+ 2708      636F6E66 
+ 2708      69676563 
+ 2708      6300
+ 2709              	.LASF8:
+ 2710 0153 756E7369 		.ascii	"unsigned int\000"
+ 2710      676E6564 
+ 2710      20696E74 
+ 2710      00
+ 2711              	.LASF7:
+ 2712 0160 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2712      206C6F6E 
+ 2712      6720756E 
+ 2712      7369676E 
+ 2712      65642069 
+ 2713              	.LASF10:
+ 2714 0177 75696E74 		.ascii	"uint8_t\000"
+ 2714      385F7400 
+ 2715              	.LASF15:
+ 2716 017f 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 2716      6574615F 
+ 2716      666C6173 
+ 2716      6870726F 
+ 2716      74656374 
+ 2717              	.LASF14:
+ 2718 0194 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 2718      6574615F 
+ 2718      776F6E76 
+ 2718      6C00
+ 2719              	.LASF11:
+ 2720 01a2 73697A65 		.ascii	"sizetype\000"
+ 2720      74797065 
+ 2720      00
+ 2721              	.LASF6:
+ 2722 01ab 6C6F6E67 		.ascii	"long long int\000"
+ 2722      206C6F6E 
+ 2722      6720696E 
+ 2722      7400
+ 2723              	.LASF2:
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccrTPDop.s 			page 50
+
+
+ 2724 01b9 73686F72 		.ascii	"short int\000"
+ 2724      7420696E 
+ 2724      7400
+ 2725              	.LASF4:
+ 2726 01c3 6C6F6E67 		.ascii	"long int\000"
+ 2726      20696E74 
+ 2726      00
+ 2727              	.LASF0:
+ 2728 01cc 7369676E 		.ascii	"signed char\000"
+ 2728      65642063 
+ 2728      68617200 
+ 2729              	.LASF18:
+ 2730 01d8 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 2730      72617465 
+ 2730      645F536F 
+ 2730      75726365 
+ 2730      5C50536F 
+ 2731              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
