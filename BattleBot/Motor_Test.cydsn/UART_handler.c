@@ -42,8 +42,6 @@ CY_ISR(ISR_UART_rx_handler_BT)
             // Try to parse the format: <char>,<int>,<int>,<int>
             if (sscanf(btBuffer, "%c,%d,%d,%d", &tempMode, &temp1, &temp2, &tempBool) == 4)
             {
-                snprintf(message, sizeof(message), "The tempMode variable is %c\r\n", tempMode);
-                UART_PC_PutString(message);
                 if (tempMode == '$') {
                     VAR1 = (int8_t)temp1;
                     VAR2 = (int8_t)temp2;
