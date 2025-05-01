@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
   45              		.section	.text.ISR_UART_rx_handler_BT,"ax",%progbits
   46              		.align	2
   47              		.global	ISR_UART_rx_handler_BT
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 2
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 2
 
 
   48              		.thumb
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
   81 001a 1171     		strb	r1, [r2, #4]
   82 001c 1344     		add	r3, r3, r2
   83 001e 1872     		strb	r0, [r3, #8]
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 3
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 3
 
 
   84              	.L6:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
   44:UART_handler.c ****             {
   45:UART_handler.c ****                 if (tempMode == '$') {
  126              		.loc 1 45 0
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 4
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 4
 
 
  127 0066 9DF8A330 		ldrb	r3, [sp, #163]	@ zero_extendqisi2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  169              		.loc 1 57 0
  170 00a6 2A9A     		ldr	r2, [sp, #168]
  171 00a8 5A60     		str	r2, [r3, #4]
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 5
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 5
 
 
   58:UART_handler.c ****                     shootRef->shootMode = tempBool;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
   74:UART_handler.c ****             memset(btBuffer, 0, sizeof(btBuffer));
  210              		.loc 1 74 0
  211 00e2 3222     		movs	r2, #50
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 6
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 6
 
 
  212 00e4 0830     		adds	r0, r0, #8
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
   90:UART_handler.c **** 
   91:UART_handler.c ****         handleByteReceived(byteReceived);
   92:UART_handler.c ****         
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 7
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 7
 
 
   93:UART_handler.c ****         bytesToRead--;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  290 003c 312C     		cmp	r4, #49
  291 003e 07D0     		beq	.L22
  292 0040 78E0     		b	.L17
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 8
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 8
 
 
  293              	.L20:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  120:UART_handler.c ****                 if (currentSpeed == PWM_MAX_DUTY)
  334              		.loc 1 120 0
  335 008c 94F93A30 		ldrsb	r3, [r4, #58]
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 9
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 9
 
 
  336 0090 322B     		cmp	r3, #50
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  371 00ce 83F83A20 		strb	r2, [r3, #58]
  372              	.L29:
  140:UART_handler.c ****                 }
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 10
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 10
 
 
  141:UART_handler.c ****                 set_speedA(currentSpeed);
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  160:UART_handler.c ****         case 'a':
  161:UART_handler.c ****            // Asks for the address (IT SHOULD BE 98d3:51:fe6f30)
  162:UART_handler.c ****             UART_PC_PutString("Fetching MAC address of Bluetooth module\r\n");
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 11
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 11
 
 
  408              		.loc 1 162 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  443 0136 10BD     		pop	{r4, pc}
  444              	.L32:
  445              		.align	2
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 12
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 12
 
 
  446              	.L31:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  495              		.loc 1 89 0
  496 0010 FFF7FEFF 		bl	UART_PC_WriteTxData
  497              	.LVL44:
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 13
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 13
 
 
   91:UART_handler.c ****         
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  534 0074 5B425420 		.ascii	"[BT Info] AT Command or response received: %s\015\012"
  534      496E666F 
  534      5D204154 
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 14
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 14
 
 
  534      20436F6D 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  556 017f 00       		.space	1
  557              	.LC17:
  558 0180 46656374 		.ascii	"Fecthing UART info from Bluetooth module\015\012\000"
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 15
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 15
 
 
  558      68696E67 
@@ -892,17 +892,17 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  590 003a 00       		.space	1
  591              		.text
  592              	.Letext0:
- 593              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 594              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 593              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 594              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
  595              		.file 4 "shootVarHandler.h"
  596              		.file 5 "Generated_Source\\PSoC5/UART_BT.h"
- 597              		.file 6 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 597              		.file 6 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
  598              		.file 7 "Generated_Source\\PSoC5/UART_PC.h"
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 16
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 16
 
 
  599              		.file 8 "motor_control.h"
- 600              		.file 9 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 600              		.file 9 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
  601              		.file 10 "Generated_Source\\PSoC5/core_cm3.h"
  602              		.section	.debug_info,"",%progbits
  603              	.Ldebug_info0:
@@ -911,31 +911,31 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  606 0006 00000000 		.4byte	.Ldebug_abbrev0
  607 000a 04       		.byte	0x4
  608 000b 01       		.uleb128 0x1
- 609 000c 3D030000 		.4byte	.LASF58
+ 609 000c 36030000 		.4byte	.LASF58
  610 0010 0C       		.byte	0xc
- 611 0011 FC010000 		.4byte	.LASF59
- 612 0015 43000000 		.4byte	.LASF60
+ 611 0011 A2010000 		.4byte	.LASF59
+ 612 0015 72020000 		.4byte	.LASF60
  613 0019 00000000 		.4byte	.Ldebug_ranges0+0
  614 001d 00000000 		.4byte	0
  615 0021 00000000 		.4byte	.Ldebug_line0
  616 0025 02       		.uleb128 0x2
- 617 0026 5D020000 		.4byte	.LASF0
+ 617 0026 03020000 		.4byte	.LASF0
  618 002a 02       		.byte	0x2
  619 002b 1B       		.byte	0x1b
  620 002c 30000000 		.4byte	0x30
  621 0030 03       		.uleb128 0x3
  622 0031 01       		.byte	0x1
  623 0032 06       		.byte	0x6
- 624 0033 FC000000 		.4byte	.LASF2
+ 624 0033 A2000000 		.4byte	.LASF2
  625 0037 02       		.uleb128 0x2
- 626 0038 6B010000 		.4byte	.LASF1
+ 626 0038 11010000 		.4byte	.LASF1
  627 003c 02       		.byte	0x2
  628 003d 1D       		.byte	0x1d
  629 003e 42000000 		.4byte	0x42
  630 0042 03       		.uleb128 0x3
  631 0043 01       		.byte	0x1
  632 0044 08       		.byte	0x8
- 633 0045 DB010000 		.4byte	.LASF3
+ 633 0045 81010000 		.4byte	.LASF3
  634 0049 03       		.uleb128 0x3
  635 004a 02       		.byte	0x2
  636 004b 05       		.byte	0x5
@@ -943,31 +943,31 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  638 0050 03       		.uleb128 0x3
  639 0051 02       		.byte	0x2
  640 0052 07       		.byte	0x7
- 641 0053 4A020000 		.4byte	.LASF5
+ 641 0053 F0010000 		.4byte	.LASF5
  642 0057 02       		.uleb128 0x2
- 643 0058 12030000 		.4byte	.LASF6
+ 643 0058 0B030000 		.4byte	.LASF6
  644 005c 02       		.byte	0x2
  645 005d 3F       		.byte	0x3f
  646 005e 62000000 		.4byte	0x62
  647 0062 03       		.uleb128 0x3
  648 0063 04       		.byte	0x4
  649 0064 05       		.byte	0x5
- 650 0065 4C010000 		.4byte	.LASF7
+ 650 0065 F2000000 		.4byte	.LASF7
  651 0069 03       		.uleb128 0x3
  652 006a 04       		.byte	0x4
  653 006b 07       		.byte	0x7
- 654 006c 2F020000 		.4byte	.LASF8
+ 654 006c D5010000 		.4byte	.LASF8
  655 0070 03       		.uleb128 0x3
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 17
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 17
 
 
  656 0071 08       		.byte	0x8
  657 0072 05       		.byte	0x5
- 658 0073 1B010000 		.4byte	.LASF9
+ 658 0073 C1000000 		.4byte	.LASF9
  659 0077 03       		.uleb128 0x3
  660 0078 08       		.byte	0x8
  661 0079 07       		.byte	0x7
- 662 007a 0B020000 		.4byte	.LASF10
+ 662 007a B1010000 		.4byte	.LASF10
  663 007e 04       		.uleb128 0x4
  664 007f 04       		.byte	0x4
  665 0080 05       		.byte	0x5
@@ -975,50 +975,50 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  667 0085 03       		.uleb128 0x3
  668 0086 04       		.byte	0x4
  669 0087 07       		.byte	0x7
- 670 0088 22020000 		.4byte	.LASF11
+ 670 0088 C8010000 		.4byte	.LASF11
  671 008c 02       		.uleb128 0x2
  672 008d 32000000 		.4byte	.LASF12
  673 0091 03       		.byte	0x3
  674 0092 14       		.byte	0x14
  675 0093 25000000 		.4byte	0x25
  676 0097 02       		.uleb128 0x2
- 677 0098 1C030000 		.4byte	.LASF13
+ 677 0098 15030000 		.4byte	.LASF13
  678 009c 03       		.byte	0x3
  679 009d 18       		.byte	0x18
  680 009e 37000000 		.4byte	0x37
  681 00a2 02       		.uleb128 0x2
- 682 00a3 83020000 		.4byte	.LASF14
+ 682 00a3 29020000 		.4byte	.LASF14
  683 00a7 03       		.byte	0x3
  684 00a8 2C       		.byte	0x2c
  685 00a9 57000000 		.4byte	0x57
  686 00ad 03       		.uleb128 0x3
  687 00ae 04       		.byte	0x4
  688 00af 04       		.byte	0x4
- 689 00b0 15010000 		.4byte	.LASF15
+ 689 00b0 BB000000 		.4byte	.LASF15
  690 00b4 03       		.uleb128 0x3
  691 00b5 08       		.byte	0x8
  692 00b6 04       		.byte	0x4
- 693 00b7 E0020000 		.4byte	.LASF16
+ 693 00b7 D9020000 		.4byte	.LASF16
  694 00bb 03       		.uleb128 0x3
  695 00bc 01       		.byte	0x1
  696 00bd 08       		.byte	0x8
- 697 00be 7E020000 		.4byte	.LASF17
+ 697 00be 24020000 		.4byte	.LASF17
  698 00c2 03       		.uleb128 0x3
  699 00c3 08       		.byte	0x8
  700 00c4 04       		.byte	0x4
- 701 00c5 B7010000 		.4byte	.LASF18
+ 701 00c5 5D010000 		.4byte	.LASF18
  702 00c9 03       		.uleb128 0x3
  703 00ca 04       		.byte	0x4
  704 00cb 07       		.byte	0x7
- 705 00cc 9D000000 		.4byte	.LASF19
+ 705 00cc 43000000 		.4byte	.LASF19
  706 00d0 05       		.uleb128 0x5
  707 00d1 0C       		.byte	0xc
  708 00d2 04       		.byte	0x4
  709 00d3 05       		.byte	0x5
  710 00d4 FD000000 		.4byte	0xfd
  711 00d8 06       		.uleb128 0x6
- 712 00d9 FA020000 		.4byte	.LASF20
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 18
+ 712 00d9 F3020000 		.4byte	.LASF20
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 18
 
 
  713 00dd 04       		.byte	0x4
@@ -1026,20 +1026,20 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  715 00df 7E000000 		.4byte	0x7e
  716 00e3 00       		.byte	0
  717 00e4 06       		.uleb128 0x6
- 718 00e5 06030000 		.4byte	.LASF21
+ 718 00e5 FF020000 		.4byte	.LASF21
  719 00e9 04       		.byte	0x4
  720 00ea 07       		.byte	0x7
  721 00eb 7E000000 		.4byte	0x7e
  722 00ef 04       		.byte	0x4
  723 00f0 06       		.uleb128 0x6
- 724 00f1 3B010000 		.4byte	.LASF22
+ 724 00f1 E1000000 		.4byte	.LASF22
  725 00f5 04       		.byte	0x4
  726 00f6 08       		.byte	0x8
  727 00f7 7E000000 		.4byte	0x7e
  728 00fb 08       		.byte	0x8
  729 00fc 00       		.byte	0
  730 00fd 02       		.uleb128 0x2
- 731 00fe 8B020000 		.4byte	.LASF23
+ 731 00fe 31020000 		.4byte	.LASF23
  732 0102 04       		.byte	0x4
  733 0103 09       		.byte	0x9
  734 0104 D0000000 		.4byte	0xd0
@@ -1053,7 +1053,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  742 0118 9C       		.byte	0x9c
  743 0119 2B010000 		.4byte	0x12b
  744 011d 08       		.uleb128 0x8
- 745 011e 9B020000 		.4byte	.LASF37
+ 745 011e 41020000 		.4byte	.LASF37
  746 0122 01       		.byte	0x1
  747 0123 09       		.byte	0x9
  748 0124 2B010000 		.4byte	0x12b
@@ -1064,7 +1064,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  753 012c 04       		.byte	0x4
  754 012d FD000000 		.4byte	0xfd
  755 0131 07       		.uleb128 0x7
- 756 0132 AC020000 		.4byte	.LASF25
+ 756 0132 52020000 		.4byte	.LASF25
  757 0136 01       		.byte	0x1
  758 0137 0E       		.byte	0xe
  759 0138 00000000 		.4byte	.LFB65
@@ -1073,18 +1073,18 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  762 0141 9C       		.byte	0x9c
  763 0142 80030000 		.4byte	0x380
  764 0146 0A       		.uleb128 0xa
- 765 0147 E9010000 		.4byte	.LASF26
+ 765 0147 8F010000 		.4byte	.LASF26
  766 014b 01       		.byte	0x1
  767 014c 10       		.byte	0x10
  768 014d 80030000 		.4byte	0x380
  769 0151 05       		.uleb128 0x5
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 19
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 19
 
 
  770 0152 03       		.byte	0x3
  771 0153 08000000 		.4byte	btBuffer.6936
  772 0157 0A       		.uleb128 0xa
- 773 0158 D3000000 		.4byte	.LASF27
+ 773 0158 79000000 		.4byte	.LASF27
  774 015c 01       		.byte	0x1
  775 015d 11       		.byte	0x11
  776 015e 97000000 		.4byte	0x97
@@ -1092,7 +1092,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  778 0163 03       		.byte	0x3
  779 0164 04000000 		.4byte	index.6937
  780 0168 0A       		.uleb128 0xa
- 781 0169 24030000 		.4byte	.LASF28
+ 781 0169 1D030000 		.4byte	.LASF28
  782 016d 01       		.byte	0x1
  783 016e 12       		.byte	0x12
  784 016f 7E000000 		.4byte	0x7e
@@ -1100,7 +1100,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  786 0174 91       		.byte	0x91
  787 0175 74       		.sleb128 -12
  788 0176 0A       		.uleb128 0xa
- 789 0177 2A030000 		.4byte	.LASF29
+ 789 0177 23030000 		.4byte	.LASF29
  790 017b 01       		.byte	0x1
  791 017c 12       		.byte	0x12
  792 017d 7E000000 		.4byte	0x7e
@@ -1108,7 +1108,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  794 0182 91       		.byte	0x91
  795 0183 70       		.sleb128 -16
  796 0184 0A       		.uleb128 0xa
- 797 0185 A3020000 		.4byte	.LASF30
+ 797 0185 49020000 		.4byte	.LASF30
  798 0189 01       		.byte	0x1
  799 018a 12       		.byte	0x12
  800 018b 7E000000 		.4byte	0x7e
@@ -1116,7 +1116,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  802 0190 91       		.byte	0x91
  803 0191 6C       		.sleb128 -20
  804 0192 0A       		.uleb128 0xa
- 805 0193 41020000 		.4byte	.LASF31
+ 805 0193 E7010000 		.4byte	.LASF31
  806 0197 01       		.byte	0x1
  807 0198 13       		.byte	0x13
  808 0199 BB000000 		.4byte	0xbb
@@ -1124,7 +1124,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  810 019e 91       		.byte	0x91
  811 019f 6B       		.sleb128 -21
  812 01a0 0A       		.uleb128 0xa
- 813 01a1 CC020000 		.4byte	.LASF32
+ 813 01a1 C5020000 		.4byte	.LASF32
  814 01a5 01       		.byte	0x1
  815 01a6 14       		.byte	0x14
  816 01a7 90030000 		.4byte	0x390
@@ -1132,16 +1132,16 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  818 01ac 91       		.byte	0x91
  819 01ad D47E     		.sleb128 -172
  820 01af 0B       		.uleb128 0xb
- 821 01b0 F2010000 		.4byte	.LASF33
+ 821 01b0 98010000 		.4byte	.LASF33
  822 01b4 01       		.byte	0x1
  823 01b5 16       		.byte	0x16
  824 01b6 8C000000 		.4byte	0x8c
  825 01ba 00000000 		.4byte	.LLST0
  826 01be 0B       		.uleb128 0xb
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 20
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 20
 
 
- 827 01bf F7010000 		.4byte	.LASF34
+ 827 01bf 9D010000 		.4byte	.LASF34
  828 01c3 01       		.byte	0x1
  829 01c4 16       		.byte	0x16
  830 01c5 8C000000 		.4byte	0x8c
@@ -1151,7 +1151,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  834 01d2 E4000000 		.4byte	.LBE2-.LBB2
  835 01d6 76030000 		.4byte	0x376
  836 01da 0B       		.uleb128 0xb
- 837 01db 08010000 		.4byte	.LASF35
+ 837 01db AE000000 		.4byte	.LASF35
  838 01df 01       		.byte	0x1
  839 01e0 1A       		.byte	0x1a
  840 01e1 BB000000 		.4byte	0xbb
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  881 022c 03       		.uleb128 0x3
  882 022d 91       		.byte	0x91
  883 022e D47E     		.sleb128 -172
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 21
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 21
 
 
  884 0230 00       		.byte	0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  938 0281 02       		.uleb128 0x2
  939 0282 74       		.byte	0x74
  940 0283 00       		.sleb128 0
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 22
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 22
 
 
  941 0284 00       		.byte	0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  995 02f0 01       		.uleb128 0x1
  996 02f1 51       		.byte	0x51
  997 02f2 05       		.uleb128 0x5
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 23
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 23
 
 
  998 02f3 03       		.byte	0x3
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1052 034f 50       		.byte	0x50
  1053 0350 05       		.uleb128 0x5
  1054 0351 03       		.byte	0x3
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 24
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 24
 
 
  1055 0352 A4000000 		.4byte	.LC6
@@ -1424,7 +1424,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1095 039e 95       		.byte	0x95
  1096 039f 00       		.byte	0
  1097 03a0 07       		.uleb128 0x7
- 1098 03a1 89010000 		.4byte	.LASF36
+ 1098 03a1 2F010000 		.4byte	.LASF36
  1099 03a5 01       		.byte	0x1
  1100 03a6 61       		.byte	0x61
  1101 03a7 00000000 		.4byte	.LFB67
@@ -1433,16 +1433,16 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1104 03b0 9C       		.byte	0x9c
  1105 03b1 34050000 		.4byte	0x534
  1106 03b5 13       		.uleb128 0x13
- 1107 03b6 08010000 		.4byte	.LASF35
+ 1107 03b6 AE000000 		.4byte	.LASF35
  1108 03ba 01       		.byte	0x1
  1109 03bb 61       		.byte	0x61
  1110 03bc 97000000 		.4byte	0x97
  1111 03c0 3A000000 		.4byte	.LLST3
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 25
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 25
 
 
  1112 03c4 0A       		.uleb128 0xa
- 1113 03c5 A6000000 		.4byte	.LASF38
+ 1113 03c5 4C000000 		.4byte	.LASF38
  1114 03c9 01       		.byte	0x1
  1115 03ca 65       		.byte	0x65
  1116 03cb 8C000000 		.4byte	0x8c
@@ -1450,7 +1450,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1118 03d0 03       		.byte	0x3
  1119 03d1 3A000000 		.4byte	currentSpeed.6960
  1120 03d5 0A       		.uleb128 0xa
- 1121 03d6 F0000000 		.4byte	.LASF39
+ 1121 03d6 96000000 		.4byte	.LASF39
  1122 03da 01       		.byte	0x1
  1123 03db 66       		.byte	0x66
  1124 03dc 34050000 		.4byte	0x534
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1166 0436 01       		.uleb128 0x1
  1167 0437 50       		.byte	0x50
  1168 0438 05       		.uleb128 0x5
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 26
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 26
 
 
  1169 0439 03       		.byte	0x3
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1223 04ae 0A010000 		.4byte	.LVL33
  1224 04b2 4F060000 		.4byte	0x64f
  1225 04b6 0E       		.uleb128 0xe
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 27
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 27
 
 
  1226 04b7 12010000 		.4byte	.LVL34
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1280 0523 10       		.uleb128 0x10
  1281 0524 34010000 		.4byte	.LVL39
  1282 0528 5A060000 		.4byte	0x65a
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 28
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 28
 
 
  1283 052c 0F       		.uleb128 0xf
@@ -1644,7 +1644,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1303 0552 0A       		.byte	0xa
  1304 0553 00       		.byte	0
  1305 0554 07       		.uleb128 0x7
- 1306 0555 D9000000 		.4byte	.LASF42
+ 1306 0555 7F000000 		.4byte	.LASF42
  1307 0559 01       		.byte	0x1
  1308 055a 53       		.byte	0x53
  1309 055b 00000000 		.4byte	.LFB66
@@ -1653,7 +1653,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1312 0564 9C       		.byte	0x9c
  1313 0565 CC050000 		.4byte	0x5cc
  1314 0569 0B       		.uleb128 0xb
- 1315 056a D4020000 		.4byte	.LASF43
+ 1315 056a CD020000 		.4byte	.LASF43
  1316 056e 01       		.byte	0x1
  1317 056f 55       		.byte	0x55
  1318 0570 97000000 		.4byte	0x97
@@ -1663,7 +1663,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1322 057d 14000000 		.4byte	.LBE3-.LBB3
  1323 0581 C2050000 		.4byte	0x5c2
  1324 0585 0B       		.uleb128 0xb
- 1325 0586 08010000 		.4byte	.LASF35
+ 1325 0586 AE000000 		.4byte	.LASF35
  1326 058a 01       		.byte	0x1
  1327 058b 58       		.byte	0x58
  1328 058c 97000000 		.4byte	0x97
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1337 05aa 0F       		.uleb128 0xf
  1338 05ab 01       		.uleb128 0x1
  1339 05ac 50       		.byte	0x50
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 29
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 29
 
 
  1340 05ad 02       		.uleb128 0x2
@@ -1701,7 +1701,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1357 05c7 7B060000 		.4byte	0x67b
  1358 05cb 00       		.byte	0
  1359 05cc 0A       		.uleb128 0xa
- 1360 05cd C3020000 		.4byte	.LASF44
+ 1360 05cd 69020000 		.4byte	.LASF44
  1361 05d1 01       		.byte	0x1
  1362 05d2 07       		.byte	0x7
  1363 05d3 2B010000 		.4byte	0x12b
@@ -1709,25 +1709,25 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1365 05d8 03       		.byte	0x3
  1366 05d9 00000000 		.4byte	shootRef
  1367 05dd 14       		.uleb128 0x14
- 1368 05de 30030000 		.4byte	.LASF61
+ 1368 05de 29030000 		.4byte	.LASF61
  1369 05e2 0A       		.byte	0xa
  1370 05e3 1207     		.2byte	0x712
  1371 05e5 E9050000 		.4byte	0x5e9
  1372 05e9 15       		.uleb128 0x15
  1373 05ea A2000000 		.4byte	0xa2
  1374 05ee 16       		.uleb128 0x16
- 1375 05ef 66020000 		.4byte	.LASF45
- 1376 05f3 66020000 		.4byte	.LASF45
+ 1375 05ef 0C020000 		.4byte	.LASF45
+ 1376 05f3 0C020000 		.4byte	.LASF45
  1377 05f7 05       		.byte	0x5
  1378 05f8 6F       		.byte	0x6f
  1379 05f9 16       		.uleb128 0x16
- 1380 05fa 9C010000 		.4byte	.LASF46
- 1381 05fe 9C010000 		.4byte	.LASF46
+ 1380 05fa 42010000 		.4byte	.LASF46
+ 1381 05fe 42010000 		.4byte	.LASF46
  1382 0602 06       		.byte	0x6
  1383 0603 FD       		.byte	0xfd
  1384 0604 16       		.uleb128 0x16
- 1385 0605 A5010000 		.4byte	.LASF47
- 1386 0609 A5010000 		.4byte	.LASF47
+ 1385 0605 4B010000 		.4byte	.LASF47
+ 1386 0609 4B010000 		.4byte	.LASF47
  1387 060d 07       		.byte	0x7
  1388 060e 8B       		.byte	0x8b
  1389 060f 16       		.uleb128 0x16
@@ -1736,54 +1736,54 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1392 0618 06       		.byte	0x6
  1393 0619 BF       		.byte	0xbf
  1394 061a 16       		.uleb128 0x16
- 1395 061b 55010000 		.4byte	.LASF49
- 1396 061f 55010000 		.4byte	.LASF49
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 30
+ 1395 061b FB000000 		.4byte	.LASF49
+ 1396 061f FB000000 		.4byte	.LASF49
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 30
 
 
  1397 0623 08       		.byte	0x8
  1398 0624 0A       		.byte	0xa
  1399 0625 16       		.uleb128 0x16
- 1400 0626 60010000 		.4byte	.LASF50
- 1401 062a 60010000 		.4byte	.LASF50
+ 1400 0626 06010000 		.4byte	.LASF50
+ 1401 062a 06010000 		.4byte	.LASF50
  1402 062e 08       		.byte	0x8
  1403 062f 0B       		.byte	0xb
  1404 0630 16       		.uleb128 0x16
- 1405 0631 B3000000 		.4byte	.LASF51
- 1406 0635 B3000000 		.4byte	.LASF51
+ 1405 0631 59000000 		.4byte	.LASF51
+ 1406 0635 59000000 		.4byte	.LASF51
  1407 0639 09       		.byte	0x9
  1408 063a 23       		.byte	0x23
  1409 063b 17       		.uleb128 0x17
- 1410 063c 45010000 		.4byte	.LASF62
- 1411 0640 45010000 		.4byte	.LASF62
+ 1410 063c EB000000 		.4byte	.LASF62
+ 1411 0640 EB000000 		.4byte	.LASF62
  1412 0644 16       		.uleb128 0x16
- 1413 0645 C3010000 		.4byte	.LASF52
- 1414 0649 C3010000 		.4byte	.LASF52
+ 1413 0645 69010000 		.4byte	.LASF52
+ 1414 0649 69010000 		.4byte	.LASF52
  1415 064d 05       		.byte	0x5
  1416 064e 73       		.byte	0x73
  1417 064f 16       		.uleb128 0x16
- 1418 0650 79020000 		.4byte	.LASF53
- 1419 0654 79020000 		.4byte	.LASF53
+ 1418 0650 1F020000 		.4byte	.LASF53
+ 1419 0654 1F020000 		.4byte	.LASF53
  1420 0658 08       		.byte	0x8
  1421 0659 0E       		.byte	0xe
  1422 065a 16       		.uleb128 0x16
- 1423 065b 29010000 		.4byte	.LASF54
- 1424 065f 29010000 		.4byte	.LASF54
+ 1423 065b CF000000 		.4byte	.LASF54
+ 1424 065f CF000000 		.4byte	.LASF54
  1425 0663 05       		.byte	0x5
  1426 0664 8B       		.byte	0x8b
  1427 0665 16       		.uleb128 0x16
- 1428 0666 E7020000 		.4byte	.LASF55
- 1429 066a E7020000 		.4byte	.LASF55
+ 1428 0666 E0020000 		.4byte	.LASF55
+ 1429 066a E0020000 		.4byte	.LASF55
  1430 066e 07       		.byte	0x7
  1431 066f 6F       		.byte	0x6f
  1432 0670 16       		.uleb128 0x16
- 1433 0671 75010000 		.4byte	.LASF56
- 1434 0675 75010000 		.4byte	.LASF56
+ 1433 0671 1B010000 		.4byte	.LASF56
+ 1434 0675 1B010000 		.4byte	.LASF56
  1435 0679 07       		.byte	0x7
  1436 067a 88       		.byte	0x88
  1437 067b 16       		.uleb128 0x16
- 1438 067c BB000000 		.4byte	.LASF57
- 1439 0680 BB000000 		.4byte	.LASF57
+ 1438 067c 61000000 		.4byte	.LASF57
+ 1439 0680 61000000 		.4byte	.LASF57
  1440 0684 07       		.byte	0x7
  1441 0685 73       		.byte	0x73
  1442 0686 00       		.byte	0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1451 0006 0B       		.uleb128 0xb
  1452 0007 03       		.uleb128 0x3
  1453 0008 0E       		.uleb128 0xe
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 31
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 31
 
 
  1454 0009 1B       		.uleb128 0x1b
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1508 003f 01       		.uleb128 0x1
  1509 0040 13       		.uleb128 0x13
  1510 0041 00       		.byte	0
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 32
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 32
 
 
  1511 0042 00       		.byte	0
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1565 0079 00       		.byte	0
  1566 007a 00       		.byte	0
  1567 007b 09       		.uleb128 0x9
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 33
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 33
 
 
  1568 007c 0F       		.uleb128 0xf
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1622 00b4 31       		.uleb128 0x31
  1623 00b5 13       		.uleb128 0x13
  1624 00b6 00       		.byte	0
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 34
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 34
 
 
  1625 00b7 00       		.byte	0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1679 00f4 0B       		.uleb128 0xb
  1680 00f5 3B       		.uleb128 0x3b
  1681 00f6 0B       		.uleb128 0xb
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 35
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 35
 
 
  1682 00f7 49       		.uleb128 0x49
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1736 012d 6E       		.uleb128 0x6e
  1737 012e 0E       		.uleb128 0xe
  1738 012f 03       		.uleb128 0x3
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 36
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 36
 
 
  1739 0130 0E       		.uleb128 0xe
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1793 0079 10000000 		.4byte	.LVL43
  1794 007d 1E000000 		.4byte	.LVL47
  1795 0081 0100     		.2byte	0x1
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 37
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 37
 
 
  1796 0083 55       		.byte	0x55
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1837      55415254 
  1837      00
  1838              	.LASF48:
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 38
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 38
 
 
  1839 002b 73736361 		.ascii	"sscanf\000"
@@ -2230,280 +2230,280 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 1
  1843 0039 73686F72 		.ascii	"short int\000"
  1843      7420696E 
  1843      7400
- 1844              	.LASF60:
- 1845 0043 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\Elektronik ingenioer\\3rd s"
- 1845      635C486F 
- 1845      6D655C44 
- 1845      65736B74 
- 1845      6F705C45 
- 1846 0070 656D6573 		.ascii	"emester\\PRJ3\\PRJ3\\BattleBot\\Motor_Test.cydsn\000"
- 1846      7465725C 
- 1846      50524A33 
- 1846      5C50524A 
- 1846      335C4261 
- 1847              	.LASF19:
- 1848 009d 73697A65 		.ascii	"sizetype\000"
- 1848      74797065 
- 1848      00
- 1849              	.LASF38:
- 1850 00a6 63757272 		.ascii	"currentSpeed\000"
- 1850      656E7453 
- 1850      70656564 
- 1850      00
- 1851              	.LASF51:
- 1852 00b3 7374726E 		.ascii	"strncmp\000"
- 1852      636D7000 
- 1853              	.LASF57:
- 1854 00bb 55415254 		.ascii	"UART_PC_GetRxBufferSize\000"
- 1854      5F50435F 
- 1854      47657452 
- 1854      78427566 
- 1854      66657253 
- 1855              	.LASF27:
- 1856 00d3 696E6465 		.ascii	"index\000"
- 1856      7800
- 1857              	.LASF42:
- 1858 00d9 4953525F 		.ascii	"ISR_UART_rx_handler_PC\000"
- 1858      55415254 
- 1858      5F72785F 
- 1858      68616E64 
- 1858      6C65725F 
- 1859              	.LASF39:
- 1860 00f0 636F6D6D 		.ascii	"command_ACK\000"
- 1860      616E645F 
- 1860      41434B00 
- 1861              	.LASF2:
- 1862 00fc 7369676E 		.ascii	"signed char\000"
- 1862      65642063 
- 1862      68617200 
- 1863              	.LASF35:
- 1864 0108 62797465 		.ascii	"byteReceived\000"
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 39
+ 1844              	.LASF19:
+ 1845 0043 73697A65 		.ascii	"sizetype\000"
+ 1845      74797065 
+ 1845      00
+ 1846              	.LASF38:
+ 1847 004c 63757272 		.ascii	"currentSpeed\000"
+ 1847      656E7453 
+ 1847      70656564 
+ 1847      00
+ 1848              	.LASF51:
+ 1849 0059 7374726E 		.ascii	"strncmp\000"
+ 1849      636D7000 
+ 1850              	.LASF57:
+ 1851 0061 55415254 		.ascii	"UART_PC_GetRxBufferSize\000"
+ 1851      5F50435F 
+ 1851      47657452 
+ 1851      78427566 
+ 1851      66657253 
+ 1852              	.LASF27:
+ 1853 0079 696E6465 		.ascii	"index\000"
+ 1853      7800
+ 1854              	.LASF42:
+ 1855 007f 4953525F 		.ascii	"ISR_UART_rx_handler_PC\000"
+ 1855      55415254 
+ 1855      5F72785F 
+ 1855      68616E64 
+ 1855      6C65725F 
+ 1856              	.LASF39:
+ 1857 0096 636F6D6D 		.ascii	"command_ACK\000"
+ 1857      616E645F 
+ 1857      41434B00 
+ 1858              	.LASF2:
+ 1859 00a2 7369676E 		.ascii	"signed char\000"
+ 1859      65642063 
+ 1859      68617200 
+ 1860              	.LASF35:
+ 1861 00ae 62797465 		.ascii	"byteReceived\000"
+ 1861      52656365 
+ 1861      69766564 
+ 1861      00
+ 1862              	.LASF15:
+ 1863 00bb 666C6F61 		.ascii	"float\000"
+ 1863      7400
+ 1864              	.LASF9:
+ 1865 00c1 6C6F6E67 		.ascii	"long long int\000"
+ 1865      206C6F6E 
+ 1865      6720696E 
+ 1865      7400
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 39
 
 
- 1864      52656365 
- 1864      69766564 
- 1864      00
- 1865              	.LASF15:
- 1866 0115 666C6F61 		.ascii	"float\000"
- 1866      7400
- 1867              	.LASF9:
- 1868 011b 6C6F6E67 		.ascii	"long long int\000"
- 1868      206C6F6E 
- 1868      6720696E 
- 1868      7400
- 1869              	.LASF54:
- 1870 0129 55415254 		.ascii	"UART_BT_PutString\000"
- 1870      5F42545F 
- 1870      50757453 
- 1870      7472696E 
- 1870      6700
- 1871              	.LASF22:
- 1872 013b 73686F6F 		.ascii	"shootMode\000"
- 1872      744D6F64 
- 1872      6500
- 1873              	.LASF62:
- 1874 0145 6D656D73 		.ascii	"memset\000"
- 1874      657400
- 1875              	.LASF7:
- 1876 014c 6C6F6E67 		.ascii	"long int\000"
- 1876      20696E74 
- 1876      00
- 1877              	.LASF49:
- 1878 0155 7365745F 		.ascii	"set_speedA\000"
- 1878      73706565 
- 1878      644100
- 1879              	.LASF50:
- 1880 0160 7365745F 		.ascii	"set_speedB\000"
- 1880      73706565 
- 1880      644200
- 1881              	.LASF1:
- 1882 016b 5F5F7569 		.ascii	"__uint8_t\000"
- 1882      6E74385F 
- 1882      7400
- 1883              	.LASF56:
- 1884 0175 55415254 		.ascii	"UART_PC_WriteTxData\000"
- 1884      5F50435F 
- 1884      57726974 
- 1884      65547844 
- 1884      61746100 
- 1885              	.LASF36:
- 1886 0189 68616E64 		.ascii	"handleByteReceived\000"
- 1886      6C654279 
- 1886      74655265 
- 1886      63656976 
- 1886      656400
- 1887              	.LASF46:
- 1888 019c 736E7072 		.ascii	"snprintf\000"
- 1888      696E7466 
- 1888      00
- 1889              	.LASF47:
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 40
+ 1866              	.LASF54:
+ 1867 00cf 55415254 		.ascii	"UART_BT_PutString\000"
+ 1867      5F42545F 
+ 1867      50757453 
+ 1867      7472696E 
+ 1867      6700
+ 1868              	.LASF22:
+ 1869 00e1 73686F6F 		.ascii	"shootMode\000"
+ 1869      744D6F64 
+ 1869      6500
+ 1870              	.LASF62:
+ 1871 00eb 6D656D73 		.ascii	"memset\000"
+ 1871      657400
+ 1872              	.LASF7:
+ 1873 00f2 6C6F6E67 		.ascii	"long int\000"
+ 1873      20696E74 
+ 1873      00
+ 1874              	.LASF49:
+ 1875 00fb 7365745F 		.ascii	"set_speedA\000"
+ 1875      73706565 
+ 1875      644100
+ 1876              	.LASF50:
+ 1877 0106 7365745F 		.ascii	"set_speedB\000"
+ 1877      73706565 
+ 1877      644200
+ 1878              	.LASF1:
+ 1879 0111 5F5F7569 		.ascii	"__uint8_t\000"
+ 1879      6E74385F 
+ 1879      7400
+ 1880              	.LASF56:
+ 1881 011b 55415254 		.ascii	"UART_PC_WriteTxData\000"
+ 1881      5F50435F 
+ 1881      57726974 
+ 1881      65547844 
+ 1881      61746100 
+ 1882              	.LASF36:
+ 1883 012f 68616E64 		.ascii	"handleByteReceived\000"
+ 1883      6C654279 
+ 1883      74655265 
+ 1883      63656976 
+ 1883      656400
+ 1884              	.LASF46:
+ 1885 0142 736E7072 		.ascii	"snprintf\000"
+ 1885      696E7466 
+ 1885      00
+ 1886              	.LASF47:
+ 1887 014b 55415254 		.ascii	"UART_PC_PutString\000"
+ 1887      5F50435F 
+ 1887      50757453 
+ 1887      7472696E 
+ 1887      6700
+ 1888              	.LASF18:
+ 1889 015d 6C6F6E67 		.ascii	"long double\000"
+ 1889      20646F75 
+ 1889      626C6500 
+ 1890              	.LASF52:
+ 1891 0169 55415254 		.ascii	"UART_BT_GetRxBufferSize\000"
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 40
 
 
- 1890 01a5 55415254 		.ascii	"UART_PC_PutString\000"
- 1890      5F50435F 
- 1890      50757453 
- 1890      7472696E 
- 1890      6700
- 1891              	.LASF18:
- 1892 01b7 6C6F6E67 		.ascii	"long double\000"
- 1892      20646F75 
- 1892      626C6500 
- 1893              	.LASF52:
- 1894 01c3 55415254 		.ascii	"UART_BT_GetRxBufferSize\000"
- 1894      5F42545F 
- 1894      47657452 
- 1894      78427566 
- 1894      66657253 
- 1895              	.LASF3:
- 1896 01db 756E7369 		.ascii	"unsigned char\000"
- 1896      676E6564 
- 1896      20636861 
- 1896      7200
- 1897              	.LASF26:
- 1898 01e9 62744275 		.ascii	"btBuffer\000"
- 1898      66666572 
- 1898      00
- 1899              	.LASF33:
- 1900 01f2 56415231 		.ascii	"VAR1\000"
- 1900      00
- 1901              	.LASF34:
- 1902 01f7 56415232 		.ascii	"VAR2\000"
- 1902      00
- 1903              	.LASF59:
- 1904 01fc 55415254 		.ascii	"UART_handler.c\000"
- 1904      5F68616E 
- 1904      646C6572 
- 1904      2E6300
- 1905              	.LASF10:
- 1906 020b 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1906      206C6F6E 
- 1906      6720756E 
- 1906      7369676E 
- 1906      65642069 
- 1907              	.LASF11:
- 1908 0222 756E7369 		.ascii	"unsigned int\000"
- 1908      676E6564 
- 1908      20696E74 
- 1908      00
- 1909              	.LASF8:
- 1910 022f 6C6F6E67 		.ascii	"long unsigned int\000"
- 1910      20756E73 
- 1910      69676E65 
- 1910      6420696E 
- 1910      7400
- 1911              	.LASF31:
- 1912 0241 74656D70 		.ascii	"tempMode\000"
- 1912      4D6F6465 
- 1912      00
- 1913              	.LASF5:
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 41
+ 1891      5F42545F 
+ 1891      47657452 
+ 1891      78427566 
+ 1891      66657253 
+ 1892              	.LASF3:
+ 1893 0181 756E7369 		.ascii	"unsigned char\000"
+ 1893      676E6564 
+ 1893      20636861 
+ 1893      7200
+ 1894              	.LASF26:
+ 1895 018f 62744275 		.ascii	"btBuffer\000"
+ 1895      66666572 
+ 1895      00
+ 1896              	.LASF33:
+ 1897 0198 56415231 		.ascii	"VAR1\000"
+ 1897      00
+ 1898              	.LASF34:
+ 1899 019d 56415232 		.ascii	"VAR2\000"
+ 1899      00
+ 1900              	.LASF59:
+ 1901 01a2 55415254 		.ascii	"UART_handler.c\000"
+ 1901      5F68616E 
+ 1901      646C6572 
+ 1901      2E6300
+ 1902              	.LASF10:
+ 1903 01b1 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1903      206C6F6E 
+ 1903      6720756E 
+ 1903      7369676E 
+ 1903      65642069 
+ 1904              	.LASF11:
+ 1905 01c8 756E7369 		.ascii	"unsigned int\000"
+ 1905      676E6564 
+ 1905      20696E74 
+ 1905      00
+ 1906              	.LASF8:
+ 1907 01d5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1907      20756E73 
+ 1907      69676E65 
+ 1907      6420696E 
+ 1907      7400
+ 1908              	.LASF31:
+ 1909 01e7 74656D70 		.ascii	"tempMode\000"
+ 1909      4D6F6465 
+ 1909      00
+ 1910              	.LASF5:
+ 1911 01f0 73686F72 		.ascii	"short unsigned int\000"
+ 1911      7420756E 
+ 1911      7369676E 
+ 1911      65642069 
+ 1911      6E7400
+ 1912              	.LASF0:
+ 1913 0203 5F5F696E 		.ascii	"__int8_t\000"
+ 1913      74385F74 
+ 1913      00
+ 1914              	.LASF45:
+ 1915 020c 55415254 		.ascii	"UART_BT_ReadRxData\000"
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 41
 
 
- 1914 024a 73686F72 		.ascii	"short unsigned int\000"
- 1914      7420756E 
- 1914      7369676E 
- 1914      65642069 
- 1914      6E7400
- 1915              	.LASF0:
- 1916 025d 5F5F696E 		.ascii	"__int8_t\000"
- 1916      74385F74 
- 1916      00
- 1917              	.LASF45:
- 1918 0266 55415254 		.ascii	"UART_BT_ReadRxData\000"
- 1918      5F42545F 
- 1918      52656164 
- 1918      52784461 
- 1918      746100
- 1919              	.LASF53:
- 1920 0279 73746F70 		.ascii	"stop\000"
- 1920      00
- 1921              	.LASF17:
- 1922 027e 63686172 		.ascii	"char\000"
- 1922      00
- 1923              	.LASF14:
- 1924 0283 696E7433 		.ascii	"int32_t\000"
- 1924      325F7400 
- 1925              	.LASF23:
- 1926 028b 73686F6F 		.ascii	"shootVarHandler\000"
- 1926      74566172 
- 1926      48616E64 
- 1926      6C657200 
- 1927              	.LASF37:
- 1928 029b 68616E64 		.ascii	"handler\000"
- 1928      6C657200 
- 1929              	.LASF30:
- 1930 02a3 74656D70 		.ascii	"tempBool\000"
- 1930      426F6F6C 
- 1930      00
- 1931              	.LASF25:
- 1932 02ac 4953525F 		.ascii	"ISR_UART_rx_handler_BT\000"
- 1932      55415254 
- 1932      5F72785F 
- 1932      68616E64 
- 1932      6C65725F 
- 1933              	.LASF44:
- 1934 02c3 73686F6F 		.ascii	"shootRef\000"
- 1934      74526566 
- 1934      00
+ 1915      5F42545F 
+ 1915      52656164 
+ 1915      52784461 
+ 1915      746100
+ 1916              	.LASF53:
+ 1917 021f 73746F70 		.ascii	"stop\000"
+ 1917      00
+ 1918              	.LASF17:
+ 1919 0224 63686172 		.ascii	"char\000"
+ 1919      00
+ 1920              	.LASF14:
+ 1921 0229 696E7433 		.ascii	"int32_t\000"
+ 1921      325F7400 
+ 1922              	.LASF23:
+ 1923 0231 73686F6F 		.ascii	"shootVarHandler\000"
+ 1923      74566172 
+ 1923      48616E64 
+ 1923      6C657200 
+ 1924              	.LASF37:
+ 1925 0241 68616E64 		.ascii	"handler\000"
+ 1925      6C657200 
+ 1926              	.LASF30:
+ 1927 0249 74656D70 		.ascii	"tempBool\000"
+ 1927      426F6F6C 
+ 1927      00
+ 1928              	.LASF25:
+ 1929 0252 4953525F 		.ascii	"ISR_UART_rx_handler_BT\000"
+ 1929      55415254 
+ 1929      5F72785F 
+ 1929      68616E64 
+ 1929      6C65725F 
+ 1930              	.LASF44:
+ 1931 0269 73686F6F 		.ascii	"shootRef\000"
+ 1931      74526566 
+ 1931      00
+ 1932              	.LASF60:
+ 1933 0272 433A5C55 		.ascii	"C:\\Users\\Totos\\Desktop\\elektronik_ingenioer\\PR"
+ 1933      73657273 
+ 1933      5C546F74 
+ 1933      6F735C44 
+ 1933      65736B74 
+ 1934 02a0 4A335C47 		.ascii	"J3\\Github\\BattleBot\\Motor_Test.cydsn\000"
+ 1934      69746875 
+ 1934      625C4261 
+ 1934      74746C65 
+ 1934      426F745C 
  1935              	.LASF32:
- 1936 02cc 6D657373 		.ascii	"message\000"
+ 1936 02c5 6D657373 		.ascii	"message\000"
  1936      61676500 
  1937              	.LASF43:
- 1938 02d4 62797465 		.ascii	"bytesToRead\000"
+ 1938 02cd 62797465 		.ascii	"bytesToRead\000"
  1938      73546F52 
  1938      65616400 
  1939              	.LASF16:
- 1940 02e0 646F7562 		.ascii	"double\000"
+ 1940 02d9 646F7562 		.ascii	"double\000"
  1940      6C6500
  1941              	.LASF55:
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cc9sUchU.s 			page 42
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccEqmoVq.s 			page 42
 
 
- 1942 02e7 55415254 		.ascii	"UART_PC_ReadRxData\000"
+ 1942 02e0 55415254 		.ascii	"UART_PC_ReadRxData\000"
  1942      5F50435F 
  1942      52656164 
  1942      52784461 
  1942      746100
  1943              	.LASF20:
- 1944 02fa 64657369 		.ascii	"desiredPos1\000"
+ 1944 02f3 64657369 		.ascii	"desiredPos1\000"
  1944      72656450 
  1944      6F733100 
  1945              	.LASF21:
- 1946 0306 64657369 		.ascii	"desiredPos2\000"
+ 1946 02ff 64657369 		.ascii	"desiredPos2\000"
  1946      72656450 
  1946      6F733200 
  1947              	.LASF6:
- 1948 0312 5F5F696E 		.ascii	"__int32_t\000"
+ 1948 030b 5F5F696E 		.ascii	"__int32_t\000"
  1948      7433325F 
  1948      7400
  1949              	.LASF13:
- 1950 031c 75696E74 		.ascii	"uint8_t\000"
+ 1950 0315 75696E74 		.ascii	"uint8_t\000"
  1950      385F7400 
  1951              	.LASF28:
- 1952 0324 74656D70 		.ascii	"temp1\000"
+ 1952 031d 74656D70 		.ascii	"temp1\000"
  1952      3100
  1953              	.LASF29:
- 1954 032a 74656D70 		.ascii	"temp2\000"
+ 1954 0323 74656D70 		.ascii	"temp2\000"
  1954      3200
  1955              	.LASF61:
- 1956 0330 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1956 0329 49544D5F 		.ascii	"ITM_RxBuffer\000"
  1956      52784275 
  1956      66666572 
  1956      00
  1957              	.LASF58:
- 1958 033d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1958 0336 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  1958      43313120 
  1958      352E342E 
  1958      31203230 
  1958      31363036 
- 1959 0370 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1959 0369 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  1959      20726576 
  1959      6973696F 
  1959      6E203233 
  1959      37373135 
- 1960 03a3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1960 039c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  1960      66756E63 
  1960      74696F6E 
  1960      2D736563 

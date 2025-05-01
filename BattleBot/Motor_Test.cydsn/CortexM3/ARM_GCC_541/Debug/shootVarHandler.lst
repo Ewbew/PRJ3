@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cck0QVbL.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
   46              		.global	shootVarHandler_getDesiredPos2
   47              		.thumb
   48              		.thumb_func
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 2
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cck0QVbL.s 			page 2
 
 
   49              		.type	shootVarHandler_getDesiredPos2, %function
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
   95              		.thumb
   96              		.thumb_func
   97              		.type	shootVarHandler_setDesiredPos1, %function
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 3
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cck0QVbL.s 			page 3
 
 
   98              	shootVarHandler_setDesiredPos1:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  144              		.global	shootVarHandler_setShootMode
  145              		.thumb
  146              		.thumb_func
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 4
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cck0QVbL.s 			page 4
 
 
  147              		.type	shootVarHandler_setShootMode, %function
@@ -224,10 +224,10 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  181 0006 00000000 		.4byte	.Ldebug_abbrev0
  182 000a 04       		.byte	0x4
  183 000b 01       		.uleb128 0x1
- 184 000c 45010000 		.4byte	.LASF12
+ 184 000c 3E010000 		.4byte	.LASF12
  185 0010 0C       		.byte	0xc
- 186 0011 16010000 		.4byte	.LASF13
- 187 0015 95000000 		.4byte	.LASF14
+ 186 0011 0F010000 		.4byte	.LASF13
+ 187 0015 70000000 		.4byte	.LASF14
  188 0019 00000000 		.4byte	.Ldebug_ranges0+0
  189 001d 00000000 		.4byte	0
  190 0021 00000000 		.4byte	.Ldebug_line0
@@ -237,8 +237,8 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  194 0028 05       		.byte	0x5
  195 0029 52000000 		.4byte	0x52
  196 002d 03       		.uleb128 0x3
- 197 002e 1A000000 		.4byte	.LASF0
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 5
+ 197 002e 39000000 		.4byte	.LASF0
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cck0QVbL.s 			page 5
 
 
  198 0032 02       		.byte	0x2
@@ -246,7 +246,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  200 0034 52000000 		.4byte	0x52
  201 0038 00       		.byte	0
  202 0039 03       		.uleb128 0x3
- 203 003a 26000000 		.4byte	.LASF1
+ 203 003a 45000000 		.4byte	.LASF1
  204 003e 02       		.byte	0x2
  205 003f 07       		.byte	0x7
  206 0040 52000000 		.4byte	0x52
@@ -263,12 +263,12 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  217 0054 05       		.byte	0x5
  218 0055 696E7400 		.ascii	"int\000"
  219 0059 05       		.uleb128 0x5
- 220 005a F2010000 		.4byte	.LASF15
+ 220 005a EB010000 		.4byte	.LASF15
  221 005e 02       		.byte	0x2
  222 005f 09       		.byte	0x9
  223 0060 25000000 		.4byte	0x25
  224 0064 06       		.uleb128 0x6
- 225 0065 32000000 		.4byte	.LASF3
+ 225 0065 51000000 		.4byte	.LASF3
  226 0069 01       		.byte	0x1
  227 006a 07       		.byte	0x7
  228 006b 52000000 		.4byte	0x52
@@ -277,7 +277,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  231 0077 01       		.uleb128 0x1
  232 0078 9C       		.byte	0x9c
  233 0079 06       		.uleb128 0x6
- 234 007a 51000000 		.4byte	.LASF4
+ 234 007a 1A000000 		.4byte	.LASF4
  235 007e 01       		.byte	0x1
  236 007f 0B       		.byte	0xb
  237 0080 52000000 		.4byte	0x52
@@ -286,7 +286,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  240 008c 01       		.uleb128 0x1
  241 008d 9C       		.byte	0x9c
  242 008e 06       		.uleb128 0x6
- 243 008f 78000000 		.4byte	.LASF5
+ 243 008f CB000000 		.4byte	.LASF5
  244 0093 01       		.byte	0x1
  245 0094 0F       		.byte	0xf
  246 0095 52000000 		.4byte	0x52
@@ -295,10 +295,10 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  249 00a1 01       		.uleb128 0x1
  250 00a2 9C       		.byte	0x9c
  251 00a3 07       		.uleb128 0x7
- 252 00a4 F7000000 		.4byte	.LASF6
+ 252 00a4 F0000000 		.4byte	.LASF6
  253 00a8 01       		.byte	0x1
  254 00a9 14       		.byte	0x14
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 6
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cck0QVbL.s 			page 6
 
 
  255 00aa 00000000 		.4byte	.LFB3
@@ -315,7 +315,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  266 00c4 50       		.byte	0x50
  267 00c5 00       		.byte	0
  268 00c6 07       		.uleb128 0x7
- 269 00c7 D3010000 		.4byte	.LASF7
+ 269 00c7 CC010000 		.4byte	.LASF7
  270 00cb 01       		.byte	0x1
  271 00cc 18       		.byte	0x18
  272 00cd 00000000 		.4byte	.LFB4
@@ -324,7 +324,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  275 00d6 9C       		.byte	0x9c
  276 00d7 E9000000 		.4byte	0xe9
  277 00db 08       		.uleb128 0x8
- 278 00dc 70000000 		.4byte	.LASF9
+ 278 00dc C3000000 		.4byte	.LASF9
  279 00e0 01       		.byte	0x1
  280 00e1 18       		.byte	0x18
  281 00e2 52000000 		.4byte	0x52
@@ -332,7 +332,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  283 00e7 50       		.byte	0x50
  284 00e8 00       		.byte	0
  285 00e9 07       		.uleb128 0x7
- 286 00ea 28010000 		.4byte	.LASF10
+ 286 00ea 21010000 		.4byte	.LASF10
  287 00ee 01       		.byte	0x1
  288 00ef 1C       		.byte	0x1c
  289 00f0 00000000 		.4byte	.LFB5
@@ -341,7 +341,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  292 00f9 9C       		.byte	0x9c
  293 00fa 0C010000 		.4byte	0x10c
  294 00fe 08       		.uleb128 0x8
- 295 00ff EF000000 		.4byte	.LASF11
+ 295 00ff E8000000 		.4byte	.LASF11
  296 0103 01       		.byte	0x1
  297 0104 1C       		.byte	0x1c
  298 0105 52000000 		.4byte	0x52
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  309 0119 00000000 		.4byte	handler
  310 011d 00       		.byte	0
  311              		.section	.debug_abbrev,"",%progbits
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 7
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cck0QVbL.s 			page 7
 
 
  312              	.Ldebug_abbrev0:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  366 0035 0B       		.uleb128 0xb
  367 0036 03       		.uleb128 0x3
  368 0037 08       		.uleb128 0x8
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 8
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cck0QVbL.s 			page 8
 
 
  369 0038 00       		.byte	0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  423 006f 01       		.uleb128 0x1
  424 0070 12       		.uleb128 0x12
  425 0071 06       		.uleb128 0x6
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 9
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cck0QVbL.s 			page 9
 
 
  426 0072 40       		.uleb128 0x40
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  480 002c 0C000000 		.4byte	.LFE3-.LFB3
  481 0030 00000000 		.4byte	.LFB4
  482 0034 0C000000 		.4byte	.LFE4-.LFB4
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 10
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cck0QVbL.s 			page 10
 
 
  483 0038 00000000 		.4byte	.LFB5
@@ -578,97 +578,97 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 1
  511 0010 73686F6F 		.ascii	"shootMode\000"
  511      744D6F64 
  511      6500
- 512              	.LASF0:
- 513 001a 64657369 		.ascii	"desiredPos1\000"
- 513      72656450 
- 513      6F733100 
- 514              	.LASF1:
- 515 0026 64657369 		.ascii	"desiredPos2\000"
+ 512              	.LASF4:
+ 513 001a 73686F6F 		.ascii	"shootVarHandler_getDesiredPos2\000"
+ 513      74566172 
+ 513      48616E64 
+ 513      6C65725F 
+ 513      67657444 
+ 514              	.LASF0:
+ 515 0039 64657369 		.ascii	"desiredPos1\000"
  515      72656450 
- 515      6F733200 
- 516              	.LASF3:
- 517 0032 73686F6F 		.ascii	"shootVarHandler_getDesiredPos1\000"
- 517      74566172 
- 517      48616E64 
- 517      6C65725F 
- 517      67657444 
- 518              	.LASF4:
- 519 0051 73686F6F 		.ascii	"shootVarHandler_getDesiredPos2\000"
+ 515      6F733100 
+ 516              	.LASF1:
+ 517 0045 64657369 		.ascii	"desiredPos2\000"
+ 517      72656450 
+ 517      6F733200 
+ 518              	.LASF3:
+ 519 0051 73686F6F 		.ascii	"shootVarHandler_getDesiredPos1\000"
  519      74566172 
  519      48616E64 
  519      6C65725F 
  519      67657444 
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 11
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cck0QVbL.s 			page 11
 
 
- 520              	.LASF9:
- 521 0070 6E657750 		.ascii	"newPos2\000"
- 521      6F733200 
- 522              	.LASF5:
- 523 0078 73686F6F 		.ascii	"shootVarHandler_getShootMode\000"
- 523      74566172 
- 523      48616E64 
- 523      6C65725F 
- 523      67657453 
- 524              	.LASF14:
- 525 0095 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\Elektronik ingenioer\\3rd s"
- 525      635C486F 
- 525      6D655C44 
- 525      65736B74 
- 525      6F705C45 
- 526 00c2 656D6573 		.ascii	"emester\\PRJ3\\PRJ3\\BattleBot\\Motor_Test.cydsn\000"
- 526      7465725C 
- 526      50524A33 
- 526      5C50524A 
- 526      335C4261 
+ 520              	.LASF14:
+ 521 0070 433A5C55 		.ascii	"C:\\Users\\Totos\\Desktop\\elektronik_ingenioer\\PR"
+ 521      73657273 
+ 521      5C546F74 
+ 521      6F735C44 
+ 521      65736B74 
+ 522 009e 4A335C47 		.ascii	"J3\\Github\\BattleBot\\Motor_Test.cydsn\000"
+ 522      69746875 
+ 522      625C4261 
+ 522      74746C65 
+ 522      426F745C 
+ 523              	.LASF9:
+ 524 00c3 6E657750 		.ascii	"newPos2\000"
+ 524      6F733200 
+ 525              	.LASF5:
+ 526 00cb 73686F6F 		.ascii	"shootVarHandler_getShootMode\000"
+ 526      74566172 
+ 526      48616E64 
+ 526      6C65725F 
+ 526      67657453 
  527              	.LASF11:
- 528 00ef 6E65774D 		.ascii	"newMode\000"
+ 528 00e8 6E65774D 		.ascii	"newMode\000"
  528      6F646500 
  529              	.LASF6:
- 530 00f7 73686F6F 		.ascii	"shootVarHandler_setDesiredPos1\000"
+ 530 00f0 73686F6F 		.ascii	"shootVarHandler_setDesiredPos1\000"
  530      74566172 
  530      48616E64 
  530      6C65725F 
  530      73657444 
  531              	.LASF13:
- 532 0116 73686F6F 		.ascii	"shootVarHandler.c\000"
+ 532 010f 73686F6F 		.ascii	"shootVarHandler.c\000"
  532      74566172 
  532      48616E64 
  532      6C65722E 
  532      6300
  533              	.LASF10:
- 534 0128 73686F6F 		.ascii	"shootVarHandler_setShootMode\000"
+ 534 0121 73686F6F 		.ascii	"shootVarHandler_setShootMode\000"
  534      74566172 
  534      48616E64 
  534      6C65725F 
  534      73657453 
  535              	.LASF12:
- 536 0145 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 536 013e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  536      43313120 
  536      352E342E 
  536      31203230 
  536      31363036 
- 537 0178 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 537 0171 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  537      20726576 
  537      6973696F 
  537      6E203233 
  537      37373135 
- 538 01ab 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 538 01a4 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  538      66756E63 
  538      74696F6E 
  538      2D736563 
  538      74696F6E 
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUIgIy.s 			page 12
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cck0QVbL.s 			page 12
 
 
  539              	.LASF7:
- 540 01d3 73686F6F 		.ascii	"shootVarHandler_setDesiredPos2\000"
+ 540 01cc 73686F6F 		.ascii	"shootVarHandler_setDesiredPos2\000"
  540      74566172 
  540      48616E64 
  540      6C65725F 
  540      73657444 
  541              	.LASF15:
- 542 01f2 73686F6F 		.ascii	"shootVarHandler\000"
+ 542 01eb 73686F6F 		.ascii	"shootVarHandler\000"
  542      74566172 
  542      48616E64 
  542      6C657200 

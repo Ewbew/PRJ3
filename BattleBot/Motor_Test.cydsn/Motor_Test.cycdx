@@ -4,13 +4,13 @@
   <block name="GND_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="PWR" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Trigger" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="DirPin" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="StepPin" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="IN2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="IN1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Clock_24MHz" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="HC_SR04" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="FreqDiv" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Em_EEPROM_Dynamic" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Counter_Reset" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <register name="Counter_Reset_CONTROL_REG" address="0x4000647D" bitWidth="8" desc="" hidden="false" />
   </block>
@@ -70,36 +70,6 @@
   </block>
   <block name="not_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="isr_uart_rx_BT" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Clock_PWM_A" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="IN3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Clock_PWM_B" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="isr_uart_rx_PC" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="UART_PC" BASE="0x0" SIZE="0x0" desc="UART" visible="true" hidden="false">
-    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <register name="TX_UART_PC_TX_DATA" address="0x40006447" bitWidth="8" desc="TX Data Register" hidden="false" />
-    <register name="TX_UART_PC_TX_STATUS" address="0x40006467" bitWidth="8" desc="TX status register" hidden="false">
-      <field name="UART_PC_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_PC_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_PC_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_PC_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" hidden="false" />
-    </register>
-    <register name="RX_UART_PC_RX_ADDRESS1" address="0x40006526" bitWidth="8" desc="RX Address1 Register" hidden="false" />
-    <register name="RX_UART_PC_RX_ADDRESS2" address="0x40006536" bitWidth="8" desc="RX Address2 Register" hidden="false" />
-    <register name="RX_UART_PC_RX_DATA" address="0x40006546" bitWidth="8" desc="RX Data Register" hidden="false" />
-    <register name="RX_UART_PC_RX_STATUS" address="0x40006566" bitWidth="8" desc="RX status register" hidden="false">
-      <field name="UART_PC_RX_STS_MRKSPC" from="0" to="0" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_PC_RX_STS_BREAK" from="1" to="1" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_PC_RX_STS_PAR_ERROR" from="2" to="2" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_PC_RX_STS_STOP_ERROR" from="3" to="3" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_PC_RX_STS_OVERRUN" from="4" to="4" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_PC_RX_STS_FIFO_NOTEMPTY" from="5" to="5" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_PC_RX_STS_ADDR_MATCH" from="6" to="6" access="R" resetVal="" desc="" hidden="false" />
-    </register>
-  </block>
-  <block name="Rx_PC" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Tx_PC" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="PWM_B" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <block name="vmIRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="vmCompare" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -149,35 +119,6 @@
       </field>
     </register>
   </block>
-  <block name="UART_BT" BASE="0x0" SIZE="0x0" desc="UART" visible="true" hidden="false">
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="TXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <register name="RX_UART_BT_RX_ADDRESS1" address="0x40006424" bitWidth="8" desc="RX Address1 Register" hidden="false" />
-    <register name="RX_UART_BT_RX_ADDRESS2" address="0x40006434" bitWidth="8" desc="RX Address2 Register" hidden="false" />
-    <register name="RX_UART_BT_RX_DATA" address="0x40006444" bitWidth="8" desc="RX Data Register" hidden="false" />
-    <register name="TX_UART_BT_TX_DATA" address="0x40006445" bitWidth="8" desc="TX Data Register" hidden="false" />
-    <register name="RX_UART_BT_RX_STATUS" address="0x40006462" bitWidth="8" desc="RX status register" hidden="false">
-      <field name="UART_BT_RX_STS_MRKSPC" from="0" to="0" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_BT_RX_STS_BREAK" from="1" to="1" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_BT_RX_STS_PAR_ERROR" from="2" to="2" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_BT_RX_STS_STOP_ERROR" from="3" to="3" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_BT_RX_STS_OVERRUN" from="4" to="4" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_BT_RX_STS_FIFO_NOTEMPTY" from="5" to="5" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_BT_RX_STS_ADDR_MATCH" from="6" to="6" access="R" resetVal="" desc="" hidden="false" />
-    </register>
-    <register name="TX_UART_BT_TX_STATUS" address="0x40006465" bitWidth="8" desc="TX status register" hidden="false">
-      <field name="UART_BT_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_BT_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_BT_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" hidden="false" />
-      <field name="UART_BT_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" hidden="false" />
-    </register>
-  </block>
-  <block name="Rx_BT" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Tx_BT" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="IN1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="IN4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="PWM_A" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <block name="vmIRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -228,5 +169,64 @@
       </field>
     </register>
   </block>
-  <block name="IN2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="isr_uart_rx_PC" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="UART_PC" BASE="0x0" SIZE="0x0" desc="UART" visible="true" hidden="false">
+    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="TX_UART_PC_TX_DATA" address="0x40006447" bitWidth="8" desc="TX Data Register" hidden="false" />
+    <register name="TX_UART_PC_TX_STATUS" address="0x40006467" bitWidth="8" desc="TX status register" hidden="false">
+      <field name="UART_PC_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_PC_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_PC_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_PC_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" hidden="false" />
+    </register>
+    <register name="RX_UART_PC_RX_ADDRESS1" address="0x40006526" bitWidth="8" desc="RX Address1 Register" hidden="false" />
+    <register name="RX_UART_PC_RX_ADDRESS2" address="0x40006536" bitWidth="8" desc="RX Address2 Register" hidden="false" />
+    <register name="RX_UART_PC_RX_DATA" address="0x40006546" bitWidth="8" desc="RX Data Register" hidden="false" />
+    <register name="RX_UART_PC_RX_STATUS" address="0x40006566" bitWidth="8" desc="RX status register" hidden="false">
+      <field name="UART_PC_RX_STS_MRKSPC" from="0" to="0" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_PC_RX_STS_BREAK" from="1" to="1" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_PC_RX_STS_PAR_ERROR" from="2" to="2" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_PC_RX_STS_STOP_ERROR" from="3" to="3" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_PC_RX_STS_OVERRUN" from="4" to="4" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_PC_RX_STS_FIFO_NOTEMPTY" from="5" to="5" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_PC_RX_STS_ADDR_MATCH" from="6" to="6" access="R" resetVal="" desc="" hidden="false" />
+    </register>
+  </block>
+  <block name="Rx_PC" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Tx_PC" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Clock_PWM_A" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="UART_BT" BASE="0x0" SIZE="0x0" desc="UART" visible="true" hidden="false">
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="TXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="RX_UART_BT_RX_ADDRESS1" address="0x40006424" bitWidth="8" desc="RX Address1 Register" hidden="false" />
+    <register name="RX_UART_BT_RX_ADDRESS2" address="0x40006434" bitWidth="8" desc="RX Address2 Register" hidden="false" />
+    <register name="RX_UART_BT_RX_DATA" address="0x40006444" bitWidth="8" desc="RX Data Register" hidden="false" />
+    <register name="TX_UART_BT_TX_DATA" address="0x40006445" bitWidth="8" desc="TX Data Register" hidden="false" />
+    <register name="RX_UART_BT_RX_STATUS" address="0x40006462" bitWidth="8" desc="RX status register" hidden="false">
+      <field name="UART_BT_RX_STS_MRKSPC" from="0" to="0" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_BT_RX_STS_BREAK" from="1" to="1" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_BT_RX_STS_PAR_ERROR" from="2" to="2" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_BT_RX_STS_STOP_ERROR" from="3" to="3" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_BT_RX_STS_OVERRUN" from="4" to="4" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_BT_RX_STS_FIFO_NOTEMPTY" from="5" to="5" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_BT_RX_STS_ADDR_MATCH" from="6" to="6" access="R" resetVal="" desc="" hidden="false" />
+    </register>
+    <register name="TX_UART_BT_TX_STATUS" address="0x40006465" bitWidth="8" desc="TX status register" hidden="false">
+      <field name="UART_BT_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_BT_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_BT_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" hidden="false" />
+      <field name="UART_BT_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" hidden="false" />
+    </register>
+  </block>
+  <block name="Rx_BT" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Tx_BT" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="StepPin" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="IN3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Clock_PWM_B" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="DirPin" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
 </blockRegMap>

@@ -24,8 +24,13 @@ CY_ISR(echo_isr)
     isr_echo_int_ClearPending() ;
     isr_echo_int_Disable() ;
     duration = Counter_ReadCounter() ;
+
     snprintf(str, sizeof(str), "Echo received – duration: %d\r\n", duration) ;
     UART_PC_PutString(str);
+    double distance = (double)(duration) * MACH / 240000.0; // The number is related to the clock frequency
+    sprintf(str, "Distance: %d cm\r\n", (int)distance);
+    UART_PC_PutString(str);
+
     echo_flag = 1 ;
 }
 
@@ -90,6 +95,15 @@ double measure_distance(void)
     {
         echo_flag = 0; // Reset the flag
         distance = (double)(duration) * MACH / 240000.0; // Calculate distance
+
+        // Debug print for calculated distance
+        char str[50];
+        sprintf(str, "Calculated Distance: %d cm\r\n", (int)distance);
+        UART_PC_PutString(str);
+    }
+    else
+    {
+        UART_PC_PutString("Timeout occurred\r\n");
     }
 
     return distance;
@@ -119,34 +133,3 @@ void splash(void)
     sprintf(str, "HC-SR04 Test CY8CKIT-059 (%s %s)\r\n", __DATE__, __TIME__) ;
     UART_PC_PutString(str) ;
 }
-
-
-/* Old code, removed while debugging
-int main(void)
-{
-    uint16_t timeout_count = 0 ;
-    
-    init_hardware() ;
-    
-    splash() ;
-
-
-    for(;;) {
-        timeout_count = 0 ;
-        pulse_trigger() ;
-
-        while((echo_flag == 0)&&(timeout_count < 1000)) { 
-            timeout_count++ ;
-            CyDelay(1) ;
-        }
-
-        if (echo_flag) {
-            echo_flag = 0 ;
-            print_value(duration) ;
-        } else {
-                UART_PutString("Timeout\r\n") ;
-        }
-        CyDelay(1000) ;
-    }
-}
-*/
