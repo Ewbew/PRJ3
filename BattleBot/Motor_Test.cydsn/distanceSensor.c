@@ -20,6 +20,7 @@ char str[128] ; /* print buffer */
 
 CY_ISR(echo_isr)
 {
+    UART_PC_PutString("Interrupt triggered\r\n");
     isr_echo_int_ClearPending() ;
     isr_echo_int_Disable() ;
     duration = Counter_ReadCounter() ;
@@ -29,12 +30,14 @@ CY_ISR(echo_isr)
 }
 
 void init_hardware(void)
-{
-    Trigger_Write(0) ;
-    Clock_24MHz_Start() ;
-    isr_echo_int_ClearPending() ;
-    isr_echo_int_StartEx(echo_isr) ;
-    Counter_Start() ; // Was before Counter_Init(), so change it back if needed
+    /* Enable global interrupts. */{
+    CYGlobalIntEnable;
+    Trigger_Write(0);
+    Clock_24MHz_Start();
+    isr_echo_int_ClearPending();
+    isr_echo_int_StartEx(echo_isr);
+    Counter_Init(); // Initialize the counter
+    Counter_Start(); // Start the counter
 }
 
 /**
@@ -43,18 +46,22 @@ void init_hardware(void)
  */
 void pulse_trigger(void)
 {
-    Counter_Reset_Write(1) ; // reset counter
-    CyDelayUs(10) ;
-    Counter_Reset_Write(0) ; // release reset counter
+    Counter_Reset_Write(1); // Reset counter
+    CyDelayUs(10);
+    Counter_Reset_Write(0); // Release reset counter
 
-    isr_echo_int_ClearPending() ;
-    isr_echo_int_Enable() ;
-    
-    Trigger_Write(1) ;  // trigger pulse HIGH
-    CyDelayUs(10) ;
-    Trigger_Write(0) ; // trigger pulse LOW
-    
-    Counter_Enable() ;
+    isr_echo_int_ClearPending();
+    isr_echo_int_Enable();
+
+    Trigger_Write(1);  // Trigger pulse HIGH
+    CyDelayUs(10);
+    Trigger_Write(0);  // Trigger pulse LOW
+
+    Counter_Enable();
+
+    char debugStr[50];
+    sprintf(debugStr, "Counter value: %u\r\n", Counter_ReadCounter());
+    UART_PC_PutString(debugStr);
 }
 
 /**
