@@ -23,6 +23,8 @@ CY_ISR(echo_isr)
     isr_echo_int_ClearPending() ;
     isr_echo_int_Disable() ;
     duration = Counter_ReadCounter() ;
+    snprintf(str, sizeof(str), "Echo received – duration: %d\r\n", duration) ;
+    UART_PC_PutString(str);
     echo_flag = 1 ;
 }
 
