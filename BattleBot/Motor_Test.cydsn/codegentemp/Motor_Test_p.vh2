@@ -1,5 +1,5 @@
 -- Project:   Motor_Test
--- Generated: 05/01/2025 22:16:00
+-- Generated: 05/02/2025 13:33:30
 -- PSoC Creator  4.2
 
 ENTITY Motor_Test IS
@@ -152,6 +152,9 @@ ARCHITECTURE __DEFAULT__ OF Motor_Test IS
     SIGNAL \PWM_B:PWMUDB:status_2\ : bit;
     SIGNAL \PWM_B:PWMUDB:status_3\ : bit;
     SIGNAL \PWM_B:PWMUDB:tc_i\ : bit;
+    SIGNAL \Timer_1:Net_261\ : bit;
+    SIGNAL \Timer_1:Net_51\ : bit;
+    SIGNAL \Timer_1:Net_57\ : bit;
     SIGNAL \UART_BT:BUART:counter_load_not\ : bit;
     SIGNAL \UART_BT:BUART:pollcount_0\ : bit;
     SIGNAL \UART_BT:BUART:pollcount_1\ : bit;
@@ -238,6 +241,7 @@ ARCHITECTURE __DEFAULT__ OF Motor_Test IS
     ATTRIBUTE POWER OF one : SIGNAL IS true;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
+    SIGNAL \ClockBlock.clk_bus_glb_ff__sig\ : bit;
     SIGNAL \Counter:CounterUDB:sC16:counterdp:u0.ce0__sig\ : bit;
     SIGNAL \Counter:CounterUDB:sC16:counterdp:u0.cl0__sig\ : bit;
     SIGNAL \Counter:CounterUDB:sC16:counterdp:u0.z0__sig\ : bit;
@@ -698,6 +702,17 @@ ARCHITECTURE __DEFAULT__ OF Motor_Test IS
     ATTRIBUTE udb_clk OF statusicell : COMPONENT IS "clock";
     ATTRIBUTE udb_clken OF statusicell : COMPONENT IS "clk_en";
     ATTRIBUTE udb_reset OF statusicell : COMPONENT IS "reset";
+    COMPONENT timercell
+        PORT (
+            clock : IN std_ulogic;
+            kill : IN std_ulogic;
+            enable : IN std_ulogic;
+            capture : IN std_ulogic;
+            timer_reset : IN std_ulogic;
+            tc : OUT std_ulogic;
+            cmp : OUT std_ulogic;
+            irq : OUT std_ulogic);
+    END COMPONENT;
 BEGIN
 
     ClockBlock:clockblockcell
@@ -724,7 +739,8 @@ BEGIN
             dclk_glb_3 => Net_425,
             dclk_3 => Net_425_local,
             dclk_glb_4 => Net_191,
-            dclk_4 => Net_191_local);
+            dclk_4 => Net_191_local,
+            clk_bus_glb_ff => \ClockBlock.clk_bus_glb_ff__sig\);
 
     Rx_PC:logicalport
         GENERIC MAP(
@@ -2770,6 +2786,19 @@ BEGIN
             control_1 => \Counter_Reset:control_1\,
             control_0 => Net_506,
             busclk => ClockBlock_BUS_CLK);
+
+    \Timer_1:TimerHW\:timercell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            clock => \ClockBlock.clk_bus_glb_ff__sig\,
+            kill => open,
+            enable => __ONE__,
+            capture => open,
+            timer_reset => open,
+            tc => \Timer_1:Net_51\,
+            cmp => \Timer_1:Net_261\,
+            irq => \Timer_1:Net_57\);
 
     \UART_PC:BUART:txn\:macrocell
         GENERIC MAP(

@@ -15,7 +15,7 @@ int main(void)
     init_hardware();
 
     // Initialize the timer for periodic distance checks
-    init_timer();
+    //init_timer(); Commented out while debugging
 
     // Start the UART RX ISR and UART component
     uartHandler_init(&shootVarObject);
@@ -34,6 +34,7 @@ int main(void)
 
     for (;;)
     {
+        /* Commented out while debugging
         // Main loop can perform other tasks
         if (get_obstruct()) {
             UART_PC_PutString("Obstacle detected!\r\n");
@@ -42,5 +43,6 @@ int main(void)
         }
 
         CyDelay(500); // Delay for demonstration purposes
+        */
     }
 }

@@ -47,6 +47,7 @@
 #include "isr_echo_int.h"
 #include "Counter.h"
 #include "Counter_Reset.h"
+#include "Timer_1.h"
 #include "UART_PC_IntClock.h"
 #include "UART_BT_IntClock.h"
 #include "cy_em_eeprom.h"

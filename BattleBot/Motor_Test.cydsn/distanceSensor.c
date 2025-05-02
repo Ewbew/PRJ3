@@ -27,6 +27,7 @@ CY_ISR(echo_isr)
     echo_flag = 1 ;
 }
 
+/* Commented out while debugging
 CY_ISR(timer_isr)
 {
     isr_timer_ClearPending(); // Clear the interrupt flag
@@ -40,6 +41,17 @@ CY_ISR(timer_isr)
         set_obstruct(0); // Set obstruct to false
     }
 }
+*/
+
+/* COmmented out while debugging
+void init_timer(void)
+{
+    Timer_Start(); // Start the timer
+    isr_timer_ClearPending(); // Clear any pending interrupts
+    isr_timer_StartEx(timer_isr); // Attach the ISR to the timer interrupt
+}
+*/
+
 
 void init_hardware(void)
     /* Enable global interrupts. */{
@@ -52,12 +64,7 @@ void init_hardware(void)
     Counter_Start(); // Start the counter
 }
 
-void init_timer(void)
-{
-    Timer_Start(); // Start the timer
-    isr_timer_ClearPending(); // Clear any pending interrupts
-    isr_timer_StartEx(timer_isr); // Attach the ISR to the timer interrupt
-}
+
 
 /**
  * pulse_trigger

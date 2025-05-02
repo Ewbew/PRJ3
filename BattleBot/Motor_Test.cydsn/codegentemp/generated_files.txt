@@ -76,6 +76,9 @@
   <file name="C:\Users\Totos\Desktop\elektronik_ingenioer\PRJ3\Github\BattleBot\Motor_Test.cydsn\codegentemp\Counter_Reset.h" value="HEADER;;;;;Counter_Reset" />
   <file name="C:\Users\Totos\Desktop\elektronik_ingenioer\PRJ3\Github\BattleBot\Motor_Test.cydsn\codegentemp\Counter_Reset.c" value="SOURCE_C;CortexM3;;;;Counter_Reset" />
   <file name="C:\Users\Totos\Desktop\elektronik_ingenioer\PRJ3\Github\BattleBot\Motor_Test.cydsn\codegentemp\Counter_Reset_PM.c" value="SOURCE_C;CortexM3;;;;Counter_Reset" />
+  <file name="C:\Users\Totos\Desktop\elektronik_ingenioer\PRJ3\Github\BattleBot\Motor_Test.cydsn\codegentemp\Timer_1.c" value="SOURCE_C;CortexM3;;;;Timer_1" />
+  <file name="C:\Users\Totos\Desktop\elektronik_ingenioer\PRJ3\Github\BattleBot\Motor_Test.cydsn\codegentemp\Timer_1.h" value="HEADER;;;;;Timer_1" />
+  <file name="C:\Users\Totos\Desktop\elektronik_ingenioer\PRJ3\Github\BattleBot\Motor_Test.cydsn\codegentemp\Timer_1_PM.c" value="SOURCE_C;CortexM3;;;;Timer_1" />
   <file name="C:\Users\Totos\Desktop\elektronik_ingenioer\PRJ3\Github\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_PC_IntClock" />
   <file name="C:\Users\Totos\Desktop\elektronik_ingenioer\PRJ3\Github\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_IntClock.h" value="HEADER;;;;;UART_PC_IntClock" />
   <file name="C:\Users\Totos\Desktop\elektronik_ingenioer\PRJ3\Github\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_BT_IntClock" />
