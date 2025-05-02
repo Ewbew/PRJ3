@@ -15,6 +15,7 @@
 
 static volatile uint16_t duration = 0 ;
 static volatile int      echo_flag = 0 ;
+static int obstruct = 0; // 1 if distance is below the threshold, 0 otherwise
 
 char str[128] ; /* print buffer */
 
@@ -23,25 +24,39 @@ CY_ISR(echo_isr)
     isr_echo_int_ClearPending() ;
     isr_echo_int_Disable() ;
     duration = Counter_ReadCounter() ;
-
-    //snprintf(str, sizeof(str), "Echo received – duration: %d\r\n", duration) ;
-    //UART_PC_PutString(str);
-    double distance = (double)(duration) * MACH / 240000.0; // The number is related to the clock frequency
-    //sprintf(str, "Distance: %d cm\r\n", (int)distance);
-    // UART_PC_PutString(str);
-
     echo_flag = 1 ;
+}
+
+CY_ISR(timer_isr)
+{
+    isr_timer_ClearPending(); // Clear the interrupt flag
+
+    double distance = measure_distance(); // Measure the distance
+
+    // Check if the distance is below the threshold
+    if (distance >= 0 && distance < 10.0) { // Example threshold: 10 cm
+        set_obstruct(1); // Set obstruct to true
+    } else {
+        set_obstruct(0); // Set obstruct to false
+    }
 }
 
 void init_hardware(void)
     /* Enable global interrupts. */{
-    CYGlobalIntEnable;
+    CyGlobalIntEnable;
     Trigger_Write(0);
     Clock_24MHz_Start();
     isr_echo_int_ClearPending();
     isr_echo_int_StartEx(echo_isr);
     Counter_Init(); // Initialize the counter
     Counter_Start(); // Start the counter
+}
+
+void init_timer(void)
+{
+    Timer_Start(); // Start the timer
+    isr_timer_ClearPending(); // Clear any pending interrupts
+    isr_timer_StartEx(timer_isr); // Attach the ISR to the timer interrupt
 }
 
 /**
@@ -106,6 +121,16 @@ double measure_distance(void)
     }
 
     return distance;
+}
+
+int get_obstruct(void)
+{
+    return obstruct;
+}
+
+void set_obstruct(int value)
+{
+    obstruct = value;
 }
 
 /**

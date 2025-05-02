@@ -42,6 +42,8 @@ CY_ISR(ISR_UART_rx_handler_BT)
             // Try to parse the format: <char>,<int>,<int>,<int>
             if (sscanf(btBuffer, "%c,%d,%d,%d", &tempMode, &temp1, &temp2, &tempBool) == 4)
             {
+                UART_PC_PutString("Parsing successful – sending ACK to RPI\r\n");
+                UART_BT_PutString("ACK");
                 if (tempMode == '$') {
                     VAR1 = (int8_t)temp1;
                     VAR2 = (int8_t)temp2;
@@ -67,7 +69,8 @@ CY_ISR(ISR_UART_rx_handler_BT)
             }
             else
             {       
-                UART_PC_PutString("Parsing error\r\n");
+                UART_PC_PutString("Parsing error – sending NACK to RPI\r\n");
+                UART_BT_PutString("NACK"); 
             }
 
             index = 0; // Reset buffer for next message
