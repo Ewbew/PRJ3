@@ -34,12 +34,12 @@ int main(void)
         if (distance >= 0)
         {
             char str[50];
-            sprintf(str, "Distance: %.2f cm\r\n", distance);
-            UART_PC_PutString(str);
+            // sprintf(str, "Distance: %.2f cm\r\n", distance);
+            //UART_PC_PutString(str);
         }
         else
         {
-            UART_PC_PutString("Timeout\r\n");
+            //UART_PC_PutString("Timeout\r\n");
         }
 
         // Wait 500 ms before the next reading

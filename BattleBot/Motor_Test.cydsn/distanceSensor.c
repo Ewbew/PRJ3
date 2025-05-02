@@ -20,16 +20,15 @@ char str[128] ; /* print buffer */
 
 CY_ISR(echo_isr)
 {
-    UART_PC_PutString("Interrupt triggered\r\n");
     isr_echo_int_ClearPending() ;
     isr_echo_int_Disable() ;
     duration = Counter_ReadCounter() ;
 
-    snprintf(str, sizeof(str), "Echo received – duration: %d\r\n", duration) ;
-    UART_PC_PutString(str);
+    //snprintf(str, sizeof(str), "Echo received – duration: %d\r\n", duration) ;
+    //UART_PC_PutString(str);
     double distance = (double)(duration) * MACH / 240000.0; // The number is related to the clock frequency
-    sprintf(str, "Distance: %d cm\r\n", (int)distance);
-    UART_PC_PutString(str);
+    //sprintf(str, "Distance: %d cm\r\n", (int)distance);
+    // UART_PC_PutString(str);
 
     echo_flag = 1 ;
 }
@@ -64,9 +63,9 @@ void pulse_trigger(void)
 
     Counter_Enable();
 
-    char debugStr[50];
-    sprintf(debugStr, "Counter value: %u\r\n", Counter_ReadCounter());
-    UART_PC_PutString(debugStr);
+    //char debugStr[50];
+    //sprintf(debugStr, "Counter value: %u\r\n", Counter_ReadCounter());
+    //UART_PC_PutString(debugStr);
 }
 
 /**
@@ -97,9 +96,9 @@ double measure_distance(void)
         distance = (double)(duration) * MACH / 240000.0; // Calculate distance
 
         // Debug print for calculated distance
-        char str[50];
-        sprintf(str, "Calculated Distance: %d cm\r\n", (int)distance);
-        UART_PC_PutString(str);
+        //char str[50];
+        //sprintf(str, "Calculated Distance: %d cm\r\n", (int)distance);
+        //UART_PC_PutString(str);
     }
     else
     {

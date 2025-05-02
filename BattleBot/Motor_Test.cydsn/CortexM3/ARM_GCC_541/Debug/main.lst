@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 1
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 1
 
 
    1              		.syntax unified
@@ -19,16 +19,15 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 1
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
-  19              		.global	__aeabi_dcmpge
-  20              		.section	.text.main,"ax",%progbits
-  21              		.align	2
-  22              		.global	main
-  23              		.thumb
-  24              		.thumb_func
-  25              		.type	main, %function
-  26              	main:
-  27              	.LFB64:
-  28              		.file 1 "main.c"
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB64:
+  27              		.file 1 "main.c"
    1:main.c        **** #include "project.h"
    2:main.c        **** #include <stdio.h>
    3:main.c        **** #include "motor_control.h"
@@ -39,1045 +38,896 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 1
    8:main.c        **** 
    9:main.c        **** int main(void)
   10:main.c        **** {
-  29              		.loc 1 10 0
-  30              		.cfi_startproc
-  31              		@ args = 0, pretend = 0, frame = 64
-  32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33 0000 30B5     		push	{r4, r5, lr}
-  34              		.cfi_def_cfa_offset 12
-  35              		.cfi_offset 4, -12
-  36              		.cfi_offset 5, -8
-  37              		.cfi_offset 14, -4
-  38 0002 91B0     		sub	sp, sp, #68
-  39              		.cfi_def_cfa_offset 80
+  28              		.loc 1 10 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 16
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 00B5     		push	{lr}
+  33              		.cfi_def_cfa_offset 4
+  34              		.cfi_offset 14, -4
+  35 0002 85B0     		sub	sp, sp, #20
+  36              		.cfi_def_cfa_offset 24
   11:main.c        ****     CyGlobalIntEnable;  /* Enable global interrupts. */
-  40              		.loc 1 11 0
-  41              		.syntax unified
-  42              	@ 11 "main.c" 1
-  43 0004 62B6     		CPSIE   i
-  44              	@ 0 "" 2
+  37              		.loc 1 11 0
+  38              		.syntax unified
+  39              	@ 11 "main.c" 1
+  40 0004 62B6     		CPSIE   i
+  41              	@ 0 "" 2
   12:main.c        ****     shootVarHandler shootVarObject;
   13:main.c        **** 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 2
-
-
   14:main.c        ****     // Initialize hardware for distance sensor
   15:main.c        ****     init_hardware();
-  45              		.loc 1 15 0
-  46              		.thumb
-  47              		.syntax unified
-  48 0006 FFF7FEFF 		bl	init_hardware
-  49              	.LVL0:
+  42              		.loc 1 15 0
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 2
+
+
+  43              		.thumb
+  44              		.syntax unified
+  45 0006 FFF7FEFF 		bl	init_hardware
+  46              	.LVL0:
   16:main.c        **** 
   17:main.c        ****     // Start the UART RX ISR and UART component
   18:main.c        ****     uartHandler_init(&shootVarObject);
-  50              		.loc 1 18 0
-  51 000a 0DA8     		add	r0, sp, #52
-  52 000c FFF7FEFF 		bl	uartHandler_init
-  53              	.LVL1:
+  47              		.loc 1 18 0
+  48 000a 01A8     		add	r0, sp, #4
+  49 000c FFF7FEFF 		bl	uartHandler_init
+  50              	.LVL1:
   19:main.c        ****     isr_uart_rx_PC_StartEx(ISR_UART_rx_handler_PC);
-  54              		.loc 1 19 0
-  55 0010 1648     		ldr	r0, .L9
-  56 0012 FFF7FEFF 		bl	isr_uart_rx_PC_StartEx
-  57              	.LVL2:
+  51              		.loc 1 19 0
+  52 0010 0C48     		ldr	r0, .L4
+  53 0012 FFF7FEFF 		bl	isr_uart_rx_PC_StartEx
+  54              	.LVL2:
   20:main.c        ****     isr_uart_rx_BT_StartEx(ISR_UART_rx_handler_BT);
-  58              		.loc 1 20 0
-  59 0016 1648     		ldr	r0, .L9+4
-  60 0018 FFF7FEFF 		bl	isr_uart_rx_BT_StartEx
-  61              	.LVL3:
+  55              		.loc 1 20 0
+  56 0016 0C48     		ldr	r0, .L4+4
+  57 0018 FFF7FEFF 		bl	isr_uart_rx_BT_StartEx
+  58              	.LVL3:
   21:main.c        ****     UART_PC_Start();
-  62              		.loc 1 21 0
-  63 001c FFF7FEFF 		bl	UART_PC_Start
-  64              	.LVL4:
+  59              		.loc 1 21 0
+  60 001c FFF7FEFF 		bl	UART_PC_Start
+  61              	.LVL4:
   22:main.c        ****     UART_BT_Start();
-  65              		.loc 1 22 0
-  66 0020 FFF7FEFF 		bl	UART_BT_Start
-  67              	.LVL5:
+  62              		.loc 1 22 0
+  63 0020 FFF7FEFF 		bl	UART_BT_Start
+  64              	.LVL5:
   23:main.c        ****     PWM_A_Start();
-  68              		.loc 1 23 0
-  69 0024 FFF7FEFF 		bl	PWM_A_Start
-  70              	.LVL6:
+  65              		.loc 1 23 0
+  66 0024 FFF7FEFF 		bl	PWM_A_Start
+  67              	.LVL6:
   24:main.c        ****     PWM_B_Start();
-  71              		.loc 1 24 0
-  72 0028 FFF7FEFF 		bl	PWM_B_Start
-  73              	.LVL7:
+  68              		.loc 1 24 0
+  69 0028 FFF7FEFF 		bl	PWM_B_Start
+  70              	.LVL7:
   25:main.c        ****     UART_PC_PutString("Starting program...\r\n");
-  74              		.loc 1 25 0
-  75 002c 1148     		ldr	r0, .L9+8
-  76 002e FFF7FEFF 		bl	UART_PC_PutString
-  77              	.LVL8:
+  71              		.loc 1 25 0
+  72 002c 0748     		ldr	r0, .L4+8
+  73 002e FFF7FEFF 		bl	UART_PC_PutString
+  74              	.LVL8:
   26:main.c        **** 
   27:main.c        ****     splash(); // Print splash message for distance sensor
-  78              		.loc 1 27 0
-  79 0032 FFF7FEFF 		bl	splash
-  80              	.LVL9:
-  81              	.L5:
-  82              	.LBB2:
+  75              		.loc 1 27 0
+  76 0032 FFF7FEFF 		bl	splash
+  77              	.LVL9:
+  78              	.L2:
+  79              	.LBB2:
   28:main.c        **** 
   29:main.c        ****     for (;;)
   30:main.c        ****     {
   31:main.c        ****         // Measure distance
   32:main.c        ****         double distance = measure_distance();
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 3
+  80              		.loc 1 32 0
+  81 0036 FFF7FEFF 		bl	measure_distance
+  82              	.LVL10:
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 3
 
 
-  83              		.loc 1 32 0
-  84 0036 FFF7FEFF 		bl	measure_distance
-  85              	.LVL10:
-  86 003a 0446     		mov	r4, r0
-  87 003c 0D46     		mov	r5, r1
-  88              	.LVL11:
   33:main.c        **** 
   34:main.c        ****         if (distance >= 0)
-  89              		.loc 1 34 0
-  90 003e 0022     		movs	r2, #0
-  91 0040 0023     		movs	r3, #0
-  92 0042 FFF7FEFF 		bl	__aeabi_dcmpge
-  93              	.LVL12:
-  94 0046 48B1     		cbz	r0, .L7
-  95              	.LBB3:
   35:main.c        ****         {
   36:main.c        ****             char str[50];
-  37:main.c        ****             sprintf(str, "Distance: %.2f cm\r\n", distance);
-  96              		.loc 1 37 0
-  97 0048 2246     		mov	r2, r4
-  98 004a 2B46     		mov	r3, r5
-  99 004c 0A49     		ldr	r1, .L9+12
- 100 004e 6846     		mov	r0, sp
- 101 0050 FFF7FEFF 		bl	sprintf
- 102              	.LVL13:
-  38:main.c        ****             UART_PC_PutString(str);
- 103              		.loc 1 38 0
- 104 0054 6846     		mov	r0, sp
- 105 0056 FFF7FEFF 		bl	UART_PC_PutString
- 106              	.LVL14:
- 107              	.LBE3:
- 108 005a 02E0     		b	.L4
- 109              	.L7:
+  37:main.c        ****             // sprintf(str, "Distance: %.2f cm\r\n", distance);
+  38:main.c        ****             //UART_PC_PutString(str);
   39:main.c        ****         }
   40:main.c        ****         else
   41:main.c        ****         {
-  42:main.c        ****             UART_PC_PutString("Timeout\r\n");
- 110              		.loc 1 42 0
- 111 005c 0748     		ldr	r0, .L9+16
- 112 005e FFF7FEFF 		bl	UART_PC_PutString
- 113              	.LVL15:
- 114              	.L4:
+  42:main.c        ****             //UART_PC_PutString("Timeout\r\n");
   43:main.c        ****         }
   44:main.c        **** 
   45:main.c        ****         // Wait 500 ms before the next reading
   46:main.c        ****         CyDelay(500);
- 115              		.loc 1 46 0
- 116 0062 4FF4FA70 		mov	r0, #500
- 117 0066 FFF7FEFF 		bl	CyDelay
- 118              	.LVL16:
- 119              	.LBE2:
-  47:main.c        ****     }
- 120              		.loc 1 47 0
- 121 006a E4E7     		b	.L5
- 122              	.L10:
- 123              		.align	2
- 124              	.L9:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 4
+  83              		.loc 1 46 0
+  84 003a 4FF4FA70 		mov	r0, #500
+  85 003e FFF7FEFF 		bl	CyDelay
+  86              	.LVL11:
+  87 0042 F8E7     		b	.L2
+  88              	.L5:
+  89              		.align	2
+  90              	.L4:
+  91 0044 00000000 		.word	ISR_UART_rx_handler_PC
+  92 0048 00000000 		.word	ISR_UART_rx_handler_BT
+  93 004c 00000000 		.word	.LC0
+  94              	.LBE2:
+  95              		.cfi_endproc
+  96              	.LFE64:
+  97              		.size	main, .-main
+  98              		.section	.rodata.str1.4,"aMS",%progbits,1
+  99              		.align	2
+ 100              	.LC0:
+ 101 0000 53746172 		.ascii	"Starting program...\015\012\000"
+ 101      74696E67 
+ 101      2070726F 
+ 101      6772616D 
+ 101      2E2E2E0D 
+ 102              		.text
+ 103              	.Letext0:
+ 104              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 105              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 106              		.file 4 "shootVarHandler.h"
+ 107              		.file 5 "distanceSensor.h"
+ 108              		.file 6 "Generated_Source\\PSoC5/CyLib.h"
+ 109              		.file 7 "UART_handler.h"
+ 110              		.file 8 "Generated_Source\\PSoC5/isr_uart_rx_PC.h"
+ 111              		.file 9 "Generated_Source\\PSoC5/isr_uart_rx_BT.h"
+ 112              		.file 10 "Generated_Source\\PSoC5/UART_PC.h"
+ 113              		.file 11 "Generated_Source\\PSoC5/UART_BT.h"
+ 114              		.file 12 "Generated_Source\\PSoC5/PWM_A.h"
+ 115              		.file 13 "Generated_Source\\PSoC5/PWM_B.h"
+ 116              		.file 14 "Generated_Source\\PSoC5/core_cm3.h"
+ 117              		.section	.debug_info,"",%progbits
+ 118              	.Ldebug_info0:
+ 119 0000 3C020000 		.4byte	0x23c
+ 120 0004 0400     		.2byte	0x4
+ 121 0006 00000000 		.4byte	.Ldebug_abbrev0
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 4
 
 
- 125 006c 00000000 		.word	ISR_UART_rx_handler_PC
- 126 0070 00000000 		.word	ISR_UART_rx_handler_BT
- 127 0074 00000000 		.word	.LC0
- 128 0078 18000000 		.word	.LC1
- 129 007c 2C000000 		.word	.LC2
- 130              		.cfi_endproc
- 131              	.LFE64:
- 132              		.size	main, .-main
- 133              		.section	.rodata.str1.4,"aMS",%progbits,1
- 134              		.align	2
- 135              	.LC0:
- 136 0000 53746172 		.ascii	"Starting program...\015\012\000"
- 136      74696E67 
- 136      2070726F 
- 136      6772616D 
- 136      2E2E2E0D 
- 137 0016 0000     		.space	2
- 138              	.LC1:
- 139 0018 44697374 		.ascii	"Distance: %.2f cm\015\012\000"
- 139      616E6365 
- 139      3A20252E 
- 139      32662063 
- 139      6D0D0A00 
- 140              	.LC2:
- 141 002c 54696D65 		.ascii	"Timeout\015\012\000"
- 141      6F75740D 
- 141      0A00
- 142              		.text
- 143              	.Letext0:
- 144              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 145              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 146              		.file 4 "shootVarHandler.h"
- 147              		.file 5 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 148              		.file 6 "Generated_Source\\PSoC5/UART_PC.h"
- 149              		.file 7 "distanceSensor.h"
- 150              		.file 8 "Generated_Source\\PSoC5/CyLib.h"
- 151              		.file 9 "UART_handler.h"
- 152              		.file 10 "Generated_Source\\PSoC5/isr_uart_rx_PC.h"
- 153              		.file 11 "Generated_Source\\PSoC5/isr_uart_rx_BT.h"
- 154              		.file 12 "Generated_Source\\PSoC5/UART_BT.h"
- 155              		.file 13 "Generated_Source\\PSoC5/PWM_A.h"
- 156              		.file 14 "Generated_Source\\PSoC5/PWM_B.h"
- 157              		.file 15 "Generated_Source\\PSoC5/core_cm3.h"
- 158              		.section	.debug_info,"",%progbits
- 159              	.Ldebug_info0:
- 160 0000 BF020000 		.4byte	0x2bf
- 161 0004 0400     		.2byte	0x4
- 162 0006 00000000 		.4byte	.Ldebug_abbrev0
- 163 000a 04       		.byte	0x4
- 164 000b 01       		.uleb128 0x1
- 165 000c DF000000 		.4byte	.LASF35
- 166 0010 0C       		.byte	0xc
- 167 0011 38020000 		.4byte	.LASF36
- 168 0015 3E000000 		.4byte	.LASF37
- 169 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 170 001d 00000000 		.4byte	0
- 171 0021 00000000 		.4byte	.Ldebug_line0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 5
+ 122 000a 04       		.byte	0x4
+ 123 000b 01       		.uleb128 0x1
+ 124 000c DF000000 		.4byte	.LASF32
+ 125 0010 0C       		.byte	0xc
+ 126 0011 30020000 		.4byte	.LASF33
+ 127 0015 3E000000 		.4byte	.LASF34
+ 128 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 129 001d 00000000 		.4byte	0
+ 130 0021 00000000 		.4byte	.Ldebug_line0
+ 131 0025 02       		.uleb128 0x2
+ 132 0026 01       		.byte	0x1
+ 133 0027 06       		.byte	0x6
+ 134 0028 7A020000 		.4byte	.LASF0
+ 135 002c 02       		.uleb128 0x2
+ 136 002d 01       		.byte	0x1
+ 137 002e 08       		.byte	0x8
+ 138 002f D1000000 		.4byte	.LASF1
+ 139 0033 02       		.uleb128 0x2
+ 140 0034 02       		.byte	0x2
+ 141 0035 05       		.byte	0x5
+ 142 0036 48020000 		.4byte	.LASF2
+ 143 003a 02       		.uleb128 0x2
+ 144 003b 02       		.byte	0x2
+ 145 003c 07       		.byte	0x7
+ 146 003d 2B000000 		.4byte	.LASF3
+ 147 0041 03       		.uleb128 0x3
+ 148 0042 00000000 		.4byte	.LASF9
+ 149 0046 02       		.byte	0x2
+ 150 0047 3F       		.byte	0x3f
+ 151 0048 4C000000 		.4byte	0x4c
+ 152 004c 02       		.uleb128 0x2
+ 153 004d 04       		.byte	0x4
+ 154 004e 05       		.byte	0x5
+ 155 004f 65020000 		.4byte	.LASF4
+ 156 0053 02       		.uleb128 0x2
+ 157 0054 04       		.byte	0x4
+ 158 0055 07       		.byte	0x7
+ 159 0056 6D010000 		.4byte	.LASF5
+ 160 005a 02       		.uleb128 0x2
+ 161 005b 08       		.byte	0x8
+ 162 005c 05       		.byte	0x5
+ 163 005d 22020000 		.4byte	.LASF6
+ 164 0061 02       		.uleb128 0x2
+ 165 0062 08       		.byte	0x8
+ 166 0063 07       		.byte	0x7
+ 167 0064 EB010000 		.4byte	.LASF7
+ 168 0068 04       		.uleb128 0x4
+ 169 0069 04       		.byte	0x4
+ 170 006a 05       		.byte	0x5
+ 171 006b 696E7400 		.ascii	"int\000"
+ 172 006f 02       		.uleb128 0x2
+ 173 0070 04       		.byte	0x4
+ 174 0071 07       		.byte	0x7
+ 175 0072 BD010000 		.4byte	.LASF8
+ 176 0076 03       		.uleb128 0x3
+ 177 0077 11020000 		.4byte	.LASF10
+ 178 007b 03       		.byte	0x3
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 5
 
 
- 172 0025 02       		.uleb128 0x2
- 173 0026 01       		.byte	0x1
- 174 0027 06       		.byte	0x6
- 175 0028 82020000 		.4byte	.LASF0
- 176 002c 02       		.uleb128 0x2
- 177 002d 01       		.byte	0x1
- 178 002e 08       		.byte	0x8
- 179 002f D1000000 		.4byte	.LASF1
- 180 0033 02       		.uleb128 0x2
- 181 0034 02       		.byte	0x2
- 182 0035 05       		.byte	0x5
- 183 0036 50020000 		.4byte	.LASF2
- 184 003a 02       		.uleb128 0x2
- 185 003b 02       		.byte	0x2
- 186 003c 07       		.byte	0x7
- 187 003d 2B000000 		.4byte	.LASF3
- 188 0041 03       		.uleb128 0x3
- 189 0042 00000000 		.4byte	.LASF9
- 190 0046 02       		.byte	0x2
- 191 0047 3F       		.byte	0x3f
- 192 0048 4C000000 		.4byte	0x4c
- 193 004c 02       		.uleb128 0x2
- 194 004d 04       		.byte	0x4
- 195 004e 05       		.byte	0x5
- 196 004f 6D020000 		.4byte	.LASF4
- 197 0053 02       		.uleb128 0x2
- 198 0054 04       		.byte	0x4
- 199 0055 07       		.byte	0x7
- 200 0056 6D010000 		.4byte	.LASF5
- 201 005a 02       		.uleb128 0x2
- 202 005b 08       		.byte	0x8
- 203 005c 05       		.byte	0x5
- 204 005d 2A020000 		.4byte	.LASF6
- 205 0061 02       		.uleb128 0x2
- 206 0062 08       		.byte	0x8
- 207 0063 07       		.byte	0x7
- 208 0064 EB010000 		.4byte	.LASF7
- 209 0068 04       		.uleb128 0x4
- 210 0069 04       		.byte	0x4
- 211 006a 05       		.byte	0x5
- 212 006b 696E7400 		.ascii	"int\000"
- 213 006f 02       		.uleb128 0x2
- 214 0070 04       		.byte	0x4
- 215 0071 07       		.byte	0x7
- 216 0072 BD010000 		.4byte	.LASF8
- 217 0076 03       		.uleb128 0x3
- 218 0077 19020000 		.4byte	.LASF10
- 219 007b 03       		.byte	0x3
- 220 007c 2C       		.byte	0x2c
- 221 007d 41000000 		.4byte	0x41
- 222 0081 02       		.uleb128 0x2
- 223 0082 04       		.byte	0x4
- 224 0083 04       		.byte	0x4
- 225 0084 CB000000 		.4byte	.LASF11
- 226 0088 02       		.uleb128 0x2
- 227 0089 08       		.byte	0x8
- 228 008a 04       		.byte	0x4
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 6
+ 179 007c 2C       		.byte	0x2c
+ 180 007d 41000000 		.4byte	0x41
+ 181 0081 02       		.uleb128 0x2
+ 182 0082 04       		.byte	0x4
+ 183 0083 04       		.byte	0x4
+ 184 0084 CB000000 		.4byte	.LASF11
+ 185 0088 02       		.uleb128 0x2
+ 186 0089 08       		.byte	0x8
+ 187 008a 04       		.byte	0x4
+ 188 008b 9A010000 		.4byte	.LASF12
+ 189 008f 02       		.uleb128 0x2
+ 190 0090 01       		.byte	0x1
+ 191 0091 08       		.byte	0x8
+ 192 0092 37020000 		.4byte	.LASF13
+ 193 0096 02       		.uleb128 0x2
+ 194 0097 08       		.byte	0x8
+ 195 0098 04       		.byte	0x4
+ 196 0099 6E020000 		.4byte	.LASF14
+ 197 009d 02       		.uleb128 0x2
+ 198 009e 04       		.byte	0x4
+ 199 009f 07       		.byte	0x7
+ 200 00a0 19020000 		.4byte	.LASF15
+ 201 00a4 05       		.uleb128 0x5
+ 202 00a5 0C       		.byte	0xc
+ 203 00a6 04       		.byte	0x4
+ 204 00a7 05       		.byte	0x5
+ 205 00a8 D1000000 		.4byte	0xd1
+ 206 00ac 06       		.uleb128 0x6
+ 207 00ad 86020000 		.4byte	.LASF16
+ 208 00b1 04       		.byte	0x4
+ 209 00b2 06       		.byte	0x6
+ 210 00b3 68000000 		.4byte	0x68
+ 211 00b7 00       		.byte	0
+ 212 00b8 06       		.uleb128 0x6
+ 213 00b9 92020000 		.4byte	.LASF17
+ 214 00bd 04       		.byte	0x4
+ 215 00be 07       		.byte	0x7
+ 216 00bf 68000000 		.4byte	0x68
+ 217 00c3 04       		.byte	0x4
+ 218 00c4 06       		.uleb128 0x6
+ 219 00c5 0A000000 		.4byte	.LASF18
+ 220 00c9 04       		.byte	0x4
+ 221 00ca 08       		.byte	0x8
+ 222 00cb 68000000 		.4byte	0x68
+ 223 00cf 08       		.byte	0x8
+ 224 00d0 00       		.byte	0
+ 225 00d1 03       		.uleb128 0x3
+ 226 00d2 DB010000 		.4byte	.LASF19
+ 227 00d6 04       		.byte	0x4
+ 228 00d7 09       		.byte	0x9
+ 229 00d8 A4000000 		.4byte	0xa4
+ 230 00dc 07       		.uleb128 0x7
+ 231 00dd A1010000 		.4byte	.LASF35
+ 232 00e1 01       		.byte	0x1
+ 233 00e2 09       		.byte	0x9
+ 234 00e3 68000000 		.4byte	0x68
+ 235 00e7 00000000 		.4byte	.LFB64
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 6
 
 
- 229 008b 9A010000 		.4byte	.LASF12
- 230 008f 02       		.uleb128 0x2
- 231 0090 01       		.byte	0x1
- 232 0091 08       		.byte	0x8
- 233 0092 3F020000 		.4byte	.LASF13
- 234 0096 02       		.uleb128 0x2
- 235 0097 08       		.byte	0x8
- 236 0098 04       		.byte	0x4
- 237 0099 76020000 		.4byte	.LASF14
- 238 009d 02       		.uleb128 0x2
- 239 009e 04       		.byte	0x4
- 240 009f 07       		.byte	0x7
- 241 00a0 21020000 		.4byte	.LASF15
- 242 00a4 05       		.uleb128 0x5
- 243 00a5 0C       		.byte	0xc
- 244 00a6 04       		.byte	0x4
- 245 00a7 05       		.byte	0x5
- 246 00a8 D1000000 		.4byte	0xd1
- 247 00ac 06       		.uleb128 0x6
- 248 00ad 8E020000 		.4byte	.LASF16
- 249 00b1 04       		.byte	0x4
- 250 00b2 06       		.byte	0x6
- 251 00b3 68000000 		.4byte	0x68
- 252 00b7 00       		.byte	0
- 253 00b8 06       		.uleb128 0x6
- 254 00b9 9A020000 		.4byte	.LASF17
- 255 00bd 04       		.byte	0x4
- 256 00be 07       		.byte	0x7
- 257 00bf 68000000 		.4byte	0x68
- 258 00c3 04       		.byte	0x4
- 259 00c4 06       		.uleb128 0x6
- 260 00c5 0A000000 		.4byte	.LASF18
- 261 00c9 04       		.byte	0x4
- 262 00ca 08       		.byte	0x8
- 263 00cb 68000000 		.4byte	0x68
- 264 00cf 08       		.byte	0x8
- 265 00d0 00       		.byte	0
- 266 00d1 03       		.uleb128 0x3
- 267 00d2 DB010000 		.4byte	.LASF19
- 268 00d6 04       		.byte	0x4
- 269 00d7 09       		.byte	0x9
- 270 00d8 A4000000 		.4byte	0xa4
- 271 00dc 07       		.uleb128 0x7
- 272 00dd A1010000 		.4byte	.LASF38
- 273 00e1 01       		.byte	0x1
- 274 00e2 09       		.byte	0x9
- 275 00e3 68000000 		.4byte	0x68
- 276 00e7 00000000 		.4byte	.LFB64
- 277 00eb 80000000 		.4byte	.LFE64-.LFB64
- 278 00ef 01       		.uleb128 0x1
- 279 00f0 9C       		.byte	0x9c
- 280 00f1 12020000 		.4byte	0x212
- 281 00f5 08       		.uleb128 0x8
- 282 00f6 02020000 		.4byte	.LASF20
- 283 00fa 01       		.byte	0x1
- 284 00fb 0C       		.byte	0xc
- 285 00fc D1000000 		.4byte	0xd1
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 7
+ 236 00eb 50000000 		.4byte	.LFE64-.LFB64
+ 237 00ef 01       		.uleb128 0x1
+ 238 00f0 9C       		.byte	0x9c
+ 239 00f1 AA010000 		.4byte	0x1aa
+ 240 00f5 08       		.uleb128 0x8
+ 241 00f6 02020000 		.4byte	.LASF36
+ 242 00fa 01       		.byte	0x1
+ 243 00fb 0C       		.byte	0xc
+ 244 00fc D1000000 		.4byte	0xd1
+ 245 0100 02       		.uleb128 0x2
+ 246 0101 91       		.byte	0x91
+ 247 0102 6C       		.sleb128 -20
+ 248 0103 09       		.uleb128 0x9
+ 249 0104 36000000 		.4byte	.LBB2
+ 250 0108 1A000000 		.4byte	.LBE2-.LBB2
+ 251 010c 36010000 		.4byte	0x136
+ 252 0110 0A       		.uleb128 0xa
+ 253 0111 C2000000 		.4byte	.LASF37
+ 254 0115 01       		.byte	0x1
+ 255 0116 20       		.byte	0x20
+ 256 0117 88000000 		.4byte	0x88
+ 257 011b 0B       		.uleb128 0xb
+ 258 011c 3A000000 		.4byte	.LVL10
+ 259 0120 BB010000 		.4byte	0x1bb
+ 260 0124 0C       		.uleb128 0xc
+ 261 0125 42000000 		.4byte	.LVL11
+ 262 0129 C6010000 		.4byte	0x1c6
+ 263 012d 0D       		.uleb128 0xd
+ 264 012e 01       		.uleb128 0x1
+ 265 012f 50       		.byte	0x50
+ 266 0130 03       		.uleb128 0x3
+ 267 0131 0A       		.byte	0xa
+ 268 0132 F401     		.2byte	0x1f4
+ 269 0134 00       		.byte	0
+ 270 0135 00       		.byte	0
+ 271 0136 0B       		.uleb128 0xb
+ 272 0137 0A000000 		.4byte	.LVL0
+ 273 013b D1010000 		.4byte	0x1d1
+ 274 013f 0E       		.uleb128 0xe
+ 275 0140 10000000 		.4byte	.LVL1
+ 276 0144 DC010000 		.4byte	0x1dc
+ 277 0148 53010000 		.4byte	0x153
+ 278 014c 0D       		.uleb128 0xd
+ 279 014d 01       		.uleb128 0x1
+ 280 014e 50       		.byte	0x50
+ 281 014f 02       		.uleb128 0x2
+ 282 0150 91       		.byte	0x91
+ 283 0151 6C       		.sleb128 -20
+ 284 0152 00       		.byte	0
+ 285 0153 0B       		.uleb128 0xb
+ 286 0154 16000000 		.4byte	.LVL2
+ 287 0158 E7010000 		.4byte	0x1e7
+ 288 015c 0B       		.uleb128 0xb
+ 289 015d 1C000000 		.4byte	.LVL3
+ 290 0161 F2010000 		.4byte	0x1f2
+ 291 0165 0B       		.uleb128 0xb
+ 292 0166 20000000 		.4byte	.LVL4
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 7
 
 
- 286 0100 02       		.uleb128 0x2
- 287 0101 91       		.byte	0x91
- 288 0102 64       		.sleb128 -28
- 289 0103 09       		.uleb128 0x9
- 290 0104 36000000 		.4byte	.LBB2
- 291 0108 34000000 		.4byte	.LBE2-.LBB2
- 292 010c 9E010000 		.4byte	0x19e
- 293 0110 08       		.uleb128 0x8
- 294 0111 C2000000 		.4byte	.LASF21
- 295 0115 01       		.byte	0x1
- 296 0116 20       		.byte	0x20
- 297 0117 88000000 		.4byte	0x88
- 298 011b 06       		.uleb128 0x6
- 299 011c 54       		.byte	0x54
- 300 011d 93       		.byte	0x93
- 301 011e 04       		.uleb128 0x4
- 302 011f 55       		.byte	0x55
- 303 0120 93       		.byte	0x93
- 304 0121 04       		.uleb128 0x4
- 305 0122 09       		.uleb128 0x9
- 306 0123 48000000 		.4byte	.LBB3
- 307 0127 12000000 		.4byte	.LBE3-.LBB3
- 308 012b 6C010000 		.4byte	0x16c
- 309 012f 0A       		.uleb128 0xa
- 310 0130 73747200 		.ascii	"str\000"
- 311 0134 01       		.byte	0x1
- 312 0135 24       		.byte	0x24
- 313 0136 12020000 		.4byte	0x212
- 314 013a 03       		.uleb128 0x3
- 315 013b 91       		.byte	0x91
- 316 013c B07F     		.sleb128 -80
- 317 013e 0B       		.uleb128 0xb
- 318 013f 54000000 		.4byte	.LVL13
- 319 0143 33020000 		.4byte	0x233
- 320 0147 5B010000 		.4byte	0x15b
- 321 014b 0C       		.uleb128 0xc
- 322 014c 01       		.uleb128 0x1
- 323 014d 50       		.byte	0x50
- 324 014e 02       		.uleb128 0x2
- 325 014f 7D       		.byte	0x7d
- 326 0150 00       		.sleb128 0
- 327 0151 0C       		.uleb128 0xc
- 328 0152 01       		.uleb128 0x1
- 329 0153 51       		.byte	0x51
- 330 0154 05       		.uleb128 0x5
- 331 0155 03       		.byte	0x3
- 332 0156 18000000 		.4byte	.LC1
- 333 015a 00       		.byte	0
- 334 015b 0D       		.uleb128 0xd
- 335 015c 5A000000 		.4byte	.LVL14
- 336 0160 3E020000 		.4byte	0x23e
- 337 0164 0C       		.uleb128 0xc
- 338 0165 01       		.uleb128 0x1
- 339 0166 50       		.byte	0x50
- 340 0167 02       		.uleb128 0x2
- 341 0168 7D       		.byte	0x7d
- 342 0169 00       		.sleb128 0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 8
+ 293 016a FD010000 		.4byte	0x1fd
+ 294 016e 0B       		.uleb128 0xb
+ 295 016f 24000000 		.4byte	.LVL5
+ 296 0173 08020000 		.4byte	0x208
+ 297 0177 0B       		.uleb128 0xb
+ 298 0178 28000000 		.4byte	.LVL6
+ 299 017c 13020000 		.4byte	0x213
+ 300 0180 0B       		.uleb128 0xb
+ 301 0181 2C000000 		.4byte	.LVL7
+ 302 0185 1E020000 		.4byte	0x21e
+ 303 0189 0E       		.uleb128 0xe
+ 304 018a 32000000 		.4byte	.LVL8
+ 305 018e 29020000 		.4byte	0x229
+ 306 0192 A0010000 		.4byte	0x1a0
+ 307 0196 0D       		.uleb128 0xd
+ 308 0197 01       		.uleb128 0x1
+ 309 0198 50       		.byte	0x50
+ 310 0199 05       		.uleb128 0x5
+ 311 019a 03       		.byte	0x3
+ 312 019b 00000000 		.4byte	.LC0
+ 313 019f 00       		.byte	0
+ 314 01a0 0B       		.uleb128 0xb
+ 315 01a1 36000000 		.4byte	.LVL9
+ 316 01a5 34020000 		.4byte	0x234
+ 317 01a9 00       		.byte	0
+ 318 01aa 0F       		.uleb128 0xf
+ 319 01ab 8D010000 		.4byte	.LASF38
+ 320 01af 0E       		.byte	0xe
+ 321 01b0 1207     		.2byte	0x712
+ 322 01b2 B6010000 		.4byte	0x1b6
+ 323 01b6 10       		.uleb128 0x10
+ 324 01b7 76000000 		.4byte	0x76
+ 325 01bb 11       		.uleb128 0x11
+ 326 01bc 91000000 		.4byte	.LASF20
+ 327 01c0 91000000 		.4byte	.LASF20
+ 328 01c4 05       		.byte	0x5
+ 329 01c5 0C       		.byte	0xc
+ 330 01c6 11       		.uleb128 0x11
+ 331 01c7 9E020000 		.4byte	.LASF21
+ 332 01cb 9E020000 		.4byte	.LASF21
+ 333 01cf 06       		.byte	0x6
+ 334 01d0 76       		.byte	0x76
+ 335 01d1 11       		.uleb128 0x11
+ 336 01d2 A6020000 		.4byte	.LASF22
+ 337 01d6 A6020000 		.4byte	.LASF22
+ 338 01da 05       		.byte	0x5
+ 339 01db 0A       		.byte	0xa
+ 340 01dc 11       		.uleb128 0x11
+ 341 01dd CA010000 		.4byte	.LASF23
+ 342 01e1 CA010000 		.4byte	.LASF23
+ 343 01e5 07       		.byte	0x7
+ 344 01e6 0A       		.byte	0xa
+ 345 01e7 11       		.uleb128 0x11
+ 346 01e8 14000000 		.4byte	.LASF24
+ 347 01ec 14000000 		.4byte	.LASF24
+ 348 01f0 08       		.byte	0x8
+ 349 01f1 18       		.byte	0x18
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 8
 
 
- 343 016a 00       		.byte	0
- 344 016b 00       		.byte	0
- 345 016c 0E       		.uleb128 0xe
- 346 016d 3A000000 		.4byte	.LVL10
- 347 0171 49020000 		.4byte	0x249
- 348 0175 0B       		.uleb128 0xb
- 349 0176 62000000 		.4byte	.LVL15
- 350 017a 3E020000 		.4byte	0x23e
- 351 017e 8C010000 		.4byte	0x18c
- 352 0182 0C       		.uleb128 0xc
- 353 0183 01       		.uleb128 0x1
- 354 0184 50       		.byte	0x50
- 355 0185 05       		.uleb128 0x5
- 356 0186 03       		.byte	0x3
- 357 0187 2C000000 		.4byte	.LC2
- 358 018b 00       		.byte	0
- 359 018c 0D       		.uleb128 0xd
- 360 018d 6A000000 		.4byte	.LVL16
- 361 0191 54020000 		.4byte	0x254
- 362 0195 0C       		.uleb128 0xc
- 363 0196 01       		.uleb128 0x1
- 364 0197 50       		.byte	0x50
- 365 0198 03       		.uleb128 0x3
- 366 0199 0A       		.byte	0xa
- 367 019a F401     		.2byte	0x1f4
- 368 019c 00       		.byte	0
- 369 019d 00       		.byte	0
- 370 019e 0E       		.uleb128 0xe
- 371 019f 0A000000 		.4byte	.LVL0
- 372 01a3 5F020000 		.4byte	0x25f
- 373 01a7 0B       		.uleb128 0xb
- 374 01a8 10000000 		.4byte	.LVL1
- 375 01ac 6A020000 		.4byte	0x26a
- 376 01b0 BB010000 		.4byte	0x1bb
- 377 01b4 0C       		.uleb128 0xc
- 378 01b5 01       		.uleb128 0x1
- 379 01b6 50       		.byte	0x50
- 380 01b7 02       		.uleb128 0x2
- 381 01b8 91       		.byte	0x91
- 382 01b9 64       		.sleb128 -28
- 383 01ba 00       		.byte	0
- 384 01bb 0E       		.uleb128 0xe
- 385 01bc 16000000 		.4byte	.LVL2
- 386 01c0 75020000 		.4byte	0x275
- 387 01c4 0E       		.uleb128 0xe
- 388 01c5 1C000000 		.4byte	.LVL3
- 389 01c9 80020000 		.4byte	0x280
- 390 01cd 0E       		.uleb128 0xe
- 391 01ce 20000000 		.4byte	.LVL4
- 392 01d2 8B020000 		.4byte	0x28b
- 393 01d6 0E       		.uleb128 0xe
- 394 01d7 24000000 		.4byte	.LVL5
- 395 01db 96020000 		.4byte	0x296
- 396 01df 0E       		.uleb128 0xe
- 397 01e0 28000000 		.4byte	.LVL6
- 398 01e4 A1020000 		.4byte	0x2a1
- 399 01e8 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 9
+ 350 01f2 11       		.uleb128 0x11
+ 351 01f3 A6010000 		.4byte	.LASF25
+ 352 01f7 A6010000 		.4byte	.LASF25
+ 353 01fb 09       		.byte	0x9
+ 354 01fc 18       		.byte	0x18
+ 355 01fd 11       		.uleb128 0x11
+ 356 01fe A2000000 		.4byte	.LASF26
+ 357 0202 A2000000 		.4byte	.LASF26
+ 358 0206 0A       		.byte	0xa
+ 359 0207 54       		.byte	0x54
+ 360 0208 11       		.uleb128 0x11
+ 361 0209 7F010000 		.4byte	.LASF27
+ 362 020d 7F010000 		.4byte	.LASF27
+ 363 0211 0B       		.byte	0xb
+ 364 0212 54       		.byte	0x54
+ 365 0213 11       		.uleb128 0x11
+ 366 0214 3C020000 		.4byte	.LASF28
+ 367 0218 3C020000 		.4byte	.LASF28
+ 368 021c 0C       		.byte	0xc
+ 369 021d 92       		.byte	0x92
+ 370 021e 11       		.uleb128 0x11
+ 371 021f 59020000 		.4byte	.LASF29
+ 372 0223 59020000 		.4byte	.LASF29
+ 373 0227 0D       		.byte	0xd
+ 374 0228 92       		.byte	0x92
+ 375 0229 11       		.uleb128 0x11
+ 376 022a B0000000 		.4byte	.LASF30
+ 377 022e B0000000 		.4byte	.LASF30
+ 378 0232 0A       		.byte	0xa
+ 379 0233 8B       		.byte	0x8b
+ 380 0234 11       		.uleb128 0x11
+ 381 0235 52020000 		.4byte	.LASF31
+ 382 0239 52020000 		.4byte	.LASF31
+ 383 023d 05       		.byte	0x5
+ 384 023e 0E       		.byte	0xe
+ 385 023f 00       		.byte	0
+ 386              		.section	.debug_abbrev,"",%progbits
+ 387              	.Ldebug_abbrev0:
+ 388 0000 01       		.uleb128 0x1
+ 389 0001 11       		.uleb128 0x11
+ 390 0002 01       		.byte	0x1
+ 391 0003 25       		.uleb128 0x25
+ 392 0004 0E       		.uleb128 0xe
+ 393 0005 13       		.uleb128 0x13
+ 394 0006 0B       		.uleb128 0xb
+ 395 0007 03       		.uleb128 0x3
+ 396 0008 0E       		.uleb128 0xe
+ 397 0009 1B       		.uleb128 0x1b
+ 398 000a 0E       		.uleb128 0xe
+ 399 000b 55       		.uleb128 0x55
+ 400 000c 17       		.uleb128 0x17
+ 401 000d 11       		.uleb128 0x11
+ 402 000e 01       		.uleb128 0x1
+ 403 000f 10       		.uleb128 0x10
+ 404 0010 17       		.uleb128 0x17
+ 405 0011 00       		.byte	0
+ 406 0012 00       		.byte	0
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 9
 
 
- 400 01e9 2C000000 		.4byte	.LVL7
- 401 01ed AC020000 		.4byte	0x2ac
- 402 01f1 0B       		.uleb128 0xb
- 403 01f2 32000000 		.4byte	.LVL8
- 404 01f6 3E020000 		.4byte	0x23e
- 405 01fa 08020000 		.4byte	0x208
- 406 01fe 0C       		.uleb128 0xc
- 407 01ff 01       		.uleb128 0x1
- 408 0200 50       		.byte	0x50
- 409 0201 05       		.uleb128 0x5
- 410 0202 03       		.byte	0x3
- 411 0203 00000000 		.4byte	.LC0
- 412 0207 00       		.byte	0
- 413 0208 0E       		.uleb128 0xe
- 414 0209 36000000 		.4byte	.LVL9
- 415 020d B7020000 		.4byte	0x2b7
- 416 0211 00       		.byte	0
- 417 0212 0F       		.uleb128 0xf
- 418 0213 8F000000 		.4byte	0x8f
- 419 0217 22020000 		.4byte	0x222
- 420 021b 10       		.uleb128 0x10
- 421 021c 9D000000 		.4byte	0x9d
- 422 0220 31       		.byte	0x31
- 423 0221 00       		.byte	0
- 424 0222 11       		.uleb128 0x11
- 425 0223 8D010000 		.4byte	.LASF39
- 426 0227 0F       		.byte	0xf
- 427 0228 1207     		.2byte	0x712
- 428 022a 2E020000 		.4byte	0x22e
- 429 022e 12       		.uleb128 0x12
- 430 022f 76000000 		.4byte	0x76
- 431 0233 13       		.uleb128 0x13
- 432 0234 11020000 		.4byte	.LASF22
- 433 0238 11020000 		.4byte	.LASF22
- 434 023c 05       		.byte	0x5
- 435 023d E7       		.byte	0xe7
- 436 023e 13       		.uleb128 0x13
- 437 023f B0000000 		.4byte	.LASF23
- 438 0243 B0000000 		.4byte	.LASF23
- 439 0247 06       		.byte	0x6
- 440 0248 8B       		.byte	0x8b
- 441 0249 13       		.uleb128 0x13
- 442 024a 91000000 		.4byte	.LASF24
- 443 024e 91000000 		.4byte	.LASF24
- 444 0252 07       		.byte	0x7
- 445 0253 0C       		.byte	0xc
- 446 0254 13       		.uleb128 0x13
- 447 0255 A6020000 		.4byte	.LASF25
- 448 0259 A6020000 		.4byte	.LASF25
- 449 025d 08       		.byte	0x8
- 450 025e 76       		.byte	0x76
- 451 025f 13       		.uleb128 0x13
- 452 0260 AE020000 		.4byte	.LASF26
- 453 0264 AE020000 		.4byte	.LASF26
- 454 0268 07       		.byte	0x7
- 455 0269 0A       		.byte	0xa
- 456 026a 13       		.uleb128 0x13
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 10
+ 407 0013 02       		.uleb128 0x2
+ 408 0014 24       		.uleb128 0x24
+ 409 0015 00       		.byte	0
+ 410 0016 0B       		.uleb128 0xb
+ 411 0017 0B       		.uleb128 0xb
+ 412 0018 3E       		.uleb128 0x3e
+ 413 0019 0B       		.uleb128 0xb
+ 414 001a 03       		.uleb128 0x3
+ 415 001b 0E       		.uleb128 0xe
+ 416 001c 00       		.byte	0
+ 417 001d 00       		.byte	0
+ 418 001e 03       		.uleb128 0x3
+ 419 001f 16       		.uleb128 0x16
+ 420 0020 00       		.byte	0
+ 421 0021 03       		.uleb128 0x3
+ 422 0022 0E       		.uleb128 0xe
+ 423 0023 3A       		.uleb128 0x3a
+ 424 0024 0B       		.uleb128 0xb
+ 425 0025 3B       		.uleb128 0x3b
+ 426 0026 0B       		.uleb128 0xb
+ 427 0027 49       		.uleb128 0x49
+ 428 0028 13       		.uleb128 0x13
+ 429 0029 00       		.byte	0
+ 430 002a 00       		.byte	0
+ 431 002b 04       		.uleb128 0x4
+ 432 002c 24       		.uleb128 0x24
+ 433 002d 00       		.byte	0
+ 434 002e 0B       		.uleb128 0xb
+ 435 002f 0B       		.uleb128 0xb
+ 436 0030 3E       		.uleb128 0x3e
+ 437 0031 0B       		.uleb128 0xb
+ 438 0032 03       		.uleb128 0x3
+ 439 0033 08       		.uleb128 0x8
+ 440 0034 00       		.byte	0
+ 441 0035 00       		.byte	0
+ 442 0036 05       		.uleb128 0x5
+ 443 0037 13       		.uleb128 0x13
+ 444 0038 01       		.byte	0x1
+ 445 0039 0B       		.uleb128 0xb
+ 446 003a 0B       		.uleb128 0xb
+ 447 003b 3A       		.uleb128 0x3a
+ 448 003c 0B       		.uleb128 0xb
+ 449 003d 3B       		.uleb128 0x3b
+ 450 003e 0B       		.uleb128 0xb
+ 451 003f 01       		.uleb128 0x1
+ 452 0040 13       		.uleb128 0x13
+ 453 0041 00       		.byte	0
+ 454 0042 00       		.byte	0
+ 455 0043 06       		.uleb128 0x6
+ 456 0044 0D       		.uleb128 0xd
+ 457 0045 00       		.byte	0
+ 458 0046 03       		.uleb128 0x3
+ 459 0047 0E       		.uleb128 0xe
+ 460 0048 3A       		.uleb128 0x3a
+ 461 0049 0B       		.uleb128 0xb
+ 462 004a 3B       		.uleb128 0x3b
+ 463 004b 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 10
 
 
- 457 026b CA010000 		.4byte	.LASF27
- 458 026f CA010000 		.4byte	.LASF27
- 459 0273 09       		.byte	0x9
- 460 0274 0A       		.byte	0xa
- 461 0275 13       		.uleb128 0x13
- 462 0276 14000000 		.4byte	.LASF28
- 463 027a 14000000 		.4byte	.LASF28
- 464 027e 0A       		.byte	0xa
- 465 027f 18       		.byte	0x18
- 466 0280 13       		.uleb128 0x13
- 467 0281 A6010000 		.4byte	.LASF29
- 468 0285 A6010000 		.4byte	.LASF29
- 469 0289 0B       		.byte	0xb
- 470 028a 18       		.byte	0x18
- 471 028b 13       		.uleb128 0x13
- 472 028c A2000000 		.4byte	.LASF30
- 473 0290 A2000000 		.4byte	.LASF30
- 474 0294 06       		.byte	0x6
- 475 0295 54       		.byte	0x54
- 476 0296 13       		.uleb128 0x13
- 477 0297 7F010000 		.4byte	.LASF31
- 478 029b 7F010000 		.4byte	.LASF31
- 479 029f 0C       		.byte	0xc
- 480 02a0 54       		.byte	0x54
- 481 02a1 13       		.uleb128 0x13
- 482 02a2 44020000 		.4byte	.LASF32
- 483 02a6 44020000 		.4byte	.LASF32
- 484 02aa 0D       		.byte	0xd
- 485 02ab 92       		.byte	0x92
- 486 02ac 13       		.uleb128 0x13
- 487 02ad 61020000 		.4byte	.LASF33
- 488 02b1 61020000 		.4byte	.LASF33
- 489 02b5 0E       		.byte	0xe
- 490 02b6 92       		.byte	0x92
- 491 02b7 13       		.uleb128 0x13
- 492 02b8 5A020000 		.4byte	.LASF34
- 493 02bc 5A020000 		.4byte	.LASF34
- 494 02c0 07       		.byte	0x7
- 495 02c1 0E       		.byte	0xe
- 496 02c2 00       		.byte	0
- 497              		.section	.debug_abbrev,"",%progbits
- 498              	.Ldebug_abbrev0:
- 499 0000 01       		.uleb128 0x1
- 500 0001 11       		.uleb128 0x11
- 501 0002 01       		.byte	0x1
- 502 0003 25       		.uleb128 0x25
- 503 0004 0E       		.uleb128 0xe
- 504 0005 13       		.uleb128 0x13
- 505 0006 0B       		.uleb128 0xb
- 506 0007 03       		.uleb128 0x3
- 507 0008 0E       		.uleb128 0xe
- 508 0009 1B       		.uleb128 0x1b
- 509 000a 0E       		.uleb128 0xe
- 510 000b 55       		.uleb128 0x55
- 511 000c 17       		.uleb128 0x17
- 512 000d 11       		.uleb128 0x11
- 513 000e 01       		.uleb128 0x1
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 11
+ 464 004c 49       		.uleb128 0x49
+ 465 004d 13       		.uleb128 0x13
+ 466 004e 38       		.uleb128 0x38
+ 467 004f 0B       		.uleb128 0xb
+ 468 0050 00       		.byte	0
+ 469 0051 00       		.byte	0
+ 470 0052 07       		.uleb128 0x7
+ 471 0053 2E       		.uleb128 0x2e
+ 472 0054 01       		.byte	0x1
+ 473 0055 3F       		.uleb128 0x3f
+ 474 0056 19       		.uleb128 0x19
+ 475 0057 03       		.uleb128 0x3
+ 476 0058 0E       		.uleb128 0xe
+ 477 0059 3A       		.uleb128 0x3a
+ 478 005a 0B       		.uleb128 0xb
+ 479 005b 3B       		.uleb128 0x3b
+ 480 005c 0B       		.uleb128 0xb
+ 481 005d 27       		.uleb128 0x27
+ 482 005e 19       		.uleb128 0x19
+ 483 005f 49       		.uleb128 0x49
+ 484 0060 13       		.uleb128 0x13
+ 485 0061 8701     		.uleb128 0x87
+ 486 0063 19       		.uleb128 0x19
+ 487 0064 11       		.uleb128 0x11
+ 488 0065 01       		.uleb128 0x1
+ 489 0066 12       		.uleb128 0x12
+ 490 0067 06       		.uleb128 0x6
+ 491 0068 40       		.uleb128 0x40
+ 492 0069 18       		.uleb128 0x18
+ 493 006a 9742     		.uleb128 0x2117
+ 494 006c 19       		.uleb128 0x19
+ 495 006d 01       		.uleb128 0x1
+ 496 006e 13       		.uleb128 0x13
+ 497 006f 00       		.byte	0
+ 498 0070 00       		.byte	0
+ 499 0071 08       		.uleb128 0x8
+ 500 0072 34       		.uleb128 0x34
+ 501 0073 00       		.byte	0
+ 502 0074 03       		.uleb128 0x3
+ 503 0075 0E       		.uleb128 0xe
+ 504 0076 3A       		.uleb128 0x3a
+ 505 0077 0B       		.uleb128 0xb
+ 506 0078 3B       		.uleb128 0x3b
+ 507 0079 0B       		.uleb128 0xb
+ 508 007a 49       		.uleb128 0x49
+ 509 007b 13       		.uleb128 0x13
+ 510 007c 02       		.uleb128 0x2
+ 511 007d 18       		.uleb128 0x18
+ 512 007e 00       		.byte	0
+ 513 007f 00       		.byte	0
+ 514 0080 09       		.uleb128 0x9
+ 515 0081 0B       		.uleb128 0xb
+ 516 0082 01       		.byte	0x1
+ 517 0083 11       		.uleb128 0x11
+ 518 0084 01       		.uleb128 0x1
+ 519 0085 12       		.uleb128 0x12
+ 520 0086 06       		.uleb128 0x6
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 11
 
 
- 514 000f 10       		.uleb128 0x10
- 515 0010 17       		.uleb128 0x17
- 516 0011 00       		.byte	0
- 517 0012 00       		.byte	0
- 518 0013 02       		.uleb128 0x2
- 519 0014 24       		.uleb128 0x24
- 520 0015 00       		.byte	0
- 521 0016 0B       		.uleb128 0xb
- 522 0017 0B       		.uleb128 0xb
- 523 0018 3E       		.uleb128 0x3e
- 524 0019 0B       		.uleb128 0xb
- 525 001a 03       		.uleb128 0x3
- 526 001b 0E       		.uleb128 0xe
- 527 001c 00       		.byte	0
- 528 001d 00       		.byte	0
- 529 001e 03       		.uleb128 0x3
- 530 001f 16       		.uleb128 0x16
- 531 0020 00       		.byte	0
- 532 0021 03       		.uleb128 0x3
- 533 0022 0E       		.uleb128 0xe
- 534 0023 3A       		.uleb128 0x3a
- 535 0024 0B       		.uleb128 0xb
- 536 0025 3B       		.uleb128 0x3b
- 537 0026 0B       		.uleb128 0xb
- 538 0027 49       		.uleb128 0x49
- 539 0028 13       		.uleb128 0x13
- 540 0029 00       		.byte	0
- 541 002a 00       		.byte	0
- 542 002b 04       		.uleb128 0x4
- 543 002c 24       		.uleb128 0x24
- 544 002d 00       		.byte	0
- 545 002e 0B       		.uleb128 0xb
- 546 002f 0B       		.uleb128 0xb
- 547 0030 3E       		.uleb128 0x3e
- 548 0031 0B       		.uleb128 0xb
- 549 0032 03       		.uleb128 0x3
- 550 0033 08       		.uleb128 0x8
- 551 0034 00       		.byte	0
- 552 0035 00       		.byte	0
- 553 0036 05       		.uleb128 0x5
- 554 0037 13       		.uleb128 0x13
- 555 0038 01       		.byte	0x1
- 556 0039 0B       		.uleb128 0xb
- 557 003a 0B       		.uleb128 0xb
- 558 003b 3A       		.uleb128 0x3a
- 559 003c 0B       		.uleb128 0xb
- 560 003d 3B       		.uleb128 0x3b
- 561 003e 0B       		.uleb128 0xb
- 562 003f 01       		.uleb128 0x1
- 563 0040 13       		.uleb128 0x13
- 564 0041 00       		.byte	0
- 565 0042 00       		.byte	0
- 566 0043 06       		.uleb128 0x6
- 567 0044 0D       		.uleb128 0xd
- 568 0045 00       		.byte	0
- 569 0046 03       		.uleb128 0x3
- 570 0047 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 12
+ 521 0087 01       		.uleb128 0x1
+ 522 0088 13       		.uleb128 0x13
+ 523 0089 00       		.byte	0
+ 524 008a 00       		.byte	0
+ 525 008b 0A       		.uleb128 0xa
+ 526 008c 34       		.uleb128 0x34
+ 527 008d 00       		.byte	0
+ 528 008e 03       		.uleb128 0x3
+ 529 008f 0E       		.uleb128 0xe
+ 530 0090 3A       		.uleb128 0x3a
+ 531 0091 0B       		.uleb128 0xb
+ 532 0092 3B       		.uleb128 0x3b
+ 533 0093 0B       		.uleb128 0xb
+ 534 0094 49       		.uleb128 0x49
+ 535 0095 13       		.uleb128 0x13
+ 536 0096 00       		.byte	0
+ 537 0097 00       		.byte	0
+ 538 0098 0B       		.uleb128 0xb
+ 539 0099 898201   		.uleb128 0x4109
+ 540 009c 00       		.byte	0
+ 541 009d 11       		.uleb128 0x11
+ 542 009e 01       		.uleb128 0x1
+ 543 009f 31       		.uleb128 0x31
+ 544 00a0 13       		.uleb128 0x13
+ 545 00a1 00       		.byte	0
+ 546 00a2 00       		.byte	0
+ 547 00a3 0C       		.uleb128 0xc
+ 548 00a4 898201   		.uleb128 0x4109
+ 549 00a7 01       		.byte	0x1
+ 550 00a8 11       		.uleb128 0x11
+ 551 00a9 01       		.uleb128 0x1
+ 552 00aa 31       		.uleb128 0x31
+ 553 00ab 13       		.uleb128 0x13
+ 554 00ac 00       		.byte	0
+ 555 00ad 00       		.byte	0
+ 556 00ae 0D       		.uleb128 0xd
+ 557 00af 8A8201   		.uleb128 0x410a
+ 558 00b2 00       		.byte	0
+ 559 00b3 02       		.uleb128 0x2
+ 560 00b4 18       		.uleb128 0x18
+ 561 00b5 9142     		.uleb128 0x2111
+ 562 00b7 18       		.uleb128 0x18
+ 563 00b8 00       		.byte	0
+ 564 00b9 00       		.byte	0
+ 565 00ba 0E       		.uleb128 0xe
+ 566 00bb 898201   		.uleb128 0x4109
+ 567 00be 01       		.byte	0x1
+ 568 00bf 11       		.uleb128 0x11
+ 569 00c0 01       		.uleb128 0x1
+ 570 00c1 31       		.uleb128 0x31
+ 571 00c2 13       		.uleb128 0x13
+ 572 00c3 01       		.uleb128 0x1
+ 573 00c4 13       		.uleb128 0x13
+ 574 00c5 00       		.byte	0
+ 575 00c6 00       		.byte	0
+ 576 00c7 0F       		.uleb128 0xf
+ 577 00c8 34       		.uleb128 0x34
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 12
 
 
- 571 0048 3A       		.uleb128 0x3a
- 572 0049 0B       		.uleb128 0xb
- 573 004a 3B       		.uleb128 0x3b
- 574 004b 0B       		.uleb128 0xb
- 575 004c 49       		.uleb128 0x49
- 576 004d 13       		.uleb128 0x13
- 577 004e 38       		.uleb128 0x38
- 578 004f 0B       		.uleb128 0xb
- 579 0050 00       		.byte	0
- 580 0051 00       		.byte	0
- 581 0052 07       		.uleb128 0x7
- 582 0053 2E       		.uleb128 0x2e
- 583 0054 01       		.byte	0x1
- 584 0055 3F       		.uleb128 0x3f
- 585 0056 19       		.uleb128 0x19
- 586 0057 03       		.uleb128 0x3
- 587 0058 0E       		.uleb128 0xe
- 588 0059 3A       		.uleb128 0x3a
- 589 005a 0B       		.uleb128 0xb
- 590 005b 3B       		.uleb128 0x3b
- 591 005c 0B       		.uleb128 0xb
- 592 005d 27       		.uleb128 0x27
- 593 005e 19       		.uleb128 0x19
- 594 005f 49       		.uleb128 0x49
- 595 0060 13       		.uleb128 0x13
- 596 0061 8701     		.uleb128 0x87
- 597 0063 19       		.uleb128 0x19
- 598 0064 11       		.uleb128 0x11
- 599 0065 01       		.uleb128 0x1
- 600 0066 12       		.uleb128 0x12
- 601 0067 06       		.uleb128 0x6
- 602 0068 40       		.uleb128 0x40
- 603 0069 18       		.uleb128 0x18
- 604 006a 9642     		.uleb128 0x2116
- 605 006c 19       		.uleb128 0x19
- 606 006d 01       		.uleb128 0x1
- 607 006e 13       		.uleb128 0x13
- 608 006f 00       		.byte	0
- 609 0070 00       		.byte	0
- 610 0071 08       		.uleb128 0x8
- 611 0072 34       		.uleb128 0x34
- 612 0073 00       		.byte	0
- 613 0074 03       		.uleb128 0x3
- 614 0075 0E       		.uleb128 0xe
- 615 0076 3A       		.uleb128 0x3a
- 616 0077 0B       		.uleb128 0xb
- 617 0078 3B       		.uleb128 0x3b
- 618 0079 0B       		.uleb128 0xb
- 619 007a 49       		.uleb128 0x49
- 620 007b 13       		.uleb128 0x13
- 621 007c 02       		.uleb128 0x2
- 622 007d 18       		.uleb128 0x18
- 623 007e 00       		.byte	0
- 624 007f 00       		.byte	0
- 625 0080 09       		.uleb128 0x9
- 626 0081 0B       		.uleb128 0xb
- 627 0082 01       		.byte	0x1
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 13
+ 578 00c9 00       		.byte	0
+ 579 00ca 03       		.uleb128 0x3
+ 580 00cb 0E       		.uleb128 0xe
+ 581 00cc 3A       		.uleb128 0x3a
+ 582 00cd 0B       		.uleb128 0xb
+ 583 00ce 3B       		.uleb128 0x3b
+ 584 00cf 05       		.uleb128 0x5
+ 585 00d0 49       		.uleb128 0x49
+ 586 00d1 13       		.uleb128 0x13
+ 587 00d2 3F       		.uleb128 0x3f
+ 588 00d3 19       		.uleb128 0x19
+ 589 00d4 3C       		.uleb128 0x3c
+ 590 00d5 19       		.uleb128 0x19
+ 591 00d6 00       		.byte	0
+ 592 00d7 00       		.byte	0
+ 593 00d8 10       		.uleb128 0x10
+ 594 00d9 35       		.uleb128 0x35
+ 595 00da 00       		.byte	0
+ 596 00db 49       		.uleb128 0x49
+ 597 00dc 13       		.uleb128 0x13
+ 598 00dd 00       		.byte	0
+ 599 00de 00       		.byte	0
+ 600 00df 11       		.uleb128 0x11
+ 601 00e0 2E       		.uleb128 0x2e
+ 602 00e1 00       		.byte	0
+ 603 00e2 3F       		.uleb128 0x3f
+ 604 00e3 19       		.uleb128 0x19
+ 605 00e4 3C       		.uleb128 0x3c
+ 606 00e5 19       		.uleb128 0x19
+ 607 00e6 6E       		.uleb128 0x6e
+ 608 00e7 0E       		.uleb128 0xe
+ 609 00e8 03       		.uleb128 0x3
+ 610 00e9 0E       		.uleb128 0xe
+ 611 00ea 3A       		.uleb128 0x3a
+ 612 00eb 0B       		.uleb128 0xb
+ 613 00ec 3B       		.uleb128 0x3b
+ 614 00ed 0B       		.uleb128 0xb
+ 615 00ee 00       		.byte	0
+ 616 00ef 00       		.byte	0
+ 617 00f0 00       		.byte	0
+ 618              		.section	.debug_aranges,"",%progbits
+ 619 0000 1C000000 		.4byte	0x1c
+ 620 0004 0200     		.2byte	0x2
+ 621 0006 00000000 		.4byte	.Ldebug_info0
+ 622 000a 04       		.byte	0x4
+ 623 000b 00       		.byte	0
+ 624 000c 0000     		.2byte	0
+ 625 000e 0000     		.2byte	0
+ 626 0010 00000000 		.4byte	.LFB64
+ 627 0014 50000000 		.4byte	.LFE64-.LFB64
+ 628 0018 00000000 		.4byte	0
+ 629 001c 00000000 		.4byte	0
+ 630              		.section	.debug_ranges,"",%progbits
+ 631              	.Ldebug_ranges0:
+ 632 0000 00000000 		.4byte	.LFB64
+ 633 0004 50000000 		.4byte	.LFE64
+ 634 0008 00000000 		.4byte	0
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 13
 
 
- 628 0083 11       		.uleb128 0x11
- 629 0084 01       		.uleb128 0x1
- 630 0085 12       		.uleb128 0x12
- 631 0086 06       		.uleb128 0x6
- 632 0087 01       		.uleb128 0x1
- 633 0088 13       		.uleb128 0x13
- 634 0089 00       		.byte	0
- 635 008a 00       		.byte	0
- 636 008b 0A       		.uleb128 0xa
- 637 008c 34       		.uleb128 0x34
- 638 008d 00       		.byte	0
- 639 008e 03       		.uleb128 0x3
- 640 008f 08       		.uleb128 0x8
- 641 0090 3A       		.uleb128 0x3a
- 642 0091 0B       		.uleb128 0xb
- 643 0092 3B       		.uleb128 0x3b
- 644 0093 0B       		.uleb128 0xb
- 645 0094 49       		.uleb128 0x49
- 646 0095 13       		.uleb128 0x13
- 647 0096 02       		.uleb128 0x2
- 648 0097 18       		.uleb128 0x18
- 649 0098 00       		.byte	0
- 650 0099 00       		.byte	0
- 651 009a 0B       		.uleb128 0xb
- 652 009b 898201   		.uleb128 0x4109
- 653 009e 01       		.byte	0x1
- 654 009f 11       		.uleb128 0x11
- 655 00a0 01       		.uleb128 0x1
- 656 00a1 31       		.uleb128 0x31
- 657 00a2 13       		.uleb128 0x13
- 658 00a3 01       		.uleb128 0x1
- 659 00a4 13       		.uleb128 0x13
- 660 00a5 00       		.byte	0
- 661 00a6 00       		.byte	0
- 662 00a7 0C       		.uleb128 0xc
- 663 00a8 8A8201   		.uleb128 0x410a
- 664 00ab 00       		.byte	0
- 665 00ac 02       		.uleb128 0x2
- 666 00ad 18       		.uleb128 0x18
- 667 00ae 9142     		.uleb128 0x2111
- 668 00b0 18       		.uleb128 0x18
- 669 00b1 00       		.byte	0
- 670 00b2 00       		.byte	0
- 671 00b3 0D       		.uleb128 0xd
- 672 00b4 898201   		.uleb128 0x4109
- 673 00b7 01       		.byte	0x1
- 674 00b8 11       		.uleb128 0x11
- 675 00b9 01       		.uleb128 0x1
- 676 00ba 31       		.uleb128 0x31
- 677 00bb 13       		.uleb128 0x13
- 678 00bc 00       		.byte	0
- 679 00bd 00       		.byte	0
- 680 00be 0E       		.uleb128 0xe
- 681 00bf 898201   		.uleb128 0x4109
- 682 00c2 00       		.byte	0
- 683 00c3 11       		.uleb128 0x11
- 684 00c4 01       		.uleb128 0x1
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 14
+ 635 000c 00000000 		.4byte	0
+ 636              		.section	.debug_line,"",%progbits
+ 637              	.Ldebug_line0:
+ 638 0000 01020000 		.section	.debug_str,"MS",%progbits,1
+ 638      0200DD01 
+ 638      00000201 
+ 638      FB0E0D00 
+ 638      01010101 
+ 639              	.LASF9:
+ 640 0000 5F5F696E 		.ascii	"__int32_t\000"
+ 640      7433325F 
+ 640      7400
+ 641              	.LASF18:
+ 642 000a 73686F6F 		.ascii	"shootMode\000"
+ 642      744D6F64 
+ 642      6500
+ 643              	.LASF24:
+ 644 0014 6973725F 		.ascii	"isr_uart_rx_PC_StartEx\000"
+ 644      75617274 
+ 644      5F72785F 
+ 644      50435F53 
+ 644      74617274 
+ 645              	.LASF3:
+ 646 002b 73686F72 		.ascii	"short unsigned int\000"
+ 646      7420756E 
+ 646      7369676E 
+ 646      65642069 
+ 646      6E7400
+ 647              	.LASF34:
+ 648 003e 433A5C55 		.ascii	"C:\\Users\\Totos\\Desktop\\elektronik_ingenioer\\PR"
+ 648      73657273 
+ 648      5C546F74 
+ 648      6F735C44 
+ 648      65736B74 
+ 649 006c 4A335C47 		.ascii	"J3\\Github\\BattleBot\\Motor_Test.cydsn\000"
+ 649      69746875 
+ 649      625C4261 
+ 649      74746C65 
+ 649      426F745C 
+ 650              	.LASF20:
+ 651 0091 6D656173 		.ascii	"measure_distance\000"
+ 651      7572655F 
+ 651      64697374 
+ 651      616E6365 
+ 651      00
+ 652              	.LASF26:
+ 653 00a2 55415254 		.ascii	"UART_PC_Start\000"
+ 653      5F50435F 
+ 653      53746172 
+ 653      7400
+ 654              	.LASF30:
+ 655 00b0 55415254 		.ascii	"UART_PC_PutString\000"
+ 655      5F50435F 
+ 655      50757453 
+ 655      7472696E 
+ 655      6700
+ 656              	.LASF37:
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 14
 
 
- 685 00c5 31       		.uleb128 0x31
- 686 00c6 13       		.uleb128 0x13
- 687 00c7 00       		.byte	0
- 688 00c8 00       		.byte	0
- 689 00c9 0F       		.uleb128 0xf
- 690 00ca 01       		.uleb128 0x1
- 691 00cb 01       		.byte	0x1
- 692 00cc 49       		.uleb128 0x49
- 693 00cd 13       		.uleb128 0x13
- 694 00ce 01       		.uleb128 0x1
- 695 00cf 13       		.uleb128 0x13
- 696 00d0 00       		.byte	0
- 697 00d1 00       		.byte	0
- 698 00d2 10       		.uleb128 0x10
- 699 00d3 21       		.uleb128 0x21
- 700 00d4 00       		.byte	0
- 701 00d5 49       		.uleb128 0x49
- 702 00d6 13       		.uleb128 0x13
- 703 00d7 2F       		.uleb128 0x2f
- 704 00d8 0B       		.uleb128 0xb
- 705 00d9 00       		.byte	0
- 706 00da 00       		.byte	0
- 707 00db 11       		.uleb128 0x11
- 708 00dc 34       		.uleb128 0x34
- 709 00dd 00       		.byte	0
- 710 00de 03       		.uleb128 0x3
- 711 00df 0E       		.uleb128 0xe
- 712 00e0 3A       		.uleb128 0x3a
- 713 00e1 0B       		.uleb128 0xb
- 714 00e2 3B       		.uleb128 0x3b
- 715 00e3 05       		.uleb128 0x5
- 716 00e4 49       		.uleb128 0x49
- 717 00e5 13       		.uleb128 0x13
- 718 00e6 3F       		.uleb128 0x3f
- 719 00e7 19       		.uleb128 0x19
- 720 00e8 3C       		.uleb128 0x3c
- 721 00e9 19       		.uleb128 0x19
- 722 00ea 00       		.byte	0
- 723 00eb 00       		.byte	0
- 724 00ec 12       		.uleb128 0x12
- 725 00ed 35       		.uleb128 0x35
- 726 00ee 00       		.byte	0
- 727 00ef 49       		.uleb128 0x49
- 728 00f0 13       		.uleb128 0x13
- 729 00f1 00       		.byte	0
- 730 00f2 00       		.byte	0
- 731 00f3 13       		.uleb128 0x13
- 732 00f4 2E       		.uleb128 0x2e
- 733 00f5 00       		.byte	0
- 734 00f6 3F       		.uleb128 0x3f
- 735 00f7 19       		.uleb128 0x19
- 736 00f8 3C       		.uleb128 0x3c
- 737 00f9 19       		.uleb128 0x19
- 738 00fa 6E       		.uleb128 0x6e
- 739 00fb 0E       		.uleb128 0xe
- 740 00fc 03       		.uleb128 0x3
- 741 00fd 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 15
+ 657 00c2 64697374 		.ascii	"distance\000"
+ 657      616E6365 
+ 657      00
+ 658              	.LASF11:
+ 659 00cb 666C6F61 		.ascii	"float\000"
+ 659      7400
+ 660              	.LASF1:
+ 661 00d1 756E7369 		.ascii	"unsigned char\000"
+ 661      676E6564 
+ 661      20636861 
+ 661      7200
+ 662              	.LASF32:
+ 663 00df 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 663      43313120 
+ 663      352E342E 
+ 663      31203230 
+ 663      31363036 
+ 664 0112 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 664      20726576 
+ 664      6973696F 
+ 664      6E203233 
+ 664      37373135 
+ 665 0145 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 665      66756E63 
+ 665      74696F6E 
+ 665      2D736563 
+ 665      74696F6E 
+ 666              	.LASF5:
+ 667 016d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 667      20756E73 
+ 667      69676E65 
+ 667      6420696E 
+ 667      7400
+ 668              	.LASF27:
+ 669 017f 55415254 		.ascii	"UART_BT_Start\000"
+ 669      5F42545F 
+ 669      53746172 
+ 669      7400
+ 670              	.LASF38:
+ 671 018d 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 671      52784275 
+ 671      66666572 
+ 671      00
+ 672              	.LASF12:
+ 673 019a 646F7562 		.ascii	"double\000"
+ 673      6C6500
+ 674              	.LASF35:
+ 675 01a1 6D61696E 		.ascii	"main\000"
+ 675      00
+ 676              	.LASF25:
+ 677 01a6 6973725F 		.ascii	"isr_uart_rx_BT_StartEx\000"
+ 677      75617274 
+ 677      5F72785F 
+ 677      42545F53 
+ 677      74617274 
+ 678              	.LASF8:
+ 679 01bd 756E7369 		.ascii	"unsigned int\000"
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 15
 
 
- 742 00fe 3A       		.uleb128 0x3a
- 743 00ff 0B       		.uleb128 0xb
- 744 0100 3B       		.uleb128 0x3b
- 745 0101 0B       		.uleb128 0xb
- 746 0102 00       		.byte	0
- 747 0103 00       		.byte	0
- 748 0104 00       		.byte	0
- 749              		.section	.debug_aranges,"",%progbits
- 750 0000 1C000000 		.4byte	0x1c
- 751 0004 0200     		.2byte	0x2
- 752 0006 00000000 		.4byte	.Ldebug_info0
- 753 000a 04       		.byte	0x4
- 754 000b 00       		.byte	0
- 755 000c 0000     		.2byte	0
- 756 000e 0000     		.2byte	0
- 757 0010 00000000 		.4byte	.LFB64
- 758 0014 80000000 		.4byte	.LFE64-.LFB64
- 759 0018 00000000 		.4byte	0
- 760 001c 00000000 		.4byte	0
- 761              		.section	.debug_ranges,"",%progbits
- 762              	.Ldebug_ranges0:
- 763 0000 00000000 		.4byte	.LFB64
- 764 0004 80000000 		.4byte	.LFE64
- 765 0008 00000000 		.4byte	0
- 766 000c 00000000 		.4byte	0
- 767              		.section	.debug_line,"",%progbits
- 768              	.Ldebug_line0:
- 769 0000 77020000 		.section	.debug_str,"MS",%progbits,1
- 769      02005002 
- 769      00000201 
- 769      FB0E0D00 
- 769      01010101 
- 770              	.LASF9:
- 771 0000 5F5F696E 		.ascii	"__int32_t\000"
- 771      7433325F 
- 771      7400
- 772              	.LASF18:
- 773 000a 73686F6F 		.ascii	"shootMode\000"
- 773      744D6F64 
- 773      6500
- 774              	.LASF28:
- 775 0014 6973725F 		.ascii	"isr_uart_rx_PC_StartEx\000"
- 775      75617274 
- 775      5F72785F 
- 775      50435F53 
- 775      74617274 
- 776              	.LASF3:
- 777 002b 73686F72 		.ascii	"short unsigned int\000"
- 777      7420756E 
- 777      7369676E 
- 777      65642069 
- 777      6E7400
- 778              	.LASF37:
- 779 003e 433A5C55 		.ascii	"C:\\Users\\Totos\\Desktop\\elektronik_ingenioer\\PR"
- 779      73657273 
- 779      5C546F74 
- 779      6F735C44 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 16
+ 679      676E6564 
+ 679      20696E74 
+ 679      00
+ 680              	.LASF23:
+ 681 01ca 75617274 		.ascii	"uartHandler_init\000"
+ 681      48616E64 
+ 681      6C65725F 
+ 681      696E6974 
+ 681      00
+ 682              	.LASF19:
+ 683 01db 73686F6F 		.ascii	"shootVarHandler\000"
+ 683      74566172 
+ 683      48616E64 
+ 683      6C657200 
+ 684              	.LASF7:
+ 685 01eb 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 685      206C6F6E 
+ 685      6720756E 
+ 685      7369676E 
+ 685      65642069 
+ 686              	.LASF36:
+ 687 0202 73686F6F 		.ascii	"shootVarObject\000"
+ 687      74566172 
+ 687      4F626A65 
+ 687      637400
+ 688              	.LASF10:
+ 689 0211 696E7433 		.ascii	"int32_t\000"
+ 689      325F7400 
+ 690              	.LASF15:
+ 691 0219 73697A65 		.ascii	"sizetype\000"
+ 691      74797065 
+ 691      00
+ 692              	.LASF6:
+ 693 0222 6C6F6E67 		.ascii	"long long int\000"
+ 693      206C6F6E 
+ 693      6720696E 
+ 693      7400
+ 694              	.LASF33:
+ 695 0230 6D61696E 		.ascii	"main.c\000"
+ 695      2E6300
+ 696              	.LASF13:
+ 697 0237 63686172 		.ascii	"char\000"
+ 697      00
+ 698              	.LASF28:
+ 699 023c 50574D5F 		.ascii	"PWM_A_Start\000"
+ 699      415F5374 
+ 699      61727400 
+ 700              	.LASF2:
+ 701 0248 73686F72 		.ascii	"short int\000"
+ 701      7420696E 
+ 701      7400
+ 702              	.LASF31:
+ 703 0252 73706C61 		.ascii	"splash\000"
+ 703      736800
+ 704              	.LASF29:
+ 705 0259 50574D5F 		.ascii	"PWM_B_Start\000"
+ 705      425F5374 
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2FmWzh.s 			page 16
 
 
- 779      65736B74 
- 780 006c 4A335C47 		.ascii	"J3\\Github\\BattleBot\\Motor_Test.cydsn\000"
- 780      69746875 
- 780      625C4261 
- 780      74746C65 
- 780      426F745C 
- 781              	.LASF24:
- 782 0091 6D656173 		.ascii	"measure_distance\000"
- 782      7572655F 
- 782      64697374 
- 782      616E6365 
- 782      00
- 783              	.LASF30:
- 784 00a2 55415254 		.ascii	"UART_PC_Start\000"
- 784      5F50435F 
- 784      53746172 
- 784      7400
- 785              	.LASF23:
- 786 00b0 55415254 		.ascii	"UART_PC_PutString\000"
- 786      5F50435F 
- 786      50757453 
- 786      7472696E 
- 786      6700
- 787              	.LASF21:
- 788 00c2 64697374 		.ascii	"distance\000"
- 788      616E6365 
- 788      00
- 789              	.LASF11:
- 790 00cb 666C6F61 		.ascii	"float\000"
- 790      7400
- 791              	.LASF1:
- 792 00d1 756E7369 		.ascii	"unsigned char\000"
- 792      676E6564 
- 792      20636861 
- 792      7200
- 793              	.LASF35:
- 794 00df 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 794      43313120 
- 794      352E342E 
- 794      31203230 
- 794      31363036 
- 795 0112 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 795      20726576 
- 795      6973696F 
- 795      6E203233 
- 795      37373135 
- 796 0145 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 796      66756E63 
- 796      74696F6E 
- 796      2D736563 
- 796      74696F6E 
- 797              	.LASF5:
- 798 016d 6C6F6E67 		.ascii	"long unsigned int\000"
- 798      20756E73 
- 798      69676E65 
- 798      6420696E 
- 798      7400
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 17
-
-
- 799              	.LASF31:
- 800 017f 55415254 		.ascii	"UART_BT_Start\000"
- 800      5F42545F 
- 800      53746172 
- 800      7400
- 801              	.LASF39:
- 802 018d 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 802      52784275 
- 802      66666572 
- 802      00
- 803              	.LASF12:
- 804 019a 646F7562 		.ascii	"double\000"
- 804      6C6500
- 805              	.LASF38:
- 806 01a1 6D61696E 		.ascii	"main\000"
- 806      00
- 807              	.LASF29:
- 808 01a6 6973725F 		.ascii	"isr_uart_rx_BT_StartEx\000"
- 808      75617274 
- 808      5F72785F 
- 808      42545F53 
- 808      74617274 
- 809              	.LASF8:
- 810 01bd 756E7369 		.ascii	"unsigned int\000"
- 810      676E6564 
- 810      20696E74 
- 810      00
- 811              	.LASF27:
- 812 01ca 75617274 		.ascii	"uartHandler_init\000"
- 812      48616E64 
- 812      6C65725F 
- 812      696E6974 
- 812      00
- 813              	.LASF19:
- 814 01db 73686F6F 		.ascii	"shootVarHandler\000"
- 814      74566172 
- 814      48616E64 
- 814      6C657200 
- 815              	.LASF7:
- 816 01eb 6C6F6E67 		.ascii	"long long unsigned int\000"
- 816      206C6F6E 
- 816      6720756E 
- 816      7369676E 
- 816      65642069 
- 817              	.LASF20:
- 818 0202 73686F6F 		.ascii	"shootVarObject\000"
- 818      74566172 
- 818      4F626A65 
- 818      637400
- 819              	.LASF22:
- 820 0211 73707269 		.ascii	"sprintf\000"
- 820      6E746600 
- 821              	.LASF10:
- 822 0219 696E7433 		.ascii	"int32_t\000"
- 822      325F7400 
- 823              	.LASF15:
- 824 0221 73697A65 		.ascii	"sizetype\000"
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 18
-
-
- 824      74797065 
- 824      00
- 825              	.LASF6:
- 826 022a 6C6F6E67 		.ascii	"long long int\000"
- 826      206C6F6E 
- 826      6720696E 
- 826      7400
- 827              	.LASF36:
- 828 0238 6D61696E 		.ascii	"main.c\000"
- 828      2E6300
- 829              	.LASF13:
- 830 023f 63686172 		.ascii	"char\000"
- 830      00
- 831              	.LASF32:
- 832 0244 50574D5F 		.ascii	"PWM_A_Start\000"
- 832      415F5374 
- 832      61727400 
- 833              	.LASF2:
- 834 0250 73686F72 		.ascii	"short int\000"
- 834      7420696E 
- 834      7400
- 835              	.LASF34:
- 836 025a 73706C61 		.ascii	"splash\000"
- 836      736800
- 837              	.LASF33:
- 838 0261 50574D5F 		.ascii	"PWM_B_Start\000"
- 838      425F5374 
- 838      61727400 
- 839              	.LASF4:
- 840 026d 6C6F6E67 		.ascii	"long int\000"
- 840      20696E74 
- 840      00
- 841              	.LASF14:
- 842 0276 6C6F6E67 		.ascii	"long double\000"
- 842      20646F75 
- 842      626C6500 
- 843              	.LASF0:
- 844 0282 7369676E 		.ascii	"signed char\000"
- 844      65642063 
- 844      68617200 
- 845              	.LASF16:
- 846 028e 64657369 		.ascii	"desiredPos1\000"
- 846      72656450 
- 846      6F733100 
- 847              	.LASF17:
- 848 029a 64657369 		.ascii	"desiredPos2\000"
- 848      72656450 
- 848      6F733200 
- 849              	.LASF25:
- 850 02a6 43794465 		.ascii	"CyDelay\000"
- 850      6C617900 
- 851              	.LASF26:
- 852 02ae 696E6974 		.ascii	"init_hardware\000"
- 852      5F686172 
- 852      64776172 
- 852      6500
- 853              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccT2BxE7.s 			page 19
-
-
+ 705      61727400 
+ 706              	.LASF4:
+ 707 0265 6C6F6E67 		.ascii	"long int\000"
+ 707      20696E74 
+ 707      00
+ 708              	.LASF14:
+ 709 026e 6C6F6E67 		.ascii	"long double\000"
+ 709      20646F75 
+ 709      626C6500 
+ 710              	.LASF0:
+ 711 027a 7369676E 		.ascii	"signed char\000"
+ 711      65642063 
+ 711      68617200 
+ 712              	.LASF16:
+ 713 0286 64657369 		.ascii	"desiredPos1\000"
+ 713      72656450 
+ 713      6F733100 
+ 714              	.LASF17:
+ 715 0292 64657369 		.ascii	"desiredPos2\000"
+ 715      72656450 
+ 715      6F733200 
+ 716              	.LASF21:
+ 717 029e 43794465 		.ascii	"CyDelay\000"
+ 717      6C617900 
+ 718              	.LASF22:
+ 719 02a6 696E6974 		.ascii	"init_hardware\000"
+ 719      5F686172 
+ 719      64776172 
+ 719      6500
+ 720              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
