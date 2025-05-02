@@ -37,33 +37,69 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
     cout << "Connected to " << destAddr << " - starting send/receive loop." << endl;
 
     char buffer[1024]; // Buffer for receiving data
+    string lastSentMessage; // Store the last sent message
+    bool resendLastMessage = false; // Flag to indicate if the last message should be resent
 
     while (keepRunning) {
         // Send data
-        string dataToSendCombined = handler->getMessage();
-        int status = write(s, dataToSendCombined.c_str(), dataToSendCombined.length());
+        string dataToSendCombined;
+        if (!resendLastMessage) {
+            dataToSendCombined = handler->getMessage();
+            if (lastSentMessage.empty() || lastSentMessage != dataToSendCombined) {
+                lastSentMessage = dataToSendCombined; // Update the last sent message
+            }
+        }
+
+        int status = write(s, lastSentMessage.c_str(), lastSentMessage.length());
         if (status < 0) {
             perror("Write failed");
             break;
         }
 
-        cout << "Sent: " << dataToSendCombined << endl;
+        cout << "Sent: " << lastSentMessage << endl;
 
-        // Receive data
-        memset(buffer, 0, sizeof(buffer)); // Clear the buffer
-        int bytesRead = read(s, buffer, sizeof(buffer) - 1);
-        if (bytesRead > 0) {
-            buffer[bytesRead] = '\0'; // Null-terminate the string
-            cout << "Received: " << buffer << endl;
+        // Wait for ACK/NACK with timeout
+        auto startTime = chrono::steady_clock::now();
+        bool responseReceived = false;
 
-            // Process the received data (optional)
-            // shandler->processReceivedData(string(buffer));
-        } else if (bytesRead < 0) {
-            perror("Read failed");
-            break;
+        while (chrono::steady_clock::now() - startTime < chrono::seconds(1)) {
+            memset(buffer, 0, sizeof(buffer)); // Clear the buffer
+            int bytesRead = read(s, buffer, sizeof(buffer) - 1);
+
+            if (bytesRead > 0) {
+                buffer[bytesRead] = '\0'; // Null-terminate the string
+                string receivedMessage(buffer);
+                cout << "Received: " << receivedMessage << endl;
+
+                // Handle ACK/NACK
+                if (receivedMessage == "ACK") {
+                    cout << "ACK received. Preparing to send the next message." << endl;
+                    lastSentMessage.clear(); // Clear the last sent message to fetch new data
+                    resendLastMessage = false; // Allow sending the next message
+                    responseReceived = true;
+                    break;
+                } else if (receivedMessage == "NACK") {
+                    cout << "NACK received. Resending the last message." << endl;
+                    resendLastMessage = true; // Keep resending the last message
+                    responseReceived = true;
+                    break;
+                } else {
+                    cout << "Unexpected message received: " << receivedMessage << endl;
+                    // Do nothing, keep waiting for ACK/NACK
+                }
+            } else if (bytesRead < 0) {
+                perror("Read failed");
+                break;
+            }
+
+            this_thread::sleep_for(chrono::milliseconds(100)); // Avoid busy-waiting
         }
 
-        this_thread::sleep_for(chrono::milliseconds(100)); // Avoid busy-waiting
+        // Timeout handling
+        if (!responseReceived) {
+            cout << "Timeout waiting for ACK/NACK. Treating as NACK and resending the last message." << endl;
+            resendLastMessage = true; // Resend the last message
+        }
     }
 
     cout << "Stopping Bluetooth sender/receiver loop." << endl;
