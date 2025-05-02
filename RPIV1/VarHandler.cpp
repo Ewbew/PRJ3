@@ -82,8 +82,18 @@ string VarHandler::getMessage(){
         return "@,"+to_string(getVar1ShootMode())+","+to_string(getVar2ShootMode())+","+to_string(static_cast<int>(getShootState()))+ "X"; 
                                                                                                                              // 'X' is the end char
     }
+
     else{
         cout<< "Get Message Failed";
         return "";
     }
+}
+
+//Acknowledgement of the last message sent
+void VarHandler::setLastMessageAcknowledged(bool acknowledged){
+    lastMessageAcknowledged = acknowledged;
+}
+
+bool VarHandler::isLastMessageAcknowledged() const{
+    return lastMessageAcknowledged;
 }

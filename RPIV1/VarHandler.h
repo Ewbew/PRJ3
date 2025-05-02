@@ -25,6 +25,9 @@ public:
     void setControlMode(const int& newValue);
     int getControlMode() const;
 
+    void setLastMessageAcknowledged(bool acknowledged);
+    bool isLastMessageAcknowledged() const;
+
 private:
     int controlMode;
     bool ShootState;
@@ -34,4 +37,6 @@ private:
 
     int value1ShootMode;
     int value2ShootMode;
+
+    bool lastMessageAcknowledged;
 };

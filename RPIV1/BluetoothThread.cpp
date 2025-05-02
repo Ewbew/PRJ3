@@ -43,7 +43,8 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
     while (keepRunning) {
         // Send data
         string dataToSendCombined;
-        if (!resendLastMessage) {
+        if (handler->isLastMessageAcknowledged()) {
+            // Generate a new message if the last one was acknowledged
             dataToSendCombined = handler->getMessage();
             if (lastSentMessage.empty() || lastSentMessage != dataToSendCombined) {
                 lastSentMessage = dataToSendCombined; // Update the last sent message
@@ -74,12 +75,14 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                 // Handle ACK/NACK
                 if (receivedMessage == "ACK") {
                     cout << "ACK received. Preparing to send the next message." << endl;
+                    handler->setLastMessageAcknowledged(true); // Mark the last message as acknowledged
                     lastSentMessage.clear(); // Clear the last sent message to fetch new data
                     resendLastMessage = false; // Allow sending the next message
                     responseReceived = true;
                     break;
                 } else if (receivedMessage == "NACK") {
                     cout << "NACK received. Resending the last message." << endl;
+                    handler->setLastMessageAcknowledged(false); // Mark the last message as not acknowledged
                     resendLastMessage = true; // Keep resending the last message
                     responseReceived = true;
                     break;
