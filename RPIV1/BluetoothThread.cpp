@@ -36,15 +36,15 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
 
     cout << "Connected to " << destAddr << " - starting send/receive loop." << endl;
 
-    char buffer[1024]; // Buffer for receiving data
+    char buffer[1024]; // Temporary buffer for receiving data
+    string receivedMessageBuffer; // Accumulate received bytes here
     string lastSentMessage; // Store the last sent message
     bool resendLastMessage = false; // Flag to indicate if the last message should be resent
 
     while (keepRunning) {
         // Send data
         string dataToSendCombined;
-        if (handler->isLastMessageAcknowledged()) {
-            // Generate a new message if the last one was acknowledged
+        if (!resendLastMessage) {
             dataToSendCombined = handler->getMessage();
             if (lastSentMessage.empty() || lastSentMessage != dataToSendCombined) {
                 lastSentMessage = dataToSendCombined; // Update the last sent message
@@ -64,31 +64,40 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
         bool responseReceived = false;
 
         while (chrono::steady_clock::now() - startTime < chrono::milliseconds(500)) {
-            memset(buffer, 0, sizeof(buffer)); // Clear the buffer
+            memset(buffer, 0, sizeof(buffer)); // Clear the temporary buffer
             int bytesRead = read(s, buffer, sizeof(buffer) - 1);
 
             if (bytesRead > 0) {
-                buffer[bytesRead] = '\0'; // Null-terminate the string
-                string receivedMessage(buffer);
-                cout << "Received: " << receivedMessage << endl;
+                // Append received bytes to the accumulated buffer
+                receivedMessageBuffer.append(buffer, bytesRead);
 
-                // Handle ACK/NACK
-                if (receivedMessage == "ACK") {
-                    cout << "ACK received. Preparing to send the next message." << endl;
-                    handler->setLastMessageAcknowledged(true); // Mark the last message as acknowledged
-                    lastSentMessage.clear(); // Clear the last sent message to fetch new data
-                    resendLastMessage = false; // Allow sending the next message
-                    responseReceived = true;
-                    break;
-                } else if (receivedMessage == "NACK") {
-                    cout << "NACK received. Resending the last message." << endl;
-                    handler->setLastMessageAcknowledged(false); // Mark the last message as not acknowledged
-                    resendLastMessage = true; // Keep resending the last message
-                    responseReceived = true;
-                    break;
-                } else {
-                    cout << "Unexpected message received: " << receivedMessage << endl;
-                    // Do nothing, keep waiting for ACK/NACK
+                // Check if the termination character 'X' is present
+                size_t endPos = receivedMessageBuffer.find('X');
+                if (endPos != string::npos) {
+                    // Full message received
+                    string fullMessage = receivedMessageBuffer.substr(0, endPos);
+                    receivedMessageBuffer.erase(0, endPos + 1); // Remove processed message
+
+                    cout << "Received: " << fullMessage << endl;
+
+                    // Handle ACK/NACK
+                    if (fullMessage == "ACK") {
+                        cout << "ACK received. Preparing to send the next message." << endl;
+                        handler->setLastMessageAcknowledged(true); // Mark the last message as acknowledged
+                        lastSentMessage.clear(); // Clear the last sent message to fetch new data
+                        resendLastMessage = false; // Allow sending the next message
+                        responseReceived = true;
+                        break;
+                    } else if (fullMessage == "NACK") {
+                        cout << "NACK received. Resending the last message." << endl;
+                        handler->setLastMessageAcknowledged(false); // Mark the last message as not acknowledged
+                        resendLastMessage = true; // Keep resending the last message
+                        responseReceived = true;
+                        break;
+                    } else {
+                        cout << "Unexpected message received: " << fullMessage << endl;
+                        // Do nothing, keep waiting for ACK/NACK
+                    }
                 }
             } else if (bytesRead < 0) {
                 perror("Read failed");
