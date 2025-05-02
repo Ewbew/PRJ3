@@ -62,7 +62,7 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
         auto startTime = chrono::steady_clock::now();
         bool responseReceived = false;
 
-        while (chrono::steady_clock::now() - startTime < chrono::seconds(1)) {
+        while (chrono::steady_clock::now() - startTime < chrono::milliseconds(500)) {
             memset(buffer, 0, sizeof(buffer)); // Clear the buffer
             int bytesRead = read(s, buffer, sizeof(buffer) - 1);
 
