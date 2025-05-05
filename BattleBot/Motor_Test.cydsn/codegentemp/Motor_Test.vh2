@@ -2,7 +2,7 @@
 --	Conversion of Motor_Test.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon May 05 11:01:21 2025
+--	Mon May 05 22:22:19 2025
 --
 
 USE cypress.cypress.all;
@@ -4286,7 +4286,7 @@ Clock_5kHz:cy_clock_v1_0
 		id=>"c3e6aaac-ac76-46d9-b787-56e482d6993c",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"200000000000",
+		period=>"10000000000000",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>Net_682,

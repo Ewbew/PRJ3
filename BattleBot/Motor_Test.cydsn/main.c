@@ -31,9 +31,35 @@ int main(void)
     // A_ENABLE_Write(0);
     // B_ENABLE_Write(0);
 
+    // Print flag value
+    char flagStr[50];
+    snprintf(flagStr, sizeof(flagStr), "Flag value: %d\r\n", get_timerFlag());
+    UART_PC_PutString(flagStr); // Print the flag value to the UART
+
+    // Read flag value again
+    snprintf(flagStr, sizeof(flagStr), "Flag value: %d\r\n", get_timerFlag());
+    UART_PC_PutString(flagStr); // Print the flag value to the UART
+
     while(get_timerFlag() == 0) { // Wait for the timer to trigger before starting the main loop
-        CyDelay(100); // Delay to avoid busy waiting
+        UART_PC_PutString("Waiting for timer to trigger while get_timerFlag() == 0...\r\n");
+        UART_PC_PutString("Skrrtmoney\r\n");
+        CyDelay(1000);
+
+            // Debug: Print the timer flag value
+        char debugStr[50];
+        snprintf(debugStr, sizeof(debugStr), "Current timerFlag value: %d\r\n", get_timerFlag());
+        UART_PC_PutString(debugStr); // Print the timer flag value to the UART
+    }
+
+    while(get_timerFlag() == 1)  { // Wait for the timer to trigger before starting the main loop
         UART_PC_PutString("Waiting for timer to trigger...\r\n");
+        CyDelay(1000); // Delay to avoid busy waiting
+        UART_PC_PutString("Waiting for timer to trigger...\r\n");
+
+                    // Debug: Print the timer flag value
+                    char debugStr[50];
+                    snprintf(debugStr, sizeof(debugStr), "Current timerFlag value: %d\r\n", get_timerFlag());
+                    UART_PC_PutString(debugStr); // Print the timer flag value to the UART
     }
 
     splash(); // Print splash message for distance sensor

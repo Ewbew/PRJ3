@@ -32,8 +32,8 @@
 ===================================================================== 
 Number of clocks: 12
 Clock: Clock_24MHz                 | Frequency: 45.24 MHz  | Target: 24.00 MHz  | 
-Clock: Clock_5kHz                  | N/A                   | Target: 0.01 MHz   | 
-Clock: Clock_5kHz(fixed-function)  | N/A                   | Target: 0.01 MHz   | 
+Clock: Clock_5kHz                  | N/A                   | Target: 0.00 MHz   | 
+Clock: Clock_5kHz(fixed-function)  | N/A                   | Target: 0.00 MHz   | 
 Clock: Clock_PWM_A                 | Frequency: 91.26 MHz  | Target: 0.02 MHz   | 
 Clock: Clock_PWM_B                 | Frequency: 88.60 MHz  | Target: 0.02 MHz   | 
 Clock: CyBUS_CLK                   | Frequency: 48.14 MHz  | Target: 24.00 MHz  | 

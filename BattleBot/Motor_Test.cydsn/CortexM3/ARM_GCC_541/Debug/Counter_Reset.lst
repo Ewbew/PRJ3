@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 1
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccCIp9E5.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 1
   28:Generated_Source\PSoC5/Counter_Reset.c **** *  Write a byte to the Control Register.
   29:Generated_Source\PSoC5/Counter_Reset.c **** *
   30:Generated_Source\PSoC5/Counter_Reset.c **** * Parameters:
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 2
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccCIp9E5.s 			page 2
 
 
   31:Generated_Source\PSoC5/Counter_Reset.c **** *  control:  The value to be assigned to the Control Register.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 1
   54              		.cfi_startproc
   55              		@ args = 0, pretend = 0, frame = 0
   56              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 3
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccCIp9E5.s 			page 3
 
 
   57              		@ link register save eliminated.
@@ -146,39 +146,39 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 1
   77 0006 00000000 		.4byte	.Ldebug_abbrev0
   78 000a 04       		.byte	0x4
   79 000b 01       		.uleb128 0x1
-  80 000c 35000000 		.4byte	.LASF14
+  80 000c 88000000 		.4byte	.LASF14
   81 0010 0C       		.byte	0xc
-  82 0011 7A010000 		.4byte	.LASF15
-  83 0015 C8000000 		.4byte	.LASF16
+  82 0011 73010000 		.4byte	.LASF15
+  83 0015 21000000 		.4byte	.LASF16
   84 0019 00000000 		.4byte	.Ldebug_ranges0+0
   85 001d 00000000 		.4byte	0
   86 0021 00000000 		.4byte	.Ldebug_line0
   87 0025 02       		.uleb128 0x2
   88 0026 01       		.byte	0x1
   89 0027 06       		.byte	0x6
-  90 0028 D3010000 		.4byte	.LASF0
+  90 0028 CC010000 		.4byte	.LASF0
   91 002c 02       		.uleb128 0x2
   92 002d 01       		.byte	0x1
   93 002e 08       		.byte	0x8
-  94 002f 27000000 		.4byte	.LASF1
+  94 002f 7A000000 		.4byte	.LASF1
   95 0033 02       		.uleb128 0x2
   96 0034 02       		.byte	0x2
   97 0035 05       		.byte	0x5
-  98 0036 BA010000 		.4byte	.LASF2
+  98 0036 B3010000 		.4byte	.LASF2
   99 003a 02       		.uleb128 0x2
  100 003b 02       		.byte	0x2
  101 003c 07       		.byte	0x7
- 102 003d 34010000 		.4byte	.LASF3
+ 102 003d 2D010000 		.4byte	.LASF3
  103 0041 02       		.uleb128 0x2
  104 0042 04       		.byte	0x4
  105 0043 05       		.byte	0x5
- 106 0044 CA010000 		.4byte	.LASF4
+ 106 0044 C3010000 		.4byte	.LASF4
  107 0048 02       		.uleb128 0x2
  108 0049 04       		.byte	0x4
  109 004a 07       		.byte	0x7
- 110 004b 22010000 		.4byte	.LASF5
+ 110 004b 1B010000 		.4byte	.LASF5
  111 004f 02       		.uleb128 0x2
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 4
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccCIp9E5.s 			page 4
 
 
  112 0050 08       		.byte	0x8
@@ -187,7 +187,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 1
  115 0056 02       		.uleb128 0x2
  116 0057 08       		.byte	0x8
  117 0058 07       		.byte	0x7
- 118 0059 63010000 		.4byte	.LASF7
+ 118 0059 5C010000 		.4byte	.LASF7
  119 005d 03       		.uleb128 0x3
  120 005e 04       		.byte	0x4
  121 005f 05       		.byte	0x5
@@ -195,33 +195,33 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 1
  123 0064 02       		.uleb128 0x2
  124 0065 04       		.byte	0x4
  125 0066 07       		.byte	0x7
- 126 0067 56010000 		.4byte	.LASF8
+ 126 0067 4F010000 		.4byte	.LASF8
  127 006b 04       		.uleb128 0x4
- 128 006c C4010000 		.4byte	.LASF12
+ 128 006c BD010000 		.4byte	.LASF12
  129 0070 02       		.byte	0x2
- 130 0071 E901     		.2byte	0x1e9
+ 130 0071 E701     		.2byte	0x1e7
  131 0073 2C000000 		.4byte	0x2c
  132 0077 02       		.uleb128 0x2
  133 0078 04       		.byte	0x4
  134 0079 04       		.byte	0x4
- 135 007a 21000000 		.4byte	.LASF9
+ 135 007a 74000000 		.4byte	.LASF9
  136 007e 02       		.uleb128 0x2
  137 007f 08       		.byte	0x8
  138 0080 04       		.byte	0x4
- 139 0081 4F010000 		.4byte	.LASF10
+ 139 0081 48010000 		.4byte	.LASF10
  140 0085 02       		.uleb128 0x2
  141 0086 01       		.byte	0x1
  142 0087 08       		.byte	0x8
- 143 0088 A1010000 		.4byte	.LASF11
+ 143 0088 9A010000 		.4byte	.LASF11
  144 008c 04       		.uleb128 0x4
- 145 008d C3000000 		.4byte	.LASF13
+ 145 008d 16010000 		.4byte	.LASF13
  146 0091 02       		.byte	0x2
- 147 0092 9302     		.2byte	0x293
+ 147 0092 9102     		.2byte	0x291
  148 0094 98000000 		.4byte	0x98
  149 0098 05       		.uleb128 0x5
  150 0099 6B000000 		.4byte	0x6b
  151 009d 06       		.uleb128 0x6
- 152 009e A6010000 		.4byte	.LASF17
+ 152 009e 9F010000 		.4byte	.LASF17
  153 00a2 01       		.byte	0x1
  154 00a3 25       		.byte	0x25
  155 00a4 00000000 		.4byte	.LFB0
@@ -230,7 +230,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 1
  158 00ad 9C       		.byte	0x9c
  159 00ae C0000000 		.4byte	0xc0
  160 00b2 07       		.uleb128 0x7
- 161 00b3 47010000 		.4byte	.LASF18
+ 161 00b3 40010000 		.4byte	.LASF18
  162 00b7 01       		.byte	0x1
  163 00b8 25       		.byte	0x25
  164 00b9 6B000000 		.4byte	0x6b
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 1
  166 00be 50       		.byte	0x50
  167 00bf 00       		.byte	0
  168 00c0 08       		.uleb128 0x8
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 5
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccCIp9E5.s 			page 5
 
 
  169 00c1 0E000000 		.4byte	.LASF19
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 1
  223 002b 00       		.byte	0
  224 002c 03       		.uleb128 0x3
  225 002d 0E       		.uleb128 0xe
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 6
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccCIp9E5.s 			page 6
 
 
  226 002e 3A       		.uleb128 0x3a
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 1
  280 0065 00       		.byte	0
  281 0066 08       		.uleb128 0x8
  282 0067 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 7
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccCIp9E5.s 			page 7
 
 
  283 0068 00       		.byte	0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 1
  333 0000 6C6F6E67 		.ascii	"long long int\000"
  333      206C6F6E 
  333      6720696E 
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 8
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccCIp9E5.s 			page 8
 
 
  333      7400
@@ -428,104 +428,104 @@ ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 1
  335      52657365 
  335      745F5265 
  335      616400
- 336              	.LASF9:
- 337 0021 666C6F61 		.ascii	"float\000"
- 337      7400
- 338              	.LASF1:
- 339 0027 756E7369 		.ascii	"unsigned char\000"
- 339      676E6564 
- 339      20636861 
- 339      7200
- 340              	.LASF14:
- 341 0035 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 341      43313120 
- 341      352E342E 
- 341      31203230 
- 341      31363036 
- 342 0068 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 342      20726576 
- 342      6973696F 
- 342      6E203233 
- 342      37373135 
- 343 009b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 343      66756E63 
- 343      74696F6E 
- 343      2D736563 
- 343      74696F6E 
- 344              	.LASF13:
- 345 00c3 72656738 		.ascii	"reg8\000"
- 345      00
- 346              	.LASF16:
- 347 00c8 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\Elektronik ingenioer\\3rd s"
- 347      635C486F 
- 347      6D655C44 
- 347      65736B74 
- 347      6F705C45 
- 348 00f5 656D6573 		.ascii	"emester\\PRJ3\\PRJ3\\BattleBot\\Motor_Test.cydsn\000"
- 348      7465725C 
- 348      50524A33 
- 348      5C50524A 
- 348      335C4261 
+ 336              	.LASF16:
+ 337 0021 433A5C55 		.ascii	"C:\\Users\\Totos\\Desktop\\elektronik_ingenioer\\PR"
+ 337      73657273 
+ 337      5C546F74 
+ 337      6F735C44 
+ 337      65736B74 
+ 338 004f 4A335C47 		.ascii	"J3\\Github\\BattleBot\\Motor_Test.cydsn\000"
+ 338      69746875 
+ 338      625C4261 
+ 338      74746C65 
+ 338      426F745C 
+ 339              	.LASF9:
+ 340 0074 666C6F61 		.ascii	"float\000"
+ 340      7400
+ 341              	.LASF1:
+ 342 007a 756E7369 		.ascii	"unsigned char\000"
+ 342      676E6564 
+ 342      20636861 
+ 342      7200
+ 343              	.LASF14:
+ 344 0088 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 344      43313120 
+ 344      352E342E 
+ 344      31203230 
+ 344      31363036 
+ 345 00bb 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 345      20726576 
+ 345      6973696F 
+ 345      6E203233 
+ 345      37373135 
+ 346 00ee 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 346      66756E63 
+ 346      74696F6E 
+ 346      2D736563 
+ 346      74696F6E 
+ 347              	.LASF13:
+ 348 0116 72656738 		.ascii	"reg8\000"
+ 348      00
  349              	.LASF5:
- 350 0122 6C6F6E67 		.ascii	"long unsigned int\000"
+ 350 011b 6C6F6E67 		.ascii	"long unsigned int\000"
  350      20756E73 
  350      69676E65 
  350      6420696E 
  350      7400
  351              	.LASF3:
- 352 0134 73686F72 		.ascii	"short unsigned int\000"
+ 352 012d 73686F72 		.ascii	"short unsigned int\000"
  352      7420756E 
  352      7369676E 
  352      65642069 
  352      6E7400
-ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\cccGdUAF.s 			page 9
+ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccCIp9E5.s 			page 9
 
 
  353              	.LASF18:
- 354 0147 636F6E74 		.ascii	"control\000"
+ 354 0140 636F6E74 		.ascii	"control\000"
  354      726F6C00 
  355              	.LASF10:
- 356 014f 646F7562 		.ascii	"double\000"
+ 356 0148 646F7562 		.ascii	"double\000"
  356      6C6500
  357              	.LASF8:
- 358 0156 756E7369 		.ascii	"unsigned int\000"
+ 358 014f 756E7369 		.ascii	"unsigned int\000"
  358      676E6564 
  358      20696E74 
  358      00
  359              	.LASF7:
- 360 0163 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 360 015c 6C6F6E67 		.ascii	"long long unsigned int\000"
  360      206C6F6E 
  360      6720756E 
  360      7369676E 
  360      65642069 
  361              	.LASF15:
- 362 017a 47656E65 		.ascii	"Generated_Source\\PSoC5\\Counter_Reset.c\000"
+ 362 0173 47656E65 		.ascii	"Generated_Source\\PSoC5\\Counter_Reset.c\000"
  362      72617465 
  362      645F536F 
  362      75726365 
  362      5C50536F 
  363              	.LASF11:
- 364 01a1 63686172 		.ascii	"char\000"
+ 364 019a 63686172 		.ascii	"char\000"
  364      00
  365              	.LASF17:
- 366 01a6 436F756E 		.ascii	"Counter_Reset_Write\000"
+ 366 019f 436F756E 		.ascii	"Counter_Reset_Write\000"
  366      7465725F 
  366      52657365 
  366      745F5772 
  366      69746500 
  367              	.LASF2:
- 368 01ba 73686F72 		.ascii	"short int\000"
+ 368 01b3 73686F72 		.ascii	"short int\000"
  368      7420696E 
  368      7400
  369              	.LASF12:
- 370 01c4 75696E74 		.ascii	"uint8\000"
+ 370 01bd 75696E74 		.ascii	"uint8\000"
  370      3800
  371              	.LASF4:
- 372 01ca 6C6F6E67 		.ascii	"long int\000"
+ 372 01c3 6C6F6E67 		.ascii	"long int\000"
  372      20696E74 
  372      00
  373              	.LASF0:
- 374 01d3 7369676E 		.ascii	"signed char\000"
+ 374 01cc 7369676E 		.ascii	"signed char\000"
  374      65642063 
  374      68617200 
  375              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

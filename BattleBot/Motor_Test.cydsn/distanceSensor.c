@@ -43,10 +43,18 @@ CY_ISR(ISR_timer_DS_tc_handler)
 {
     isr_timer_DS_ClearPending(); // Clear the interrupt flag
     set_timerFlag(1); // Set the timer flag to indicate the timer has triggere
-}
+    /*
+    char debugStr[50];
+    snprintf(debugStr, sizeof(debugStr), "Timer triggered: %d\r\n", timerFlag);
+    UART_PC_PutString(debugStr); // Print the timer flag value to the UART
+    */
+    }
+
 
 int get_timerFlag(void)
 {
+    //char debugStr[50];
+    
     return timerFlag;
 }
 
