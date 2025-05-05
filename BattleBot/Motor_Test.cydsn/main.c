@@ -37,9 +37,14 @@ int main(void)
     {
         if (get_timerFlag()) { // Check if the timer has triggered
             set_timerFlag(0); // Reset the timer flag
+            UART_PC_PutString("Timer triggered - measuring distance...\r\n");
     
             double distance = measure_distance(); // Measure the distance
-    
+            char distanceStr[50];
+            snprintf(distanceStr, sizeof(distanceStr), "Distance: %.2f cm\r\n", distance);
+            UART_PC_PutString(distanceStr); // Print the distance to the UART
+            
+
             // Check if the distance is below the threshold
             if (distance >= 0 && distance < 30.0) { // Example threshold: 30 cm
                 set_obstruct(1); // Set obstruct to true
