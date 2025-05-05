@@ -42,7 +42,7 @@ void set_obstruct(int value)
 CY_ISR(ISR_timer_DS_tc_handler)
 {
     isr_timer_DS_ClearPending(); // Clear the interrupt flag
-    set_timerFlag(1); // Set the timer flag to indicate the timer has triggered
+    set_timerFlag(1); // Set the timer flag to indicate the timer has triggere
 }
 
 int get_timerFlag(void)

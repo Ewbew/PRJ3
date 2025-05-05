@@ -31,6 +31,11 @@ int main(void)
     // A_ENABLE_Write(0);
     // B_ENABLE_Write(0);
 
+    while(get_timerFlag() == 0) { // Wait for the timer to trigger before starting the main loop
+        CyDelay(100); // Delay to avoid busy waiting
+        UART_PC_PutString("Waiting for timer to trigger...\r\n");
+    }
+
     splash(); // Print splash message for distance sensor
 
     for (;;)
