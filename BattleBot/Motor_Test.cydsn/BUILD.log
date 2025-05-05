@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 --------------- Build Started: 05/02/2025 14:07:51 Project: Motor_Test, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/UART_handler.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c UART_handler.c -o .\CortexM3\ARM_GCC_541\Debug\UART_handler.o
@@ -12,3 +13,10 @@ cyelftool.exe -S C:\Users\Totos\Desktop\elektronik_ingenioer\PRJ3\Github\BattleB
 Flash used: 19232 of 262144 bytes (7,3 %).
 SRAM used: 2993 of 65536 bytes (4,6 %). Stack: 2048 bytes. Heap: 128 bytes.
 --------------- Build Succeeded: 05/02/2025 14:07:54 ---------------
+=======
+--------------- Build Started: 05/05/2025 12:00:55 Project: Motor_Test, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+The code generation step is up to date.
+The compile step is up to date, no work needs to be done.
+The link step is up to date, no work needs to be done.
+--------------- Build Succeeded: 05/05/2025 12:00:56 ---------------
+>>>>>>> c569158 (Added timer for periodic distance check)

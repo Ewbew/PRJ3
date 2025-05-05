@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 1
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
    1              		.syntax unified
@@ -58,7 +62,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
   45              		.section	.text.ISR_UART_rx_handler_BT,"ax",%progbits
   46              		.align	2
   47              		.global	ISR_UART_rx_handler_BT
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 2
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 2
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
   48              		.thumb
@@ -118,7 +126,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
   81 001a 1171     		strb	r1, [r2, #4]
   82 001c 1344     		add	r3, r3, r2
   83 001e 1872     		strb	r0, [r3, #8]
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 3
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 3
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
   84              	.L6:
@@ -178,7 +190,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
   44:UART_handler.c ****             {
   45:UART_handler.c ****                 UART_PC_PutString("Parsing successful - sending ACK to RPI\r\n");
  126              		.loc 1 45 0
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 4
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 4
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  127 0066 2B48     		ldr	r0, .L15+12
@@ -238,7 +254,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  170 00a6 FFF7FEFF 		bl	set_speedB
  171              	.LVL15:
   57:UART_handler.c **** 
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 5
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 5
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
   58:UART_handler.c ****                     shootRef->desiredPos1 = temp1;
@@ -298,7 +318,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  211 00e4 FFF7FEFF 		bl	UART_PC_PutString
  212              	.LVL20:
   73:UART_handler.c ****                 UART_BT_PutString("NACKX"); 
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 6
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 6
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  213              		.loc 1 73 0
@@ -358,7 +382,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  259              		.global	handleByteReceived
  260              		.thumb
  261              		.thumb_func
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 7
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 7
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  262              		.type	handleByteReceived, %function
@@ -418,7 +446,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  290 0020 1A70     		strb	r2, [r3]
  107:UART_handler.c ****     char command_UART[] = "AT+UART?\r\n";
  291              		.loc 1 107 0
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 8
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 8
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  292 0022 474A     		ldr	r2, .L31+8
@@ -478,7 +510,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  119:UART_handler.c ****                     currentSpeed = PWM_MAX_DUTY;
  335              		.loc 1 119 0
  336 0072 3222     		movs	r2, #50
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 9
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 9
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  337 0074 334B     		ldr	r3, .L31+12
@@ -538,7 +574,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  372 00b2 FFF7FEFF 		bl	UART_PC_PutString
  373              	.LVL31:
  139:UART_handler.c ****                 currentSpeed -= 5;
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 10
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 10
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  374              		.loc 1 139 0
@@ -598,7 +638,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  155:UART_handler.c ****             break;
  156:UART_handler.c ****             
  157:UART_handler.c ****         case '0':
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 11
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 11
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  158:UART_handler.c ****             // Stop the motors by setting current speed to 0.
@@ -658,7 +702,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  448              	.LVL41:
  177:UART_handler.c ****             UART_BT_PutString(command_ACK);
  449              		.loc 1 177 0
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 12
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 12
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  450 012e 06A8     		add	r0, sp, #24
@@ -718,7 +766,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
   88:UART_handler.c ****     while (bytesToRead > 0)
  496              		.loc 1 88 0
  497 0002 FFF7FEFF 		bl	UART_PC_GetRxBufferSize
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 13
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 13
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  498              	.LVL43:
@@ -778,7 +830,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  539              	.LC2:
  540 0020 50617273 		.ascii	"Parsing successful - sending ACK to RPI\015\012\000"
  540      696E6720 
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 14
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 14
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  540      73756363 
@@ -838,7 +894,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  567      73706565 
  567      64207265 
  568              	.LC15:
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 15
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 15
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  569 0138 416C7265 		.ascii	"Already at max forward speed\015\012\000"
@@ -898,7 +958,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  592      0D0A00
  593 023b 00       		.space	1
  594              	.LC12:
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 16
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 16
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  595 023c 41542B55 		.ascii	"AT+UART?\015\012\000"
@@ -911,6 +975,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  600              		.size	shootRef, 4
  601              	shootRef:
  602 0000 00000000 		.space	4
+<<<<<<< HEAD
  603              		.type	index.6977, %object
  604              		.size	index.6977, 1
  605              	index.6977:
@@ -919,11 +984,22 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  608              		.type	btBuffer.6976, %object
  609              		.size	btBuffer.6976, 50
  610              	btBuffer.6976:
+=======
+ 603              		.type	index.7026, %object
+ 604              		.size	index.7026, 1
+ 605              	index.7026:
+ 606 0004 00       		.space	1
+ 607 0005 000000   		.space	3
+ 608              		.type	btBuffer.7025, %object
+ 609              		.size	btBuffer.7025, 50
+ 610              	btBuffer.7025:
+>>>>>>> c569158 (Added timer for periodic distance check)
  611 0008 00000000 		.space	50
  611      00000000 
  611      00000000 
  611      00000000 
  611      00000000 
+<<<<<<< HEAD
  612              		.type	currentSpeed.7000, %object
  613              		.size	currentSpeed.7000, 1
  614              	currentSpeed.7000:
@@ -938,6 +1014,22 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  623              		.file 7 "Generated_Source\\PSoC5/UART_PC.h"
  624              		.file 8 "motor_control.h"
  625              		.file 9 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+=======
+ 612              		.type	currentSpeed.7049, %object
+ 613              		.size	currentSpeed.7049, 1
+ 614              	currentSpeed.7049:
+ 615 003a 00       		.space	1
+ 616              		.text
+ 617              	.Letext0:
+ 618              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 619              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 620              		.file 4 "shootVarHandler.h"
+ 621              		.file 5 "Generated_Source\\PSoC5/UART_BT.h"
+ 622              		.file 6 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 623              		.file 7 "Generated_Source\\PSoC5/UART_PC.h"
+ 624              		.file 8 "motor_control.h"
+ 625              		.file 9 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+>>>>>>> c569158 (Added timer for periodic distance check)
  626              		.file 10 "Generated_Source\\PSoC5/core_cm3.h"
  627              		.section	.debug_info,"",%progbits
  628              	.Ldebug_info0:
@@ -946,34 +1038,59 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  631 0006 00000000 		.4byte	.Ldebug_abbrev0
  632 000a 04       		.byte	0x4
  633 000b 01       		.uleb128 0x1
+<<<<<<< HEAD
  634 000c 36030000 		.4byte	.LASF58
  635 0010 0C       		.byte	0xc
  636 0011 A2010000 		.4byte	.LASF59
  637 0015 72020000 		.4byte	.LASF60
+=======
+ 634 000c 3D030000 		.4byte	.LASF58
+ 635 0010 0C       		.byte	0xc
+ 636 0011 FC010000 		.4byte	.LASF59
+ 637 0015 43000000 		.4byte	.LASF60
+>>>>>>> c569158 (Added timer for periodic distance check)
  638 0019 00000000 		.4byte	.Ldebug_ranges0+0
  639 001d 00000000 		.4byte	0
  640 0021 00000000 		.4byte	.Ldebug_line0
  641 0025 02       		.uleb128 0x2
+<<<<<<< HEAD
  642 0026 03020000 		.4byte	.LASF0
  643 002a 02       		.byte	0x2
  644 002b 1B       		.byte	0x1b
  645 002c 30000000 		.4byte	0x30
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 17
+=======
+ 642 0026 5D020000 		.4byte	.LASF0
+ 643 002a 02       		.byte	0x2
+ 644 002b 1B       		.byte	0x1b
+ 645 002c 30000000 		.4byte	0x30
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 17
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  646 0030 03       		.uleb128 0x3
  647 0031 01       		.byte	0x1
  648 0032 06       		.byte	0x6
+<<<<<<< HEAD
  649 0033 A2000000 		.4byte	.LASF2
  650 0037 02       		.uleb128 0x2
  651 0038 11010000 		.4byte	.LASF1
+=======
+ 649 0033 FC000000 		.4byte	.LASF2
+ 650 0037 02       		.uleb128 0x2
+ 651 0038 6B010000 		.4byte	.LASF1
+>>>>>>> c569158 (Added timer for periodic distance check)
  652 003c 02       		.byte	0x2
  653 003d 1D       		.byte	0x1d
  654 003e 42000000 		.4byte	0x42
  655 0042 03       		.uleb128 0x3
  656 0043 01       		.byte	0x1
  657 0044 08       		.byte	0x8
+<<<<<<< HEAD
  658 0045 81010000 		.4byte	.LASF3
+=======
+ 658 0045 DB010000 		.4byte	.LASF3
+>>>>>>> c569158 (Added timer for periodic distance check)
  659 0049 03       		.uleb128 0x3
  660 004a 02       		.byte	0x2
  661 004b 05       		.byte	0x5
@@ -981,15 +1098,22 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  663 0050 03       		.uleb128 0x3
  664 0051 02       		.byte	0x2
  665 0052 07       		.byte	0x7
+<<<<<<< HEAD
  666 0053 F0010000 		.4byte	.LASF5
  667 0057 02       		.uleb128 0x2
  668 0058 0B030000 		.4byte	.LASF6
+=======
+ 666 0053 4A020000 		.4byte	.LASF5
+ 667 0057 02       		.uleb128 0x2
+ 668 0058 12030000 		.4byte	.LASF6
+>>>>>>> c569158 (Added timer for periodic distance check)
  669 005c 02       		.byte	0x2
  670 005d 3F       		.byte	0x3f
  671 005e 62000000 		.4byte	0x62
  672 0062 03       		.uleb128 0x3
  673 0063 04       		.byte	0x4
  674 0064 05       		.byte	0x5
+<<<<<<< HEAD
  675 0065 F2000000 		.4byte	.LASF7
  676 0069 03       		.uleb128 0x3
  677 006a 04       		.byte	0x4
@@ -1003,6 +1127,21 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  685 0078 08       		.byte	0x8
  686 0079 07       		.byte	0x7
  687 007a B1010000 		.4byte	.LASF10
+=======
+ 675 0065 4C010000 		.4byte	.LASF7
+ 676 0069 03       		.uleb128 0x3
+ 677 006a 04       		.byte	0x4
+ 678 006b 07       		.byte	0x7
+ 679 006c 2F020000 		.4byte	.LASF8
+ 680 0070 03       		.uleb128 0x3
+ 681 0071 08       		.byte	0x8
+ 682 0072 05       		.byte	0x5
+ 683 0073 1B010000 		.4byte	.LASF9
+ 684 0077 03       		.uleb128 0x3
+ 685 0078 08       		.byte	0x8
+ 686 0079 07       		.byte	0x7
+ 687 007a 0B020000 		.4byte	.LASF10
+>>>>>>> c569158 (Added timer for periodic distance check)
  688 007e 04       		.uleb128 0x4
  689 007f 04       		.byte	0x4
  690 0080 05       		.byte	0x5
@@ -1010,28 +1149,42 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  692 0085 03       		.uleb128 0x3
  693 0086 04       		.byte	0x4
  694 0087 07       		.byte	0x7
+<<<<<<< HEAD
  695 0088 C8010000 		.4byte	.LASF11
+=======
+ 695 0088 22020000 		.4byte	.LASF11
+>>>>>>> c569158 (Added timer for periodic distance check)
  696 008c 02       		.uleb128 0x2
  697 008d 32000000 		.4byte	.LASF12
  698 0091 03       		.byte	0x3
  699 0092 14       		.byte	0x14
  700 0093 25000000 		.4byte	0x25
  701 0097 02       		.uleb128 0x2
+<<<<<<< HEAD
  702 0098 15030000 		.4byte	.LASF13
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 18
+=======
+ 702 0098 1C030000 		.4byte	.LASF13
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 18
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  703 009c 03       		.byte	0x3
  704 009d 18       		.byte	0x18
  705 009e 37000000 		.4byte	0x37
  706 00a2 02       		.uleb128 0x2
+<<<<<<< HEAD
  707 00a3 29020000 		.4byte	.LASF14
+=======
+ 707 00a3 83020000 		.4byte	.LASF14
+>>>>>>> c569158 (Added timer for periodic distance check)
  708 00a7 03       		.byte	0x3
  709 00a8 2C       		.byte	0x2c
  710 00a9 57000000 		.4byte	0x57
  711 00ad 03       		.uleb128 0x3
  712 00ae 04       		.byte	0x4
  713 00af 04       		.byte	0x4
+<<<<<<< HEAD
  714 00b0 BB000000 		.4byte	.LASF15
  715 00b4 03       		.uleb128 0x3
  716 00b5 08       		.byte	0x8
@@ -1049,36 +1202,75 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  728 00ca 04       		.byte	0x4
  729 00cb 07       		.byte	0x7
  730 00cc 43000000 		.4byte	.LASF19
+=======
+ 714 00b0 15010000 		.4byte	.LASF15
+ 715 00b4 03       		.uleb128 0x3
+ 716 00b5 08       		.byte	0x8
+ 717 00b6 04       		.byte	0x4
+ 718 00b7 E0020000 		.4byte	.LASF16
+ 719 00bb 03       		.uleb128 0x3
+ 720 00bc 01       		.byte	0x1
+ 721 00bd 08       		.byte	0x8
+ 722 00be 7E020000 		.4byte	.LASF17
+ 723 00c2 03       		.uleb128 0x3
+ 724 00c3 08       		.byte	0x8
+ 725 00c4 04       		.byte	0x4
+ 726 00c5 B7010000 		.4byte	.LASF18
+ 727 00c9 03       		.uleb128 0x3
+ 728 00ca 04       		.byte	0x4
+ 729 00cb 07       		.byte	0x7
+ 730 00cc 9D000000 		.4byte	.LASF19
+>>>>>>> c569158 (Added timer for periodic distance check)
  731 00d0 05       		.uleb128 0x5
  732 00d1 0C       		.byte	0xc
  733 00d2 04       		.byte	0x4
  734 00d3 05       		.byte	0x5
  735 00d4 FD000000 		.4byte	0xfd
  736 00d8 06       		.uleb128 0x6
+<<<<<<< HEAD
  737 00d9 F3020000 		.4byte	.LASF20
+=======
+ 737 00d9 FA020000 		.4byte	.LASF20
+>>>>>>> c569158 (Added timer for periodic distance check)
  738 00dd 04       		.byte	0x4
  739 00de 06       		.byte	0x6
  740 00df 7E000000 		.4byte	0x7e
  741 00e3 00       		.byte	0
  742 00e4 06       		.uleb128 0x6
+<<<<<<< HEAD
  743 00e5 FF020000 		.4byte	.LASF21
+=======
+ 743 00e5 06030000 		.4byte	.LASF21
+>>>>>>> c569158 (Added timer for periodic distance check)
  744 00e9 04       		.byte	0x4
  745 00ea 07       		.byte	0x7
  746 00eb 7E000000 		.4byte	0x7e
  747 00ef 04       		.byte	0x4
  748 00f0 06       		.uleb128 0x6
+<<<<<<< HEAD
  749 00f1 E1000000 		.4byte	.LASF22
+=======
+ 749 00f1 3B010000 		.4byte	.LASF22
+>>>>>>> c569158 (Added timer for periodic distance check)
  750 00f5 04       		.byte	0x4
  751 00f6 08       		.byte	0x8
  752 00f7 7E000000 		.4byte	0x7e
  753 00fb 08       		.byte	0x8
  754 00fc 00       		.byte	0
  755 00fd 02       		.uleb128 0x2
+<<<<<<< HEAD
  756 00fe 31020000 		.4byte	.LASF23
  757 0102 04       		.byte	0x4
  758 0103 09       		.byte	0x9
  759 0104 D0000000 		.4byte	0xd0
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 19
+=======
+ 756 00fe 8B020000 		.4byte	.LASF23
+ 757 0102 04       		.byte	0x4
+ 758 0103 09       		.byte	0x9
+ 759 0104 D0000000 		.4byte	0xd0
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 19
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  760 0108 07       		.uleb128 0x7
@@ -1091,7 +1283,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  767 0118 9C       		.byte	0x9c
  768 0119 2B010000 		.4byte	0x12b
  769 011d 08       		.uleb128 0x8
+<<<<<<< HEAD
  770 011e 41020000 		.4byte	.LASF37
+=======
+ 770 011e 9B020000 		.4byte	.LASF37
+>>>>>>> c569158 (Added timer for periodic distance check)
  771 0122 01       		.byte	0x1
  772 0123 09       		.byte	0x9
  773 0124 2B010000 		.4byte	0x12b
@@ -1102,7 +1298,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  778 012c 04       		.byte	0x4
  779 012d FD000000 		.4byte	0xfd
  780 0131 07       		.uleb128 0x7
+<<<<<<< HEAD
  781 0132 52020000 		.4byte	.LASF25
+=======
+ 781 0132 AC020000 		.4byte	.LASF25
+>>>>>>> c569158 (Added timer for periodic distance check)
  782 0136 01       		.byte	0x1
  783 0137 0E       		.byte	0xe
  784 0138 00000000 		.4byte	.LFB65
@@ -1111,23 +1311,39 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  787 0141 9C       		.byte	0x9c
  788 0142 C5030000 		.4byte	0x3c5
  789 0146 0A       		.uleb128 0xa
+<<<<<<< HEAD
  790 0147 8F010000 		.4byte	.LASF26
+=======
+ 790 0147 E9010000 		.4byte	.LASF26
+>>>>>>> c569158 (Added timer for periodic distance check)
  791 014b 01       		.byte	0x1
  792 014c 10       		.byte	0x10
  793 014d C5030000 		.4byte	0x3c5
  794 0151 05       		.uleb128 0x5
  795 0152 03       		.byte	0x3
+<<<<<<< HEAD
  796 0153 08000000 		.4byte	btBuffer.6976
  797 0157 0A       		.uleb128 0xa
  798 0158 79000000 		.4byte	.LASF27
+=======
+ 796 0153 08000000 		.4byte	btBuffer.7025
+ 797 0157 0A       		.uleb128 0xa
+ 798 0158 D3000000 		.4byte	.LASF27
+>>>>>>> c569158 (Added timer for periodic distance check)
  799 015c 01       		.byte	0x1
  800 015d 11       		.byte	0x11
  801 015e 97000000 		.4byte	0x97
  802 0162 05       		.uleb128 0x5
  803 0163 03       		.byte	0x3
+<<<<<<< HEAD
  804 0164 04000000 		.4byte	index.6977
  805 0168 0A       		.uleb128 0xa
  806 0169 1D030000 		.4byte	.LASF28
+=======
+ 804 0164 04000000 		.4byte	index.7026
+ 805 0168 0A       		.uleb128 0xa
+ 806 0169 24030000 		.4byte	.LASF28
+>>>>>>> c569158 (Added timer for periodic distance check)
  807 016d 01       		.byte	0x1
  808 016e 12       		.byte	0x12
  809 016f 7E000000 		.4byte	0x7e
@@ -1135,10 +1351,17 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  811 0174 91       		.byte	0x91
  812 0175 74       		.sleb128 -12
  813 0176 0A       		.uleb128 0xa
+<<<<<<< HEAD
  814 0177 23030000 		.4byte	.LASF29
  815 017b 01       		.byte	0x1
  816 017c 12       		.byte	0x12
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 20
+=======
+ 814 0177 2A030000 		.4byte	.LASF29
+ 815 017b 01       		.byte	0x1
+ 816 017c 12       		.byte	0x12
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 20
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  817 017d 7E000000 		.4byte	0x7e
@@ -1146,7 +1369,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  819 0182 91       		.byte	0x91
  820 0183 70       		.sleb128 -16
  821 0184 0A       		.uleb128 0xa
+<<<<<<< HEAD
  822 0185 49020000 		.4byte	.LASF30
+=======
+ 822 0185 A3020000 		.4byte	.LASF30
+>>>>>>> c569158 (Added timer for periodic distance check)
  823 0189 01       		.byte	0x1
  824 018a 12       		.byte	0x12
  825 018b 7E000000 		.4byte	0x7e
@@ -1154,7 +1381,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  827 0190 91       		.byte	0x91
  828 0191 6C       		.sleb128 -20
  829 0192 0A       		.uleb128 0xa
+<<<<<<< HEAD
  830 0193 E7010000 		.4byte	.LASF31
+=======
+ 830 0193 41020000 		.4byte	.LASF31
+>>>>>>> c569158 (Added timer for periodic distance check)
  831 0197 01       		.byte	0x1
  832 0198 13       		.byte	0x13
  833 0199 BB000000 		.4byte	0xbb
@@ -1162,7 +1393,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  835 019e 91       		.byte	0x91
  836 019f 6B       		.sleb128 -21
  837 01a0 0A       		.uleb128 0xa
+<<<<<<< HEAD
  838 01a1 C5020000 		.4byte	.LASF32
+=======
+ 838 01a1 CC020000 		.4byte	.LASF32
+>>>>>>> c569158 (Added timer for periodic distance check)
  839 01a5 01       		.byte	0x1
  840 01a6 14       		.byte	0x14
  841 01a7 D5030000 		.4byte	0x3d5
@@ -1170,13 +1405,21 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  843 01ac 91       		.byte	0x91
  844 01ad D47E     		.sleb128 -172
  845 01af 0B       		.uleb128 0xb
+<<<<<<< HEAD
  846 01b0 98010000 		.4byte	.LASF33
+=======
+ 846 01b0 F2010000 		.4byte	.LASF33
+>>>>>>> c569158 (Added timer for periodic distance check)
  847 01b4 01       		.byte	0x1
  848 01b5 16       		.byte	0x16
  849 01b6 8C000000 		.4byte	0x8c
  850 01ba 00000000 		.4byte	.LLST0
  851 01be 0B       		.uleb128 0xb
+<<<<<<< HEAD
  852 01bf 9D010000 		.4byte	.LASF34
+=======
+ 852 01bf F7010000 		.4byte	.LASF34
+>>>>>>> c569158 (Added timer for periodic distance check)
  853 01c3 01       		.byte	0x1
  854 01c4 16       		.byte	0x16
  855 01c5 8C000000 		.4byte	0x8c
@@ -1186,7 +1429,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  859 01d2 F6000000 		.4byte	.LBE2-.LBB2
  860 01d6 BB030000 		.4byte	0x3bb
  861 01da 0B       		.uleb128 0xb
+<<<<<<< HEAD
  862 01db AE000000 		.4byte	.LASF35
+=======
+ 862 01db 08010000 		.4byte	.LASF35
+>>>>>>> c569158 (Added timer for periodic distance check)
  863 01df 01       		.byte	0x1
  864 01e0 1A       		.byte	0x1a
  865 01e1 BB000000 		.4byte	0xbb
@@ -1198,7 +1445,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  871 01f3 46000000 		.4byte	.LVL3
  872 01f7 3E060000 		.4byte	0x63e
  873 01fb 1C020000 		.4byte	0x21c
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 21
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 21
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  874 01ff 0F       		.uleb128 0xf
@@ -1258,7 +1509,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  928 024f 52       		.byte	0x52
  929 0250 02       		.uleb128 0x2
  930 0251 91       		.byte	0x91
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 22
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 22
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  931 0252 6B       		.sleb128 -21
@@ -1318,7 +1573,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  985 02af 02       		.uleb128 0x2
  986 02b0 74       		.byte	0x74
  987 02b1 00       		.sleb128 0
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 23
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 23
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  988 02b2 00       		.byte	0
@@ -1378,7 +1637,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1042 031e 01       		.uleb128 0x1
  1043 031f 51       		.byte	0x51
  1044 0320 05       		.uleb128 0x5
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 24
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 24
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1045 0321 03       		.byte	0x3
@@ -1438,7 +1701,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1099 037d 50       		.byte	0x50
  1100 037e 05       		.uleb128 0x5
  1101 037f 03       		.byte	0x3
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 25
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 25
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1102 0380 D8000000 		.4byte	.LC8
@@ -1495,10 +1762,17 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1153 03e3 95       		.byte	0x95
  1154 03e4 00       		.byte	0
  1155 03e5 07       		.uleb128 0x7
+<<<<<<< HEAD
  1156 03e6 2F010000 		.4byte	.LASF36
  1157 03ea 01       		.byte	0x1
  1158 03eb 64       		.byte	0x64
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 26
+=======
+ 1156 03e6 89010000 		.4byte	.LASF36
+ 1157 03ea 01       		.byte	0x1
+ 1158 03eb 64       		.byte	0x64
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 26
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1159 03ec 00000000 		.4byte	.LFB67
@@ -1507,21 +1781,35 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1162 03f5 9C       		.byte	0x9c
  1163 03f6 79050000 		.4byte	0x579
  1164 03fa 13       		.uleb128 0x13
+<<<<<<< HEAD
  1165 03fb AE000000 		.4byte	.LASF35
+=======
+ 1165 03fb 08010000 		.4byte	.LASF35
+>>>>>>> c569158 (Added timer for periodic distance check)
  1166 03ff 01       		.byte	0x1
  1167 0400 64       		.byte	0x64
  1168 0401 97000000 		.4byte	0x97
  1169 0405 3A000000 		.4byte	.LLST3
  1170 0409 0A       		.uleb128 0xa
+<<<<<<< HEAD
  1171 040a 4C000000 		.4byte	.LASF38
+=======
+ 1171 040a A6000000 		.4byte	.LASF38
+>>>>>>> c569158 (Added timer for periodic distance check)
  1172 040e 01       		.byte	0x1
  1173 040f 68       		.byte	0x68
  1174 0410 8C000000 		.4byte	0x8c
  1175 0414 05       		.uleb128 0x5
  1176 0415 03       		.byte	0x3
+<<<<<<< HEAD
  1177 0416 3A000000 		.4byte	currentSpeed.7000
  1178 041a 0A       		.uleb128 0xa
  1179 041b 96000000 		.4byte	.LASF39
+=======
+ 1177 0416 3A000000 		.4byte	currentSpeed.7049
+ 1178 041a 0A       		.uleb128 0xa
+ 1179 041b F0000000 		.4byte	.LASF39
+>>>>>>> c569158 (Added timer for periodic distance check)
  1180 041f 01       		.byte	0x1
  1181 0420 69       		.byte	0x69
  1182 0421 79050000 		.4byte	0x579
@@ -1558,7 +1846,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1213 045b 0D       		.uleb128 0xd
  1214 045c 84000000 		.4byte	.LVL27
  1215 0460 6A060000 		.4byte	0x66a
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 27
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 27
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1216 0464 0D       		.uleb128 0xd
@@ -1618,7 +1910,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1270 04dc FC000000 		.4byte	.LVL35
  1271 04e0 49060000 		.4byte	0x649
  1272 04e4 F2040000 		.4byte	0x4f2
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 28
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 28
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1273 04e8 0F       		.uleb128 0xf
@@ -1678,7 +1974,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1327 0551 0E       		.uleb128 0xe
  1328 0552 2E010000 		.4byte	.LVL41
  1329 0556 49060000 		.4byte	0x649
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 29
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 29
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1330 055a 68050000 		.4byte	0x568
@@ -1715,7 +2015,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1361 0597 0A       		.byte	0xa
  1362 0598 00       		.byte	0
  1363 0599 07       		.uleb128 0x7
+<<<<<<< HEAD
  1364 059a 7F000000 		.4byte	.LASF42
+=======
+ 1364 059a D9000000 		.4byte	.LASF42
+>>>>>>> c569158 (Added timer for periodic distance check)
  1365 059e 01       		.byte	0x1
  1366 059f 56       		.byte	0x56
  1367 05a0 00000000 		.4byte	.LFB66
@@ -1724,7 +2028,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1370 05a9 9C       		.byte	0x9c
  1371 05aa 11060000 		.4byte	0x611
  1372 05ae 0B       		.uleb128 0xb
+<<<<<<< HEAD
  1373 05af CD020000 		.4byte	.LASF43
+=======
+ 1373 05af D4020000 		.4byte	.LASF43
+>>>>>>> c569158 (Added timer for periodic distance check)
  1374 05b3 01       		.byte	0x1
  1375 05b4 58       		.byte	0x58
  1376 05b5 97000000 		.4byte	0x97
@@ -1734,11 +2042,19 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1380 05c2 14000000 		.4byte	.LBE3-.LBB3
  1381 05c6 07060000 		.4byte	0x607
  1382 05ca 0B       		.uleb128 0xb
+<<<<<<< HEAD
  1383 05cb AE000000 		.4byte	.LASF35
  1384 05cf 01       		.byte	0x1
  1385 05d0 5B       		.byte	0x5b
  1386 05d1 97000000 		.4byte	0x97
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 30
+=======
+ 1383 05cb 08010000 		.4byte	.LASF35
+ 1384 05cf 01       		.byte	0x1
+ 1385 05d0 5B       		.byte	0x5b
+ 1386 05d1 97000000 		.4byte	0x97
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 30
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1387 05d5 79000000 		.4byte	.LLST5
@@ -1772,7 +2088,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1415 060c C0060000 		.4byte	0x6c0
  1416 0610 00       		.byte	0
  1417 0611 0A       		.uleb128 0xa
+<<<<<<< HEAD
  1418 0612 69020000 		.4byte	.LASF44
+=======
+ 1418 0612 C3020000 		.4byte	.LASF44
+>>>>>>> c569158 (Added timer for periodic distance check)
  1419 0616 01       		.byte	0x1
  1420 0617 07       		.byte	0x7
  1421 0618 2B010000 		.4byte	0x12b
@@ -1780,13 +2100,18 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1423 061d 03       		.byte	0x3
  1424 061e 00000000 		.4byte	shootRef
  1425 0622 14       		.uleb128 0x14
+<<<<<<< HEAD
  1426 0623 29030000 		.4byte	.LASF61
+=======
+ 1426 0623 30030000 		.4byte	.LASF61
+>>>>>>> c569158 (Added timer for periodic distance check)
  1427 0627 0A       		.byte	0xa
  1428 0628 1207     		.2byte	0x712
  1429 062a 2E060000 		.4byte	0x62e
  1430 062e 15       		.uleb128 0x15
  1431 062f A2000000 		.4byte	0xa2
  1432 0633 16       		.uleb128 0x16
+<<<<<<< HEAD
  1433 0634 0C020000 		.4byte	.LASF45
  1434 0638 0C020000 		.4byte	.LASF45
  1435 063c 05       		.byte	0x5
@@ -1802,6 +2127,23 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
 
 
  1444 064e 4B010000 		.4byte	.LASF47
+=======
+ 1433 0634 66020000 		.4byte	.LASF45
+ 1434 0638 66020000 		.4byte	.LASF45
+ 1435 063c 05       		.byte	0x5
+ 1436 063d 6F       		.byte	0x6f
+ 1437 063e 16       		.uleb128 0x16
+ 1438 063f 9C010000 		.4byte	.LASF46
+ 1439 0643 9C010000 		.4byte	.LASF46
+ 1440 0647 06       		.byte	0x6
+ 1441 0648 FD       		.byte	0xfd
+ 1442 0649 16       		.uleb128 0x16
+ 1443 064a A5010000 		.4byte	.LASF47
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 31
+
+
+ 1444 064e A5010000 		.4byte	.LASF47
+>>>>>>> c569158 (Added timer for periodic distance check)
  1445 0652 07       		.byte	0x7
  1446 0653 8B       		.byte	0x8b
  1447 0654 16       		.uleb128 0x16
@@ -1810,6 +2152,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1450 065d 06       		.byte	0x6
  1451 065e BF       		.byte	0xbf
  1452 065f 16       		.uleb128 0x16
+<<<<<<< HEAD
  1453 0660 CF000000 		.4byte	.LASF49
  1454 0664 CF000000 		.4byte	.LASF49
  1455 0668 05       		.byte	0x5
@@ -1859,6 +2202,57 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1499 06ca 73       		.byte	0x73
  1500 06cb 00       		.byte	0
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 32
+=======
+ 1453 0660 29010000 		.4byte	.LASF49
+ 1454 0664 29010000 		.4byte	.LASF49
+ 1455 0668 05       		.byte	0x5
+ 1456 0669 8B       		.byte	0x8b
+ 1457 066a 16       		.uleb128 0x16
+ 1458 066b 55010000 		.4byte	.LASF50
+ 1459 066f 55010000 		.4byte	.LASF50
+ 1460 0673 08       		.byte	0x8
+ 1461 0674 0A       		.byte	0xa
+ 1462 0675 16       		.uleb128 0x16
+ 1463 0676 60010000 		.4byte	.LASF51
+ 1464 067a 60010000 		.4byte	.LASF51
+ 1465 067e 08       		.byte	0x8
+ 1466 067f 0B       		.byte	0xb
+ 1467 0680 16       		.uleb128 0x16
+ 1468 0681 B3000000 		.4byte	.LASF52
+ 1469 0685 B3000000 		.4byte	.LASF52
+ 1470 0689 09       		.byte	0x9
+ 1471 068a 23       		.byte	0x23
+ 1472 068b 17       		.uleb128 0x17
+ 1473 068c 45010000 		.4byte	.LASF62
+ 1474 0690 45010000 		.4byte	.LASF62
+ 1475 0694 16       		.uleb128 0x16
+ 1476 0695 C3010000 		.4byte	.LASF53
+ 1477 0699 C3010000 		.4byte	.LASF53
+ 1478 069d 05       		.byte	0x5
+ 1479 069e 73       		.byte	0x73
+ 1480 069f 16       		.uleb128 0x16
+ 1481 06a0 79020000 		.4byte	.LASF54
+ 1482 06a4 79020000 		.4byte	.LASF54
+ 1483 06a8 08       		.byte	0x8
+ 1484 06a9 0E       		.byte	0xe
+ 1485 06aa 16       		.uleb128 0x16
+ 1486 06ab E7020000 		.4byte	.LASF55
+ 1487 06af E7020000 		.4byte	.LASF55
+ 1488 06b3 07       		.byte	0x7
+ 1489 06b4 6F       		.byte	0x6f
+ 1490 06b5 16       		.uleb128 0x16
+ 1491 06b6 75010000 		.4byte	.LASF56
+ 1492 06ba 75010000 		.4byte	.LASF56
+ 1493 06be 07       		.byte	0x7
+ 1494 06bf 88       		.byte	0x88
+ 1495 06c0 16       		.uleb128 0x16
+ 1496 06c1 BB000000 		.4byte	.LASF57
+ 1497 06c5 BB000000 		.4byte	.LASF57
+ 1498 06c9 07       		.byte	0x7
+ 1499 06ca 73       		.byte	0x73
+ 1500 06cb 00       		.byte	0
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 32
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1501              		.section	.debug_abbrev,"",%progbits
@@ -1918,7 +2312,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1555 0034 00       		.byte	0
  1556 0035 00       		.byte	0
  1557 0036 05       		.uleb128 0x5
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 33
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 33
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1558 0037 13       		.uleb128 0x13
@@ -1978,7 +2376,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1612 006e 00       		.byte	0
  1613 006f 03       		.uleb128 0x3
  1614 0070 0E       		.uleb128 0xe
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 34
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 34
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1615 0071 3A       		.uleb128 0x3a
@@ -2038,7 +2440,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1669 00a7 12       		.uleb128 0x12
  1670 00a8 06       		.uleb128 0x6
  1671 00a9 01       		.uleb128 0x1
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 35
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 35
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1672 00aa 13       		.uleb128 0x13
@@ -2098,7 +2504,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1726 00e9 13       		.uleb128 0x13
  1727 00ea 2F       		.uleb128 0x2f
  1728 00eb 0B       		.uleb128 0xb
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 36
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 36
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1729 00ec 00       		.byte	0
@@ -2158,7 +2568,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1783 0122 3B       		.uleb128 0x3b
  1784 0123 0B       		.uleb128 0xb
  1785 0124 00       		.byte	0
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 37
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 37
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1786 0125 00       		.byte	0
@@ -2218,7 +2632,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1840 005b 08000000 		.4byte	.LVL44
  1841 005f 1C000000 		.4byte	.LVL49
  1842 0063 0100     		.2byte	0x1
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 38
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 38
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1843 0065 54       		.byte	0x54
@@ -2278,7 +2696,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1891      6C65725F 
  1891      696E6974 
  1891      00
+<<<<<<< HEAD
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 39
+=======
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 39
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  1892              	.LASF40:
@@ -2301,6 +2723,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1901 0039 73686F72 		.ascii	"short int\000"
  1901      7420696E 
  1901      7400
+<<<<<<< HEAD
  1902              	.LASF19:
  1903 0043 73697A65 		.ascii	"sizetype\000"
  1903      74797065 
@@ -2533,11 +2956,246 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  1998      6C6500
  1999              	.LASF55:
  2000 02e0 55415254 		.ascii	"UART_PC_ReadRxData\000"
+=======
+ 1902              	.LASF60:
+ 1903 0043 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\Elektronik ingenioer\\3rd s"
+ 1903      635C486F 
+ 1903      6D655C44 
+ 1903      65736B74 
+ 1903      6F705C45 
+ 1904 0070 656D6573 		.ascii	"emester\\PRJ3\\PRJ3\\BattleBot\\Motor_Test.cydsn\000"
+ 1904      7465725C 
+ 1904      50524A33 
+ 1904      5C50524A 
+ 1904      335C4261 
+ 1905              	.LASF19:
+ 1906 009d 73697A65 		.ascii	"sizetype\000"
+ 1906      74797065 
+ 1906      00
+ 1907              	.LASF38:
+ 1908 00a6 63757272 		.ascii	"currentSpeed\000"
+ 1908      656E7453 
+ 1908      70656564 
+ 1908      00
+ 1909              	.LASF52:
+ 1910 00b3 7374726E 		.ascii	"strncmp\000"
+ 1910      636D7000 
+ 1911              	.LASF57:
+ 1912 00bb 55415254 		.ascii	"UART_PC_GetRxBufferSize\000"
+ 1912      5F50435F 
+ 1912      47657452 
+ 1912      78427566 
+ 1912      66657253 
+ 1913              	.LASF27:
+ 1914 00d3 696E6465 		.ascii	"index\000"
+ 1914      7800
+ 1915              	.LASF42:
+ 1916 00d9 4953525F 		.ascii	"ISR_UART_rx_handler_PC\000"
+ 1916      55415254 
+ 1916      5F72785F 
+ 1916      68616E64 
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 40
+
+
+ 1916      6C65725F 
+ 1917              	.LASF39:
+ 1918 00f0 636F6D6D 		.ascii	"command_ACK\000"
+ 1918      616E645F 
+ 1918      41434B00 
+ 1919              	.LASF2:
+ 1920 00fc 7369676E 		.ascii	"signed char\000"
+ 1920      65642063 
+ 1920      68617200 
+ 1921              	.LASF35:
+ 1922 0108 62797465 		.ascii	"byteReceived\000"
+ 1922      52656365 
+ 1922      69766564 
+ 1922      00
+ 1923              	.LASF15:
+ 1924 0115 666C6F61 		.ascii	"float\000"
+ 1924      7400
+ 1925              	.LASF9:
+ 1926 011b 6C6F6E67 		.ascii	"long long int\000"
+ 1926      206C6F6E 
+ 1926      6720696E 
+ 1926      7400
+ 1927              	.LASF49:
+ 1928 0129 55415254 		.ascii	"UART_BT_PutString\000"
+ 1928      5F42545F 
+ 1928      50757453 
+ 1928      7472696E 
+ 1928      6700
+ 1929              	.LASF22:
+ 1930 013b 73686F6F 		.ascii	"shootMode\000"
+ 1930      744D6F64 
+ 1930      6500
+ 1931              	.LASF62:
+ 1932 0145 6D656D73 		.ascii	"memset\000"
+ 1932      657400
+ 1933              	.LASF7:
+ 1934 014c 6C6F6E67 		.ascii	"long int\000"
+ 1934      20696E74 
+ 1934      00
+ 1935              	.LASF50:
+ 1936 0155 7365745F 		.ascii	"set_speedA\000"
+ 1936      73706565 
+ 1936      644100
+ 1937              	.LASF51:
+ 1938 0160 7365745F 		.ascii	"set_speedB\000"
+ 1938      73706565 
+ 1938      644200
+ 1939              	.LASF1:
+ 1940 016b 5F5F7569 		.ascii	"__uint8_t\000"
+ 1940      6E74385F 
+ 1940      7400
+ 1941              	.LASF56:
+ 1942 0175 55415254 		.ascii	"UART_PC_WriteTxData\000"
+ 1942      5F50435F 
+ 1942      57726974 
+ 1942      65547844 
+ 1942      61746100 
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 41
+
+
+ 1943              	.LASF36:
+ 1944 0189 68616E64 		.ascii	"handleByteReceived\000"
+ 1944      6C654279 
+ 1944      74655265 
+ 1944      63656976 
+ 1944      656400
+ 1945              	.LASF46:
+ 1946 019c 736E7072 		.ascii	"snprintf\000"
+ 1946      696E7466 
+ 1946      00
+ 1947              	.LASF47:
+ 1948 01a5 55415254 		.ascii	"UART_PC_PutString\000"
+ 1948      5F50435F 
+ 1948      50757453 
+ 1948      7472696E 
+ 1948      6700
+ 1949              	.LASF18:
+ 1950 01b7 6C6F6E67 		.ascii	"long double\000"
+ 1950      20646F75 
+ 1950      626C6500 
+ 1951              	.LASF53:
+ 1952 01c3 55415254 		.ascii	"UART_BT_GetRxBufferSize\000"
+ 1952      5F42545F 
+ 1952      47657452 
+ 1952      78427566 
+ 1952      66657253 
+ 1953              	.LASF3:
+ 1954 01db 756E7369 		.ascii	"unsigned char\000"
+ 1954      676E6564 
+ 1954      20636861 
+ 1954      7200
+ 1955              	.LASF26:
+ 1956 01e9 62744275 		.ascii	"btBuffer\000"
+ 1956      66666572 
+ 1956      00
+ 1957              	.LASF33:
+ 1958 01f2 56415231 		.ascii	"VAR1\000"
+ 1958      00
+ 1959              	.LASF34:
+ 1960 01f7 56415232 		.ascii	"VAR2\000"
+ 1960      00
+ 1961              	.LASF59:
+ 1962 01fc 55415254 		.ascii	"UART_handler.c\000"
+ 1962      5F68616E 
+ 1962      646C6572 
+ 1962      2E6300
+ 1963              	.LASF10:
+ 1964 020b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1964      206C6F6E 
+ 1964      6720756E 
+ 1964      7369676E 
+ 1964      65642069 
+ 1965              	.LASF11:
+ 1966 0222 756E7369 		.ascii	"unsigned int\000"
+ 1966      676E6564 
+ 1966      20696E74 
+ 1966      00
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 42
+
+
+ 1967              	.LASF8:
+ 1968 022f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1968      20756E73 
+ 1968      69676E65 
+ 1968      6420696E 
+ 1968      7400
+ 1969              	.LASF31:
+ 1970 0241 74656D70 		.ascii	"tempMode\000"
+ 1970      4D6F6465 
+ 1970      00
+ 1971              	.LASF5:
+ 1972 024a 73686F72 		.ascii	"short unsigned int\000"
+ 1972      7420756E 
+ 1972      7369676E 
+ 1972      65642069 
+ 1972      6E7400
+ 1973              	.LASF0:
+ 1974 025d 5F5F696E 		.ascii	"__int8_t\000"
+ 1974      74385F74 
+ 1974      00
+ 1975              	.LASF45:
+ 1976 0266 55415254 		.ascii	"UART_BT_ReadRxData\000"
+ 1976      5F42545F 
+ 1976      52656164 
+ 1976      52784461 
+ 1976      746100
+ 1977              	.LASF54:
+ 1978 0279 73746F70 		.ascii	"stop\000"
+ 1978      00
+ 1979              	.LASF17:
+ 1980 027e 63686172 		.ascii	"char\000"
+ 1980      00
+ 1981              	.LASF14:
+ 1982 0283 696E7433 		.ascii	"int32_t\000"
+ 1982      325F7400 
+ 1983              	.LASF23:
+ 1984 028b 73686F6F 		.ascii	"shootVarHandler\000"
+ 1984      74566172 
+ 1984      48616E64 
+ 1984      6C657200 
+ 1985              	.LASF37:
+ 1986 029b 68616E64 		.ascii	"handler\000"
+ 1986      6C657200 
+ 1987              	.LASF30:
+ 1988 02a3 74656D70 		.ascii	"tempBool\000"
+ 1988      426F6F6C 
+ 1988      00
+ 1989              	.LASF25:
+ 1990 02ac 4953525F 		.ascii	"ISR_UART_rx_handler_BT\000"
+ 1990      55415254 
+ 1990      5F72785F 
+ 1990      68616E64 
+ 1990      6C65725F 
+ 1991              	.LASF44:
+ 1992 02c3 73686F6F 		.ascii	"shootRef\000"
+ 1992      74526566 
+ 1992      00
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 43
+
+
+ 1993              	.LASF32:
+ 1994 02cc 6D657373 		.ascii	"message\000"
+ 1994      61676500 
+ 1995              	.LASF43:
+ 1996 02d4 62797465 		.ascii	"bytesToRead\000"
+ 1996      73546F52 
+ 1996      65616400 
+ 1997              	.LASF16:
+ 1998 02e0 646F7562 		.ascii	"double\000"
+ 1998      6C6500
+ 1999              	.LASF55:
+ 2000 02e7 55415254 		.ascii	"UART_PC_ReadRxData\000"
+>>>>>>> c569158 (Added timer for periodic distance check)
  2000      5F50435F 
  2000      52656164 
  2000      52784461 
  2000      746100
  2001              	.LASF20:
+<<<<<<< HEAD
  2002 02f3 64657369 		.ascii	"desiredPos1\000"
  2002      72656450 
  2002      6F733100 
@@ -2560,25 +3218,65 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 1
  2012      3200
  2013              	.LASF61:
  2014 0329 49544D5F 		.ascii	"ITM_RxBuffer\000"
+=======
+ 2002 02fa 64657369 		.ascii	"desiredPos1\000"
+ 2002      72656450 
+ 2002      6F733100 
+ 2003              	.LASF21:
+ 2004 0306 64657369 		.ascii	"desiredPos2\000"
+ 2004      72656450 
+ 2004      6F733200 
+ 2005              	.LASF6:
+ 2006 0312 5F5F696E 		.ascii	"__int32_t\000"
+ 2006      7433325F 
+ 2006      7400
+ 2007              	.LASF13:
+ 2008 031c 75696E74 		.ascii	"uint8_t\000"
+ 2008      385F7400 
+ 2009              	.LASF28:
+ 2010 0324 74656D70 		.ascii	"temp1\000"
+ 2010      3100
+ 2011              	.LASF29:
+ 2012 032a 74656D70 		.ascii	"temp2\000"
+ 2012      3200
+ 2013              	.LASF61:
+ 2014 0330 49544D5F 		.ascii	"ITM_RxBuffer\000"
+>>>>>>> c569158 (Added timer for periodic distance check)
  2014      52784275 
  2014      66666572 
  2014      00
  2015              	.LASF58:
+<<<<<<< HEAD
  2016 0336 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+=======
+ 2016 033d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+>>>>>>> c569158 (Added timer for periodic distance check)
  2016      43313120 
  2016      352E342E 
  2016      31203230 
  2016      31363036 
+<<<<<<< HEAD
  2017 0369 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+=======
+ 2017 0370 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+>>>>>>> c569158 (Added timer for periodic distance check)
  2017      20726576 
  2017      6973696F 
  2017      6E203233 
  2017      37373135 
+<<<<<<< HEAD
  2018 039c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  2018      66756E63 
  2018      74696F6E 
  2018      2D736563 
 ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccntfk1d.s 			page 44
+=======
+ 2018 03a3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2018      66756E63 
+ 2018      74696F6E 
+ 2018      2D736563 
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccHUPufk.s 			page 44
+>>>>>>> c569158 (Added timer for periodic distance check)
 
 
  2018      74696F6E 

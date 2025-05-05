@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="UltraSonic_059_190702-000\UltraSonic_059_190702\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="UltraSonic_059_190702-000\UltraSonic_059_190702\TopDesign">
 <ExpandedNodeIds>
 <v>UltraSonic_059_190702-000</v>
 <v>UltraSonic_059_190702-000\UltraSonic_059_190702</v>
@@ -281,6 +281,19 @@
 <v>UltraSonic_059_190702-000\UltraSonic_059_190702\PSoC 5LP Architecture TRM</v>
 <v>UltraSonic_059_190702-000\UltraSonic_059_190702\CY8C58LP Family Datasheet</v>
 <v>UltraSonic_059_190702-000\UltraSonic_059_190702\System Reference Guides</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\System Reference Guides\cy_boot_v5_70</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\Connector20_v1_0.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\Counter_v3_0.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\cy_clock_v2_20.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\cy_isr_v1_70.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\cy_pins_v2_20</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\CyControlReg_v1_80.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\FreqDiv_v1_0.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\Gnd_v1_0.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\not_v1_0.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\Power_v1_0.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\UART_v2_50.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>UltraSonic_059_190702-000</v>
@@ -288,6 +301,19 @@
 <v>UltraSonic_059_190702-000\UltraSonic_059_190702\PSoC 5LP Architecture TRM</v>
 <v>UltraSonic_059_190702-000\UltraSonic_059_190702\CY8C58LP Family Datasheet</v>
 <v>UltraSonic_059_190702-000\UltraSonic_059_190702\System Reference Guides</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\System Reference Guides\cy_boot_v5_70</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\Connector20_v1_0.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\Counter_v3_0.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\cy_clock_v2_20.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\cy_isr_v1_70.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\cy_pins_v2_20</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\CyControlReg_v1_80.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\FreqDiv_v1_0.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\Gnd_v1_0.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\not_v1_0.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\Power_v1_0.pdf</v>
+<v>UltraSonic_059_190702-000\UltraSonic_059_190702\UART_v2_50.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -298,6 +324,9 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\main.c" />
+<name v=".\Generated_Source\PSoC4\Clock_12MHz.c" />
+<name v=".\UltraSonic_059_190702.cydwr" />
+<name v=".\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -305,7 +334,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="981, 530" SelectedTabbedMdiWindow="9f8d0b3b-8633-4bdd-922c-1d5290e3cba9"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="80049aaf-e99f-4f8f-8842-d12b4a551b07" /><DocumentWindow Key="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\afstandssensor_test\UltraSonic_059_190702.cydsn\main.c" Guid="9f8d0b3b-8633-4bdd-922c-1d5290e3cba9" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="876, 530" SelectedTabbedMdiWindow="0a5845b9-68a1-4c95-943b-280487e67076"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="80049aaf-e99f-4f8f-8842-d12b4a551b07" /><DocumentWindow Key="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\afstandssensor_test\UltraSonic_059_190702.cydsn\main.c" Guid="9f8d0b3b-8633-4bdd-922c-1d5290e3cba9" /><DocumentWindow Key="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\afstandssensor_test\UltraSonic_059_190702.cydsn\Generated_Source\PSoC4\Clock_12MHz.c" Guid="7da8b0d2-70ed-4125-b085-d3703c8d6e73" /><DocumentWindow Key="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\afstandssensor_test\UltraSonic_059_190702.cydsn\UltraSonic_059_190702.cydwr" Guid="de7b58ef-859d-46e5-aff0-662f334aee63" /><DocumentWindow Key="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\afstandssensor_test\UltraSonic_059_190702.cydsn\TopDesign\TopDesign.cysch" Guid="0a5845b9-68a1-4c95-943b-280487e67076" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

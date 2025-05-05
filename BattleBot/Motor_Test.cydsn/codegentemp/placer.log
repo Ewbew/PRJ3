@@ -4,9 +4,9 @@
 
 #Version:            1.1
 
-#Build Date:         Dec  5 2017 15:35:27
+#Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     May 2 2025 13:33:30
+#File Generated:     May 5 2025 11:01:24
 
 #Purpose:            
 
@@ -14,16 +14,16 @@
 
 #***************************************************************************
 
-Executing : C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\bin/sjplacer.exe --proj-name Motor_Test --netlist-vh2 Motor_Test_p.vh2 --arch p35_udb4x6 --arch-file C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\dev\arch/udbdsi_4x6_24.cydata --ip-file C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\dev\psoc5/psoc5lp/ip_blocks.cydata --rrg-file C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\dev\psoc5/psoc5lp/route_arch-rrg.cydata --irq-file C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\dev\psoc5/psoc5lp/irqconn.cydata --drq-file C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\dev\psoc5/psoc5lp/dmaconn.cydata --dsi-conn-file C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\dev\psoc5/psoc5lp/dsiconn.cydata --pins-file pins_68-QFN.xml --lib-file Motor_Test_p.lib --sdc-file Motor_Test.sdc --io-pcf Motor_Test.pci --outdir .
+Executing : C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\bin/sjplacer.exe --proj-name Motor_Test --netlist-vh2 Motor_Test_p.vh2 --arch p35_udb4x6 --arch-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\arch/udbdsi_4x6_24.cydata --ip-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/ip_blocks.cydata --rrg-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/route_arch-rrg.cydata --irq-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/irqconn.cydata --drq-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/dmaconn.cydata --dsi-conn-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/dsiconn.cydata --pins-file pins_68-QFN.xml --lib-file Motor_Test_p.lib --sdc-file Motor_Test.sdc --io-pcf Motor_Test.pci --outdir .
 
 		Softjin Techologies Placer, Version 1.1
 
-Build Date : Dec  5 2017	15:33:41
+Build Date : Sep  9 2019	11:45:12
 
 D2004: Option and Settings Summary
 =============================================================
 Netlist vh2 file          - Motor_Test_p.vh2
-Architecture file         - C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\dev\arch/udbdsi_4x6_24.cydata
+Architecture file         - C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\arch/udbdsi_4x6_24.cydata
 Package                   - 
 Defparam file             - 
 SDC file                  - Motor_Test.sdc
@@ -34,7 +34,7 @@ IO Placement file         - Motor_Test.pci
 D2050: Starting reading inputs for placer
 =============================================================
 D2065: Reading netlist file : "Motor_Test_p.vh2"
-D2065: Reading arch file : "C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\dev\arch/udbdsi_4x6_24.cydata"
+D2065: Reading arch file : "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\arch/udbdsi_4x6_24.cydata"
 D2051: Reading of inputs for placer completed successfully
 
 D2053: Starting placement of the design
@@ -54,7 +54,7 @@ Design Statistics after Packing
 
 Device Utilization Summary after Packing
     Macrocells                  :	78/192
-    UDBS                        :	12/24
+    UDBS                        :	13/24
     IOs                         :	12/72
 
 
@@ -79,18 +79,19 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 11
+Number of clocks: 12
 Clock: Clock_24MHz          | Frequency:  42.6 MHz | Target:  24.0 MHz
-Clock: Clock_PWM_A          | Frequency:  84.8 MHz | Target:   0.0 MHz
+Clock: Clock_5kHz           | Frequency: N/A       | Target:   0.0 MHz
+Clock: Clock_5kHz(fixed-function) | Frequency: N/A       | Target:   0.0 MHz
+Clock: Clock_PWM_A          | Frequency:  85.3 MHz | Target:   0.0 MHz
 Clock: Clock_PWM_B          | Frequency:  84.8 MHz | Target:   0.0 MHz
 Clock: CyBUS_CLK            | Frequency:  45.5 MHz | Target:  24.0 MHz
-Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: UART_BT_IntClock     | Frequency:  52.7 MHz | Target:   0.1 MHz
-Clock: UART_PC_IntClock     | Frequency:  45.6 MHz | Target:   0.5 MHz
+Clock: UART_BT_IntClock     | Frequency:  51.4 MHz | Target:   0.1 MHz
+Clock: UART_PC_IntClock     | Frequency:  49.9 MHz | Target:   0.5 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -102,23 +103,24 @@ Phase 7
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 11
+Number of clocks: 12
 Clock: Clock_24MHz          | Frequency:  41.5 MHz | Target:  24.0 MHz
-Clock: Clock_PWM_A          | Frequency:  84.8 MHz | Target:   0.0 MHz
-Clock: Clock_PWM_B          | Frequency:  84.8 MHz | Target:   0.0 MHz
+Clock: Clock_5kHz           | Frequency: N/A       | Target:   0.0 MHz
+Clock: Clock_5kHz(fixed-function) | Frequency: N/A       | Target:   0.0 MHz
+Clock: Clock_PWM_A          | Frequency:  85.3 MHz | Target:   0.0 MHz
+Clock: Clock_PWM_B          | Frequency:  69.1 MHz | Target:   0.0 MHz
 Clock: CyBUS_CLK            | Frequency:   1.3 MHz | Target:  24.0 MHz
-Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
 Clock: UART_BT_IntClock     | Frequency:   1.3 MHz | Target:   0.1 MHz
-Clock: UART_PC_IntClock     | Frequency:   2.4 MHz | Target:   0.5 MHz
+Clock: UART_PC_IntClock     | Frequency:   2.5 MHz | Target:   0.5 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 1.1 (sec)
+D2088: Phase 7, elapsed time : 0.9 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	24
@@ -148,18 +150,19 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 11
-Clock: Clock_24MHz          | Frequency:  41.5 MHz | Target:  24.0 MHz
-Clock: Clock_PWM_A          | Frequency:  58.3 MHz | Target:   0.0 MHz
-Clock: Clock_PWM_B          | Frequency:  74.0 MHz | Target:   0.0 MHz
-Clock: CyBUS_CLK            | Frequency:   1.5 MHz | Target:  24.0 MHz
-Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
+Number of clocks: 12
+Clock: Clock_24MHz          | Frequency:  40.3 MHz | Target:  24.0 MHz
+Clock: Clock_5kHz           | Frequency: N/A       | Target:   0.0 MHz
+Clock: Clock_5kHz(fixed-function) | Frequency: N/A       | Target:   0.0 MHz
+Clock: Clock_PWM_A          | Frequency:  85.3 MHz | Target:   0.0 MHz
+Clock: Clock_PWM_B          | Frequency:  84.8 MHz | Target:   0.0 MHz
+Clock: CyBUS_CLK            | Frequency:   1.4 MHz | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: UART_BT_IntClock     | Frequency:   1.5 MHz | Target:   0.1 MHz
-Clock: UART_PC_IntClock     | Frequency:   2.8 MHz | Target:   0.5 MHz
+Clock: UART_BT_IntClock     | Frequency:   1.4 MHz | Target:   0.1 MHz
+Clock: UART_PC_IntClock     | Frequency:   2.5 MHz | Target:   0.5 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -170,5 +173,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 2.7 sec.
+I2076: Total run-time: 1.8 sec.
 

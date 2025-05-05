@@ -14,12 +14,14 @@
 // Tester
 
 static volatile uint16_t duration = 0 ;
-static volatile int      echo_flag = 0 ;
-static int obstruct = 0; // 1 if distance is below the threshold, 0 otherwise
+static volatile int     echo_flag = 0 ;
+static volatile int     timerFlag = 0; // Flag to indicate if the timer has triggered
+static int              obstruct = 0; // 1 if distance is below the threshold, 0 otherwise
+
 
 char str[128] ; /* print buffer */
 
-CY_ISR(echo_isr)
+CY_ISR(ISR_DS_echo)
 {
     isr_echo_int_ClearPending() ;
     isr_echo_int_Disable() ;
@@ -27,41 +29,73 @@ CY_ISR(echo_isr)
     echo_flag = 1 ;
 }
 
-/* Commented out while debugging
-CY_ISR(timer_isr)
+int get_obstruct(void)
 {
-    isr_timer_ClearPending(); // Clear the interrupt flag
+    return obstruct;
+}
 
+void set_obstruct(int value)
+{
+    obstruct = value;
+}
+
+CY_ISR(ISR_timer_DS_tc_handler)
+{
+    isr_timer_DS_ClearPending(); // Clear the interrupt flag
+    set_timerFlag(1); // Set the timer flag to indicate the timer has triggered
+}
+
+int get_timerFlag(void)
+{
+    return timerFlag;
+}
+
+void set_timerFlag(int value)
+{
+    timerFlag = value;
+}
+
+/* Old ISR code for timer – commented out, since we are using a flag
+   to trigger the distance measurement in the main loop
+   instead of using a timer interrupt directly.
+CY_ISR(ISR_timer_DS_tc_handler)
+{
+    isr_timer_DS_ClearPending(); // Clear the interrupt flag
+
+    
     double distance = measure_distance(); // Measure the distance
 
     // Check if the distance is below the threshold
-    if (distance >= 0 && distance < 10.0) { // Example threshold: 10 cm
+    if (distance >= 0 && distance < 30.0) { // Example threshold: 30 cm
         set_obstruct(1); // Set obstruct to true
+        UART_PC_PutString("Obstacle detected\r\n");
     } else {
         set_obstruct(0); // Set obstruct to false
+        UART_PC_PutString("No obstacle detected\r\n");
     }
-}
-*/
-
-/* COmmented out while debugging
-void init_timer(void)
-{
-    Timer_Start(); // Start the timer
-    isr_timer_ClearPending(); // Clear any pending interrupts
-    isr_timer_StartEx(timer_isr); // Attach the ISR to the timer interrupt
+    
 }
 */
 
 
-void init_hardware(void)
+void init_DS_hardware(void)
     /* Enable global interrupts. */{
     CyGlobalIntEnable;
+    
+    // Hardware init for the the trigger/pulse functionality
     Trigger_Write(0);
     Clock_24MHz_Start();
     isr_echo_int_ClearPending();
-    isr_echo_int_StartEx(echo_isr);
+    isr_echo_int_StartEx(ISR_DS_echo);
     Counter_Init(); // Initialize the counter
     Counter_Start(); // Start the counter
+    
+    // Hardware init for Timer (that drives the periodic obstacle check)
+    Clock_5kHz_Start(); // Start the clock
+    Timer_DS_Start(); // Start the timer
+    isr_timer_DS_ClearPending(), // Clear any pending interrupts
+    isr_timer_DS_StartEx(ISR_timer_DS_tc_handler); // Attach the ISR to the timer interrupt (which is connected  
+                                        // to the TC output pin).
 }
 
 
@@ -122,23 +156,10 @@ double measure_distance(void)
         //sprintf(str, "Calculated Distance: %d cm\r\n", (int)distance);
         //UART_PC_PutString(str);
     }
-    else
-    {
-        UART_PC_PutString("Timeout occurred\r\n");
-    }
 
     return distance;
 }
 
-int get_obstruct(void)
-{
-    return obstruct;
-}
-
-void set_obstruct(int value)
-{
-    obstruct = value;
-}
 
 /**
  * print_value

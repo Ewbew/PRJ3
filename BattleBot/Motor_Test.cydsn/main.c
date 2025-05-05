@@ -12,7 +12,7 @@ int main(void)
     shootVarHandler shootVarObject;
 
     // Initialize hardware for distance sensor
-    init_hardware();
+    init_DS_hardware();
 
     // Initialize the timer for periodic distance checks
     //init_timer(); Commented out while debugging
@@ -25,6 +25,7 @@ int main(void)
     UART_BT_Start();
     PWM_A_Start();
     PWM_B_Start();
+    Timer_DS_Start();
     UART_PC_PutString("Starting program...\r\n");
     // Optionally initialize motor enable signals if needed:
     // A_ENABLE_Write(0);
@@ -34,15 +35,21 @@ int main(void)
 
     for (;;)
     {
-        /* Commented out while debugging
-        // Main loop can perform other tasks
-        if (get_obstruct()) {
-            UART_PC_PutString("Obstacle detected!\r\n");
-        } else {
-            UART_PC_PutString("No obstacle.\r\n");
+        if (get_timerFlag()) { // Check if the timer has triggered
+            set_timerFlag(0); // Reset the timer flag
+    
+            double distance = measure_distance(); // Measure the distance
+    
+            // Check if the distance is below the threshold
+            if (distance >= 0 && distance < 30.0) { // Example threshold: 30 cm
+                set_obstruct(1); // Set obstruct to true
+                UART_PC_PutString("Obstacle detected\r\n");
+            } else {
+                set_obstruct(0); // Set obstruct to false
+                UART_PC_PutString("No obstacle detected\r\n");
+            }
         }
-
-        CyDelay(500); // Delay for demonstration purposes
-        */
+    
+        // Other tasks can be performed here
     }
 }

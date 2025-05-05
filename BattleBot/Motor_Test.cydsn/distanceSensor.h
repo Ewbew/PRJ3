@@ -6,11 +6,14 @@
 // Define the speed of sound in air (Mach 1.0 at 20°C)
 #define MACH 343.4
 
+CY_ISR_PROTO(ISR_DS_echo); // ISR for echo signal
+CY_ISR_PROTO(ISR_timer_DS_tc_handler); // ISR for timer
+
 // Function prototypes
 /**
  * @brief Initializes the hardware components required for the distance sensor.
  */
-void init_hardware(void);
+void init_DS_hardware(void);
 
 /**
  * @brief Initializes the timer for periodic distance checks.
@@ -42,6 +45,20 @@ int get_obstruct(void);
  * @param value The new value for the obstruct variable (1 for true, 0 for false).
  */
 void set_obstruct(int value);
+
+/**
+ * @brief Gets the current value of the timer flag.
+ * 
+ * @return int The value of the timer flag (1 for true, 0 for false).
+ */
+int get_timerFlag(void);
+
+/**
+ * @brief Sets the value of the timer flag.
+ * 
+ * @param value The new value for the timer flag (1 for true, 0 for false).
+ */
+void set_timerFlag(int value);
 
 /**
  * @brief Prints the calculated distance based on the echo duration.

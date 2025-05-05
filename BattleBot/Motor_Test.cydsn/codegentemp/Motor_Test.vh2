@@ -2,7 +2,7 @@
 --	Conversion of Motor_Test.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Fri May 02 13:33:28 2025
+--	Mon May 05 11:01:21 2025
 --
 
 USE cypress.cypress.all;
@@ -1890,16 +1890,16 @@ SIGNAL \FreqDiv:MODULE_13:g2:a0:g1:z1:s0:g1:u0:c_2\ : bit;
 SIGNAL \FreqDiv:MODULE_13:g2:a0:g1:z1:s0:g1:u0:c_1\ : bit;
 SIGNAL \FreqDiv:MODULE_13:g2:a0:g1:z1:s0:g1:u0:c_0\ : bit;
 SIGNAL \FreqDiv:MODULE_13:g2:a0:g1:z1:s0:g1:u0:b_0\ : bit;
-SIGNAL Net_682 : bit;
+SIGNAL Net_697 : bit;
 SIGNAL Net_684 : bit;
-SIGNAL \Timer_1:Net_260\ : bit;
-SIGNAL \Timer_1:Net_266\ : bit;
-SIGNAL \Timer_1:Net_51\ : bit;
-SIGNAL \Timer_1:Net_261\ : bit;
-SIGNAL \Timer_1:Net_57\ : bit;
-SIGNAL Net_685 : bit;
+SIGNAL Net_682 : bit;
+SIGNAL \Timer_DS:Net_260\ : bit;
+SIGNAL \Timer_DS:Net_266\ : bit;
+SIGNAL \Timer_DS:Net_51\ : bit;
+SIGNAL \Timer_DS:Net_261\ : bit;
+SIGNAL \Timer_DS:Net_57\ : bit;
 SIGNAL Net_690 : bit;
-SIGNAL \Timer_1:Net_102\ : bit;
+SIGNAL \Timer_DS:Net_102\ : bit;
 SIGNAL \UART_PC:BUART:reset_reg\\D\ : bit;
 SIGNAL \UART_PC:BUART:txn\\D\ : bit;
 SIGNAL \UART_PC:BUART:tx_state_1\\D\ : bit;
@@ -4267,26 +4267,30 @@ isr_echo_int:cy_isr_v1_0
 \FreqDiv:MODULE_13:g2:a0:g1:z1:s0:g1:u0:gs(8):g2:g3:ub\:cy_buf
 	PORT MAP(x=>zero,
 		y=>\FreqDiv:MODULE_13:g2:a0:g1:z1:s0:g1:u0:c_8\);
-timer_clock:cy_clock_v1_0
-	GENERIC MAP(cy_registers=>"",
-		id=>"c0fb34bd-1044-4931-9788-16b01ce89812",
-		source_clock_id=>"75C2148C-3656-4d8a-846D-0CAE99AB6FF7",
-		divisor=>0,
-		period=>"0",
-		is_direct=>'1',
-		is_digital=>'1')
-	PORT MAP(clock_out=>Net_682,
-		dig_domain_out=>open);
-\Timer_1:TimerHW\:cy_psoc3_timer_v1_0
+isr_timer_DS:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_697);
+\Timer_DS:TimerHW\:cy_psoc3_timer_v1_0
 	GENERIC MAP(cy_registers=>"")
 	PORT MAP(clock=>Net_682,
 		kill=>zero,
 		enable=>one,
 		capture=>zero,
 		timer_reset=>zero,
-		tc=>\Timer_1:Net_51\,
-		compare=>\Timer_1:Net_261\,
-		interrupt=>\Timer_1:Net_57\);
+		tc=>\Timer_DS:Net_51\,
+		compare=>\Timer_DS:Net_261\,
+		interrupt=>Net_697);
+Clock_5kHz:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"c3e6aaac-ac76-46d9-b787-56e482d6993c",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"200000000000",
+		is_direct=>'0',
+		is_digital=>'1')
+	PORT MAP(clock_out=>Net_682,
+		dig_domain_out=>open);
 \UART_PC:BUART:reset_reg\:cy_dff
 	PORT MAP(d=>zero,
 		clk=>\UART_PC:BUART:clock_op\,

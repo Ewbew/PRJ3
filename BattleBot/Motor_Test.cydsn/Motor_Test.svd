@@ -263,7 +263,7 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>Timer_1</name>
+      <name>Timer_DS</name>
       <description>No description available</description>
       <baseAddress>0x0</baseAddress>
       <addressBlock>
@@ -273,7 +273,7 @@
       </addressBlock>
       <registers>
         <register>
-          <name>Timer_1_GLOBAL_ENABLE</name>
+          <name>Timer_DS_GLOBAL_ENABLE</name>
           <description>PM.ACT.CFG</description>
           <addressOffset>0x400043A3</addressOffset>
           <size>8</size>
@@ -291,7 +291,7 @@
           </fields>
         </register>
         <register>
-          <name>Timer_1_CONTROL</name>
+          <name>Timer_DS_CONTROL</name>
           <description>TMRx.CFG0</description>
           <addressOffset>0x40004F00</addressOffset>
           <size>8</size>
@@ -375,7 +375,7 @@
           </fields>
         </register>
         <register>
-          <name>Timer_1_CONTROL2</name>
+          <name>Timer_DS_CONTROL2</name>
           <description>TMRx.CFG1</description>
           <addressOffset>0x40004F01</addressOffset>
           <size>8</size>
@@ -440,7 +440,7 @@
           </fields>
         </register>
         <register>
-          <name>Timer_1_CONTROL3_</name>
+          <name>Timer_DS_CONTROL3_</name>
           <description>TMRx.CFG2</description>
           <addressOffset>0x40004F02</addressOffset>
           <size>8</size>
@@ -535,7 +535,7 @@
           </fields>
         </register>
         <register>
-          <name>Timer_1_PERIOD</name>
+          <name>Timer_DS_PERIOD</name>
           <description>TMRx.PER0 - Assigned Period</description>
           <addressOffset>0x40004F04</addressOffset>
           <size>8</size>
@@ -544,7 +544,7 @@
           <resetMask>0</resetMask>
         </register>
         <register>
-          <name>Timer_1_COUNTER</name>
+          <name>Timer_DS_COUNTER</name>
           <description>TMRx.CNT_CMP0 - Current Down Counter Value</description>
           <addressOffset>0x40004F06</addressOffset>
           <size>8</size>
@@ -567,7 +567,7 @@
         <register>
           <name>Counter_Reset_CONTROL_REG</name>
           <description>No description available</description>
-          <addressOffset>0x4000647C</addressOffset>
+          <addressOffset>0x4000647B</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -588,7 +588,7 @@
         <register>
           <name>PWM_B__COMPARE1</name>
           <description>UDB.D0 - Assigned Compare1 Value</description>
-          <addressOffset>0x40006525</addressOffset>
+          <addressOffset>0x4000642A</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -597,7 +597,7 @@
         <register>
           <name>PWM_B__COMPARE2</name>
           <description>UDB.D1 - Assigned Compare2 Value</description>
-          <addressOffset>0x40006535</addressOffset>
+          <addressOffset>0x4000643A</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -606,7 +606,7 @@
         <register>
           <name>PWM_B_Control_Reg</name>
           <description>UDB Control Register - Assigned Control Register Value</description>
-          <addressOffset>0x40006575</addressOffset>
+          <addressOffset>0x4000647A</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -638,7 +638,7 @@
         <register>
           <name>PWM_B_STATUS_MASK</name>
           <description>UDB Status bits Interrupt Mask Enable Register</description>
-          <addressOffset>0x40006585</addressOffset>
+          <addressOffset>0x4000648A</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -684,7 +684,7 @@
         <register>
           <name>PWM_B_STATUS_AUX_CTRL</name>
           <description>UDB Auxilliary Control Register</description>
-          <addressOffset>0x40006595</addressOffset>
+          <addressOffset>0x4000649A</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -821,7 +821,7 @@
         <register>
           <name>PWM_A__COMPARE1</name>
           <description>UDB.D0 - Assigned Compare1 Value</description>
-          <addressOffset>0x40006420</addressOffset>
+          <addressOffset>0x40006524</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -830,7 +830,7 @@
         <register>
           <name>PWM_A__COMPARE2</name>
           <description>UDB.D1 - Assigned Compare2 Value</description>
-          <addressOffset>0x40006430</addressOffset>
+          <addressOffset>0x40006534</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -839,7 +839,7 @@
         <register>
           <name>PWM_A_Control_Reg</name>
           <description>UDB Control Register - Assigned Control Register Value</description>
-          <addressOffset>0x40006475</addressOffset>
+          <addressOffset>0x40006574</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -871,7 +871,7 @@
         <register>
           <name>PWM_A_STATUS_MASK</name>
           <description>UDB Status bits Interrupt Mask Enable Register</description>
-          <addressOffset>0x40006487</addressOffset>
+          <addressOffset>0x40006584</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -917,7 +917,7 @@
         <register>
           <name>PWM_A_STATUS_AUX_CTRL</name>
           <description>UDB Auxilliary Control Register</description>
-          <addressOffset>0x40006490</addressOffset>
+          <addressOffset>0x40006594</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -1052,9 +1052,18 @@
       </addressBlock>
       <registers>
         <register>
+          <name>TX_UART_PC_TX_DATA</name>
+          <description>TX Data Register</description>
+          <addressOffset>0x40006445</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
           <name>RX_UART_PC_RX_STATUS</name>
           <description>RX status register</description>
-          <addressOffset>0x40006464</addressOffset>
+          <addressOffset>0x40006466</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -1112,45 +1121,9 @@
           </fields>
         </register>
         <register>
-          <name>RX_UART_PC_RX_ADDRESS1</name>
-          <description>RX Address1 Register</description>
-          <addressOffset>0x40006524</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>RX_UART_PC_RX_ADDRESS2</name>
-          <description>RX Address2 Register</description>
-          <addressOffset>0x40006534</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>RX_UART_PC_RX_DATA</name>
-          <description>RX Data Register</description>
-          <addressOffset>0x40006544</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>TX_UART_PC_TX_DATA</name>
-          <description>TX Data Register</description>
-          <addressOffset>0x40006547</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
           <name>TX_UART_PC_TX_STATUS</name>
           <description>TX status register</description>
-          <addressOffset>0x40006567</addressOffset>
+          <addressOffset>0x4000646B</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -1186,6 +1159,33 @@
             </field>
           </fields>
         </register>
+        <register>
+          <name>RX_UART_PC_RX_ADDRESS1</name>
+          <description>RX Address1 Register</description>
+          <addressOffset>0x40006526</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>RX_UART_PC_RX_ADDRESS2</name>
+          <description>RX Address2 Register</description>
+          <addressOffset>0x40006536</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>RX_UART_PC_RX_DATA</name>
+          <description>RX Data Register</description>
+          <addressOffset>0x40006546</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
       </registers>
     </peripheral>
     <peripheral>
@@ -1201,7 +1201,7 @@
         <register>
           <name>RX_UART_BT_RX_ADDRESS1</name>
           <description>RX Address1 Register</description>
-          <addressOffset>0x40006422</addressOffset>
+          <addressOffset>0x40006427</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -1210,16 +1210,7 @@
         <register>
           <name>RX_UART_BT_RX_ADDRESS2</name>
           <description>RX Address2 Register</description>
-          <addressOffset>0x40006432</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>RX_UART_BT_RX_DATA</name>
-          <description>RX Data Register</description>
-          <addressOffset>0x40006442</addressOffset>
+          <addressOffset>0x40006437</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -1228,7 +1219,16 @@
         <register>
           <name>TX_UART_BT_TX_DATA</name>
           <description>TX Data Register</description>
-          <addressOffset>0x40006445</addressOffset>
+          <addressOffset>0x40006442</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>RX_UART_BT_RX_DATA</name>
+          <description>RX Data Register</description>
+          <addressOffset>0x40006447</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -1237,7 +1237,7 @@
         <register>
           <name>RX_UART_BT_RX_STATUS</name>
           <description>RX status register</description>
-          <addressOffset>0x4000646C</addressOffset>
+          <addressOffset>0x40006463</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -1297,7 +1297,7 @@
         <register>
           <name>TX_UART_BT_TX_STATUS</name>
           <description>TX status register</description>
-          <addressOffset>0x40006566</addressOffset>
+          <addressOffset>0x40006465</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
