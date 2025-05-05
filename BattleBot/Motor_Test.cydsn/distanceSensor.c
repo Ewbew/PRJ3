@@ -89,6 +89,7 @@ void init_DS_hardware(void)
     isr_echo_int_StartEx(ISR_DS_echo);
     Counter_Init(); // Initialize the counter
     Counter_Start(); // Start the counter
+    UART_PC_PutString("Counter initialised\r\n");
     
     // Hardware init for Timer (that drives the periodic obstacle check)
     Clock_5kHz_Start(); // Start the clock
@@ -96,6 +97,7 @@ void init_DS_hardware(void)
     isr_timer_DS_ClearPending(), // Clear any pending interrupts
     isr_timer_DS_StartEx(ISR_timer_DS_tc_handler); // Attach the ISR to the timer interrupt (which is connected  
                                         // to the TC output pin).
+    UART_PC_PutString("Timer initialized.\r\n");
 }
 
 
