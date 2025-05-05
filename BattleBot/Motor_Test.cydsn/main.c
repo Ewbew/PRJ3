@@ -11,13 +11,12 @@ int main(void)
     CyGlobalIntEnable;  /* Enable global interrupts. */
     shootVarHandler shootVarObject;
 
-    // Initialize hardware for distance sensor
-    init_DS_hardware();
 
     // Initialize the timer for periodic distance checks
     //init_timer(); Commented out while debugging
 
     // Start the UART RX ISR and UART component
+    // TO-DO: Make the functions below into hardware start for comm and motor
     uartHandler_init(&shootVarObject);
     isr_uart_rx_PC_StartEx(ISR_UART_rx_handler_PC);
     isr_uart_rx_BT_StartEx(ISR_UART_rx_handler_BT);
@@ -25,7 +24,8 @@ int main(void)
     UART_BT_Start();
     PWM_A_Start();
     PWM_B_Start();
-    Timer_DS_Start();
+        // Initialize hardware for distance sensor
+    init_DS_hardware();
     UART_PC_PutString("Starting program...\r\n");
     // Optionally initialize motor enable signals if needed:
     // A_ENABLE_Write(0);
