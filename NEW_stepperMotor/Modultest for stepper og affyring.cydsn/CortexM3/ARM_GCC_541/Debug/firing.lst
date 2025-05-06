@@ -1,0 +1,872 @@
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"firing.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.fireMechanism,"ax",%progbits
+  20              		.align	2
+  21              		.global	fireMechanism
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	fireMechanism, %function
+  25              	fireMechanism:
+  26              	.LFB63:
+  27              		.file 1 "firing.c"
+   1:firing.c      **** #include "firing.h"
+   2:firing.c      **** #include "stepper.h"
+   3:firing.c      **** 
+   4:firing.c      **** #define FIRE_STEP_PIN_STEP    fireStepPin_Write(1)
+   5:firing.c      **** #define FIRE_STEP_PIN_RESET   fireStepPin_Write(0)
+   6:firing.c      **** #define FIRE_DIR_PIN_FORWARD  fireDirPin_Write(1)
+   7:firing.c      **** #define FIRE_DIR_PIN_BACKWARD fireDirPin_Write(0)
+   8:firing.c      **** 
+   9:firing.c      **** // Motorens interne tilstande
+  10:firing.c      **** volatile int16 fireStepsRemaining = 0;
+  11:firing.c      **** volatile int8 fireDirection = 1;
+  12:firing.c      **** volatile uint8 fireStepPhase = 0;
+  13:firing.c      **** volatile uint8 fireInProgress = 0;
+  14:firing.c      **** 
+  15:firing.c      **** void fireMechanism(void)
+  16:firing.c      **** {
+  28              		.loc 1 16 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 38B5     		push	{r3, r4, r5, lr}
+  33              		.cfi_def_cfa_offset 16
+  34              		.cfi_offset 3, -16
+  35              		.cfi_offset 4, -12
+  36              		.cfi_offset 5, -8
+  37              		.cfi_offset 14, -4
+  17:firing.c      ****     fireStepPhase = 0;
+  38              		.loc 1 17 0
+  39 0002 0B4C     		ldr	r4, .L3
+  40 0004 0025     		movs	r5, #0
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 2
+
+
+  41 0006 2570     		strb	r5, [r4]
+  18:firing.c      ****     fireDirection = 1;
+  42              		.loc 1 18 0
+  43 0008 0120     		movs	r0, #1
+  44 000a 0A4B     		ldr	r3, .L3+4
+  45 000c 1870     		strb	r0, [r3]
+  19:firing.c      ****     fireInProgress = 1;
+  46              		.loc 1 19 0
+  47 000e 6070     		strb	r0, [r4, #1]
+  20:firing.c      **** 
+  21:firing.c      ****     FIRE_DIR_PIN_FORWARD;
+  48              		.loc 1 21 0
+  49 0010 FFF7FEFF 		bl	fireDirPin_Write
+  50              	.LVL0:
+  22:firing.c      ****     fireStepsRemaining = FIRE_MAX_STEPS;
+  51              		.loc 1 22 0
+  52 0014 4623     		movs	r3, #70
+  53 0016 6380     		strh	r3, [r4, #2]	@ movhi
+  23:firing.c      **** 
+  24:firing.c      ****     Timer_1_Stop();
+  54              		.loc 1 24 0
+  55 0018 FFF7FEFF 		bl	Timer_1_Stop
+  56              	.LVL1:
+  25:firing.c      ****     Timer_1_WritePeriod(TIMER_PERIOD);
+  57              		.loc 1 25 0
+  58 001c 1920     		movs	r0, #25
+  59 001e FFF7FEFF 		bl	Timer_1_WritePeriod
+  60              	.LVL2:
+  26:firing.c      ****     Timer_1_WriteCounter(0);
+  61              		.loc 1 26 0
+  62 0022 2846     		mov	r0, r5
+  63 0024 FFF7FEFF 		bl	Timer_1_WriteCounter
+  64              	.LVL3:
+  27:firing.c      ****     Timer_1_Start();
+  65              		.loc 1 27 0
+  66 0028 FFF7FEFF 		bl	Timer_1_Start
+  67              	.LVL4:
+  68 002c 38BD     		pop	{r3, r4, r5, pc}
+  69              	.L4:
+  70 002e 00BF     		.align	2
+  71              	.L3:
+  72 0030 00000000 		.word	.LANCHOR0
+  73 0034 00000000 		.word	.LANCHOR1
+  74              		.cfi_endproc
+  75              	.LFE63:
+  76              		.size	fireMechanism, .-fireMechanism
+  77              		.section	.text.initFiringPins,"ax",%progbits
+  78              		.align	2
+  79              		.global	initFiringPins
+  80              		.thumb
+  81              		.thumb_func
+  82              		.type	initFiringPins, %function
+  83              	initFiringPins:
+  84              	.LFB64:
+  28:firing.c      **** }
+  29:firing.c      **** 
+  30:firing.c      **** void initFiringPins(void)
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 3
+
+
+  31:firing.c      **** {
+  85              		.loc 1 31 0
+  86              		.cfi_startproc
+  87              		@ args = 0, pretend = 0, frame = 0
+  88              		@ frame_needed = 0, uses_anonymous_args = 0
+  89 0000 08B5     		push	{r3, lr}
+  90              		.cfi_def_cfa_offset 8
+  91              		.cfi_offset 3, -8
+  92              		.cfi_offset 14, -4
+  32:firing.c      ****     fireStepPin_Write(0);
+  93              		.loc 1 32 0
+  94 0002 0020     		movs	r0, #0
+  95 0004 FFF7FEFF 		bl	fireStepPin_Write
+  96              	.LVL5:
+  33:firing.c      ****     fireDirPin_Write(0);
+  97              		.loc 1 33 0
+  98 0008 0020     		movs	r0, #0
+  99 000a FFF7FEFF 		bl	fireDirPin_Write
+ 100              	.LVL6:
+ 101 000e 08BD     		pop	{r3, pc}
+ 102              		.cfi_endproc
+ 103              	.LFE64:
+ 104              		.size	initFiringPins, .-initFiringPins
+ 105              		.global	fireInProgress
+ 106              		.global	fireStepPhase
+ 107              		.global	fireDirection
+ 108              		.global	fireStepsRemaining
+ 109              		.data
+ 110              		.set	.LANCHOR1,. + 0
+ 111              		.type	fireDirection, %object
+ 112              		.size	fireDirection, 1
+ 113              	fireDirection:
+ 114 0000 01       		.byte	1
+ 115              		.bss
+ 116              		.align	1
+ 117              		.set	.LANCHOR0,. + 0
+ 118              		.type	fireStepPhase, %object
+ 119              		.size	fireStepPhase, 1
+ 120              	fireStepPhase:
+ 121 0000 00       		.space	1
+ 122              		.type	fireInProgress, %object
+ 123              		.size	fireInProgress, 1
+ 124              	fireInProgress:
+ 125 0001 00       		.space	1
+ 126              		.type	fireStepsRemaining, %object
+ 127              		.size	fireStepsRemaining, 2
+ 128              	fireStepsRemaining:
+ 129 0002 0000     		.space	2
+ 130              		.text
+ 131              	.Letext0:
+ 132              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 133              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 134              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 135              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 136              		.file 6 "Generated_Source\\PSoC5/fireDirPin.h"
+ 137              		.file 7 "Generated_Source\\PSoC5/Timer_1.h"
+ 138              		.file 8 "Generated_Source\\PSoC5/fireStepPin.h"
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 4
+
+
+ 139              		.section	.debug_info,"",%progbits
+ 140              	.Ldebug_info0:
+ 141 0000 05020000 		.4byte	0x205
+ 142 0004 0400     		.2byte	0x4
+ 143 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 144 000a 04       		.byte	0x4
+ 145 000b 01       		.uleb128 0x1
+ 146 000c 57000000 		.4byte	.LASF32
+ 147 0010 0C       		.byte	0xc
+ 148 0011 3A000000 		.4byte	.LASF33
+ 149 0015 D2010000 		.4byte	.LASF34
+ 150 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 151 001d 00000000 		.4byte	0
+ 152 0021 00000000 		.4byte	.Ldebug_line0
+ 153 0025 02       		.uleb128 0x2
+ 154 0026 01       		.byte	0x1
+ 155 0027 06       		.byte	0x6
+ 156 0028 99020000 		.4byte	.LASF0
+ 157 002c 02       		.uleb128 0x2
+ 158 002d 01       		.byte	0x1
+ 159 002e 08       		.byte	0x8
+ 160 002f 49000000 		.4byte	.LASF1
+ 161 0033 02       		.uleb128 0x2
+ 162 0034 02       		.byte	0x2
+ 163 0035 05       		.byte	0x5
+ 164 0036 74020000 		.4byte	.LASF2
+ 165 003a 02       		.uleb128 0x2
+ 166 003b 02       		.byte	0x2
+ 167 003c 07       		.byte	0x7
+ 168 003d 0B010000 		.4byte	.LASF3
+ 169 0041 03       		.uleb128 0x3
+ 170 0042 22000000 		.4byte	.LASF9
+ 171 0046 02       		.byte	0x2
+ 172 0047 3F       		.byte	0x3f
+ 173 0048 4C000000 		.4byte	0x4c
+ 174 004c 02       		.uleb128 0x2
+ 175 004d 04       		.byte	0x4
+ 176 004e 05       		.byte	0x5
+ 177 004f 84020000 		.4byte	.LASF4
+ 178 0053 02       		.uleb128 0x2
+ 179 0054 04       		.byte	0x4
+ 180 0055 07       		.byte	0x7
+ 181 0056 F9000000 		.4byte	.LASF5
+ 182 005a 02       		.uleb128 0x2
+ 183 005b 08       		.byte	0x8
+ 184 005c 05       		.byte	0x5
+ 185 005d 50020000 		.4byte	.LASF6
+ 186 0061 02       		.uleb128 0x2
+ 187 0062 08       		.byte	0x8
+ 188 0063 07       		.byte	0x7
+ 189 0064 83010000 		.4byte	.LASF7
+ 190 0068 04       		.uleb128 0x4
+ 191 0069 04       		.byte	0x4
+ 192 006a 05       		.byte	0x5
+ 193 006b 696E7400 		.ascii	"int\000"
+ 194 006f 02       		.uleb128 0x2
+ 195 0070 04       		.byte	0x4
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 5
+
+
+ 196 0071 07       		.byte	0x7
+ 197 0072 67010000 		.4byte	.LASF8
+ 198 0076 03       		.uleb128 0x3
+ 199 0077 C1010000 		.4byte	.LASF10
+ 200 007b 03       		.byte	0x3
+ 201 007c 2C       		.byte	0x2c
+ 202 007d 41000000 		.4byte	0x41
+ 203 0081 05       		.uleb128 0x5
+ 204 0082 7E020000 		.4byte	.LASF11
+ 205 0086 04       		.byte	0x4
+ 206 0087 E901     		.2byte	0x1e9
+ 207 0089 2C000000 		.4byte	0x2c
+ 208 008d 05       		.uleb128 0x5
+ 209 008e 32010000 		.4byte	.LASF12
+ 210 0092 04       		.byte	0x4
+ 211 0093 EC01     		.2byte	0x1ec
+ 212 0095 25000000 		.4byte	0x25
+ 213 0099 05       		.uleb128 0x5
+ 214 009a F3000000 		.4byte	.LASF13
+ 215 009e 04       		.byte	0x4
+ 216 009f ED01     		.2byte	0x1ed
+ 217 00a1 33000000 		.4byte	0x33
+ 218 00a5 02       		.uleb128 0x2
+ 219 00a6 04       		.byte	0x4
+ 220 00a7 04       		.byte	0x4
+ 221 00a8 43000000 		.4byte	.LASF14
+ 222 00ac 02       		.uleb128 0x2
+ 223 00ad 08       		.byte	0x8
+ 224 00ae 04       		.byte	0x4
+ 225 00af 2B010000 		.4byte	.LASF15
+ 226 00b3 02       		.uleb128 0x2
+ 227 00b4 01       		.byte	0x1
+ 228 00b5 08       		.byte	0x8
+ 229 00b6 6F020000 		.4byte	.LASF16
+ 230 00ba 06       		.uleb128 0x6
+ 231 00bb 81000000 		.4byte	0x81
+ 232 00bf 02       		.uleb128 0x2
+ 233 00c0 08       		.byte	0x8
+ 234 00c1 04       		.byte	0x4
+ 235 00c2 8D020000 		.4byte	.LASF17
+ 236 00c6 02       		.uleb128 0x2
+ 237 00c7 04       		.byte	0x4
+ 238 00c8 07       		.byte	0x7
+ 239 00c9 C9010000 		.4byte	.LASF18
+ 240 00cd 07       		.uleb128 0x7
+ 241 00ce 37010000 		.4byte	.LASF19
+ 242 00d2 01       		.byte	0x1
+ 243 00d3 0F       		.byte	0xf
+ 244 00d4 00000000 		.4byte	.LFB63
+ 245 00d8 38000000 		.4byte	.LFE63-.LFB63
+ 246 00dc 01       		.uleb128 0x1
+ 247 00dd 9C       		.byte	0x9c
+ 248 00de 2F010000 		.4byte	0x12f
+ 249 00e2 08       		.uleb128 0x8
+ 250 00e3 14000000 		.4byte	.LVL0
+ 251 00e7 C6010000 		.4byte	0x1c6
+ 252 00eb F5000000 		.4byte	0xf5
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 6
+
+
+ 253 00ef 09       		.uleb128 0x9
+ 254 00f0 01       		.uleb128 0x1
+ 255 00f1 50       		.byte	0x50
+ 256 00f2 01       		.uleb128 0x1
+ 257 00f3 31       		.byte	0x31
+ 258 00f4 00       		.byte	0
+ 259 00f5 0A       		.uleb128 0xa
+ 260 00f6 1C000000 		.4byte	.LVL1
+ 261 00fa D1010000 		.4byte	0x1d1
+ 262 00fe 08       		.uleb128 0x8
+ 263 00ff 22000000 		.4byte	.LVL2
+ 264 0103 DC010000 		.4byte	0x1dc
+ 265 0107 11010000 		.4byte	0x111
+ 266 010b 09       		.uleb128 0x9
+ 267 010c 01       		.uleb128 0x1
+ 268 010d 50       		.byte	0x50
+ 269 010e 01       		.uleb128 0x1
+ 270 010f 49       		.byte	0x49
+ 271 0110 00       		.byte	0
+ 272 0111 08       		.uleb128 0x8
+ 273 0112 28000000 		.4byte	.LVL3
+ 274 0116 E7010000 		.4byte	0x1e7
+ 275 011a 25010000 		.4byte	0x125
+ 276 011e 09       		.uleb128 0x9
+ 277 011f 01       		.uleb128 0x1
+ 278 0120 50       		.byte	0x50
+ 279 0121 02       		.uleb128 0x2
+ 280 0122 75       		.byte	0x75
+ 281 0123 00       		.sleb128 0
+ 282 0124 00       		.byte	0
+ 283 0125 0A       		.uleb128 0xa
+ 284 0126 2C000000 		.4byte	.LVL4
+ 285 012a F2010000 		.4byte	0x1f2
+ 286 012e 00       		.byte	0
+ 287 012f 07       		.uleb128 0x7
+ 288 0130 58010000 		.4byte	.LASF20
+ 289 0134 01       		.byte	0x1
+ 290 0135 1E       		.byte	0x1e
+ 291 0136 00000000 		.4byte	.LFB64
+ 292 013a 10000000 		.4byte	.LFE64-.LFB64
+ 293 013e 01       		.uleb128 0x1
+ 294 013f 9C       		.byte	0x9c
+ 295 0140 67010000 		.4byte	0x167
+ 296 0144 08       		.uleb128 0x8
+ 297 0145 08000000 		.4byte	.LVL5
+ 298 0149 FD010000 		.4byte	0x1fd
+ 299 014d 57010000 		.4byte	0x157
+ 300 0151 09       		.uleb128 0x9
+ 301 0152 01       		.uleb128 0x1
+ 302 0153 50       		.byte	0x50
+ 303 0154 01       		.uleb128 0x1
+ 304 0155 30       		.byte	0x30
+ 305 0156 00       		.byte	0
+ 306 0157 0B       		.uleb128 0xb
+ 307 0158 0E000000 		.4byte	.LVL6
+ 308 015c C6010000 		.4byte	0x1c6
+ 309 0160 09       		.uleb128 0x9
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 7
+
+
+ 310 0161 01       		.uleb128 0x1
+ 311 0162 50       		.byte	0x50
+ 312 0163 01       		.uleb128 0x1
+ 313 0164 30       		.byte	0x30
+ 314 0165 00       		.byte	0
+ 315 0166 00       		.byte	0
+ 316 0167 0C       		.uleb128 0xc
+ 317 0168 1E010000 		.4byte	.LASF21
+ 318 016c 05       		.byte	0x5
+ 319 016d 1207     		.2byte	0x712
+ 320 016f 73010000 		.4byte	0x173
+ 321 0173 06       		.uleb128 0x6
+ 322 0174 76000000 		.4byte	0x76
+ 323 0178 0D       		.uleb128 0xd
+ 324 0179 45010000 		.4byte	.LASF22
+ 325 017d 01       		.byte	0x1
+ 326 017e 0A       		.byte	0xa
+ 327 017f 89010000 		.4byte	0x189
+ 328 0183 05       		.uleb128 0x5
+ 329 0184 03       		.byte	0x3
+ 330 0185 00000000 		.4byte	fireStepsRemaining
+ 331 0189 06       		.uleb128 0x6
+ 332 018a 99000000 		.4byte	0x99
+ 333 018e 0D       		.uleb128 0xd
+ 334 018f 2C000000 		.4byte	.LASF23
+ 335 0193 01       		.byte	0x1
+ 336 0194 0B       		.byte	0xb
+ 337 0195 9F010000 		.4byte	0x19f
+ 338 0199 05       		.uleb128 0x5
+ 339 019a 03       		.byte	0x3
+ 340 019b 00000000 		.4byte	fireDirection
+ 341 019f 06       		.uleb128 0x6
+ 342 01a0 8D000000 		.4byte	0x8d
+ 343 01a4 0D       		.uleb128 0xd
+ 344 01a5 E5000000 		.4byte	.LASF24
+ 345 01a9 01       		.byte	0x1
+ 346 01aa 0C       		.byte	0xc
+ 347 01ab BA000000 		.4byte	0xba
+ 348 01af 05       		.uleb128 0x5
+ 349 01b0 03       		.byte	0x3
+ 350 01b1 00000000 		.4byte	fireStepPhase
+ 351 01b5 0D       		.uleb128 0xd
+ 352 01b6 74010000 		.4byte	.LASF25
+ 353 01ba 01       		.byte	0x1
+ 354 01bb 0D       		.byte	0xd
+ 355 01bc BA000000 		.4byte	0xba
+ 356 01c0 05       		.uleb128 0x5
+ 357 01c1 03       		.byte	0x3
+ 358 01c2 00000000 		.4byte	fireInProgress
+ 359 01c6 0E       		.uleb128 0xe
+ 360 01c7 5E020000 		.4byte	.LASF26
+ 361 01cb 5E020000 		.4byte	.LASF26
+ 362 01cf 06       		.byte	0x6
+ 363 01d0 26       		.byte	0x26
+ 364 01d1 0E       		.uleb128 0xe
+ 365 01d2 A5020000 		.4byte	.LASF27
+ 366 01d6 A5020000 		.4byte	.LASF27
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 8
+
+
+ 367 01da 07       		.byte	0x7
+ 368 01db 5B       		.byte	0x5b
+ 369 01dc 0E       		.uleb128 0xe
+ 370 01dd 0E000000 		.4byte	.LASF28
+ 371 01e1 0E000000 		.4byte	.LASF28
+ 372 01e5 07       		.byte	0x7
+ 373 01e6 68       		.byte	0x68
+ 374 01e7 0E       		.uleb128 0xe
+ 375 01e8 9A010000 		.4byte	.LASF29
+ 376 01ec 9A010000 		.4byte	.LASF29
+ 377 01f0 07       		.byte	0x7
+ 378 01f1 6A       		.byte	0x6a
+ 379 01f2 0E       		.uleb128 0xe
+ 380 01f3 00000000 		.4byte	.LASF30
+ 381 01f7 00000000 		.4byte	.LASF30
+ 382 01fb 07       		.byte	0x7
+ 383 01fc 5A       		.byte	0x5a
+ 384 01fd 0E       		.uleb128 0xe
+ 385 01fe AF010000 		.4byte	.LASF31
+ 386 0202 AF010000 		.4byte	.LASF31
+ 387 0206 08       		.byte	0x8
+ 388 0207 26       		.byte	0x26
+ 389 0208 00       		.byte	0
+ 390              		.section	.debug_abbrev,"",%progbits
+ 391              	.Ldebug_abbrev0:
+ 392 0000 01       		.uleb128 0x1
+ 393 0001 11       		.uleb128 0x11
+ 394 0002 01       		.byte	0x1
+ 395 0003 25       		.uleb128 0x25
+ 396 0004 0E       		.uleb128 0xe
+ 397 0005 13       		.uleb128 0x13
+ 398 0006 0B       		.uleb128 0xb
+ 399 0007 03       		.uleb128 0x3
+ 400 0008 0E       		.uleb128 0xe
+ 401 0009 1B       		.uleb128 0x1b
+ 402 000a 0E       		.uleb128 0xe
+ 403 000b 55       		.uleb128 0x55
+ 404 000c 17       		.uleb128 0x17
+ 405 000d 11       		.uleb128 0x11
+ 406 000e 01       		.uleb128 0x1
+ 407 000f 10       		.uleb128 0x10
+ 408 0010 17       		.uleb128 0x17
+ 409 0011 00       		.byte	0
+ 410 0012 00       		.byte	0
+ 411 0013 02       		.uleb128 0x2
+ 412 0014 24       		.uleb128 0x24
+ 413 0015 00       		.byte	0
+ 414 0016 0B       		.uleb128 0xb
+ 415 0017 0B       		.uleb128 0xb
+ 416 0018 3E       		.uleb128 0x3e
+ 417 0019 0B       		.uleb128 0xb
+ 418 001a 03       		.uleb128 0x3
+ 419 001b 0E       		.uleb128 0xe
+ 420 001c 00       		.byte	0
+ 421 001d 00       		.byte	0
+ 422 001e 03       		.uleb128 0x3
+ 423 001f 16       		.uleb128 0x16
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 9
+
+
+ 424 0020 00       		.byte	0
+ 425 0021 03       		.uleb128 0x3
+ 426 0022 0E       		.uleb128 0xe
+ 427 0023 3A       		.uleb128 0x3a
+ 428 0024 0B       		.uleb128 0xb
+ 429 0025 3B       		.uleb128 0x3b
+ 430 0026 0B       		.uleb128 0xb
+ 431 0027 49       		.uleb128 0x49
+ 432 0028 13       		.uleb128 0x13
+ 433 0029 00       		.byte	0
+ 434 002a 00       		.byte	0
+ 435 002b 04       		.uleb128 0x4
+ 436 002c 24       		.uleb128 0x24
+ 437 002d 00       		.byte	0
+ 438 002e 0B       		.uleb128 0xb
+ 439 002f 0B       		.uleb128 0xb
+ 440 0030 3E       		.uleb128 0x3e
+ 441 0031 0B       		.uleb128 0xb
+ 442 0032 03       		.uleb128 0x3
+ 443 0033 08       		.uleb128 0x8
+ 444 0034 00       		.byte	0
+ 445 0035 00       		.byte	0
+ 446 0036 05       		.uleb128 0x5
+ 447 0037 16       		.uleb128 0x16
+ 448 0038 00       		.byte	0
+ 449 0039 03       		.uleb128 0x3
+ 450 003a 0E       		.uleb128 0xe
+ 451 003b 3A       		.uleb128 0x3a
+ 452 003c 0B       		.uleb128 0xb
+ 453 003d 3B       		.uleb128 0x3b
+ 454 003e 05       		.uleb128 0x5
+ 455 003f 49       		.uleb128 0x49
+ 456 0040 13       		.uleb128 0x13
+ 457 0041 00       		.byte	0
+ 458 0042 00       		.byte	0
+ 459 0043 06       		.uleb128 0x6
+ 460 0044 35       		.uleb128 0x35
+ 461 0045 00       		.byte	0
+ 462 0046 49       		.uleb128 0x49
+ 463 0047 13       		.uleb128 0x13
+ 464 0048 00       		.byte	0
+ 465 0049 00       		.byte	0
+ 466 004a 07       		.uleb128 0x7
+ 467 004b 2E       		.uleb128 0x2e
+ 468 004c 01       		.byte	0x1
+ 469 004d 3F       		.uleb128 0x3f
+ 470 004e 19       		.uleb128 0x19
+ 471 004f 03       		.uleb128 0x3
+ 472 0050 0E       		.uleb128 0xe
+ 473 0051 3A       		.uleb128 0x3a
+ 474 0052 0B       		.uleb128 0xb
+ 475 0053 3B       		.uleb128 0x3b
+ 476 0054 0B       		.uleb128 0xb
+ 477 0055 27       		.uleb128 0x27
+ 478 0056 19       		.uleb128 0x19
+ 479 0057 11       		.uleb128 0x11
+ 480 0058 01       		.uleb128 0x1
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 10
+
+
+ 481 0059 12       		.uleb128 0x12
+ 482 005a 06       		.uleb128 0x6
+ 483 005b 40       		.uleb128 0x40
+ 484 005c 18       		.uleb128 0x18
+ 485 005d 9742     		.uleb128 0x2117
+ 486 005f 19       		.uleb128 0x19
+ 487 0060 01       		.uleb128 0x1
+ 488 0061 13       		.uleb128 0x13
+ 489 0062 00       		.byte	0
+ 490 0063 00       		.byte	0
+ 491 0064 08       		.uleb128 0x8
+ 492 0065 898201   		.uleb128 0x4109
+ 493 0068 01       		.byte	0x1
+ 494 0069 11       		.uleb128 0x11
+ 495 006a 01       		.uleb128 0x1
+ 496 006b 31       		.uleb128 0x31
+ 497 006c 13       		.uleb128 0x13
+ 498 006d 01       		.uleb128 0x1
+ 499 006e 13       		.uleb128 0x13
+ 500 006f 00       		.byte	0
+ 501 0070 00       		.byte	0
+ 502 0071 09       		.uleb128 0x9
+ 503 0072 8A8201   		.uleb128 0x410a
+ 504 0075 00       		.byte	0
+ 505 0076 02       		.uleb128 0x2
+ 506 0077 18       		.uleb128 0x18
+ 507 0078 9142     		.uleb128 0x2111
+ 508 007a 18       		.uleb128 0x18
+ 509 007b 00       		.byte	0
+ 510 007c 00       		.byte	0
+ 511 007d 0A       		.uleb128 0xa
+ 512 007e 898201   		.uleb128 0x4109
+ 513 0081 00       		.byte	0
+ 514 0082 11       		.uleb128 0x11
+ 515 0083 01       		.uleb128 0x1
+ 516 0084 31       		.uleb128 0x31
+ 517 0085 13       		.uleb128 0x13
+ 518 0086 00       		.byte	0
+ 519 0087 00       		.byte	0
+ 520 0088 0B       		.uleb128 0xb
+ 521 0089 898201   		.uleb128 0x4109
+ 522 008c 01       		.byte	0x1
+ 523 008d 11       		.uleb128 0x11
+ 524 008e 01       		.uleb128 0x1
+ 525 008f 31       		.uleb128 0x31
+ 526 0090 13       		.uleb128 0x13
+ 527 0091 00       		.byte	0
+ 528 0092 00       		.byte	0
+ 529 0093 0C       		.uleb128 0xc
+ 530 0094 34       		.uleb128 0x34
+ 531 0095 00       		.byte	0
+ 532 0096 03       		.uleb128 0x3
+ 533 0097 0E       		.uleb128 0xe
+ 534 0098 3A       		.uleb128 0x3a
+ 535 0099 0B       		.uleb128 0xb
+ 536 009a 3B       		.uleb128 0x3b
+ 537 009b 05       		.uleb128 0x5
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 11
+
+
+ 538 009c 49       		.uleb128 0x49
+ 539 009d 13       		.uleb128 0x13
+ 540 009e 3F       		.uleb128 0x3f
+ 541 009f 19       		.uleb128 0x19
+ 542 00a0 3C       		.uleb128 0x3c
+ 543 00a1 19       		.uleb128 0x19
+ 544 00a2 00       		.byte	0
+ 545 00a3 00       		.byte	0
+ 546 00a4 0D       		.uleb128 0xd
+ 547 00a5 34       		.uleb128 0x34
+ 548 00a6 00       		.byte	0
+ 549 00a7 03       		.uleb128 0x3
+ 550 00a8 0E       		.uleb128 0xe
+ 551 00a9 3A       		.uleb128 0x3a
+ 552 00aa 0B       		.uleb128 0xb
+ 553 00ab 3B       		.uleb128 0x3b
+ 554 00ac 0B       		.uleb128 0xb
+ 555 00ad 49       		.uleb128 0x49
+ 556 00ae 13       		.uleb128 0x13
+ 557 00af 3F       		.uleb128 0x3f
+ 558 00b0 19       		.uleb128 0x19
+ 559 00b1 02       		.uleb128 0x2
+ 560 00b2 18       		.uleb128 0x18
+ 561 00b3 00       		.byte	0
+ 562 00b4 00       		.byte	0
+ 563 00b5 0E       		.uleb128 0xe
+ 564 00b6 2E       		.uleb128 0x2e
+ 565 00b7 00       		.byte	0
+ 566 00b8 3F       		.uleb128 0x3f
+ 567 00b9 19       		.uleb128 0x19
+ 568 00ba 3C       		.uleb128 0x3c
+ 569 00bb 19       		.uleb128 0x19
+ 570 00bc 6E       		.uleb128 0x6e
+ 571 00bd 0E       		.uleb128 0xe
+ 572 00be 03       		.uleb128 0x3
+ 573 00bf 0E       		.uleb128 0xe
+ 574 00c0 3A       		.uleb128 0x3a
+ 575 00c1 0B       		.uleb128 0xb
+ 576 00c2 3B       		.uleb128 0x3b
+ 577 00c3 0B       		.uleb128 0xb
+ 578 00c4 00       		.byte	0
+ 579 00c5 00       		.byte	0
+ 580 00c6 00       		.byte	0
+ 581              		.section	.debug_aranges,"",%progbits
+ 582 0000 24000000 		.4byte	0x24
+ 583 0004 0200     		.2byte	0x2
+ 584 0006 00000000 		.4byte	.Ldebug_info0
+ 585 000a 04       		.byte	0x4
+ 586 000b 00       		.byte	0
+ 587 000c 0000     		.2byte	0
+ 588 000e 0000     		.2byte	0
+ 589 0010 00000000 		.4byte	.LFB63
+ 590 0014 38000000 		.4byte	.LFE63-.LFB63
+ 591 0018 00000000 		.4byte	.LFB64
+ 592 001c 10000000 		.4byte	.LFE64-.LFB64
+ 593 0020 00000000 		.4byte	0
+ 594 0024 00000000 		.4byte	0
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 12
+
+
+ 595              		.section	.debug_ranges,"",%progbits
+ 596              	.Ldebug_ranges0:
+ 597 0000 00000000 		.4byte	.LFB63
+ 598 0004 38000000 		.4byte	.LFE63
+ 599 0008 00000000 		.4byte	.LFB64
+ 600 000c 10000000 		.4byte	.LFE64
+ 601 0010 00000000 		.4byte	0
+ 602 0014 00000000 		.4byte	0
+ 603              		.section	.debug_line,"",%progbits
+ 604              	.Ldebug_line0:
+ 605 0000 AB010000 		.section	.debug_str,"MS",%progbits,1
+ 605      02007C01 
+ 605      00000201 
+ 605      FB0E0D00 
+ 605      01010101 
+ 606              	.LASF30:
+ 607 0000 54696D65 		.ascii	"Timer_1_Start\000"
+ 607      725F315F 
+ 607      53746172 
+ 607      7400
+ 608              	.LASF28:
+ 609 000e 54696D65 		.ascii	"Timer_1_WritePeriod\000"
+ 609      725F315F 
+ 609      57726974 
+ 609      65506572 
+ 609      696F6400 
+ 610              	.LASF9:
+ 611 0022 5F5F696E 		.ascii	"__int32_t\000"
+ 611      7433325F 
+ 611      7400
+ 612              	.LASF23:
+ 613 002c 66697265 		.ascii	"fireDirection\000"
+ 613      44697265 
+ 613      6374696F 
+ 613      6E00
+ 614              	.LASF33:
+ 615 003a 66697269 		.ascii	"firing.c\000"
+ 615      6E672E63 
+ 615      00
+ 616              	.LASF14:
+ 617 0043 666C6F61 		.ascii	"float\000"
+ 617      7400
+ 618              	.LASF1:
+ 619 0049 756E7369 		.ascii	"unsigned char\000"
+ 619      676E6564 
+ 619      20636861 
+ 619      7200
+ 620              	.LASF32:
+ 621 0057 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 621      43313120 
+ 621      352E342E 
+ 621      31203230 
+ 621      31363036 
+ 622 008a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 622      20726576 
+ 622      6973696F 
+ 622      6E203233 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 13
+
+
+ 622      37373135 
+ 623 00bd 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 623      66756E63 
+ 623      74696F6E 
+ 623      2D736563 
+ 623      74696F6E 
+ 624              	.LASF24:
+ 625 00e5 66697265 		.ascii	"fireStepPhase\000"
+ 625      53746570 
+ 625      50686173 
+ 625      6500
+ 626              	.LASF13:
+ 627 00f3 696E7431 		.ascii	"int16\000"
+ 627      3600
+ 628              	.LASF5:
+ 629 00f9 6C6F6E67 		.ascii	"long unsigned int\000"
+ 629      20756E73 
+ 629      69676E65 
+ 629      6420696E 
+ 629      7400
+ 630              	.LASF3:
+ 631 010b 73686F72 		.ascii	"short unsigned int\000"
+ 631      7420756E 
+ 631      7369676E 
+ 631      65642069 
+ 631      6E7400
+ 632              	.LASF21:
+ 633 011e 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 633      52784275 
+ 633      66666572 
+ 633      00
+ 634              	.LASF15:
+ 635 012b 646F7562 		.ascii	"double\000"
+ 635      6C6500
+ 636              	.LASF12:
+ 637 0132 696E7438 		.ascii	"int8\000"
+ 637      00
+ 638              	.LASF19:
+ 639 0137 66697265 		.ascii	"fireMechanism\000"
+ 639      4D656368 
+ 639      616E6973 
+ 639      6D00
+ 640              	.LASF22:
+ 641 0145 66697265 		.ascii	"fireStepsRemaining\000"
+ 641      53746570 
+ 641      7352656D 
+ 641      61696E69 
+ 641      6E6700
+ 642              	.LASF20:
+ 643 0158 696E6974 		.ascii	"initFiringPins\000"
+ 643      46697269 
+ 643      6E675069 
+ 643      6E7300
+ 644              	.LASF8:
+ 645 0167 756E7369 		.ascii	"unsigned int\000"
+ 645      676E6564 
+ 645      20696E74 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 14
+
+
+ 645      00
+ 646              	.LASF25:
+ 647 0174 66697265 		.ascii	"fireInProgress\000"
+ 647      496E5072 
+ 647      6F677265 
+ 647      737300
+ 648              	.LASF7:
+ 649 0183 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 649      206C6F6E 
+ 649      6720756E 
+ 649      7369676E 
+ 649      65642069 
+ 650              	.LASF29:
+ 651 019a 54696D65 		.ascii	"Timer_1_WriteCounter\000"
+ 651      725F315F 
+ 651      57726974 
+ 651      65436F75 
+ 651      6E746572 
+ 652              	.LASF31:
+ 653 01af 66697265 		.ascii	"fireStepPin_Write\000"
+ 653      53746570 
+ 653      50696E5F 
+ 653      57726974 
+ 653      6500
+ 654              	.LASF10:
+ 655 01c1 696E7433 		.ascii	"int32_t\000"
+ 655      325F7400 
+ 656              	.LASF18:
+ 657 01c9 73697A65 		.ascii	"sizetype\000"
+ 657      74797065 
+ 657      00
+ 658              	.LASF34:
+ 659 01d2 433A5C55 		.ascii	"C:\\Users\\peter\\OneDrive - Aarhus universitet\\Do"
+ 659      73657273 
+ 659      5C706574 
+ 659      65725C4F 
+ 659      6E654472 
+ 660 0201 6B756D65 		.ascii	"kumenter\\PSoC Creator\\NEW_stepperMotor\\Modultest"
+ 660      6E746572 
+ 660      5C50536F 
+ 660      43204372 
+ 660      6561746F 
+ 661 0231 20666F72 		.ascii	" for stepper og affyring.cydsn\000"
+ 661      20737465 
+ 661      70706572 
+ 661      206F6720 
+ 661      61666679 
+ 662              	.LASF6:
+ 663 0250 6C6F6E67 		.ascii	"long long int\000"
+ 663      206C6F6E 
+ 663      6720696E 
+ 663      7400
+ 664              	.LASF26:
+ 665 025e 66697265 		.ascii	"fireDirPin_Write\000"
+ 665      44697250 
+ 665      696E5F57 
+ 665      72697465 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccxJBlGC.s 			page 15
+
+
+ 665      00
+ 666              	.LASF16:
+ 667 026f 63686172 		.ascii	"char\000"
+ 667      00
+ 668              	.LASF2:
+ 669 0274 73686F72 		.ascii	"short int\000"
+ 669      7420696E 
+ 669      7400
+ 670              	.LASF11:
+ 671 027e 75696E74 		.ascii	"uint8\000"
+ 671      3800
+ 672              	.LASF4:
+ 673 0284 6C6F6E67 		.ascii	"long int\000"
+ 673      20696E74 
+ 673      00
+ 674              	.LASF17:
+ 675 028d 6C6F6E67 		.ascii	"long double\000"
+ 675      20646F75 
+ 675      626C6500 
+ 676              	.LASF0:
+ 677 0299 7369676E 		.ascii	"signed char\000"
+ 677      65642063 
+ 677      68617200 
+ 678              	.LASF27:
+ 679 02a5 54696D65 		.ascii	"Timer_1_Stop\000"
+ 679      725F315F 
+ 679      53746F70 
+ 679      00
+ 680              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
