@@ -114,6 +114,7 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
         }
     }
 
+
     cout << "Stopping Bluetooth sender/receiver loop." << endl;
     close(s);
 }
