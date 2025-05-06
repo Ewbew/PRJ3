@@ -1,0 +1,1242 @@
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"stepper.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.setStepperTargets,"ax",%progbits
+  20              		.align	2
+  21              		.global	setStepperTargets
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	setStepperTargets, %function
+  25              	setStepperTargets:
+  26              	.LFB63:
+  27              		.file 1 "stepper.c"
+   1:stepper.c     **** #include "stepper.h"
+   2:stepper.c     **** #include <stdlib.h>
+   3:stepper.c     **** 
+   4:stepper.c     **** // Pin-makroer
+   5:stepper.c     **** #define DIAL_STEP_PIN_STEP    dialStepPin_Write(1)
+   6:stepper.c     **** #define DIAL_STEP_PIN_RESET   dialStepPin_Write(0)
+   7:stepper.c     **** #define DIAL_DIR_PIN_FORWARD  dialDirPin_Write(1)
+   8:stepper.c     **** #define DIAL_DIR_PIN_BACKWARD dialDirPin_Write(0)
+   9:stepper.c     **** 
+  10:stepper.c     **** #define ANGLE_STEP_PIN_STEP    angleStepPin_Write(1)
+  11:stepper.c     **** #define ANGLE_STEP_PIN_RESET   angleStepPin_Write(0)
+  12:stepper.c     **** #define ANGLE_DIR_PIN_FORWARD  angleDirPin_Write(1)
+  13:stepper.c     **** #define ANGLE_DIR_PIN_BACKWARD angleDirPin_Write(0)
+  14:stepper.c     **** 
+  15:stepper.c     **** // Globale motorvariabler
+  16:stepper.c     **** volatile int8 dialCurrentPosition = 0;
+  17:stepper.c     **** volatile int8 dialDirection = 1;
+  18:stepper.c     **** volatile int8 dialStepsRemaining = 0;
+  19:stepper.c     **** 
+  20:stepper.c     **** volatile int8 angleCurrentPosition = 0;
+  21:stepper.c     **** volatile int8 angleDirection = 1;
+  22:stepper.c     **** volatile int8 angleStepsRemaining = 0;
+  23:stepper.c     **** 
+  24:stepper.c     **** void setStepperTargets(int8 dialTarget, int8 angleTarget)
+  25:stepper.c     **** {
+  28              		.loc 1 25 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 2
+
+
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  37 0002 0C46     		mov	r4, r1
+  26:stepper.c     ****     int16 delta;
+  27:stepper.c     **** 
+  28:stepper.c     ****     // Dial motor
+  29:stepper.c     ****     if (dialTarget > DIAL_MAX_POSITION) dialTarget = DIAL_MAX_POSITION;
+  38              		.loc 1 29 0
+  39 0004 6428     		cmp	r0, #100
+  40 0006 00DD     		ble	.L2
+  41 0008 6420     		movs	r0, #100
+  42              	.LVL1:
+  43              	.L2:
+  30:stepper.c     ****     if (dialTarget < DIAL_MIN_POSITION) dialTarget = DIAL_MIN_POSITION;
+  44              		.loc 1 30 0
+  45 000a 10F1640F 		cmn	r0, #100
+  46 000e 01DA     		bge	.L3
+  47 0010 6FF06300 		mvn	r0, #99
+  48              	.LVL2:
+  49              	.L3:
+  31:stepper.c     **** 
+  32:stepper.c     ****     delta = dialTarget - dialCurrentPosition;
+  50              		.loc 1 32 0
+  51 0014 2A4B     		ldr	r3, .L21
+  52 0016 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  53 0018 5BB2     		sxtb	r3, r3
+  54 001a C01A     		subs	r0, r0, r3
+  55              	.LVL3:
+  33:stepper.c     ****     dialDirection = (delta > 0) ? 1 : -1;
+  56              		.loc 1 33 0
+  57 001c 0028     		cmp	r0, #0
+  58 001e 01DD     		ble	.L16
+  59 0020 0122     		movs	r2, #1
+  60 0022 01E0     		b	.L4
+  61              	.L16:
+  62 0024 4FF0FF32 		mov	r2, #-1
+  63              	.L4:
+  64              		.loc 1 33 0 is_stmt 0 discriminator 4
+  65 0028 264B     		ldr	r3, .L21+4
+  66 002a 1A70     		strb	r2, [r3]
+  34:stepper.c     ****     dialStepsRemaining = abs(delta);
+  67              		.loc 1 34 0 is_stmt 1 discriminator 4
+  68 002c 0028     		cmp	r0, #0
+  69 002e B8BF     		it	lt
+  70 0030 4042     		rsblt	r0, r0, #0
+  71              	.LVL4:
+  72 0032 40B2     		sxtb	r0, r0
+  73 0034 224A     		ldr	r2, .L21
+  74 0036 5070     		strb	r0, [r2, #1]
+  35:stepper.c     ****     if (dialDirection > 0) DIAL_DIR_PIN_FORWARD; else DIAL_DIR_PIN_BACKWARD;
+  75              		.loc 1 35 0 discriminator 4
+  76 0038 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  77 003a 5BB2     		sxtb	r3, r3
+  78 003c 002B     		cmp	r3, #0
+  79 003e 03DD     		ble	.L5
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 3
+
+
+  80              		.loc 1 35 0 is_stmt 0 discriminator 1
+  81 0040 0120     		movs	r0, #1
+  82 0042 FFF7FEFF 		bl	dialDirPin_Write
+  83              	.LVL5:
+  84 0046 02E0     		b	.L6
+  85              	.LVL6:
+  86              	.L5:
+  87              		.loc 1 35 0 discriminator 2
+  88 0048 0020     		movs	r0, #0
+  89 004a FFF7FEFF 		bl	dialDirPin_Write
+  90              	.LVL7:
+  91              	.L6:
+  36:stepper.c     **** 
+  37:stepper.c     ****     // Angle motor
+  38:stepper.c     ****     if (angleTarget > ANGLE_MAX_POSITION) angleTarget = ANGLE_MAX_POSITION;
+  92              		.loc 1 38 0 is_stmt 1
+  93 004e 322C     		cmp	r4, #50
+  94 0050 00DD     		ble	.L7
+  95 0052 3224     		movs	r4, #50
+  96              	.L7:
+  97              	.LVL8:
+  39:stepper.c     ****     if (angleTarget < ANGLE_MIN_POSITION) angleTarget = ANGLE_MIN_POSITION;
+  98              		.loc 1 39 0
+  99 0054 002C     		cmp	r4, #0
+ 100 0056 00DA     		bge	.L8
+ 101 0058 0024     		movs	r4, #0
+ 102              	.LVL9:
+ 103              	.L8:
+  40:stepper.c     **** 
+  41:stepper.c     ****     delta = angleTarget - angleCurrentPosition;
+ 104              		.loc 1 41 0
+ 105 005a 194B     		ldr	r3, .L21
+ 106 005c 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 107 005e 5BB2     		sxtb	r3, r3
+ 108 0060 E41A     		subs	r4, r4, r3
+ 109              	.LVL10:
+  42:stepper.c     ****     angleDirection = (delta > 0) ? 1 : -1;
+ 110              		.loc 1 42 0
+ 111 0062 002C     		cmp	r4, #0
+ 112 0064 01DD     		ble	.L19
+ 113 0066 0122     		movs	r2, #1
+ 114 0068 01E0     		b	.L9
+ 115              	.L19:
+ 116 006a 4FF0FF32 		mov	r2, #-1
+ 117              	.L9:
+ 118              		.loc 1 42 0 is_stmt 0 discriminator 4
+ 119 006e 154B     		ldr	r3, .L21+4
+ 120 0070 5A70     		strb	r2, [r3, #1]
+  43:stepper.c     ****     angleStepsRemaining = abs(delta);
+ 121              		.loc 1 43 0 is_stmt 1 discriminator 4
+ 122 0072 002C     		cmp	r4, #0
+ 123 0074 B8BF     		it	lt
+ 124 0076 6442     		rsblt	r4, r4, #0
+ 125              	.LVL11:
+ 126 0078 64B2     		sxtb	r4, r4
+ 127 007a 114A     		ldr	r2, .L21
+ 128 007c D470     		strb	r4, [r2, #3]
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 4
+
+
+  44:stepper.c     ****     if (angleDirection > 0) ANGLE_DIR_PIN_FORWARD; else ANGLE_DIR_PIN_BACKWARD;
+ 129              		.loc 1 44 0 discriminator 4
+ 130 007e 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 131 0080 5BB2     		sxtb	r3, r3
+ 132 0082 002B     		cmp	r3, #0
+ 133 0084 03DD     		ble	.L10
+ 134              		.loc 1 44 0 is_stmt 0 discriminator 1
+ 135 0086 0120     		movs	r0, #1
+ 136 0088 FFF7FEFF 		bl	angleDirPin_Write
+ 137              	.LVL12:
+ 138 008c 02E0     		b	.L11
+ 139              	.L10:
+ 140              		.loc 1 44 0 discriminator 2
+ 141 008e 0020     		movs	r0, #0
+ 142 0090 FFF7FEFF 		bl	angleDirPin_Write
+ 143              	.LVL13:
+ 144              	.L11:
+  45:stepper.c     **** 
+  46:stepper.c     ****     if (dialStepsRemaining > 0 || angleStepsRemaining > 0)
+ 145              		.loc 1 46 0 is_stmt 1
+ 146 0094 0A4B     		ldr	r3, .L21
+ 147 0096 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 148 0098 5BB2     		sxtb	r3, r3
+ 149 009a 002B     		cmp	r3, #0
+ 150 009c 04DC     		bgt	.L12
+ 151              		.loc 1 46 0 is_stmt 0 discriminator 1
+ 152 009e 084B     		ldr	r3, .L21
+ 153 00a0 DB78     		ldrb	r3, [r3, #3]	@ zero_extendqisi2
+ 154 00a2 5BB2     		sxtb	r3, r3
+ 155 00a4 002B     		cmp	r3, #0
+ 156 00a6 09DD     		ble	.L1
+ 157              	.L12:
+  47:stepper.c     ****     {
+  48:stepper.c     ****         Timer_1_Stop();
+ 158              		.loc 1 48 0 is_stmt 1
+ 159 00a8 FFF7FEFF 		bl	Timer_1_Stop
+ 160              	.LVL14:
+  49:stepper.c     ****         Timer_1_WritePeriod(TIMER_PERIOD);
+ 161              		.loc 1 49 0
+ 162 00ac 1920     		movs	r0, #25
+ 163 00ae FFF7FEFF 		bl	Timer_1_WritePeriod
+ 164              	.LVL15:
+  50:stepper.c     ****         Timer_1_WriteCounter(0);
+ 165              		.loc 1 50 0
+ 166 00b2 0020     		movs	r0, #0
+ 167 00b4 FFF7FEFF 		bl	Timer_1_WriteCounter
+ 168              	.LVL16:
+  51:stepper.c     ****         Timer_1_Start();
+ 169              		.loc 1 51 0
+ 170 00b8 FFF7FEFF 		bl	Timer_1_Start
+ 171              	.LVL17:
+ 172              	.L1:
+ 173 00bc 10BD     		pop	{r4, pc}
+ 174              	.L22:
+ 175 00be 00BF     		.align	2
+ 176              	.L21:
+ 177 00c0 00000000 		.word	.LANCHOR0
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 5
+
+
+ 178 00c4 00000000 		.word	.LANCHOR1
+ 179              		.cfi_endproc
+ 180              	.LFE63:
+ 181              		.size	setStepperTargets, .-setStepperTargets
+ 182              		.section	.text.initStepperPins,"ax",%progbits
+ 183              		.align	2
+ 184              		.global	initStepperPins
+ 185              		.thumb
+ 186              		.thumb_func
+ 187              		.type	initStepperPins, %function
+ 188              	initStepperPins:
+ 189              	.LFB64:
+  52:stepper.c     ****     }
+  53:stepper.c     **** }
+  54:stepper.c     **** 
+  55:stepper.c     **** void initStepperPins(void)
+  56:stepper.c     **** {
+ 190              		.loc 1 56 0
+ 191              		.cfi_startproc
+ 192              		@ args = 0, pretend = 0, frame = 0
+ 193              		@ frame_needed = 0, uses_anonymous_args = 0
+ 194 0000 08B5     		push	{r3, lr}
+ 195              		.cfi_def_cfa_offset 8
+ 196              		.cfi_offset 3, -8
+ 197              		.cfi_offset 14, -4
+  57:stepper.c     ****     dialStepPin_Write(0);
+ 198              		.loc 1 57 0
+ 199 0002 0020     		movs	r0, #0
+ 200 0004 FFF7FEFF 		bl	dialStepPin_Write
+ 201              	.LVL18:
+  58:stepper.c     ****     dialDirPin_Write(0);
+ 202              		.loc 1 58 0
+ 203 0008 0020     		movs	r0, #0
+ 204 000a FFF7FEFF 		bl	dialDirPin_Write
+ 205              	.LVL19:
+  59:stepper.c     ****     angleStepPin_Write(0);
+ 206              		.loc 1 59 0
+ 207 000e 0020     		movs	r0, #0
+ 208 0010 FFF7FEFF 		bl	angleStepPin_Write
+ 209              	.LVL20:
+  60:stepper.c     ****     angleDirPin_Write(0);
+ 210              		.loc 1 60 0
+ 211 0014 0020     		movs	r0, #0
+ 212 0016 FFF7FEFF 		bl	angleDirPin_Write
+ 213              	.LVL21:
+ 214 001a 08BD     		pop	{r3, pc}
+ 215              		.cfi_endproc
+ 216              	.LFE64:
+ 217              		.size	initStepperPins, .-initStepperPins
+ 218              		.global	angleStepsRemaining
+ 219              		.global	angleDirection
+ 220              		.global	angleCurrentPosition
+ 221              		.global	dialStepsRemaining
+ 222              		.global	dialDirection
+ 223              		.global	dialCurrentPosition
+ 224              		.data
+ 225              		.set	.LANCHOR1,. + 0
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 6
+
+
+ 226              		.type	dialDirection, %object
+ 227              		.size	dialDirection, 1
+ 228              	dialDirection:
+ 229 0000 01       		.byte	1
+ 230              		.type	angleDirection, %object
+ 231              		.size	angleDirection, 1
+ 232              	angleDirection:
+ 233 0001 01       		.byte	1
+ 234              		.bss
+ 235              		.set	.LANCHOR0,. + 0
+ 236              		.type	dialCurrentPosition, %object
+ 237              		.size	dialCurrentPosition, 1
+ 238              	dialCurrentPosition:
+ 239 0000 00       		.space	1
+ 240              		.type	dialStepsRemaining, %object
+ 241              		.size	dialStepsRemaining, 1
+ 242              	dialStepsRemaining:
+ 243 0001 00       		.space	1
+ 244              		.type	angleCurrentPosition, %object
+ 245              		.size	angleCurrentPosition, 1
+ 246              	angleCurrentPosition:
+ 247 0002 00       		.space	1
+ 248              		.type	angleStepsRemaining, %object
+ 249              		.size	angleStepsRemaining, 1
+ 250              	angleStepsRemaining:
+ 251 0003 00       		.space	1
+ 252              		.text
+ 253              	.Letext0:
+ 254              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 255              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 256              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 257              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 258              		.file 6 "Generated_Source\\PSoC5/dialDirPin.h"
+ 259              		.file 7 "Generated_Source\\PSoC5/angleDirPin.h"
+ 260              		.file 8 "Generated_Source\\PSoC5/Timer_1.h"
+ 261              		.file 9 "Generated_Source\\PSoC5/dialStepPin.h"
+ 262              		.file 10 "Generated_Source\\PSoC5/angleStepPin.h"
+ 263              		.section	.debug_info,"",%progbits
+ 264              	.Ldebug_info0:
+ 265 0000 B2020000 		.4byte	0x2b2
+ 266 0004 0400     		.2byte	0x4
+ 267 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 268 000a 04       		.byte	0x4
+ 269 000b 01       		.uleb128 0x1
+ 270 000c 79000000 		.4byte	.LASF37
+ 271 0010 0C       		.byte	0xc
+ 272 0011 19030000 		.4byte	.LASF38
+ 273 0015 EA010000 		.4byte	.LASF39
+ 274 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 275 001d 00000000 		.4byte	0
+ 276 0021 00000000 		.4byte	.Ldebug_line0
+ 277 0025 02       		.uleb128 0x2
+ 278 0026 01       		.byte	0x1
+ 279 0027 06       		.byte	0x6
+ 280 0028 AB010000 		.4byte	.LASF0
+ 281 002c 02       		.uleb128 0x2
+ 282 002d 01       		.byte	0x1
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 7
+
+
+ 283 002e 08       		.byte	0x8
+ 284 002f 6B000000 		.4byte	.LASF1
+ 285 0033 02       		.uleb128 0x2
+ 286 0034 02       		.byte	0x2
+ 287 0035 05       		.byte	0x5
+ 288 0036 8E020000 		.4byte	.LASF2
+ 289 003a 02       		.uleb128 0x2
+ 290 003b 02       		.byte	0x2
+ 291 003c 07       		.byte	0x7
+ 292 003d 31010000 		.4byte	.LASF3
+ 293 0041 03       		.uleb128 0x3
+ 294 0042 22000000 		.4byte	.LASF9
+ 295 0046 02       		.byte	0x2
+ 296 0047 3F       		.byte	0x3f
+ 297 0048 4C000000 		.4byte	0x4c
+ 298 004c 02       		.uleb128 0x2
+ 299 004d 04       		.byte	0x4
+ 300 004e 05       		.byte	0x5
+ 301 004f BD020000 		.4byte	.LASF4
+ 302 0053 02       		.uleb128 0x2
+ 303 0054 04       		.byte	0x4
+ 304 0055 07       		.byte	0x7
+ 305 0056 0D010000 		.4byte	.LASF5
+ 306 005a 02       		.uleb128 0x2
+ 307 005b 08       		.byte	0x8
+ 308 005c 05       		.byte	0x5
+ 309 005d 68020000 		.4byte	.LASF6
+ 310 0061 02       		.uleb128 0x2
+ 311 0062 08       		.byte	0x8
+ 312 0063 07       		.byte	0x7
+ 313 0064 7F010000 		.4byte	.LASF7
+ 314 0068 04       		.uleb128 0x4
+ 315 0069 04       		.byte	0x4
+ 316 006a 05       		.byte	0x5
+ 317 006b 696E7400 		.ascii	"int\000"
+ 318 006f 02       		.uleb128 0x2
+ 319 0070 04       		.byte	0x4
+ 320 0071 07       		.byte	0x7
+ 321 0072 72010000 		.4byte	.LASF8
+ 322 0076 03       		.uleb128 0x3
+ 323 0077 D9010000 		.4byte	.LASF10
+ 324 007b 03       		.byte	0x3
+ 325 007c 2C       		.byte	0x2c
+ 326 007d 41000000 		.4byte	0x41
+ 327 0081 05       		.uleb128 0x5
+ 328 0082 58010000 		.4byte	.LASF11
+ 329 0086 04       		.byte	0x4
+ 330 0087 EC01     		.2byte	0x1ec
+ 331 0089 25000000 		.4byte	0x25
+ 332 008d 05       		.uleb128 0x5
+ 333 008e 07010000 		.4byte	.LASF12
+ 334 0092 04       		.byte	0x4
+ 335 0093 ED01     		.2byte	0x1ed
+ 336 0095 33000000 		.4byte	0x33
+ 337 0099 02       		.uleb128 0x2
+ 338 009a 04       		.byte	0x4
+ 339 009b 04       		.byte	0x4
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 8
+
+
+ 340 009c 40000000 		.4byte	.LASF13
+ 341 00a0 02       		.uleb128 0x2
+ 342 00a1 08       		.byte	0x8
+ 343 00a2 04       		.byte	0x4
+ 344 00a3 51010000 		.4byte	.LASF14
+ 345 00a7 02       		.uleb128 0x2
+ 346 00a8 01       		.byte	0x1
+ 347 00a9 08       		.byte	0x8
+ 348 00aa 76020000 		.4byte	.LASF15
+ 349 00ae 02       		.uleb128 0x2
+ 350 00af 08       		.byte	0x8
+ 351 00b0 04       		.byte	0x4
+ 352 00b1 DD020000 		.4byte	.LASF16
+ 353 00b5 02       		.uleb128 0x2
+ 354 00b6 04       		.byte	0x4
+ 355 00b7 07       		.byte	0x7
+ 356 00b8 E1010000 		.4byte	.LASF17
+ 357 00bc 06       		.uleb128 0x6
+ 358 00bd AB020000 		.4byte	.LASF20
+ 359 00c1 01       		.byte	0x1
+ 360 00c2 18       		.byte	0x18
+ 361 00c3 00000000 		.4byte	.LFB63
+ 362 00c7 C8000000 		.4byte	.LFE63-.LFB63
+ 363 00cb 01       		.uleb128 0x1
+ 364 00cc 9C       		.byte	0x9c
+ 365 00cd 83010000 		.4byte	0x183
+ 366 00d1 07       		.uleb128 0x7
+ 367 00d2 D2020000 		.4byte	.LASF18
+ 368 00d6 01       		.byte	0x1
+ 369 00d7 18       		.byte	0x18
+ 370 00d8 81000000 		.4byte	0x81
+ 371 00dc 00000000 		.4byte	.LLST0
+ 372 00e0 07       		.uleb128 0x7
+ 373 00e1 C6020000 		.4byte	.LASF19
+ 374 00e5 01       		.byte	0x1
+ 375 00e6 18       		.byte	0x18
+ 376 00e7 81000000 		.4byte	0x81
+ 377 00eb 1E000000 		.4byte	.LLST1
+ 378 00ef 08       		.uleb128 0x8
+ 379 00f0 2C000000 		.4byte	.LASF40
+ 380 00f4 01       		.byte	0x1
+ 381 00f5 1A       		.byte	0x1a
+ 382 00f6 8D000000 		.4byte	0x8d
+ 383 00fa 63000000 		.4byte	.LLST2
+ 384 00fe 09       		.uleb128 0x9
+ 385 00ff 46000000 		.4byte	.LVL5
+ 386 0103 5D020000 		.4byte	0x25d
+ 387 0107 11010000 		.4byte	0x111
+ 388 010b 0A       		.uleb128 0xa
+ 389 010c 01       		.uleb128 0x1
+ 390 010d 50       		.byte	0x50
+ 391 010e 01       		.uleb128 0x1
+ 392 010f 31       		.byte	0x31
+ 393 0110 00       		.byte	0
+ 394 0111 09       		.uleb128 0x9
+ 395 0112 4E000000 		.4byte	.LVL7
+ 396 0116 5D020000 		.4byte	0x25d
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 9
+
+
+ 397 011a 24010000 		.4byte	0x124
+ 398 011e 0A       		.uleb128 0xa
+ 399 011f 01       		.uleb128 0x1
+ 400 0120 50       		.byte	0x50
+ 401 0121 01       		.uleb128 0x1
+ 402 0122 30       		.byte	0x30
+ 403 0123 00       		.byte	0
+ 404 0124 09       		.uleb128 0x9
+ 405 0125 8C000000 		.4byte	.LVL12
+ 406 0129 68020000 		.4byte	0x268
+ 407 012d 37010000 		.4byte	0x137
+ 408 0131 0A       		.uleb128 0xa
+ 409 0132 01       		.uleb128 0x1
+ 410 0133 50       		.byte	0x50
+ 411 0134 01       		.uleb128 0x1
+ 412 0135 31       		.byte	0x31
+ 413 0136 00       		.byte	0
+ 414 0137 09       		.uleb128 0x9
+ 415 0138 94000000 		.4byte	.LVL13
+ 416 013c 68020000 		.4byte	0x268
+ 417 0140 4A010000 		.4byte	0x14a
+ 418 0144 0A       		.uleb128 0xa
+ 419 0145 01       		.uleb128 0x1
+ 420 0146 50       		.byte	0x50
+ 421 0147 01       		.uleb128 0x1
+ 422 0148 30       		.byte	0x30
+ 423 0149 00       		.byte	0
+ 424 014a 0B       		.uleb128 0xb
+ 425 014b AC000000 		.4byte	.LVL14
+ 426 014f 73020000 		.4byte	0x273
+ 427 0153 09       		.uleb128 0x9
+ 428 0154 B2000000 		.4byte	.LVL15
+ 429 0158 7E020000 		.4byte	0x27e
+ 430 015c 66010000 		.4byte	0x166
+ 431 0160 0A       		.uleb128 0xa
+ 432 0161 01       		.uleb128 0x1
+ 433 0162 50       		.byte	0x50
+ 434 0163 01       		.uleb128 0x1
+ 435 0164 49       		.byte	0x49
+ 436 0165 00       		.byte	0
+ 437 0166 09       		.uleb128 0x9
+ 438 0167 B8000000 		.4byte	.LVL16
+ 439 016b 89020000 		.4byte	0x289
+ 440 016f 79010000 		.4byte	0x179
+ 441 0173 0A       		.uleb128 0xa
+ 442 0174 01       		.uleb128 0x1
+ 443 0175 50       		.byte	0x50
+ 444 0176 01       		.uleb128 0x1
+ 445 0177 30       		.byte	0x30
+ 446 0178 00       		.byte	0
+ 447 0179 0B       		.uleb128 0xb
+ 448 017a BC000000 		.4byte	.LVL17
+ 449 017e 94020000 		.4byte	0x294
+ 450 0182 00       		.byte	0
+ 451 0183 06       		.uleb128 0x6
+ 452 0184 C9010000 		.4byte	.LASF21
+ 453 0188 01       		.byte	0x1
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 10
+
+
+ 454 0189 37       		.byte	0x37
+ 455 018a 00000000 		.4byte	.LFB64
+ 456 018e 1C000000 		.4byte	.LFE64-.LFB64
+ 457 0192 01       		.uleb128 0x1
+ 458 0193 9C       		.byte	0x9c
+ 459 0194 E1010000 		.4byte	0x1e1
+ 460 0198 09       		.uleb128 0x9
+ 461 0199 08000000 		.4byte	.LVL18
+ 462 019d 9F020000 		.4byte	0x29f
+ 463 01a1 AB010000 		.4byte	0x1ab
+ 464 01a5 0A       		.uleb128 0xa
+ 465 01a6 01       		.uleb128 0x1
+ 466 01a7 50       		.byte	0x50
+ 467 01a8 01       		.uleb128 0x1
+ 468 01a9 30       		.byte	0x30
+ 469 01aa 00       		.byte	0
+ 470 01ab 09       		.uleb128 0x9
+ 471 01ac 0E000000 		.4byte	.LVL19
+ 472 01b0 5D020000 		.4byte	0x25d
+ 473 01b4 BE010000 		.4byte	0x1be
+ 474 01b8 0A       		.uleb128 0xa
+ 475 01b9 01       		.uleb128 0x1
+ 476 01ba 50       		.byte	0x50
+ 477 01bb 01       		.uleb128 0x1
+ 478 01bc 30       		.byte	0x30
+ 479 01bd 00       		.byte	0
+ 480 01be 09       		.uleb128 0x9
+ 481 01bf 14000000 		.4byte	.LVL20
+ 482 01c3 AA020000 		.4byte	0x2aa
+ 483 01c7 D1010000 		.4byte	0x1d1
+ 484 01cb 0A       		.uleb128 0xa
+ 485 01cc 01       		.uleb128 0x1
+ 486 01cd 50       		.byte	0x50
+ 487 01ce 01       		.uleb128 0x1
+ 488 01cf 30       		.byte	0x30
+ 489 01d0 00       		.byte	0
+ 490 01d1 0C       		.uleb128 0xc
+ 491 01d2 1A000000 		.4byte	.LVL21
+ 492 01d6 68020000 		.4byte	0x268
+ 493 01da 0A       		.uleb128 0xa
+ 494 01db 01       		.uleb128 0x1
+ 495 01dc 50       		.byte	0x50
+ 496 01dd 01       		.uleb128 0x1
+ 497 01de 30       		.byte	0x30
+ 498 01df 00       		.byte	0
+ 499 01e0 00       		.byte	0
+ 500 01e1 0D       		.uleb128 0xd
+ 501 01e2 44010000 		.4byte	.LASF22
+ 502 01e6 05       		.byte	0x5
+ 503 01e7 1207     		.2byte	0x712
+ 504 01e9 ED010000 		.4byte	0x1ed
+ 505 01ed 0E       		.uleb128 0xe
+ 506 01ee 76000000 		.4byte	0x76
+ 507 01f2 0F       		.uleb128 0xf
+ 508 01f3 E9020000 		.4byte	.LASF23
+ 509 01f7 01       		.byte	0x1
+ 510 01f8 10       		.byte	0x10
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 11
+
+
+ 511 01f9 03020000 		.4byte	0x203
+ 512 01fd 05       		.uleb128 0x5
+ 513 01fe 03       		.byte	0x3
+ 514 01ff 00000000 		.4byte	dialCurrentPosition
+ 515 0203 0E       		.uleb128 0xe
+ 516 0204 81000000 		.4byte	0x81
+ 517 0208 0F       		.uleb128 0xf
+ 518 0209 98020000 		.4byte	.LASF24
+ 519 020d 01       		.byte	0x1
+ 520 020e 12       		.byte	0x12
+ 521 020f 03020000 		.4byte	0x203
+ 522 0213 05       		.uleb128 0x5
+ 523 0214 03       		.byte	0x3
+ 524 0215 00000000 		.4byte	dialStepsRemaining
+ 525 0219 0F       		.uleb128 0xf
+ 526 021a 32000000 		.4byte	.LASF25
+ 527 021e 01       		.byte	0x1
+ 528 021f 11       		.byte	0x11
+ 529 0220 03020000 		.4byte	0x203
+ 530 0224 05       		.uleb128 0x5
+ 531 0225 03       		.byte	0x3
+ 532 0226 00000000 		.4byte	dialDirection
+ 533 022a 0F       		.uleb128 0xf
+ 534 022b 5D010000 		.4byte	.LASF26
+ 535 022f 01       		.byte	0x1
+ 536 0230 14       		.byte	0x14
+ 537 0231 03020000 		.4byte	0x203
+ 538 0235 05       		.uleb128 0x5
+ 539 0236 03       		.byte	0x3
+ 540 0237 00000000 		.4byte	angleCurrentPosition
+ 541 023b 0F       		.uleb128 0xf
+ 542 023c 46000000 		.4byte	.LASF27
+ 543 0240 01       		.byte	0x1
+ 544 0241 16       		.byte	0x16
+ 545 0242 03020000 		.4byte	0x203
+ 546 0246 05       		.uleb128 0x5
+ 547 0247 03       		.byte	0x3
+ 548 0248 00000000 		.4byte	angleStepsRemaining
+ 549 024c 0F       		.uleb128 0xf
+ 550 024d 0A030000 		.4byte	.LASF28
+ 551 0251 01       		.byte	0x1
+ 552 0252 15       		.byte	0x15
+ 553 0253 03020000 		.4byte	0x203
+ 554 0257 05       		.uleb128 0x5
+ 555 0258 03       		.byte	0x3
+ 556 0259 00000000 		.4byte	angleDirection
+ 557 025d 10       		.uleb128 0x10
+ 558 025e 5A000000 		.4byte	.LASF29
+ 559 0262 5A000000 		.4byte	.LASF29
+ 560 0266 06       		.byte	0x6
+ 561 0267 26       		.byte	0x26
+ 562 0268 10       		.uleb128 0x10
+ 563 0269 B7010000 		.4byte	.LASF30
+ 564 026d B7010000 		.4byte	.LASF30
+ 565 0271 07       		.byte	0x7
+ 566 0272 26       		.byte	0x26
+ 567 0273 10       		.uleb128 0x10
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 12
+
+
+ 568 0274 FD020000 		.4byte	.LASF31
+ 569 0278 FD020000 		.4byte	.LASF31
+ 570 027c 08       		.byte	0x8
+ 571 027d 5B       		.byte	0x5b
+ 572 027e 10       		.uleb128 0x10
+ 573 027f 0E000000 		.4byte	.LASF32
+ 574 0283 0E000000 		.4byte	.LASF32
+ 575 0287 08       		.byte	0x8
+ 576 0288 68       		.byte	0x68
+ 577 0289 10       		.uleb128 0x10
+ 578 028a 96010000 		.4byte	.LASF33
+ 579 028e 96010000 		.4byte	.LASF33
+ 580 0292 08       		.byte	0x8
+ 581 0293 6A       		.byte	0x6a
+ 582 0294 10       		.uleb128 0x10
+ 583 0295 00000000 		.4byte	.LASF34
+ 584 0299 00000000 		.4byte	.LASF34
+ 585 029d 08       		.byte	0x8
+ 586 029e 5A       		.byte	0x5a
+ 587 029f 10       		.uleb128 0x10
+ 588 02a0 1F010000 		.4byte	.LASF35
+ 589 02a4 1F010000 		.4byte	.LASF35
+ 590 02a8 09       		.byte	0x9
+ 591 02a9 26       		.byte	0x26
+ 592 02aa 10       		.uleb128 0x10
+ 593 02ab 7B020000 		.4byte	.LASF36
+ 594 02af 7B020000 		.4byte	.LASF36
+ 595 02b3 0A       		.byte	0xa
+ 596 02b4 26       		.byte	0x26
+ 597 02b5 00       		.byte	0
+ 598              		.section	.debug_abbrev,"",%progbits
+ 599              	.Ldebug_abbrev0:
+ 600 0000 01       		.uleb128 0x1
+ 601 0001 11       		.uleb128 0x11
+ 602 0002 01       		.byte	0x1
+ 603 0003 25       		.uleb128 0x25
+ 604 0004 0E       		.uleb128 0xe
+ 605 0005 13       		.uleb128 0x13
+ 606 0006 0B       		.uleb128 0xb
+ 607 0007 03       		.uleb128 0x3
+ 608 0008 0E       		.uleb128 0xe
+ 609 0009 1B       		.uleb128 0x1b
+ 610 000a 0E       		.uleb128 0xe
+ 611 000b 55       		.uleb128 0x55
+ 612 000c 17       		.uleb128 0x17
+ 613 000d 11       		.uleb128 0x11
+ 614 000e 01       		.uleb128 0x1
+ 615 000f 10       		.uleb128 0x10
+ 616 0010 17       		.uleb128 0x17
+ 617 0011 00       		.byte	0
+ 618 0012 00       		.byte	0
+ 619 0013 02       		.uleb128 0x2
+ 620 0014 24       		.uleb128 0x24
+ 621 0015 00       		.byte	0
+ 622 0016 0B       		.uleb128 0xb
+ 623 0017 0B       		.uleb128 0xb
+ 624 0018 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 13
+
+
+ 625 0019 0B       		.uleb128 0xb
+ 626 001a 03       		.uleb128 0x3
+ 627 001b 0E       		.uleb128 0xe
+ 628 001c 00       		.byte	0
+ 629 001d 00       		.byte	0
+ 630 001e 03       		.uleb128 0x3
+ 631 001f 16       		.uleb128 0x16
+ 632 0020 00       		.byte	0
+ 633 0021 03       		.uleb128 0x3
+ 634 0022 0E       		.uleb128 0xe
+ 635 0023 3A       		.uleb128 0x3a
+ 636 0024 0B       		.uleb128 0xb
+ 637 0025 3B       		.uleb128 0x3b
+ 638 0026 0B       		.uleb128 0xb
+ 639 0027 49       		.uleb128 0x49
+ 640 0028 13       		.uleb128 0x13
+ 641 0029 00       		.byte	0
+ 642 002a 00       		.byte	0
+ 643 002b 04       		.uleb128 0x4
+ 644 002c 24       		.uleb128 0x24
+ 645 002d 00       		.byte	0
+ 646 002e 0B       		.uleb128 0xb
+ 647 002f 0B       		.uleb128 0xb
+ 648 0030 3E       		.uleb128 0x3e
+ 649 0031 0B       		.uleb128 0xb
+ 650 0032 03       		.uleb128 0x3
+ 651 0033 08       		.uleb128 0x8
+ 652 0034 00       		.byte	0
+ 653 0035 00       		.byte	0
+ 654 0036 05       		.uleb128 0x5
+ 655 0037 16       		.uleb128 0x16
+ 656 0038 00       		.byte	0
+ 657 0039 03       		.uleb128 0x3
+ 658 003a 0E       		.uleb128 0xe
+ 659 003b 3A       		.uleb128 0x3a
+ 660 003c 0B       		.uleb128 0xb
+ 661 003d 3B       		.uleb128 0x3b
+ 662 003e 05       		.uleb128 0x5
+ 663 003f 49       		.uleb128 0x49
+ 664 0040 13       		.uleb128 0x13
+ 665 0041 00       		.byte	0
+ 666 0042 00       		.byte	0
+ 667 0043 06       		.uleb128 0x6
+ 668 0044 2E       		.uleb128 0x2e
+ 669 0045 01       		.byte	0x1
+ 670 0046 3F       		.uleb128 0x3f
+ 671 0047 19       		.uleb128 0x19
+ 672 0048 03       		.uleb128 0x3
+ 673 0049 0E       		.uleb128 0xe
+ 674 004a 3A       		.uleb128 0x3a
+ 675 004b 0B       		.uleb128 0xb
+ 676 004c 3B       		.uleb128 0x3b
+ 677 004d 0B       		.uleb128 0xb
+ 678 004e 27       		.uleb128 0x27
+ 679 004f 19       		.uleb128 0x19
+ 680 0050 11       		.uleb128 0x11
+ 681 0051 01       		.uleb128 0x1
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 14
+
+
+ 682 0052 12       		.uleb128 0x12
+ 683 0053 06       		.uleb128 0x6
+ 684 0054 40       		.uleb128 0x40
+ 685 0055 18       		.uleb128 0x18
+ 686 0056 9742     		.uleb128 0x2117
+ 687 0058 19       		.uleb128 0x19
+ 688 0059 01       		.uleb128 0x1
+ 689 005a 13       		.uleb128 0x13
+ 690 005b 00       		.byte	0
+ 691 005c 00       		.byte	0
+ 692 005d 07       		.uleb128 0x7
+ 693 005e 05       		.uleb128 0x5
+ 694 005f 00       		.byte	0
+ 695 0060 03       		.uleb128 0x3
+ 696 0061 0E       		.uleb128 0xe
+ 697 0062 3A       		.uleb128 0x3a
+ 698 0063 0B       		.uleb128 0xb
+ 699 0064 3B       		.uleb128 0x3b
+ 700 0065 0B       		.uleb128 0xb
+ 701 0066 49       		.uleb128 0x49
+ 702 0067 13       		.uleb128 0x13
+ 703 0068 02       		.uleb128 0x2
+ 704 0069 17       		.uleb128 0x17
+ 705 006a 00       		.byte	0
+ 706 006b 00       		.byte	0
+ 707 006c 08       		.uleb128 0x8
+ 708 006d 34       		.uleb128 0x34
+ 709 006e 00       		.byte	0
+ 710 006f 03       		.uleb128 0x3
+ 711 0070 0E       		.uleb128 0xe
+ 712 0071 3A       		.uleb128 0x3a
+ 713 0072 0B       		.uleb128 0xb
+ 714 0073 3B       		.uleb128 0x3b
+ 715 0074 0B       		.uleb128 0xb
+ 716 0075 49       		.uleb128 0x49
+ 717 0076 13       		.uleb128 0x13
+ 718 0077 02       		.uleb128 0x2
+ 719 0078 17       		.uleb128 0x17
+ 720 0079 00       		.byte	0
+ 721 007a 00       		.byte	0
+ 722 007b 09       		.uleb128 0x9
+ 723 007c 898201   		.uleb128 0x4109
+ 724 007f 01       		.byte	0x1
+ 725 0080 11       		.uleb128 0x11
+ 726 0081 01       		.uleb128 0x1
+ 727 0082 31       		.uleb128 0x31
+ 728 0083 13       		.uleb128 0x13
+ 729 0084 01       		.uleb128 0x1
+ 730 0085 13       		.uleb128 0x13
+ 731 0086 00       		.byte	0
+ 732 0087 00       		.byte	0
+ 733 0088 0A       		.uleb128 0xa
+ 734 0089 8A8201   		.uleb128 0x410a
+ 735 008c 00       		.byte	0
+ 736 008d 02       		.uleb128 0x2
+ 737 008e 18       		.uleb128 0x18
+ 738 008f 9142     		.uleb128 0x2111
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 15
+
+
+ 739 0091 18       		.uleb128 0x18
+ 740 0092 00       		.byte	0
+ 741 0093 00       		.byte	0
+ 742 0094 0B       		.uleb128 0xb
+ 743 0095 898201   		.uleb128 0x4109
+ 744 0098 00       		.byte	0
+ 745 0099 11       		.uleb128 0x11
+ 746 009a 01       		.uleb128 0x1
+ 747 009b 31       		.uleb128 0x31
+ 748 009c 13       		.uleb128 0x13
+ 749 009d 00       		.byte	0
+ 750 009e 00       		.byte	0
+ 751 009f 0C       		.uleb128 0xc
+ 752 00a0 898201   		.uleb128 0x4109
+ 753 00a3 01       		.byte	0x1
+ 754 00a4 11       		.uleb128 0x11
+ 755 00a5 01       		.uleb128 0x1
+ 756 00a6 31       		.uleb128 0x31
+ 757 00a7 13       		.uleb128 0x13
+ 758 00a8 00       		.byte	0
+ 759 00a9 00       		.byte	0
+ 760 00aa 0D       		.uleb128 0xd
+ 761 00ab 34       		.uleb128 0x34
+ 762 00ac 00       		.byte	0
+ 763 00ad 03       		.uleb128 0x3
+ 764 00ae 0E       		.uleb128 0xe
+ 765 00af 3A       		.uleb128 0x3a
+ 766 00b0 0B       		.uleb128 0xb
+ 767 00b1 3B       		.uleb128 0x3b
+ 768 00b2 05       		.uleb128 0x5
+ 769 00b3 49       		.uleb128 0x49
+ 770 00b4 13       		.uleb128 0x13
+ 771 00b5 3F       		.uleb128 0x3f
+ 772 00b6 19       		.uleb128 0x19
+ 773 00b7 3C       		.uleb128 0x3c
+ 774 00b8 19       		.uleb128 0x19
+ 775 00b9 00       		.byte	0
+ 776 00ba 00       		.byte	0
+ 777 00bb 0E       		.uleb128 0xe
+ 778 00bc 35       		.uleb128 0x35
+ 779 00bd 00       		.byte	0
+ 780 00be 49       		.uleb128 0x49
+ 781 00bf 13       		.uleb128 0x13
+ 782 00c0 00       		.byte	0
+ 783 00c1 00       		.byte	0
+ 784 00c2 0F       		.uleb128 0xf
+ 785 00c3 34       		.uleb128 0x34
+ 786 00c4 00       		.byte	0
+ 787 00c5 03       		.uleb128 0x3
+ 788 00c6 0E       		.uleb128 0xe
+ 789 00c7 3A       		.uleb128 0x3a
+ 790 00c8 0B       		.uleb128 0xb
+ 791 00c9 3B       		.uleb128 0x3b
+ 792 00ca 0B       		.uleb128 0xb
+ 793 00cb 49       		.uleb128 0x49
+ 794 00cc 13       		.uleb128 0x13
+ 795 00cd 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 16
+
+
+ 796 00ce 19       		.uleb128 0x19
+ 797 00cf 02       		.uleb128 0x2
+ 798 00d0 18       		.uleb128 0x18
+ 799 00d1 00       		.byte	0
+ 800 00d2 00       		.byte	0
+ 801 00d3 10       		.uleb128 0x10
+ 802 00d4 2E       		.uleb128 0x2e
+ 803 00d5 00       		.byte	0
+ 804 00d6 3F       		.uleb128 0x3f
+ 805 00d7 19       		.uleb128 0x19
+ 806 00d8 3C       		.uleb128 0x3c
+ 807 00d9 19       		.uleb128 0x19
+ 808 00da 6E       		.uleb128 0x6e
+ 809 00db 0E       		.uleb128 0xe
+ 810 00dc 03       		.uleb128 0x3
+ 811 00dd 0E       		.uleb128 0xe
+ 812 00de 3A       		.uleb128 0x3a
+ 813 00df 0B       		.uleb128 0xb
+ 814 00e0 3B       		.uleb128 0x3b
+ 815 00e1 0B       		.uleb128 0xb
+ 816 00e2 00       		.byte	0
+ 817 00e3 00       		.byte	0
+ 818 00e4 00       		.byte	0
+ 819              		.section	.debug_loc,"",%progbits
+ 820              	.Ldebug_loc0:
+ 821              	.LLST0:
+ 822 0000 00000000 		.4byte	.LVL0
+ 823 0004 0A000000 		.4byte	.LVL1
+ 824 0008 0100     		.2byte	0x1
+ 825 000a 50       		.byte	0x50
+ 826 000b 0A000000 		.4byte	.LVL1
+ 827 000f 1C000000 		.4byte	.LVL3
+ 828 0013 0100     		.2byte	0x1
+ 829 0015 50       		.byte	0x50
+ 830 0016 00000000 		.4byte	0
+ 831 001a 00000000 		.4byte	0
+ 832              	.LLST1:
+ 833 001e 00000000 		.4byte	.LVL0
+ 834 0022 45000000 		.4byte	.LVL5-1
+ 835 0026 0100     		.2byte	0x1
+ 836 0028 51       		.byte	0x51
+ 837 0029 45000000 		.4byte	.LVL5-1
+ 838 002d 48000000 		.4byte	.LVL6
+ 839 0031 0400     		.2byte	0x4
+ 840 0033 F3       		.byte	0xf3
+ 841 0034 01       		.uleb128 0x1
+ 842 0035 51       		.byte	0x51
+ 843 0036 9F       		.byte	0x9f
+ 844 0037 48000000 		.4byte	.LVL6
+ 845 003b 4D000000 		.4byte	.LVL7-1
+ 846 003f 0100     		.2byte	0x1
+ 847 0041 51       		.byte	0x51
+ 848 0042 4D000000 		.4byte	.LVL7-1
+ 849 0046 54000000 		.4byte	.LVL8
+ 850 004a 0400     		.2byte	0x4
+ 851 004c F3       		.byte	0xf3
+ 852 004d 01       		.uleb128 0x1
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 17
+
+
+ 853 004e 51       		.byte	0x51
+ 854 004f 9F       		.byte	0x9f
+ 855 0050 54000000 		.4byte	.LVL8
+ 856 0054 62000000 		.4byte	.LVL10
+ 857 0058 0100     		.2byte	0x1
+ 858 005a 54       		.byte	0x54
+ 859 005b 00000000 		.4byte	0
+ 860 005f 00000000 		.4byte	0
+ 861              	.LLST2:
+ 862 0063 1C000000 		.4byte	.LVL3
+ 863 0067 32000000 		.4byte	.LVL4
+ 864 006b 0100     		.2byte	0x1
+ 865 006d 50       		.byte	0x50
+ 866 006e 62000000 		.4byte	.LVL10
+ 867 0072 78000000 		.4byte	.LVL11
+ 868 0076 0100     		.2byte	0x1
+ 869 0078 54       		.byte	0x54
+ 870 0079 00000000 		.4byte	0
+ 871 007d 00000000 		.4byte	0
+ 872              		.section	.debug_aranges,"",%progbits
+ 873 0000 24000000 		.4byte	0x24
+ 874 0004 0200     		.2byte	0x2
+ 875 0006 00000000 		.4byte	.Ldebug_info0
+ 876 000a 04       		.byte	0x4
+ 877 000b 00       		.byte	0
+ 878 000c 0000     		.2byte	0
+ 879 000e 0000     		.2byte	0
+ 880 0010 00000000 		.4byte	.LFB63
+ 881 0014 C8000000 		.4byte	.LFE63-.LFB63
+ 882 0018 00000000 		.4byte	.LFB64
+ 883 001c 1C000000 		.4byte	.LFE64-.LFB64
+ 884 0020 00000000 		.4byte	0
+ 885 0024 00000000 		.4byte	0
+ 886              		.section	.debug_ranges,"",%progbits
+ 887              	.Ldebug_ranges0:
+ 888 0000 00000000 		.4byte	.LFB63
+ 889 0004 C8000000 		.4byte	.LFE63
+ 890 0008 00000000 		.4byte	.LFB64
+ 891 000c 1C000000 		.4byte	.LFE64
+ 892 0010 00000000 		.4byte	0
+ 893 0014 00000000 		.4byte	0
+ 894              		.section	.debug_line,"",%progbits
+ 895              	.Ldebug_line0:
+ 896 0000 16020000 		.section	.debug_str,"MS",%progbits,1
+ 896      0200A001 
+ 896      00000201 
+ 896      FB0E0D00 
+ 896      01010101 
+ 897              	.LASF34:
+ 898 0000 54696D65 		.ascii	"Timer_1_Start\000"
+ 898      725F315F 
+ 898      53746172 
+ 898      7400
+ 899              	.LASF32:
+ 900 000e 54696D65 		.ascii	"Timer_1_WritePeriod\000"
+ 900      725F315F 
+ 900      57726974 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 18
+
+
+ 900      65506572 
+ 900      696F6400 
+ 901              	.LASF9:
+ 902 0022 5F5F696E 		.ascii	"__int32_t\000"
+ 902      7433325F 
+ 902      7400
+ 903              	.LASF40:
+ 904 002c 64656C74 		.ascii	"delta\000"
+ 904      6100
+ 905              	.LASF25:
+ 906 0032 6469616C 		.ascii	"dialDirection\000"
+ 906      44697265 
+ 906      6374696F 
+ 906      6E00
+ 907              	.LASF13:
+ 908 0040 666C6F61 		.ascii	"float\000"
+ 908      7400
+ 909              	.LASF27:
+ 910 0046 616E676C 		.ascii	"angleStepsRemaining\000"
+ 910      65537465 
+ 910      70735265 
+ 910      6D61696E 
+ 910      696E6700 
+ 911              	.LASF29:
+ 912 005a 6469616C 		.ascii	"dialDirPin_Write\000"
+ 912      44697250 
+ 912      696E5F57 
+ 912      72697465 
+ 912      00
+ 913              	.LASF1:
+ 914 006b 756E7369 		.ascii	"unsigned char\000"
+ 914      676E6564 
+ 914      20636861 
+ 914      7200
+ 915              	.LASF37:
+ 916 0079 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 916      43313120 
+ 916      352E342E 
+ 916      31203230 
+ 916      31363036 
+ 917 00ac 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 917      20726576 
+ 917      6973696F 
+ 917      6E203233 
+ 917      37373135 
+ 918 00df 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 918      66756E63 
+ 918      74696F6E 
+ 918      2D736563 
+ 918      74696F6E 
+ 919              	.LASF12:
+ 920 0107 696E7431 		.ascii	"int16\000"
+ 920      3600
+ 921              	.LASF5:
+ 922 010d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 922      20756E73 
+ 922      69676E65 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 19
+
+
+ 922      6420696E 
+ 922      7400
+ 923              	.LASF35:
+ 924 011f 6469616C 		.ascii	"dialStepPin_Write\000"
+ 924      53746570 
+ 924      50696E5F 
+ 924      57726974 
+ 924      6500
+ 925              	.LASF3:
+ 926 0131 73686F72 		.ascii	"short unsigned int\000"
+ 926      7420756E 
+ 926      7369676E 
+ 926      65642069 
+ 926      6E7400
+ 927              	.LASF22:
+ 928 0144 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 928      52784275 
+ 928      66666572 
+ 928      00
+ 929              	.LASF14:
+ 930 0151 646F7562 		.ascii	"double\000"
+ 930      6C6500
+ 931              	.LASF11:
+ 932 0158 696E7438 		.ascii	"int8\000"
+ 932      00
+ 933              	.LASF26:
+ 934 015d 616E676C 		.ascii	"angleCurrentPosition\000"
+ 934      65437572 
+ 934      72656E74 
+ 934      506F7369 
+ 934      74696F6E 
+ 935              	.LASF8:
+ 936 0172 756E7369 		.ascii	"unsigned int\000"
+ 936      676E6564 
+ 936      20696E74 
+ 936      00
+ 937              	.LASF7:
+ 938 017f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 938      206C6F6E 
+ 938      6720756E 
+ 938      7369676E 
+ 938      65642069 
+ 939              	.LASF33:
+ 940 0196 54696D65 		.ascii	"Timer_1_WriteCounter\000"
+ 940      725F315F 
+ 940      57726974 
+ 940      65436F75 
+ 940      6E746572 
+ 941              	.LASF0:
+ 942 01ab 7369676E 		.ascii	"signed char\000"
+ 942      65642063 
+ 942      68617200 
+ 943              	.LASF30:
+ 944 01b7 616E676C 		.ascii	"angleDirPin_Write\000"
+ 944      65446972 
+ 944      50696E5F 
+ 944      57726974 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 20
+
+
+ 944      6500
+ 945              	.LASF21:
+ 946 01c9 696E6974 		.ascii	"initStepperPins\000"
+ 946      53746570 
+ 946      70657250 
+ 946      696E7300 
+ 947              	.LASF10:
+ 948 01d9 696E7433 		.ascii	"int32_t\000"
+ 948      325F7400 
+ 949              	.LASF17:
+ 950 01e1 73697A65 		.ascii	"sizetype\000"
+ 950      74797065 
+ 950      00
+ 951              	.LASF39:
+ 952 01ea 433A5C55 		.ascii	"C:\\Users\\peter\\OneDrive - Aarhus universitet\\Do"
+ 952      73657273 
+ 952      5C706574 
+ 952      65725C4F 
+ 952      6E654472 
+ 953 0219 6B756D65 		.ascii	"kumenter\\PSoC Creator\\NEW_stepperMotor\\Modultest"
+ 953      6E746572 
+ 953      5C50536F 
+ 953      43204372 
+ 953      6561746F 
+ 954 0249 20666F72 		.ascii	" for stepper og affyring.cydsn\000"
+ 954      20737465 
+ 954      70706572 
+ 954      206F6720 
+ 954      61666679 
+ 955              	.LASF6:
+ 956 0268 6C6F6E67 		.ascii	"long long int\000"
+ 956      206C6F6E 
+ 956      6720696E 
+ 956      7400
+ 957              	.LASF15:
+ 958 0276 63686172 		.ascii	"char\000"
+ 958      00
+ 959              	.LASF36:
+ 960 027b 616E676C 		.ascii	"angleStepPin_Write\000"
+ 960      65537465 
+ 960      7050696E 
+ 960      5F577269 
+ 960      746500
+ 961              	.LASF2:
+ 962 028e 73686F72 		.ascii	"short int\000"
+ 962      7420696E 
+ 962      7400
+ 963              	.LASF24:
+ 964 0298 6469616C 		.ascii	"dialStepsRemaining\000"
+ 964      53746570 
+ 964      7352656D 
+ 964      61696E69 
+ 964      6E6700
+ 965              	.LASF20:
+ 966 02ab 73657453 		.ascii	"setStepperTargets\000"
+ 966      74657070 
+ 966      65725461 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc1s8v2r.s 			page 21
+
+
+ 966      72676574 
+ 966      7300
+ 967              	.LASF4:
+ 968 02bd 6C6F6E67 		.ascii	"long int\000"
+ 968      20696E74 
+ 968      00
+ 969              	.LASF19:
+ 970 02c6 616E676C 		.ascii	"angleTarget\000"
+ 970      65546172 
+ 970      67657400 
+ 971              	.LASF18:
+ 972 02d2 6469616C 		.ascii	"dialTarget\000"
+ 972      54617267 
+ 972      657400
+ 973              	.LASF16:
+ 974 02dd 6C6F6E67 		.ascii	"long double\000"
+ 974      20646F75 
+ 974      626C6500 
+ 975              	.LASF23:
+ 976 02e9 6469616C 		.ascii	"dialCurrentPosition\000"
+ 976      43757272 
+ 976      656E7450 
+ 976      6F736974 
+ 976      696F6E00 
+ 977              	.LASF31:
+ 978 02fd 54696D65 		.ascii	"Timer_1_Stop\000"
+ 978      725F315F 
+ 978      53746F70 
+ 978      00
+ 979              	.LASF28:
+ 980 030a 616E676C 		.ascii	"angleDirection\000"
+ 980      65446972 
+ 980      65637469 
+ 980      6F6E00
+ 981              	.LASF38:
+ 982 0319 73746570 		.ascii	"stepper.c\000"
+ 982      7065722E 
+ 982      6300
+ 983              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
