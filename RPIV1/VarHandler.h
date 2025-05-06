@@ -19,6 +19,9 @@ public:
 
     void setShootState(const bool& newValue);
     bool getShootState() const;
+    //Obstruction state
+    void setObstructionState(const int& newValue);
+    int getObstructionState() const;
 
     std::string getMessage();
 
@@ -27,6 +30,8 @@ public:
 
     void setLastMessageAcknowledged(bool acknowledged);
     bool isLastMessageAcknowledged() const;
+
+    
 
 private:
     int controlMode;
@@ -39,4 +44,6 @@ private:
     int value2ShootMode;
 
     bool lastMessageAcknowledged;
+
+    int ObstructionState;
 };

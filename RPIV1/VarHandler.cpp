@@ -12,6 +12,7 @@ VarHandler::VarHandler() {
     value2ShootMode = 0;
     ShootState = false;
     controlMode = 2;
+    ObstructionState = 0;
 }
 
 //Set and get Drive mode
@@ -96,4 +97,14 @@ void VarHandler::setLastMessageAcknowledged(bool acknowledged){
 
 bool VarHandler::isLastMessageAcknowledged() const{
     return lastMessageAcknowledged;
+}
+
+
+//Set and get ObstructionState
+void VarHandler::setObstructionState(const int& newValue){
+    ObstructionState = newValue;
+}
+
+int VarHandler::getObstructionState() const{
+    return ObstructionState;
 }
