@@ -84,42 +84,57 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                     if (fullMessage == "ACK") {
                         cout << "ACK received. Preparing to send the next message." << endl;
 
-                        // Retrieve ShootState from VarHandler
-                        int shootState = static_cast<int>(handler->getShootState());
+                        // Handle ShootState
+                        if (handler->getShootState()) {
+                            int shootState = static_cast<int>(handler->getShootState());
+                            string ackShootStateMessage = "ACK," + to_string(shootState) + "X";
+                            int status = write(s, ackShootStateMessage.c_str(), ackShootStateMessage.length());
+                            if (status < 0) {
+                                perror("Write failed for ACK with ShootState");
+                            } else {
+                                cout << "Sent: " << ackShootStateMessage << endl;
+                            }
+                            handler->setShootState(false); // Reset ShootState after sending
+                        }
 
-                        // Send ACK with ShootState
-                        string ackMessage = "ACK," + to_string(shootState) + "X";
-                        int status = write(s, ackMessage.c_str(), ackMessage.length());
-                        i
-                         (status < 0) {
-                            perror("Write failed for ACK with ShootState");
+                        // Handle ObstructionState
+                        int obstructionState = handler->getObstructionState();
+                        string ackObstructionStateMessage = "ACK," + to_string(obstructionState) + "X";
+                        int status = write(s, ackObstructionStateMessage.c_str(), ackObstructionStateMessage.length());
+                        if (status < 0) {
+                            perror("Write failed for ACK with ObstructionState");
                         } else {
-                            cout << "Sent: " << ackMessage << endl;
+                            cout << "Sent: " << ackObstructionStateMessage << endl;
                         }
 
                         handler->setLastMessageAcknowledged(true); // Mark the last message as acknowledged
                         lastSentMessage.clear(); // Clear the last sent message to fetch new data
                         resendLastMessage = false; // Allow sending the next message
-
-                        if (handler->getShootState()){
-                            cout <<"if high"<<
-                            handler->setShootState(false); // Reset shoot state after ACK
-                        }
                         responseReceived = true;
                         break;
                     } else if (fullMessage == "NACK") {
                         cout << "NACK received. Resending the last message." << endl;
 
-                        // Retrieve ShootState from VarHandler
-                        int shootState = static_cast<int>(handler->getShootState());
+                        // Handle ShootState
+                        if (handler->getShootState()) {
+                            int shootState = static_cast<int>(handler->getShootState());
+                            string nackShootStateMessage = "NACK," + to_string(shootState) + "X";
+                            int status = write(s, nackShootStateMessage.c_str(), nackShootStateMessage.length());
+                            if (status < 0) {
+                                perror("Write failed for NACK with ShootState");
+                            } else {
+                                cout << "Sent: " << nackShootStateMessage << endl;
+                            }
+                        }
 
-                        // Send NACK with ShootState
-                        string nackMessage = "NACK," + to_string(shootState) + "X";
-                        int status = write(s, nackMessage.c_str(), nackMessage.length());
+                        // Handle ObstructionState
+                        int obstructionState = handler->getObstructionState();
+                        string nackObstructionStateMessage = "NACK," + to_string(obstructionState) + "X";
+                        int status = write(s, nackObstructionStateMessage.c_str(), nackObstructionStateMessage.length());
                         if (status < 0) {
-                            perror("Write failed for NACK with ShootState");
+                            perror("Write failed for NACK with ObstructionState");
                         } else {
-                            cout << "Sent: " << nackMessage << endl;
+                            cout << "Sent: " << nackObstructionStateMessage << endl;
                         }
 
                         handler->setLastMessageAcknowledged(false); // Mark the last message as not acknowledged
