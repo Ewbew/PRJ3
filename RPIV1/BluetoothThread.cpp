@@ -83,6 +83,20 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                     // Handle ACK/NACK
                     if (fullMessage == "ACK") {
                         cout << "ACK received. Preparing to send the next message." << endl;
+
+                        // Retrieve ShootState from VarHandler
+                        int shootState = static_cast<int>(handler->getShootState());
+
+                        // Send ACK with ShootState
+                        string ackMessage = "ACK," + to_string(shootState) + "X";
+                        int status = write(s, ackMessage.c_str(), ackMessage.length());
+                        i
+                         (status < 0) {
+                            perror("Write failed for ACK with ShootState");
+                        } else {
+                            cout << "Sent: " << ackMessage << endl;
+                        }
+
                         handler->setLastMessageAcknowledged(true); // Mark the last message as acknowledged
                         lastSentMessage.clear(); // Clear the last sent message to fetch new data
                         resendLastMessage = false; // Allow sending the next message
@@ -90,6 +104,19 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                         break;
                     } else if (fullMessage == "NACK") {
                         cout << "NACK received. Resending the last message." << endl;
+
+                        // Retrieve ShootState from VarHandler
+                        int shootState = static_cast<int>(handler->getShootState());
+
+                        // Send NACK with ShootState
+                        string nackMessage = "NACK," + to_string(shootState) + "X";
+                        int status = write(s, nackMessage.c_str(), nackMessage.length());
+                        if (status < 0) {
+                            perror("Write failed for NACK with ShootState");
+                        } else {
+                            cout << "Sent: " << nackMessage << endl;
+                        }
+
                         handler->setLastMessageAcknowledged(false); // Mark the last message as not acknowledged
                         resendLastMessage = true; // Keep resending the last message
                         responseReceived = true;
