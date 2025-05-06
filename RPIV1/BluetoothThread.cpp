@@ -100,6 +100,11 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                         handler->setLastMessageAcknowledged(true); // Mark the last message as acknowledged
                         lastSentMessage.clear(); // Clear the last sent message to fetch new data
                         resendLastMessage = false; // Allow sending the next message
+
+                        if (handler->getShootState()){
+                            cout <<"if high"<<
+                            handler->setShootState(false); // Reset shoot state after ACK
+                        }
                         responseReceived = true;
                         break;
                     } else if (fullMessage == "NACK") {
@@ -130,6 +135,8 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                 perror("Read failed");
                 break;
             }
+
+            //Everytime we receive a message, we set the obstruction. 
 
             this_thread::sleep_for(chrono::milliseconds(100)); // Avoid busy-waiting
         }
