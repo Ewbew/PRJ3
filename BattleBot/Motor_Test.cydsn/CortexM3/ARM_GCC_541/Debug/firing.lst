@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
   38              		.loc 1 17 0
   39 0002 0B4C     		ldr	r4, .L3
   40 0004 0025     		movs	r5, #0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 2
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 2
 
 
   41 0006 2570     		strb	r5, [r4]
@@ -77,7 +77,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
   50              	.LVL0:
   22:firing.c      ****     fireStepsRemaining = FIRE_MAX_STEPS;
   51              		.loc 1 22 0
-  52 0014 4623     		movs	r3, #70
+  52 0014 6423     		movs	r3, #100
   53 0016 6380     		strh	r3, [r4, #2]	@ movhi
   23:firing.c      **** 
   24:firing.c      ****     Timer_Stepper_Stop();
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
   28:firing.c      **** }
   29:firing.c      **** 
   30:firing.c      **** void initFiringPins(void)
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 3
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 3
 
 
   31:firing.c      **** {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
  136              		.file 6 "Generated_Source\\PSoC5/fireDirPin.h"
  137              		.file 7 "Generated_Source\\PSoC5/Timer_Stepper.h"
  138              		.file 8 "Generated_Source\\PSoC5/fireStepPin.h"
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 4
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 4
 
 
  139              		.section	.debug_info,"",%progbits
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
  193 006b 696E7400 		.ascii	"int\000"
  194 006f 02       		.uleb128 0x2
  195 0070 04       		.byte	0x4
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 5
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 5
 
 
  196 0071 07       		.byte	0x7
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
  250 00e3 14000000 		.4byte	.LVL0
  251 00e7 C6010000 		.4byte	0x1c6
  252 00eb F5000000 		.4byte	0xf5
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 6
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 6
 
 
  253 00ef 09       		.uleb128 0x9
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
  307 0158 0E000000 		.4byte	.LVL6
  308 015c C6010000 		.4byte	0x1c6
  309 0160 09       		.uleb128 0x9
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 7
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 7
 
 
  310 0161 01       		.uleb128 0x1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
  364 01d1 0E       		.uleb128 0xe
  365 01d2 0A000000 		.4byte	.LASF27
  366 01d6 0A000000 		.4byte	.LASF27
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 8
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 8
 
 
  367 01da 07       		.byte	0x7
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
  421 001d 00       		.byte	0
  422 001e 03       		.uleb128 0x3
  423 001f 16       		.uleb128 0x16
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 9
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 9
 
 
  424 0020 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
  478 0056 19       		.uleb128 0x19
  479 0057 11       		.uleb128 0x11
  480 0058 01       		.uleb128 0x1
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 10
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 10
 
 
  481 0059 12       		.uleb128 0x12
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
  535 0099 0B       		.uleb128 0xb
  536 009a 3B       		.uleb128 0x3b
  537 009b 05       		.uleb128 0x5
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 11
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 11
 
 
  538 009c 49       		.uleb128 0x49
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
  592 001c 10000000 		.4byte	.LFE64-.LFB64
  593 0020 00000000 		.4byte	0
  594 0024 00000000 		.4byte	0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 12
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 12
 
 
  595              		.section	.debug_ranges,"",%progbits
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
  622 0088 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  622      43313120 
  622      352E342E 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 13
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 13
 
 
  622      31203230 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
  643              	.LASF22:
  644 0191 66697265 		.ascii	"fireStepsRemaining\000"
  644      53746570 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 14
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 14
 
 
  644      7352656D 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 1
  666      7400
  667              	.LASF11:
  668 0237 75696E74 		.ascii	"uint8\000"
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccaKhh1U.s 			page 15
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccJJdegd.s 			page 15
 
 
  668      3800

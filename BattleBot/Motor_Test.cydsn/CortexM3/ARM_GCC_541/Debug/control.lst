@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
   44 000e 17DD     		ble	.L2
   12:control.c     ****     {
   13:control.c     ****         dialStepPin_Write(1);
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 2
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 2
 
 
   45              		.loc 1 13 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
   88              	.LVL5:
   25:control.c     ****         angleStepPin_Write(0);
   89              		.loc 1 25 0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 3
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 3
 
 
   90 0056 0020     		movs	r0, #0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  133 009c 1BB2     		sxth	r3, r3
  134 009e 1380     		strh	r3, [r2]	@ movhi
  135 00a0 23E0     		b	.L5
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 4
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 4
 
 
  136              	.L4:
@@ -212,7 +212,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  158              	.LVL10:
   43:control.c     ****         fireStepsRemaining = FIRE_MAX_STEPS;
  159              		.loc 1 43 0
- 160 00c8 4622     		movs	r2, #70
+ 160 00c8 6422     		movs	r2, #100
  161 00ca 184B     		ldr	r3, .L9+24
  162 00cc 1A80     		strh	r2, [r3]	@ movhi
  163 00ce 0CE0     		b	.L5
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  179 00e8 1A70     		strb	r2, [r3]
  180              	.L5:
   48:control.c     ****     }
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 5
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 5
 
 
   49:control.c     **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
   54:control.c     ****     }
   55:control.c     **** }
   56:control.c     **** 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 6
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 6
 
 
   57:control.c     **** void initControlTimer(void)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  279 0010 0C       		.byte	0xc
  280 0011 93010000 		.4byte	.LASF42
  281 0015 44000000 		.4byte	.LASF43
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 7
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 7
 
 
  282 0019 00000000 		.4byte	.Ldebug_ranges0+0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  336 0082 B7020000 		.4byte	.LASF11
  337 0086 04       		.byte	0x4
  338 0087 E901     		.2byte	0x1e9
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 8
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 8
 
 
  339 0089 2C000000 		.4byte	0x2c
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  393 00fd 00       		.byte	0
  394 00fe 09       		.uleb128 0x9
  395 00ff 1C000000 		.4byte	.LVL2
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 9
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 9
 
 
  396 0103 90020000 		.4byte	0x290
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  450 016c 0A       		.uleb128 0xa
  451 016d 01       		.uleb128 0x1
  452 016e 50       		.byte	0x50
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 10
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 10
 
 
  453 016f 01       		.uleb128 0x1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  507 01de 10000000 		.4byte	.LVL14
  508 01e2 D2020000 		.4byte	0x2d2
  509 01e6 0A       		.uleb128 0xa
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 11
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 11
 
 
  510 01e7 01       		.uleb128 0x1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  564 025a CF010000 		.4byte	.LASF29
  565 025e 07       		.byte	0x7
  566 025f 0A       		.byte	0xa
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 12
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 12
 
 
  567 0260 0D020000 		.4byte	0x20d
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  621 02db 0E       		.byte	0xe
  622 02dc 18       		.byte	0x18
  623 02dd 00       		.byte	0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 13
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 13
 
 
  624              		.section	.debug_abbrev,"",%progbits
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  678 0034 00       		.byte	0
  679 0035 00       		.byte	0
  680 0036 05       		.uleb128 0x5
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 14
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 14
 
 
  681 0037 16       		.uleb128 0x16
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  735 0070 898201   		.uleb128 0x4109
  736 0073 01       		.byte	0x1
  737 0074 11       		.uleb128 0x11
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 15
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 15
 
 
  738 0075 01       		.uleb128 0x1
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  792 00b0 19       		.uleb128 0x19
  793 00b1 3C       		.uleb128 0x3c
  794 00b2 19       		.uleb128 0x19
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 16
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 16
 
 
  795 00b3 00       		.byte	0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  841      6500
  842              	.LASF9:
  843 0012 5F5F696E 		.ascii	"__int32_t\000"
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 17
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 17
 
 
  843      7433325F 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  863              	.LASF1:
  864 00e3 756E7369 		.ascii	"unsigned char\000"
  864      676E6564 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 18
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 18
 
 
  864      20636861 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  884      53746570 
  884      7352656D 
  884      61696E69 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 19
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 19
 
 
  884      6E6700
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 1
  908      44697250 
  908      696E5F57 
  908      72697465 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cceScQI6.s 			page 20
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 20
 
 
  908      00
