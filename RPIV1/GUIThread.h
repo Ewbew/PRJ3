@@ -25,6 +25,7 @@ private slots:
 private:
     VarHandler* VarHandler_;
 
+    QLabel* warningLabel;
     QVBoxLayout* layout;
     QHBoxLayout* controlWidgetLayout;
 

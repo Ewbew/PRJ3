@@ -5,6 +5,7 @@
 #include <QSlider>
 #include <QPushButton>
 #include <QLabel>
+#include <QTimer>
 #include <iostream>
 
 SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
@@ -18,10 +19,16 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     layout->addLayout(controlWidgetLayout);
 
     toggleModeButton = new QPushButton("Switch Mode", this);
-    toggleShootStateButton = new QPushButton("Toggle ShootState", this);
+    toggleShootStateButton = new QPushButton("Shoot!", this);
     toggleShootStateButton->setVisible(false);
     layout->addWidget(toggleModeButton);
     layout->addWidget(toggleShootStateButton);
+
+    // Add warning label for ObstructionState
+    warningLabel = new QLabel("You're about to hit a wall, one second.", this);
+    warningLabel->setStyleSheet("color: red; font-weight: bold;");
+    warningLabel->setVisible(false);
+    layout->addWidget(warningLabel);
 
     // DRIVE MODE
     driveLabel1 = new QLabel("Drive Var1", this);
@@ -77,12 +84,9 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
 
     connect(toggleModeButton, &QPushButton::clicked, this, &SliderWindow::toggleMode);
 
-    // Update: Hold button to shoot
-    connect(toggleShootStateButton, &QPushButton::pressed, this, [=]() {
+    // Click to set ShootState to true
+    connect(toggleShootStateButton, &QPushButton::clicked, this, [=]() {
         VarHandler_->setShootState(true);
-    });
-    connect(toggleShootStateButton, &QPushButton::released, this, [=]() {
-        VarHandler_->setShootState(false);
     });
 
     statusTimer = new QTimer(this);
@@ -90,7 +94,7 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     statusTimer->start(1000);
 
     setLayout(layout);
-    setWindowTitle("Slider Mode Example");
+    setWindowTitle("SWEET BATTLEBOT");
 
     VarHandler_->setControlMode(2);  // Default to Drive Mode
     updateMode();
@@ -150,5 +154,12 @@ void SliderWindow::printStatus() {
                   << std::endl;
     } else {
         std::cout << " | Unknown mode" << std::endl;
+    }
+
+    // Show warning if obstruction is detected
+    if (VarHandler_->getObstructionState() == 1) {
+        warningLabel->setVisible(true);
+    } else {
+        warningLabel->setVisible(false);
     }
 }
