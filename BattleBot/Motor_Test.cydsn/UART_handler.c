@@ -1,6 +1,10 @@
 #include "UART_handler.h"
 #include "motor_control.h"
-#include "shootVarHandler.h"
+#include "firing.h"
+#include "stepper.h"
+// #include "shootVarHandler.h" // THis is probably deprecated, since we can just call the functions from
+                                // firing.c directly on the variables read from the RPI message
+
 #include <stdio.h>
 #include <string.h>
 
@@ -54,10 +58,10 @@ CY_ISR(ISR_UART_rx_handler_BT)
                 else if (tempMode == '@' && shootRef != NULL) {
                     set_speedA(0);
                     set_speedB(0);
-
-                    shootRef->desiredPos1 = temp1;
-                    shootRef->desiredPos2 = temp2;
-                    shootRef->shootMode = tempBool;
+                    VAR1 = (int8_t)temp1;
+                    VAR2 = (int8_t)temp2; 
+                    setStepperTargets(VAR1, VAR2);
+                    if(tempBool) fireMechanism();
                     UART_PC_PutString("Turret direction and shoot mode successfully set\r\n");
                 }
             }

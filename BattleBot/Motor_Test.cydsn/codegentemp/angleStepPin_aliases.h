@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: StepPin.h  
+* File Name: angleStepPin.h  
 * Version 2.20
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_StepPin_ALIASES_H) /* Pins StepPin_ALIASES_H */
-#define CY_PINS_StepPin_ALIASES_H
+#if !defined(CY_PINS_angleStepPin_ALIASES_H) /* Pins angleStepPin_ALIASES_H */
+#define CY_PINS_angleStepPin_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -25,12 +25,12 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define StepPin_0			(StepPin__0__PC)
-#define StepPin_0_INTR	((uint16)((uint16)0x0001u << StepPin__0__SHIFT))
+#define angleStepPin_0			(angleStepPin__0__PC)
+#define angleStepPin_0_INTR	((uint16)((uint16)0x0001u << angleStepPin__0__SHIFT))
 
-#define StepPin_INTR_ALL	 ((uint16)(StepPin_0_INTR))
+#define angleStepPin_INTR_ALL	 ((uint16)(angleStepPin_0_INTR))
 
-#endif /* End Pins StepPin_ALIASES_H */
+#endif /* End Pins angleStepPin_ALIASES_H */
 
 
 /* [] END OF FILE */

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccXSbppS.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
   46              		.global	shootVarHandler_getDesiredPos2
   47              		.thumb
   48              		.thumb_func
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 2
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccXSbppS.s 			page 2
 
 
   49              		.type	shootVarHandler_getDesiredPos2, %function
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
   95              		.thumb
   96              		.thumb_func
   97              		.type	shootVarHandler_setDesiredPos1, %function
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 3
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccXSbppS.s 			page 3
 
 
   98              	shootVarHandler_setDesiredPos1:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  144              		.global	shootVarHandler_setShootMode
  145              		.thumb
  146              		.thumb_func
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 4
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccXSbppS.s 			page 4
 
 
  147              		.type	shootVarHandler_setShootMode, %function
@@ -224,10 +224,10 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  181 0006 00000000 		.4byte	.Ldebug_abbrev0
  182 000a 04       		.byte	0x4
  183 000b 01       		.uleb128 0x1
- 184 000c 2B010000 		.4byte	.LASF12
+ 184 000c 45010000 		.4byte	.LASF12
  185 0010 0C       		.byte	0xc
- 186 0011 BC000000 		.4byte	.LASF13
- 187 0015 CE000000 		.4byte	.LASF14
+ 186 0011 16010000 		.4byte	.LASF13
+ 187 0015 95000000 		.4byte	.LASF14
  188 0019 00000000 		.4byte	.Ldebug_ranges0+0
  189 001d 00000000 		.4byte	0
  190 0021 00000000 		.4byte	.Ldebug_line0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  195 0029 52000000 		.4byte	0x52
  196 002d 03       		.uleb128 0x3
  197 002e 1A000000 		.4byte	.LASF0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 5
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccXSbppS.s 			page 5
 
 
  198 0032 02       		.byte	0x2
@@ -263,7 +263,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  217 0054 05       		.byte	0x5
  218 0055 696E7400 		.ascii	"int\000"
  219 0059 05       		.uleb128 0x5
- 220 005a D8010000 		.4byte	.LASF15
+ 220 005a F2010000 		.4byte	.LASF15
  221 005e 02       		.byte	0x2
  222 005f 09       		.byte	0x9
  223 0060 25000000 		.4byte	0x25
@@ -295,10 +295,10 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  249 00a1 01       		.uleb128 0x1
  250 00a2 9C       		.byte	0x9c
  251 00a3 07       		.uleb128 0x7
- 252 00a4 9D000000 		.4byte	.LASF6
+ 252 00a4 F7000000 		.4byte	.LASF6
  253 00a8 01       		.byte	0x1
  254 00a9 14       		.byte	0x14
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 6
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccXSbppS.s 			page 6
 
 
  255 00aa 00000000 		.4byte	.LFB3
@@ -315,7 +315,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  266 00c4 50       		.byte	0x50
  267 00c5 00       		.byte	0
  268 00c6 07       		.uleb128 0x7
- 269 00c7 B9010000 		.4byte	.LASF7
+ 269 00c7 D3010000 		.4byte	.LASF7
  270 00cb 01       		.byte	0x1
  271 00cc 18       		.byte	0x18
  272 00cd 00000000 		.4byte	.LFB4
@@ -332,7 +332,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  283 00e7 50       		.byte	0x50
  284 00e8 00       		.byte	0
  285 00e9 07       		.uleb128 0x7
- 286 00ea 0E010000 		.4byte	.LASF10
+ 286 00ea 28010000 		.4byte	.LASF10
  287 00ee 01       		.byte	0x1
  288 00ef 1C       		.byte	0x1c
  289 00f0 00000000 		.4byte	.LFB5
@@ -341,7 +341,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  292 00f9 9C       		.byte	0x9c
  293 00fa 0C010000 		.4byte	0x10c
  294 00fe 08       		.uleb128 0x8
- 295 00ff 95000000 		.4byte	.LASF11
+ 295 00ff EF000000 		.4byte	.LASF11
  296 0103 01       		.byte	0x1
  297 0104 1C       		.byte	0x1c
  298 0105 52000000 		.4byte	0x52
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  309 0119 00000000 		.4byte	handler
  310 011d 00       		.byte	0
  311              		.section	.debug_abbrev,"",%progbits
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 7
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccXSbppS.s 			page 7
 
 
  312              	.Ldebug_abbrev0:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  366 0035 0B       		.uleb128 0xb
  367 0036 03       		.uleb128 0x3
  368 0037 08       		.uleb128 0x8
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 8
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccXSbppS.s 			page 8
 
 
  369 0038 00       		.byte	0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  423 006f 01       		.uleb128 0x1
  424 0070 12       		.uleb128 0x12
  425 0071 06       		.uleb128 0x6
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 9
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccXSbppS.s 			page 9
 
 
  426 0072 40       		.uleb128 0x40
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  480 002c 0C000000 		.4byte	.LFE3-.LFB3
  481 0030 00000000 		.4byte	.LFB4
  482 0034 0C000000 		.4byte	.LFE4-.LFB4
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 10
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccXSbppS.s 			page 10
 
 
  483 0038 00000000 		.4byte	.LFB5
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  519      48616E64 
  519      6C65725F 
  519      67657444 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 11
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccXSbppS.s 			page 11
 
 
  520              	.LASF9:
@@ -610,65 +610,65 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 1
  523      48616E64 
  523      6C65725F 
  523      67657453 
- 524              	.LASF11:
- 525 0095 6E65774D 		.ascii	"newMode\000"
- 525      6F646500 
- 526              	.LASF6:
- 527 009d 73686F6F 		.ascii	"shootVarHandler_setDesiredPos1\000"
- 527      74566172 
- 527      48616E64 
- 527      6C65725F 
- 527      73657444 
- 528              	.LASF13:
- 529 00bc 73686F6F 		.ascii	"shootVarHandler.c\000"
- 529      74566172 
- 529      48616E64 
- 529      6C65722E 
- 529      6300
- 530              	.LASF14:
- 531 00ce 433A5C55 		.ascii	"C:\\Users\\peter\\Documents\\GitHub\\PRJ3\\BattleBo"
- 531      73657273 
- 531      5C706574 
- 531      65725C44 
- 531      6F63756D 
- 532 00fb 745C4D6F 		.ascii	"t\\Motor_Test.cydsn\000"
- 532      746F725F 
- 532      54657374 
- 532      2E637964 
- 532      736E00
+ 524              	.LASF14:
+ 525 0095 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\Elektronik ingenioer\\3rd s"
+ 525      635C486F 
+ 525      6D655C44 
+ 525      65736B74 
+ 525      6F705C45 
+ 526 00c2 656D6573 		.ascii	"emester\\PRJ3\\PRJ3\\BattleBot\\Motor_Test.cydsn\000"
+ 526      7465725C 
+ 526      50524A33 
+ 526      5C50524A 
+ 526      335C4261 
+ 527              	.LASF11:
+ 528 00ef 6E65774D 		.ascii	"newMode\000"
+ 528      6F646500 
+ 529              	.LASF6:
+ 530 00f7 73686F6F 		.ascii	"shootVarHandler_setDesiredPos1\000"
+ 530      74566172 
+ 530      48616E64 
+ 530      6C65725F 
+ 530      73657444 
+ 531              	.LASF13:
+ 532 0116 73686F6F 		.ascii	"shootVarHandler.c\000"
+ 532      74566172 
+ 532      48616E64 
+ 532      6C65722E 
+ 532      6300
  533              	.LASF10:
- 534 010e 73686F6F 		.ascii	"shootVarHandler_setShootMode\000"
+ 534 0128 73686F6F 		.ascii	"shootVarHandler_setShootMode\000"
  534      74566172 
  534      48616E64 
  534      6C65725F 
  534      73657453 
  535              	.LASF12:
- 536 012b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 536 0145 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  536      43313120 
  536      352E342E 
  536      31203230 
  536      31363036 
- 537 015e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 537 0178 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  537      20726576 
  537      6973696F 
  537      6E203233 
  537      37373135 
- 538 0191 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 538 01ab 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  538      66756E63 
  538      74696F6E 
  538      2D736563 
  538      74696F6E 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccREmos2.s 			page 12
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccXSbppS.s 			page 12
 
 
  539              	.LASF7:
- 540 01b9 73686F6F 		.ascii	"shootVarHandler_setDesiredPos2\000"
+ 540 01d3 73686F6F 		.ascii	"shootVarHandler_setDesiredPos2\000"
  540      74566172 
  540      48616E64 
  540      6C65725F 
  540      73657444 
  541              	.LASF15:
- 542 01d8 73686F6F 		.ascii	"shootVarHandler\000"
+ 542 01f2 73686F6F 		.ascii	"shootVarHandler\000"
  542      74566172 
  542      48616E64 
  542      6C657200 

@@ -1,123 +1,142 @@
 <?xml version="1.0" encoding="us-ascii"?>
 
-<fileSet version="1" anchorPath="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp" xsi:schemaLocation="http://cypress.com/xsd/cypathdictionary cypathdictionary.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cypathdictionary">
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyfitter_cfg.h" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyfitter_cfg.c" value="SOURCE_C;CortexM3;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\config.hex" value="OTHER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cymetadata.c" value="SOURCE_C;CortexM3;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydevice.h" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydevicegnu.inc" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydevicerv.inc" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydeviceiar.inc" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydevice_trm.h" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydevicegnu_trm.inc" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydevicerv_trm.inc" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydeviceiar_trm.inc" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyfittergnu.inc" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyfitterrv.inc" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyfitteriar.inc" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC.c" value="SOURCE_C;CortexM3;;;;UART_PC" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC.h" value="HEADER;;;;;UART_PC" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_PM.c" value="SOURCE_C;CortexM3;;;;UART_PC" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_INT.c" value="SOURCE_C;CortexM3;;;;UART_PC" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_BOOT.c" value="SOURCE_C;CortexM3;;;;UART_PC" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_uart_rx_PC.c" value="SOURCE_C;CortexM3;;;;isr_uart_rx_PC" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_uart_rx_PC.h" value="HEADER;;;;;isr_uart_rx_PC" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\PWM_B.c" value="SOURCE_C;CortexM3;;;;PWM_B" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\PWM_B.h" value="HEADER;;;;;PWM_B" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\PWM_B_PM.c" value="SOURCE_C;CortexM3;;;;PWM_B" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN4_aliases.h" value="HEADER;;;;;IN4" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN4.c" value="SOURCE_C;CortexM3;;;;IN4" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN4.h" value="HEADER;;;;;IN4" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\PWM_A.c" value="SOURCE_C;CortexM3;;;;PWM_A" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\PWM_A.h" value="HEADER;;;;;PWM_A" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\PWM_A_PM.c" value="SOURCE_C;CortexM3;;;;PWM_A" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_PWM_A.c" value="SOURCE_C;CortexM3;;;;Clock_PWM_A" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_PWM_A.h" value="HEADER;;;;;Clock_PWM_A" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN3_aliases.h" value="HEADER;;;;;IN3" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN3.c" value="SOURCE_C;CortexM3;;;;IN3" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN3.h" value="HEADER;;;;;IN3" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_PWM_B.c" value="SOURCE_C;CortexM3;;;;Clock_PWM_B" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_PWM_B.h" value="HEADER;;;;;Clock_PWM_B" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\DirPin_aliases.h" value="HEADER;;;;;DirPin" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\DirPin.c" value="SOURCE_C;CortexM3;;;;DirPin" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\DirPin.h" value="HEADER;;;;;DirPin" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\StepPin_aliases.h" value="HEADER;;;;;StepPin" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\StepPin.c" value="SOURCE_C;CortexM3;;;;StepPin" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\StepPin.h" value="HEADER;;;;;StepPin" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT.c" value="SOURCE_C;CortexM3;;;;UART_BT" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT.h" value="HEADER;;;;;UART_BT" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_PM.c" value="SOURCE_C;CortexM3;;;;UART_BT" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_INT.c" value="SOURCE_C;CortexM3;;;;UART_BT" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_BOOT.c" value="SOURCE_C;CortexM3;;;;UART_BT" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_uart_rx_BT.c" value="SOURCE_C;CortexM3;;;;isr_uart_rx_BT" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_uart_rx_BT.h" value="HEADER;;;;;isr_uart_rx_BT" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN2_aliases.h" value="HEADER;;;;;IN2" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN2.c" value="SOURCE_C;CortexM3;;;;IN2" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN2.h" value="HEADER;;;;;IN2" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN1_aliases.h" value="HEADER;;;;;IN1" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN1.c" value="SOURCE_C;CortexM3;;;;IN1" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN1.h" value="HEADER;;;;;IN1" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_24MHz.c" value="SOURCE_C;CortexM3;;;;Clock_24MHz" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_24MHz.h" value="HEADER;;;;;Clock_24MHz" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Trigger_aliases.h" value="HEADER;;;;;Trigger" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Trigger.c" value="SOURCE_C;CortexM3;;;;Trigger" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Trigger.h" value="HEADER;;;;;Trigger" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Echo_aliases.h" value="HEADER;;;;;Echo" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Echo.c" value="SOURCE_C;CortexM3;;;;Echo" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Echo.h" value="HEADER;;;;;Echo" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_echo_int.c" value="SOURCE_C;CortexM3;;;;isr_echo_int" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_echo_int.h" value="HEADER;;;;;isr_echo_int" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Counter.c" value="SOURCE_C;CortexM3;;;;Counter" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Counter.h" value="HEADER;;;;;Counter" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Counter_PM.c" value="SOURCE_C;CortexM3;;;;Counter" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Counter_Reset.h" value="HEADER;;;;;Counter_Reset" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Counter_Reset.c" value="SOURCE_C;CortexM3;;;;Counter_Reset" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Counter_Reset_PM.c" value="SOURCE_C;CortexM3;;;;Counter_Reset" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_timer_DS.c" value="SOURCE_C;CortexM3;;;;isr_timer_DS" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_timer_DS.h" value="HEADER;;;;;isr_timer_DS" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_DS.c" value="SOURCE_C;CortexM3;;;;Timer_DS" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_DS.h" value="HEADER;;;;;Timer_DS" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_DS_PM.c" value="SOURCE_C;CortexM3;;;;Timer_DS" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_5kHz.c" value="SOURCE_C;CortexM3;;;;Clock_5kHz" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_5kHz.h" value="HEADER;;;;;Clock_5kHz" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_PC_IntClock" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_IntClock.h" value="HEADER;;;;;UART_PC_IntClock" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_BT_IntClock" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_IntClock.h" value="HEADER;;;;;UART_BT_IntClock" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cm3gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Cm3RealView.scat" value="LINKER_SCRIPT;;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Cm3Start.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\core_cm3.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\core_cm3_psoc5.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyBootAsmGnu.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyBootAsmRv.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyDmac.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyDmac.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyFlash.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyFlash.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyLib.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyLib.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cypins.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyPm.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyPm.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CySpc.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CySpc.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cytypes.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyutils.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\core_cmFunc.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\core_cmInstr.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Cm3Iar.icf" value="LINKER_SCRIPT;;;e9305a93-d091-4da5-bdc7-2813049dcdbf;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyBootAsmIar.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;e9305a93-d091-4da5-bdc7-2813049dcdbf;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cmsis_armcc.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cmsis_gcc.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cmsis_compiler.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cy_em_eeprom.c" value="SOURCE_C;CortexM3;;;;Em_EEPROM_Dynamic" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cy_em_eeprom.h" value="HEADER;;;;;Em_EEPROM_Dynamic" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\project.h" value="OTHER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cycodeshareimport.ld" value="OTHER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cycodeshareexport.ld" value="OTHER;;;;;" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cycodeshareimport.scat" value="OTHER;;;;;" />
+<fileSet version="1" anchorPath="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp" xsi:schemaLocation="http://cypress.com/xsd/cypathdictionary cypathdictionary.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cypathdictionary">
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyfitter_cfg.h" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyfitter_cfg.c" value="SOURCE_C;CortexM3;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\config.hex" value="OTHER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cymetadata.c" value="SOURCE_C;CortexM3;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydevice.h" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydevicegnu.inc" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydevicerv.inc" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydeviceiar.inc" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydevice_trm.h" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydevicegnu_trm.inc" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydevicerv_trm.inc" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydeviceiar_trm.inc" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyfittergnu.inc" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyfitterrv.inc" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyfitteriar.inc" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC.c" value="SOURCE_C;CortexM3;;;;UART_PC" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC.h" value="HEADER;;;;;UART_PC" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_PM.c" value="SOURCE_C;CortexM3;;;;UART_PC" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_INT.c" value="SOURCE_C;CortexM3;;;;UART_PC" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_BOOT.c" value="SOURCE_C;CortexM3;;;;UART_PC" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_uart_rx_PC.c" value="SOURCE_C;CortexM3;;;;isr_uart_rx_PC" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_uart_rx_PC.h" value="HEADER;;;;;isr_uart_rx_PC" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\PWM_B.c" value="SOURCE_C;CortexM3;;;;PWM_B" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\PWM_B.h" value="HEADER;;;;;PWM_B" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\PWM_B_PM.c" value="SOURCE_C;CortexM3;;;;PWM_B" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN4_aliases.h" value="HEADER;;;;;IN4" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN4.c" value="SOURCE_C;CortexM3;;;;IN4" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN4.h" value="HEADER;;;;;IN4" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\PWM_A.c" value="SOURCE_C;CortexM3;;;;PWM_A" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\PWM_A.h" value="HEADER;;;;;PWM_A" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\PWM_A_PM.c" value="SOURCE_C;CortexM3;;;;PWM_A" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_PWM_A.c" value="SOURCE_C;CortexM3;;;;Clock_PWM_A" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_PWM_A.h" value="HEADER;;;;;Clock_PWM_A" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN3_aliases.h" value="HEADER;;;;;IN3" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN3.c" value="SOURCE_C;CortexM3;;;;IN3" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN3.h" value="HEADER;;;;;IN3" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_PWM_B.c" value="SOURCE_C;CortexM3;;;;Clock_PWM_B" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_PWM_B.h" value="HEADER;;;;;Clock_PWM_B" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\fireDirPin_aliases.h" value="HEADER;;;;;fireDirPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\fireDirPin.c" value="SOURCE_C;CortexM3;;;;fireDirPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\fireDirPin.h" value="HEADER;;;;;fireDirPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT.c" value="SOURCE_C;CortexM3;;;;UART_BT" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT.h" value="HEADER;;;;;UART_BT" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_PM.c" value="SOURCE_C;CortexM3;;;;UART_BT" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_INT.c" value="SOURCE_C;CortexM3;;;;UART_BT" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_BOOT.c" value="SOURCE_C;CortexM3;;;;UART_BT" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_uart_rx_BT.c" value="SOURCE_C;CortexM3;;;;isr_uart_rx_BT" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_uart_rx_BT.h" value="HEADER;;;;;isr_uart_rx_BT" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN2_aliases.h" value="HEADER;;;;;IN2" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN2.c" value="SOURCE_C;CortexM3;;;;IN2" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN2.h" value="HEADER;;;;;IN2" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN1_aliases.h" value="HEADER;;;;;IN1" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN1.c" value="SOURCE_C;CortexM3;;;;IN1" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\IN1.h" value="HEADER;;;;;IN1" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_24MHz.c" value="SOURCE_C;CortexM3;;;;Clock_24MHz" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_24MHz.h" value="HEADER;;;;;Clock_24MHz" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Trigger_aliases.h" value="HEADER;;;;;Trigger" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Trigger.c" value="SOURCE_C;CortexM3;;;;Trigger" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Trigger.h" value="HEADER;;;;;Trigger" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Echo_aliases.h" value="HEADER;;;;;Echo" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Echo.c" value="SOURCE_C;CortexM3;;;;Echo" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Echo.h" value="HEADER;;;;;Echo" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_echo_int.c" value="SOURCE_C;CortexM3;;;;isr_echo_int" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_echo_int.h" value="HEADER;;;;;isr_echo_int" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Counter.c" value="SOURCE_C;CortexM3;;;;Counter" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Counter.h" value="HEADER;;;;;Counter" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Counter_PM.c" value="SOURCE_C;CortexM3;;;;Counter" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Counter_Reset.h" value="HEADER;;;;;Counter_Reset" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Counter_Reset.c" value="SOURCE_C;CortexM3;;;;Counter_Reset" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Counter_Reset_PM.c" value="SOURCE_C;CortexM3;;;;Counter_Reset" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_timer_DS.c" value="SOURCE_C;CortexM3;;;;isr_timer_DS" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_timer_DS.h" value="HEADER;;;;;isr_timer_DS" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_DS.c" value="SOURCE_C;CortexM3;;;;Timer_DS" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_DS.h" value="HEADER;;;;;Timer_DS" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_DS_PM.c" value="SOURCE_C;CortexM3;;;;Timer_DS" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_5kHz.c" value="SOURCE_C;CortexM3;;;;Clock_5kHz" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_5kHz.h" value="HEADER;;;;;Clock_5kHz" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\dialDirPin_aliases.h" value="HEADER;;;;;dialDirPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\dialDirPin.c" value="SOURCE_C;CortexM3;;;;dialDirPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\dialDirPin.h" value="HEADER;;;;;dialDirPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\dialStepPin_aliases.h" value="HEADER;;;;;dialStepPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\dialStepPin.c" value="SOURCE_C;CortexM3;;;;dialStepPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\dialStepPin.h" value="HEADER;;;;;dialStepPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_Stepper.c" value="SOURCE_C;CortexM3;;;;Timer_Stepper" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_Stepper.h" value="HEADER;;;;;Timer_Stepper" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_Stepper_PM.c" value="SOURCE_C;CortexM3;;;;Timer_Stepper" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\stepper_isr_timer.c" value="SOURCE_C;CortexM3;;;;stepper_isr_timer" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\stepper_isr_timer.h" value="HEADER;;;;;stepper_isr_timer" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_1.c" value="SOURCE_C;CortexM3;;;;Clock_1" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_1.h" value="HEADER;;;;;Clock_1" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\angleDirPin_aliases.h" value="HEADER;;;;;angleDirPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\angleDirPin.c" value="SOURCE_C;CortexM3;;;;angleDirPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\angleDirPin.h" value="HEADER;;;;;angleDirPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\angleStepPin_aliases.h" value="HEADER;;;;;angleStepPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\angleStepPin.c" value="SOURCE_C;CortexM3;;;;angleStepPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\angleStepPin.h" value="HEADER;;;;;angleStepPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\fireStepPin_aliases.h" value="HEADER;;;;;fireStepPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\fireStepPin.c" value="SOURCE_C;CortexM3;;;;fireStepPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\fireStepPin.h" value="HEADER;;;;;fireStepPin" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_PC_IntClock" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_IntClock.h" value="HEADER;;;;;UART_PC_IntClock" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_BT_IntClock" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_IntClock.h" value="HEADER;;;;;UART_BT_IntClock" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cm3gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Cm3RealView.scat" value="LINKER_SCRIPT;;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Cm3Start.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\core_cm3.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\core_cm3_psoc5.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyBootAsmGnu.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyBootAsmRv.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyDmac.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyDmac.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyFlash.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyFlash.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyLib.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyLib.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cypins.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyPm.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyPm.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CySpc.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CySpc.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cytypes.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cyutils.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\core_cmFunc.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\core_cmInstr.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Cm3Iar.icf" value="LINKER_SCRIPT;;;e9305a93-d091-4da5-bdc7-2813049dcdbf;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\CyBootAsmIar.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;e9305a93-d091-4da5-bdc7-2813049dcdbf;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cmsis_armcc.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cmsis_gcc.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cmsis_compiler.h" value="HEADER;;;;;cy_boot" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cy_em_eeprom.c" value="SOURCE_C;CortexM3;;;;Em_EEPROM_Dynamic" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cy_em_eeprom.h" value="HEADER;;;;;Em_EEPROM_Dynamic" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\project.h" value="OTHER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cycodeshareimport.ld" value="OTHER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cycodeshareexport.ld" value="OTHER;;;;;" />
+  <file name="\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\cycodeshareimport.scat" value="OTHER;;;;;" />
 </fileSet>

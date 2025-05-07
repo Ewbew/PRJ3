@@ -3,7 +3,9 @@
 #include "motor_control.h"
 #include "UART_handler.h"
 #include "shootVarHandler.h"
-#include "stepperMotor.h"
+#include "stepper.h"
+#include "firing.h"
+#include "control.h"
 #include "distanceSensor.h" // Include the distance sensor module
 
 #define obstacle_distance_threshold 30.0
@@ -16,6 +18,10 @@ int main(void)
 
     // Initialize the timer for periodic distance checks
     //init_timer(); Commented out while debugging
+    // Initialiser hardware for motorer og affyring
+    initStepperPins();
+    initFiringPins();
+    initControlTimer();
 
     // Start the UART RX ISR and UART component
     // TO-DO: Make the functions below into hardware start for comm and motor

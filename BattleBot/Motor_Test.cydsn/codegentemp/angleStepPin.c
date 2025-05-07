@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: DirPin.c  
+* File Name: angleStepPin.c  
 * Version 2.20
 *
 * Description:
@@ -15,15 +15,15 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "DirPin.h"
+#include "angleStepPin.h"
 
 /* APIs are not generated for P15[7:6] on PSoC 5 */
 #if !(CY_PSOC5A &&\
-	 DirPin__PORT == 15 && ((DirPin__MASK & 0xC0) != 0))
+	 angleStepPin__PORT == 15 && ((angleStepPin__MASK & 0xC0) != 0))
 
 
 /*******************************************************************************
-* Function Name: DirPin_Write
+* Function Name: angleStepPin_Write
 ****************************************************************************//**
 *
 * \brief Writes the value to the physical port (data output register), masking
@@ -52,17 +52,17 @@
 *  this function.
 *
 * \funcusage
-*  \snippet DirPin_SUT.c usage_DirPin_Write
+*  \snippet angleStepPin_SUT.c usage_angleStepPin_Write
 *******************************************************************************/
-void DirPin_Write(uint8 value)
+void angleStepPin_Write(uint8 value)
 {
-    uint8 staticBits = (DirPin_DR & (uint8)(~DirPin_MASK));
-    DirPin_DR = staticBits | ((uint8)(value << DirPin_SHIFT) & DirPin_MASK);
+    uint8 staticBits = (angleStepPin_DR & (uint8)(~angleStepPin_MASK));
+    angleStepPin_DR = staticBits | ((uint8)(value << angleStepPin_SHIFT) & angleStepPin_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: DirPin_SetDriveMode
+* Function Name: angleStepPin_SetDriveMode
 ****************************************************************************//**
 *
 * \brief Sets the drive mode for each of the Pins component's pins.
@@ -85,16 +85,16 @@ void DirPin_Write(uint8 value)
 *  APIs (primary method) or disable interrupts around this function.
 *
 * \funcusage
-*  \snippet DirPin_SUT.c usage_DirPin_SetDriveMode
+*  \snippet angleStepPin_SUT.c usage_angleStepPin_SetDriveMode
 *******************************************************************************/
-void DirPin_SetDriveMode(uint8 mode)
+void angleStepPin_SetDriveMode(uint8 mode)
 {
-	CyPins_SetPinDriveMode(DirPin_0, mode);
+	CyPins_SetPinDriveMode(angleStepPin_0, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: DirPin_Read
+* Function Name: angleStepPin_Read
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port (pin status register) and masks 
@@ -108,16 +108,16 @@ void DirPin_SetDriveMode(uint8 mode)
 *  The current value for the pins in the component as a right justified number.
 *
 * \funcusage
-*  \snippet DirPin_SUT.c usage_DirPin_Read  
+*  \snippet angleStepPin_SUT.c usage_angleStepPin_Read  
 *******************************************************************************/
-uint8 DirPin_Read(void)
+uint8 angleStepPin_Read(void)
 {
-    return (DirPin_PS & DirPin_MASK) >> DirPin_SHIFT;
+    return (angleStepPin_PS & angleStepPin_MASK) >> angleStepPin_SHIFT;
 }
 
 
 /*******************************************************************************
-* Function Name: DirPin_ReadDataReg
+* Function Name: angleStepPin_ReadDataReg
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port's data output register and masks 
@@ -126,8 +126,8 @@ uint8 DirPin_Read(void)
 *
 * The data output register controls the signal applied to the physical pin in 
 * conjunction with the drive mode parameter. This is not the same as the 
-* preferred DirPin_Read() API because the 
-* DirPin_ReadDataReg() reads the data register instead of the status 
+* preferred angleStepPin_Read() API because the 
+* angleStepPin_ReadDataReg() reads the data register instead of the status 
 * register. For output pins this is a useful function to determine the value 
 * just written to the pin.
 *
@@ -136,19 +136,19 @@ uint8 DirPin_Read(void)
 *  justified number for the component instance.
 *
 * \funcusage
-*  \snippet DirPin_SUT.c usage_DirPin_ReadDataReg 
+*  \snippet angleStepPin_SUT.c usage_angleStepPin_ReadDataReg 
 *******************************************************************************/
-uint8 DirPin_ReadDataReg(void)
+uint8 angleStepPin_ReadDataReg(void)
 {
-    return (DirPin_DR & DirPin_MASK) >> DirPin_SHIFT;
+    return (angleStepPin_DR & angleStepPin_MASK) >> angleStepPin_SHIFT;
 }
 
 
 /* If interrupt is connected for this Pins component */ 
-#if defined(DirPin_INTSTAT) 
+#if defined(angleStepPin_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: DirPin_SetInterruptMode
+    * Function Name: angleStepPin_SetInterruptMode
     ****************************************************************************//**
     *
     * \brief Configures the interrupt mode for each of the Pins component's
@@ -161,12 +161,12 @@ uint8 DirPin_ReadDataReg(void)
     * \param position
     *  The pin position as listed in the Pins component. You may OR these to be 
     *  able to configure the interrupt mode of multiple pins within a Pins 
-    *  component. Or you may use DirPin_INTR_ALL to configure the
+    *  component. Or you may use angleStepPin_INTR_ALL to configure the
     *  interrupt mode of all the pins in the Pins component.       
-    *  - DirPin_0_INTR       (First pin in the list)
-    *  - DirPin_1_INTR       (Second pin in the list)
+    *  - angleStepPin_0_INTR       (First pin in the list)
+    *  - angleStepPin_1_INTR       (Second pin in the list)
     *  - ...
-    *  - DirPin_INTR_ALL     (All pins in Pins component)
+    *  - angleStepPin_INTR_ALL     (All pins in Pins component)
     *
     * \param mode
     *  Interrupt mode for the selected pins. Valid options are documented in
@@ -182,19 +182,19 @@ uint8 DirPin_ReadDataReg(void)
     *  port.
     *
     * \funcusage
-    *  \snippet DirPin_SUT.c usage_DirPin_SetInterruptMode
+    *  \snippet angleStepPin_SUT.c usage_angleStepPin_SetInterruptMode
     *******************************************************************************/
-    void DirPin_SetInterruptMode(uint16 position, uint16 mode)
+    void angleStepPin_SetInterruptMode(uint16 position, uint16 mode)
     {
-		if((position & DirPin_0_INTR) != 0u) 
+		if((position & angleStepPin_0_INTR) != 0u) 
 		{ 
-			 DirPin_0_INTTYPE_REG = (uint8)mode; 
+			 angleStepPin_0_INTTYPE_REG = (uint8)mode; 
 		}
     }
     
     
     /*******************************************************************************
-    * Function Name: DirPin_ClearInterrupt
+    * Function Name: angleStepPin_ClearInterrupt
     ****************************************************************************//**
     *
     * \brief Clears any active interrupts attached with the component and returns 
@@ -211,11 +211,11 @@ uint8 DirPin_ReadDataReg(void)
     *  those associated with the Pins component.
     *
     * \funcusage
-    *  \snippet DirPin_SUT.c usage_DirPin_ClearInterrupt
+    *  \snippet angleStepPin_SUT.c usage_angleStepPin_ClearInterrupt
     *******************************************************************************/
-    uint8 DirPin_ClearInterrupt(void)
+    uint8 angleStepPin_ClearInterrupt(void)
     {
-        return (DirPin_INTSTAT & DirPin_MASK) >> DirPin_SHIFT;
+        return (angleStepPin_INTSTAT & angleStepPin_MASK) >> angleStepPin_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 

@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: DirPin.h  
+* File Name: angleStepPin.h  
 * Version 2.20
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_DirPin_ALIASES_H) /* Pins DirPin_ALIASES_H */
-#define CY_PINS_DirPin_ALIASES_H
+#if !defined(CY_PINS_angleStepPin_ALIASES_H) /* Pins angleStepPin_ALIASES_H */
+#define CY_PINS_angleStepPin_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -25,12 +25,12 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define DirPin_0			(DirPin__0__PC)
-#define DirPin_0_INTR	((uint16)((uint16)0x0001u << DirPin__0__SHIFT))
+#define angleStepPin_0			(angleStepPin__0__PC)
+#define angleStepPin_0_INTR	((uint16)((uint16)0x0001u << angleStepPin__0__SHIFT))
 
-#define DirPin_INTR_ALL	 ((uint16)(DirPin_0_INTR))
+#define angleStepPin_INTR_ALL	 ((uint16)(angleStepPin_0_INTR))
 
-#endif /* End Pins DirPin_ALIASES_H */
+#endif /* End Pins angleStepPin_ALIASES_H */
 
 
 /* [] END OF FILE */
