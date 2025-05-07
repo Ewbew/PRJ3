@@ -1,6 +1,6 @@
--- Project:   C:\Users\Totos\Desktop\elektronik_ingenioer\PRJ3\Github\BattleBot\Motor_Test.cydsn\Motor_Test.cyprj
--- Generated: 05/05/2025 22:22:29
--- PSoC Creator  4.2
+-- Project:   C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\Motor_Test.cyprj
+-- Generated: 05/06/2025 13:30:58
+-- PSoC Creator  4.4
 
 ENTITY Motor_Test IS
     PORT(
@@ -86,7 +86,7 @@ ARCHITECTURE __DEFAULT__ OF Motor_Test IS
     SIGNAL Net_682 : bit;
     ATTRIBUTE global_signal OF Net_682 : SIGNAL IS true;
     SIGNAL Net_682_local : bit;
-    SIGNAL Net_697 : bit;
+    SIGNAL Net_698 : bit;
     SIGNAL Net_72 : bit;
     ATTRIBUTE placement_force OF Net_72 : SIGNAL IS "U(2,0,B)2";
     SIGNAL Net_8 : bit;
@@ -190,7 +190,7 @@ ARCHITECTURE __DEFAULT__ OF Motor_Test IS
     SIGNAL \PWM_B:PWMUDB:status_3\ : bit;
     SIGNAL \PWM_B:PWMUDB:tc_i\ : bit;
     SIGNAL \Timer_DS:Net_261\ : bit;
-    SIGNAL \Timer_DS:Net_51\ : bit;
+    SIGNAL \Timer_DS:Net_57\ : bit;
     SIGNAL \UART_BT:BUART:counter_load_not\ : bit;
     ATTRIBUTE placement_force OF \UART_BT:BUART:counter_load_not\ : SIGNAL IS "U(3,4,B)1";
     SIGNAL \UART_BT:BUART:pollcount_0\ : bit;
@@ -420,7 +420,7 @@ ARCHITECTURE __DEFAULT__ OF Motor_Test IS
     ATTRIBUTE Location OF \UART_PC:BUART:sRX:RxBitCounter\ : LABEL IS "U(3,1)";
     ATTRIBUTE lib_model OF \UART_PC:BUART:sRX:RxSts\ : LABEL IS "statusicell2";
     ATTRIBUTE Location OF \UART_PC:BUART:sRX:RxSts\ : LABEL IS "U(3,2)";
-    ATTRIBUTE Location OF isr_uart_rx_PC : LABEL IS "[IntrContainer=(0)][IntrId=(4)]";
+    ATTRIBUTE Location OF isr_uart_rx_PC : LABEL IS "[IntrContainer=(0)][IntrId=(5)]";
     ATTRIBUTE lib_model OF \PWM_B:PWMUDB:genblk1:ctrlreg\ : LABEL IS "controlcell1";
     ATTRIBUTE Location OF \PWM_B:PWMUDB:genblk1:ctrlreg\ : LABEL IS "U(0,3)";
     ATTRIBUTE lib_model OF \PWM_B:PWMUDB:genblk8:stsreg\ : LABEL IS "statusicell3";
@@ -446,7 +446,7 @@ ARCHITECTURE __DEFAULT__ OF Motor_Test IS
     ATTRIBUTE Location OF \UART_BT:BUART:sRX:RxBitCounter\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \UART_BT:BUART:sRX:RxSts\ : LABEL IS "statusicell6";
     ATTRIBUTE Location OF \UART_BT:BUART:sRX:RxSts\ : LABEL IS "U(2,4)";
-    ATTRIBUTE Location OF isr_uart_rx_BT : LABEL IS "[IntrContainer=(0)][IntrId=(3)]";
+    ATTRIBUTE Location OF isr_uart_rx_BT : LABEL IS "[IntrContainer=(0)][IntrId=(4)]";
     ATTRIBUTE Location OF isr_echo_int : LABEL IS "[IntrContainer=(0)][IntrId=(2)]";
     ATTRIBUTE lib_model OF \Counter:CounterUDB:sCTRLReg:ctrlreg\ : LABEL IS "controlcell3";
     ATTRIBUTE Location OF \Counter:CounterUDB:sCTRLReg:ctrlreg\ : LABEL IS "U(0,4)";
@@ -458,7 +458,7 @@ ARCHITECTURE __DEFAULT__ OF Motor_Test IS
     ATTRIBUTE Location OF \Counter:CounterUDB:sC16:counterdp:u1\ : LABEL IS "U(0,4)";
     ATTRIBUTE lib_model OF \Counter_Reset:Sync:ctrl_reg\ : LABEL IS "controlcell4";
     ATTRIBUTE Location OF \Counter_Reset:Sync:ctrl_reg\ : LABEL IS "U(1,3)";
-    ATTRIBUTE Location OF isr_timer_DS : LABEL IS "[IntrContainer=(0)][IntrId=(17)]";
+    ATTRIBUTE Location OF isr_timer_DS : LABEL IS "[IntrContainer=(0)][IntrId=(3)]";
     ATTRIBUTE Location OF \Timer_DS:TimerHW\ : LABEL IS "F(Timer,0)";
     ATTRIBUTE lib_model OF \UART_PC:BUART:txn\ : LABEL IS "macrocell25";
     ATTRIBUTE Location OF \UART_PC:BUART:txn\ : LABEL IS "U(3,2)";
@@ -2962,7 +2962,7 @@ BEGIN
             int_type => "10",
             is_nmi => 0)
         PORT MAP(
-            interrupt => Net_697,
+            interrupt => Net_698,
             clock => ClockBlock_BUS_CLK);
 
     \Timer_DS:TimerHW\:timercell
@@ -2974,9 +2974,9 @@ BEGIN
             enable => __ONE__,
             capture => open,
             timer_reset => open,
-            tc => \Timer_DS:Net_51\,
+            tc => Net_698,
             cmp => \Timer_DS:Net_261\,
-            irq => Net_697);
+            irq => \Timer_DS:Net_57\);
 
     \UART_PC:BUART:txn\:macrocell
         GENERIC MAP(

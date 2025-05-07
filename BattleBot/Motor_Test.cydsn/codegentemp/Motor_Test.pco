@@ -1,5 +1,5 @@
 # Motor_Test
-# 2025-05-05 20:22:25Z
+# 2025-05-06 11:30:56Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -50,7 +50,7 @@ set_location "\UART_PC:BUART:sTX:TxSts\" 1 3 4
 set_location "\UART_PC:BUART:sRX:RxShifter:u0\" 3 1 2
 set_location "\UART_PC:BUART:sRX:RxBitCounter\" 3 1 7
 set_location "\UART_PC:BUART:sRX:RxSts\" 3 2 4
-set_location "isr_uart_rx_PC" interrupt -1 -1 4
+set_location "isr_uart_rx_PC" interrupt -1 -1 5
 set_location "\PWM_B:PWMUDB:genblk1:ctrlreg\" 0 3 6
 set_location "\PWM_B:PWMUDB:genblk8:stsreg\" 0 3 4
 set_location "\PWM_B:PWMUDB:sP8:pwmdp:u0\" 0 3 2
@@ -65,14 +65,14 @@ set_location "\UART_BT:BUART:sTX:TxSts\" 3 3 4
 set_location "\UART_BT:BUART:sRX:RxShifter:u0\" 2 2 2
 set_location "\UART_BT:BUART:sRX:RxBitCounter\" 2 3 7
 set_location "\UART_BT:BUART:sRX:RxSts\" 2 4 4
-set_location "isr_uart_rx_BT" interrupt -1 -1 3
+set_location "isr_uart_rx_BT" interrupt -1 -1 4
 set_location "isr_echo_int" interrupt -1 -1 2
 set_location "\Counter:CounterUDB:sCTRLReg:ctrlreg\" 0 4 6
 set_location "\Counter:CounterUDB:sSTSReg:stsreg\" 0 4 4
 set_location "\Counter:CounterUDB:sC16:counterdp:u0\" 1 4 2
 set_location "\Counter:CounterUDB:sC16:counterdp:u1\" 0 4 2
 set_location "\Counter_Reset:Sync:ctrl_reg\" 1 3 6
-set_location "isr_timer_DS" interrupt -1 -1 17
+set_location "isr_timer_DS" interrupt -1 -1 3
 set_location "\Timer_DS:TimerHW\" timercell -1 -1 0
 set_location "\UART_PC:BUART:txn\" 3 2 0 0
 set_location "\UART_PC:BUART:tx_state_1\" 3 2 0 1

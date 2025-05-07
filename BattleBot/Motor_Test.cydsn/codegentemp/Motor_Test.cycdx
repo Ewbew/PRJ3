@@ -119,8 +119,8 @@
     <register name="Timer_DS_PERIOD" address="0x40004F04" bitWidth="8" desc="TMRx.PER0 - Assigned Period" hidden="false" />
     <register name="Timer_DS_COUNTER" address="0x40004F06" bitWidth="8" desc="TMRx.CNT_CMP0 - Current Down Counter Value" hidden="false" />
   </block>
-  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Em_EEPROM_Dynamic" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="FreqDiv" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Counter_Reset" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <register name="Counter_Reset_CONTROL_REG" address="0x4000647B" bitWidth="8" desc="" hidden="false" />

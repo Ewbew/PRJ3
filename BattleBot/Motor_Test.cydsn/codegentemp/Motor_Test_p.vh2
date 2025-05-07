@@ -1,6 +1,6 @@
 -- Project:   Motor_Test
--- Generated: 05/05/2025 22:22:21
--- PSoC Creator  4.2
+-- Generated: 05/06/2025 13:30:54
+-- PSoC Creator  4.4
 
 ENTITY Motor_Test IS
     PORT(
@@ -79,7 +79,7 @@ ARCHITECTURE __DEFAULT__ OF Motor_Test IS
     SIGNAL Net_682 : bit;
     ATTRIBUTE global_signal OF Net_682 : SIGNAL IS true;
     SIGNAL Net_682_local : bit;
-    SIGNAL Net_697 : bit;
+    SIGNAL Net_698 : bit;
     SIGNAL Net_72 : bit;
     SIGNAL Net_8 : bit;
     SIGNAL Rx_BT(0)__PA : bit;
@@ -157,7 +157,7 @@ ARCHITECTURE __DEFAULT__ OF Motor_Test IS
     SIGNAL \PWM_B:PWMUDB:status_3\ : bit;
     SIGNAL \PWM_B:PWMUDB:tc_i\ : bit;
     SIGNAL \Timer_DS:Net_261\ : bit;
-    SIGNAL \Timer_DS:Net_51\ : bit;
+    SIGNAL \Timer_DS:Net_57\ : bit;
     SIGNAL \UART_BT:BUART:counter_load_not\ : bit;
     SIGNAL \UART_BT:BUART:pollcount_0\ : bit;
     SIGNAL \UART_BT:BUART:pollcount_1\ : bit;
@@ -2797,7 +2797,7 @@ BEGIN
             int_type => "10",
             is_nmi => 0)
         PORT MAP(
-            interrupt => Net_697,
+            interrupt => Net_698,
             clock => ClockBlock_BUS_CLK);
 
     \Timer_DS:TimerHW\:timercell
@@ -2809,9 +2809,9 @@ BEGIN
             enable => __ONE__,
             capture => open,
             timer_reset => open,
-            tc => \Timer_DS:Net_51\,
+            tc => Net_698,
             cmp => \Timer_DS:Net_261\,
-            irq => Net_697);
+            irq => \Timer_DS:Net_57\);
 
     \UART_PC:BUART:txn\:macrocell
         GENERIC MAP(

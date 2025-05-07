@@ -6,6 +6,8 @@
 #include "stepperMotor.h"
 #include "distanceSensor.h" // Include the distance sensor module
 
+#define obstacle_distance_threshold 30.0
+
 int main(void)
 {
     CyGlobalIntEnable;  /* Enable global interrupts. */
@@ -36,32 +38,6 @@ int main(void)
     snprintf(flagStr, sizeof(flagStr), "Flag value: %d\r\n", get_timerFlag());
     UART_PC_PutString(flagStr); // Print the flag value to the UART
 
-    // Read flag value again
-    snprintf(flagStr, sizeof(flagStr), "Flag value: %d\r\n", get_timerFlag());
-    UART_PC_PutString(flagStr); // Print the flag value to the UART
-
-    while(get_timerFlag() == 0) { // Wait for the timer to trigger before starting the main loop
-        UART_PC_PutString("Waiting for timer to trigger while get_timerFlag() == 0...\r\n");
-        UART_PC_PutString("Skrrtmoney\r\n");
-        CyDelay(1000);
-
-            // Debug: Print the timer flag value
-        char debugStr[50];
-        snprintf(debugStr, sizeof(debugStr), "Current timerFlag value: %d\r\n", get_timerFlag());
-        UART_PC_PutString(debugStr); // Print the timer flag value to the UART
-    }
-
-    while(get_timerFlag() == 1)  { // Wait for the timer to trigger before starting the main loop
-        UART_PC_PutString("Waiting for timer to trigger...\r\n");
-        CyDelay(1000); // Delay to avoid busy waiting
-        UART_PC_PutString("Waiting for timer to trigger...\r\n");
-
-                    // Debug: Print the timer flag value
-                    char debugStr[50];
-                    snprintf(debugStr, sizeof(debugStr), "Current timerFlag value: %d\r\n", get_timerFlag());
-                    UART_PC_PutString(debugStr); // Print the timer flag value to the UART
-    }
-
     splash(); // Print splash message for distance sensor
 
     for (;;)
@@ -77,7 +53,7 @@ int main(void)
             
 
             // Check if the distance is below the threshold
-            if (distance >= 0 && distance < 30.0) { // Example threshold: 30 cm
+            if (distance >= 0 && distance < obstacle_distance_threshold) { // Example threshold: 30 cm
                 set_obstruct(1); // Set obstruct to true
                 UART_PC_PutString("Obstacle detected\r\n");
             } else {

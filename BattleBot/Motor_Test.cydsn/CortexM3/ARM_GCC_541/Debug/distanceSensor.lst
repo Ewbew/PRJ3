@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 2
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 2
 
 
   33              		.cfi_def_cfa_offset 8
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
   77              	.L6:
   78 0008 00000000 		.word	.LANCHOR0
   79              		.cfi_endproc
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 3
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 3
 
 
   80              	.LFE65:
@@ -178,18 +178,20 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
   55:distanceSensor.c **** {
  115              		.loc 1 55 0
  116              		.cfi_startproc
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 4
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 4
 
 
  117              		@ args = 0, pretend = 0, frame = 0
  118              		@ frame_needed = 0, uses_anonymous_args = 0
  119              		@ link register save eliminated.
-  56:distanceSensor.c ****     return timerFlag;
- 120              		.loc 1 56 0
+  56:distanceSensor.c ****     //char debugStr[50];
+  57:distanceSensor.c ****     
+  58:distanceSensor.c ****     return timerFlag;
+ 120              		.loc 1 58 0
  121 0000 014B     		ldr	r3, .L12
  122 0002 D868     		ldr	r0, [r3, #12]
-  57:distanceSensor.c **** }
- 123              		.loc 1 57 0
+  59:distanceSensor.c **** }
+ 123              		.loc 1 59 0
  124 0004 7047     		bx	lr
  125              	.L13:
  126 0006 00BF     		.align	2
@@ -206,17 +208,17 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  137              		.type	set_timerFlag, %function
  138              	set_timerFlag:
  139              	.LFB69:
-  58:distanceSensor.c **** 
-  59:distanceSensor.c **** void set_timerFlag(int value)
-  60:distanceSensor.c **** {
- 140              		.loc 1 60 0
+  60:distanceSensor.c **** 
+  61:distanceSensor.c **** void set_timerFlag(int value)
+  62:distanceSensor.c **** {
+ 140              		.loc 1 62 0
  141              		.cfi_startproc
  142              		@ args = 0, pretend = 0, frame = 0
  143              		@ frame_needed = 0, uses_anonymous_args = 0
  144              		@ link register save eliminated.
  145              	.LVL4:
-  61:distanceSensor.c ****     timerFlag = value;
- 146              		.loc 1 61 0
+  63:distanceSensor.c ****     timerFlag = value;
+ 146              		.loc 1 63 0
  147 0000 014B     		ldr	r3, .L15
  148 0002 D860     		str	r0, [r3, #12]
  149 0004 7047     		bx	lr
@@ -236,11 +238,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  163              	ISR_timer_DS_tc_handler:
  164              	.LFB67:
   43:distanceSensor.c ****     isr_timer_DS_ClearPending(); // Clear the interrupt flag
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 5
+
+
  165              		.loc 1 43 0
  166              		.cfi_startproc
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 5
-
-
  167              		@ args = 0, pretend = 0, frame = 0
  168              		@ frame_needed = 0, uses_anonymous_args = 0
  169 0000 08B5     		push	{r3, lr}
@@ -268,110 +270,110 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  189              		.type	init_DS_hardware, %function
  190              	init_DS_hardware:
  191              	.LFB70:
-  62:distanceSensor.c **** }
-  63:distanceSensor.c **** 
-  64:distanceSensor.c **** /* Old ISR code for timer – commented out, since we are using a flag
-  65:distanceSensor.c ****    to trigger the distance measurement in the main loop
-  66:distanceSensor.c ****    instead of using a timer interrupt directly.
-  67:distanceSensor.c **** CY_ISR(ISR_timer_DS_tc_handler)
-  68:distanceSensor.c **** {
-  69:distanceSensor.c ****     isr_timer_DS_ClearPending(); // Clear the interrupt flag
-  70:distanceSensor.c **** 
-  71:distanceSensor.c ****     
-  72:distanceSensor.c ****     double distance = measure_distance(); // Measure the distance
-  73:distanceSensor.c **** 
-  74:distanceSensor.c ****     // Check if the distance is below the threshold
-  75:distanceSensor.c ****     if (distance >= 0 && distance < 30.0) { // Example threshold: 30 cm
-  76:distanceSensor.c ****         set_obstruct(1); // Set obstruct to true
-  77:distanceSensor.c ****         UART_PC_PutString("Obstacle detected\r\n");
-  78:distanceSensor.c ****     } else {
-  79:distanceSensor.c ****         set_obstruct(0); // Set obstruct to false
-  80:distanceSensor.c ****         UART_PC_PutString("No obstacle detected\r\n");
-  81:distanceSensor.c ****     }
-  82:distanceSensor.c ****     
-  83:distanceSensor.c **** }
-  84:distanceSensor.c **** */
-  85:distanceSensor.c **** 
-  86:distanceSensor.c **** 
-  87:distanceSensor.c **** void init_DS_hardware(void)
-  88:distanceSensor.c ****     /* Enable global interrupts. */{
- 192              		.loc 1 88 0
+  64:distanceSensor.c **** }
+  65:distanceSensor.c **** 
+  66:distanceSensor.c **** /* Old ISR code for timer – commented out, since we are using a flag
+  67:distanceSensor.c ****    to trigger the distance measurement in the main loop
+  68:distanceSensor.c ****    instead of using a timer interrupt directly.
+  69:distanceSensor.c **** CY_ISR(ISR_timer_DS_tc_handler)
+  70:distanceSensor.c **** {
+  71:distanceSensor.c ****     isr_timer_DS_ClearPending(); // Clear the interrupt flag
+  72:distanceSensor.c **** 
+  73:distanceSensor.c ****     
+  74:distanceSensor.c ****     double distance = measure_distance(); // Measure the distance
+  75:distanceSensor.c **** 
+  76:distanceSensor.c ****     // Check if the distance is below the threshold
+  77:distanceSensor.c ****     if (distance >= 0 && distance < 30.0) { // Example threshold: 30 cm
+  78:distanceSensor.c ****         set_obstruct(1); // Set obstruct to true
+  79:distanceSensor.c ****         UART_PC_PutString("Obstacle detected\r\n");
+  80:distanceSensor.c ****     } else {
+  81:distanceSensor.c ****         set_obstruct(0); // Set obstruct to false
+  82:distanceSensor.c ****         UART_PC_PutString("No obstacle detected\r\n");
+  83:distanceSensor.c ****     }
+  84:distanceSensor.c ****     
+  85:distanceSensor.c **** }
+  86:distanceSensor.c **** */
+  87:distanceSensor.c **** 
+  88:distanceSensor.c **** 
+  89:distanceSensor.c **** void init_DS_hardware(void)
+  90:distanceSensor.c ****     /* Enable global interrupts. */{
+ 192              		.loc 1 90 0
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 6
+
+
  193              		.cfi_startproc
  194              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 6
-
-
  195              		@ frame_needed = 0, uses_anonymous_args = 0
  196 0000 08B5     		push	{r3, lr}
  197              		.cfi_def_cfa_offset 8
  198              		.cfi_offset 3, -8
  199              		.cfi_offset 14, -4
-  89:distanceSensor.c ****     CyGlobalIntEnable;
- 200              		.loc 1 89 0
+  91:distanceSensor.c ****     CyGlobalIntEnable;
+ 200              		.loc 1 91 0
  201              		.syntax unified
- 202              	@ 89 "distanceSensor.c" 1
+ 202              	@ 91 "distanceSensor.c" 1
  203 0002 62B6     		CPSIE   i
  204              	@ 0 "" 2
-  90:distanceSensor.c ****     
-  91:distanceSensor.c ****     // Hardware init for the the trigger/pulse functionality
-  92:distanceSensor.c ****     Trigger_Write(0);
- 205              		.loc 1 92 0
+  92:distanceSensor.c ****     
+  93:distanceSensor.c ****     // Hardware init for the the trigger/pulse functionality
+  94:distanceSensor.c ****     Trigger_Write(0);
+ 205              		.loc 1 94 0
  206              		.thumb
  207              		.syntax unified
  208 0004 0020     		movs	r0, #0
  209 0006 FFF7FEFF 		bl	Trigger_Write
  210              	.LVL7:
-  93:distanceSensor.c ****     Clock_24MHz_Start();
- 211              		.loc 1 93 0
+  95:distanceSensor.c ****     Clock_24MHz_Start();
+ 211              		.loc 1 95 0
  212 000a FFF7FEFF 		bl	Clock_24MHz_Start
  213              	.LVL8:
-  94:distanceSensor.c ****     isr_echo_int_ClearPending();
- 214              		.loc 1 94 0
+  96:distanceSensor.c ****     isr_echo_int_ClearPending();
+ 214              		.loc 1 96 0
  215 000e FFF7FEFF 		bl	isr_echo_int_ClearPending
  216              	.LVL9:
-  95:distanceSensor.c ****     isr_echo_int_StartEx(ISR_DS_echo);
- 217              		.loc 1 95 0
+  97:distanceSensor.c ****     isr_echo_int_StartEx(ISR_DS_echo);
+ 217              		.loc 1 97 0
  218 0012 0B48     		ldr	r0, .L21
  219 0014 FFF7FEFF 		bl	isr_echo_int_StartEx
  220              	.LVL10:
-  96:distanceSensor.c ****     Counter_Init(); // Initialize the counter
- 221              		.loc 1 96 0
+  98:distanceSensor.c ****     Counter_Init(); // Initialize the counter
+ 221              		.loc 1 98 0
  222 0018 FFF7FEFF 		bl	Counter_Init
  223              	.LVL11:
-  97:distanceSensor.c ****     Counter_Start(); // Start the counter
- 224              		.loc 1 97 0
+  99:distanceSensor.c ****     Counter_Start(); // Start the counter
+ 224              		.loc 1 99 0
  225 001c FFF7FEFF 		bl	Counter_Start
  226              	.LVL12:
-  98:distanceSensor.c ****     UART_PC_PutString("Counter initialised\r\n");
- 227              		.loc 1 98 0
+ 100:distanceSensor.c ****     UART_PC_PutString("Counter initialised\r\n");
+ 227              		.loc 1 100 0
  228 0020 0848     		ldr	r0, .L21+4
  229 0022 FFF7FEFF 		bl	UART_PC_PutString
  230              	.LVL13:
-  99:distanceSensor.c ****     
- 100:distanceSensor.c ****     // Hardware init for Timer (that drives the periodic obstacle check)
- 101:distanceSensor.c ****     Clock_5kHz_Start(); // Start the clock
- 231              		.loc 1 101 0
+ 101:distanceSensor.c ****     
+ 102:distanceSensor.c ****     // Hardware init for Timer (that drives the periodic obstacle check)
+ 103:distanceSensor.c ****     Clock_5kHz_Start(); // Start the clock
+ 231              		.loc 1 103 0
  232 0026 FFF7FEFF 		bl	Clock_5kHz_Start
  233              	.LVL14:
- 102:distanceSensor.c ****     Timer_DS_Start(); // Start the timer
- 234              		.loc 1 102 0
+ 104:distanceSensor.c ****     Timer_DS_Start(); // Start the timer
+ 234              		.loc 1 104 0
  235 002a FFF7FEFF 		bl	Timer_DS_Start
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 7
+
+
  236              	.LVL15:
- 103:distanceSensor.c ****     isr_timer_DS_ClearPending(), // Clear any pending interrupts
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 7
-
-
- 237              		.loc 1 103 0
+ 105:distanceSensor.c ****     isr_timer_DS_ClearPending(), // Clear any pending interrupts
+ 237              		.loc 1 105 0
  238 002e FFF7FEFF 		bl	isr_timer_DS_ClearPending
  239              	.LVL16:
- 104:distanceSensor.c ****     isr_timer_DS_StartEx(ISR_timer_DS_tc_handler); // Attach the ISR to the timer interrupt (which 
- 240              		.loc 1 104 0
+ 106:distanceSensor.c ****     isr_timer_DS_StartEx(ISR_timer_DS_tc_handler); // Attach the ISR to the timer interrupt (which 
+ 240              		.loc 1 106 0
  241 0032 0548     		ldr	r0, .L21+8
  242 0034 FFF7FEFF 		bl	isr_timer_DS_StartEx
  243              	.LVL17:
- 105:distanceSensor.c ****                                         // to the TC output pin).
- 106:distanceSensor.c ****     UART_PC_PutString("Timer initialized.\r\n");
- 244              		.loc 1 106 0
+ 107:distanceSensor.c ****                                         // to the TC output pin).
+ 108:distanceSensor.c ****     UART_PC_PutString("Timer initialized.\r\n");
+ 244              		.loc 1 108 0
  245 0038 0448     		ldr	r0, .L21+12
  246 003a FFF7FEFF 		bl	UART_PC_PutString
  247              	.LVL18:
@@ -394,17 +396,17 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  264              		.type	pulse_trigger, %function
  265              	pulse_trigger:
  266              	.LFB71:
- 107:distanceSensor.c **** }
- 108:distanceSensor.c **** 
- 109:distanceSensor.c **** 
+ 109:distanceSensor.c **** }
  110:distanceSensor.c **** 
- 111:distanceSensor.c **** /**
- 112:distanceSensor.c ****  * pulse_trigger
- 113:distanceSensor.c ****  * Generate 10us high pulse from trigger pin
- 114:distanceSensor.c ****  */
- 115:distanceSensor.c **** void pulse_trigger(void)
- 116:distanceSensor.c **** {
- 267              		.loc 1 116 0
+ 111:distanceSensor.c **** 
+ 112:distanceSensor.c **** 
+ 113:distanceSensor.c **** /**
+ 114:distanceSensor.c ****  * pulse_trigger
+ 115:distanceSensor.c ****  * Generate 10us high pulse from trigger pin
+ 116:distanceSensor.c ****  */
+ 117:distanceSensor.c **** void pulse_trigger(void)
+ 118:distanceSensor.c **** {
+ 267              		.loc 1 118 0
  268              		.cfi_startproc
  269              		@ args = 0, pretend = 0, frame = 0
  270              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -412,52 +414,52 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  272              		.cfi_def_cfa_offset 8
  273              		.cfi_offset 3, -8
  274              		.cfi_offset 14, -4
- 117:distanceSensor.c ****     Counter_Reset_Write(1); // Reset counter
- 275              		.loc 1 117 0
+ 119:distanceSensor.c ****     Counter_Reset_Write(1); // Reset counter
+ 275              		.loc 1 119 0
  276 0002 0120     		movs	r0, #1
  277 0004 FFF7FEFF 		bl	Counter_Reset_Write
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 8
+
+
  278              	.LVL19:
- 118:distanceSensor.c ****     CyDelayUs(10);
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 8
-
-
- 279              		.loc 1 118 0
+ 120:distanceSensor.c ****     CyDelayUs(10);
+ 279              		.loc 1 120 0
  280 0008 0A20     		movs	r0, #10
  281 000a FFF7FEFF 		bl	CyDelayUs
  282              	.LVL20:
- 119:distanceSensor.c ****     Counter_Reset_Write(0); // Release reset counter
- 283              		.loc 1 119 0
+ 121:distanceSensor.c ****     Counter_Reset_Write(0); // Release reset counter
+ 283              		.loc 1 121 0
  284 000e 0020     		movs	r0, #0
  285 0010 FFF7FEFF 		bl	Counter_Reset_Write
  286              	.LVL21:
- 120:distanceSensor.c **** 
- 121:distanceSensor.c ****     isr_echo_int_ClearPending();
- 287              		.loc 1 121 0
+ 122:distanceSensor.c **** 
+ 123:distanceSensor.c ****     isr_echo_int_ClearPending();
+ 287              		.loc 1 123 0
  288 0014 FFF7FEFF 		bl	isr_echo_int_ClearPending
  289              	.LVL22:
- 122:distanceSensor.c ****     isr_echo_int_Enable();
- 290              		.loc 1 122 0
+ 124:distanceSensor.c ****     isr_echo_int_Enable();
+ 290              		.loc 1 124 0
  291 0018 FFF7FEFF 		bl	isr_echo_int_Enable
  292              	.LVL23:
- 123:distanceSensor.c **** 
- 124:distanceSensor.c ****     Trigger_Write(1);  // Trigger pulse HIGH
- 293              		.loc 1 124 0
+ 125:distanceSensor.c **** 
+ 126:distanceSensor.c ****     Trigger_Write(1);  // Trigger pulse HIGH
+ 293              		.loc 1 126 0
  294 001c 0120     		movs	r0, #1
  295 001e FFF7FEFF 		bl	Trigger_Write
  296              	.LVL24:
- 125:distanceSensor.c ****     CyDelayUs(10);
- 297              		.loc 1 125 0
+ 127:distanceSensor.c ****     CyDelayUs(10);
+ 297              		.loc 1 127 0
  298 0022 0A20     		movs	r0, #10
  299 0024 FFF7FEFF 		bl	CyDelayUs
  300              	.LVL25:
- 126:distanceSensor.c ****     Trigger_Write(0);  // Trigger pulse LOW
- 301              		.loc 1 126 0
+ 128:distanceSensor.c ****     Trigger_Write(0);  // Trigger pulse LOW
+ 301              		.loc 1 128 0
  302 0028 0020     		movs	r0, #0
  303 002a FFF7FEFF 		bl	Trigger_Write
  304              	.LVL26:
- 127:distanceSensor.c **** 
- 128:distanceSensor.c ****     Counter_Enable();
- 305              		.loc 1 128 0
+ 129:distanceSensor.c **** 
+ 130:distanceSensor.c ****     Counter_Enable();
+ 305              		.loc 1 130 0
  306 002e FFF7FEFF 		bl	Counter_Enable
  307              	.LVL27:
  308 0032 08BD     		pop	{r3, pc}
@@ -475,25 +477,25 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  320              		.type	measure_distance, %function
  321              	measure_distance:
  322              	.LFB72:
- 129:distanceSensor.c **** 
- 130:distanceSensor.c ****     //char debugStr[50];
- 131:distanceSensor.c ****     //sprintf(debugStr, "Counter value: %u\r\n", Counter_ReadCounter());
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 9
+ 131:distanceSensor.c **** 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 9
 
 
- 132:distanceSensor.c ****     //UART_PC_PutString(debugStr);
- 133:distanceSensor.c **** }
- 134:distanceSensor.c **** 
- 135:distanceSensor.c **** /**
- 136:distanceSensor.c ****  * measure_distance
- 137:distanceSensor.c ****  * Triggers the ultrasonic sensor, waits for the echo, and calculates the distance.
- 138:distanceSensor.c ****  * If the echo is not received within the timeout, it returns -1 to indicate a timeout.
- 139:distanceSensor.c ****  *
- 140:distanceSensor.c ****  * @return double - The measured distance in centimeters, or -1 if a timeout occurred.
- 141:distanceSensor.c ****  */
- 142:distanceSensor.c **** double measure_distance(void)
- 143:distanceSensor.c **** {
- 323              		.loc 1 143 0
+ 132:distanceSensor.c ****     //char debugStr[50];
+ 133:distanceSensor.c ****     //sprintf(debugStr, "Counter value: %u\r\n", Counter_ReadCounter());
+ 134:distanceSensor.c ****     //UART_PC_PutString(debugStr);
+ 135:distanceSensor.c **** }
+ 136:distanceSensor.c **** 
+ 137:distanceSensor.c **** /**
+ 138:distanceSensor.c ****  * measure_distance
+ 139:distanceSensor.c ****  * Triggers the ultrasonic sensor, waits for the echo, and calculates the distance.
+ 140:distanceSensor.c ****  * If the echo is not received within the timeout, it returns -1 to indicate a timeout.
+ 141:distanceSensor.c ****  *
+ 142:distanceSensor.c ****  * @return double - The measured distance in centimeters, or -1 if a timeout occurred.
+ 143:distanceSensor.c ****  */
+ 144:distanceSensor.c **** double measure_distance(void)
+ 145:distanceSensor.c **** {
+ 323              		.loc 1 145 0
  324              		.cfi_startproc
  325              		@ args = 0, pretend = 0, frame = 0
  326              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -502,65 +504,65 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  329              		.cfi_offset 4, -8
  330              		.cfi_offset 14, -4
  331              	.LVL28:
- 144:distanceSensor.c ****     uint16_t timeout_count = 0;
- 145:distanceSensor.c ****     double distance = -1.0; // Default to -1 to indicate timeout
- 146:distanceSensor.c **** 
- 147:distanceSensor.c ****     // Trigger the ultrasonic sensor
- 148:distanceSensor.c ****     pulse_trigger();
- 332              		.loc 1 148 0
+ 146:distanceSensor.c ****     uint16_t timeout_count = 0;
+ 147:distanceSensor.c ****     double distance = -1.0; // Default to -1 to indicate timeout
+ 148:distanceSensor.c **** 
+ 149:distanceSensor.c ****     // Trigger the ultrasonic sensor
+ 150:distanceSensor.c ****     pulse_trigger();
+ 332              		.loc 1 150 0
  333 0002 FFF7FEFF 		bl	pulse_trigger
  334              	.LVL29:
- 144:distanceSensor.c ****     uint16_t timeout_count = 0;
- 335              		.loc 1 144 0
+ 146:distanceSensor.c ****     uint16_t timeout_count = 0;
+ 335              		.loc 1 146 0
  336 0006 0024     		movs	r4, #0
- 149:distanceSensor.c **** 
- 150:distanceSensor.c ****     // Wait for the echo or timeout
- 151:distanceSensor.c ****     while ((echo_flag == 0) && (timeout_count < 1000))
- 337              		.loc 1 151 0
+ 151:distanceSensor.c **** 
+ 152:distanceSensor.c ****     // Wait for the echo or timeout
+ 153:distanceSensor.c ****     while ((echo_flag == 0) && (timeout_count < 1000))
+ 337              		.loc 1 153 0
  338 0008 04E0     		b	.L26
  339              	.LVL30:
  340              	.L28:
- 152:distanceSensor.c ****     {
- 153:distanceSensor.c ****         timeout_count++;
- 341              		.loc 1 153 0
+ 154:distanceSensor.c ****     {
+ 155:distanceSensor.c ****         timeout_count++;
+ 341              		.loc 1 155 0
  342 000a 0134     		adds	r4, r4, #1
  343              	.LVL31:
  344 000c A4B2     		uxth	r4, r4
  345              	.LVL32:
- 154:distanceSensor.c ****         CyDelay(1); // Wait 1 ms
- 346              		.loc 1 154 0
+ 156:distanceSensor.c ****         CyDelay(1); // Wait 1 ms
+ 346              		.loc 1 156 0
  347 000e 0120     		movs	r0, #1
  348 0010 FFF7FEFF 		bl	CyDelay
  349              	.LVL33:
  350              	.L26:
- 151:distanceSensor.c ****     {
- 351              		.loc 1 151 0
+ 153:distanceSensor.c ****     {
+ 351              		.loc 1 153 0
  352 0014 124B     		ldr	r3, .L32+16
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 10
+
+
  353 0016 5B68     		ldr	r3, [r3, #4]
  354 0018 13B9     		cbnz	r3, .L27
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 10
-
-
- 151:distanceSensor.c ****     {
- 355              		.loc 1 151 0 is_stmt 0 discriminator 1
+ 153:distanceSensor.c ****     {
+ 355              		.loc 1 153 0 is_stmt 0 discriminator 1
  356 001a B4F57A7F 		cmp	r4, #1000
  357 001e F4D3     		bcc	.L28
  358              	.L27:
- 155:distanceSensor.c ****     }
- 156:distanceSensor.c **** 
- 157:distanceSensor.c ****     if (echo_flag)
- 359              		.loc 1 157 0 is_stmt 1
+ 157:distanceSensor.c ****     }
+ 158:distanceSensor.c **** 
+ 159:distanceSensor.c ****     if (echo_flag)
+ 359              		.loc 1 159 0 is_stmt 1
  360 0020 0F4B     		ldr	r3, .L32+16
  361 0022 5B68     		ldr	r3, [r3, #4]
  362 0024 8BB1     		cbz	r3, .L30
- 158:distanceSensor.c ****     {
- 159:distanceSensor.c ****         echo_flag = 0; // Reset the flag
- 363              		.loc 1 159 0
+ 160:distanceSensor.c ****     {
+ 161:distanceSensor.c ****         echo_flag = 0; // Reset the flag
+ 363              		.loc 1 161 0
  364 0026 0E4B     		ldr	r3, .L32+16
  365 0028 0022     		movs	r2, #0
  366 002a 5A60     		str	r2, [r3, #4]
- 160:distanceSensor.c ****         distance = (double)(duration) * MACH / 240000.0; // Calculate distance
- 367              		.loc 1 160 0
+ 162:distanceSensor.c ****         distance = (double)(duration) * MACH / 240000.0; // Calculate distance
+ 367              		.loc 1 162 0
  368 002c 1888     		ldrh	r0, [r3]
  369 002e 80B2     		uxth	r0, r0
  370 0030 FFF7FEFF 		bl	__aeabi_ui2d
@@ -576,31 +578,31 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  380 0048 10BD     		pop	{r4, pc}
  381              	.LVL37:
  382              	.L30:
- 145:distanceSensor.c **** 
- 383              		.loc 1 145 0
+ 147:distanceSensor.c **** 
+ 383              		.loc 1 147 0
  384 004a 0020     		movs	r0, #0
  385 004c 0549     		ldr	r1, .L32+20
  386              	.LVL38:
- 161:distanceSensor.c **** 
- 162:distanceSensor.c ****         // Debug print for calculated distance
- 163:distanceSensor.c ****         //char str[50];
- 164:distanceSensor.c ****         //sprintf(str, "Calculated Distance: %d cm\r\n", (int)distance);
- 165:distanceSensor.c ****         //UART_PC_PutString(str);
- 166:distanceSensor.c ****     }
- 167:distanceSensor.c **** 
- 168:distanceSensor.c ****     return distance;
- 169:distanceSensor.c **** }
- 387              		.loc 1 169 0
+ 163:distanceSensor.c **** 
+ 164:distanceSensor.c ****         // Debug print for calculated distance
+ 165:distanceSensor.c ****         //char str[50];
+ 166:distanceSensor.c ****         //sprintf(str, "Calculated Distance: %d cm\r\n", (int)distance);
+ 167:distanceSensor.c ****         //UART_PC_PutString(str);
+ 168:distanceSensor.c ****     }
+ 169:distanceSensor.c **** 
+ 170:distanceSensor.c ****     return distance;
+ 171:distanceSensor.c **** }
+ 387              		.loc 1 171 0
  388 004e 10BD     		pop	{r4, pc}
  389              	.LVL39:
  390              	.L33:
  391              		.align	3
  392              	.L32:
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 11
+
+
  393 0050 66666666 		.word	1717986918
  394 0054 66767540 		.word	1081439846
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 11
-
-
  395 0058 00000000 		.word	0
  396 005c 004C0D41 		.word	1091390464
  397 0060 00000000 		.word	.LANCHOR0
@@ -617,21 +619,21 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  408              		.type	print_value, %function
  409              	print_value:
  410              	.LFB73:
- 170:distanceSensor.c **** 
- 171:distanceSensor.c **** 
- 172:distanceSensor.c **** /**
- 173:distanceSensor.c ****  * print_value
- 174:distanceSensor.c ****  * Calculate distance from the duration
- 175:distanceSensor.c ****  * Since the duration include both way of the trip
- 176:distanceSensor.c ****  * to get the distance, the real duration is the half 
- 177:distanceSensor.c ****  * of the duration.
- 178:distanceSensor.c ****  *
- 179:distanceSensor.c ****  * distance = duration * MACH(m/s) * 100(cm) / (2 * 12000000(Hz)) ;
+ 172:distanceSensor.c **** 
+ 173:distanceSensor.c **** 
+ 174:distanceSensor.c **** /**
+ 175:distanceSensor.c ****  * print_value
+ 176:distanceSensor.c ****  * Calculate distance from the duration
+ 177:distanceSensor.c ****  * Since the duration include both way of the trip
+ 178:distanceSensor.c ****  * to get the distance, the real duration is the half 
+ 179:distanceSensor.c ****  * of the duration.
  180:distanceSensor.c ****  *
- 181:distanceSensor.c ****  */
- 182:distanceSensor.c **** void print_value(uint32_t duration)
- 183:distanceSensor.c **** {
- 411              		.loc 1 183 0
+ 181:distanceSensor.c ****  * distance = duration * MACH(m/s) * 100(cm) / (2 * 12000000(Hz)) ;
+ 182:distanceSensor.c ****  *
+ 183:distanceSensor.c ****  */
+ 184:distanceSensor.c **** void print_value(uint32_t duration)
+ 185:distanceSensor.c **** {
+ 411              		.loc 1 185 0
  412              		.cfi_startproc
  413              		@ args = 0, pretend = 0, frame = 0
  414              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -645,10 +647,10 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  422              		.cfi_offset 7, -8
  423              		.cfi_offset 14, -4
  424              	.LVL41:
- 184:distanceSensor.c ****     double distance = 0.0 ;
- 185:distanceSensor.c ****     
- 186:distanceSensor.c ****     distance = (double)(duration) * MACH / 240000.0 ;
- 425              		.loc 1 186 0
+ 186:distanceSensor.c ****     double distance = 0.0 ;
+ 187:distanceSensor.c ****     
+ 188:distanceSensor.c ****     distance = (double)(duration) * MACH / 240000.0 ;
+ 425              		.loc 1 188 0
  426 0002 FFF7FEFF 		bl	__aeabi_ui2d
  427              	.LVL42:
  428 0006 16A3     		adr	r3, .L36
@@ -656,17 +658,17 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  430 000c FFF7FEFF 		bl	__aeabi_dmul
  431              	.LVL43:
  432 0010 15A3     		adr	r3, .L36+8
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 12
+
+
  433 0012 D3E90023 		ldrd	r2, [r3]
  434 0016 FFF7FEFF 		bl	__aeabi_ddiv
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 12
-
-
  435              	.LVL44:
  436 001a 0646     		mov	r6, r0
  437 001c 0F46     		mov	r7, r1
  438              	.LVL45:
- 187:distanceSensor.c ****     sprintf(str, "%d.%02dcm\r\n", (int)distance, (int)(100 * distance)%100) ;
- 439              		.loc 1 187 0
+ 189:distanceSensor.c ****     sprintf(str, "%d.%02dcm\r\n", (int)distance, (int)(100 * distance)%100) ;
+ 439              		.loc 1 189 0
  440 001e 0022     		movs	r2, #0
  441 0020 134B     		ldr	r3, .L36+16
  442 0022 FFF7FEFF 		bl	__aeabi_dmul
@@ -690,8 +692,8 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  460 004c 2846     		mov	r0, r5
  461 004e FFF7FEFF 		bl	sprintf
  462              	.LVL49:
- 188:distanceSensor.c ****     UART_PC_PutString(str) ;
- 463              		.loc 1 188 0
+ 190:distanceSensor.c ****     UART_PC_PutString(str) ;
+ 463              		.loc 1 190 0
  464 0052 2846     		mov	r0, r5
  465 0054 FFF7FEFF 		bl	UART_PC_PutString
  466              	.LVL50:
@@ -716,18 +718,18 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  484              		.align	2
  485              		.global	splash
  486              		.thumb
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 13
+
+
  487              		.thumb_func
  488              		.type	splash, %function
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 13
-
-
  489              	splash:
  490              	.LFB74:
- 189:distanceSensor.c **** }
- 190:distanceSensor.c **** 
- 191:distanceSensor.c **** void splash(void)
- 192:distanceSensor.c **** {
- 491              		.loc 1 192 0
+ 191:distanceSensor.c **** }
+ 192:distanceSensor.c **** 
+ 193:distanceSensor.c **** void splash(void)
+ 194:distanceSensor.c **** {
+ 491              		.loc 1 194 0
  492              		.cfi_startproc
  493              		@ args = 0, pretend = 0, frame = 0
  494              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -735,8 +737,8 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  496              		.cfi_def_cfa_offset 8
  497              		.cfi_offset 4, -8
  498              		.cfi_offset 14, -4
- 193:distanceSensor.c ****     sprintf(str, "HC-SR04 Test CY8CKIT-059 (%s %s)\r\n", __DATE__, __TIME__) ;
- 499              		.loc 1 193 0
+ 195:distanceSensor.c ****     sprintf(str, "HC-SR04 Test CY8CKIT-059 (%s %s)\r\n", __DATE__, __TIME__) ;
+ 499              		.loc 1 195 0
  500 0002 054C     		ldr	r4, .L40
  501 0004 054B     		ldr	r3, .L40+4
  502 0006 064A     		ldr	r2, .L40+8
@@ -744,8 +746,8 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  504 000a 2046     		mov	r0, r4
  505 000c FFF7FEFF 		bl	sprintf
  506              	.LVL52:
- 194:distanceSensor.c ****     UART_PC_PutString(str) ;
- 507              		.loc 1 194 0
+ 196:distanceSensor.c ****     UART_PC_PutString(str) ;
+ 507              		.loc 1 196 0
  508 0010 2046     		mov	r0, r4
  509 0012 FFF7FEFF 		bl	UART_PC_PutString
  510              	.LVL53:
@@ -776,22 +778,22 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  529      69746961 
  529      6C697A65 
  529      642E0D0A 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 14
+
+
  530 002d 000000   		.space	3
  531              	.LC2:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 14
-
-
  532 0030 25642E25 		.ascii	"%d.%02dcm\015\012\000"
  532      30326463 
  532      6D0D0A00 
  533              	.LC3:
- 534 003c 32323A32 		.ascii	"22:22:40\000"
- 534      323A3430 
+ 534 003c 31333A33 		.ascii	"13:31:03\000"
+ 534      313A3033 
  534      00
  535 0045 000000   		.space	3
  536              	.LC4:
- 537 0048 4D617920 		.ascii	"May  5 2025\000"
- 537      20352032 
+ 537 0048 4D617920 		.ascii	"May  6 2025\000"
+ 537      20362032 
  537      30323500 
  538              	.LC5:
  539 0054 48432D53 		.ascii	"HC-SR04 Test CY8CKIT-059 (%s %s)\015\012\000"
@@ -821,8 +823,8 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  559 000c 00000000 		.space	4
  560              		.text
  561              	.Letext0:
- 562              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 563              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 562              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 563              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
  564              		.file 4 "Generated_Source\\PSoC5/isr_echo_int.h"
  565              		.file 5 "Generated_Source\\PSoC5/Counter.h"
  566              		.file 6 "Generated_Source\\PSoC5/isr_timer_DS.h"
@@ -833,19 +835,19 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  571              		.file 11 "Generated_Source\\PSoC5/Timer_DS.h"
  572              		.file 12 "Generated_Source\\PSoC5/Counter_Reset.h"
  573              		.file 13 "Generated_Source\\PSoC5/CyLib.h"
- 574              		.file 14 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4
+ 574              		.file 14 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4
  575              		.file 15 "Generated_Source\\PSoC5/core_cm3.h"
  576              		.section	.debug_info,"",%progbits
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 15
+
+
  577              	.Ldebug_info0:
  578 0000 5C050000 		.4byte	0x55c
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 15
-
-
  579 0004 0400     		.2byte	0x4
  580 0006 00000000 		.4byte	.Ldebug_abbrev0
  581 000a 04       		.byte	0x4
  582 000b 01       		.uleb128 0x1
- 583 000c 3A010000 		.4byte	.LASF57
+ 583 000c 27010000 		.4byte	.LASF57
  584 0010 0C       		.byte	0xc
  585 0011 0F000000 		.4byte	.LASF58
  586 0015 86000000 		.4byte	.LASF59
@@ -855,24 +857,24 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  590 0025 02       		.uleb128 0x2
  591 0026 01       		.byte	0x1
  592 0027 06       		.byte	0x6
- 593 0028 20010000 		.4byte	.LASF0
+ 593 0028 0D010000 		.4byte	.LASF0
  594 002c 02       		.uleb128 0x2
  595 002d 01       		.byte	0x1
  596 002e 08       		.byte	0x8
- 597 002f 2C010000 		.4byte	.LASF1
+ 597 002f 19010000 		.4byte	.LASF1
  598 0033 02       		.uleb128 0x2
  599 0034 02       		.byte	0x2
  600 0035 05       		.byte	0x5
- 601 0036 6D030000 		.4byte	.LASF2
+ 601 0036 58030000 		.4byte	.LASF2
  602 003a 03       		.uleb128 0x3
- 603 003b 5B020000 		.4byte	.LASF4
+ 603 003b 5A020000 		.4byte	.LASF4
  604 003f 02       		.byte	0x2
  605 0040 2B       		.byte	0x2b
  606 0041 45000000 		.4byte	0x45
  607 0045 02       		.uleb128 0x2
  608 0046 02       		.byte	0x2
  609 0047 07       		.byte	0x7
- 610 0048 FD010000 		.4byte	.LASF3
+ 610 0048 FC010000 		.4byte	.LASF3
  611 004c 03       		.uleb128 0x3
  612 004d 4E000000 		.4byte	.LASF5
  613 0051 02       		.byte	0x2
@@ -881,27 +883,27 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  616 0057 02       		.uleb128 0x2
  617 0058 04       		.byte	0x4
  618 0059 05       		.byte	0x5
- 619 005a AF030000 		.4byte	.LASF6
+ 619 005a 9A030000 		.4byte	.LASF6
  620 005e 03       		.uleb128 0x3
- 621 005f 78020000 		.4byte	.LASF7
+ 621 005f 77020000 		.4byte	.LASF7
  622 0063 02       		.byte	0x2
  623 0064 41       		.byte	0x41
  624 0065 69000000 		.4byte	0x69
  625 0069 02       		.uleb128 0x2
  626 006a 04       		.byte	0x4
  627 006b 07       		.byte	0x7
- 628 006c 66020000 		.4byte	.LASF8
+ 628 006c 65020000 		.4byte	.LASF8
  629 0070 02       		.uleb128 0x2
  630 0071 08       		.byte	0x8
  631 0072 05       		.byte	0x5
- 632 0073 22030000 		.4byte	.LASF9
+ 632 0073 21030000 		.4byte	.LASF9
  633 0077 02       		.uleb128 0x2
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 16
+
+
  634 0078 08       		.byte	0x8
  635 0079 07       		.byte	0x7
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 16
-
-
- 636 007a C5020000 		.4byte	.LASF10
+ 636 007a C4020000 		.4byte	.LASF10
  637 007e 04       		.uleb128 0x4
  638 007f 04       		.byte	0x4
  639 0080 05       		.byte	0x5
@@ -909,42 +911,42 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  641 0085 02       		.uleb128 0x2
  642 0086 04       		.byte	0x4
  643 0087 07       		.byte	0x7
- 644 0088 B8020000 		.4byte	.LASF11
+ 644 0088 B7020000 		.4byte	.LASF11
  645 008c 03       		.uleb128 0x3
- 646 008d 96030000 		.4byte	.LASF12
+ 646 008d 81030000 		.4byte	.LASF12
  647 0091 03       		.byte	0x3
  648 0092 24       		.byte	0x24
  649 0093 3A000000 		.4byte	0x3a
  650 0097 03       		.uleb128 0x3
- 651 0098 11030000 		.4byte	.LASF13
+ 651 0098 10030000 		.4byte	.LASF13
  652 009c 03       		.byte	0x3
  653 009d 2C       		.byte	0x2c
  654 009e 4C000000 		.4byte	0x4c
  655 00a2 03       		.uleb128 0x3
- 656 00a3 A6030000 		.4byte	.LASF14
+ 656 00a3 91030000 		.4byte	.LASF14
  657 00a7 03       		.byte	0x3
  658 00a8 30       		.byte	0x30
  659 00a9 5E000000 		.4byte	0x5e
  660 00ad 02       		.uleb128 0x2
  661 00ae 04       		.byte	0x4
  662 00af 04       		.byte	0x4
- 663 00b0 1A010000 		.4byte	.LASF15
+ 663 00b0 07010000 		.4byte	.LASF15
  664 00b4 02       		.uleb128 0x2
  665 00b5 08       		.byte	0x8
  666 00b6 04       		.byte	0x4
- 667 00b7 F1030000 		.4byte	.LASF16
+ 667 00b7 DE030000 		.4byte	.LASF16
  668 00bb 02       		.uleb128 0x2
  669 00bc 01       		.byte	0x1
  670 00bd 08       		.byte	0x8
- 671 00be 3A030000 		.4byte	.LASF17
+ 671 00be 39030000 		.4byte	.LASF17
  672 00c2 02       		.uleb128 0x2
  673 00c3 08       		.byte	0x8
  674 00c4 04       		.byte	0x4
- 675 00c5 C5030000 		.4byte	.LASF18
+ 675 00c5 B0030000 		.4byte	.LASF18
  676 00c9 02       		.uleb128 0x2
  677 00ca 04       		.byte	0x4
  678 00cb 07       		.byte	0x7
- 679 00cc 19030000 		.4byte	.LASF19
+ 679 00cc 18030000 		.4byte	.LASF19
  680 00d0 05       		.uleb128 0x5
  681 00d1 8C000000 		.4byte	0x8c
  682 00d5 06       		.uleb128 0x6
@@ -956,11 +958,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  688 00e4 01       		.uleb128 0x1
  689 00e5 9C       		.byte	0x9c
  690 00e6 06010000 		.4byte	0x106
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 17
+
+
  691 00ea 07       		.uleb128 0x7
  692 00eb 06000000 		.4byte	.LVL0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 17
-
-
  693 00ef 8E040000 		.4byte	0x48e
  694 00f3 07       		.uleb128 0x7
  695 00f4 0A000000 		.4byte	.LVL1
@@ -970,7 +972,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  699 0101 A4040000 		.4byte	0x4a4
  700 0105 00       		.byte	0
  701 0106 08       		.uleb128 0x8
- 702 0107 AB020000 		.4byte	.LASF22
+ 702 0107 AA020000 		.4byte	.LASF22
  703 010b 01       		.byte	0x1
  704 010c 20       		.byte	0x20
  705 010d 7E000000 		.4byte	0x7e
@@ -979,7 +981,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  708 0119 01       		.uleb128 0x1
  709 011a 9C       		.byte	0x9c
  710 011b 06       		.uleb128 0x6
- 711 011c B8030000 		.4byte	.LASF21
+ 711 011c A3030000 		.4byte	.LASF21
  712 0120 01       		.byte	0x1
  713 0121 25       		.byte	0x25
  714 0122 00000000 		.4byte	.LFB66
@@ -996,7 +998,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  725 013c 50       		.byte	0x50
  726 013d 00       		.byte	0
  727 013e 08       		.uleb128 0x8
- 728 013f D1030000 		.4byte	.LASF23
+ 728 013f BC030000 		.4byte	.LASF23
  729 0143 01       		.byte	0x1
  730 0144 36       		.byte	0x36
  731 0145 7E000000 		.4byte	0x7e
@@ -1007,7 +1009,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  736 0153 06       		.uleb128 0x6
  737 0154 3A000000 		.4byte	.LASF24
  738 0158 01       		.byte	0x1
- 739 0159 3B       		.byte	0x3b
+ 739 0159 3D       		.byte	0x3d
  740 015a 00000000 		.4byte	.LFB69
  741 015e 0C000000 		.4byte	.LFE69-.LFB69
  742 0162 01       		.uleb128 0x1
@@ -1016,11 +1018,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  745 0168 09       		.uleb128 0x9
  746 0169 48000000 		.4byte	.LASF25
  747 016d 01       		.byte	0x1
- 748 016e 3B       		.byte	0x3b
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 18
+
+
+ 748 016e 3D       		.byte	0x3d
  749 016f 7E000000 		.4byte	0x7e
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 18
-
-
  750 0173 01       		.uleb128 0x1
  751 0174 50       		.byte	0x50
  752 0175 00       		.byte	0
@@ -1047,9 +1049,9 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  773 01a2 00       		.byte	0
  774 01a3 00       		.byte	0
  775 01a4 06       		.uleb128 0x6
- 776 01a5 C8010000 		.4byte	.LASF27
+ 776 01a5 B5010000 		.4byte	.LASF27
  777 01a9 01       		.byte	0x1
- 778 01aa 57       		.byte	0x57
+ 778 01aa 59       		.byte	0x59
  779 01ab 00000000 		.4byte	.LFB70
  780 01af 50000000 		.4byte	.LFE70-.LFB70
  781 01b3 01       		.uleb128 0x1
@@ -1076,11 +1078,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  802 01e3 D0040000 		.4byte	0x4d0
  803 01e7 F5010000 		.4byte	0x1f5
  804 01eb 0B       		.uleb128 0xb
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 19
+
+
  805 01ec 01       		.uleb128 0x1
  806 01ed 50       		.byte	0x50
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 19
-
-
  807 01ee 05       		.uleb128 0x5
  808 01ef 03       		.byte	0x3
  809 01f0 00000000 		.4byte	ISR_DS_echo
@@ -1134,13 +1136,13 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  857 0262 00       		.byte	0
  858 0263 00       		.byte	0
  859 0264 06       		.uleb128 0x6
- 860 0265 DC020000 		.4byte	.LASF28
+ 860 0265 DB020000 		.4byte	.LASF28
  861 0269 01       		.byte	0x1
- 862 026a 73       		.byte	0x73
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 20
+
+
+ 862 026a 75       		.byte	0x75
  863 026b 00000000 		.4byte	.LFB71
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 20
-
-
  864 026f 34000000 		.4byte	.LFE71-.LFB71
  865 0273 01       		.uleb128 0x1
  866 0274 9C       		.byte	0x9c
@@ -1196,11 +1198,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  916 02dc 28050000 		.4byte	0x528
  917 02e0 EA020000 		.4byte	0x2ea
  918 02e4 0B       		.uleb128 0xb
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 21
+
+
  919 02e5 01       		.uleb128 0x1
  920 02e6 50       		.byte	0x50
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 21
-
-
  921 02e7 01       		.uleb128 0x1
  922 02e8 3A       		.byte	0x3a
  923 02e9 00       		.byte	0
@@ -1219,9 +1221,9 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  936 0302 3E050000 		.4byte	0x53e
  937 0306 00       		.byte	0
  938 0307 0D       		.uleb128 0xd
- 939 0308 D9000000 		.4byte	.LASF60
+ 939 0308 C6000000 		.4byte	.LASF60
  940 030c 01       		.byte	0x1
- 941 030d 8E       		.byte	0x8e
+ 941 030d 90       		.byte	0x90
  942 030e B4000000 		.4byte	0xb4
  943 0312 00000000 		.4byte	.LFB72
  944 0316 68000000 		.4byte	.LFE72-.LFB72
@@ -1229,15 +1231,15 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  946 031b 9C       		.byte	0x9c
  947 031c 57030000 		.4byte	0x357
  948 0320 0E       		.uleb128 0xe
- 949 0321 83020000 		.4byte	.LASF29
+ 949 0321 82020000 		.4byte	.LASF29
  950 0325 01       		.byte	0x1
- 951 0326 90       		.byte	0x90
+ 951 0326 92       		.byte	0x92
  952 0327 8C000000 		.4byte	0x8c
  953 032b 00000000 		.4byte	.LLST0
  954 032f 0E       		.uleb128 0xe
- 955 0330 11010000 		.4byte	.LASF30
+ 955 0330 FE000000 		.4byte	.LASF30
  956 0334 01       		.byte	0x1
- 957 0335 91       		.byte	0x91
+ 957 0335 93       		.byte	0x93
  958 0336 B4000000 		.4byte	0xb4
  959 033a 2A000000 		.4byte	.LLST1
  960 033e 07       		.uleb128 0x7
@@ -1254,13 +1256,13 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  971 0355 00       		.byte	0
  972 0356 00       		.byte	0
  973 0357 0F       		.uleb128 0xf
- 974 0358 4F020000 		.4byte	.LASF31
+ 974 0358 4E020000 		.4byte	.LASF31
  975 035c 01       		.byte	0x1
- 976 035d B6       		.byte	0xb6
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 22
+
+
+ 976 035d B8       		.byte	0xb8
  977 035e 00000000 		.4byte	.LFB73
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 22
-
-
  978 0362 80000000 		.4byte	.LFE73-.LFB73
  979 0366 01       		.uleb128 0x1
  980 0367 9C       		.byte	0x9c
@@ -1268,13 +1270,13 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  982 036c 10       		.uleb128 0x10
  983 036d 58000000 		.4byte	.LASF32
  984 0371 01       		.byte	0x1
- 985 0372 B6       		.byte	0xb6
+ 985 0372 B8       		.byte	0xb8
  986 0373 A2000000 		.4byte	0xa2
  987 0377 7A000000 		.4byte	.LLST2
  988 037b 0E       		.uleb128 0xe
- 989 037c 11010000 		.4byte	.LASF30
+ 989 037c FE000000 		.4byte	.LASF30
  990 0380 01       		.byte	0x1
- 991 0381 B8       		.byte	0xb8
+ 991 0381 BA       		.byte	0xba
  992 0382 B4000000 		.4byte	0xb4
  993 0386 9B000000 		.4byte	.LLST3
  994 038a 0C       		.uleb128 0xc
@@ -1312,15 +1314,15 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1026 03bc 00       		.byte	0
  1027 03bd 00       		.byte	0
  1028 03be 06       		.uleb128 0x6
- 1029 03bf 9F030000 		.4byte	.LASF33
+ 1029 03bf 8A030000 		.4byte	.LASF33
  1030 03c3 01       		.byte	0x1
- 1031 03c4 BF       		.byte	0xbf
+ 1031 03c4 C1       		.byte	0xc1
  1032 03c5 00000000 		.4byte	.LFB74
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 23
+
+
  1033 03c9 28000000 		.4byte	.LFE74-.LFB74
  1034 03cd 01       		.uleb128 0x1
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 23
-
-
  1035 03ce 9C       		.byte	0x9c
  1036 03cf 13040000 		.4byte	0x413
  1037 03d3 0C       		.uleb128 0xc
@@ -1372,20 +1374,20 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1083 041f 03       		.byte	0x3
  1084 0420 00000000 		.4byte	duration
  1085 0424 11       		.uleb128 0x11
- 1086 0425 EA020000 		.4byte	.LASF34
+ 1086 0425 E9020000 		.4byte	.LASF34
  1087 0429 01       		.byte	0x1
  1088 042a 11       		.byte	0x11
  1089 042b 35040000 		.4byte	0x435
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 24
+
+
  1090 042f 05       		.uleb128 0x5
  1091 0430 03       		.byte	0x3
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 24
-
-
  1092 0431 04000000 		.4byte	echo_flag
  1093 0435 05       		.uleb128 0x5
  1094 0436 7E000000 		.4byte	0x7e
  1095 043a 11       		.uleb128 0x11
- 1096 043b 10020000 		.4byte	.LASF35
+ 1096 043b 0F020000 		.4byte	.LASF35
  1097 043f 01       		.byte	0x1
  1098 0440 12       		.byte	0x12
  1099 0441 35040000 		.4byte	0x435
@@ -1393,7 +1395,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1101 0446 03       		.byte	0x3
  1102 0447 0C000000 		.4byte	timerFlag
  1103 044b 11       		.uleb128 0x11
- 1104 044c F8030000 		.4byte	.LASF36
+ 1104 044c E5030000 		.4byte	.LASF36
  1105 0450 01       		.byte	0x1
  1106 0451 13       		.byte	0x13
  1107 0452 7E000000 		.4byte	0x7e
@@ -1401,7 +1403,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1109 0457 03       		.byte	0x3
  1110 0458 08000000 		.4byte	obstruct
  1111 045c 12       		.uleb128 0x12
- 1112 045d 2E020000 		.4byte	.LASF37
+ 1112 045d 2D020000 		.4byte	.LASF37
  1113 0461 0F       		.byte	0xf
  1114 0462 1207     		.2byte	0x712
  1115 0464 68040000 		.4byte	0x468
@@ -1423,26 +1425,26 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1131 0489 03       		.byte	0x3
  1132 048a 00000000 		.4byte	str
  1133 048e 16       		.uleb128 0x16
- 1134 048f 91020000 		.4byte	.LASF38
- 1135 0493 91020000 		.4byte	.LASF38
+ 1134 048f 90020000 		.4byte	.LASF38
+ 1135 0493 90020000 		.4byte	.LASF38
  1136 0497 04       		.byte	0x4
  1137 0498 28       		.byte	0x28
  1138 0499 16       		.uleb128 0x16
- 1139 049a FC020000 		.4byte	.LASF39
- 1140 049e FC020000 		.4byte	.LASF39
+ 1139 049a FB020000 		.4byte	.LASF39
+ 1140 049e FB020000 		.4byte	.LASF39
  1141 04a2 04       		.byte	0x4
  1142 04a3 25       		.byte	0x25
  1143 04a4 16       		.uleb128 0x16
- 1144 04a5 1A020000 		.4byte	.LASF40
- 1145 04a9 1A020000 		.4byte	.LASF40
+ 1144 04a5 19020000 		.4byte	.LASF40
+ 1145 04a9 19020000 		.4byte	.LASF40
  1146 04ad 05       		.byte	0x5
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 25
+
+
  1147 04ae 5D       		.byte	0x5d
  1148 04af 16       		.uleb128 0x16
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 25
-
-
- 1149 04b0 53030000 		.4byte	.LASF41
- 1150 04b4 53030000 		.4byte	.LASF41
+ 1149 04b0 3E030000 		.4byte	.LASF41
+ 1150 04b4 3E030000 		.4byte	.LASF41
  1151 04b8 06       		.byte	0x6
  1152 04b9 28       		.byte	0x28
  1153 04ba 16       		.uleb128 0x16
@@ -1451,13 +1453,13 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1156 04c3 07       		.byte	0x7
  1157 04c4 26       		.byte	0x26
  1158 04c5 16       		.uleb128 0x16
- 1159 04c6 DF030000 		.4byte	.LASF43
- 1160 04ca DF030000 		.4byte	.LASF43
+ 1159 04c6 C6010000 		.4byte	.LASF43
+ 1160 04ca C6010000 		.4byte	.LASF43
  1161 04ce 08       		.byte	0x8
  1162 04cf 27       		.byte	0x27
  1163 04d0 16       		.uleb128 0x16
- 1164 04d1 E8010000 		.4byte	.LASF44
- 1165 04d5 E8010000 		.4byte	.LASF44
+ 1164 04d1 E7010000 		.4byte	.LASF44
+ 1165 04d5 E7010000 		.4byte	.LASF44
  1166 04d9 04       		.byte	0x4
  1167 04da 18       		.byte	0x18
  1168 04db 16       		.uleb128 0x16
@@ -1466,46 +1468,46 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1171 04e4 05       		.byte	0x5
  1172 04e5 70       		.byte	0x70
  1173 04e6 16       		.uleb128 0x16
- 1174 04e7 77030000 		.4byte	.LASF46
- 1175 04eb 77030000 		.4byte	.LASF46
+ 1174 04e7 62030000 		.4byte	.LASF46
+ 1175 04eb 62030000 		.4byte	.LASF46
  1176 04ef 05       		.byte	0x5
  1177 04f0 4F       		.byte	0x4f
  1178 04f1 16       		.uleb128 0x16
- 1179 04f2 FF000000 		.4byte	.LASF47
- 1180 04f6 FF000000 		.4byte	.LASF47
+ 1179 04f2 EC000000 		.4byte	.LASF47
+ 1180 04f6 EC000000 		.4byte	.LASF47
  1181 04fa 09       		.byte	0x9
  1182 04fb 8B       		.byte	0x8b
  1183 04fc 16       		.uleb128 0x16
- 1184 04fd 85030000 		.4byte	.LASF48
- 1185 0501 85030000 		.4byte	.LASF48
+ 1184 04fd 70030000 		.4byte	.LASF48
+ 1185 0501 70030000 		.4byte	.LASF48
  1186 0505 0A       		.byte	0xa
  1187 0506 27       		.byte	0x27
  1188 0507 16       		.uleb128 0x16
- 1189 0508 D9010000 		.4byte	.LASF49
- 1190 050c D9010000 		.4byte	.LASF49
+ 1189 0508 D8010000 		.4byte	.LASF49
+ 1190 050c D8010000 		.4byte	.LASF49
  1191 0510 0B       		.byte	0xb
  1192 0511 5A       		.byte	0x5a
  1193 0512 16       		.uleb128 0x16
- 1194 0513 EA000000 		.4byte	.LASF50
- 1195 0517 EA000000 		.4byte	.LASF50
+ 1194 0513 D7000000 		.4byte	.LASF50
+ 1195 0517 D7000000 		.4byte	.LASF50
  1196 051b 06       		.byte	0x6
  1197 051c 18       		.byte	0x18
  1198 051d 16       		.uleb128 0x16
- 1199 051e 3F030000 		.4byte	.LASF51
- 1200 0522 3F030000 		.4byte	.LASF51
+ 1199 051e CA030000 		.4byte	.LASF51
+ 1200 0522 CA030000 		.4byte	.LASF51
  1201 0526 0C       		.byte	0xc
  1202 0527 2F       		.byte	0x2f
  1203 0528 16       		.uleb128 0x16
- 1204 0529 30030000 		.4byte	.LASF52
- 1205 052d 30030000 		.4byte	.LASF52
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 26
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 26
 
 
+ 1204 0529 2F030000 		.4byte	.LASF52
+ 1205 052d 2F030000 		.4byte	.LASF52
  1206 0531 0D       		.byte	0xd
  1207 0532 77       		.byte	0x77
  1208 0533 16       		.uleb128 0x16
- 1209 0534 3B020000 		.4byte	.LASF53
- 1210 0538 3B020000 		.4byte	.LASF53
+ 1209 0534 3A020000 		.4byte	.LASF53
+ 1210 0538 3A020000 		.4byte	.LASF53
  1211 053c 04       		.byte	0x4
  1212 053d 23       		.byte	0x23
  1213 053e 16       		.uleb128 0x16
@@ -1514,13 +1516,13 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1216 0547 05       		.byte	0x5
  1217 0548 71       		.byte	0x71
  1218 0549 16       		.uleb128 0x16
- 1219 054a 01040000 		.4byte	.LASF55
- 1220 054e 01040000 		.4byte	.LASF55
+ 1219 054a EE030000 		.4byte	.LASF55
+ 1220 054e EE030000 		.4byte	.LASF55
  1221 0552 0D       		.byte	0xd
  1222 0553 76       		.byte	0x76
  1223 0554 16       		.uleb128 0x16
- 1224 0555 F4020000 		.4byte	.LASF56
- 1225 0559 F4020000 		.4byte	.LASF56
+ 1224 0555 F3020000 		.4byte	.LASF56
+ 1225 0559 F3020000 		.4byte	.LASF56
  1226 055d 0E       		.byte	0xe
  1227 055e E7       		.byte	0xe7
  1228 055f 00       		.byte	0
@@ -1556,11 +1558,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1258 001b 0E       		.uleb128 0xe
  1259 001c 00       		.byte	0
  1260 001d 00       		.byte	0
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 27
+
+
  1261 001e 03       		.uleb128 0x3
  1262 001f 16       		.uleb128 0x16
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 27
-
-
  1263 0020 00       		.byte	0
  1264 0021 03       		.uleb128 0x3
  1265 0022 0E       		.uleb128 0xe
@@ -1616,11 +1618,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1315 0055 00       		.byte	0
  1316 0056 00       		.byte	0
  1317 0057 07       		.uleb128 0x7
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 28
+
+
  1318 0058 898201   		.uleb128 0x4109
  1319 005b 00       		.byte	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 28
-
-
  1320 005c 11       		.uleb128 0x11
  1321 005d 01       		.uleb128 0x1
  1322 005e 31       		.uleb128 0x31
@@ -1676,11 +1678,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1372 0093 13       		.uleb128 0x13
  1373 0094 00       		.byte	0
  1374 0095 00       		.byte	0
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 29
+
+
  1375 0096 0B       		.uleb128 0xb
  1376 0097 8A8201   		.uleb128 0x410a
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 29
-
-
  1377 009a 00       		.byte	0
  1378 009b 02       		.uleb128 0x2
  1379 009c 18       		.uleb128 0x18
@@ -1736,11 +1738,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1429 00d2 3B       		.uleb128 0x3b
  1430 00d3 0B       		.uleb128 0xb
  1431 00d4 49       		.uleb128 0x49
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 30
+
+
  1432 00d5 13       		.uleb128 0x13
  1433 00d6 02       		.uleb128 0x2
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 30
-
-
  1434 00d7 17       		.uleb128 0x17
  1435 00d8 00       		.byte	0
  1436 00d9 00       		.byte	0
@@ -1796,11 +1798,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1486 010c 49       		.uleb128 0x49
  1487 010d 13       		.uleb128 0x13
  1488 010e 02       		.uleb128 0x2
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 31
+
+
  1489 010f 18       		.uleb128 0x18
  1490 0110 00       		.byte	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 31
-
-
  1491 0111 00       		.byte	0
  1492 0112 12       		.uleb128 0x12
  1493 0113 34       		.uleb128 0x34
@@ -1856,11 +1858,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1543 0145 00       		.byte	0
  1544 0146 16       		.uleb128 0x16
  1545 0147 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 32
+
+
  1546 0148 00       		.byte	0
  1547 0149 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 32
-
-
  1548 014a 19       		.uleb128 0x19
  1549 014b 3C       		.uleb128 0x3c
  1550 014c 19       		.uleb128 0x19
@@ -1916,11 +1918,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1600 0058 9E       		.byte	0x9e
  1601 0059 08       		.uleb128 0x8
  1602 005a 00000000 		.4byte	0
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 33
+
+
  1603 005e 0000F0BF 		.4byte	0xbff00000
  1604 0062 4E000000 		.4byte	.LVL38
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 33
-
-
  1605 0066 68000000 		.4byte	.LFE72
  1606 006a 0600     		.2byte	0x6
  1607 006c 50       		.byte	0x50
@@ -1976,11 +1978,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1657 0014 1C000000 		.4byte	.LFE64-.LFB64
  1658 0018 00000000 		.4byte	.LFB65
  1659 001c 0C000000 		.4byte	.LFE65-.LFB65
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 34
+
+
  1660 0020 00000000 		.4byte	.LFB66
  1661 0024 0C000000 		.4byte	.LFE66-.LFB66
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 34
-
-
  1662 0028 00000000 		.4byte	.LFB68
  1663 002c 0C000000 		.4byte	.LFE68-.LFB68
  1664 0030 00000000 		.4byte	.LFB69
@@ -2036,11 +2038,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1710 0000 436F756E 		.ascii	"Counter_Enable\000"
  1710      7465725F 
  1710      456E6162 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 35
+
+
  1710      6C6500
  1711              	.LASF58:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 35
-
-
  1712 000f 64697374 		.ascii	"distanceSensor.c\000"
  1712      616E6365 
  1712      53656E73 
@@ -2083,277 +2085,277 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 1
  1728      5F74635F 
  1728      68616E64 
  1729              	.LASF59:
- 1730 0086 433A5C55 		.ascii	"C:\\Users\\Totos\\Desktop\\elektronik_ingenioer\\PR"
+ 1730 0086 433A5C55 		.ascii	"C:\\Users\\peter\\Documents\\GitHub\\PRJ3\\BattleBo"
  1730      73657273 
- 1730      5C546F74 
- 1730      6F735C44 
- 1730      65736B74 
- 1731 00b4 4A335C47 		.ascii	"J3\\Github\\BattleBot\\Motor_Test.cydsn\000"
- 1731      69746875 
- 1731      625C4261 
- 1731      74746C65 
- 1731      426F745C 
+ 1730      5C706574 
+ 1730      65725C44 
+ 1730      6F63756D 
+ 1731 00b3 745C4D6F 		.ascii	"t\\Motor_Test.cydsn\000"
+ 1731      746F725F 
+ 1731      54657374 
+ 1731      2E637964 
+ 1731      736E00
  1732              	.LASF60:
- 1733 00d9 6D656173 		.ascii	"measure_distance\000"
+ 1733 00c6 6D656173 		.ascii	"measure_distance\000"
  1733      7572655F 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 36
+
+
  1733      64697374 
  1733      616E6365 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 36
-
-
  1733      00
  1734              	.LASF50:
- 1735 00ea 6973725F 		.ascii	"isr_timer_DS_StartEx\000"
+ 1735 00d7 6973725F 		.ascii	"isr_timer_DS_StartEx\000"
  1735      74696D65 
  1735      725F4453 
  1735      5F537461 
  1735      72744578 
  1736              	.LASF47:
- 1737 00ff 55415254 		.ascii	"UART_PC_PutString\000"
+ 1737 00ec 55415254 		.ascii	"UART_PC_PutString\000"
  1737      5F50435F 
  1737      50757453 
  1737      7472696E 
  1737      6700
  1738              	.LASF30:
- 1739 0111 64697374 		.ascii	"distance\000"
+ 1739 00fe 64697374 		.ascii	"distance\000"
  1739      616E6365 
  1739      00
  1740              	.LASF15:
- 1741 011a 666C6F61 		.ascii	"float\000"
+ 1741 0107 666C6F61 		.ascii	"float\000"
  1741      7400
  1742              	.LASF0:
- 1743 0120 7369676E 		.ascii	"signed char\000"
+ 1743 010d 7369676E 		.ascii	"signed char\000"
  1743      65642063 
  1743      68617200 
  1744              	.LASF1:
- 1745 012c 756E7369 		.ascii	"unsigned char\000"
+ 1745 0119 756E7369 		.ascii	"unsigned char\000"
  1745      676E6564 
  1745      20636861 
  1745      7200
  1746              	.LASF57:
- 1747 013a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1747 0127 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  1747      43313120 
  1747      352E342E 
  1747      31203230 
  1747      31363036 
- 1748 016d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1748 015a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  1748      20726576 
  1748      6973696F 
  1748      6E203233 
  1748      37373135 
- 1749 01a0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1749 018d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  1749      66756E63 
  1749      74696F6E 
  1749      2D736563 
  1749      74696F6E 
  1750              	.LASF27:
- 1751 01c8 696E6974 		.ascii	"init_DS_hardware\000"
+ 1751 01b5 696E6974 		.ascii	"init_DS_hardware\000"
  1751      5F44535F 
  1751      68617264 
  1751      77617265 
  1751      00
- 1752              	.LASF49:
- 1753 01d9 54696D65 		.ascii	"Timer_DS_Start\000"
- 1753      725F4453 
- 1753      5F537461 
- 1753      727400
- 1754              	.LASF44:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 37
+ 1752              	.LASF43:
+ 1753 01c6 436C6F63 		.ascii	"Clock_24MHz_Start\000"
+ 1753      6B5F3234 
+ 1753      4D487A5F 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 37
 
 
- 1755 01e8 6973725F 		.ascii	"isr_echo_int_StartEx\000"
- 1755      6563686F 
- 1755      5F696E74 
+ 1753      53746172 
+ 1753      7400
+ 1754              	.LASF49:
+ 1755 01d8 54696D65 		.ascii	"Timer_DS_Start\000"
+ 1755      725F4453 
  1755      5F537461 
- 1755      72744578 
- 1756              	.LASF3:
- 1757 01fd 73686F72 		.ascii	"short unsigned int\000"
- 1757      7420756E 
- 1757      7369676E 
- 1757      65642069 
- 1757      6E7400
- 1758              	.LASF35:
- 1759 0210 74696D65 		.ascii	"timerFlag\000"
- 1759      72466C61 
- 1759      6700
- 1760              	.LASF40:
- 1761 021a 436F756E 		.ascii	"Counter_ReadCounter\000"
- 1761      7465725F 
- 1761      52656164 
- 1761      436F756E 
- 1761      74657200 
- 1762              	.LASF37:
- 1763 022e 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1763      52784275 
- 1763      66666572 
- 1763      00
- 1764              	.LASF53:
- 1765 023b 6973725F 		.ascii	"isr_echo_int_Enable\000"
- 1765      6563686F 
- 1765      5F696E74 
- 1765      5F456E61 
- 1765      626C6500 
- 1766              	.LASF31:
- 1767 024f 7072696E 		.ascii	"print_value\000"
- 1767      745F7661 
- 1767      6C756500 
- 1768              	.LASF4:
- 1769 025b 5F5F7569 		.ascii	"__uint16_t\000"
- 1769      6E743136 
- 1769      5F7400
- 1770              	.LASF8:
- 1771 0266 6C6F6E67 		.ascii	"long unsigned int\000"
- 1771      20756E73 
- 1771      69676E65 
- 1771      6420696E 
- 1771      7400
- 1772              	.LASF7:
- 1773 0278 5F5F7569 		.ascii	"__uint32_t\000"
- 1773      6E743332 
- 1773      5F7400
- 1774              	.LASF29:
- 1775 0283 74696D65 		.ascii	"timeout_count\000"
- 1775      6F75745F 
- 1775      636F756E 
- 1775      7400
- 1776              	.LASF38:
- 1777 0291 6973725F 		.ascii	"isr_echo_int_ClearPending\000"
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 38
+ 1755      727400
+ 1756              	.LASF44:
+ 1757 01e7 6973725F 		.ascii	"isr_echo_int_StartEx\000"
+ 1757      6563686F 
+ 1757      5F696E74 
+ 1757      5F537461 
+ 1757      72744578 
+ 1758              	.LASF3:
+ 1759 01fc 73686F72 		.ascii	"short unsigned int\000"
+ 1759      7420756E 
+ 1759      7369676E 
+ 1759      65642069 
+ 1759      6E7400
+ 1760              	.LASF35:
+ 1761 020f 74696D65 		.ascii	"timerFlag\000"
+ 1761      72466C61 
+ 1761      6700
+ 1762              	.LASF40:
+ 1763 0219 436F756E 		.ascii	"Counter_ReadCounter\000"
+ 1763      7465725F 
+ 1763      52656164 
+ 1763      436F756E 
+ 1763      74657200 
+ 1764              	.LASF37:
+ 1765 022d 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1765      52784275 
+ 1765      66666572 
+ 1765      00
+ 1766              	.LASF53:
+ 1767 023a 6973725F 		.ascii	"isr_echo_int_Enable\000"
+ 1767      6563686F 
+ 1767      5F696E74 
+ 1767      5F456E61 
+ 1767      626C6500 
+ 1768              	.LASF31:
+ 1769 024e 7072696E 		.ascii	"print_value\000"
+ 1769      745F7661 
+ 1769      6C756500 
+ 1770              	.LASF4:
+ 1771 025a 5F5F7569 		.ascii	"__uint16_t\000"
+ 1771      6E743136 
+ 1771      5F7400
+ 1772              	.LASF8:
+ 1773 0265 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1773      20756E73 
+ 1773      69676E65 
+ 1773      6420696E 
+ 1773      7400
+ 1774              	.LASF7:
+ 1775 0277 5F5F7569 		.ascii	"__uint32_t\000"
+ 1775      6E743332 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 38
 
 
- 1777      6563686F 
- 1777      5F696E74 
- 1777      5F436C65 
- 1777      61725065 
- 1778              	.LASF22:
- 1779 02ab 6765745F 		.ascii	"get_obstruct\000"
- 1779      6F627374 
- 1779      72756374 
- 1779      00
- 1780              	.LASF11:
- 1781 02b8 756E7369 		.ascii	"unsigned int\000"
- 1781      676E6564 
- 1781      20696E74 
+ 1775      5F7400
+ 1776              	.LASF29:
+ 1777 0282 74696D65 		.ascii	"timeout_count\000"
+ 1777      6F75745F 
+ 1777      636F756E 
+ 1777      7400
+ 1778              	.LASF38:
+ 1779 0290 6973725F 		.ascii	"isr_echo_int_ClearPending\000"
+ 1779      6563686F 
+ 1779      5F696E74 
+ 1779      5F436C65 
+ 1779      61725065 
+ 1780              	.LASF22:
+ 1781 02aa 6765745F 		.ascii	"get_obstruct\000"
+ 1781      6F627374 
+ 1781      72756374 
  1781      00
- 1782              	.LASF10:
- 1783 02c5 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1783      206C6F6E 
- 1783      6720756E 
- 1783      7369676E 
- 1783      65642069 
- 1784              	.LASF28:
- 1785 02dc 70756C73 		.ascii	"pulse_trigger\000"
- 1785      655F7472 
- 1785      69676765 
- 1785      7200
- 1786              	.LASF34:
- 1787 02ea 6563686F 		.ascii	"echo_flag\000"
- 1787      5F666C61 
- 1787      6700
- 1788              	.LASF56:
- 1789 02f4 73707269 		.ascii	"sprintf\000"
- 1789      6E746600 
- 1790              	.LASF39:
- 1791 02fc 6973725F 		.ascii	"isr_echo_int_Disable\000"
- 1791      6563686F 
- 1791      5F696E74 
- 1791      5F446973 
- 1791      61626C65 
- 1792              	.LASF13:
- 1793 0311 696E7433 		.ascii	"int32_t\000"
- 1793      325F7400 
- 1794              	.LASF19:
- 1795 0319 73697A65 		.ascii	"sizetype\000"
- 1795      74797065 
- 1795      00
- 1796              	.LASF9:
- 1797 0322 6C6F6E67 		.ascii	"long long int\000"
- 1797      206C6F6E 
- 1797      6720696E 
- 1797      7400
- 1798              	.LASF52:
- 1799 0330 43794465 		.ascii	"CyDelayUs\000"
- 1799      6C617955 
- 1799      7300
- 1800              	.LASF17:
- 1801 033a 63686172 		.ascii	"char\000"
- 1801      00
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 39
+ 1782              	.LASF11:
+ 1783 02b7 756E7369 		.ascii	"unsigned int\000"
+ 1783      676E6564 
+ 1783      20696E74 
+ 1783      00
+ 1784              	.LASF10:
+ 1785 02c4 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1785      206C6F6E 
+ 1785      6720756E 
+ 1785      7369676E 
+ 1785      65642069 
+ 1786              	.LASF28:
+ 1787 02db 70756C73 		.ascii	"pulse_trigger\000"
+ 1787      655F7472 
+ 1787      69676765 
+ 1787      7200
+ 1788              	.LASF34:
+ 1789 02e9 6563686F 		.ascii	"echo_flag\000"
+ 1789      5F666C61 
+ 1789      6700
+ 1790              	.LASF56:
+ 1791 02f3 73707269 		.ascii	"sprintf\000"
+ 1791      6E746600 
+ 1792              	.LASF39:
+ 1793 02fb 6973725F 		.ascii	"isr_echo_int_Disable\000"
+ 1793      6563686F 
+ 1793      5F696E74 
+ 1793      5F446973 
+ 1793      61626C65 
+ 1794              	.LASF13:
+ 1795 0310 696E7433 		.ascii	"int32_t\000"
+ 1795      325F7400 
+ 1796              	.LASF19:
+ 1797 0318 73697A65 		.ascii	"sizetype\000"
+ 1797      74797065 
+ 1797      00
+ 1798              	.LASF9:
+ 1799 0321 6C6F6E67 		.ascii	"long long int\000"
+ 1799      206C6F6E 
+ 1799      6720696E 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 39
 
 
- 1802              	.LASF51:
- 1803 033f 436F756E 		.ascii	"Counter_Reset_Write\000"
- 1803      7465725F 
- 1803      52657365 
- 1803      745F5772 
- 1803      69746500 
+ 1799      7400
+ 1800              	.LASF52:
+ 1801 032f 43794465 		.ascii	"CyDelayUs\000"
+ 1801      6C617955 
+ 1801      7300
+ 1802              	.LASF17:
+ 1803 0339 63686172 		.ascii	"char\000"
+ 1803      00
  1804              	.LASF41:
- 1805 0353 6973725F 		.ascii	"isr_timer_DS_ClearPending\000"
+ 1805 033e 6973725F 		.ascii	"isr_timer_DS_ClearPending\000"
  1805      74696D65 
  1805      725F4453 
  1805      5F436C65 
  1805      61725065 
  1806              	.LASF2:
- 1807 036d 73686F72 		.ascii	"short int\000"
+ 1807 0358 73686F72 		.ascii	"short int\000"
  1807      7420696E 
  1807      7400
  1808              	.LASF46:
- 1809 0377 436F756E 		.ascii	"Counter_Start\000"
+ 1809 0362 436F756E 		.ascii	"Counter_Start\000"
  1809      7465725F 
  1809      53746172 
  1809      7400
  1810              	.LASF48:
- 1811 0385 436C6F63 		.ascii	"Clock_5kHz_Start\000"
+ 1811 0370 436C6F63 		.ascii	"Clock_5kHz_Start\000"
  1811      6B5F356B 
  1811      487A5F53 
  1811      74617274 
  1811      00
  1812              	.LASF12:
- 1813 0396 75696E74 		.ascii	"uint16_t\000"
+ 1813 0381 75696E74 		.ascii	"uint16_t\000"
  1813      31365F74 
  1813      00
  1814              	.LASF33:
- 1815 039f 73706C61 		.ascii	"splash\000"
+ 1815 038a 73706C61 		.ascii	"splash\000"
  1815      736800
  1816              	.LASF14:
- 1817 03a6 75696E74 		.ascii	"uint32_t\000"
+ 1817 0391 75696E74 		.ascii	"uint32_t\000"
  1817      33325F74 
  1817      00
  1818              	.LASF6:
- 1819 03af 6C6F6E67 		.ascii	"long int\000"
+ 1819 039a 6C6F6E67 		.ascii	"long int\000"
  1819      20696E74 
  1819      00
  1820              	.LASF21:
- 1821 03b8 7365745F 		.ascii	"set_obstruct\000"
+ 1821 03a3 7365745F 		.ascii	"set_obstruct\000"
  1821      6F627374 
  1821      72756374 
  1821      00
  1822              	.LASF18:
- 1823 03c5 6C6F6E67 		.ascii	"long double\000"
+ 1823 03b0 6C6F6E67 		.ascii	"long double\000"
  1823      20646F75 
  1823      626C6500 
  1824              	.LASF23:
- 1825 03d1 6765745F 		.ascii	"get_timerFlag\000"
+ 1825 03bc 6765745F 		.ascii	"get_timerFlag\000"
  1825      74696D65 
  1825      72466C61 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc5zlAPX.s 			page 40
+
+
  1825      6700
- 1826              	.LASF43:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc2vUHvg.s 			page 40
-
-
- 1827 03df 436C6F63 		.ascii	"Clock_24MHz_Start\000"
- 1827      6B5F3234 
- 1827      4D487A5F 
- 1827      53746172 
- 1827      7400
+ 1826              	.LASF51:
+ 1827 03ca 436F756E 		.ascii	"Counter_Reset_Write\000"
+ 1827      7465725F 
+ 1827      52657365 
+ 1827      745F5772 
+ 1827      69746500 
  1828              	.LASF16:
- 1829 03f1 646F7562 		.ascii	"double\000"
+ 1829 03de 646F7562 		.ascii	"double\000"
  1829      6C6500
  1830              	.LASF36:
- 1831 03f8 6F627374 		.ascii	"obstruct\000"
+ 1831 03e5 6F627374 		.ascii	"obstruct\000"
  1831      72756374 
  1831      00
  1832              	.LASF55:
- 1833 0401 43794465 		.ascii	"CyDelay\000"
+ 1833 03ee 43794465 		.ascii	"CyDelay\000"
  1833      6C617900 
  1834              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
