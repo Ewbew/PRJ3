@@ -26,7 +26,9 @@ int main(void)
     // Start the UART RX ISR and UART component
     // TO-DO: Make the functions below into hardware start for comm and motor
     uartHandler_init(&shootVarObject);
-    isr_uart_rx_PC_StartEx(ISR_UART_rx_handler_PC);
+    // isr_uart_rx_PC_StartEx(ISR_UART_rx_handler_PC); // Removed while debugging – for some reason, 
+                                                        // an AT command was sent to the BT module
+   
     isr_uart_rx_BT_StartEx(ISR_UART_rx_handler_BT);
     UART_PC_Start();
     UART_BT_Start();
