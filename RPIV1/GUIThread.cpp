@@ -52,14 +52,14 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     // SHOOT MODE
     shootDialLabel = new QLabel("Shoot Var1 (Angle)", this);
     shootDial = new QDial(this);
-    shootDial->setRange(0, 360);
+    shootDial->setRange(-100, 100);
     connect(shootDial, &QDial::valueChanged, this, [=](int value){
         VarHandler_->setVar1ShootMode(value);
     });
 
     shootSliderLabel = new QLabel("Shoot Var2 (Elevation)", this);
     shootSlider = new QSlider(Qt::Vertical, this);
-    shootSlider->setRange(0, 90);
+    shootSlider->setRange(0, 50);
     connect(shootSlider, &QSlider::valueChanged, this, [=](int value){
         VarHandler_->setVar2ShootMode(value);
     });
