@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="NEW_stepperMotor\Modultest for stepper og affyring\Modultest for stepper og affyring.cydwr\Pins">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="NEW_stepperMotor\Modultest for stepper og affyring">
 <ExpandedNodeIds>
 <v>NEW_stepperMotor</v>
 <v>NEW_stepperMotor\BB\TopDesign</v>
@@ -113,8 +113,6 @@
 <v>NEW_stepperMotor\Modultest for stepper og affyring</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\TopDesign</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\TopDesign\TopDesign.cysch</v>
-<v>NEW_stepperMotor\stepper with timer</v>
-<v>NEW_stepperMotor\test for begge stepper</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>NEW_stepperMotor</v>
@@ -124,8 +122,6 @@
 <v>NEW_stepperMotor\Modultest for stepper og affyring</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\TopDesign</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\TopDesign\TopDesign.cysch</v>
-<v>NEW_stepperMotor\stepper with timer</v>
-<v>NEW_stepperMotor\test for begge stepper</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -200,8 +196,6 @@
 <v>NEW_stepperMotor\Modultest for stepper og affyring\Modultest for stepper og affyring.gpdsc</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\Modultest for stepper og affyring.rpt</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\Modultest for stepper og affyring_timing.html</v>
-<v>NEW_stepperMotor\stepper with timer</v>
-<v>NEW_stepperMotor\test for begge stepper</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>NEW_stepperMotor</v>

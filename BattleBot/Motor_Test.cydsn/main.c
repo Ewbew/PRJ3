@@ -14,7 +14,7 @@ int main(void)
 {
     CyGlobalIntEnable;  /* Enable global interrupts. */
     shootVarHandler shootVarObject;
-
+    splash(); // Print splash message for distance sensor
 
     // Initialize the timer for periodic distance checks
     //init_timer(); Commented out while debugging
