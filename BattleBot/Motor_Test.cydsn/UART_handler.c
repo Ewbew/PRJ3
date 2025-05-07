@@ -46,7 +46,7 @@ CY_ISR(ISR_UART_rx_handler_BT)
                 UART_BT_PutString("ACKX");
                 if (tempMode == '$') {
                     VAR1 = (int8_t)temp1;
-                    VAR2 = (int8_t)temp2;
+                    VAR2 = (int8_t)temp2;                    
                     set_speedA(VAR1);
                     set_speedB(VAR2);
                     UART_PC_PutString("Speed successfully set\r\n");

@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="NEW_stepperMotor\Modultest for stepper og affyring\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="NEW_stepperMotor\Modultest for stepper og affyring\Modultest for stepper og affyring.cydwr\Pins">
 <ExpandedNodeIds>
 <v>NEW_stepperMotor</v>
 <v>NEW_stepperMotor\BB\TopDesign</v>
@@ -57,42 +57,6 @@
 <v>NEW_stepperMotor\Modultest for stepper og affyring\Source Files\stepper.c</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\Generated_Source</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\Generated_Source\PSoC5</v>
-<v>NEW_stepperMotor\stepper with timer\TopDesign</v>
-<v>NEW_stepperMotor\stepper with timer\stepper with timer.cydwr</v>
-<v>NEW_stepperMotor\stepper with timer\stepper with timer.cydwr\Pins</v>
-<v>NEW_stepperMotor\stepper with timer\stepper with timer.cydwr\Analog</v>
-<v>NEW_stepperMotor\stepper with timer\stepper with timer.cydwr\Clocks</v>
-<v>NEW_stepperMotor\stepper with timer\stepper with timer.cydwr\Interrupts</v>
-<v>NEW_stepperMotor\stepper with timer\stepper with timer.cydwr\DMA</v>
-<v>NEW_stepperMotor\stepper with timer\stepper with timer.cydwr\System</v>
-<v>NEW_stepperMotor\stepper with timer\stepper with timer.cydwr\Directives</v>
-<v>NEW_stepperMotor\stepper with timer\stepper with timer.cydwr\Flash Security</v>
-<v>NEW_stepperMotor\stepper with timer\stepper with timer.cydwr\EEPROM</v>
-<v>NEW_stepperMotor\stepper with timer\Header Files</v>
-<v>NEW_stepperMotor\stepper with timer\Header Files\cyapicallbacks.h</v>
-<v>NEW_stepperMotor\stepper with timer\Header Files\stepper.h</v>
-<v>NEW_stepperMotor\stepper with timer\Source Files</v>
-<v>NEW_stepperMotor\stepper with timer\Source Files\main.c</v>
-<v>NEW_stepperMotor\stepper with timer\Source Files\stepper.c</v>
-<v>NEW_stepperMotor\stepper with timer\Generated_Source</v>
-<v>NEW_stepperMotor\stepper with timer\Generated_Source\PSoC5</v>
-<v>NEW_stepperMotor\test for begge stepper\TopDesign</v>
-<v>NEW_stepperMotor\test for begge stepper\test for begge stepper.cydwr</v>
-<v>NEW_stepperMotor\test for begge stepper\test for begge stepper.cydwr\Pins</v>
-<v>NEW_stepperMotor\test for begge stepper\test for begge stepper.cydwr\Analog</v>
-<v>NEW_stepperMotor\test for begge stepper\test for begge stepper.cydwr\Clocks</v>
-<v>NEW_stepperMotor\test for begge stepper\test for begge stepper.cydwr\Interrupts</v>
-<v>NEW_stepperMotor\test for begge stepper\test for begge stepper.cydwr\DMA</v>
-<v>NEW_stepperMotor\test for begge stepper\test for begge stepper.cydwr\System</v>
-<v>NEW_stepperMotor\test for begge stepper\test for begge stepper.cydwr\Directives</v>
-<v>NEW_stepperMotor\test for begge stepper\test for begge stepper.cydwr\Flash Security</v>
-<v>NEW_stepperMotor\test for begge stepper\test for begge stepper.cydwr\EEPROM</v>
-<v>NEW_stepperMotor\test for begge stepper\Header Files</v>
-<v>NEW_stepperMotor\test for begge stepper\Header Files\cyapicallbacks.h</v>
-<v>NEW_stepperMotor\test for begge stepper\Source Files</v>
-<v>NEW_stepperMotor\test for begge stepper\Source Files\main.c</v>
-<v>NEW_stepperMotor\test for begge stepper\Generated_Source</v>
-<v>NEW_stepperMotor\test for begge stepper\Generated_Source\PSoC5</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>NEW_stepperMotor</v>
@@ -150,11 +114,7 @@
 <v>NEW_stepperMotor\Modultest for stepper og affyring\TopDesign</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\TopDesign\TopDesign.cysch</v>
 <v>NEW_stepperMotor\stepper with timer</v>
-<v>NEW_stepperMotor\stepper with timer\TopDesign</v>
-<v>NEW_stepperMotor\stepper with timer\TopDesign\TopDesign.cysch</v>
 <v>NEW_stepperMotor\test for begge stepper</v>
-<v>NEW_stepperMotor\test for begge stepper\TopDesign</v>
-<v>NEW_stepperMotor\test for begge stepper\TopDesign\TopDesign.cysch</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>NEW_stepperMotor</v>
@@ -165,11 +125,7 @@
 <v>NEW_stepperMotor\Modultest for stepper og affyring\TopDesign</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\TopDesign\TopDesign.cysch</v>
 <v>NEW_stepperMotor\stepper with timer</v>
-<v>NEW_stepperMotor\stepper with timer\TopDesign</v>
-<v>NEW_stepperMotor\stepper with timer\TopDesign\TopDesign.cysch</v>
 <v>NEW_stepperMotor\test for begge stepper</v>
-<v>NEW_stepperMotor\test for begge stepper\TopDesign</v>
-<v>NEW_stepperMotor\test for begge stepper\TopDesign\TopDesign.cysch</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -245,66 +201,7 @@
 <v>NEW_stepperMotor\Modultest for stepper og affyring\Modultest for stepper og affyring.rpt</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\Modultest for stepper og affyring_timing.html</v>
 <v>NEW_stepperMotor\stepper with timer</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\DirPin.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_timer.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\stepper.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\StepPin.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_1.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_1_PM.lst</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\stepper with timer.elf</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\stepper with timer.hex</v>
-<v>NEW_stepperMotor\stepper with timer\CortexM3\ARM_GCC_541\Debug\stepper with timer.map</v>
-<v>NEW_stepperMotor\stepper with timer\stepper with timer.gpdsc</v>
-<v>NEW_stepperMotor\stepper with timer\stepper with timer.rpt</v>
-<v>NEW_stepperMotor\stepper with timer\stepper with timer_timing.html</v>
 <v>NEW_stepperMotor\test for begge stepper</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\angleDirPin.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\angleStepPin.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\dialDirPin.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\dialStepPin.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\stepper_isr_timer.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_1.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_1_PM.lst</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\test for begge stepper.elf</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\test for begge stepper.hex</v>
-<v>NEW_stepperMotor\test for begge stepper\CortexM3\ARM_GCC_541\Debug\test for begge stepper.map</v>
-<v>NEW_stepperMotor\test for begge stepper\test for begge stepper.gpdsc</v>
-<v>NEW_stepperMotor\test for begge stepper\test for begge stepper.rpt</v>
-<v>NEW_stepperMotor\test for begge stepper\test for begge stepper_timing.html</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>NEW_stepperMotor</v>
@@ -382,28 +279,6 @@
 <v>NEW_stepperMotor\Modultest for stepper og affyring\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\Timer_v2_80.pdf</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\ZeroTerminal.pdf</v>
-<v>NEW_stepperMotor\stepper with timer</v>
-<v>NEW_stepperMotor\stepper with timer\PSoC 5LP Architecture TRM</v>
-<v>NEW_stepperMotor\stepper with timer\CY8C58LP Family Datasheet</v>
-<v>NEW_stepperMotor\stepper with timer\System Reference Guides</v>
-<v>NEW_stepperMotor\stepper with timer\System Reference Guides\cy_boot_v6_10</v>
-<v>NEW_stepperMotor\stepper with timer\cy_clock_v2_20.pdf</v>
-<v>NEW_stepperMotor\stepper with timer\cy_isr_v1_71.pdf</v>
-<v>NEW_stepperMotor\stepper with timer\cy_pins_v2_20</v>
-<v>NEW_stepperMotor\stepper with timer\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>NEW_stepperMotor\stepper with timer\Timer_v2_80.pdf</v>
-<v>NEW_stepperMotor\stepper with timer\ZeroTerminal.pdf</v>
-<v>NEW_stepperMotor\test for begge stepper</v>
-<v>NEW_stepperMotor\test for begge stepper\PSoC 5LP Architecture TRM</v>
-<v>NEW_stepperMotor\test for begge stepper\CY8C58LP Family Datasheet</v>
-<v>NEW_stepperMotor\test for begge stepper\System Reference Guides</v>
-<v>NEW_stepperMotor\test for begge stepper\System Reference Guides\cy_boot_v6_10</v>
-<v>NEW_stepperMotor\test for begge stepper\cy_clock_v2_20.pdf</v>
-<v>NEW_stepperMotor\test for begge stepper\cy_isr_v1_71.pdf</v>
-<v>NEW_stepperMotor\test for begge stepper\cy_pins_v2_20</v>
-<v>NEW_stepperMotor\test for begge stepper\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>NEW_stepperMotor\test for begge stepper\Timer_v2_80.pdf</v>
-<v>NEW_stepperMotor\test for begge stepper\ZeroTerminal.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>NEW_stepperMotor</v>
@@ -429,26 +304,6 @@
 <v>NEW_stepperMotor\Modultest for stepper og affyring\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\Timer_v2_80.pdf</v>
 <v>NEW_stepperMotor\Modultest for stepper og affyring\ZeroTerminal.pdf</v>
-<v>NEW_stepperMotor\stepper with timer</v>
-<v>NEW_stepperMotor\stepper with timer\PSoC 5LP Architecture TRM</v>
-<v>NEW_stepperMotor\stepper with timer\CY8C58LP Family Datasheet</v>
-<v>NEW_stepperMotor\stepper with timer\System Reference Guides</v>
-<v>NEW_stepperMotor\stepper with timer\System Reference Guides\cy_boot_v6_10</v>
-<v>NEW_stepperMotor\stepper with timer\cy_clock_v2_20.pdf</v>
-<v>NEW_stepperMotor\stepper with timer\cy_isr_v1_71.pdf</v>
-<v>NEW_stepperMotor\stepper with timer\cy_pins_v2_20</v>
-<v>NEW_stepperMotor\stepper with timer\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>NEW_stepperMotor\stepper with timer\Timer_v2_80.pdf</v>
-<v>NEW_stepperMotor\stepper with timer\ZeroTerminal.pdf</v>
-<v>NEW_stepperMotor\test for begge stepper</v>
-<v>NEW_stepperMotor\test for begge stepper\PSoC 5LP Architecture TRM</v>
-<v>NEW_stepperMotor\test for begge stepper\CY8C58LP Family Datasheet</v>
-<v>NEW_stepperMotor\test for begge stepper\System Reference Guides</v>
-<v>NEW_stepperMotor\test for begge stepper\System Reference Guides\cy_boot_v6_10</v>
-<v>NEW_stepperMotor\test for begge stepper\cy_clock_v2_20.pdf</v>
-<v>NEW_stepperMotor\test for begge stepper\cy_isr_v1_71.pdf</v>
-<v>NEW_stepperMotor\test for begge stepper\cy_pins_v2_20</v>
-<v>NEW_stepperMotor\test for begge stepper\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
