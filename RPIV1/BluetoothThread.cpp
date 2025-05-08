@@ -122,36 +122,34 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                         int obstructionState = handler->getObstructionState();
                         string nackObstructionStateMessage = "NACK," + to_string(obstructionState) + "X";
                         // Prepare the message for the RPi to read
-                        handler->setPreparedMessage(nackObstructionStateMessage); // Example function to set the messageionState = handler->getObstructionState();
-                        cout << "Prepared for RPi to read: " << nackObstructionStateMessage << endl;bstructionState) + "X";
-tatus = write(s, nackObstructionStateMessage.c_str(), nackObstructionStateMessage.length());
-                        handler->setLastMessageAcknowledged(false); // Mark the last message as not acknowledgedf (status < 0) {
-                        resendLastMessage = true; // Keep resending the last message                            perror("Write failed for NACK with ObstructionState");
+                        handler->setPreparedMessage(nackObstructionStateMessage); // Example function to set the message
+                        cout << "Prepared for RPi to read: " << nackObstructionStateMessage << endl;
+
+                        // Mark the last message as not acknowledged
+                        handler->setLastMessageAcknowledged(false);
+                        resendLastMessage = true; // Keep resending the last message
                         responseReceived = true;
-                        break; endl;
+                        break;
                     } else {
                         cout << "Unexpected message received: " << fullMessage << endl;
-                        // Do nothing, keep waiting for ACK/NACKessageAcknowledged(false); // Mark the last message as not acknowledged
-                    }ge
-                }Received = true;
+                        // Do nothing, keep waiting for ACK/NACK
+                    }
+                }
             } else if (bytesRead < 0) {
-                perror("Read failed");e {
-                break;                        cout << "Unexpected message received: " << fullMessage << endl;
+                perror("Read failed");
+                break;
             }
 
-            //Everytime we receive a message, we set the obstruction. 
-ad < 0) {
-            this_thread::sleep_for(chrono::milliseconds(100)); // Avoid busy-waiting failed");
+            this_thread::sleep_for(chrono::milliseconds(100)); // Avoid busy-waiting
         }
 
         // Timeout handling
-        if (!responseReceived) {rytime we receive a message, we set the obstruction. 
+        if (!responseReceived) {
             cout << "Timeout waiting for ACK/NACK. Treating as NACK and resending the last message." << endl;
-            resendLastMessage = true; // Resend the last messageono::milliseconds(100)); // Avoid busy-waiting
+            resendLastMessage = true; // Resend the last message
         }
     }
-        // Timeout handling
 
-    cout << "Stopping Bluetooth sender/receiver loop." << endl;            cout << "Timeout waiting for ACK/NACK. Treating as NACK and resending the last message." << endl;
+    cout << "Stopping Bluetooth sender/receiver loop." << endl;
     close(s);
 }
