@@ -2192,47 +2192,47 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x8a61
+.debug_info     0x00000000     0x8a62
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x3bc .\CortexM3\ARM_GCC_541\Debug\main.o
  .debug_info    0x000003bc      0x278 .\CortexM3\ARM_GCC_541\Debug\motor_control.o
  .debug_info    0x00000634      0x6f4 .\CortexM3\ARM_GCC_541\Debug\UART_handler.o
  .debug_info    0x00000d28      0x11e .\CortexM3\ARM_GCC_541\Debug\shootVarHandler.o
  .debug_info    0x00000e46      0x54c .\CortexM3\ARM_GCC_541\Debug\distanceSensor.o
- .debug_info    0x00001392      0x209 .\CortexM3\ARM_GCC_541\Debug\firing.o
- .debug_info    0x0000159b      0x2de .\CortexM3\ARM_GCC_541\Debug\control.o
- .debug_info    0x00001879      0x2b6 .\CortexM3\ARM_GCC_541\Debug\stepper.o
- .debug_info    0x00001b2f      0x617 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_info    0x00002146      0x139 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_info    0x0000227f      0x3bb .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_info    0x0000263a     0x1374 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(CyLib.o)
- .debug_info    0x000039ae      0xa2a .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(cyPm.o)
- .debug_info    0x000043d8      0x2d2 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(isr_uart_rx_BT.o)
- .debug_info    0x000046aa      0x7ae .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(UART_BT.o)
- .debug_info    0x00004e58      0x186 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(UART_BT_INT.o)
- .debug_info    0x00004fde      0x283 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(UART_BT_IntClock.o)
- .debug_info    0x00005261      0x383 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(PWM_B.o)
- .debug_info    0x000055e4      0x383 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(PWM_A.o)
- .debug_info    0x00005967      0x60c .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(UART_PC.o)
- .debug_info    0x00005f73      0x283 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(UART_PC_IntClock.o)
- .debug_info    0x000061f6      0x283 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(Clock_24MHz.o)
- .debug_info    0x00006479      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(Trigger.o)
- .debug_info    0x00006598      0x2d2 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(isr_echo_int.o)
- .debug_info    0x0000686a      0x344 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(Counter.o)
- .debug_info    0x00006bae       0xd6 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(Counter_Reset.o)
- .debug_info    0x00006c84      0x2d2 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(isr_timer_DS.o)
- .debug_info    0x00006f56      0x283 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(Clock_5kHz.o)
- .debug_info    0x000071d9      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(fireDirPin.o)
- .debug_info    0x000072f8      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(dialDirPin.o)
- .debug_info    0x00007417      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(dialStepPin.o)
- .debug_info    0x00007536      0x2d1 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(Timer_Stepper.o)
- .debug_info    0x00007807      0x2d2 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(stepper_isr_timer.o)
- .debug_info    0x00007ad9      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(angleDirPin.o)
- .debug_info    0x00007bf8      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(angleStepPin.o)
- .debug_info    0x00007d17      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(fireStepPin.o)
- .debug_info    0x00007e36       0x8e .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(CyBootAsmGnu.o)
- .debug_info    0x00007ec4      0x64d .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(CyFlash.o)
- .debug_info    0x00008511      0x550 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(CySpc.o)
+ .debug_info    0x00001392      0x20a .\CortexM3\ARM_GCC_541\Debug\firing.o
+ .debug_info    0x0000159c      0x2de .\CortexM3\ARM_GCC_541\Debug\control.o
+ .debug_info    0x0000187a      0x2b6 .\CortexM3\ARM_GCC_541\Debug\stepper.o
+ .debug_info    0x00001b30      0x617 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x00002147      0x139 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x00002280      0x3bb .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_info    0x0000263b     0x1374 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(CyLib.o)
+ .debug_info    0x000039af      0xa2a .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(cyPm.o)
+ .debug_info    0x000043d9      0x2d2 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(isr_uart_rx_BT.o)
+ .debug_info    0x000046ab      0x7ae .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(UART_BT.o)
+ .debug_info    0x00004e59      0x186 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(UART_BT_INT.o)
+ .debug_info    0x00004fdf      0x283 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(UART_BT_IntClock.o)
+ .debug_info    0x00005262      0x383 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(PWM_B.o)
+ .debug_info    0x000055e5      0x383 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(PWM_A.o)
+ .debug_info    0x00005968      0x60c .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(UART_PC.o)
+ .debug_info    0x00005f74      0x283 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(UART_PC_IntClock.o)
+ .debug_info    0x000061f7      0x283 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(Clock_24MHz.o)
+ .debug_info    0x0000647a      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(Trigger.o)
+ .debug_info    0x00006599      0x2d2 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(isr_echo_int.o)
+ .debug_info    0x0000686b      0x344 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(Counter.o)
+ .debug_info    0x00006baf       0xd6 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(Counter_Reset.o)
+ .debug_info    0x00006c85      0x2d2 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(isr_timer_DS.o)
+ .debug_info    0x00006f57      0x283 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(Clock_5kHz.o)
+ .debug_info    0x000071da      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(fireDirPin.o)
+ .debug_info    0x000072f9      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(dialDirPin.o)
+ .debug_info    0x00007418      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(dialStepPin.o)
+ .debug_info    0x00007537      0x2d1 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(Timer_Stepper.o)
+ .debug_info    0x00007808      0x2d2 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(stepper_isr_timer.o)
+ .debug_info    0x00007ada      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(angleDirPin.o)
+ .debug_info    0x00007bf9      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(angleStepPin.o)
+ .debug_info    0x00007d18      0x11f .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(fireStepPin.o)
+ .debug_info    0x00007e37       0x8e .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(CyBootAsmGnu.o)
+ .debug_info    0x00007ec5      0x64d .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(CyFlash.o)
+ .debug_info    0x00008512      0x550 .\CortexM3\ARM_GCC_541\Debug\Motor_Test.a(CySpc.o)
 
 .debug_abbrev   0x00000000     0x2a5f
  *(.debug_abbrev)
@@ -2405,22 +2405,22 @@ END GROUP
 
 .debug_str      0x00000000     0x3448
  *(.debug_str)
- .debug_str     0x00000000      0x2aa .\CortexM3\ARM_GCC_541\Debug\main.o
-                                0x2fb (size before relaxing)
- .debug_str     0x000002aa       0xad .\CortexM3\ARM_GCC_541\Debug\motor_control.o
+ .debug_str     0x00000000      0x2c4 .\CortexM3\ARM_GCC_541\Debug\main.o
+                                0x315 (size before relaxing)
+ .debug_str     0x000002c4       0xed .\CortexM3\ARM_GCC_541\Debug\motor_control.o
                                 0x26f (size before relaxing)
- .debug_str     0x00000357      0x196 .\CortexM3\ARM_GCC_541\Debug\UART_handler.o
-                                0x3d1 (size before relaxing)
- .debug_str     0x000004ed      0x13a .\CortexM3\ARM_GCC_541\Debug\shootVarHandler.o
+ .debug_str     0x000003b1      0x196 .\CortexM3\ARM_GCC_541\Debug\UART_handler.o
+                                0x3eb (size before relaxing)
+ .debug_str     0x00000547       0xe0 .\CortexM3\ARM_GCC_541\Debug\shootVarHandler.o
                                 0x202 (size before relaxing)
  .debug_str     0x00000627      0x1ac .\CortexM3\ARM_GCC_541\Debug\distanceSensor.o
                                 0x3e7 (size before relaxing)
  .debug_str     0x000007d3       0xcc .\CortexM3\ARM_GCC_541\Debug\firing.o
-                                0x28c (size before relaxing)
+                                0x2a6 (size before relaxing)
  .debug_str     0x0000089f       0xe7 .\CortexM3\ARM_GCC_541\Debug\control.o
-                                0x33d (size before relaxing)
+                                0x357 (size before relaxing)
  .debug_str     0x00000986       0x4a .\CortexM3\ARM_GCC_541\Debug\stepper.o
-                                0x2fd (size before relaxing)
+                                0x317 (size before relaxing)
  .debug_str     0x000009d0      0x1a3 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
                                 0x342 (size before relaxing)
  .debug_str     0x00000b73       0x75 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
@@ -2816,4 +2816,4 @@ END GROUP
 
 /DISCARD/
  *(.note.GNU-stack)
-OUTPUT(C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\CortexM3\ARM_GCC_541\Debug\Motor_Test.elf elf32-littlearm)
+OUTPUT(\\Mac\Home\Desktop\Elektronik ingenioer\3rd semester\PRJ3\PRJ3\BattleBot\Motor_Test.cydsn\CortexM3\ARM_GCC_541\Debug\Motor_Test.elf elf32-littlearm)

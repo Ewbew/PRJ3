@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
   44 000e 17DD     		ble	.L2
   12:control.c     ****     {
   13:control.c     ****         dialStepPin_Write(1);
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 2
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 2
 
 
   45              		.loc 1 13 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
   88              	.LVL5:
   25:control.c     ****         angleStepPin_Write(0);
   89              		.loc 1 25 0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 3
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 3
 
 
   90 0056 0020     		movs	r0, #0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  133 009c 1BB2     		sxth	r3, r3
  134 009e 1380     		strh	r3, [r2]	@ movhi
  135 00a0 23E0     		b	.L5
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 4
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 4
 
 
  136              	.L4:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  179 00e8 1A70     		strb	r2, [r3]
  180              	.L5:
   48:control.c     ****     }
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 5
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 5
 
 
   49:control.c     **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
   54:control.c     ****     }
   55:control.c     **** }
   56:control.c     **** 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 6
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 6
 
 
   57:control.c     **** void initControlTimer(void)
@@ -354,11 +354,11 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  275 0006 00000000 		.4byte	.Ldebug_abbrev0
  276 000a 04       		.byte	0x4
  277 000b 01       		.uleb128 0x1
- 278 000c F1000000 		.4byte	.LASF41
+ 278 000c 0B010000 		.4byte	.LASF41
  279 0010 0C       		.byte	0xc
- 280 0011 93010000 		.4byte	.LASF42
- 281 0015 44000000 		.4byte	.LASF43
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 7
+ 280 0011 AD010000 		.4byte	.LASF42
+ 281 0015 00000000 		.4byte	.LASF43
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 7
 
 
  282 0019 00000000 		.4byte	.Ldebug_ranges0+0
@@ -367,40 +367,40 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  285 0025 02       		.uleb128 0x2
  286 0026 01       		.byte	0x1
  287 0027 06       		.byte	0x6
- 288 0028 47020000 		.4byte	.LASF0
+ 288 0028 61020000 		.4byte	.LASF0
  289 002c 02       		.uleb128 0x2
  290 002d 01       		.byte	0x1
  291 002e 08       		.byte	0x8
- 292 002f E3000000 		.4byte	.LASF1
+ 292 002f FD000000 		.4byte	.LASF1
  293 0033 02       		.uleb128 0x2
  294 0034 02       		.byte	0x2
  295 0035 05       		.byte	0x5
- 296 0036 AD020000 		.4byte	.LASF2
+ 296 0036 C7020000 		.4byte	.LASF2
  297 003a 02       		.uleb128 0x2
  298 003b 02       		.byte	0x2
  299 003c 07       		.byte	0x7
- 300 003d 9D010000 		.4byte	.LASF3
+ 300 003d B7010000 		.4byte	.LASF3
  301 0041 03       		.uleb128 0x3
- 302 0042 12000000 		.4byte	.LASF9
+ 302 0042 6C000000 		.4byte	.LASF9
  303 0046 02       		.byte	0x2
  304 0047 3F       		.byte	0x3f
  305 0048 4C000000 		.4byte	0x4c
  306 004c 02       		.uleb128 0x2
  307 004d 04       		.byte	0x4
  308 004e 05       		.byte	0x5
- 309 004f D0020000 		.4byte	.LASF4
+ 309 004f EA020000 		.4byte	.LASF4
  310 0053 02       		.uleb128 0x2
  311 0054 04       		.byte	0x4
  312 0055 07       		.byte	0x7
- 313 0056 BD010000 		.4byte	.LASF5
+ 313 0056 D7010000 		.4byte	.LASF5
  314 005a 02       		.uleb128 0x2
  315 005b 08       		.byte	0x8
  316 005c 05       		.byte	0x5
- 317 005d 76020000 		.4byte	.LASF6
+ 317 005d 90020000 		.4byte	.LASF6
  318 0061 02       		.uleb128 0x2
  319 0062 08       		.byte	0x8
  320 0063 07       		.byte	0x7
- 321 0064 30020000 		.4byte	.LASF7
+ 321 0064 4A020000 		.4byte	.LASF7
  322 0068 04       		.uleb128 0x4
  323 0069 04       		.byte	0x4
  324 006a 05       		.byte	0x5
@@ -408,54 +408,54 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  326 006f 02       		.uleb128 0x2
  327 0070 04       		.byte	0x4
  328 0071 07       		.byte	0x7
- 329 0072 14020000 		.4byte	.LASF8
+ 329 0072 2E020000 		.4byte	.LASF8
  330 0076 03       		.uleb128 0x3
- 331 0077 65020000 		.4byte	.LASF10
+ 331 0077 7F020000 		.4byte	.LASF10
  332 007b 03       		.byte	0x3
  333 007c 2C       		.byte	0x2c
  334 007d 41000000 		.4byte	0x41
  335 0081 05       		.uleb128 0x5
- 336 0082 B7020000 		.4byte	.LASF11
+ 336 0082 D1020000 		.4byte	.LASF11
  337 0086 04       		.byte	0x4
  338 0087 E901     		.2byte	0x1e9
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 8
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 8
 
 
  339 0089 2C000000 		.4byte	0x2c
  340 008d 05       		.uleb128 0x5
- 341 008e FA010000 		.4byte	.LASF12
+ 341 008e 14020000 		.4byte	.LASF12
  342 0092 04       		.byte	0x4
  343 0093 EC01     		.2byte	0x1ec
  344 0095 25000000 		.4byte	0x25
  345 0099 05       		.uleb128 0x5
- 346 009a 8D010000 		.4byte	.LASF13
+ 346 009a A7010000 		.4byte	.LASF13
  347 009e 04       		.byte	0x4
  348 009f ED01     		.2byte	0x1ed
  349 00a1 33000000 		.4byte	0x33
  350 00a5 02       		.uleb128 0x2
  351 00a6 04       		.byte	0x4
  352 00a7 04       		.byte	0x4
- 353 00a8 B8000000 		.4byte	.LASF14
+ 353 00a8 D2000000 		.4byte	.LASF14
  354 00ac 02       		.uleb128 0x2
  355 00ad 08       		.byte	0x8
  356 00ae 04       		.byte	0x4
- 357 00af 3D000000 		.4byte	.LASF15
+ 357 00af 97000000 		.4byte	.LASF15
  358 00b3 02       		.uleb128 0x2
  359 00b4 01       		.byte	0x1
  360 00b5 08       		.byte	0x8
- 361 00b6 95020000 		.4byte	.LASF16
+ 361 00b6 AF020000 		.4byte	.LASF16
  362 00ba 06       		.uleb128 0x6
  363 00bb 81000000 		.4byte	0x81
  364 00bf 02       		.uleb128 0x2
  365 00c0 08       		.byte	0x8
  366 00c1 04       		.byte	0x4
- 367 00c2 D9020000 		.4byte	.LASF17
+ 367 00c2 F3020000 		.4byte	.LASF17
  368 00c6 02       		.uleb128 0x2
  369 00c7 04       		.byte	0x4
  370 00c8 07       		.byte	0x7
- 371 00c9 6D020000 		.4byte	.LASF18
+ 371 00c9 87020000 		.4byte	.LASF18
  372 00cd 07       		.uleb128 0x7
- 373 00ce 9E000000 		.4byte	.LASF19
+ 373 00ce B8000000 		.4byte	.LASF19
  374 00d2 01       		.byte	0x1
  375 00d3 06       		.byte	0x6
  376 00d4 00000000 		.4byte	.LFB63
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  393 00fd 00       		.byte	0
  394 00fe 09       		.uleb128 0x9
  395 00ff 1C000000 		.4byte	.LVL2
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 9
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 9
 
 
  396 0103 90020000 		.4byte	0x290
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  450 016c 0A       		.uleb128 0xa
  451 016d 01       		.uleb128 0x1
  452 016e 50       		.byte	0x50
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 10
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 10
 
 
  453 016f 01       		.uleb128 0x1
@@ -580,7 +580,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  489 01b1 BC020000 		.4byte	0x2bc
  490 01b5 00       		.byte	0
  491 01b6 07       		.uleb128 0x7
- 492 01b7 BE000000 		.4byte	.LASF20
+ 492 01b7 D8000000 		.4byte	.LASF20
  493 01bb 01       		.byte	0x1
  494 01bc 39       		.byte	0x39
  495 01bd 00000000 		.4byte	.LFB64
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  507 01de 10000000 		.4byte	.LVL14
  508 01e2 D2020000 		.4byte	0x2d2
  509 01e6 0A       		.uleb128 0xa
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 11
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 11
 
 
  510 01e7 01       		.uleb128 0x1
@@ -609,116 +609,116 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  515 01ef 00       		.byte	0
  516 01f0 00       		.byte	0
  517 01f1 0C       		.uleb128 0xc
- 518 01f2 B0010000 		.4byte	.LASF21
+ 518 01f2 CA010000 		.4byte	.LASF21
  519 01f6 05       		.byte	0x5
  520 01f7 1207     		.2byte	0x712
  521 01f9 FD010000 		.4byte	0x1fd
  522 01fd 06       		.uleb128 0x6
  523 01fe 76000000 		.4byte	0x76
  524 0202 0D       		.uleb128 0xd
- 525 0203 E5020000 		.4byte	.LASF22
+ 525 0203 FF020000 		.4byte	.LASF22
  526 0207 06       		.byte	0x6
- 527 0208 0F       		.byte	0xf
+ 527 0208 10       		.byte	0x10
  528 0209 0D020000 		.4byte	0x20d
  529 020d 06       		.uleb128 0x6
  530 020e 8D000000 		.4byte	0x8d
  531 0212 0D       		.uleb128 0xd
- 532 0213 BD020000 		.4byte	.LASF23
+ 532 0213 D7020000 		.4byte	.LASF23
  533 0217 06       		.byte	0x6
- 534 0218 10       		.byte	0x10
+ 534 0218 11       		.byte	0x11
  535 0219 0D020000 		.4byte	0x20d
  536 021d 0D       		.uleb128 0xd
- 537 021e 2F000000 		.4byte	.LASF24
+ 537 021e 89000000 		.4byte	.LASF24
  538 0222 06       		.byte	0x6
- 539 0223 11       		.byte	0x11
+ 539 0223 12       		.byte	0x12
  540 0224 0D020000 		.4byte	0x20d
  541 0228 0D       		.uleb128 0xd
- 542 0229 FF010000 		.4byte	.LASF25
+ 542 0229 19020000 		.4byte	.LASF25
  543 022d 06       		.byte	0x6
- 544 022e 13       		.byte	0x13
+ 544 022e 14       		.byte	0x14
  545 022f 0D020000 		.4byte	0x20d
  546 0233 0D       		.uleb128 0xd
- 547 0234 CF000000 		.4byte	.LASF26
+ 547 0234 E9000000 		.4byte	.LASF26
  548 0238 06       		.byte	0x6
- 549 0239 14       		.byte	0x14
+ 549 0239 15       		.byte	0x15
  550 023a 0D020000 		.4byte	0x20d
  551 023e 0D       		.uleb128 0xd
- 552 023f 1A030000 		.4byte	.LASF27
+ 552 023f 34030000 		.4byte	.LASF27
  553 0243 06       		.byte	0x6
- 554 0244 15       		.byte	0x15
+ 554 0244 16       		.byte	0x16
  555 0245 0D020000 		.4byte	0x20d
  556 0249 0D       		.uleb128 0xd
- 557 024a DD010000 		.4byte	.LASF28
+ 557 024a F7010000 		.4byte	.LASF28
  558 024e 07       		.byte	0x7
- 559 024f 09       		.byte	0x9
+ 559 024f 0A       		.byte	0xa
  560 0250 54020000 		.4byte	0x254
  561 0254 06       		.uleb128 0x6
  562 0255 99000000 		.4byte	0x99
  563 0259 0D       		.uleb128 0xd
- 564 025a CF010000 		.4byte	.LASF29
+ 564 025a E9010000 		.4byte	.LASF29
  565 025e 07       		.byte	0x7
- 566 025f 0A       		.byte	0xa
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 12
+ 566 025f 0B       		.byte	0xb
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 12
 
 
  567 0260 0D020000 		.4byte	0x20d
  568 0264 0D       		.uleb128 0xd
- 569 0265 7F010000 		.4byte	.LASF30
+ 569 0265 99010000 		.4byte	.LASF30
  570 0269 07       		.byte	0x7
- 571 026a 0B       		.byte	0xb
+ 571 026a 0C       		.byte	0xc
  572 026b BA000000 		.4byte	0xba
  573 026f 0D       		.uleb128 0xd
- 574 0270 21020000 		.4byte	.LASF31
+ 574 0270 3B020000 		.4byte	.LASF31
  575 0274 07       		.byte	0x7
- 576 0275 0C       		.byte	0xc
+ 576 0275 0D       		.byte	0xd
  577 0276 BA000000 		.4byte	0xba
  578 027a 0E       		.uleb128 0xe
- 579 027b F9020000 		.4byte	.LASF32
- 580 027f F9020000 		.4byte	.LASF32
+ 579 027b 13030000 		.4byte	.LASF32
+ 580 027f 13030000 		.4byte	.LASF32
  581 0283 08       		.byte	0x8
  582 0284 5E       		.byte	0x5e
  583 0285 0E       		.uleb128 0xe
- 584 0286 00000000 		.4byte	.LASF33
- 585 028a 00000000 		.4byte	.LASF33
+ 584 0286 5A000000 		.4byte	.LASF33
+ 585 028a 5A000000 		.4byte	.LASF33
  586 028e 09       		.byte	0x9
  587 028f 26       		.byte	0x26
  588 0290 0E       		.uleb128 0xe
- 589 0291 F0010000 		.4byte	.LASF34
- 590 0295 F0010000 		.4byte	.LASF34
+ 589 0291 0A020000 		.4byte	.LASF34
+ 590 0295 0A020000 		.4byte	.LASF34
  591 0299 0A       		.byte	0xa
  592 029a 77       		.byte	0x77
  593 029b 0E       		.uleb128 0xe
- 594 029c 9A020000 		.4byte	.LASF35
- 595 02a0 9A020000 		.4byte	.LASF35
+ 594 029c B4020000 		.4byte	.LASF35
+ 595 02a0 B4020000 		.4byte	.LASF35
  596 02a4 0B       		.byte	0xb
  597 02a5 26       		.byte	0x26
  598 02a6 0E       		.uleb128 0xe
- 599 02a7 53020000 		.4byte	.LASF36
- 600 02ab 53020000 		.4byte	.LASF36
+ 599 02a7 6D020000 		.4byte	.LASF36
+ 600 02ab 6D020000 		.4byte	.LASF36
  601 02af 0C       		.byte	0xc
  602 02b0 26       		.byte	0x26
  603 02b1 0E       		.uleb128 0xe
- 604 02b2 84020000 		.4byte	.LASF37
- 605 02b6 84020000 		.4byte	.LASF37
+ 604 02b2 9E020000 		.4byte	.LASF37
+ 605 02b6 9E020000 		.4byte	.LASF37
  606 02ba 0D       		.byte	0xd
  607 02bb 26       		.byte	0x26
  608 02bc 0E       		.uleb128 0xe
- 609 02bd 1C000000 		.4byte	.LASF38
- 610 02c1 1C000000 		.4byte	.LASF38
+ 609 02bd 76000000 		.4byte	.LASF38
+ 610 02c1 76000000 		.4byte	.LASF38
  611 02c5 08       		.byte	0x8
  612 02c6 5B       		.byte	0x5b
  613 02c7 0E       		.uleb128 0xe
- 614 02c8 29030000 		.4byte	.LASF39
- 615 02cc 29030000 		.4byte	.LASF39
+ 614 02c8 43030000 		.4byte	.LASF39
+ 615 02cc 43030000 		.4byte	.LASF39
  616 02d0 08       		.byte	0x8
  617 02d1 5A       		.byte	0x5a
  618 02d2 0E       		.uleb128 0xe
- 619 02d3 84000000 		.4byte	.LASF40
- 620 02d7 84000000 		.4byte	.LASF40
+ 619 02d3 9E000000 		.4byte	.LASF40
+ 620 02d7 9E000000 		.4byte	.LASF40
  621 02db 0E       		.byte	0xe
  622 02dc 18       		.byte	0x18
  623 02dd 00       		.byte	0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 13
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 13
 
 
  624              		.section	.debug_abbrev,"",%progbits
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  678 0034 00       		.byte	0
  679 0035 00       		.byte	0
  680 0036 05       		.uleb128 0x5
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 14
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 14
 
 
  681 0037 16       		.uleb128 0x16
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  735 0070 898201   		.uleb128 0x4109
  736 0073 01       		.byte	0x1
  737 0074 11       		.uleb128 0x11
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 15
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 15
 
 
  738 0075 01       		.uleb128 0x1
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  792 00b0 19       		.uleb128 0x19
  793 00b1 3C       		.uleb128 0x3c
  794 00b2 19       		.uleb128 0x19
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 16
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 16
 
 
  795 00b3 00       		.byte	0
@@ -950,247 +950,247 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 1
  839      00000201 
  839      FB0E0D00 
  839      01010101 
- 840              	.LASF33:
- 841 0000 6469616C 		.ascii	"dialStepPin_Write\000"
- 841      53746570 
- 841      50696E5F 
- 841      57726974 
- 841      6500
- 842              	.LASF9:
- 843 0012 5F5F696E 		.ascii	"__int32_t\000"
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 17
+ 840              	.LASF43:
+ 841 0000 5C5C4D61 		.ascii	"\\\\Mac\\Home\\Desktop\\Elektronik ingenioer\\3rd s"
+ 841      635C486F 
+ 841      6D655C44 
+ 841      65736B74 
+ 841      6F705C45 
+ 842 002d 656D6573 		.ascii	"emester\\PRJ3\\PRJ3\\BattleBot\\Motor_Test.cydsn\000"
+ 842      7465725C 
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 17
 
 
- 843      7433325F 
- 843      7400
- 844              	.LASF38:
- 845 001c 54696D65 		.ascii	"Timer_Stepper_Stop\000"
- 845      725F5374 
- 845      65707065 
- 845      725F5374 
- 845      6F7000
- 846              	.LASF24:
- 847 002f 6469616C 		.ascii	"dialDirection\000"
- 847      44697265 
- 847      6374696F 
- 847      6E00
- 848              	.LASF15:
- 849 003d 646F7562 		.ascii	"double\000"
- 849      6C6500
- 850              	.LASF43:
- 851 0044 433A5C55 		.ascii	"C:\\Users\\peter\\Documents\\GitHub\\PRJ3\\BattleBo"
- 851      73657273 
- 851      5C706574 
- 851      65725C44 
- 851      6F63756D 
- 852 0071 745C4D6F 		.ascii	"t\\Motor_Test.cydsn\000"
- 852      746F725F 
- 852      54657374 
- 852      2E637964 
- 852      736E00
+ 842      50524A33 
+ 842      5C50524A 
+ 842      335C4261 
+ 843              	.LASF33:
+ 844 005a 6469616C 		.ascii	"dialStepPin_Write\000"
+ 844      53746570 
+ 844      50696E5F 
+ 844      57726974 
+ 844      6500
+ 845              	.LASF9:
+ 846 006c 5F5F696E 		.ascii	"__int32_t\000"
+ 846      7433325F 
+ 846      7400
+ 847              	.LASF38:
+ 848 0076 54696D65 		.ascii	"Timer_Stepper_Stop\000"
+ 848      725F5374 
+ 848      65707065 
+ 848      725F5374 
+ 848      6F7000
+ 849              	.LASF24:
+ 850 0089 6469616C 		.ascii	"dialDirection\000"
+ 850      44697265 
+ 850      6374696F 
+ 850      6E00
+ 851              	.LASF15:
+ 852 0097 646F7562 		.ascii	"double\000"
+ 852      6C6500
  853              	.LASF40:
- 854 0084 73746570 		.ascii	"stepper_isr_timer_StartEx\000"
+ 854 009e 73746570 		.ascii	"stepper_isr_timer_StartEx\000"
  854      7065725F 
  854      6973725F 
  854      74696D65 
  854      725F5374 
  855              	.LASF19:
- 856 009e 53746570 		.ascii	"Stepper_Timer_ISR_Handler\000"
+ 856 00b8 53746570 		.ascii	"Stepper_Timer_ISR_Handler\000"
  856      7065725F 
  856      54696D65 
  856      725F4953 
  856      525F4861 
  857              	.LASF14:
- 858 00b8 666C6F61 		.ascii	"float\000"
+ 858 00d2 666C6F61 		.ascii	"float\000"
  858      7400
  859              	.LASF20:
- 860 00be 696E6974 		.ascii	"initControlTimer\000"
+ 860 00d8 696E6974 		.ascii	"initControlTimer\000"
  860      436F6E74 
  860      726F6C54 
  860      696D6572 
  860      00
  861              	.LASF26:
- 862 00cf 616E676C 		.ascii	"angleStepsRemaining\000"
+ 862 00e9 616E676C 		.ascii	"angleStepsRemaining\000"
  862      65537465 
  862      70735265 
  862      6D61696E 
  862      696E6700 
  863              	.LASF1:
- 864 00e3 756E7369 		.ascii	"unsigned char\000"
+ 864 00fd 756E7369 		.ascii	"unsigned char\000"
  864      676E6564 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 18
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 18
 
 
  864      20636861 
  864      7200
  865              	.LASF41:
- 866 00f1 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 866 010b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  866      43313120 
  866      352E342E 
  866      31203230 
  866      31363036 
- 867 0124 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 867 013e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  867      20726576 
  867      6973696F 
  867      6E203233 
  867      37373135 
- 868 0157 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 868 0171 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  868      66756E63 
  868      74696F6E 
  868      2D736563 
  868      74696F6E 
  869              	.LASF30:
- 870 017f 66697265 		.ascii	"fireStepPhase\000"
+ 870 0199 66697265 		.ascii	"fireStepPhase\000"
  870      53746570 
  870      50686173 
  870      6500
  871              	.LASF13:
- 872 018d 696E7431 		.ascii	"int16\000"
+ 872 01a7 696E7431 		.ascii	"int16\000"
  872      3600
  873              	.LASF42:
- 874 0193 636F6E74 		.ascii	"control.c\000"
+ 874 01ad 636F6E74 		.ascii	"control.c\000"
  874      726F6C2E 
  874      6300
  875              	.LASF3:
- 876 019d 73686F72 		.ascii	"short unsigned int\000"
+ 876 01b7 73686F72 		.ascii	"short unsigned int\000"
  876      7420756E 
  876      7369676E 
  876      65642069 
  876      6E7400
  877              	.LASF21:
- 878 01b0 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 878 01ca 49544D5F 		.ascii	"ITM_RxBuffer\000"
  878      52784275 
  878      66666572 
  878      00
  879              	.LASF5:
- 880 01bd 6C6F6E67 		.ascii	"long unsigned int\000"
+ 880 01d7 6C6F6E67 		.ascii	"long unsigned int\000"
  880      20756E73 
  880      69676E65 
  880      6420696E 
  880      7400
  881              	.LASF29:
- 882 01cf 66697265 		.ascii	"fireDirection\000"
+ 882 01e9 66697265 		.ascii	"fireDirection\000"
  882      44697265 
  882      6374696F 
  882      6E00
  883              	.LASF28:
- 884 01dd 66697265 		.ascii	"fireStepsRemaining\000"
+ 884 01f7 66697265 		.ascii	"fireStepsRemaining\000"
  884      53746570 
  884      7352656D 
  884      61696E69 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 19
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 19
 
 
  884      6E6700
  885              	.LASF34:
- 886 01f0 43794465 		.ascii	"CyDelayUs\000"
+ 886 020a 43794465 		.ascii	"CyDelayUs\000"
  886      6C617955 
  886      7300
  887              	.LASF12:
- 888 01fa 696E7438 		.ascii	"int8\000"
+ 888 0214 696E7438 		.ascii	"int8\000"
  888      00
  889              	.LASF25:
- 890 01ff 616E676C 		.ascii	"angleCurrentPosition\000"
+ 890 0219 616E676C 		.ascii	"angleCurrentPosition\000"
  890      65437572 
  890      72656E74 
  890      506F7369 
  890      74696F6E 
  891              	.LASF8:
- 892 0214 756E7369 		.ascii	"unsigned int\000"
+ 892 022e 756E7369 		.ascii	"unsigned int\000"
  892      676E6564 
  892      20696E74 
  892      00
  893              	.LASF31:
- 894 0221 66697265 		.ascii	"fireInProgress\000"
+ 894 023b 66697265 		.ascii	"fireInProgress\000"
  894      496E5072 
  894      6F677265 
  894      737300
  895              	.LASF7:
- 896 0230 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 896 024a 6C6F6E67 		.ascii	"long long unsigned int\000"
  896      206C6F6E 
  896      6720756E 
  896      7369676E 
  896      65642069 
  897              	.LASF0:
- 898 0247 7369676E 		.ascii	"signed char\000"
+ 898 0261 7369676E 		.ascii	"signed char\000"
  898      65642063 
  898      68617200 
  899              	.LASF36:
- 900 0253 66697265 		.ascii	"fireStepPin_Write\000"
+ 900 026d 66697265 		.ascii	"fireStepPin_Write\000"
  900      53746570 
  900      50696E5F 
  900      57726974 
  900      6500
  901              	.LASF10:
- 902 0265 696E7433 		.ascii	"int32_t\000"
+ 902 027f 696E7433 		.ascii	"int32_t\000"
  902      325F7400 
  903              	.LASF18:
- 904 026d 73697A65 		.ascii	"sizetype\000"
+ 904 0287 73697A65 		.ascii	"sizetype\000"
  904      74797065 
  904      00
  905              	.LASF6:
- 906 0276 6C6F6E67 		.ascii	"long long int\000"
+ 906 0290 6C6F6E67 		.ascii	"long long int\000"
  906      206C6F6E 
  906      6720696E 
  906      7400
  907              	.LASF37:
- 908 0284 66697265 		.ascii	"fireDirPin_Write\000"
+ 908 029e 66697265 		.ascii	"fireDirPin_Write\000"
  908      44697250 
  908      696E5F57 
  908      72697465 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7bwJys.s 			page 20
+ARM GAS  C:\Users\OTTOSE~1\AppData\Local\Temp\ccRlrZjg.s 			page 20
 
 
  908      00
  909              	.LASF16:
- 910 0295 63686172 		.ascii	"char\000"
+ 910 02af 63686172 		.ascii	"char\000"
  910      00
  911              	.LASF35:
- 912 029a 616E676C 		.ascii	"angleStepPin_Write\000"
+ 912 02b4 616E676C 		.ascii	"angleStepPin_Write\000"
  912      65537465 
  912      7050696E 
  912      5F577269 
  912      746500
  913              	.LASF2:
- 914 02ad 73686F72 		.ascii	"short int\000"
+ 914 02c7 73686F72 		.ascii	"short int\000"
  914      7420696E 
  914      7400
  915              	.LASF11:
- 916 02b7 75696E74 		.ascii	"uint8\000"
+ 916 02d1 75696E74 		.ascii	"uint8\000"
  916      3800
  917              	.LASF23:
- 918 02bd 6469616C 		.ascii	"dialStepsRemaining\000"
+ 918 02d7 6469616C 		.ascii	"dialStepsRemaining\000"
  918      53746570 
  918      7352656D 
  918      61696E69 
  918      6E6700
  919              	.LASF4:
- 920 02d0 6C6F6E67 		.ascii	"long int\000"
+ 920 02ea 6C6F6E67 		.ascii	"long int\000"
  920      20696E74 
  920      00
  921              	.LASF17:
- 922 02d9 6C6F6E67 		.ascii	"long double\000"
+ 922 02f3 6C6F6E67 		.ascii	"long double\000"
  922      20646F75 
  922      626C6500 
  923              	.LASF22:
- 924 02e5 6469616C 		.ascii	"dialCurrentPosition\000"
+ 924 02ff 6469616C 		.ascii	"dialCurrentPosition\000"
  924      43757272 
  924      656E7450 
  924      6F736974 
  924      696F6E00 
  925              	.LASF32:
- 926 02f9 54696D65 		.ascii	"Timer_Stepper_ReadStatusRegister\000"
+ 926 0313 54696D65 		.ascii	"Timer_Stepper_ReadStatusRegister\000"
  926      725F5374 
  926      65707065 
  926      725F5265 
  926      61645374 
  927              	.LASF27:
- 928 031a 616E676C 		.ascii	"angleDirection\000"
+ 928 0334 616E676C 		.ascii	"angleDirection\000"
  928      65446972 
  928      65637469 
  928      6F6E00
  929              	.LASF39:
- 930 0329 54696D65 		.ascii	"Timer_Stepper_Start\000"
+ 930 0343 54696D65 		.ascii	"Timer_Stepper_Start\000"
  930      725F5374 
  930      65707065 
  930      725F5374 

@@ -46,7 +46,7 @@ void setStepperTargets(int8 dialTarget, int8 angleTarget)
     if (dialStepsRemaining > 0 || angleStepsRemaining > 0)
     {
         Timer_Stepper_Stop();
-        Timer_Stepper_WritePeriod(TIMER_PERIOD);
+        Timer_Stepper_WritePeriod(STEPPER_TIMER_PERIOD);
         Timer_Stepper_WriteCounter(0);
         Timer_Stepper_Start();
     }

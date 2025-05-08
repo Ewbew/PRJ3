@@ -8,7 +8,8 @@
 #define DIAL_MIN_POSITION -100
 #define ANGLE_MAX_POSITION 50
 #define ANGLE_MIN_POSITION 0
-#define TIMER_PERIOD 25 // Can alternatively be set in the top design (HW configuration)
+// #define FIRE_TIMER_PERIOD 
+#define STEPPER_TIMER_PERIOD 25 // Can alternatively be set in the top design (HW configuration)
                         // If we do this, then we can circumvent including the stepper.h file in firing.c
 
 // Variabler tilgængelige for ISR
