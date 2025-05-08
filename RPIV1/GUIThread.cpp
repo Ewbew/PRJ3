@@ -11,6 +11,8 @@
 SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     : QWidget(parent), VarHandler_(handler)
 {
+    setAttribute(Qt::WA_AcceptTouchEvents);
+
     layout = new QVBoxLayout(this);
     modeTitle = new QLabel(this);
     layout->addWidget(modeTitle);

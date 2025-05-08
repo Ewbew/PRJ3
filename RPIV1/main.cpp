@@ -58,6 +58,11 @@ int main(int argc, char *argv[]) {
     // Start Bluetooth sender in its own thread
     thread btThread(bluetoothSenderLoop, targetBluetoothAddress, &handler);
 
+
+    QCoreApplication::setAttribute(Qt::AA_SynthesizeTouchForUnhandledMouseEvents, false);
+    QCoreApplication::setAttribute(Qt::AA_SynthesizeMouseForUnhandledTouchEvents, false);
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling); // optional but good for touch screens
+
     QApplication app(argc, argv);
 
     SliderWindow window(&handler);
