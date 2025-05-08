@@ -38,14 +38,14 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     driveSlider1->setStyleSheet(R"(
         QSlider::groove:vertical {
             background: #cccccc;
-            width: 20px;
+            width: 40px;
             border: 1px solid #999999;
         }
         QSlider::handle:vertical {
             background: #66ccff;
             border: 1px solid #3399ff;
-            width: 30px;
-            height: 20px;
+            width: 50px;
+            height: 50px;
             margin: 0 -5px;
             border-radius: 4px;
         }
