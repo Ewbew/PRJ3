@@ -81,12 +81,9 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                     //To-do:
                     // Here, you need to split the received message (fullmessage) up into two parts; one that has the ACK/NACK part and the other
                     // should contain the obstruction variable. So you will need to split up the fullmessage with regards to the comma
-                    //
-
-
+                    
 
                     cout << "Received: " << fullMessage << endl;
-                    handler->setObstructionState(messageObstrction);
 
                     // Handle ACK/NACK
                     if (fullMessage == "ACK") { // ACK,0X
