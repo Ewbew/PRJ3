@@ -8,12 +8,6 @@
 #include <stdio.h>
 #include <string.h>
 
-static shootVarHandler* shootRef = NULL;  // Pointer to shared object
-
-void uartHandler_init(shootVarHandler* handler) {
-    shootRef = handler;
-}
-
 // UART RX interrupt service routine for Bluetooth
 CY_ISR(ISR_UART_rx_handler_BT)
 {
@@ -47,7 +41,9 @@ CY_ISR(ISR_UART_rx_handler_BT)
             if (sscanf(btBuffer, "%c,%d,%d,%d", &tempMode, &temp1, &temp2, &tempBool) == 4)
             {
                 UART_PC_PutString("Parsing successful - sending ACK to RPI\r\n");
-                UART_BT_PutString("ACKX");
+                snprintf(message, sizeof(message), "ACK,%dX", get_obstruct());
+                UART_BT_PutString(message);
+
                 if (tempMode == '$') {
                     VAR1 = (int8_t)temp1;
                     VAR2 = (int8_t)temp2;                    
@@ -74,7 +70,8 @@ CY_ISR(ISR_UART_rx_handler_BT)
             else
             {       
                 UART_PC_PutString("Parsing error - sending NACK to RPI\r\n");
-                UART_BT_PutString("NACKX"); 
+                snprintf(message, sizeof(message), "NACK,%dX", get_obstruct());
+                UART_BT_PutString(message);
             }
 
             index = 0; // Reset buffer for next message
