@@ -59,7 +59,7 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
 
         cout << "Sent: " << lastSentMessage << endl;
 
-        // Wait for ACK/NACK with timeout
+        // Wait for response
         auto startTime = chrono::steady_clock::now();
         bool responseReceived = false;
 
@@ -81,9 +81,68 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                     //To-do:
                     // Here, you need to split the received message (fullmessage) up into two parts; one that has the ACK/NACK part and the other
                     // should contain the obstruction variable. So you will need to split up the fullmessage with regards to the comma
-                    
+                    //
+                    size_t commaPos = fullMessage.find(',');
+                        if (commaPos != string::npos) {
+                        string StatusPart = fullMessage.substr(0, commaPos); //ACK or NACK
+                        string ObstructionPart = fullMessage.substr(commaPos + 1);
 
-                    cout << "Received: " << fullMessage << endl;
+                        int ObstructionState = stoi(obstructionState);
+                        handler->setObstructionState(ObstructionState); // Set the obstruction state in the handler
+
+                        if (obstructionState == 1) {
+                            cout << "Obstruction detected! " << endl;
+                        } else {
+                            cout << "No obstruction detected." << endl; //Most of the time
+                        }
+
+                        if (StatusPart == "ACK") {
+                            cout << "ACK received. " << endl;
+
+                        string ackMessage = "ACK," + to_string(obstructionState) + "X";
+                        handler->setPreparedMessage(ackMessage);
+                        handler->setShootState(false);
+                        handler->setLastMessageAcknowledged(true);
+                        lastMessageSent.clear();
+                        resendLastMessage = false;
+                        responseReceived = true;
+                        break;
+
+                        } else if (statusPart == "NACK") {
+                            cout << "NACK received." << endl;
+
+                        string nackMessage = "NACK," + to_string(obstructionState) + "X";
+                        handler->setPreparedMessage(nackMessage);
+                        handler->setLastMessageAcknowledged(false);
+                        resendLastMessage = true;
+                        responseReceived = true;
+                        break;
+                    } else {
+                        cout << "Unexpected message received: " << statusPart << endl;
+                        // Do nothing, keep waiting for ACK/NACK
+                    }
+                } else {
+                    cout << "Invalid message format received: " << fullMessage << endl;
+                }
+            } else if (bytesRead < 0) {
+                perror("Read failed");
+                break;
+            }
+            this_thread::sleep_for(chrono::milliseconds(100)); // Avoid busy-waiting
+            }
+    
+        // Timeout handling
+        if (!responseReceived) {
+            cout << "Timeout waiting for ACK/NACK. Treating as NACK and resending the last message." << endl;
+            resendLastMessage = true; // Resend the last message
+        }
+    }
+    
+    cout << "Stopping Bluetooth sender/receiver loop." << endl;
+    close(s);
+}
+                    /*cout << "Received: " << fullMessage << endl;
+                    handler->setObstructionState(messageObstrction);
 
                     // Handle ACK/NACK
                     if (fullMessage == "ACK") { // ACK,0X
@@ -140,21 +199,6 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                         // Do nothing, keep waiting for ACK/NACK
                     }
                 }
-            } else if (bytesRead < 0) {
-                perror("Read failed");
-                break;
-            }
+           
 
-            this_thread::sleep_for(chrono::milliseconds(100)); // Avoid busy-waiting
-        }
-
-        // Timeout handling
-        if (!responseReceived) {
-            cout << "Timeout waiting for ACK/NACK. Treating as NACK and resending the last message." << endl;
-            resendLastMessage = true; // Resend the last message
-        }
-    }
-
-    cout << "Stopping Bluetooth sender/receiver loop." << endl;
-    close(s);
-}
+       
