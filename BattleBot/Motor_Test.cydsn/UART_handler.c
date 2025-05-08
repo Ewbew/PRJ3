@@ -2,6 +2,7 @@
 #include "motor_control.h"
 #include "firing.h"
 #include "stepper.h"
+#include "distanceSensor.h"
 // #include "shootVarHandler.h" // THis is probably deprecated, since we can just call the functions from
                                 // firing.c directly on the variables read from the RPI message
 
@@ -51,7 +52,7 @@ CY_ISR(ISR_UART_rx_handler_BT)
                     set_speedB(VAR2);
                     UART_PC_PutString("Speed successfully set\r\n");
                 }
-                else if (tempMode == '@' && shootRef != NULL) {
+                else if (tempMode == '@') {
                     set_speedA(0);
                     set_speedB(0);
                     VAR1 = (int8_t)temp1;
@@ -72,6 +73,9 @@ CY_ISR(ISR_UART_rx_handler_BT)
                 UART_PC_PutString("Parsing error - sending NACK to RPI\r\n");
                 snprintf(message, sizeof(message), "NACK,%dX", get_obstruct());
                 UART_BT_PutString(message);
+                char PC_dbg_msg[50];
+                snprintf(PC_dbg_msg, sizeof(PC_dbg_msg), "Msg sent to RPI is: %s\r\n", message);
+                UART_PC_PutString(PC_dbg_msg);
             }
 
             index = 0; // Reset buffer for next message
