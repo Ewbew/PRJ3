@@ -108,3 +108,13 @@ void VarHandler::setObstructionState(const int& newValue){
 int VarHandler::getObstructionState() const{
     return ObstructionState;
 }
+
+// Set the prepared message
+void VarHandler::setPreparedMessage(const string& message) {
+    preparedMessage = message;
+}
+
+// Get the prepared message
+string VarHandler::getPreparedMessage() const {
+    return preparedMessage;
+}

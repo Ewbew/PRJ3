@@ -31,7 +31,8 @@ public:
     void setLastMessageAcknowledged(bool acknowledged);
     bool isLastMessageAcknowledged() const;
 
-    
+    void setPreparedMessage(const std::string& message); // Set the prepared message
+    std::string getPreparedMessage() const; // Get the prepared message
 
 private:
     int controlMode;
@@ -46,4 +47,6 @@ private:
     bool lastMessageAcknowledged;
 
     int ObstructionState;
+
+    std::string preparedMessage; // Variable to store the prepared message
 };
