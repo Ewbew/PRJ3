@@ -11,6 +11,8 @@
 SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     : QWidget(parent), VarHandler_(handler)
 {
+    setAttribute(Qt::WA_AcceptTouchEvents);  // Enable touch input
+
     layout = new QVBoxLayout(this);
     modeTitle = new QLabel(this);
     layout->addWidget(modeTitle);
@@ -24,7 +26,6 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     layout->addWidget(toggleModeButton);
     layout->addWidget(toggleShootStateButton);
 
-    // Add warning label for ObstructionState
     warningLabel = new QLabel("You're about to hit a wall, one second.", this);
     warningLabel->setStyleSheet("color: red; font-weight: bold;");
     warningLabel->setVisible(false);
@@ -34,6 +35,21 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     driveLabel1 = new QLabel("Drive Var1", this);
     driveSlider1 = new QSlider(Qt::Vertical, this);
     driveSlider1->setRange(-50, 50);
+    driveSlider1->setStyleSheet(R"(
+        QSlider::groove:vertical {
+            background: #cccccc;
+            width: 40px;
+            border: 1px solid #999999;
+        }
+        QSlider::handle:vertical {
+            background: #66ccff;
+            border: 1px solid #3399ff;
+            width: 50px;
+            height: 50px;
+            margin: 0 -5px;
+            border-radius: 4px;
+        }
+    )");
     connect(driveSlider1, &QSlider::valueChanged, this, [=](int value){
         VarHandler_->setVar1DriveMode(value);
     });
@@ -41,6 +57,7 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     driveLabel2 = new QLabel("Drive Var2", this);
     driveSlider2 = new QSlider(Qt::Vertical, this);
     driveSlider2->setRange(-50, 50);
+    driveSlider2->setStyleSheet(driveSlider1->styleSheet());  // reuse style
     connect(driveSlider2, &QSlider::valueChanged, this, [=](int value){
         VarHandler_->setVar2DriveMode(value);
     });
@@ -67,6 +84,7 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     shootSliderLabel = new QLabel("Shoot Var2 (Elevation)", this);
     shootSlider = new QSlider(Qt::Vertical, this);
     shootSlider->setRange(0, 50);
+    shootSlider->setStyleSheet(driveSlider1->styleSheet());  // reuse style
     connect(shootSlider, &QSlider::valueChanged, this, [=](int value){
         VarHandler_->setVar2ShootMode(value);
     });
@@ -84,7 +102,6 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
 
     connect(toggleModeButton, &QPushButton::clicked, this, &SliderWindow::toggleMode);
 
-    // Click to set ShootState to true
     connect(toggleShootStateButton, &QPushButton::clicked, this, [=]() {
         VarHandler_->setShootState(true);
     });
@@ -99,6 +116,7 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     VarHandler_->setControlMode(2);  // Default to Drive Mode
     updateMode();
 }
+
 
 void SliderWindow::updateMode() {
     int mode = VarHandler_->getControlMode();
