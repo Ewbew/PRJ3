@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
     string targetBluetoothAddress = "98:D3:51:FE:6F:30"; // REPLACE WITH MAC ADRESS OF PSOC
 
     // Start Bluetooth sender in its own thread
-    //thread btThread(bluetoothSenderLoop, targetBluetoothAddress, &handler);
+    thread btThread(bluetoothSenderLoop, targetBluetoothAddress, &handler);
 
 
     QCoreApplication::setAttribute(Qt::AA_SynthesizeTouchForUnhandledMouseEvents, false);
@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
 
     // Stop the Bluetooth loop after the application exits
     keepRunning = false;
-    //btThread.join();
+    btThread.join();
 
     cout << "Program complete." << endl;
     return result;
