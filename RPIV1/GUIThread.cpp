@@ -13,6 +13,7 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
 {
     setAttribute(Qt::WA_AcceptTouchEvents);  // Enable touch input
 
+    
     layout = new QVBoxLayout(this);
     modeTitle = new QLabel(this);
     layout->addWidget(modeTitle);
@@ -35,6 +36,7 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     driveLabel1 = new QLabel("Drive Var1", this);
     driveSlider1 = new QSlider(Qt::Vertical, this);
     driveSlider1->setRange(-50, 50);
+    driveSlider1->setFixedWidth(100);
     driveSlider1->setStyleSheet(R"(
         QSlider::groove:vertical {
             background: #cccccc;
