@@ -13,6 +13,8 @@ VarHandler::VarHandler() {
     ShootState = false;
     controlMode = 2;
     ObstructionState = 0;
+    lastMessageAcknowledged = false; // Ensure this is initialized
+    preparedMessage = ""; // Ensure this is initialized
 }
 
 //Set and get Drive mode
