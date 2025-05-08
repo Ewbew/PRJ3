@@ -92,16 +92,6 @@ string VarHandler::getMessage(){
     }
 }
 
-//Acknowledgement of the last message sent
-void VarHandler::setLastMessageAcknowledged(bool acknowledged){
-    lastMessageAcknowledged = acknowledged;
-}
-
-bool VarHandler::isLastMessageAcknowledged() const{
-    return lastMessageAcknowledged;
-}
-
-
 //Set and get ObstructionState
 void VarHandler::setObstructionState(const int& newValue){
     ObstructionState = newValue;
@@ -111,12 +101,3 @@ int VarHandler::getObstructionState() const{
     return ObstructionState;
 }
 
-// Set the prepared message
-void VarHandler::setPreparedMessage(const string& message) {
-    preparedMessage = message;
-}
-
-// Get the prepared message
-string VarHandler::getPreparedMessage() const {
-    return preparedMessage;
-}

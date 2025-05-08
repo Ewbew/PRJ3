@@ -41,23 +41,32 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
     string lastSentMessage; // Store the last sent message
     bool resendLastMessage = false; // Flag to indicate if the last message should be resent
 
+    // Add a retry limit for resending messages
+    int retryCount = 0;
+    const int maxRetries = 5;
+
     while (keepRunning) {
-        // Send data
-        string dataToSendCombined;
-        if (!resendLastMessage) {
-            dataToSendCombined = handler->getMessage();
-            if (lastSentMessage.empty() || lastSentMessage != dataToSendCombined) {
-                lastSentMessage = dataToSendCombined; // Update the last sent message
+        string dataToSend;
+
+        // Determine what to send
+        if (resendLastMessage) {
+            dataToSend = lastSentMessage; // Resend the last message
+        } else {
+            string newMessage = handler->getMessage();
+            if (!newMessage.empty() && (lastSentMessage.empty() || lastSentMessage != newMessage)) {
+                lastSentMessage = newMessage; // Update the last sent message
             }
+            dataToSend = lastSentMessage; // Send the new message
         }
 
-        int status = write(s, lastSentMessage.c_str(), lastSentMessage.length());
+        // Write the data to the socket
+        int status = write(s, dataToSend.c_str(), dataToSend.length());
         if (status < 0) {
             perror("Write failed");
             break;
         }
 
-        cout << "Sent: " << lastSentMessage << endl;
+        cout << "Sent: " << dataToSend << endl;
 
         // Wait for response
         auto startTime = chrono::steady_clock::now();
@@ -95,21 +104,26 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                         if (StatusPart == "ACK") {
                             cout << "ACK received." << endl;
 
-                            string ackMessage = "ACK," + to_string(ObstructionState) + "X"; // Corrected variable name
+                            string ackMessage = "ACK," + to_string(ObstructionState) + "X"; 
                             handler->setPreparedMessage(ackMessage);
-                            handler->setShootState(false);
-                            handler->setLastMessageAcknowledged(true);
-                            lastSentMessage.clear(); // Corrected variable name
+
+                            // Check if the current shoot state is high
+                            if (handler->getShootState()) {
+                                handler->setShootState(false); // Reset shoot state to false
+                                cout << "Shoot state reset to false after ACK." << endl;
+                            }
+
+                            lastSentMessage.clear(); 
                             resendLastMessage = false;
                             responseReceived = true;
                             break;
 
-                        } else if (StatusPart == "NACK") { // Corrected variable name
+                        } else if (StatusPart == "NACK") { 
                             cout << "NACK received." << endl;
 
-                            string nackMessage = "NACK," + to_string(ObstructionState) + "X"; // Corrected variable name
-                            handler->setPreparedMessage(nackMessage);
-                            handler->setLastMessageAcknowledged(false);
+                            string nackMessage = "NACK," + to_string(ObstructionState) + "X"; 
+
+                            // Resend, since the PSoC didn't correctly receive the data
                             resendLastMessage = true;
                             responseReceived = true;
                             break;
@@ -131,11 +145,18 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
         // Timeout handling
         if (!responseReceived) {
             cout << "Timeout waiting for ACK/NACK. Treating as NACK and resending the last message." << endl;
-            resendLastMessage = true; // Resend the last message
+            resendLastMessage = true;
+            retryCount++;
+
+            if (retryCount >= maxRetries) {
+                cerr << "Max retries reached." << endl;
+                break;
+            }
+        } else {
+            retryCount = 0; // Reset retry count on successful response
         }
     }
     
     cout << "Stopping Bluetooth sender/receiver loop." << endl;
     close(s);
 }
-

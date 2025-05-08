@@ -154,6 +154,15 @@ void SliderWindow::updateMode() {
 
 void SliderWindow::toggleMode() {
     int current = VarHandler_->getControlMode();
+
+    // If switching from drive mode to shoot mode, reset speed variables
+    if (current == 2) { // Drive mode
+        VarHandler_->setVar1DriveMode(0); // Reset Drive Var1 to 0
+        VarHandler_->setVar2DriveMode(0); // Reset Drive Var2 to 0
+        std::cout << "Drive mode variables reset to 0." << std::endl;
+    }
+
+    // Toggle between drive mode (2) and shoot mode (3)
     VarHandler_->setControlMode(current == 2 ? 3 : 2);
     updateMode();
 }
