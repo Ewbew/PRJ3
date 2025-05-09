@@ -9,6 +9,8 @@
 #include <QDial>
 #include <QPushButton>
 #include <QTimer>
+#include <QEvent>
+#include <QTouchEvent>
 #include "VarHandler.h"
 
 class SliderWindow : public QWidget {
