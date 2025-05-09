@@ -8,6 +8,8 @@
 #include <QTimer>
 #include <QDebug>
 #include <QEvent>
+#include <QTouchEvent>
+#include <QApplication>
 #include <iostream>
 
 SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
