@@ -194,3 +194,53 @@ void SliderWindow::printStatus() {
         warningLabel->setVisible(false);
     }
 }
+
+
+
+
+bool SliderWindow::event(QEvent* event)
+{
+    if (event->type() == QEvent::TouchBegin ||
+        event->type() == QEvent::TouchUpdate ||
+        event->type() == QEvent::TouchEnd) {
+
+        QTouchEvent* touchEvent = static_cast<QTouchEvent*>(event);
+        const QList<QTouchEvent::TouchPoint>& points = touchEvent->touchPoints();
+
+        for (const QTouchEvent::TouchPoint& point : points) {
+            QPointF pos = point.pos(); // touch position
+            QWidget* targetWidget = childAt(pos.toPoint());
+
+            if (!targetWidget) continue;
+
+            // Handle drive sliders
+            if (driveSlider1->isVisible() && driveSlider1->geometry().contains(pos.toPoint())) {
+                int sliderY = driveSlider1->mapFrom(this, pos.toPoint()).y();
+                int sliderHeight = driveSlider1->height();
+                int range = driveSlider1->maximum() - driveSlider1->minimum();
+                int value = driveSlider1->maximum() - (sliderY * range / sliderHeight);
+                driveSlider1->setValue(value);
+            }
+            else if (driveSlider2->isVisible() && driveSlider2->geometry().contains(pos.toPoint())) {
+                int sliderY = driveSlider2->mapFrom(this, pos.toPoint()).y();
+                int sliderHeight = driveSlider2->height();
+                int range = driveSlider2->maximum() - driveSlider2->minimum();
+                int value = driveSlider2->maximum() - (sliderY * range / sliderHeight);
+                driveSlider2->setValue(value);
+            }
+
+            // Handle shoot slider
+            else if (shootSlider->isVisible() && shootSlider->geometry().contains(pos.toPoint())) {
+                int sliderY = shootSlider->mapFrom(this, pos.toPoint()).y();
+                int sliderHeight = shootSlider->height();
+                int range = shootSlider->maximum() - shootSlider->minimum();
+                int value = shootSlider->maximum() - (sliderY * range / sliderHeight);
+                shootSlider->setValue(value);
+            }
+        }
+
+        return true; // mark event as handled
+    }
+
+    return QWidget::event(event); // fallback
+}

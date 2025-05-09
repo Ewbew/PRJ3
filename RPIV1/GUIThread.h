@@ -17,6 +17,8 @@ class SliderWindow : public QWidget {
 public:
     explicit SliderWindow(VarHandler* handler, QWidget *parent = nullptr);
 
+protected:
+    bool event(QEvent* event) override;
 private slots:
     void updateMode();
     void toggleMode();
