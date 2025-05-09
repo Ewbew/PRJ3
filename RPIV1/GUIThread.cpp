@@ -200,9 +200,8 @@ void SliderWindow::printStatus() {
 
     // Show warning if the socket is disconnected
     if (VarHandler_->isSocketDisconnected()) {
-            warningLabel->setText("Socket disconnected. Attempting to reconnect...");
-            warningLabel->setVisible(true);
-        }
+        warningLabel->setText("Socket disconnected. Attempting to reconnect...");
+        warningLabel->setVisible(true);
     }
 
     // Hide the warning label if no issues are present
