@@ -6,6 +6,8 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QTimer>
+#include <QDebug>
+#include <QEvent>
 #include <iostream>
 
 SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
