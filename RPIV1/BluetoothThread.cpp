@@ -46,6 +46,31 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
     const int maxRetries = 5;
 
     while (keepRunning) {
+        // Check if the socket is still valid
+        if (s < 0) {
+            cerr << "Socket disconnected. Attempting to reconnect..." << endl;
+            handler->setSocketDisconnected(true); // Notify VarHandler about the disconnection
+
+            // Attempt to reconnect
+            s = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
+            if (s < 0) {
+                perror("Socket creation failed during reconnection");
+                this_thread::sleep_for(chrono::seconds(1)); // Wait before retrying
+                continue;
+            }
+
+            if (connect(s, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
+                perror("Reconnection failed");
+                close(s);
+                s = -1; // Mark socket as invalid
+                this_thread::sleep_for(chrono::seconds(1)); // Wait before retrying
+                continue;
+            }
+
+            cout << "Reconnected to " << destAddr << endl;
+            handler->setSocketDisconnected(false); // Clear the disconnection flag
+        }
+
         string dataToSend;
 
         // Determine what to send
@@ -63,7 +88,9 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
         int status = write(s, dataToSend.c_str(), dataToSend.length());
         if (status < 0) {
             perror("Write failed");
-            break;
+            close(s);
+            s = -1; // Mark socket as invalid
+            continue; // Attempt to reconnect in the next iteration
         }
 
         cout << "Sent: " << dataToSend << endl;
@@ -138,7 +165,9 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                 }
             } else if (bytesRead < 0) {
                 perror("Read failed");
-                break;
+                close(s);
+                s = -1; // Mark socket as invalid
+                continue; // Attempt to reconnect in the next iteration
             }
             this_thread::sleep_for(chrono::milliseconds(100)); // Avoid busy-waiting
         }

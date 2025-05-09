@@ -194,8 +194,19 @@ void SliderWindow::printStatus() {
 
     // Show warning if obstruction is detected
     if (VarHandler_->getObstructionState() == 1) {
+        warningLabel->setText("You're about to hit a wall, one second.");
         warningLabel->setVisible(true);
-    } else {
+    }
+
+    // Show warning if the socket is disconnected
+    if (VarHandler_->isSocketDisconnected()) {
+            warningLabel->setText("Socket disconnected. Attempting to reconnect...");
+            warningLabel->setVisible(true)
+        }
+    }
+
+    // Hide the warning label if no issues are present
+    if (VarHandler_->getObstructionState() != 1 && !VarHandler_->isSocketDisconnected()) {
         warningLabel->setVisible(false);
     }
 }

@@ -15,6 +15,7 @@ VarHandler::VarHandler() {
     ObstructionState = 0;
     lastMessageAcknowledged = false; // Ensure this is initialized
     preparedMessage = ""; // Ensure this is initialized
+    socketDisconnected = false; // Initialize to false
 }
 
 //Set and get Drive mode
@@ -99,5 +100,14 @@ void VarHandler::setObstructionState(const int& newValue){
 
 int VarHandler::getObstructionState() const{
     return ObstructionState;
+}
+
+//Set and get socketDisconnected
+void VarHandler::setSocketDisconnected(bool disconnected) {
+    socketDisconnected = disconnected;
+}
+
+bool VarHandler::isSocketDisconnected() const {
+    return socketDisconnected;
 }
 

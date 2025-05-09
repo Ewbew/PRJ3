@@ -38,6 +38,10 @@ public:
     void setPreparedMessage(const std::string& message);
     std::string getPreparedMessage() const;
 
+    // Socket disconnection state
+    void setSocketDisconnected(bool disconnected);
+    bool isSocketDisconnected() const;
+
 private:
     int controlMode;
     bool ShootState;
@@ -53,4 +57,6 @@ private:
     int ObstructionState;
 
     std::string preparedMessage; // Variable to store the prepared message
+
+    bool socketDisconnected; // Track socket disconnection state
 };
