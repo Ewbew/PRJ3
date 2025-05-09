@@ -207,6 +207,9 @@ bool SliderWindow::event(QEvent* event)
         event->type() == QEvent::TouchUpdate ||
         event->type() == QEvent::TouchEnd) {
 
+        
+        std::cout << "[Touch] Event detected!" << std::endl;
+        std::cout << "  Touch ID: " << point.id() << " at " << point.pos().x() << ", " << point.pos().y() << std::endl;
         qDebug() << "[Touch] Event detected!";
         QTouchEvent* touchEvent = static_cast<QTouchEvent*>(event);
         const QList<QTouchEvent::TouchPoint>& points = touchEvent->touchPoints();
