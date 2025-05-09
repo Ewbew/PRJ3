@@ -105,7 +105,6 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                             cout << "ACK received." << endl;
 
                             string ackMessage = "ACK," + to_string(ObstructionState) + "X"; 
-                            handler->setPreparedMessage(ackMessage);
 
                             // Check if the current shoot state is high
                             if (handler->getShootState()) {
