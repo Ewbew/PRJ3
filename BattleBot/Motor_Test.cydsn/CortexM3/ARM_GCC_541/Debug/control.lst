@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 1
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
 
 
    1              		.syntax unified
@@ -19,1180 +19,1049 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 1
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
-  19              		.section	.text.Stepper_Timer_ISR_Handler,"ax",%progbits
+  19              		.section	.text.initControlTimer,"ax",%progbits
   20              		.align	2
-  21              		.global	Stepper_Timer_ISR_Handler
+  21              		.global	initControlTimer
   22              		.thumb
   23              		.thumb_func
-  24              		.type	Stepper_Timer_ISR_Handler, %function
-  25              	Stepper_Timer_ISR_Handler:
-  26              	.LFB63:
+  24              		.type	initControlTimer, %function
+  25              	initControlTimer:
+  26              	.LFB64:
   27              		.file 1 "control.c"
    1:control.c     **** #include "control.h"
    2:control.c     **** #include "stepper.h"
    3:control.c     **** #include "firing.h"
    4:control.c     **** 
-   5:control.c     **** // Timer ISR – ét step ad gangen
-   6:control.c     **** CY_ISR(Stepper_Timer_ISR_Handler)
-   7:control.c     **** {
-  28              		.loc 1 7 0
+   5:control.c     **** // === TIMER ISR ===
+   6:control.c     **** // Denne interrupt kaldes periodisk af Timer_Stepper.
+   7:control.c     **** // Den kalder nu kun én funktion per subsystem, som hver især håndterer deres eget tick.
+   8:control.c     **** CY_ISR(Stepper_Timer_ISR_Handler)
+   9:control.c     **** {
+  10:control.c     ****     Timer_Stepper_ReadStatusRegister();  // Ryd interrupt-flag
+  11:control.c     **** 
+  12:control.c     ****     // Håndter et step for dial og angle motorer
+  13:control.c     ****     stepperTick();
+  14:control.c     **** 
+  15:control.c     ****     // Håndter et step for affyringsmekanisme
+  16:control.c     ****     firingStepperTick();
+  17:control.c     **** 
+  18:control.c     ****     // Stop timeren hvis alt arbejde er færdigt
+  19:control.c     ****     if (isControlIdle())
+  20:control.c     ****     {
+  21:control.c     ****         stopStepperTimer();
+  22:control.c     ****     }
+  23:control.c     **** }
+  24:control.c     **** 
+  25:control.c     **** // Initialiser timer og tilknyt ISR
+  26:control.c     **** void initControlTimer(void)
+  27:control.c     **** {
+  28              		.loc 1 27 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 2
+
+
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32 0000 08B5     		push	{r3, lr}
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 3, -8
   35              		.cfi_offset 14, -4
-   8:control.c     ****     Timer_Stepper_ReadStatusRegister();
-  36              		.loc 1 8 0
-  37 0002 FFF7FEFF 		bl	Timer_Stepper_ReadStatusRegister
+  28:control.c     ****     Timer_Stepper_Start();  // Start én gang for init
+  36              		.loc 1 28 0
+  37 0002 FFF7FEFF 		bl	Timer_Stepper_Start
   38              	.LVL0:
-   9:control.c     **** 
-  10:control.c     ****     // Dial
-  11:control.c     ****     if (dialStepsRemaining > 0)
-  39              		.loc 1 11 0
-  40 0006 434B     		ldr	r3, .L9
-  41 0008 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  42 000a 5BB2     		sxtb	r3, r3
-  43 000c 002B     		cmp	r3, #0
-  44 000e 17DD     		ble	.L2
-  12:control.c     ****     {
-  13:control.c     ****         dialStepPin_Write(1);
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 2
+  29:control.c     ****     Timer_Stepper_Stop();   // Stop med det samme
+  39              		.loc 1 29 0
+  40 0006 FFF7FEFF 		bl	Timer_Stepper_Stop
+  41              	.LVL1:
+  30:control.c     ****     stepper_isr_timer_StartEx(Stepper_Timer_ISR_Handler);
+  42              		.loc 1 30 0
+  43 000a 0248     		ldr	r0, .L3
+  44 000c FFF7FEFF 		bl	stepper_isr_timer_StartEx
+  45              	.LVL2:
+  46 0010 08BD     		pop	{r3, pc}
+  47              	.L4:
+  48 0012 00BF     		.align	2
+  49              	.L3:
+  50 0014 00000000 		.word	Stepper_Timer_ISR_Handler
+  51              		.cfi_endproc
+  52              	.LFE64:
+  53              		.size	initControlTimer, .-initControlTimer
+  54              		.section	.text.startStepperTimerWithPeriod,"ax",%progbits
+  55              		.align	2
+  56              		.global	startStepperTimerWithPeriod
+  57              		.thumb
+  58              		.thumb_func
+  59              		.type	startStepperTimerWithPeriod, %function
+  60              	startStepperTimerWithPeriod:
+  61              	.LFB65:
+  31:control.c     **** }
+  32:control.c     **** 
+  33:control.c     **** // Start timeren med ny periode og nulstil tæller
+  34:control.c     **** void startStepperTimerWithPeriod(uint16_t period)
+  35:control.c     **** {
+  62              		.loc 1 35 0
+  63              		.cfi_startproc
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66              	.LVL3:
+  67 0000 10B5     		push	{r4, lr}
+  68              		.cfi_def_cfa_offset 8
+  69              		.cfi_offset 4, -8
+  70              		.cfi_offset 14, -4
+  71 0002 0446     		mov	r4, r0
+  36:control.c     ****     Timer_Stepper_Stop();
+  72              		.loc 1 36 0
+  73 0004 FFF7FEFF 		bl	Timer_Stepper_Stop
+  74              	.LVL4:
+  37:control.c     ****     Timer_Stepper_WritePeriod(period);
+  75              		.loc 1 37 0
+  76 0008 E0B2     		uxtb	r0, r4
+  77 000a FFF7FEFF 		bl	Timer_Stepper_WritePeriod
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 3
 
 
-  45              		.loc 1 13 0
-  46 0010 0120     		movs	r0, #1
-  47 0012 FFF7FEFF 		bl	dialStepPin_Write
-  48              	.LVL1:
-  14:control.c     ****         CyDelayUs(50);
-  49              		.loc 1 14 0
-  50 0016 3220     		movs	r0, #50
-  51 0018 FFF7FEFF 		bl	CyDelayUs
-  52              	.LVL2:
-  15:control.c     ****         dialStepPin_Write(0);
-  53              		.loc 1 15 0
-  54 001c 0020     		movs	r0, #0
-  55 001e FFF7FEFF 		bl	dialStepPin_Write
-  56              	.LVL3:
-  16:control.c     ****         dialStepsRemaining--;
-  57              		.loc 1 16 0
-  58 0022 3C4A     		ldr	r2, .L9
-  59 0024 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  60 0026 5BB2     		sxtb	r3, r3
-  61 0028 013B     		subs	r3, r3, #1
-  62 002a 5BB2     		sxtb	r3, r3
-  63 002c 1370     		strb	r3, [r2]
-  17:control.c     ****         dialCurrentPosition += dialDirection;
-  64              		.loc 1 17 0
-  65 002e 3A4B     		ldr	r3, .L9+4
-  66 0030 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  67 0032 5AB2     		sxtb	r2, r3
-  68 0034 3949     		ldr	r1, .L9+8
-  69 0036 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
-  70 0038 5BB2     		sxtb	r3, r3
-  71 003a 1344     		add	r3, r3, r2
-  72 003c 5BB2     		sxtb	r3, r3
-  73 003e 0B70     		strb	r3, [r1]
-  74              	.L2:
-  18:control.c     ****     }
-  19:control.c     **** 
-  20:control.c     ****     // Angle
-  21:control.c     ****     if (angleStepsRemaining > 0)
-  75              		.loc 1 21 0
-  76 0040 374B     		ldr	r3, .L9+12
-  77 0042 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  78 0044 5BB2     		sxtb	r3, r3
-  79 0046 002B     		cmp	r3, #0
-  80 0048 17DD     		ble	.L3
-  22:control.c     ****     {
-  23:control.c     ****         angleStepPin_Write(1);
-  81              		.loc 1 23 0
-  82 004a 0120     		movs	r0, #1
-  83 004c FFF7FEFF 		bl	angleStepPin_Write
-  84              	.LVL4:
-  24:control.c     ****         CyDelayUs(50);
-  85              		.loc 1 24 0
-  86 0050 3220     		movs	r0, #50
-  87 0052 FFF7FEFF 		bl	CyDelayUs
-  88              	.LVL5:
-  25:control.c     ****         angleStepPin_Write(0);
-  89              		.loc 1 25 0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 3
+  78              	.LVL5:
+  38:control.c     ****     Timer_Stepper_WriteCounter(0);
+  79              		.loc 1 38 0
+  80 000e 0020     		movs	r0, #0
+  81 0010 FFF7FEFF 		bl	Timer_Stepper_WriteCounter
+  82              	.LVL6:
+  39:control.c     ****     Timer_Stepper_Start();
+  83              		.loc 1 39 0
+  84 0014 FFF7FEFF 		bl	Timer_Stepper_Start
+  85              	.LVL7:
+  86 0018 10BD     		pop	{r4, pc}
+  87              		.cfi_endproc
+  88              	.LFE65:
+  89              		.size	startStepperTimerWithPeriod, .-startStepperTimerWithPeriod
+  90 001a 00BF     		.section	.text.stopStepperTimer,"ax",%progbits
+  91              		.align	2
+  92              		.global	stopStepperTimer
+  93              		.thumb
+  94              		.thumb_func
+  95              		.type	stopStepperTimer, %function
+  96              	stopStepperTimer:
+  97              	.LFB66:
+  40:control.c     **** }
+  41:control.c     **** 
+  42:control.c     **** // Stop timeren
+  43:control.c     **** void stopStepperTimer(void)
+  44:control.c     **** {
+  98              		.loc 1 44 0
+  99              		.cfi_startproc
+ 100              		@ args = 0, pretend = 0, frame = 0
+ 101              		@ frame_needed = 0, uses_anonymous_args = 0
+ 102 0000 08B5     		push	{r3, lr}
+ 103              		.cfi_def_cfa_offset 8
+ 104              		.cfi_offset 3, -8
+ 105              		.cfi_offset 14, -4
+  45:control.c     ****     Timer_Stepper_Stop();
+ 106              		.loc 1 45 0
+ 107 0002 FFF7FEFF 		bl	Timer_Stepper_Stop
+ 108              	.LVL8:
+ 109 0006 08BD     		pop	{r3, pc}
+ 110              		.cfi_endproc
+ 111              	.LFE66:
+ 112              		.size	stopStepperTimer, .-stopStepperTimer
+ 113              		.section	.text.isControlIdle,"ax",%progbits
+ 114              		.align	2
+ 115              		.global	isControlIdle
+ 116              		.thumb
+ 117              		.thumb_func
+ 118              		.type	isControlIdle, %function
+ 119              	isControlIdle:
+ 120              	.LFB67:
+  46:control.c     **** }
+  47:control.c     **** 
+  48:control.c     **** // Returnerer 1 hvis alle subsystemer er færdige (idle), ellers 0
+  49:control.c     **** uint8 isControlIdle(void)
+  50:control.c     **** {
+ 121              		.loc 1 50 0
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 4
 
 
-  90 0056 0020     		movs	r0, #0
-  91 0058 FFF7FEFF 		bl	angleStepPin_Write
-  92              	.LVL6:
-  26:control.c     ****         angleStepsRemaining--;
-  93              		.loc 1 26 0
-  94 005c 304A     		ldr	r2, .L9+12
-  95 005e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  96 0060 5BB2     		sxtb	r3, r3
-  97 0062 013B     		subs	r3, r3, #1
-  98 0064 5BB2     		sxtb	r3, r3
-  99 0066 1370     		strb	r3, [r2]
-  27:control.c     ****         angleCurrentPosition += angleDirection;
- 100              		.loc 1 27 0
- 101 0068 2E4B     		ldr	r3, .L9+16
- 102 006a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 103 006c 5AB2     		sxtb	r2, r3
- 104 006e 2E49     		ldr	r1, .L9+20
- 105 0070 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
- 106 0072 5BB2     		sxtb	r3, r3
- 107 0074 1344     		add	r3, r3, r2
- 108 0076 5BB2     		sxtb	r3, r3
- 109 0078 0B70     		strb	r3, [r1]
- 110              	.L3:
-  28:control.c     ****     }
-  29:control.c     **** 
-  30:control.c     ****     // Fire
-  31:control.c     ****     if (fireStepsRemaining > 0)
- 111              		.loc 1 31 0
- 112 007a 2C4B     		ldr	r3, .L9+24
- 113 007c 1B88     		ldrh	r3, [r3]
- 114 007e 1BB2     		sxth	r3, r3
- 115 0080 002B     		cmp	r3, #0
- 116 0082 0EDD     		ble	.L4
-  32:control.c     ****     {
-  33:control.c     ****         fireStepPin_Write(1);
- 117              		.loc 1 33 0
- 118 0084 0120     		movs	r0, #1
- 119 0086 FFF7FEFF 		bl	fireStepPin_Write
- 120              	.LVL7:
-  34:control.c     ****         CyDelayUs(50);
- 121              		.loc 1 34 0
- 122 008a 3220     		movs	r0, #50
- 123 008c FFF7FEFF 		bl	CyDelayUs
- 124              	.LVL8:
-  35:control.c     ****         fireStepPin_Write(0);
- 125              		.loc 1 35 0
- 126 0090 0020     		movs	r0, #0
- 127 0092 FFF7FEFF 		bl	fireStepPin_Write
- 128              	.LVL9:
-  36:control.c     ****         fireStepsRemaining--;
- 129              		.loc 1 36 0
- 130 0096 254A     		ldr	r2, .L9+24
- 131 0098 1388     		ldrh	r3, [r2]
- 132 009a 013B     		subs	r3, r3, #1
- 133 009c 1BB2     		sxth	r3, r3
- 134 009e 1380     		strh	r3, [r2]	@ movhi
- 135 00a0 23E0     		b	.L5
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 4
+ 122              		.cfi_startproc
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125 0000 08B5     		push	{r3, lr}
+ 126              		.cfi_def_cfa_offset 8
+ 127              		.cfi_offset 3, -8
+ 128              		.cfi_offset 14, -4
+  51:control.c     ****     return (stepperIsIdle() && firingIsIdle()) ? 1 : 0;
+ 129              		.loc 1 51 0
+ 130 0002 FFF7FEFF 		bl	stepperIsIdle
+ 131              	.LVL9:
+ 132 0006 20B1     		cbz	r0, .L11
+ 133              		.loc 1 51 0 is_stmt 0 discriminator 1
+ 134 0008 FFF7FEFF 		bl	firingIsIdle
+ 135              	.LVL10:
+ 136 000c 18B1     		cbz	r0, .L12
+ 137              		.loc 1 51 0
+ 138 000e 0120     		movs	r0, #1
+ 139 0010 08BD     		pop	{r3, pc}
+ 140              	.L11:
+ 141 0012 0020     		movs	r0, #0
+ 142 0014 08BD     		pop	{r3, pc}
+ 143              	.L12:
+ 144 0016 0020     		movs	r0, #0
+  52:control.c     **** }
+ 145              		.loc 1 52 0 is_stmt 1
+ 146 0018 08BD     		pop	{r3, pc}
+ 147              		.cfi_endproc
+ 148              	.LFE67:
+ 149              		.size	isControlIdle, .-isControlIdle
+ 150 001a 00BF     		.section	.text.Stepper_Timer_ISR_Handler,"ax",%progbits
+ 151              		.align	2
+ 152              		.global	Stepper_Timer_ISR_Handler
+ 153              		.thumb
+ 154              		.thumb_func
+ 155              		.type	Stepper_Timer_ISR_Handler, %function
+ 156              	Stepper_Timer_ISR_Handler:
+ 157              	.LFB63:
+   9:control.c     ****     Timer_Stepper_ReadStatusRegister();  // Ryd interrupt-flag
+ 158              		.loc 1 9 0
+ 159              		.cfi_startproc
+ 160              		@ args = 0, pretend = 0, frame = 0
+ 161              		@ frame_needed = 0, uses_anonymous_args = 0
+ 162 0000 08B5     		push	{r3, lr}
+ 163              		.cfi_def_cfa_offset 8
+ 164              		.cfi_offset 3, -8
+ 165              		.cfi_offset 14, -4
+  10:control.c     **** 
+ 166              		.loc 1 10 0
+ 167 0002 FFF7FEFF 		bl	Timer_Stepper_ReadStatusRegister
+ 168              	.LVL11:
+  13:control.c     **** 
+ 169              		.loc 1 13 0
+ 170 0006 FFF7FEFF 		bl	stepperTick
+ 171              	.LVL12:
+  16:control.c     **** 
+ 172              		.loc 1 16 0
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 5
 
 
- 136              	.L4:
-  37:control.c     ****     }
-  38:control.c     ****     else if (fireInProgress && fireStepPhase == 0)
- 137              		.loc 1 38 0
- 138 00a2 234B     		ldr	r3, .L9+28
- 139 00a4 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 140 00a6 13F0FF0F 		tst	r3, #255
- 141 00aa 11D0     		beq	.L6
- 142              		.loc 1 38 0 is_stmt 0 discriminator 1
- 143 00ac 214B     		ldr	r3, .L9+32
- 144 00ae 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 145 00b0 13F0FF0F 		tst	r3, #255
- 146 00b4 0CD1     		bne	.L6
-  39:control.c     ****     {
-  40:control.c     ****         fireStepPhase = 1;
- 147              		.loc 1 40 0 is_stmt 1
- 148 00b6 0122     		movs	r2, #1
- 149 00b8 1E4B     		ldr	r3, .L9+32
- 150 00ba 1A70     		strb	r2, [r3]
-  41:control.c     ****         fireDirection = -1;
- 151              		.loc 1 41 0
- 152 00bc FF22     		movs	r2, #255
- 153 00be 1E4B     		ldr	r3, .L9+36
- 154 00c0 1A70     		strb	r2, [r3]
-  42:control.c     ****         fireDirPin_Write(0);
- 155              		.loc 1 42 0
- 156 00c2 0020     		movs	r0, #0
- 157 00c4 FFF7FEFF 		bl	fireDirPin_Write
- 158              	.LVL10:
-  43:control.c     ****         fireStepsRemaining = FIRE_MAX_STEPS;
- 159              		.loc 1 43 0
- 160 00c8 6422     		movs	r2, #100
- 161 00ca 184B     		ldr	r3, .L9+24
- 162 00cc 1A80     		strh	r2, [r3]	@ movhi
- 163 00ce 0CE0     		b	.L5
- 164              	.L6:
-  44:control.c     ****     }
-  45:control.c     ****     else if (fireInProgress && fireStepPhase == 1)
- 165              		.loc 1 45 0
- 166 00d0 174B     		ldr	r3, .L9+28
- 167 00d2 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 168 00d4 13F0FF0F 		tst	r3, #255
- 169 00d8 07D0     		beq	.L5
- 170              		.loc 1 45 0 is_stmt 0 discriminator 1
- 171 00da 164B     		ldr	r3, .L9+32
- 172 00dc 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 173 00de DBB2     		uxtb	r3, r3
- 174 00e0 012B     		cmp	r3, #1
- 175 00e2 02D1     		bne	.L5
-  46:control.c     ****     {
-  47:control.c     ****         fireInProgress = 0;
- 176              		.loc 1 47 0 is_stmt 1
- 177 00e4 0022     		movs	r2, #0
- 178 00e6 124B     		ldr	r3, .L9+28
- 179 00e8 1A70     		strb	r2, [r3]
- 180              	.L5:
-  48:control.c     ****     }
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 5
+ 173 000a FFF7FEFF 		bl	firingStepperTick
+ 174              	.LVL13:
+  19:control.c     ****     {
+ 175              		.loc 1 19 0
+ 176 000e FFF7FEFF 		bl	isControlIdle
+ 177              	.LVL14:
+ 178 0012 08B1     		cbz	r0, .L14
+  21:control.c     ****     }
+ 179              		.loc 1 21 0
+ 180 0014 FFF7FEFF 		bl	stopStepperTimer
+ 181              	.LVL15:
+ 182              	.L14:
+ 183 0018 08BD     		pop	{r3, pc}
+ 184              		.cfi_endproc
+ 185              	.LFE63:
+ 186              		.size	Stepper_Timer_ISR_Handler, .-Stepper_Timer_ISR_Handler
+ 187 001a 00BF     		.text
+ 188              	.Letext0:
+ 189              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 190              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 191              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 192              		.file 5 "Generated_Source\\PSoC5/Timer_Stepper.h"
+ 193              		.file 6 "Generated_Source\\PSoC5/stepper_isr_timer.h"
+ 194              		.file 7 "stepper.h"
+ 195              		.file 8 "firing.h"
+ 196              		.file 9 "Generated_Source\\PSoC5/core_cm3.h"
+ 197              		.section	.debug_info,"",%progbits
+ 198              	.Ldebug_info0:
+ 199 0000 69020000 		.4byte	0x269
+ 200 0004 0400     		.2byte	0x4
+ 201 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 202 000a 04       		.byte	0x4
+ 203 000b 01       		.uleb128 0x1
+ 204 000c E0000000 		.4byte	.LASF33
+ 205 0010 0C       		.byte	0xc
+ 206 0011 6E010000 		.4byte	.LASF34
+ 207 0015 18000000 		.4byte	.LASF35
+ 208 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 209 001d 00000000 		.4byte	0
+ 210 0021 00000000 		.4byte	.Ldebug_line0
+ 211 0025 02       		.uleb128 0x2
+ 212 0026 01       		.byte	0x1
+ 213 0027 06       		.byte	0x6
+ 214 0028 9E020000 		.4byte	.LASF0
+ 215 002c 02       		.uleb128 0x2
+ 216 002d 01       		.byte	0x1
+ 217 002e 08       		.byte	0x8
+ 218 002f D2000000 		.4byte	.LASF1
+ 219 0033 02       		.uleb128 0x2
+ 220 0034 02       		.byte	0x2
+ 221 0035 05       		.byte	0x5
+ 222 0036 65020000 		.4byte	.LASF2
+ 223 003a 03       		.uleb128 0x3
+ 224 003b C5010000 		.4byte	.LASF4
+ 225 003f 02       		.byte	0x2
+ 226 0040 2B       		.byte	0x2b
+ 227 0041 45000000 		.4byte	0x45
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 6
 
 
-  49:control.c     **** 
-  50:control.c     ****     // Stop timer hvis alt er færdigt
-  51:control.c     ****     if (dialStepsRemaining == 0 && angleStepsRemaining == 0 && fireStepsRemaining == 0 && !fireInPr
- 181              		.loc 1 51 0
- 182 00ea 0A4B     		ldr	r3, .L9
- 183 00ec 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 184 00ee 5BB2     		sxtb	r3, r3
- 185 00f0 73B9     		cbnz	r3, .L1
- 186              		.loc 1 51 0 is_stmt 0 discriminator 1
- 187 00f2 0B4B     		ldr	r3, .L9+12
- 188 00f4 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 189 00f6 5BB2     		sxtb	r3, r3
- 190 00f8 53B9     		cbnz	r3, .L1
- 191              		.loc 1 51 0 discriminator 2
- 192 00fa 0C4B     		ldr	r3, .L9+24
- 193 00fc 1B88     		ldrh	r3, [r3]
- 194 00fe 1BB2     		sxth	r3, r3
- 195 0100 33B9     		cbnz	r3, .L1
- 196              		.loc 1 51 0 discriminator 3
- 197 0102 0B4B     		ldr	r3, .L9+28
- 198 0104 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 199 0106 13F0FF0F 		tst	r3, #255
- 200 010a 01D1     		bne	.L1
-  52:control.c     ****     {
-  53:control.c     ****         Timer_Stepper_Stop();
- 201              		.loc 1 53 0 is_stmt 1
- 202 010c FFF7FEFF 		bl	Timer_Stepper_Stop
- 203              	.LVL11:
- 204              	.L1:
- 205 0110 08BD     		pop	{r3, pc}
- 206              	.L10:
- 207 0112 00BF     		.align	2
- 208              	.L9:
- 209 0114 00000000 		.word	dialStepsRemaining
- 210 0118 00000000 		.word	dialDirection
- 211 011c 00000000 		.word	dialCurrentPosition
- 212 0120 00000000 		.word	angleStepsRemaining
- 213 0124 00000000 		.word	angleDirection
- 214 0128 00000000 		.word	angleCurrentPosition
- 215 012c 00000000 		.word	fireStepsRemaining
- 216 0130 00000000 		.word	fireInProgress
- 217 0134 00000000 		.word	fireStepPhase
- 218 0138 00000000 		.word	fireDirection
- 219              		.cfi_endproc
- 220              	.LFE63:
- 221              		.size	Stepper_Timer_ISR_Handler, .-Stepper_Timer_ISR_Handler
- 222              		.section	.text.initControlTimer,"ax",%progbits
- 223              		.align	2
- 224              		.global	initControlTimer
- 225              		.thumb
- 226              		.thumb_func
- 227              		.type	initControlTimer, %function
- 228              	initControlTimer:
- 229              	.LFB64:
-  54:control.c     ****     }
-  55:control.c     **** }
-  56:control.c     **** 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 6
+ 228 0045 02       		.uleb128 0x2
+ 229 0046 02       		.byte	0x2
+ 230 0047 07       		.byte	0x7
+ 231 0048 78010000 		.4byte	.LASF3
+ 232 004c 03       		.uleb128 0x3
+ 233 004d 00000000 		.4byte	.LASF5
+ 234 0051 02       		.byte	0x2
+ 235 0052 3F       		.byte	0x3f
+ 236 0053 57000000 		.4byte	0x57
+ 237 0057 02       		.uleb128 0x2
+ 238 0058 04       		.byte	0x4
+ 239 0059 05       		.byte	0x5
+ 240 005a 89020000 		.4byte	.LASF6
+ 241 005e 02       		.uleb128 0x2
+ 242 005f 04       		.byte	0x4
+ 243 0060 07       		.byte	0x7
+ 244 0061 D0010000 		.4byte	.LASF7
+ 245 0065 02       		.uleb128 0x2
+ 246 0066 08       		.byte	0x8
+ 247 0067 05       		.byte	0x5
+ 248 0068 52020000 		.4byte	.LASF8
+ 249 006c 02       		.uleb128 0x2
+ 250 006d 08       		.byte	0x8
+ 251 006e 07       		.byte	0x7
+ 252 006f 0E020000 		.4byte	.LASF9
+ 253 0073 04       		.uleb128 0x4
+ 254 0074 04       		.byte	0x4
+ 255 0075 05       		.byte	0x5
+ 256 0076 696E7400 		.ascii	"int\000"
+ 257 007a 02       		.uleb128 0x2
+ 258 007b 04       		.byte	0x4
+ 259 007c 07       		.byte	0x7
+ 260 007d F5010000 		.4byte	.LASF10
+ 261 0081 03       		.uleb128 0x3
+ 262 0082 6F020000 		.4byte	.LASF11
+ 263 0086 03       		.byte	0x3
+ 264 0087 24       		.byte	0x24
+ 265 0088 3A000000 		.4byte	0x3a
+ 266 008c 03       		.uleb128 0x3
+ 267 008d 33020000 		.4byte	.LASF12
+ 268 0091 03       		.byte	0x3
+ 269 0092 2C       		.byte	0x2c
+ 270 0093 4C000000 		.4byte	0x4c
+ 271 0097 05       		.uleb128 0x5
+ 272 0098 B0000000 		.4byte	.LASF13
+ 273 009c 04       		.byte	0x4
+ 274 009d E901     		.2byte	0x1e9
+ 275 009f 2C000000 		.4byte	0x2c
+ 276 00a3 02       		.uleb128 0x2
+ 277 00a4 04       		.byte	0x4
+ 278 00a5 04       		.byte	0x4
+ 279 00a6 99000000 		.4byte	.LASF14
+ 280 00aa 02       		.uleb128 0x2
+ 281 00ab 08       		.byte	0x8
+ 282 00ac 04       		.byte	0x4
+ 283 00ad 11000000 		.4byte	.LASF15
+ 284 00b1 02       		.uleb128 0x2
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 7
 
 
-  57:control.c     **** void initControlTimer(void)
-  58:control.c     **** {
- 230              		.loc 1 58 0
- 231              		.cfi_startproc
- 232              		@ args = 0, pretend = 0, frame = 0
- 233              		@ frame_needed = 0, uses_anonymous_args = 0
- 234 0000 08B5     		push	{r3, lr}
- 235              		.cfi_def_cfa_offset 8
- 236              		.cfi_offset 3, -8
- 237              		.cfi_offset 14, -4
-  59:control.c     ****     Timer_Stepper_Start();
- 238              		.loc 1 59 0
- 239 0002 FFF7FEFF 		bl	Timer_Stepper_Start
- 240              	.LVL12:
-  60:control.c     ****     Timer_Stepper_Stop();
- 241              		.loc 1 60 0
- 242 0006 FFF7FEFF 		bl	Timer_Stepper_Stop
- 243              	.LVL13:
-  61:control.c     ****     stepper_isr_timer_StartEx(Stepper_Timer_ISR_Handler);
- 244              		.loc 1 61 0
- 245 000a 0248     		ldr	r0, .L13
- 246 000c FFF7FEFF 		bl	stepper_isr_timer_StartEx
- 247              	.LVL14:
- 248 0010 08BD     		pop	{r3, pc}
- 249              	.L14:
- 250 0012 00BF     		.align	2
- 251              	.L13:
- 252 0014 00000000 		.word	Stepper_Timer_ISR_Handler
- 253              		.cfi_endproc
- 254              	.LFE64:
- 255              		.size	initControlTimer, .-initControlTimer
- 256              		.text
- 257              	.Letext0:
- 258              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 259              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 260              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 261              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
- 262              		.file 6 "stepper.h"
- 263              		.file 7 "firing.h"
- 264              		.file 8 "Generated_Source\\PSoC5/Timer_Stepper.h"
- 265              		.file 9 "Generated_Source\\PSoC5/dialStepPin.h"
- 266              		.file 10 "Generated_Source\\PSoC5/CyLib.h"
- 267              		.file 11 "Generated_Source\\PSoC5/angleStepPin.h"
- 268              		.file 12 "Generated_Source\\PSoC5/fireStepPin.h"
- 269              		.file 13 "Generated_Source\\PSoC5/fireDirPin.h"
- 270              		.file 14 "Generated_Source\\PSoC5/stepper_isr_timer.h"
- 271              		.section	.debug_info,"",%progbits
- 272              	.Ldebug_info0:
- 273 0000 DA020000 		.4byte	0x2da
- 274 0004 0400     		.2byte	0x4
- 275 0006 00000000 		.4byte	.Ldebug_abbrev0
- 276 000a 04       		.byte	0x4
- 277 000b 01       		.uleb128 0x1
- 278 000c 04010000 		.4byte	.LASF41
- 279 0010 0C       		.byte	0xc
- 280 0011 A6010000 		.4byte	.LASF42
- 281 0015 44000000 		.4byte	.LASF43
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 7
+ 285 00b2 01       		.byte	0x1
+ 286 00b3 08       		.byte	0x8
+ 287 00b4 60020000 		.4byte	.LASF16
+ 288 00b8 02       		.uleb128 0x2
+ 289 00b9 08       		.byte	0x8
+ 290 00ba 04       		.byte	0x4
+ 291 00bb 92020000 		.4byte	.LASF17
+ 292 00bf 02       		.uleb128 0x2
+ 293 00c0 04       		.byte	0x4
+ 294 00c1 07       		.byte	0x7
+ 295 00c2 49020000 		.4byte	.LASF18
+ 296 00c6 06       		.uleb128 0x6
+ 297 00c7 9F000000 		.4byte	.LASF19
+ 298 00cb 01       		.byte	0x1
+ 299 00cc 1A       		.byte	0x1a
+ 300 00cd 00000000 		.4byte	.LFB64
+ 301 00d1 18000000 		.4byte	.LFE64-.LFB64
+ 302 00d5 01       		.uleb128 0x1
+ 303 00d6 9C       		.byte	0x9c
+ 304 00d7 01010000 		.4byte	0x101
+ 305 00db 07       		.uleb128 0x7
+ 306 00dc 06000000 		.4byte	.LVL0
+ 307 00e0 FE010000 		.4byte	0x1fe
+ 308 00e4 07       		.uleb128 0x7
+ 309 00e5 0A000000 		.4byte	.LVL1
+ 310 00e9 09020000 		.4byte	0x209
+ 311 00ed 08       		.uleb128 0x8
+ 312 00ee 10000000 		.4byte	.LVL2
+ 313 00f2 14020000 		.4byte	0x214
+ 314 00f6 09       		.uleb128 0x9
+ 315 00f7 01       		.uleb128 0x1
+ 316 00f8 50       		.byte	0x50
+ 317 00f9 05       		.uleb128 0x5
+ 318 00fa 03       		.byte	0x3
+ 319 00fb 00000000 		.4byte	Stepper_Timer_ISR_Handler
+ 320 00ff 00       		.byte	0
+ 321 0100 00       		.byte	0
+ 322 0101 06       		.uleb128 0x6
+ 323 0102 B6000000 		.4byte	.LASF20
+ 324 0106 01       		.byte	0x1
+ 325 0107 22       		.byte	0x22
+ 326 0108 00000000 		.4byte	.LFB65
+ 327 010c 1A000000 		.4byte	.LFE65-.LFB65
+ 328 0110 01       		.uleb128 0x1
+ 329 0111 9C       		.byte	0x9c
+ 330 0112 5F010000 		.4byte	0x15f
+ 331 0116 0A       		.uleb128 0xa
+ 332 0117 0A000000 		.4byte	.LASF36
+ 333 011b 01       		.byte	0x1
+ 334 011c 22       		.byte	0x22
+ 335 011d 81000000 		.4byte	0x81
+ 336 0121 00000000 		.4byte	.LLST0
+ 337 0125 07       		.uleb128 0x7
+ 338 0126 08000000 		.4byte	.LVL4
+ 339 012a 09020000 		.4byte	0x209
+ 340 012e 0B       		.uleb128 0xb
+ 341 012f 0E000000 		.4byte	.LVL5
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 8
 
 
- 282 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 283 001d 00000000 		.4byte	0
- 284 0021 00000000 		.4byte	.Ldebug_line0
- 285 0025 02       		.uleb128 0x2
- 286 0026 01       		.byte	0x1
- 287 0027 06       		.byte	0x6
- 288 0028 5A020000 		.4byte	.LASF0
- 289 002c 02       		.uleb128 0x2
- 290 002d 01       		.byte	0x1
- 291 002e 08       		.byte	0x8
- 292 002f F6000000 		.4byte	.LASF1
- 293 0033 02       		.uleb128 0x2
- 294 0034 02       		.byte	0x2
- 295 0035 05       		.byte	0x5
- 296 0036 C0020000 		.4byte	.LASF2
- 297 003a 02       		.uleb128 0x2
- 298 003b 02       		.byte	0x2
- 299 003c 07       		.byte	0x7
- 300 003d B0010000 		.4byte	.LASF3
- 301 0041 03       		.uleb128 0x3
- 302 0042 12000000 		.4byte	.LASF9
- 303 0046 02       		.byte	0x2
- 304 0047 3F       		.byte	0x3f
- 305 0048 4C000000 		.4byte	0x4c
- 306 004c 02       		.uleb128 0x2
- 307 004d 04       		.byte	0x4
- 308 004e 05       		.byte	0x5
- 309 004f E3020000 		.4byte	.LASF4
- 310 0053 02       		.uleb128 0x2
- 311 0054 04       		.byte	0x4
- 312 0055 07       		.byte	0x7
- 313 0056 D0010000 		.4byte	.LASF5
- 314 005a 02       		.uleb128 0x2
- 315 005b 08       		.byte	0x8
- 316 005c 05       		.byte	0x5
- 317 005d 89020000 		.4byte	.LASF6
- 318 0061 02       		.uleb128 0x2
- 319 0062 08       		.byte	0x8
- 320 0063 07       		.byte	0x7
- 321 0064 43020000 		.4byte	.LASF7
- 322 0068 04       		.uleb128 0x4
- 323 0069 04       		.byte	0x4
- 324 006a 05       		.byte	0x5
- 325 006b 696E7400 		.ascii	"int\000"
- 326 006f 02       		.uleb128 0x2
- 327 0070 04       		.byte	0x4
- 328 0071 07       		.byte	0x7
- 329 0072 27020000 		.4byte	.LASF8
- 330 0076 03       		.uleb128 0x3
- 331 0077 78020000 		.4byte	.LASF10
- 332 007b 03       		.byte	0x3
- 333 007c 2C       		.byte	0x2c
- 334 007d 41000000 		.4byte	0x41
- 335 0081 05       		.uleb128 0x5
- 336 0082 CA020000 		.4byte	.LASF11
- 337 0086 04       		.byte	0x4
- 338 0087 E701     		.2byte	0x1e7
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 8
+ 342 0133 1F020000 		.4byte	0x21f
+ 343 0137 42010000 		.4byte	0x142
+ 344 013b 09       		.uleb128 0x9
+ 345 013c 01       		.uleb128 0x1
+ 346 013d 50       		.byte	0x50
+ 347 013e 02       		.uleb128 0x2
+ 348 013f 74       		.byte	0x74
+ 349 0140 00       		.sleb128 0
+ 350 0141 00       		.byte	0
+ 351 0142 0B       		.uleb128 0xb
+ 352 0143 14000000 		.4byte	.LVL6
+ 353 0147 2A020000 		.4byte	0x22a
+ 354 014b 55010000 		.4byte	0x155
+ 355 014f 09       		.uleb128 0x9
+ 356 0150 01       		.uleb128 0x1
+ 357 0151 50       		.byte	0x50
+ 358 0152 01       		.uleb128 0x1
+ 359 0153 30       		.byte	0x30
+ 360 0154 00       		.byte	0
+ 361 0155 07       		.uleb128 0x7
+ 362 0156 18000000 		.4byte	.LVL7
+ 363 015a FE010000 		.4byte	0x1fe
+ 364 015e 00       		.byte	0
+ 365 015f 06       		.uleb128 0x6
+ 366 0160 78020000 		.4byte	.LASF21
+ 367 0164 01       		.byte	0x1
+ 368 0165 2B       		.byte	0x2b
+ 369 0166 00000000 		.4byte	.LFB66
+ 370 016a 08000000 		.4byte	.LFE66-.LFB66
+ 371 016e 01       		.uleb128 0x1
+ 372 016f 9C       		.byte	0x9c
+ 373 0170 7E010000 		.4byte	0x17e
+ 374 0174 07       		.uleb128 0x7
+ 375 0175 06000000 		.4byte	.LVL8
+ 376 0179 09020000 		.4byte	0x209
+ 377 017d 00       		.byte	0
+ 378 017e 0C       		.uleb128 0xc
+ 379 017f 25020000 		.4byte	.LASF37
+ 380 0183 01       		.byte	0x1
+ 381 0184 31       		.byte	0x31
+ 382 0185 97000000 		.4byte	0x97
+ 383 0189 00000000 		.4byte	.LFB67
+ 384 018d 1A000000 		.4byte	.LFE67-.LFB67
+ 385 0191 01       		.uleb128 0x1
+ 386 0192 9C       		.byte	0x9c
+ 387 0193 AA010000 		.4byte	0x1aa
+ 388 0197 07       		.uleb128 0x7
+ 389 0198 06000000 		.4byte	.LVL9
+ 390 019c 35020000 		.4byte	0x235
+ 391 01a0 07       		.uleb128 0x7
+ 392 01a1 0C000000 		.4byte	.LVL10
+ 393 01a5 40020000 		.4byte	0x240
+ 394 01a9 00       		.byte	0
+ 395 01aa 06       		.uleb128 0x6
+ 396 01ab 7F000000 		.4byte	.LASF22
+ 397 01af 01       		.byte	0x1
+ 398 01b0 08       		.byte	0x8
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 9
 
 
- 339 0089 2C000000 		.4byte	0x2c
- 340 008d 05       		.uleb128 0x5
- 341 008e 0D020000 		.4byte	.LASF12
- 342 0092 04       		.byte	0x4
- 343 0093 EA01     		.2byte	0x1ea
- 344 0095 25000000 		.4byte	0x25
- 345 0099 05       		.uleb128 0x5
- 346 009a A0010000 		.4byte	.LASF13
- 347 009e 04       		.byte	0x4
- 348 009f EB01     		.2byte	0x1eb
- 349 00a1 33000000 		.4byte	0x33
- 350 00a5 02       		.uleb128 0x2
- 351 00a6 04       		.byte	0x4
- 352 00a7 04       		.byte	0x4
- 353 00a8 CB000000 		.4byte	.LASF14
- 354 00ac 02       		.uleb128 0x2
- 355 00ad 08       		.byte	0x8
- 356 00ae 04       		.byte	0x4
- 357 00af 3D000000 		.4byte	.LASF15
- 358 00b3 02       		.uleb128 0x2
- 359 00b4 01       		.byte	0x1
- 360 00b5 08       		.byte	0x8
- 361 00b6 A8020000 		.4byte	.LASF16
- 362 00ba 06       		.uleb128 0x6
- 363 00bb 81000000 		.4byte	0x81
- 364 00bf 02       		.uleb128 0x2
- 365 00c0 08       		.byte	0x8
- 366 00c1 04       		.byte	0x4
- 367 00c2 EC020000 		.4byte	.LASF17
- 368 00c6 02       		.uleb128 0x2
- 369 00c7 04       		.byte	0x4
- 370 00c8 07       		.byte	0x7
- 371 00c9 80020000 		.4byte	.LASF18
- 372 00cd 07       		.uleb128 0x7
- 373 00ce B1000000 		.4byte	.LASF19
- 374 00d2 01       		.byte	0x1
- 375 00d3 06       		.byte	0x6
- 376 00d4 00000000 		.4byte	.LFB63
- 377 00d8 3C010000 		.4byte	.LFE63-.LFB63
- 378 00dc 01       		.uleb128 0x1
- 379 00dd 9C       		.byte	0x9c
- 380 00de B6010000 		.4byte	0x1b6
- 381 00e2 08       		.uleb128 0x8
- 382 00e3 06000000 		.4byte	.LVL0
- 383 00e7 7A020000 		.4byte	0x27a
- 384 00eb 09       		.uleb128 0x9
- 385 00ec 16000000 		.4byte	.LVL1
- 386 00f0 85020000 		.4byte	0x285
- 387 00f4 FE000000 		.4byte	0xfe
- 388 00f8 0A       		.uleb128 0xa
- 389 00f9 01       		.uleb128 0x1
- 390 00fa 50       		.byte	0x50
- 391 00fb 01       		.uleb128 0x1
- 392 00fc 31       		.byte	0x31
- 393 00fd 00       		.byte	0
- 394 00fe 09       		.uleb128 0x9
- 395 00ff 1C000000 		.4byte	.LVL2
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 9
+ 399 01b1 00000000 		.4byte	.LFB63
+ 400 01b5 1A000000 		.4byte	.LFE63-.LFB63
+ 401 01b9 01       		.uleb128 0x1
+ 402 01ba 9C       		.byte	0x9c
+ 403 01bb ED010000 		.4byte	0x1ed
+ 404 01bf 07       		.uleb128 0x7
+ 405 01c0 06000000 		.4byte	.LVL11
+ 406 01c4 4B020000 		.4byte	0x24b
+ 407 01c8 07       		.uleb128 0x7
+ 408 01c9 0A000000 		.4byte	.LVL12
+ 409 01cd 56020000 		.4byte	0x256
+ 410 01d1 07       		.uleb128 0x7
+ 411 01d2 0E000000 		.4byte	.LVL13
+ 412 01d6 61020000 		.4byte	0x261
+ 413 01da 07       		.uleb128 0x7
+ 414 01db 12000000 		.4byte	.LVL14
+ 415 01df 7E010000 		.4byte	0x17e
+ 416 01e3 07       		.uleb128 0x7
+ 417 01e4 18000000 		.4byte	.LVL15
+ 418 01e8 5F010000 		.4byte	0x15f
+ 419 01ec 00       		.byte	0
+ 420 01ed 0D       		.uleb128 0xd
+ 421 01ee 8B010000 		.4byte	.LASF38
+ 422 01f2 09       		.byte	0x9
+ 423 01f3 1207     		.2byte	0x712
+ 424 01f5 F9010000 		.4byte	0x1f9
+ 425 01f9 0E       		.uleb128 0xe
+ 426 01fa 8C000000 		.4byte	0x8c
+ 427 01fe 0F       		.uleb128 0xf
+ 428 01ff E5020000 		.4byte	.LASF23
+ 429 0203 E5020000 		.4byte	.LASF23
+ 430 0207 05       		.byte	0x5
+ 431 0208 5A       		.byte	0x5a
+ 432 0209 0F       		.uleb128 0xf
+ 433 020a E2010000 		.4byte	.LASF24
+ 434 020e E2010000 		.4byte	.LASF24
+ 435 0212 05       		.byte	0x5
+ 436 0213 5B       		.byte	0x5b
+ 437 0214 0F       		.uleb128 0xf
+ 438 0215 58000000 		.4byte	.LASF25
+ 439 0219 58000000 		.4byte	.LASF25
+ 440 021d 06       		.byte	0x6
+ 441 021e 18       		.byte	0x18
+ 442 021f 0F       		.uleb128 0xf
+ 443 0220 AA020000 		.4byte	.LASF26
+ 444 0224 AA020000 		.4byte	.LASF26
+ 445 0228 05       		.byte	0x5
+ 446 0229 68       		.byte	0x68
+ 447 022a 0F       		.uleb128 0xf
+ 448 022b 98010000 		.4byte	.LASF27
+ 449 022f 98010000 		.4byte	.LASF27
+ 450 0233 05       		.byte	0x5
+ 451 0234 6A       		.byte	0x6a
+ 452 0235 0F       		.uleb128 0xf
+ 453 0236 3B020000 		.4byte	.LASF28
+ 454 023a 3B020000 		.4byte	.LASF28
+ 455 023e 07       		.byte	0x7
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 10
 
 
- 396 0103 90020000 		.4byte	0x290
- 397 0107 12010000 		.4byte	0x112
- 398 010b 0A       		.uleb128 0xa
- 399 010c 01       		.uleb128 0x1
- 400 010d 50       		.byte	0x50
- 401 010e 02       		.uleb128 0x2
- 402 010f 08       		.byte	0x8
- 403 0110 32       		.byte	0x32
- 404 0111 00       		.byte	0
- 405 0112 09       		.uleb128 0x9
- 406 0113 22000000 		.4byte	.LVL3
- 407 0117 85020000 		.4byte	0x285
- 408 011b 25010000 		.4byte	0x125
- 409 011f 0A       		.uleb128 0xa
- 410 0120 01       		.uleb128 0x1
- 411 0121 50       		.byte	0x50
- 412 0122 01       		.uleb128 0x1
- 413 0123 30       		.byte	0x30
- 414 0124 00       		.byte	0
- 415 0125 09       		.uleb128 0x9
- 416 0126 50000000 		.4byte	.LVL4
- 417 012a 9B020000 		.4byte	0x29b
- 418 012e 38010000 		.4byte	0x138
- 419 0132 0A       		.uleb128 0xa
- 420 0133 01       		.uleb128 0x1
- 421 0134 50       		.byte	0x50
- 422 0135 01       		.uleb128 0x1
- 423 0136 31       		.byte	0x31
- 424 0137 00       		.byte	0
- 425 0138 09       		.uleb128 0x9
- 426 0139 56000000 		.4byte	.LVL5
- 427 013d 90020000 		.4byte	0x290
- 428 0141 4C010000 		.4byte	0x14c
- 429 0145 0A       		.uleb128 0xa
- 430 0146 01       		.uleb128 0x1
- 431 0147 50       		.byte	0x50
- 432 0148 02       		.uleb128 0x2
- 433 0149 08       		.byte	0x8
- 434 014a 32       		.byte	0x32
- 435 014b 00       		.byte	0
- 436 014c 09       		.uleb128 0x9
- 437 014d 5C000000 		.4byte	.LVL6
- 438 0151 9B020000 		.4byte	0x29b
- 439 0155 5F010000 		.4byte	0x15f
- 440 0159 0A       		.uleb128 0xa
- 441 015a 01       		.uleb128 0x1
- 442 015b 50       		.byte	0x50
- 443 015c 01       		.uleb128 0x1
- 444 015d 30       		.byte	0x30
- 445 015e 00       		.byte	0
- 446 015f 09       		.uleb128 0x9
- 447 0160 8A000000 		.4byte	.LVL7
- 448 0164 A6020000 		.4byte	0x2a6
- 449 0168 72010000 		.4byte	0x172
- 450 016c 0A       		.uleb128 0xa
- 451 016d 01       		.uleb128 0x1
- 452 016e 50       		.byte	0x50
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 10
+ 456 023f 1C       		.byte	0x1c
+ 457 0240 0F       		.uleb128 0xf
+ 458 0241 72000000 		.4byte	.LASF29
+ 459 0245 72000000 		.4byte	.LASF29
+ 460 0249 08       		.byte	0x8
+ 461 024a 18       		.byte	0x18
+ 462 024b 0F       		.uleb128 0xf
+ 463 024c C4020000 		.4byte	.LASF30
+ 464 0250 C4020000 		.4byte	.LASF30
+ 465 0254 05       		.byte	0x5
+ 466 0255 5E       		.byte	0x5e
+ 467 0256 0F       		.uleb128 0xf
+ 468 0257 02020000 		.4byte	.LASF31
+ 469 025b 02020000 		.4byte	.LASF31
+ 470 025f 07       		.byte	0x7
+ 471 0260 1B       		.byte	0x1b
+ 472 0261 0F       		.uleb128 0xf
+ 473 0262 B3010000 		.4byte	.LASF32
+ 474 0266 B3010000 		.4byte	.LASF32
+ 475 026a 08       		.byte	0x8
+ 476 026b 17       		.byte	0x17
+ 477 026c 00       		.byte	0
+ 478              		.section	.debug_abbrev,"",%progbits
+ 479              	.Ldebug_abbrev0:
+ 480 0000 01       		.uleb128 0x1
+ 481 0001 11       		.uleb128 0x11
+ 482 0002 01       		.byte	0x1
+ 483 0003 25       		.uleb128 0x25
+ 484 0004 0E       		.uleb128 0xe
+ 485 0005 13       		.uleb128 0x13
+ 486 0006 0B       		.uleb128 0xb
+ 487 0007 03       		.uleb128 0x3
+ 488 0008 0E       		.uleb128 0xe
+ 489 0009 1B       		.uleb128 0x1b
+ 490 000a 0E       		.uleb128 0xe
+ 491 000b 55       		.uleb128 0x55
+ 492 000c 17       		.uleb128 0x17
+ 493 000d 11       		.uleb128 0x11
+ 494 000e 01       		.uleb128 0x1
+ 495 000f 10       		.uleb128 0x10
+ 496 0010 17       		.uleb128 0x17
+ 497 0011 00       		.byte	0
+ 498 0012 00       		.byte	0
+ 499 0013 02       		.uleb128 0x2
+ 500 0014 24       		.uleb128 0x24
+ 501 0015 00       		.byte	0
+ 502 0016 0B       		.uleb128 0xb
+ 503 0017 0B       		.uleb128 0xb
+ 504 0018 3E       		.uleb128 0x3e
+ 505 0019 0B       		.uleb128 0xb
+ 506 001a 03       		.uleb128 0x3
+ 507 001b 0E       		.uleb128 0xe
+ 508 001c 00       		.byte	0
+ 509 001d 00       		.byte	0
+ 510 001e 03       		.uleb128 0x3
+ 511 001f 16       		.uleb128 0x16
+ 512 0020 00       		.byte	0
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 11
 
 
- 453 016f 01       		.uleb128 0x1
- 454 0170 31       		.byte	0x31
- 455 0171 00       		.byte	0
- 456 0172 09       		.uleb128 0x9
- 457 0173 90000000 		.4byte	.LVL8
- 458 0177 90020000 		.4byte	0x290
- 459 017b 86010000 		.4byte	0x186
- 460 017f 0A       		.uleb128 0xa
- 461 0180 01       		.uleb128 0x1
- 462 0181 50       		.byte	0x50
- 463 0182 02       		.uleb128 0x2
- 464 0183 08       		.byte	0x8
- 465 0184 32       		.byte	0x32
- 466 0185 00       		.byte	0
- 467 0186 09       		.uleb128 0x9
- 468 0187 96000000 		.4byte	.LVL9
- 469 018b A6020000 		.4byte	0x2a6
- 470 018f 99010000 		.4byte	0x199
- 471 0193 0A       		.uleb128 0xa
- 472 0194 01       		.uleb128 0x1
- 473 0195 50       		.byte	0x50
- 474 0196 01       		.uleb128 0x1
- 475 0197 30       		.byte	0x30
- 476 0198 00       		.byte	0
- 477 0199 09       		.uleb128 0x9
- 478 019a C8000000 		.4byte	.LVL10
- 479 019e B1020000 		.4byte	0x2b1
- 480 01a2 AC010000 		.4byte	0x1ac
- 481 01a6 0A       		.uleb128 0xa
- 482 01a7 01       		.uleb128 0x1
- 483 01a8 50       		.byte	0x50
- 484 01a9 01       		.uleb128 0x1
- 485 01aa 30       		.byte	0x30
- 486 01ab 00       		.byte	0
- 487 01ac 08       		.uleb128 0x8
- 488 01ad 10010000 		.4byte	.LVL11
- 489 01b1 BC020000 		.4byte	0x2bc
- 490 01b5 00       		.byte	0
- 491 01b6 07       		.uleb128 0x7
- 492 01b7 D1000000 		.4byte	.LASF20
- 493 01bb 01       		.byte	0x1
- 494 01bc 39       		.byte	0x39
- 495 01bd 00000000 		.4byte	.LFB64
- 496 01c1 18000000 		.4byte	.LFE64-.LFB64
- 497 01c5 01       		.uleb128 0x1
- 498 01c6 9C       		.byte	0x9c
- 499 01c7 F1010000 		.4byte	0x1f1
- 500 01cb 08       		.uleb128 0x8
- 501 01cc 06000000 		.4byte	.LVL12
- 502 01d0 C7020000 		.4byte	0x2c7
- 503 01d4 08       		.uleb128 0x8
- 504 01d5 0A000000 		.4byte	.LVL13
- 505 01d9 BC020000 		.4byte	0x2bc
- 506 01dd 0B       		.uleb128 0xb
- 507 01de 10000000 		.4byte	.LVL14
- 508 01e2 D2020000 		.4byte	0x2d2
- 509 01e6 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 11
+ 513 0021 03       		.uleb128 0x3
+ 514 0022 0E       		.uleb128 0xe
+ 515 0023 3A       		.uleb128 0x3a
+ 516 0024 0B       		.uleb128 0xb
+ 517 0025 3B       		.uleb128 0x3b
+ 518 0026 0B       		.uleb128 0xb
+ 519 0027 49       		.uleb128 0x49
+ 520 0028 13       		.uleb128 0x13
+ 521 0029 00       		.byte	0
+ 522 002a 00       		.byte	0
+ 523 002b 04       		.uleb128 0x4
+ 524 002c 24       		.uleb128 0x24
+ 525 002d 00       		.byte	0
+ 526 002e 0B       		.uleb128 0xb
+ 527 002f 0B       		.uleb128 0xb
+ 528 0030 3E       		.uleb128 0x3e
+ 529 0031 0B       		.uleb128 0xb
+ 530 0032 03       		.uleb128 0x3
+ 531 0033 08       		.uleb128 0x8
+ 532 0034 00       		.byte	0
+ 533 0035 00       		.byte	0
+ 534 0036 05       		.uleb128 0x5
+ 535 0037 16       		.uleb128 0x16
+ 536 0038 00       		.byte	0
+ 537 0039 03       		.uleb128 0x3
+ 538 003a 0E       		.uleb128 0xe
+ 539 003b 3A       		.uleb128 0x3a
+ 540 003c 0B       		.uleb128 0xb
+ 541 003d 3B       		.uleb128 0x3b
+ 542 003e 05       		.uleb128 0x5
+ 543 003f 49       		.uleb128 0x49
+ 544 0040 13       		.uleb128 0x13
+ 545 0041 00       		.byte	0
+ 546 0042 00       		.byte	0
+ 547 0043 06       		.uleb128 0x6
+ 548 0044 2E       		.uleb128 0x2e
+ 549 0045 01       		.byte	0x1
+ 550 0046 3F       		.uleb128 0x3f
+ 551 0047 19       		.uleb128 0x19
+ 552 0048 03       		.uleb128 0x3
+ 553 0049 0E       		.uleb128 0xe
+ 554 004a 3A       		.uleb128 0x3a
+ 555 004b 0B       		.uleb128 0xb
+ 556 004c 3B       		.uleb128 0x3b
+ 557 004d 0B       		.uleb128 0xb
+ 558 004e 27       		.uleb128 0x27
+ 559 004f 19       		.uleb128 0x19
+ 560 0050 11       		.uleb128 0x11
+ 561 0051 01       		.uleb128 0x1
+ 562 0052 12       		.uleb128 0x12
+ 563 0053 06       		.uleb128 0x6
+ 564 0054 40       		.uleb128 0x40
+ 565 0055 18       		.uleb128 0x18
+ 566 0056 9742     		.uleb128 0x2117
+ 567 0058 19       		.uleb128 0x19
+ 568 0059 01       		.uleb128 0x1
+ 569 005a 13       		.uleb128 0x13
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 12
 
 
- 510 01e7 01       		.uleb128 0x1
- 511 01e8 50       		.byte	0x50
- 512 01e9 05       		.uleb128 0x5
- 513 01ea 03       		.byte	0x3
- 514 01eb 00000000 		.4byte	Stepper_Timer_ISR_Handler
- 515 01ef 00       		.byte	0
- 516 01f0 00       		.byte	0
- 517 01f1 0C       		.uleb128 0xc
- 518 01f2 C3010000 		.4byte	.LASF21
- 519 01f6 05       		.byte	0x5
- 520 01f7 1207     		.2byte	0x712
- 521 01f9 FD010000 		.4byte	0x1fd
- 522 01fd 06       		.uleb128 0x6
- 523 01fe 76000000 		.4byte	0x76
- 524 0202 0D       		.uleb128 0xd
- 525 0203 F8020000 		.4byte	.LASF22
- 526 0207 06       		.byte	0x6
- 527 0208 10       		.byte	0x10
- 528 0209 0D020000 		.4byte	0x20d
- 529 020d 06       		.uleb128 0x6
- 530 020e 8D000000 		.4byte	0x8d
- 531 0212 0D       		.uleb128 0xd
- 532 0213 D0020000 		.4byte	.LASF23
- 533 0217 06       		.byte	0x6
- 534 0218 11       		.byte	0x11
- 535 0219 0D020000 		.4byte	0x20d
- 536 021d 0D       		.uleb128 0xd
- 537 021e 2F000000 		.4byte	.LASF24
- 538 0222 06       		.byte	0x6
- 539 0223 12       		.byte	0x12
- 540 0224 0D020000 		.4byte	0x20d
- 541 0228 0D       		.uleb128 0xd
- 542 0229 12020000 		.4byte	.LASF25
- 543 022d 06       		.byte	0x6
- 544 022e 14       		.byte	0x14
- 545 022f 0D020000 		.4byte	0x20d
- 546 0233 0D       		.uleb128 0xd
- 547 0234 E2000000 		.4byte	.LASF26
- 548 0238 06       		.byte	0x6
- 549 0239 15       		.byte	0x15
- 550 023a 0D020000 		.4byte	0x20d
- 551 023e 0D       		.uleb128 0xd
- 552 023f 2D030000 		.4byte	.LASF27
- 553 0243 06       		.byte	0x6
- 554 0244 16       		.byte	0x16
- 555 0245 0D020000 		.4byte	0x20d
- 556 0249 0D       		.uleb128 0xd
- 557 024a F0010000 		.4byte	.LASF28
- 558 024e 07       		.byte	0x7
- 559 024f 0A       		.byte	0xa
- 560 0250 54020000 		.4byte	0x254
- 561 0254 06       		.uleb128 0x6
- 562 0255 99000000 		.4byte	0x99
- 563 0259 0D       		.uleb128 0xd
- 564 025a E2010000 		.4byte	.LASF29
- 565 025e 07       		.byte	0x7
- 566 025f 0B       		.byte	0xb
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 12
+ 570 005b 00       		.byte	0
+ 571 005c 00       		.byte	0
+ 572 005d 07       		.uleb128 0x7
+ 573 005e 898201   		.uleb128 0x4109
+ 574 0061 00       		.byte	0
+ 575 0062 11       		.uleb128 0x11
+ 576 0063 01       		.uleb128 0x1
+ 577 0064 31       		.uleb128 0x31
+ 578 0065 13       		.uleb128 0x13
+ 579 0066 00       		.byte	0
+ 580 0067 00       		.byte	0
+ 581 0068 08       		.uleb128 0x8
+ 582 0069 898201   		.uleb128 0x4109
+ 583 006c 01       		.byte	0x1
+ 584 006d 11       		.uleb128 0x11
+ 585 006e 01       		.uleb128 0x1
+ 586 006f 31       		.uleb128 0x31
+ 587 0070 13       		.uleb128 0x13
+ 588 0071 00       		.byte	0
+ 589 0072 00       		.byte	0
+ 590 0073 09       		.uleb128 0x9
+ 591 0074 8A8201   		.uleb128 0x410a
+ 592 0077 00       		.byte	0
+ 593 0078 02       		.uleb128 0x2
+ 594 0079 18       		.uleb128 0x18
+ 595 007a 9142     		.uleb128 0x2111
+ 596 007c 18       		.uleb128 0x18
+ 597 007d 00       		.byte	0
+ 598 007e 00       		.byte	0
+ 599 007f 0A       		.uleb128 0xa
+ 600 0080 05       		.uleb128 0x5
+ 601 0081 00       		.byte	0
+ 602 0082 03       		.uleb128 0x3
+ 603 0083 0E       		.uleb128 0xe
+ 604 0084 3A       		.uleb128 0x3a
+ 605 0085 0B       		.uleb128 0xb
+ 606 0086 3B       		.uleb128 0x3b
+ 607 0087 0B       		.uleb128 0xb
+ 608 0088 49       		.uleb128 0x49
+ 609 0089 13       		.uleb128 0x13
+ 610 008a 02       		.uleb128 0x2
+ 611 008b 17       		.uleb128 0x17
+ 612 008c 00       		.byte	0
+ 613 008d 00       		.byte	0
+ 614 008e 0B       		.uleb128 0xb
+ 615 008f 898201   		.uleb128 0x4109
+ 616 0092 01       		.byte	0x1
+ 617 0093 11       		.uleb128 0x11
+ 618 0094 01       		.uleb128 0x1
+ 619 0095 31       		.uleb128 0x31
+ 620 0096 13       		.uleb128 0x13
+ 621 0097 01       		.uleb128 0x1
+ 622 0098 13       		.uleb128 0x13
+ 623 0099 00       		.byte	0
+ 624 009a 00       		.byte	0
+ 625 009b 0C       		.uleb128 0xc
+ 626 009c 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 13
 
 
- 567 0260 0D020000 		.4byte	0x20d
- 568 0264 0D       		.uleb128 0xd
- 569 0265 92010000 		.4byte	.LASF30
- 570 0269 07       		.byte	0x7
- 571 026a 0C       		.byte	0xc
- 572 026b BA000000 		.4byte	0xba
- 573 026f 0D       		.uleb128 0xd
- 574 0270 34020000 		.4byte	.LASF31
- 575 0274 07       		.byte	0x7
- 576 0275 0D       		.byte	0xd
- 577 0276 BA000000 		.4byte	0xba
- 578 027a 0E       		.uleb128 0xe
- 579 027b 0C030000 		.4byte	.LASF32
- 580 027f 0C030000 		.4byte	.LASF32
- 581 0283 08       		.byte	0x8
- 582 0284 5E       		.byte	0x5e
- 583 0285 0E       		.uleb128 0xe
- 584 0286 00000000 		.4byte	.LASF33
- 585 028a 00000000 		.4byte	.LASF33
- 586 028e 09       		.byte	0x9
- 587 028f 26       		.byte	0x26
- 588 0290 0E       		.uleb128 0xe
- 589 0291 03020000 		.4byte	.LASF34
- 590 0295 03020000 		.4byte	.LASF34
- 591 0299 0A       		.byte	0xa
- 592 029a 77       		.byte	0x77
- 593 029b 0E       		.uleb128 0xe
- 594 029c AD020000 		.4byte	.LASF35
- 595 02a0 AD020000 		.4byte	.LASF35
- 596 02a4 0B       		.byte	0xb
- 597 02a5 26       		.byte	0x26
- 598 02a6 0E       		.uleb128 0xe
- 599 02a7 66020000 		.4byte	.LASF36
- 600 02ab 66020000 		.4byte	.LASF36
- 601 02af 0C       		.byte	0xc
- 602 02b0 26       		.byte	0x26
- 603 02b1 0E       		.uleb128 0xe
- 604 02b2 97020000 		.4byte	.LASF37
- 605 02b6 97020000 		.4byte	.LASF37
- 606 02ba 0D       		.byte	0xd
- 607 02bb 26       		.byte	0x26
- 608 02bc 0E       		.uleb128 0xe
- 609 02bd 1C000000 		.4byte	.LASF38
- 610 02c1 1C000000 		.4byte	.LASF38
- 611 02c5 08       		.byte	0x8
- 612 02c6 5B       		.byte	0x5b
- 613 02c7 0E       		.uleb128 0xe
- 614 02c8 3C030000 		.4byte	.LASF39
- 615 02cc 3C030000 		.4byte	.LASF39
- 616 02d0 08       		.byte	0x8
- 617 02d1 5A       		.byte	0x5a
- 618 02d2 0E       		.uleb128 0xe
- 619 02d3 97000000 		.4byte	.LASF40
- 620 02d7 97000000 		.4byte	.LASF40
- 621 02db 0E       		.byte	0xe
- 622 02dc 18       		.byte	0x18
- 623 02dd 00       		.byte	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 13
+ 627 009d 01       		.byte	0x1
+ 628 009e 3F       		.uleb128 0x3f
+ 629 009f 19       		.uleb128 0x19
+ 630 00a0 03       		.uleb128 0x3
+ 631 00a1 0E       		.uleb128 0xe
+ 632 00a2 3A       		.uleb128 0x3a
+ 633 00a3 0B       		.uleb128 0xb
+ 634 00a4 3B       		.uleb128 0x3b
+ 635 00a5 0B       		.uleb128 0xb
+ 636 00a6 27       		.uleb128 0x27
+ 637 00a7 19       		.uleb128 0x19
+ 638 00a8 49       		.uleb128 0x49
+ 639 00a9 13       		.uleb128 0x13
+ 640 00aa 11       		.uleb128 0x11
+ 641 00ab 01       		.uleb128 0x1
+ 642 00ac 12       		.uleb128 0x12
+ 643 00ad 06       		.uleb128 0x6
+ 644 00ae 40       		.uleb128 0x40
+ 645 00af 18       		.uleb128 0x18
+ 646 00b0 9742     		.uleb128 0x2117
+ 647 00b2 19       		.uleb128 0x19
+ 648 00b3 01       		.uleb128 0x1
+ 649 00b4 13       		.uleb128 0x13
+ 650 00b5 00       		.byte	0
+ 651 00b6 00       		.byte	0
+ 652 00b7 0D       		.uleb128 0xd
+ 653 00b8 34       		.uleb128 0x34
+ 654 00b9 00       		.byte	0
+ 655 00ba 03       		.uleb128 0x3
+ 656 00bb 0E       		.uleb128 0xe
+ 657 00bc 3A       		.uleb128 0x3a
+ 658 00bd 0B       		.uleb128 0xb
+ 659 00be 3B       		.uleb128 0x3b
+ 660 00bf 05       		.uleb128 0x5
+ 661 00c0 49       		.uleb128 0x49
+ 662 00c1 13       		.uleb128 0x13
+ 663 00c2 3F       		.uleb128 0x3f
+ 664 00c3 19       		.uleb128 0x19
+ 665 00c4 3C       		.uleb128 0x3c
+ 666 00c5 19       		.uleb128 0x19
+ 667 00c6 00       		.byte	0
+ 668 00c7 00       		.byte	0
+ 669 00c8 0E       		.uleb128 0xe
+ 670 00c9 35       		.uleb128 0x35
+ 671 00ca 00       		.byte	0
+ 672 00cb 49       		.uleb128 0x49
+ 673 00cc 13       		.uleb128 0x13
+ 674 00cd 00       		.byte	0
+ 675 00ce 00       		.byte	0
+ 676 00cf 0F       		.uleb128 0xf
+ 677 00d0 2E       		.uleb128 0x2e
+ 678 00d1 00       		.byte	0
+ 679 00d2 3F       		.uleb128 0x3f
+ 680 00d3 19       		.uleb128 0x19
+ 681 00d4 3C       		.uleb128 0x3c
+ 682 00d5 19       		.uleb128 0x19
+ 683 00d6 6E       		.uleb128 0x6e
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 14
 
 
- 624              		.section	.debug_abbrev,"",%progbits
- 625              	.Ldebug_abbrev0:
- 626 0000 01       		.uleb128 0x1
- 627 0001 11       		.uleb128 0x11
- 628 0002 01       		.byte	0x1
- 629 0003 25       		.uleb128 0x25
- 630 0004 0E       		.uleb128 0xe
- 631 0005 13       		.uleb128 0x13
- 632 0006 0B       		.uleb128 0xb
- 633 0007 03       		.uleb128 0x3
- 634 0008 0E       		.uleb128 0xe
- 635 0009 1B       		.uleb128 0x1b
- 636 000a 0E       		.uleb128 0xe
- 637 000b 55       		.uleb128 0x55
- 638 000c 17       		.uleb128 0x17
- 639 000d 11       		.uleb128 0x11
- 640 000e 01       		.uleb128 0x1
- 641 000f 10       		.uleb128 0x10
- 642 0010 17       		.uleb128 0x17
- 643 0011 00       		.byte	0
- 644 0012 00       		.byte	0
- 645 0013 02       		.uleb128 0x2
- 646 0014 24       		.uleb128 0x24
- 647 0015 00       		.byte	0
- 648 0016 0B       		.uleb128 0xb
- 649 0017 0B       		.uleb128 0xb
- 650 0018 3E       		.uleb128 0x3e
- 651 0019 0B       		.uleb128 0xb
- 652 001a 03       		.uleb128 0x3
- 653 001b 0E       		.uleb128 0xe
- 654 001c 00       		.byte	0
- 655 001d 00       		.byte	0
- 656 001e 03       		.uleb128 0x3
- 657 001f 16       		.uleb128 0x16
- 658 0020 00       		.byte	0
- 659 0021 03       		.uleb128 0x3
- 660 0022 0E       		.uleb128 0xe
- 661 0023 3A       		.uleb128 0x3a
- 662 0024 0B       		.uleb128 0xb
- 663 0025 3B       		.uleb128 0x3b
- 664 0026 0B       		.uleb128 0xb
- 665 0027 49       		.uleb128 0x49
- 666 0028 13       		.uleb128 0x13
- 667 0029 00       		.byte	0
- 668 002a 00       		.byte	0
- 669 002b 04       		.uleb128 0x4
- 670 002c 24       		.uleb128 0x24
- 671 002d 00       		.byte	0
- 672 002e 0B       		.uleb128 0xb
- 673 002f 0B       		.uleb128 0xb
- 674 0030 3E       		.uleb128 0x3e
- 675 0031 0B       		.uleb128 0xb
- 676 0032 03       		.uleb128 0x3
- 677 0033 08       		.uleb128 0x8
- 678 0034 00       		.byte	0
- 679 0035 00       		.byte	0
- 680 0036 05       		.uleb128 0x5
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 14
+ 684 00d7 0E       		.uleb128 0xe
+ 685 00d8 03       		.uleb128 0x3
+ 686 00d9 0E       		.uleb128 0xe
+ 687 00da 3A       		.uleb128 0x3a
+ 688 00db 0B       		.uleb128 0xb
+ 689 00dc 3B       		.uleb128 0x3b
+ 690 00dd 0B       		.uleb128 0xb
+ 691 00de 00       		.byte	0
+ 692 00df 00       		.byte	0
+ 693 00e0 00       		.byte	0
+ 694              		.section	.debug_loc,"",%progbits
+ 695              	.Ldebug_loc0:
+ 696              	.LLST0:
+ 697 0000 00000000 		.4byte	.LVL3
+ 698 0004 07000000 		.4byte	.LVL4-1
+ 699 0008 0100     		.2byte	0x1
+ 700 000a 50       		.byte	0x50
+ 701 000b 07000000 		.4byte	.LVL4-1
+ 702 000f 1A000000 		.4byte	.LFE65
+ 703 0013 0400     		.2byte	0x4
+ 704 0015 F3       		.byte	0xf3
+ 705 0016 01       		.uleb128 0x1
+ 706 0017 50       		.byte	0x50
+ 707 0018 9F       		.byte	0x9f
+ 708 0019 00000000 		.4byte	0
+ 709 001d 00000000 		.4byte	0
+ 710              		.section	.debug_aranges,"",%progbits
+ 711 0000 3C000000 		.4byte	0x3c
+ 712 0004 0200     		.2byte	0x2
+ 713 0006 00000000 		.4byte	.Ldebug_info0
+ 714 000a 04       		.byte	0x4
+ 715 000b 00       		.byte	0
+ 716 000c 0000     		.2byte	0
+ 717 000e 0000     		.2byte	0
+ 718 0010 00000000 		.4byte	.LFB64
+ 719 0014 18000000 		.4byte	.LFE64-.LFB64
+ 720 0018 00000000 		.4byte	.LFB65
+ 721 001c 1A000000 		.4byte	.LFE65-.LFB65
+ 722 0020 00000000 		.4byte	.LFB66
+ 723 0024 08000000 		.4byte	.LFE66-.LFB66
+ 724 0028 00000000 		.4byte	.LFB67
+ 725 002c 1A000000 		.4byte	.LFE67-.LFB67
+ 726 0030 00000000 		.4byte	.LFB63
+ 727 0034 1A000000 		.4byte	.LFE63-.LFB63
+ 728 0038 00000000 		.4byte	0
+ 729 003c 00000000 		.4byte	0
+ 730              		.section	.debug_ranges,"",%progbits
+ 731              	.Ldebug_ranges0:
+ 732 0000 00000000 		.4byte	.LFB64
+ 733 0004 18000000 		.4byte	.LFE64
+ 734 0008 00000000 		.4byte	.LFB65
+ 735 000c 1A000000 		.4byte	.LFE65
+ 736 0010 00000000 		.4byte	.LFB66
+ 737 0014 08000000 		.4byte	.LFE66
+ 738 0018 00000000 		.4byte	.LFB67
+ 739 001c 1A000000 		.4byte	.LFE67
+ 740 0020 00000000 		.4byte	.LFB63
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 15
 
 
- 681 0037 16       		.uleb128 0x16
- 682 0038 00       		.byte	0
- 683 0039 03       		.uleb128 0x3
- 684 003a 0E       		.uleb128 0xe
- 685 003b 3A       		.uleb128 0x3a
- 686 003c 0B       		.uleb128 0xb
- 687 003d 3B       		.uleb128 0x3b
- 688 003e 05       		.uleb128 0x5
- 689 003f 49       		.uleb128 0x49
- 690 0040 13       		.uleb128 0x13
- 691 0041 00       		.byte	0
- 692 0042 00       		.byte	0
- 693 0043 06       		.uleb128 0x6
- 694 0044 35       		.uleb128 0x35
- 695 0045 00       		.byte	0
- 696 0046 49       		.uleb128 0x49
- 697 0047 13       		.uleb128 0x13
- 698 0048 00       		.byte	0
- 699 0049 00       		.byte	0
- 700 004a 07       		.uleb128 0x7
- 701 004b 2E       		.uleb128 0x2e
- 702 004c 01       		.byte	0x1
- 703 004d 3F       		.uleb128 0x3f
- 704 004e 19       		.uleb128 0x19
- 705 004f 03       		.uleb128 0x3
- 706 0050 0E       		.uleb128 0xe
- 707 0051 3A       		.uleb128 0x3a
- 708 0052 0B       		.uleb128 0xb
- 709 0053 3B       		.uleb128 0x3b
- 710 0054 0B       		.uleb128 0xb
- 711 0055 27       		.uleb128 0x27
- 712 0056 19       		.uleb128 0x19
- 713 0057 11       		.uleb128 0x11
- 714 0058 01       		.uleb128 0x1
- 715 0059 12       		.uleb128 0x12
- 716 005a 06       		.uleb128 0x6
- 717 005b 40       		.uleb128 0x40
- 718 005c 18       		.uleb128 0x18
- 719 005d 9742     		.uleb128 0x2117
- 720 005f 19       		.uleb128 0x19
- 721 0060 01       		.uleb128 0x1
- 722 0061 13       		.uleb128 0x13
- 723 0062 00       		.byte	0
- 724 0063 00       		.byte	0
- 725 0064 08       		.uleb128 0x8
- 726 0065 898201   		.uleb128 0x4109
- 727 0068 00       		.byte	0
- 728 0069 11       		.uleb128 0x11
- 729 006a 01       		.uleb128 0x1
- 730 006b 31       		.uleb128 0x31
- 731 006c 13       		.uleb128 0x13
- 732 006d 00       		.byte	0
- 733 006e 00       		.byte	0
- 734 006f 09       		.uleb128 0x9
- 735 0070 898201   		.uleb128 0x4109
- 736 0073 01       		.byte	0x1
- 737 0074 11       		.uleb128 0x11
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 15
+ 741 0024 1A000000 		.4byte	.LFE63
+ 742 0028 00000000 		.4byte	0
+ 743 002c 00000000 		.4byte	0
+ 744              		.section	.debug_line,"",%progbits
+ 745              	.Ldebug_line0:
+ 746 0000 F8010000 		.section	.debug_str,"MS",%progbits,1
+ 746      02009201 
+ 746      00000201 
+ 746      FB0E0D00 
+ 746      01010101 
+ 747              	.LASF5:
+ 748 0000 5F5F696E 		.ascii	"__int32_t\000"
+ 748      7433325F 
+ 748      7400
+ 749              	.LASF36:
+ 750 000a 70657269 		.ascii	"period\000"
+ 750      6F6400
+ 751              	.LASF15:
+ 752 0011 646F7562 		.ascii	"double\000"
+ 752      6C6500
+ 753              	.LASF35:
+ 754 0018 433A5C55 		.ascii	"C:\\Users\\peter\\Documents\\GitHub\\PRJ3\\BattleBo"
+ 754      73657273 
+ 754      5C706574 
+ 754      65725C44 
+ 754      6F63756D 
+ 755 0045 745C4D6F 		.ascii	"t\\Motor_Test.cydsn\000"
+ 755      746F725F 
+ 755      54657374 
+ 755      2E637964 
+ 755      736E00
+ 756              	.LASF25:
+ 757 0058 73746570 		.ascii	"stepper_isr_timer_StartEx\000"
+ 757      7065725F 
+ 757      6973725F 
+ 757      74696D65 
+ 757      725F5374 
+ 758              	.LASF29:
+ 759 0072 66697269 		.ascii	"firingIsIdle\000"
+ 759      6E674973 
+ 759      49646C65 
+ 759      00
+ 760              	.LASF22:
+ 761 007f 53746570 		.ascii	"Stepper_Timer_ISR_Handler\000"
+ 761      7065725F 
+ 761      54696D65 
+ 761      725F4953 
+ 761      525F4861 
+ 762              	.LASF14:
+ 763 0099 666C6F61 		.ascii	"float\000"
+ 763      7400
+ 764              	.LASF19:
+ 765 009f 696E6974 		.ascii	"initControlTimer\000"
+ 765      436F6E74 
+ 765      726F6C54 
+ 765      696D6572 
+ 765      00
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 16
 
 
- 738 0075 01       		.uleb128 0x1
- 739 0076 31       		.uleb128 0x31
- 740 0077 13       		.uleb128 0x13
- 741 0078 01       		.uleb128 0x1
- 742 0079 13       		.uleb128 0x13
- 743 007a 00       		.byte	0
- 744 007b 00       		.byte	0
- 745 007c 0A       		.uleb128 0xa
- 746 007d 8A8201   		.uleb128 0x410a
- 747 0080 00       		.byte	0
- 748 0081 02       		.uleb128 0x2
- 749 0082 18       		.uleb128 0x18
- 750 0083 9142     		.uleb128 0x2111
- 751 0085 18       		.uleb128 0x18
- 752 0086 00       		.byte	0
- 753 0087 00       		.byte	0
- 754 0088 0B       		.uleb128 0xb
- 755 0089 898201   		.uleb128 0x4109
- 756 008c 01       		.byte	0x1
- 757 008d 11       		.uleb128 0x11
- 758 008e 01       		.uleb128 0x1
- 759 008f 31       		.uleb128 0x31
- 760 0090 13       		.uleb128 0x13
- 761 0091 00       		.byte	0
- 762 0092 00       		.byte	0
- 763 0093 0C       		.uleb128 0xc
- 764 0094 34       		.uleb128 0x34
- 765 0095 00       		.byte	0
- 766 0096 03       		.uleb128 0x3
- 767 0097 0E       		.uleb128 0xe
- 768 0098 3A       		.uleb128 0x3a
- 769 0099 0B       		.uleb128 0xb
- 770 009a 3B       		.uleb128 0x3b
- 771 009b 05       		.uleb128 0x5
- 772 009c 49       		.uleb128 0x49
- 773 009d 13       		.uleb128 0x13
- 774 009e 3F       		.uleb128 0x3f
- 775 009f 19       		.uleb128 0x19
- 776 00a0 3C       		.uleb128 0x3c
- 777 00a1 19       		.uleb128 0x19
- 778 00a2 00       		.byte	0
- 779 00a3 00       		.byte	0
- 780 00a4 0D       		.uleb128 0xd
- 781 00a5 34       		.uleb128 0x34
- 782 00a6 00       		.byte	0
- 783 00a7 03       		.uleb128 0x3
- 784 00a8 0E       		.uleb128 0xe
- 785 00a9 3A       		.uleb128 0x3a
- 786 00aa 0B       		.uleb128 0xb
- 787 00ab 3B       		.uleb128 0x3b
- 788 00ac 0B       		.uleb128 0xb
- 789 00ad 49       		.uleb128 0x49
- 790 00ae 13       		.uleb128 0x13
- 791 00af 3F       		.uleb128 0x3f
- 792 00b0 19       		.uleb128 0x19
- 793 00b1 3C       		.uleb128 0x3c
- 794 00b2 19       		.uleb128 0x19
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 16
+ 766              	.LASF13:
+ 767 00b0 75696E74 		.ascii	"uint8\000"
+ 767      3800
+ 768              	.LASF20:
+ 769 00b6 73746172 		.ascii	"startStepperTimerWithPeriod\000"
+ 769      74537465 
+ 769      70706572 
+ 769      54696D65 
+ 769      72576974 
+ 770              	.LASF1:
+ 771 00d2 756E7369 		.ascii	"unsigned char\000"
+ 771      676E6564 
+ 771      20636861 
+ 771      7200
+ 772              	.LASF33:
+ 773 00e0 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 773      43313120 
+ 773      352E342E 
+ 773      31203230 
+ 773      31363036 
+ 774 0113 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 774      20726576 
+ 774      6973696F 
+ 774      6E203233 
+ 774      37373135 
+ 775 0146 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 775      66756E63 
+ 775      74696F6E 
+ 775      2D736563 
+ 775      74696F6E 
+ 776              	.LASF34:
+ 777 016e 636F6E74 		.ascii	"control.c\000"
+ 777      726F6C2E 
+ 777      6300
+ 778              	.LASF3:
+ 779 0178 73686F72 		.ascii	"short unsigned int\000"
+ 779      7420756E 
+ 779      7369676E 
+ 779      65642069 
+ 779      6E7400
+ 780              	.LASF38:
+ 781 018b 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 781      52784275 
+ 781      66666572 
+ 781      00
+ 782              	.LASF27:
+ 783 0198 54696D65 		.ascii	"Timer_Stepper_WriteCounter\000"
+ 783      725F5374 
+ 783      65707065 
+ 783      725F5772 
+ 783      69746543 
+ 784              	.LASF32:
+ 785 01b3 66697269 		.ascii	"firingStepperTick\000"
+ 785      6E675374 
+ 785      65707065 
+ 785      72546963 
+ 785      6B00
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 17
 
 
- 795 00b3 00       		.byte	0
- 796 00b4 00       		.byte	0
- 797 00b5 0E       		.uleb128 0xe
- 798 00b6 2E       		.uleb128 0x2e
- 799 00b7 00       		.byte	0
- 800 00b8 3F       		.uleb128 0x3f
- 801 00b9 19       		.uleb128 0x19
- 802 00ba 3C       		.uleb128 0x3c
- 803 00bb 19       		.uleb128 0x19
- 804 00bc 6E       		.uleb128 0x6e
- 805 00bd 0E       		.uleb128 0xe
- 806 00be 03       		.uleb128 0x3
- 807 00bf 0E       		.uleb128 0xe
- 808 00c0 3A       		.uleb128 0x3a
- 809 00c1 0B       		.uleb128 0xb
- 810 00c2 3B       		.uleb128 0x3b
- 811 00c3 0B       		.uleb128 0xb
- 812 00c4 00       		.byte	0
- 813 00c5 00       		.byte	0
- 814 00c6 00       		.byte	0
- 815              		.section	.debug_aranges,"",%progbits
- 816 0000 24000000 		.4byte	0x24
- 817 0004 0200     		.2byte	0x2
- 818 0006 00000000 		.4byte	.Ldebug_info0
- 819 000a 04       		.byte	0x4
- 820 000b 00       		.byte	0
- 821 000c 0000     		.2byte	0
- 822 000e 0000     		.2byte	0
- 823 0010 00000000 		.4byte	.LFB63
- 824 0014 3C010000 		.4byte	.LFE63-.LFB63
- 825 0018 00000000 		.4byte	.LFB64
- 826 001c 18000000 		.4byte	.LFE64-.LFB64
- 827 0020 00000000 		.4byte	0
- 828 0024 00000000 		.4byte	0
- 829              		.section	.debug_ranges,"",%progbits
- 830              	.Ldebug_ranges0:
- 831 0000 00000000 		.4byte	.LFB63
- 832 0004 3C010000 		.4byte	.LFE63
- 833 0008 00000000 		.4byte	.LFB64
- 834 000c 18000000 		.4byte	.LFE64
- 835 0010 00000000 		.4byte	0
- 836 0014 00000000 		.4byte	0
- 837              		.section	.debug_line,"",%progbits
- 838              	.Ldebug_line0:
- 839 0000 40020000 		.section	.debug_str,"MS",%progbits,1
- 839      0200E101 
- 839      00000201 
- 839      FB0E0D00 
- 839      01010101 
- 840              	.LASF33:
- 841 0000 6469616C 		.ascii	"dialStepPin_Write\000"
- 841      53746570 
- 841      50696E5F 
- 841      57726974 
- 841      6500
- 842              	.LASF9:
- 843 0012 5F5F696E 		.ascii	"__int32_t\000"
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 17
+ 786              	.LASF4:
+ 787 01c5 5F5F7569 		.ascii	"__uint16_t\000"
+ 787      6E743136 
+ 787      5F7400
+ 788              	.LASF7:
+ 789 01d0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 789      20756E73 
+ 789      69676E65 
+ 789      6420696E 
+ 789      7400
+ 790              	.LASF24:
+ 791 01e2 54696D65 		.ascii	"Timer_Stepper_Stop\000"
+ 791      725F5374 
+ 791      65707065 
+ 791      725F5374 
+ 791      6F7000
+ 792              	.LASF10:
+ 793 01f5 756E7369 		.ascii	"unsigned int\000"
+ 793      676E6564 
+ 793      20696E74 
+ 793      00
+ 794              	.LASF31:
+ 795 0202 73746570 		.ascii	"stepperTick\000"
+ 795      70657254 
+ 795      69636B00 
+ 796              	.LASF9:
+ 797 020e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 797      206C6F6E 
+ 797      6720756E 
+ 797      7369676E 
+ 797      65642069 
+ 798              	.LASF37:
+ 799 0225 6973436F 		.ascii	"isControlIdle\000"
+ 799      6E74726F 
+ 799      6C49646C 
+ 799      6500
+ 800              	.LASF12:
+ 801 0233 696E7433 		.ascii	"int32_t\000"
+ 801      325F7400 
+ 802              	.LASF28:
+ 803 023b 73746570 		.ascii	"stepperIsIdle\000"
+ 803      70657249 
+ 803      7349646C 
+ 803      6500
+ 804              	.LASF18:
+ 805 0249 73697A65 		.ascii	"sizetype\000"
+ 805      74797065 
+ 805      00
+ 806              	.LASF8:
+ 807 0252 6C6F6E67 		.ascii	"long long int\000"
+ 807      206C6F6E 
+ 807      6720696E 
+ 807      7400
+ 808              	.LASF16:
+ 809 0260 63686172 		.ascii	"char\000"
+ 809      00
+ 810              	.LASF2:
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 18
 
 
- 843      7433325F 
- 843      7400
- 844              	.LASF38:
- 845 001c 54696D65 		.ascii	"Timer_Stepper_Stop\000"
- 845      725F5374 
- 845      65707065 
- 845      725F5374 
- 845      6F7000
- 846              	.LASF24:
- 847 002f 6469616C 		.ascii	"dialDirection\000"
- 847      44697265 
- 847      6374696F 
- 847      6E00
- 848              	.LASF15:
- 849 003d 646F7562 		.ascii	"double\000"
- 849      6C6500
- 850              	.LASF43:
- 851 0044 433A5C55 		.ascii	"C:\\Users\\Totos\\Desktop\\elektronik_ingenioer\\PR"
- 851      73657273 
- 851      5C546F74 
- 851      6F735C44 
- 851      65736B74 
- 852 0072 4A335C47 		.ascii	"J3\\Github\\BattleBot\\Motor_Test.cydsn\000"
- 852      69746875 
- 852      625C4261 
- 852      74746C65 
- 852      426F745C 
- 853              	.LASF40:
- 854 0097 73746570 		.ascii	"stepper_isr_timer_StartEx\000"
- 854      7065725F 
- 854      6973725F 
- 854      74696D65 
- 854      725F5374 
- 855              	.LASF19:
- 856 00b1 53746570 		.ascii	"Stepper_Timer_ISR_Handler\000"
- 856      7065725F 
- 856      54696D65 
- 856      725F4953 
- 856      525F4861 
- 857              	.LASF14:
- 858 00cb 666C6F61 		.ascii	"float\000"
- 858      7400
- 859              	.LASF20:
- 860 00d1 696E6974 		.ascii	"initControlTimer\000"
- 860      436F6E74 
- 860      726F6C54 
- 860      696D6572 
- 860      00
- 861              	.LASF26:
- 862 00e2 616E676C 		.ascii	"angleStepsRemaining\000"
- 862      65537465 
- 862      70735265 
- 862      6D61696E 
- 862      696E6700 
- 863              	.LASF1:
- 864 00f6 756E7369 		.ascii	"unsigned char\000"
- 864      676E6564 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 18
-
-
- 864      20636861 
- 864      7200
- 865              	.LASF41:
- 866 0104 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 866      43313120 
- 866      352E342E 
- 866      31203230 
- 866      31363036 
- 867 0137 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 867      20726576 
- 867      6973696F 
- 867      6E203233 
- 867      37373135 
- 868 016a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 868      66756E63 
- 868      74696F6E 
- 868      2D736563 
- 868      74696F6E 
- 869              	.LASF30:
- 870 0192 66697265 		.ascii	"fireStepPhase\000"
- 870      53746570 
- 870      50686173 
- 870      6500
- 871              	.LASF13:
- 872 01a0 696E7431 		.ascii	"int16\000"
- 872      3600
- 873              	.LASF42:
- 874 01a6 636F6E74 		.ascii	"control.c\000"
- 874      726F6C2E 
- 874      6300
- 875              	.LASF3:
- 876 01b0 73686F72 		.ascii	"short unsigned int\000"
- 876      7420756E 
- 876      7369676E 
- 876      65642069 
- 876      6E7400
- 877              	.LASF21:
- 878 01c3 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 878      52784275 
- 878      66666572 
- 878      00
- 879              	.LASF5:
- 880 01d0 6C6F6E67 		.ascii	"long unsigned int\000"
- 880      20756E73 
- 880      69676E65 
- 880      6420696E 
- 880      7400
- 881              	.LASF29:
- 882 01e2 66697265 		.ascii	"fireDirection\000"
- 882      44697265 
- 882      6374696F 
- 882      6E00
- 883              	.LASF28:
- 884 01f0 66697265 		.ascii	"fireStepsRemaining\000"
- 884      53746570 
- 884      7352656D 
- 884      61696E69 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 19
-
-
- 884      6E6700
- 885              	.LASF34:
- 886 0203 43794465 		.ascii	"CyDelayUs\000"
- 886      6C617955 
- 886      7300
- 887              	.LASF12:
- 888 020d 696E7438 		.ascii	"int8\000"
- 888      00
- 889              	.LASF25:
- 890 0212 616E676C 		.ascii	"angleCurrentPosition\000"
- 890      65437572 
- 890      72656E74 
- 890      506F7369 
- 890      74696F6E 
- 891              	.LASF8:
- 892 0227 756E7369 		.ascii	"unsigned int\000"
- 892      676E6564 
- 892      20696E74 
- 892      00
- 893              	.LASF31:
- 894 0234 66697265 		.ascii	"fireInProgress\000"
- 894      496E5072 
- 894      6F677265 
- 894      737300
- 895              	.LASF7:
- 896 0243 6C6F6E67 		.ascii	"long long unsigned int\000"
- 896      206C6F6E 
- 896      6720756E 
- 896      7369676E 
- 896      65642069 
- 897              	.LASF0:
- 898 025a 7369676E 		.ascii	"signed char\000"
- 898      65642063 
- 898      68617200 
- 899              	.LASF36:
- 900 0266 66697265 		.ascii	"fireStepPin_Write\000"
- 900      53746570 
- 900      50696E5F 
- 900      57726974 
- 900      6500
- 901              	.LASF10:
- 902 0278 696E7433 		.ascii	"int32_t\000"
- 902      325F7400 
- 903              	.LASF18:
- 904 0280 73697A65 		.ascii	"sizetype\000"
- 904      74797065 
- 904      00
- 905              	.LASF6:
- 906 0289 6C6F6E67 		.ascii	"long long int\000"
- 906      206C6F6E 
- 906      6720696E 
- 906      7400
- 907              	.LASF37:
- 908 0297 66697265 		.ascii	"fireDirPin_Write\000"
- 908      44697250 
- 908      696E5F57 
- 908      72697465 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccKGUMmE.s 			page 20
-
-
- 908      00
- 909              	.LASF16:
- 910 02a8 63686172 		.ascii	"char\000"
- 910      00
- 911              	.LASF35:
- 912 02ad 616E676C 		.ascii	"angleStepPin_Write\000"
- 912      65537465 
- 912      7050696E 
- 912      5F577269 
- 912      746500
- 913              	.LASF2:
- 914 02c0 73686F72 		.ascii	"short int\000"
- 914      7420696E 
- 914      7400
- 915              	.LASF11:
- 916 02ca 75696E74 		.ascii	"uint8\000"
- 916      3800
- 917              	.LASF23:
- 918 02d0 6469616C 		.ascii	"dialStepsRemaining\000"
- 918      53746570 
- 918      7352656D 
- 918      61696E69 
- 918      6E6700
- 919              	.LASF4:
- 920 02e3 6C6F6E67 		.ascii	"long int\000"
- 920      20696E74 
- 920      00
- 921              	.LASF17:
- 922 02ec 6C6F6E67 		.ascii	"long double\000"
- 922      20646F75 
- 922      626C6500 
- 923              	.LASF22:
- 924 02f8 6469616C 		.ascii	"dialCurrentPosition\000"
- 924      43757272 
- 924      656E7450 
- 924      6F736974 
- 924      696F6E00 
- 925              	.LASF32:
- 926 030c 54696D65 		.ascii	"Timer_Stepper_ReadStatusRegister\000"
- 926      725F5374 
- 926      65707065 
- 926      725F5265 
- 926      61645374 
- 927              	.LASF27:
- 928 032d 616E676C 		.ascii	"angleDirection\000"
- 928      65446972 
- 928      65637469 
- 928      6F6E00
- 929              	.LASF39:
- 930 033c 54696D65 		.ascii	"Timer_Stepper_Start\000"
- 930      725F5374 
- 930      65707065 
- 930      725F5374 
- 930      61727400 
- 931              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 811 0265 73686F72 		.ascii	"short int\000"
+ 811      7420696E 
+ 811      7400
+ 812              	.LASF11:
+ 813 026f 75696E74 		.ascii	"uint16_t\000"
+ 813      31365F74 
+ 813      00
+ 814              	.LASF21:
+ 815 0278 73746F70 		.ascii	"stopStepperTimer\000"
+ 815      53746570 
+ 815      70657254 
+ 815      696D6572 
+ 815      00
+ 816              	.LASF6:
+ 817 0289 6C6F6E67 		.ascii	"long int\000"
+ 817      20696E74 
+ 817      00
+ 818              	.LASF17:
+ 819 0292 6C6F6E67 		.ascii	"long double\000"
+ 819      20646F75 
+ 819      626C6500 
+ 820              	.LASF0:
+ 821 029e 7369676E 		.ascii	"signed char\000"
+ 821      65642063 
+ 821      68617200 
+ 822              	.LASF26:
+ 823 02aa 54696D65 		.ascii	"Timer_Stepper_WritePeriod\000"
+ 823      725F5374 
+ 823      65707065 
+ 823      725F5772 
+ 823      69746550 
+ 824              	.LASF30:
+ 825 02c4 54696D65 		.ascii	"Timer_Stepper_ReadStatusRegister\000"
+ 825      725F5374 
+ 825      65707065 
+ 825      725F5265 
+ 825      61645374 
+ 826              	.LASF23:
+ 827 02e5 54696D65 		.ascii	"Timer_Stepper_Start\000"
+ 827      725F5374 
+ 827      65707065 
+ 827      725F5374 
+ 827      61727400 
+ 828              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

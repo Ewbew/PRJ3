@@ -1,6 +1,6 @@
--- Project:   C:\Users\Totos\Desktop\elektronik_ingenioer\PRJ3\Github\BattleBot\Motor_Test.cydsn\Motor_Test.cyprj
--- Generated: 05/08/2025 17:29:23
--- PSoC Creator  4.2
+-- Project:   C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\Motor_Test.cyprj
+-- Generated: 05/09/2025 10:37:15
+-- PSoC Creator  4.4
 
 ENTITY Motor_Test IS
     PORT(

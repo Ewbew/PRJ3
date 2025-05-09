@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
   28:Generated_Source\PSoC5/UART_BT.c **** 
   29:Generated_Source\PSoC5/UART_BT.c **** #if (UART_BT_TX_INTERRUPT_ENABLED && UART_BT_TX_ENABLED)
   30:Generated_Source\PSoC5/UART_BT.c ****     volatile uint8 UART_BT_txBuffer[UART_BT_TX_BUFFER_SIZE];
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 2
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 2
 
 
   31:Generated_Source\PSoC5/UART_BT.c ****     volatile uint8 UART_BT_txBufferRead = 0u;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
   85:Generated_Source\PSoC5/UART_BT.c ****     UART_BT_Enable();
   86:Generated_Source\PSoC5/UART_BT.c **** }
   87:Generated_Source\PSoC5/UART_BT.c **** 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 3
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 3
 
 
   88:Generated_Source\PSoC5/UART_BT.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  120:Generated_Source\PSoC5/UART_BT.c ****             UART_BT_SetRxAddress2(UART_BT_RX_HW_ADDRESS2);
  121:Generated_Source\PSoC5/UART_BT.c ****         #endif /* End UART_BT_RXHW_ADDRESS_ENABLED */
  122:Generated_Source\PSoC5/UART_BT.c **** 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 4
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 4
 
 
  123:Generated_Source\PSoC5/UART_BT.c ****         /* Init Count7 period */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
   78 0042 5033     		adds	r3, r3, #80
   79 0044 1A70     		strb	r2, [r3]
   80 0046 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 5
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 5
 
 
   81              	.L4:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  184:Generated_Source\PSoC5/UART_BT.c **** {
  100              		.loc 1 184 0
  101              		.cfi_startproc
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 6
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 6
 
 
  102              		@ args = 0, pretend = 0, frame = 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  129 0024 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  130 0026 43F01003 		orr	r3, r3, #16
  131 002a 0B70     		strb	r3, [r1]
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 7
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 7
 
 
  212:Generated_Source\PSoC5/UART_BT.c ****         #if (UART_BT_TX_INTERRUPT_ENABLED)
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  173              		.loc 1 79 0
  174 0002 054B     		ldr	r3, .L12
  175 0004 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 8
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 8
 
 
  176 0006 23B9     		cbnz	r3, .L10
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  208 0000 10B5     		push	{r4, lr}
  209              		.cfi_def_cfa_offset 8
  210              		.cfi_offset 4, -8
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 9
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 9
 
 
  211              		.cfi_offset 14, -4
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  236 0028 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  237 002a 03F0EF03 		and	r3, r3, #239
  238 002e 0B70     		strb	r3, [r1]
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 10
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 10
 
 
  271:Generated_Source\PSoC5/UART_BT.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  267              		.cfi_startproc
  268              		@ args = 0, pretend = 0, frame = 0
  269              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 11
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 11
 
 
  270              		@ link register save eliminated.
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  300              		.type	UART_BT_SetRxInterruptMode, %function
  301              	UART_BT_SetRxInterruptMode:
  302              	.LFB6:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 12
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 12
 
 
  321:Generated_Source\PSoC5/UART_BT.c ****     #if (UART_BT_CONTROL_REG_REMOVED)
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  316 0008 84640040 		.word	1073767556
  317              		.cfi_endproc
  318              	.LFE6:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 13
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 13
 
 
  319              		.size	UART_BT_SetRxInterruptMode, .-UART_BT_SetRxInterruptMode
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  402:Generated_Source\PSoC5/UART_BT.c ****         UART_BT_DisableRxInt();
  333              		.loc 1 402 0
  334 0000 0122     		movs	r2, #1
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 14
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 14
 
 
  335 0002 134B     		ldr	r3, .L29
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  418:Generated_Source\PSoC5/UART_BT.c **** 
  419:Generated_Source\PSoC5/UART_BT.c ****             if(UART_BT_rxBufferLoopDetect != 0u)
  374              		.loc 1 419 0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 15
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 15
 
 
  375 0030 1379     		ldrb	r3, [r2, #4]	@ zero_extendqisi2
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  451:Generated_Source\PSoC5/UART_BT.c **** 
  452:Generated_Source\PSoC5/UART_BT.c ****         return(rxData);
  453:Generated_Source\PSoC5/UART_BT.c ****     }
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 16
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 16
 
 
  398              		.loc 1 453 0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  419              		.loc 1 486 0
  420              		.cfi_startproc
  421              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 17
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 17
 
 
  422              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  503:Generated_Source\PSoC5/UART_BT.c ****     /*******************************************************************************
  504:Generated_Source\PSoC5/UART_BT.c ****     * Function Name: UART_BT_GetChar
  505:Generated_Source\PSoC5/UART_BT.c ****     ********************************************************************************
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 18
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 18
 
 
  506:Generated_Source\PSoC5/UART_BT.c ****     *
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  545:Generated_Source\PSoC5/UART_BT.c ****         locRxBufferWrite = UART_BT_rxBufferWrite;
  475              		.loc 1 545 0
  476 000c D178     		ldrb	r1, [r2, #3]	@ zero_extendqisi2
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 19
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 19
 
 
  477 000e C9B2     		uxtb	r1, r1
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  516              	.LVL39:
  517 003e 0FE0     		b	.L39
  518              	.LVL40:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 20
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 20
 
 
  519              	.L37:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  545              		.loc 1 587 0
  546 005e 0020     		movs	r0, #0
  547              	.LVL46:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 21
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 21
 
 
  548              	.L39:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  615:Generated_Source\PSoC5/UART_BT.c ****     /*******************************************************************************
  616:Generated_Source\PSoC5/UART_BT.c ****     * Function Name: UART_BT_GetByte
  617:Generated_Source\PSoC5/UART_BT.c ****     ********************************************************************************
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 22
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 22
 
 
  618:Generated_Source\PSoC5/UART_BT.c ****     *
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  602 001a 2043     		orrs	r0, r0, r4
  645:Generated_Source\PSoC5/UART_BT.c ****     #else
  646:Generated_Source\PSoC5/UART_BT.c ****         return ( ((uint16)UART_BT_ReadRxStatus() << 8u) | UART_BT_ReadRxData() );
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 23
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 23
 
 
  647:Generated_Source\PSoC5/UART_BT.c ****     #endif /* UART_BT_RX_INTERRUPT_ENABLED */
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  681:Generated_Source\PSoC5/UART_BT.c ****     *
  682:Generated_Source\PSoC5/UART_BT.c ****     *******************************************************************************/
  683:Generated_Source\PSoC5/UART_BT.c ****     uint8 UART_BT_GetRxBufferSize(void)
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 24
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 24
 
 
  684:Generated_Source\PSoC5/UART_BT.c ****                                                             
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  656 002e 05D2     		bcs	.L52
  705:Generated_Source\PSoC5/UART_BT.c ****         {
  706:Generated_Source\PSoC5/UART_BT.c ****             size = (UART_BT_rxBufferWrite - UART_BT_rxBufferRead);
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 25
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 25
 
 
  657              		.loc 1 706 0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  693 005c 00E100E0 		.word	-536813312
  694              		.cfi_endproc
  695              	.LFE11:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 26
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 26
 
 
  696              		.size	UART_BT_GetRxBufferSize, .-UART_BT_GetRxBufferSize
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  761:Generated_Source\PSoC5/UART_BT.c ****         /* Clear the HW FIFO */
  762:Generated_Source\PSoC5/UART_BT.c ****         enableInterrupts = CyEnterCriticalSection();
  713              		.loc 1 762 0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 27
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 27
 
 
  714 0002 FFF7FEFF 		bl	CyEnterCriticalSection
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  753              		.cfi_endproc
  754              	.LFE12:
  755              		.size	UART_BT_ClearRxBuffer, .-UART_BT_ClearRxBuffer
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 28
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 28
 
 
  756              		.section	.text.UART_BT_SetRxAddressMode,"ax",%progbits
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  772              	.LFE13:
  773              		.size	UART_BT_SetRxAddressMode, .-UART_BT_SetRxAddressMode
  774 0002 00BF     		.section	.text.UART_BT_SetRxAddress1,"ax",%progbits
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 29
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 29
 
 
  775              		.align	2
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  786              		@ link register save eliminated.
  787              	.LVL58:
  859:Generated_Source\PSoC5/UART_BT.c ****         UART_BT_RXADDRESS1_REG = address;
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 30
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 30
 
 
  788              		.loc 1 859 0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  822              	.LFE15:
  823              		.size	UART_BT_SetRxAddress2, .-UART_BT_SetRxAddress2
  824              		.section	.text.UART_BT_SetTxInterruptMode,"ax",%progbits
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 31
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 31
 
 
  825              		.align	2
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  848              		.size	UART_BT_SetTxInterruptMode, .-UART_BT_SetTxInterruptMode
  849              		.section	.text.UART_BT_WriteTxData,"ax",%progbits
  850              		.align	2
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 32
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 32
 
 
  851              		.global	UART_BT_WriteTxData
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  949:Generated_Source\PSoC5/UART_BT.c ****             /* Protect variables that could change on interrupt. */
  950:Generated_Source\PSoC5/UART_BT.c ****             UART_BT_DisableTxInt();
  867              		.loc 1 950 0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 33
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 33
 
 
  868 0006 0222     		movs	r2, #2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  903 003a 0133     		adds	r3, r3, #1
  904 003c D371     		strb	r3, [r2, #7]
  905              	.L73:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 34
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 34
 
 
  969:Generated_Source\PSoC5/UART_BT.c ****             }
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  997:Generated_Source\PSoC5/UART_BT.c ****     *  This function reads the TX status register, which is cleared on read.
  998:Generated_Source\PSoC5/UART_BT.c ****     *  It is up to the user to handle all bits in this return value accordingly,
  999:Generated_Source\PSoC5/UART_BT.c ****     *  even if the bit was not enabled as an interrupt source the event happened
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 35
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 35
 
 
 1000:Generated_Source\PSoC5/UART_BT.c ****     *  and must be handled accordingly.
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
 1029:Generated_Source\PSoC5/UART_BT.c ****     *  UART_BT_txBufferRead - cyclic index for read from txBuffer,
 1030:Generated_Source\PSoC5/UART_BT.c ****     *     checked to identify free space in txBuffer.
 1031:Generated_Source\PSoC5/UART_BT.c ****     *  UART_BT_initVar - checked to identify that the component has been
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 36
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 36
 
 
 1032:Generated_Source\PSoC5/UART_BT.c ****     *     initialized.
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  975              		.loc 1 1067 0 is_stmt 0 discriminator 1
  976 000c 5A1E     		subs	r2, r3, #1
  977 000e 9142     		cmp	r1, r2
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 37
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 37
 
 
  978 0010 14BF     		ite	ne
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
 1082:Generated_Source\PSoC5/UART_BT.c ****             }
 1083:Generated_Source\PSoC5/UART_BT.c ****             /* Add to the software buffer. */
 1084:Generated_Source\PSoC5/UART_BT.c ****             UART_BT_txBuffer[locTxBufferWrite] = txDataByte;
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 38
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 38
 
 
  1016              		.loc 1 1084 0
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1053              	UART_BT_PutString:
  1054              	.LFB20:
 1102:Generated_Source\PSoC5/UART_BT.c ****             }
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 39
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 39
 
 
 1103:Generated_Source\PSoC5/UART_BT.c ****         }
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1065              		.cfi_offset 14, -4
  1066              	.LVL69:
 1147:Generated_Source\PSoC5/UART_BT.c ****         uint16 bufIndex = 0u;
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 40
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 40
 
 
 1148:Generated_Source\PSoC5/UART_BT.c **** 
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
 1158:Generated_Source\PSoC5/UART_BT.c ****         }
 1159:Generated_Source\PSoC5/UART_BT.c ****     }
 1160:Generated_Source\PSoC5/UART_BT.c **** 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 41
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 41
 
 
 1161:Generated_Source\PSoC5/UART_BT.c **** 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
 1198:Generated_Source\PSoC5/UART_BT.c ****         {
 1199:Generated_Source\PSoC5/UART_BT.c ****             while(bufIndex < byteCount)
 1200:Generated_Source\PSoC5/UART_BT.c ****             {
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 42
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 42
 
 
 1201:Generated_Source\PSoC5/UART_BT.c ****                 UART_BT_PutChar(string[bufIndex]);
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
 1204:Generated_Source\PSoC5/UART_BT.c ****         }
 1205:Generated_Source\PSoC5/UART_BT.c ****     }
 1206:Generated_Source\PSoC5/UART_BT.c **** 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 43
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 43
 
 
 1207:Generated_Source\PSoC5/UART_BT.c **** 
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1199              	.LVL88:
  1200              	.L106:
  1201 0018 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 44
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 44
 
 
  1202              	.L110:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1218              		.cfi_startproc
  1219              		@ args = 0, pretend = 0, frame = 0
  1220              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 45
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 45
 
 
  1221              		@ link register save eliminated.
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1257              	.L114:
 1285:Generated_Source\PSoC5/UART_BT.c ****         }
  1258              		.loc 1 1285 0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 46
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 46
 
 
  1259 0032 0020     		movs	r0, #0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
 1322:Generated_Source\PSoC5/UART_BT.c **** 
 1323:Generated_Source\PSoC5/UART_BT.c **** 
 1324:Generated_Source\PSoC5/UART_BT.c ****     /*******************************************************************************
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 47
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 47
 
 
 1325:Generated_Source\PSoC5/UART_BT.c ****     * Function Name: UART_BT_ClearTxBuffer
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1302 0010 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
  1303 0012 02F0FE02 		and	r2, r2, #254
  1304 0016 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 48
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 48
 
 
 1362:Generated_Source\PSoC5/UART_BT.c ****         CyExitCriticalSection(enableInterrupts);
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
 1381:Generated_Source\PSoC5/UART_BT.c ****     ********************************************************************************
 1382:Generated_Source\PSoC5/UART_BT.c ****     *
 1383:Generated_Source\PSoC5/UART_BT.c ****     * Summary:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 49
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 49
 
 
 1384:Generated_Source\PSoC5/UART_BT.c ****     *  Transmits a break signal on the bus.
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
 1438:Generated_Source\PSoC5/UART_BT.c ****     *
 1439:Generated_Source\PSoC5/UART_BT.c ****     *******************************************************************************/
 1440:Generated_Source\PSoC5/UART_BT.c ****     void UART_BT_SendBreak(uint8 retMode) 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 50
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 50
 
 
 1441:Generated_Source\PSoC5/UART_BT.c ****     {
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
 1484:Generated_Source\PSoC5/UART_BT.c ****             }
 1485:Generated_Source\PSoC5/UART_BT.c **** 
 1486:Generated_Source\PSoC5/UART_BT.c ****         #else /* UART_BT_HD_ENABLED Full Duplex mode */
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 51
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 51
 
 
 1487:Generated_Source\PSoC5/UART_BT.c **** 
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1376 0026 FAD1     		bne	.L125
  1377              	.LVL98:
  1378              	.L124:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 52
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 52
 
 
 1516:Generated_Source\PSoC5/UART_BT.c ****             }
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1413 0050 39650040 		.word	1073767737
  1414 0054 69650040 		.word	1073767785
  1415              	.LBE2:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 53
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 53
 
 
  1416              		.cfi_endproc
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1431              		@ link register save eliminated.
  1432              	.LVL102:
  1433 0000 7047     		bx	lr
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 54
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 54
 
 
  1434              		.cfi_endproc
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1488              		.file 3 "Generated_Source\\PSoC5\\CyLib.h"
  1489              		.file 4 "Generated_Source\\PSoC5\\UART_BT_IntClock.h"
  1490              		.section	.debug_info,"",%progbits
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 55
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 55
 
 
  1491              	.Ldebug_info0:
@@ -3247,10 +3247,10 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1494 0006 00000000 		.4byte	.Ldebug_abbrev0
  1495 000a 04       		.byte	0x4
  1496 000b 01       		.uleb128 0x1
- 1497 000c 53040000 		.4byte	.LASF84
+ 1497 000c 00040000 		.4byte	.LASF84
  1498 0010 0C       		.byte	0xc
- 1499 0011 48020000 		.4byte	.LASF85
- 1500 0015 6E010000 		.4byte	.LASF86
+ 1499 0011 F5010000 		.4byte	.LASF85
+ 1500 0015 26050000 		.4byte	.LASF86
  1501 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1502 001d 00000000 		.4byte	0
  1503 0021 00000000 		.4byte	.Ldebug_line0
@@ -3261,15 +3261,15 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1508 002c 02       		.uleb128 0x2
  1509 002d 01       		.byte	0x1
  1510 002e 08       		.byte	0x8
- 1511 002f 2C040000 		.4byte	.LASF1
+ 1511 002f D9030000 		.4byte	.LASF1
  1512 0033 02       		.uleb128 0x2
  1513 0034 02       		.byte	0x2
  1514 0035 05       		.byte	0x5
- 1515 0036 3A040000 		.4byte	.LASF2
+ 1515 0036 E7030000 		.4byte	.LASF2
  1516 003a 02       		.uleb128 0x2
  1517 003b 02       		.byte	0x2
  1518 003c 07       		.byte	0x7
- 1519 003d AB020000 		.4byte	.LASF3
+ 1519 003d 58020000 		.4byte	.LASF3
  1520 0041 02       		.uleb128 0x2
  1521 0042 04       		.byte	0x4
  1522 0043 05       		.byte	0x5
@@ -3277,7 +3277,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1524 0048 02       		.uleb128 0x2
  1525 0049 04       		.byte	0x4
  1526 004a 07       		.byte	0x7
- 1527 004b 25020000 		.4byte	.LASF5
+ 1527 004b D2010000 		.4byte	.LASF5
  1528 004f 02       		.uleb128 0x2
  1529 0050 08       		.byte	0x8
  1530 0051 05       		.byte	0x5
@@ -3293,72 +3293,72 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1540 0064 02       		.uleb128 0x2
  1541 0065 04       		.byte	0x4
  1542 0066 07       		.byte	0x7
- 1543 0067 F8010000 		.4byte	.LASF8
+ 1543 0067 A5010000 		.4byte	.LASF8
  1544 006b 04       		.uleb128 0x4
  1545 006c 3F010000 		.4byte	.LASF9
  1546 0070 02       		.byte	0x2
- 1547 0071 E701     		.2byte	0x1e7
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 56
+ 1547 0071 E901     		.2byte	0x1e9
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 56
 
 
  1548 0073 2C000000 		.4byte	0x2c
  1549 0077 04       		.uleb128 0x4
  1550 0078 00000000 		.4byte	.LASF10
  1551 007c 02       		.byte	0x2
- 1552 007d E801     		.2byte	0x1e8
+ 1552 007d EA01     		.2byte	0x1ea
  1553 007f 3A000000 		.4byte	0x3a
  1554 0083 04       		.uleb128 0x4
- 1555 0084 C1010000 		.4byte	.LASF11
+ 1555 0084 6E010000 		.4byte	.LASF11
  1556 0088 02       		.byte	0x2
- 1557 0089 E901     		.2byte	0x1e9
+ 1557 0089 EB01     		.2byte	0x1eb
  1558 008b 48000000 		.4byte	0x48
  1559 008f 02       		.uleb128 0x2
  1560 0090 04       		.byte	0x4
  1561 0091 04       		.byte	0x4
- 1562 0092 E3030000 		.4byte	.LASF12
+ 1562 0092 90030000 		.4byte	.LASF12
  1563 0096 02       		.uleb128 0x2
  1564 0097 08       		.byte	0x8
  1565 0098 04       		.byte	0x4
  1566 0099 5B010000 		.4byte	.LASF13
  1567 009d 04       		.uleb128 0x4
- 1568 009e 42050000 		.4byte	.LASF14
+ 1568 009e EF040000 		.4byte	.LASF14
  1569 00a2 02       		.byte	0x2
- 1570 00a3 F801     		.2byte	0x1f8
+ 1570 00a3 FA01     		.2byte	0x1fa
  1571 00a5 A9000000 		.4byte	0xa9
  1572 00a9 02       		.uleb128 0x2
  1573 00aa 01       		.byte	0x1
  1574 00ab 08       		.byte	0x8
- 1575 00ac 07050000 		.4byte	.LASF15
+ 1575 00ac B4040000 		.4byte	.LASF15
  1576 00b0 04       		.uleb128 0x4
- 1577 00b1 16040000 		.4byte	.LASF16
+ 1577 00b1 C3030000 		.4byte	.LASF16
  1578 00b5 02       		.byte	0x2
- 1579 00b6 9102     		.2byte	0x291
+ 1579 00b6 9302     		.2byte	0x293
  1580 00b8 BC000000 		.4byte	0xbc
  1581 00bc 05       		.uleb128 0x5
  1582 00bd 6B000000 		.4byte	0x6b
  1583 00c1 04       		.uleb128 0x4
- 1584 00c2 67030000 		.4byte	.LASF17
+ 1584 00c2 14030000 		.4byte	.LASF17
  1585 00c6 02       		.byte	0x2
- 1586 00c7 9302     		.2byte	0x293
+ 1586 00c7 9502     		.2byte	0x295
  1587 00c9 CD000000 		.4byte	0xcd
  1588 00cd 05       		.uleb128 0x5
  1589 00ce 83000000 		.4byte	0x83
  1590 00d2 02       		.uleb128 0x2
  1591 00d3 08       		.byte	0x8
  1592 00d4 04       		.byte	0x4
- 1593 00d5 8E030000 		.4byte	.LASF18
+ 1593 00d5 3B030000 		.4byte	.LASF18
  1594 00d9 02       		.uleb128 0x2
  1595 00da 04       		.byte	0x4
  1596 00db 07       		.byte	0x7
- 1597 00dc 85030000 		.4byte	.LASF19
+ 1597 00dc 32030000 		.4byte	.LASF19
  1598 00e0 06       		.uleb128 0x6
- 1599 00e1 0C050000 		.4byte	.LASF20
+ 1599 00e1 B9040000 		.4byte	.LASF20
  1600 00e5 01       		.byte	0x1
  1601 00e6 6A       		.byte	0x6a
  1602 00e7 00000000 		.4byte	.LFB1
  1603 00eb 5C000000 		.4byte	.LFE1-.LFB1
  1604 00ef 01       		.uleb128 0x1
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 57
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 57
 
 
  1605 00f0 9C       		.byte	0x9c
@@ -3414,11 +3414,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1655 0146 00       		.byte	0
  1656 0147 00       		.byte	0
  1657 0148 06       		.uleb128 0x6
- 1658 0149 44040000 		.4byte	.LASF21
+ 1658 0149 F1030000 		.4byte	.LASF21
  1659 014d 01       		.byte	0x1
  1660 014e B7       		.byte	0xb7
  1661 014f 00000000 		.4byte	.LFB2
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 58
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 58
 
 
  1662 0153 50000000 		.4byte	.LFE2-.LFB2
@@ -3426,7 +3426,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1664 0158 9C       		.byte	0x9c
  1665 0159 8F010000 		.4byte	0x18f
  1666 015d 0A       		.uleb128 0xa
- 1667 015e B2050000 		.4byte	.LASF24
+ 1667 015e 9F050000 		.4byte	.LASF24
  1668 0162 01       		.byte	0x1
  1669 0163 B9       		.byte	0xb9
  1670 0164 6B000000 		.4byte	0x6b
@@ -3449,7 +3449,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1687 018d 00       		.byte	0
  1688 018e 00       		.byte	0
  1689 018f 06       		.uleb128 0x6
- 1690 0190 39030000 		.4byte	.LASF22
+ 1690 0190 E6020000 		.4byte	.LASF22
  1691 0194 01       		.byte	0x1
  1692 0195 4C       		.byte	0x4c
  1693 0196 00000000 		.4byte	.LFB0
@@ -3465,7 +3465,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1703 01b2 48010000 		.4byte	0x148
  1704 01b6 00       		.byte	0
  1705 01b7 06       		.uleb128 0x6
- 1706 01b8 69020000 		.4byte	.LASF23
+ 1706 01b8 16020000 		.4byte	.LASF23
  1707 01bc 01       		.byte	0x1
  1708 01bd F0       		.byte	0xf0
  1709 01be 00000000 		.4byte	.LFB3
@@ -3474,11 +3474,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1712 01c7 9C       		.byte	0x9c
  1713 01c8 FE010000 		.4byte	0x1fe
  1714 01cc 0A       		.uleb128 0xa
- 1715 01cd B2050000 		.4byte	.LASF24
+ 1715 01cd 9F050000 		.4byte	.LASF24
  1716 01d1 01       		.byte	0x1
  1717 01d2 F2       		.byte	0xf2
  1718 01d3 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 59
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 59
 
 
  1719 01d7 13000000 		.4byte	.LLST1
@@ -3500,7 +3500,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1735 01fc 00       		.byte	0
  1736 01fd 00       		.byte	0
  1737 01fe 0C       		.uleb128 0xc
- 1738 01ff 1D030000 		.4byte	.LASF50
+ 1738 01ff CA020000 		.4byte	.LASF50
  1739 0203 01       		.byte	0x1
  1740 0204 2701     		.2byte	0x127
  1741 0206 6B000000 		.4byte	0x6b
@@ -3518,7 +3518,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1753 0225 9C       		.byte	0x9c
  1754 0226 39020000 		.4byte	0x239
  1755 022a 0E       		.uleb128 0xe
- 1756 022b C8010000 		.4byte	.LASF27
+ 1756 022b 75010000 		.4byte	.LASF27
  1757 022f 01       		.byte	0x1
  1758 0230 3F01     		.2byte	0x13f
  1759 0232 6B000000 		.4byte	0x6b
@@ -3526,7 +3526,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1761 0237 50       		.byte	0x50
  1762 0238 00       		.byte	0
  1763 0239 0D       		.uleb128 0xd
- 1764 023a 48050000 		.4byte	.LASF26
+ 1764 023a F5040000 		.4byte	.LASF26
  1765 023e 01       		.byte	0x1
  1766 023f 6701     		.2byte	0x167
  1767 0241 00000000 		.4byte	.LFB6
@@ -3535,10 +3535,10 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1770 024a 9C       		.byte	0x9c
  1771 024b 5E020000 		.4byte	0x25e
  1772 024f 0E       		.uleb128 0xe
- 1773 0250 47030000 		.4byte	.LASF28
+ 1773 0250 F4020000 		.4byte	.LASF28
  1774 0254 01       		.byte	0x1
  1775 0255 6701     		.2byte	0x167
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 60
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 60
 
 
  1776 0257 6B000000 		.4byte	0x6b
@@ -3546,7 +3546,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1778 025c 50       		.byte	0x50
  1779 025d 00       		.byte	0
  1780 025e 0F       		.uleb128 0xf
- 1781 025f 79050000 		.4byte	.LASF32
+ 1781 025f 66050000 		.4byte	.LASF32
  1782 0263 01       		.byte	0x1
  1783 0264 8801     		.2byte	0x188
  1784 0266 6B000000 		.4byte	0x6b
@@ -3556,19 +3556,19 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1788 0273 9C       		.byte	0x9c
  1789 0274 A7020000 		.4byte	0x2a7
  1790 0278 10       		.uleb128 0x10
- 1791 0279 EB040000 		.4byte	.LASF29
+ 1791 0279 98040000 		.4byte	.LASF29
  1792 027d 01       		.byte	0x1
  1793 027e 8A01     		.2byte	0x18a
  1794 0280 6B000000 		.4byte	0x6b
  1795 0284 26000000 		.4byte	.LLST2
  1796 0288 10       		.uleb128 0x10
- 1797 0289 8C050000 		.4byte	.LASF30
+ 1797 0289 79050000 		.4byte	.LASF30
  1798 028d 01       		.byte	0x1
  1799 028e 8E01     		.2byte	0x18e
  1800 0290 6B000000 		.4byte	0x6b
  1801 0294 44000000 		.4byte	.LLST3
  1802 0298 11       		.uleb128 0x11
- 1803 0299 B8030000 		.4byte	.LASF31
+ 1803 0299 65030000 		.4byte	.LASF31
  1804 029d 01       		.byte	0x1
  1805 029e 8F01     		.2byte	0x18f
  1806 02a0 6B000000 		.4byte	0x6b
@@ -3576,7 +3576,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1808 02a5 51       		.byte	0x51
  1809 02a6 00       		.byte	0
  1810 02a7 0F       		.uleb128 0xf
- 1811 02a8 F2040000 		.4byte	.LASF33
+ 1811 02a8 9F040000 		.4byte	.LASF33
  1812 02ac 01       		.byte	0x1
  1813 02ad E501     		.2byte	0x1e5
  1814 02af 6B000000 		.4byte	0x6b
@@ -3586,7 +3586,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1818 02bc 9C       		.byte	0x9c
  1819 02bd D0020000 		.4byte	0x2d0
  1820 02c1 11       		.uleb128 0x11
- 1821 02c2 C3050000 		.4byte	.LASF34
+ 1821 02c2 B0050000 		.4byte	.LASF34
  1822 02c6 01       		.byte	0x1
  1823 02c7 E701     		.2byte	0x1e7
  1824 02c9 6B000000 		.4byte	0x6b
@@ -3594,11 +3594,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1826 02ce 50       		.byte	0x50
  1827 02cf 00       		.byte	0
  1828 02d0 0F       		.uleb128 0xf
- 1829 02d1 D0010000 		.4byte	.LASF35
+ 1829 02d1 7D010000 		.4byte	.LASF35
  1830 02d5 01       		.byte	0x1
  1831 02d6 1402     		.2byte	0x214
  1832 02d8 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 61
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 61
 
 
  1833 02dc 00000000 		.4byte	.LFB9
@@ -3607,25 +3607,25 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1836 02e5 9C       		.byte	0x9c
  1837 02e6 29030000 		.4byte	0x329
  1838 02ea 10       		.uleb128 0x10
- 1839 02eb EB040000 		.4byte	.LASF29
+ 1839 02eb 98040000 		.4byte	.LASF29
  1840 02ef 01       		.byte	0x1
  1841 02f0 1602     		.2byte	0x216
  1842 02f2 6B000000 		.4byte	0x6b
  1843 02f6 89000000 		.4byte	.LLST4
  1844 02fa 10       		.uleb128 0x10
- 1845 02fb C9030000 		.4byte	.LASF36
+ 1845 02fb 76030000 		.4byte	.LASF36
  1846 02ff 01       		.byte	0x1
  1847 0300 1702     		.2byte	0x217
  1848 0302 6B000000 		.4byte	0x6b
  1849 0306 D6000000 		.4byte	.LLST5
  1850 030a 10       		.uleb128 0x10
- 1851 030b 8C050000 		.4byte	.LASF30
+ 1851 030b 79050000 		.4byte	.LASF30
  1852 030f 01       		.byte	0x1
  1853 0310 1A02     		.2byte	0x21a
  1854 0312 6B000000 		.4byte	0x6b
  1855 0316 E9000000 		.4byte	.LLST6
  1856 031a 11       		.uleb128 0x11
- 1857 031b B8030000 		.4byte	.LASF31
+ 1857 031b 65030000 		.4byte	.LASF31
  1858 031f 01       		.byte	0x1
  1859 0320 1B02     		.2byte	0x21b
  1860 0322 6B000000 		.4byte	0x6b
@@ -3633,7 +3633,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1862 0327 51       		.byte	0x51
  1863 0328 00       		.byte	0
  1864 0329 0F       		.uleb128 0xf
- 1865 032a 32050000 		.4byte	.LASF37
+ 1865 032a DF040000 		.4byte	.LASF37
  1866 032e 01       		.byte	0x1
  1867 032f 7A02     		.2byte	0x27a
  1868 0331 77000000 		.4byte	0x77
@@ -3643,7 +3643,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1872 033e 9C       		.byte	0x9c
  1873 033f 5D030000 		.4byte	0x35d
  1874 0343 10       		.uleb128 0x10
- 1875 0344 16020000 		.4byte	.LASF38
+ 1875 0344 C3010000 		.4byte	.LASF38
  1876 0348 01       		.byte	0x1
  1877 0349 7E02     		.2byte	0x27e
  1878 034b 77000000 		.4byte	0x77
@@ -3653,12 +3653,12 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1882 0358 5E020000 		.4byte	0x25e
  1883 035c 00       		.byte	0
  1884 035d 0F       		.uleb128 0xf
- 1885 035e F3020000 		.4byte	.LASF39
+ 1885 035e A0020000 		.4byte	.LASF39
  1886 0362 01       		.byte	0x1
  1887 0363 AB02     		.2byte	0x2ab
  1888 0365 6B000000 		.4byte	0x6b
  1889 0369 00000000 		.4byte	.LFB11
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 62
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 62
 
 
  1890 036d 60000000 		.4byte	.LFE11-.LFB11
@@ -3666,7 +3666,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1892 0372 9C       		.byte	0x9c
  1893 0373 88030000 		.4byte	0x388
  1894 0377 10       		.uleb128 0x10
- 1895 0378 A6020000 		.4byte	.LASF40
+ 1895 0378 53020000 		.4byte	.LASF40
  1896 037c 01       		.byte	0x1
  1897 037d AE02     		.2byte	0x2ae
  1898 037f 6B000000 		.4byte	0x6b
@@ -3682,7 +3682,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1908 0399 9C       		.byte	0x9c
  1909 039a C1030000 		.4byte	0x3c1
  1910 039e 10       		.uleb128 0x10
- 1911 039f B2050000 		.4byte	.LASF24
+ 1911 039f 9F050000 		.4byte	.LASF24
  1912 03a3 01       		.byte	0x1
  1913 03a4 F702     		.2byte	0x2f7
  1914 03a6 6B000000 		.4byte	0x6b
@@ -3695,7 +3695,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1921 03bc 97070000 		.4byte	0x797
  1922 03c0 00       		.byte	0
  1923 03c1 0D       		.uleb128 0xd
- 1924 03c2 DE050000 		.4byte	.LASF42
+ 1924 03c2 CB050000 		.4byte	.LASF42
  1925 03c6 01       		.byte	0x1
  1926 03c7 2D03     		.2byte	0x32d
  1927 03c9 00000000 		.4byte	.LFB13
@@ -3712,19 +3712,19 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1938 03e4 50       		.byte	0x50
  1939 03e5 00       		.byte	0
  1940 03e6 0D       		.uleb128 0xd
- 1941 03e7 F7050000 		.4byte	.LASF44
+ 1941 03e7 E4050000 		.4byte	.LASF44
  1942 03eb 01       		.byte	0x1
  1943 03ec 5903     		.2byte	0x359
  1944 03ee 00000000 		.4byte	.LFB14
  1945 03f2 0C000000 		.4byte	.LFE14-.LFB14
  1946 03f6 01       		.uleb128 0x1
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 63
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 63
 
 
  1947 03f7 9C       		.byte	0x9c
  1948 03f8 0B040000 		.4byte	0x40b
  1949 03fc 0E       		.uleb128 0xe
- 1950 03fd 9A030000 		.4byte	.LASF45
+ 1950 03fd 47030000 		.4byte	.LASF45
  1951 0401 01       		.byte	0x1
  1952 0402 5903     		.2byte	0x359
  1953 0404 6B000000 		.4byte	0x6b
@@ -3732,7 +3732,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1955 0409 50       		.byte	0x50
  1956 040a 00       		.byte	0
  1957 040b 0D       		.uleb128 0xd
- 1958 040c 63050000 		.4byte	.LASF46
+ 1958 040c 10050000 		.4byte	.LASF46
  1959 0410 01       		.byte	0x1
  1960 0411 6D03     		.2byte	0x36d
  1961 0413 00000000 		.4byte	.LFB15
@@ -3741,7 +3741,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1964 041c 9C       		.byte	0x9c
  1965 041d 30040000 		.4byte	0x430
  1966 0421 0E       		.uleb128 0xe
- 1967 0422 9A030000 		.4byte	.LASF45
+ 1967 0422 47030000 		.4byte	.LASF45
  1968 0426 01       		.byte	0x1
  1969 0427 6D03     		.2byte	0x36d
  1970 0429 6B000000 		.4byte	0x6b
@@ -3758,7 +3758,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1981 0441 9C       		.byte	0x9c
  1982 0442 55040000 		.4byte	0x455
  1983 0446 0E       		.uleb128 0xe
- 1984 0447 47030000 		.4byte	.LASF28
+ 1984 0447 F4020000 		.4byte	.LASF28
  1985 044b 01       		.byte	0x1
  1986 044c 8C03     		.2byte	0x38c
  1987 044e 6B000000 		.4byte	0x6b
@@ -3766,7 +3766,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  1989 0453 50       		.byte	0x50
  1990 0454 00       		.byte	0
  1991 0455 0D       		.uleb128 0xd
- 1992 0456 0D060000 		.4byte	.LASF48
+ 1992 0456 FA050000 		.4byte	.LASF48
  1993 045a 01       		.byte	0x1
  1994 045b AE03     		.2byte	0x3ae
  1995 045d 00000000 		.4byte	.LFB17
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2001 046c 1D000000 		.4byte	.LASF49
  2002 0470 01       		.byte	0x1
  2003 0471 AE03     		.2byte	0x3ae
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 64
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 64
 
 
  2004 0473 6B000000 		.4byte	0x6b
@@ -3795,7 +3795,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2015 048e 01       		.uleb128 0x1
  2016 048f 9C       		.byte	0x9c
  2017 0490 0D       		.uleb128 0xd
- 2018 0491 96020000 		.4byte	.LASF52
+ 2018 0491 43020000 		.4byte	.LASF52
  2019 0495 01       		.byte	0x1
  2020 0496 1104     		.2byte	0x411
  2021 0498 00000000 		.4byte	.LFB19
@@ -3811,21 +3811,21 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2031 04b2 01       		.uleb128 0x1
  2032 04b3 50       		.byte	0x50
  2033 04b4 11       		.uleb128 0x11
- 2034 04b5 37020000 		.4byte	.LASF53
+ 2034 04b5 E4010000 		.4byte	.LASF53
  2035 04b9 01       		.byte	0x1
  2036 04ba 1804     		.2byte	0x418
  2037 04bc 6B000000 		.4byte	0x6b
  2038 04c0 01       		.uleb128 0x1
  2039 04c1 51       		.byte	0x51
  2040 04c2 10       		.uleb128 0x10
- 2041 04c3 E0010000 		.4byte	.LASF54
+ 2041 04c3 8D010000 		.4byte	.LASF54
  2042 04c7 01       		.byte	0x1
  2043 04c8 1904     		.2byte	0x419
  2044 04ca 6B000000 		.4byte	0x6b
  2045 04ce 7D010000 		.4byte	.LLST10
  2046 04d2 00       		.byte	0
  2047 04d3 0D       		.uleb128 0xd
- 2048 04d4 0B030000 		.4byte	.LASF55
+ 2048 04d4 B8020000 		.4byte	.LASF55
  2049 04d8 01       		.byte	0x1
  2050 04d9 7904     		.2byte	0x479
  2051 04db 00000000 		.4byte	.LFB20
@@ -3838,12 +3838,12 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2058 04ee 01       		.byte	0x1
  2059 04ef 7904     		.2byte	0x479
  2060 04f1 13050000 		.4byte	0x513
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 65
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 65
 
 
  2061 04f5 90010000 		.4byte	.LLST11
  2062 04f9 10       		.uleb128 0x10
- 2063 04fa 76020000 		.4byte	.LASF57
+ 2063 04fa 23020000 		.4byte	.LASF57
  2064 04fe 01       		.byte	0x1
  2065 04ff 7B04     		.2byte	0x47b
  2066 0501 77000000 		.4byte	0x77
@@ -3858,7 +3858,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2075 0519 14       		.uleb128 0x14
  2076 051a 9D000000 		.4byte	0x9d
  2077 051e 0D       		.uleb128 0xd
- 2078 051f E2020000 		.4byte	.LASF58
+ 2078 051f 8F020000 		.4byte	.LASF58
  2079 0523 01       		.byte	0x1
  2080 0524 A704     		.2byte	0x4a7
  2081 0526 00000000 		.4byte	.LFB21
@@ -3873,13 +3873,13 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2090 053c 6E050000 		.4byte	0x56e
  2091 0540 13020000 		.4byte	.LLST13
  2092 0544 12       		.uleb128 0x12
- 2093 0545 E1040000 		.4byte	.LASF59
+ 2093 0545 8E040000 		.4byte	.LASF59
  2094 0549 01       		.byte	0x1
  2095 054a A704     		.2byte	0x4a7
  2096 054c 6B000000 		.4byte	0x6b
  2097 0550 55020000 		.4byte	.LLST14
  2098 0554 10       		.uleb128 0x10
- 2099 0555 76020000 		.4byte	.LASF57
+ 2099 0555 23020000 		.4byte	.LASF57
  2100 0559 01       		.byte	0x1
  2101 055a AA04     		.2byte	0x4aa
  2102 055c 6B000000 		.4byte	0x6b
@@ -3894,11 +3894,11 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2111 0574 14       		.uleb128 0x14
  2112 0575 6B000000 		.4byte	0x6b
  2113 0579 0D       		.uleb128 0xd
- 2114 057a 75030000 		.4byte	.LASF60
+ 2114 057a 22030000 		.4byte	.LASF60
  2115 057e 01       		.byte	0x1
  2116 057f CE04     		.2byte	0x4ce
  2117 0581 00000000 		.4byte	.LFB22
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 66
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 66
 
 
  2118 0585 20000000 		.4byte	.LFE22-.LFB22
@@ -3945,26 +3945,26 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2159 05e0 9C       		.byte	0x9c
  2160 05e1 F6050000 		.4byte	0x5f6
  2161 05e5 10       		.uleb128 0x10
- 2162 05e6 A6020000 		.4byte	.LASF40
+ 2162 05e6 53020000 		.4byte	.LASF40
  2163 05ea 01       		.byte	0x1
  2164 05eb FC04     		.2byte	0x4fc
  2165 05ed 6B000000 		.4byte	0x6b
  2166 05f1 F1020000 		.4byte	.LLST17
  2167 05f5 00       		.byte	0
  2168 05f6 0D       		.uleb128 0xd
- 2169 05f7 00040000 		.4byte	.LASF62
+ 2169 05f7 AD030000 		.4byte	.LASF62
  2170 05fb 01       		.byte	0x1
  2171 05fc 4A05     		.2byte	0x54a
  2172 05fe 00000000 		.4byte	.LFB24
  2173 0602 40000000 		.4byte	.LFE24-.LFB24
  2174 0606 01       		.uleb128 0x1
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 67
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 67
 
 
  2175 0607 9C       		.byte	0x9c
  2176 0608 2F060000 		.4byte	0x62f
  2177 060c 10       		.uleb128 0x10
- 2178 060d B2050000 		.4byte	.LASF24
+ 2178 060d 9F050000 		.4byte	.LASF24
  2179 0611 01       		.byte	0x1
  2180 0612 4C05     		.2byte	0x54c
  2181 0614 6B000000 		.4byte	0x6b
@@ -3986,7 +3986,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2197 0640 9C       		.byte	0x9c
  2198 0641 82060000 		.4byte	0x682
  2199 0645 12       		.uleb128 0x12
- 2200 0646 F0010000 		.4byte	.LASF64
+ 2200 0646 9D010000 		.4byte	.LASF64
  2201 064a 01       		.byte	0x1
  2202 064b A005     		.2byte	0x5a0
  2203 064d 6B000000 		.4byte	0x6b
@@ -3995,7 +3995,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2206 0656 06000000 		.4byte	.LBB2
  2207 065a 52000000 		.4byte	.LBE2-.LBB2
  2208 065e 10       		.uleb128 0x10
- 2209 065f 6D030000 		.4byte	.LASF65
+ 2209 065f 1A030000 		.4byte	.LASF65
  2210 0663 01       		.byte	0x1
  2211 0664 A805     		.2byte	0x5a8
  2212 0666 6B000000 		.4byte	0x6b
@@ -4011,14 +4011,14 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2222 0680 00       		.byte	0
  2223 0681 00       		.byte	0
  2224 0682 0D       		.uleb128 0xd
- 2225 0683 19050000 		.4byte	.LASF67
+ 2225 0683 C6040000 		.4byte	.LASF67
  2226 0687 01       		.byte	0x1
  2227 0688 2406     		.2byte	0x624
  2228 068a 00000000 		.4byte	.LFB26
  2229 068e 02000000 		.4byte	.LFE26-.LFB26
  2230 0692 01       		.uleb128 0x1
  2231 0693 9C       		.byte	0x9c
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 68
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 68
 
 
  2232 0694 A7060000 		.4byte	0x6a7
@@ -4046,7 +4046,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2254 06c6 63       		.byte	0x63
  2255 06c7 00       		.byte	0
  2256 06c8 16       		.uleb128 0x16
- 2257 06c9 05020000 		.4byte	.LASF69
+ 2257 06c9 B2010000 		.4byte	.LASF69
  2258 06cd 01       		.byte	0x1
  2259 06ce 1E       		.byte	0x1e
  2260 06cf D9060000 		.4byte	0x6d9
@@ -4072,18 +4072,18 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2280 06fb 03       		.byte	0x3
  2281 06fc 00000000 		.4byte	UART_BT_txBufferWrite
  2282 0700 16       		.uleb128 0x16
- 2283 0701 CA050000 		.4byte	.LASF72
+ 2283 0701 B7050000 		.4byte	.LASF72
  2284 0705 01       		.byte	0x1
  2285 0706 24       		.byte	0x24
  2286 0707 6B000000 		.4byte	0x6b
  2287 070b 05       		.uleb128 0x5
  2288 070c 03       		.byte	0x3
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 69
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 69
 
 
  2289 070d 00000000 		.4byte	UART_BT_errorStatus
  2290 0711 16       		.uleb128 0x16
- 2291 0712 1B040000 		.4byte	.LASF73
+ 2291 0712 C8030000 		.4byte	.LASF73
  2292 0716 01       		.byte	0x1
  2293 0717 25       		.byte	0x25
  2294 0718 22070000 		.4byte	0x722
@@ -4093,7 +4093,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2298 0722 05       		.uleb128 0x5
  2299 0723 B8060000 		.4byte	0x6b8
  2300 0727 16       		.uleb128 0x16
- 2301 0728 BE020000 		.4byte	.LASF74
+ 2301 0728 6B020000 		.4byte	.LASF74
  2302 072c 01       		.byte	0x1
  2303 072d 26       		.byte	0x26
  2304 072e BC000000 		.4byte	0xbc
@@ -4101,7 +4101,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2306 0733 03       		.byte	0x3
  2307 0734 00000000 		.4byte	UART_BT_rxBufferRead
  2308 0738 16       		.uleb128 0x16
- 2309 0739 A2030000 		.4byte	.LASF75
+ 2309 0739 4F030000 		.4byte	.LASF75
  2310 073d 01       		.byte	0x1
  2311 073e 27       		.byte	0x27
  2312 073f BC000000 		.4byte	0xbc
@@ -4117,7 +4117,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2322 0755 03       		.byte	0x3
  2323 0756 00000000 		.4byte	UART_BT_rxBufferLoopDetect
  2324 075a 16       		.uleb128 0x16
- 2325 075b 4E030000 		.4byte	.LASF77
+ 2325 075b FB020000 		.4byte	.LASF77
  2326 075f 01       		.byte	0x1
  2327 0760 29       		.byte	0x29
  2328 0761 BC000000 		.4byte	0xbc
@@ -4125,26 +4125,26 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2330 0766 03       		.byte	0x3
  2331 0767 00000000 		.4byte	UART_BT_rxBufferOverflow
  2332 076b 19       		.uleb128 0x19
- 2333 076c D3020000 		.4byte	.LASF78
- 2334 0770 D3020000 		.4byte	.LASF78
+ 2333 076c 80020000 		.4byte	.LASF78
+ 2334 0770 80020000 		.4byte	.LASF78
  2335 0774 03       		.byte	0x3
  2336 0775 88       		.byte	0x88
  2337 0776 19       		.uleb128 0x19
- 2338 0777 D2030000 		.4byte	.LASF79
- 2339 077b D2030000 		.4byte	.LASF79
+ 2338 0777 7F030000 		.4byte	.LASF79
+ 2339 077b 7F030000 		.4byte	.LASF79
  2340 077f 03       		.byte	0x3
  2341 0780 8B       		.byte	0x8b
  2342 0781 19       		.uleb128 0x19
- 2343 0782 7F020000 		.4byte	.LASF80
- 2344 0786 7F020000 		.4byte	.LASF80
+ 2343 0782 2C020000 		.4byte	.LASF80
+ 2344 0786 2C020000 		.4byte	.LASF80
  2345 078a 03       		.byte	0x3
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 70
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 70
 
 
  2346 078b 7D       		.byte	0x7d
  2347 078c 19       		.uleb128 0x19
- 2348 078d E9030000 		.4byte	.LASF81
- 2349 0791 E9030000 		.4byte	.LASF81
+ 2348 078d 96030000 		.4byte	.LASF81
+ 2349 0791 96030000 		.4byte	.LASF81
  2350 0795 04       		.byte	0x4
  2351 0796 27       		.byte	0x27
  2352 0797 19       		.uleb128 0x19
@@ -4153,8 +4153,8 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2355 07a0 03       		.byte	0x3
  2356 07a1 7E       		.byte	0x7e
  2357 07a2 19       		.uleb128 0x19
- 2358 07a3 9C050000 		.4byte	.LASF83
- 2359 07a7 9C050000 		.4byte	.LASF83
+ 2358 07a3 89050000 		.4byte	.LASF83
+ 2359 07a7 89050000 		.4byte	.LASF83
  2360 07ab 04       		.byte	0x4
  2361 07ac 28       		.byte	0x28
  2362 07ad 00       		.byte	0
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2400 0023 3E       		.uleb128 0x3e
  2401 0024 0B       		.uleb128 0xb
  2402 0025 03       		.uleb128 0x3
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 71
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 71
 
 
  2403 0026 08       		.uleb128 0x8
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2457 005f 13       		.uleb128 0x13
  2458 0060 01       		.uleb128 0x1
  2459 0061 13       		.uleb128 0x13
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 72
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 72
 
 
  2460 0062 00       		.byte	0
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2514 009f 05       		.uleb128 0x5
  2515 00a0 27       		.uleb128 0x27
  2516 00a1 19       		.uleb128 0x19
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 73
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 73
 
 
  2517 00a2 49       		.uleb128 0x49
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2571 00da 01       		.byte	0x1
  2572 00db 3F       		.uleb128 0x3f
  2573 00dc 19       		.uleb128 0x19
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 74
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 74
 
 
  2574 00dd 03       		.uleb128 0x3
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2628 0114 00       		.byte	0
  2629 0115 03       		.uleb128 0x3
  2630 0116 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 75
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 75
 
 
  2631 0117 3A       		.uleb128 0x3a
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2685 014d 01       		.byte	0x1
  2686 014e 49       		.uleb128 0x49
  2687 014f 13       		.uleb128 0x13
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 76
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 76
 
 
  2688 0150 01       		.uleb128 0x1
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2742 0039 0100     		.2byte	0x1
  2743 003b 50       		.byte	0x50
  2744 003c 00000000 		.4byte	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 77
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 77
 
 
  2745 0040 00000000 		.4byte	0
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2799 00cd 50       		.byte	0x50
  2800 00ce 00000000 		.4byte	0
  2801 00d2 00000000 		.4byte	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 78
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 78
 
 
  2802              	.LLST5:
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2856 0166 00000000 		.4byte	0
  2857              	.LLST9:
  2858 016a 06000000 		.4byte	.LVL55
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 79
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 79
 
 
  2859 016e 1B000000 		.4byte	.LVL56-1
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2913 01fc 0200     		.2byte	0x2
  2914 01fe 30       		.byte	0x30
  2915 01ff 9F       		.byte	0x9f
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 80
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 80
 
 
  2916 0200 18000000 		.4byte	.LVL75
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  2970 0286 9F       		.byte	0x9f
  2971 0287 00000000 		.4byte	0
  2972 028b 00000000 		.4byte	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 81
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 81
 
 
  2973              	.LLST15:
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  3027              	.LLST18:
  3028 031a 06000000 		.4byte	.LVL94
  3029 031e 1B000000 		.4byte	.LVL95-1
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 82
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 82
 
 
  3030 0322 0100     		.2byte	0x1
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  3084 0054 28000000 		.4byte	.LFE8-.LFB8
  3085 0058 00000000 		.4byte	.LFB9
  3086 005c 80000000 		.4byte	.LFE9-.LFB9
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 83
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 83
 
 
  3087 0060 00000000 		.4byte	.LFB10
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  3141 0040 00000000 		.4byte	.LFB8
  3142 0044 28000000 		.4byte	.LFE8
  3143 0048 00000000 		.4byte	.LFB9
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 84
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 84
 
 
  3144 004c 80000000 		.4byte	.LFE9
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  3189 001d 74784461 		.ascii	"txDataByte\000"
  3189      74614279 
  3189      746500
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 85
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 85
 
 
  3190              	.LASF68:
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  3209      78427566 
  3209      66657253 
  3210              	.LASF6:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 86
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 86
 
 
  3211 0101 6C6F6E67 		.ascii	"long long int\000"
@@ -5139,357 +5139,357 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 1
  3227 0162 61646472 		.ascii	"addressMode\000"
  3227      6573734D 
  3227      6F646500 
- 3228              	.LASF86:
- 3229 016e 433A5C55 		.ascii	"C:\\Users\\Totos\\Desktop\\elektronik_ingenioer\\PR"
- 3229      73657273 
- 3229      5C546F74 
- 3229      6F735C44 
- 3229      65736B74 
- 3230 019c 4A335C47 		.ascii	"J3\\Github\\BattleBot\\Motor_Test.cydsn\000"
- 3230      69746875 
- 3230      625C4261 
- 3230      74746C65 
- 3230      426F745C 
- 3231              	.LASF11:
- 3232 01c1 75696E74 		.ascii	"uint32\000"
- 3232      333200
- 3233              	.LASF27:
- 3234 01c8 636F6E74 		.ascii	"control\000"
- 3234      726F6C00 
- 3235              	.LASF35:
- 3236 01d0 55415254 		.ascii	"UART_BT_GetChar\000"
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 87
+ 3228              	.LASF11:
+ 3229 016e 75696E74 		.ascii	"uint32\000"
+ 3229      333200
+ 3230              	.LASF27:
+ 3231 0175 636F6E74 		.ascii	"control\000"
+ 3231      726F6C00 
+ 3232              	.LASF35:
+ 3233 017d 55415254 		.ascii	"UART_BT_GetChar\000"
+ 3233      5F42545F 
+ 3233      47657443 
+ 3233      68617200 
+ 3234              	.LASF54:
+ 3235 018d 6C6F6354 		.ascii	"locTxBufferRead\000"
+ 3235      78427566 
+ 3235      66657252 
+ 3235      65616400 
+ 3236              	.LASF64:
+ 3237 019d 7265744D 		.ascii	"retMode\000"
+ 3237      6F646500 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 87
 
 
- 3236      5F42545F 
- 3236      47657443 
- 3236      68617200 
- 3237              	.LASF54:
- 3238 01e0 6C6F6354 		.ascii	"locTxBufferRead\000"
- 3238      78427566 
- 3238      66657252 
- 3238      65616400 
- 3239              	.LASF64:
- 3240 01f0 7265744D 		.ascii	"retMode\000"
- 3240      6F646500 
- 3241              	.LASF8:
- 3242 01f8 756E7369 		.ascii	"unsigned int\000"
- 3242      676E6564 
- 3242      20696E74 
- 3242      00
- 3243              	.LASF69:
- 3244 0205 55415254 		.ascii	"UART_BT_txBuffer\000"
- 3244      5F42545F 
- 3244      74784275 
- 3244      66666572 
- 3244      00
- 3245              	.LASF38:
- 3246 0216 6C6F6345 		.ascii	"locErrorStatus\000"
- 3246      72726F72 
- 3246      53746174 
- 3246      757300
- 3247              	.LASF5:
- 3248 0225 6C6F6E67 		.ascii	"long unsigned int\000"
- 3248      20756E73 
- 3248      69676E65 
- 3248      6420696E 
- 3248      7400
- 3249              	.LASF53:
- 3250 0237 6C6F6354 		.ascii	"locTxBufferWrite\000"
- 3250      78427566 
- 3250      66657257 
- 3250      72697465 
- 3250      00
- 3251              	.LASF85:
- 3252 0248 47656E65 		.ascii	"Generated_Source\\PSoC5\\UART_BT.c\000"
- 3252      72617465 
- 3252      645F536F 
- 3252      75726365 
- 3252      5C50536F 
- 3253              	.LASF23:
- 3254 0269 55415254 		.ascii	"UART_BT_Stop\000"
- 3254      5F42545F 
- 3254      53746F70 
- 3254      00
- 3255              	.LASF57:
- 3256 0276 62756649 		.ascii	"bufIndex\000"
- 3256      6E646578 
- 3256      00
- 3257              	.LASF80:
- 3258 027f 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 3258      74657243 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 88
+ 3238              	.LASF8:
+ 3239 01a5 756E7369 		.ascii	"unsigned int\000"
+ 3239      676E6564 
+ 3239      20696E74 
+ 3239      00
+ 3240              	.LASF69:
+ 3241 01b2 55415254 		.ascii	"UART_BT_txBuffer\000"
+ 3241      5F42545F 
+ 3241      74784275 
+ 3241      66666572 
+ 3241      00
+ 3242              	.LASF38:
+ 3243 01c3 6C6F6345 		.ascii	"locErrorStatus\000"
+ 3243      72726F72 
+ 3243      53746174 
+ 3243      757300
+ 3244              	.LASF5:
+ 3245 01d2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3245      20756E73 
+ 3245      69676E65 
+ 3245      6420696E 
+ 3245      7400
+ 3246              	.LASF53:
+ 3247 01e4 6C6F6354 		.ascii	"locTxBufferWrite\000"
+ 3247      78427566 
+ 3247      66657257 
+ 3247      72697465 
+ 3247      00
+ 3248              	.LASF85:
+ 3249 01f5 47656E65 		.ascii	"Generated_Source\\PSoC5\\UART_BT.c\000"
+ 3249      72617465 
+ 3249      645F536F 
+ 3249      75726365 
+ 3249      5C50536F 
+ 3250              	.LASF23:
+ 3251 0216 55415254 		.ascii	"UART_BT_Stop\000"
+ 3251      5F42545F 
+ 3251      53746F70 
+ 3251      00
+ 3252              	.LASF57:
+ 3253 0223 62756649 		.ascii	"bufIndex\000"
+ 3253      6E646578 
+ 3253      00
+ 3254              	.LASF80:
+ 3255 022c 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 3255      74657243 
+ 3255      72697469 
+ 3255      63616C53 
+ 3255      65637469 
+ 3256              	.LASF52:
+ 3257 0243 55415254 		.ascii	"UART_BT_PutChar\000"
+ 3257      5F42545F 
+ 3257      50757443 
+ 3257      68617200 
+ 3258              	.LASF40:
+ 3259 0253 73697A65 		.ascii	"size\000"
+ 3259      00
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 88
 
 
- 3258      72697469 
- 3258      63616C53 
- 3258      65637469 
- 3259              	.LASF52:
- 3260 0296 55415254 		.ascii	"UART_BT_PutChar\000"
- 3260      5F42545F 
- 3260      50757443 
- 3260      68617200 
- 3261              	.LASF40:
- 3262 02a6 73697A65 		.ascii	"size\000"
- 3262      00
- 3263              	.LASF3:
- 3264 02ab 73686F72 		.ascii	"short unsigned int\000"
- 3264      7420756E 
- 3264      7369676E 
- 3264      65642069 
- 3264      6E7400
- 3265              	.LASF74:
- 3266 02be 55415254 		.ascii	"UART_BT_rxBufferRead\000"
- 3266      5F42545F 
- 3266      72784275 
- 3266      66666572 
- 3266      52656164 
- 3267              	.LASF78:
- 3268 02d3 4379496E 		.ascii	"CyIntSetVector\000"
- 3268      74536574 
- 3268      56656374 
- 3268      6F7200
- 3269              	.LASF58:
- 3270 02e2 55415254 		.ascii	"UART_BT_PutArray\000"
- 3270      5F42545F 
- 3270      50757441 
- 3270      72726179 
- 3270      00
- 3271              	.LASF39:
- 3272 02f3 55415254 		.ascii	"UART_BT_GetRxBufferSize\000"
- 3272      5F42545F 
- 3272      47657452 
- 3272      78427566 
- 3272      66657253 
- 3273              	.LASF55:
- 3274 030b 55415254 		.ascii	"UART_BT_PutString\000"
- 3274      5F42545F 
- 3274      50757453 
- 3274      7472696E 
- 3274      6700
- 3275              	.LASF50:
- 3276 031d 55415254 		.ascii	"UART_BT_ReadControlRegister\000"
- 3276      5F42545F 
- 3276      52656164 
- 3276      436F6E74 
- 3276      726F6C52 
- 3277              	.LASF22:
- 3278 0339 55415254 		.ascii	"UART_BT_Start\000"
- 3278      5F42545F 
- 3278      53746172 
- 3278      7400
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 89
+ 3260              	.LASF3:
+ 3261 0258 73686F72 		.ascii	"short unsigned int\000"
+ 3261      7420756E 
+ 3261      7369676E 
+ 3261      65642069 
+ 3261      6E7400
+ 3262              	.LASF74:
+ 3263 026b 55415254 		.ascii	"UART_BT_rxBufferRead\000"
+ 3263      5F42545F 
+ 3263      72784275 
+ 3263      66666572 
+ 3263      52656164 
+ 3264              	.LASF78:
+ 3265 0280 4379496E 		.ascii	"CyIntSetVector\000"
+ 3265      74536574 
+ 3265      56656374 
+ 3265      6F7200
+ 3266              	.LASF58:
+ 3267 028f 55415254 		.ascii	"UART_BT_PutArray\000"
+ 3267      5F42545F 
+ 3267      50757441 
+ 3267      72726179 
+ 3267      00
+ 3268              	.LASF39:
+ 3269 02a0 55415254 		.ascii	"UART_BT_GetRxBufferSize\000"
+ 3269      5F42545F 
+ 3269      47657452 
+ 3269      78427566 
+ 3269      66657253 
+ 3270              	.LASF55:
+ 3271 02b8 55415254 		.ascii	"UART_BT_PutString\000"
+ 3271      5F42545F 
+ 3271      50757453 
+ 3271      7472696E 
+ 3271      6700
+ 3272              	.LASF50:
+ 3273 02ca 55415254 		.ascii	"UART_BT_ReadControlRegister\000"
+ 3273      5F42545F 
+ 3273      52656164 
+ 3273      436F6E74 
+ 3273      726F6C52 
+ 3274              	.LASF22:
+ 3275 02e6 55415254 		.ascii	"UART_BT_Start\000"
+ 3275      5F42545F 
+ 3275      53746172 
+ 3275      7400
+ 3276              	.LASF28:
+ 3277 02f4 696E7453 		.ascii	"intSrc\000"
+ 3277      726300
+ 3278              	.LASF77:
+ 3279 02fb 55415254 		.ascii	"UART_BT_rxBufferOverflow\000"
+ 3279      5F42545F 
+ 3279      72784275 
+ 3279      66666572 
+ 3279      4F766572 
+ 3280              	.LASF17:
+ 3281 0314 72656733 		.ascii	"reg32\000"
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 89
 
 
- 3279              	.LASF28:
- 3280 0347 696E7453 		.ascii	"intSrc\000"
- 3280      726300
- 3281              	.LASF77:
- 3282 034e 55415254 		.ascii	"UART_BT_rxBufferOverflow\000"
- 3282      5F42545F 
- 3282      72784275 
- 3282      66666572 
- 3282      4F766572 
- 3283              	.LASF17:
- 3284 0367 72656733 		.ascii	"reg32\000"
- 3284      3200
- 3285              	.LASF65:
- 3286 036d 746D7053 		.ascii	"tmpStat\000"
- 3286      74617400 
- 3287              	.LASF60:
- 3288 0375 55415254 		.ascii	"UART_BT_PutCRLF\000"
- 3288      5F42545F 
- 3288      50757443 
- 3288      524C4600 
- 3289              	.LASF19:
- 3290 0385 73697A65 		.ascii	"sizetype\000"
- 3290      74797065 
- 3290      00
- 3291              	.LASF18:
- 3292 038e 6C6F6E67 		.ascii	"long double\000"
- 3292      20646F75 
- 3292      626C6500 
- 3293              	.LASF45:
- 3294 039a 61646472 		.ascii	"address\000"
- 3294      65737300 
- 3295              	.LASF75:
- 3296 03a2 55415254 		.ascii	"UART_BT_rxBufferWrite\000"
- 3296      5F42545F 
- 3296      72784275 
- 3296      66666572 
- 3296      57726974 
- 3297              	.LASF31:
- 3298 03b8 6C6F6352 		.ascii	"locRxBufferWrite\000"
- 3298      78427566 
- 3298      66657257 
- 3298      72697465 
- 3298      00
- 3299              	.LASF36:
- 3300 03c9 72785374 		.ascii	"rxStatus\000"
- 3300      61747573 
- 3300      00
- 3301              	.LASF79:
- 3302 03d2 4379496E 		.ascii	"CyIntSetPriority\000"
- 3302      74536574 
- 3302      5072696F 
- 3302      72697479 
- 3302      00
- 3303              	.LASF12:
- 3304 03e3 666C6F61 		.ascii	"float\000"
- 3304      7400
- 3305              	.LASF81:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 90
+ 3281      3200
+ 3282              	.LASF65:
+ 3283 031a 746D7053 		.ascii	"tmpStat\000"
+ 3283      74617400 
+ 3284              	.LASF60:
+ 3285 0322 55415254 		.ascii	"UART_BT_PutCRLF\000"
+ 3285      5F42545F 
+ 3285      50757443 
+ 3285      524C4600 
+ 3286              	.LASF19:
+ 3287 0332 73697A65 		.ascii	"sizetype\000"
+ 3287      74797065 
+ 3287      00
+ 3288              	.LASF18:
+ 3289 033b 6C6F6E67 		.ascii	"long double\000"
+ 3289      20646F75 
+ 3289      626C6500 
+ 3290              	.LASF45:
+ 3291 0347 61646472 		.ascii	"address\000"
+ 3291      65737300 
+ 3292              	.LASF75:
+ 3293 034f 55415254 		.ascii	"UART_BT_rxBufferWrite\000"
+ 3293      5F42545F 
+ 3293      72784275 
+ 3293      66666572 
+ 3293      57726974 
+ 3294              	.LASF31:
+ 3295 0365 6C6F6352 		.ascii	"locRxBufferWrite\000"
+ 3295      78427566 
+ 3295      66657257 
+ 3295      72697465 
+ 3295      00
+ 3296              	.LASF36:
+ 3297 0376 72785374 		.ascii	"rxStatus\000"
+ 3297      61747573 
+ 3297      00
+ 3298              	.LASF79:
+ 3299 037f 4379496E 		.ascii	"CyIntSetPriority\000"
+ 3299      74536574 
+ 3299      5072696F 
+ 3299      72697479 
+ 3299      00
+ 3300              	.LASF12:
+ 3301 0390 666C6F61 		.ascii	"float\000"
+ 3301      7400
+ 3302              	.LASF81:
+ 3303 0396 55415254 		.ascii	"UART_BT_IntClock_Start\000"
+ 3303      5F42545F 
+ 3303      496E7443 
+ 3303      6C6F636B 
+ 3303      5F537461 
+ 3304              	.LASF62:
+ 3305 03ad 55415254 		.ascii	"UART_BT_ClearTxBuffer\000"
+ 3305      5F42545F 
+ 3305      436C6561 
+ 3305      72547842 
+ 3305      75666665 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 90
 
 
- 3306 03e9 55415254 		.ascii	"UART_BT_IntClock_Start\000"
- 3306      5F42545F 
- 3306      496E7443 
- 3306      6C6F636B 
- 3306      5F537461 
- 3307              	.LASF62:
- 3308 0400 55415254 		.ascii	"UART_BT_ClearTxBuffer\000"
- 3308      5F42545F 
- 3308      436C6561 
- 3308      72547842 
- 3308      75666665 
- 3309              	.LASF16:
- 3310 0416 72656738 		.ascii	"reg8\000"
- 3310      00
- 3311              	.LASF73:
- 3312 041b 55415254 		.ascii	"UART_BT_rxBuffer\000"
- 3312      5F42545F 
- 3312      72784275 
- 3312      66666572 
- 3312      00
- 3313              	.LASF1:
- 3314 042c 756E7369 		.ascii	"unsigned char\000"
- 3314      676E6564 
- 3314      20636861 
- 3314      7200
- 3315              	.LASF2:
- 3316 043a 73686F72 		.ascii	"short int\000"
- 3316      7420696E 
- 3316      7400
- 3317              	.LASF21:
- 3318 0444 55415254 		.ascii	"UART_BT_Enable\000"
- 3318      5F42545F 
- 3318      456E6162 
- 3318      6C6500
- 3319              	.LASF84:
- 3320 0453 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 3320      43313120 
- 3320      352E342E 
- 3320      31203230 
- 3320      31363036 
- 3321 0486 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 3321      20726576 
- 3321      6973696F 
- 3321      6E203233 
- 3321      37373135 
- 3322 04b9 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 3322      66756E63 
- 3322      74696F6E 
- 3322      2D736563 
- 3322      74696F6E 
- 3323              	.LASF59:
- 3324 04e1 62797465 		.ascii	"byteCount\000"
- 3324      436F756E 
- 3324      7400
- 3325              	.LASF29:
- 3326 04eb 72784461 		.ascii	"rxData\000"
- 3326      746100
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 91
+ 3306              	.LASF16:
+ 3307 03c3 72656738 		.ascii	"reg8\000"
+ 3307      00
+ 3308              	.LASF73:
+ 3309 03c8 55415254 		.ascii	"UART_BT_rxBuffer\000"
+ 3309      5F42545F 
+ 3309      72784275 
+ 3309      66666572 
+ 3309      00
+ 3310              	.LASF1:
+ 3311 03d9 756E7369 		.ascii	"unsigned char\000"
+ 3311      676E6564 
+ 3311      20636861 
+ 3311      7200
+ 3312              	.LASF2:
+ 3313 03e7 73686F72 		.ascii	"short int\000"
+ 3313      7420696E 
+ 3313      7400
+ 3314              	.LASF21:
+ 3315 03f1 55415254 		.ascii	"UART_BT_Enable\000"
+ 3315      5F42545F 
+ 3315      456E6162 
+ 3315      6C6500
+ 3316              	.LASF84:
+ 3317 0400 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 3317      43313120 
+ 3317      352E342E 
+ 3317      31203230 
+ 3317      31363036 
+ 3318 0433 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 3318      20726576 
+ 3318      6973696F 
+ 3318      6E203233 
+ 3318      37373135 
+ 3319 0466 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 3319      66756E63 
+ 3319      74696F6E 
+ 3319      2D736563 
+ 3319      74696F6E 
+ 3320              	.LASF59:
+ 3321 048e 62797465 		.ascii	"byteCount\000"
+ 3321      436F756E 
+ 3321      7400
+ 3322              	.LASF29:
+ 3323 0498 72784461 		.ascii	"rxData\000"
+ 3323      746100
+ 3324              	.LASF33:
+ 3325 049f 55415254 		.ascii	"UART_BT_ReadRxStatus\000"
+ 3325      5F42545F 
+ 3325      52656164 
+ 3325      52785374 
+ 3325      61747573 
+ 3326              	.LASF15:
+ 3327 04b4 63686172 		.ascii	"char\000"
+ 3327      00
+ 3328              	.LASF20:
+ 3329 04b9 55415254 		.ascii	"UART_BT_Init\000"
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 91
 
 
- 3327              	.LASF33:
- 3328 04f2 55415254 		.ascii	"UART_BT_ReadRxStatus\000"
- 3328      5F42545F 
- 3328      52656164 
- 3328      52785374 
- 3328      61747573 
- 3329              	.LASF15:
- 3330 0507 63686172 		.ascii	"char\000"
- 3330      00
- 3331              	.LASF20:
- 3332 050c 55415254 		.ascii	"UART_BT_Init\000"
- 3332      5F42545F 
- 3332      496E6974 
- 3332      00
- 3333              	.LASF67:
- 3334 0519 55415254 		.ascii	"UART_BT_SetTxAddressMode\000"
- 3334      5F42545F 
- 3334      53657454 
- 3334      78416464 
- 3334      72657373 
- 3335              	.LASF37:
- 3336 0532 55415254 		.ascii	"UART_BT_GetByte\000"
- 3336      5F42545F 
- 3336      47657442 
- 3336      79746500 
- 3337              	.LASF14:
- 3338 0542 63686172 		.ascii	"char8\000"
- 3338      3800
- 3339              	.LASF26:
- 3340 0548 55415254 		.ascii	"UART_BT_SetRxInterruptMode\000"
- 3340      5F42545F 
- 3340      53657452 
- 3340      78496E74 
- 3340      65727275 
- 3341              	.LASF46:
- 3342 0563 55415254 		.ascii	"UART_BT_SetRxAddress2\000"
- 3342      5F42545F 
- 3342      53657452 
- 3342      78416464 
- 3342      72657373 
+ 3329      5F42545F 
+ 3329      496E6974 
+ 3329      00
+ 3330              	.LASF67:
+ 3331 04c6 55415254 		.ascii	"UART_BT_SetTxAddressMode\000"
+ 3331      5F42545F 
+ 3331      53657454 
+ 3331      78416464 
+ 3331      72657373 
+ 3332              	.LASF37:
+ 3333 04df 55415254 		.ascii	"UART_BT_GetByte\000"
+ 3333      5F42545F 
+ 3333      47657442 
+ 3333      79746500 
+ 3334              	.LASF14:
+ 3335 04ef 63686172 		.ascii	"char8\000"
+ 3335      3800
+ 3336              	.LASF26:
+ 3337 04f5 55415254 		.ascii	"UART_BT_SetRxInterruptMode\000"
+ 3337      5F42545F 
+ 3337      53657452 
+ 3337      78496E74 
+ 3337      65727275 
+ 3338              	.LASF46:
+ 3339 0510 55415254 		.ascii	"UART_BT_SetRxAddress2\000"
+ 3339      5F42545F 
+ 3339      53657452 
+ 3339      78416464 
+ 3339      72657373 
+ 3340              	.LASF86:
+ 3341 0526 433A5C55 		.ascii	"C:\\Users\\peter\\Documents\\GitHub\\PRJ3\\BattleBo"
+ 3341      73657273 
+ 3341      5C706574 
+ 3341      65725C44 
+ 3341      6F63756D 
+ 3342 0553 745C4D6F 		.ascii	"t\\Motor_Test.cydsn\000"
+ 3342      746F725F 
+ 3342      54657374 
+ 3342      2E637964 
+ 3342      736E00
  3343              	.LASF32:
- 3344 0579 55415254 		.ascii	"UART_BT_ReadRxData\000"
+ 3344 0566 55415254 		.ascii	"UART_BT_ReadRxData\000"
  3344      5F42545F 
  3344      52656164 
  3344      52784461 
  3344      746100
  3345              	.LASF30:
- 3346 058c 6C6F6352 		.ascii	"locRxBufferRead\000"
+ 3346 0579 6C6F6352 		.ascii	"locRxBufferRead\000"
  3346      78427566 
  3346      66657252 
  3346      65616400 
  3347              	.LASF83:
- 3348 059c 55415254 		.ascii	"UART_BT_IntClock_Stop\000"
+ 3348 0589 55415254 		.ascii	"UART_BT_IntClock_Stop\000"
  3348      5F42545F 
  3348      496E7443 
  3348      6C6F636B 
  3348      5F53746F 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\ccljomDt.s 			page 92
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cc7BVGvL.s 			page 92
 
 
  3349              	.LASF24:
- 3350 05b2 656E6162 		.ascii	"enableInterrupts\000"
+ 3350 059f 656E6162 		.ascii	"enableInterrupts\000"
  3350      6C65496E 
  3350      74657272 
  3350      75707473 
  3350      00
  3351              	.LASF34:
- 3352 05c3 73746174 		.ascii	"status\000"
+ 3352 05b0 73746174 		.ascii	"status\000"
  3352      757300
  3353              	.LASF72:
- 3354 05ca 55415254 		.ascii	"UART_BT_errorStatus\000"
+ 3354 05b7 55415254 		.ascii	"UART_BT_errorStatus\000"
  3354      5F42545F 
  3354      6572726F 
  3354      72537461 
  3354      74757300 
  3355              	.LASF42:
- 3356 05de 55415254 		.ascii	"UART_BT_SetRxAddressMode\000"
+ 3356 05cb 55415254 		.ascii	"UART_BT_SetRxAddressMode\000"
  3356      5F42545F 
  3356      53657452 
  3356      78416464 
  3356      72657373 
  3357              	.LASF44:
- 3358 05f7 55415254 		.ascii	"UART_BT_SetRxAddress1\000"
+ 3358 05e4 55415254 		.ascii	"UART_BT_SetRxAddress1\000"
  3358      5F42545F 
  3358      53657452 
  3358      78416464 
  3358      72657373 
  3359              	.LASF48:
- 3360 060d 55415254 		.ascii	"UART_BT_WriteTxData\000"
+ 3360 05fa 55415254 		.ascii	"UART_BT_WriteTxData\000"
  3360      5F42545F 
  3360      57726974 
  3360      65547844 

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 2
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 2
 
 
   33              		.cfi_def_cfa_offset 8
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
   77              	.L6:
   78 0008 00000000 		.word	.LANCHOR0
   79              		.cfi_endproc
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 3
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 3
 
 
   80              	.LFE65:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
   55:distanceSensor.c **** {
  115              		.loc 1 55 0
  116              		.cfi_startproc
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 4
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 4
 
 
  117              		@ args = 0, pretend = 0, frame = 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  163              	ISR_timer_DS_tc_handler:
  164              	.LFB67:
   43:distanceSensor.c ****     isr_timer_DS_ClearPending(); // Clear the interrupt flag
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 5
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 5
 
 
  165              		.loc 1 43 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
   89:distanceSensor.c **** void init_DS_hardware(void)
   90:distanceSensor.c ****     /* Enable global interrupts. */{
  192              		.loc 1 90 0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 6
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 6
 
 
  193              		.cfi_startproc
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  104:distanceSensor.c ****     // Timer_DS_Start(); // Start the timer UNCOMMENT THIS WHEN THE PERIODIC DISTANCE CHECK SHOULD 
  105:distanceSensor.c ****     isr_timer_DS_ClearPending(), // Clear any pending interrupts
  234              		.loc 1 105 0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 7
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 7
 
 
  235 002a FFF7FEFF 		bl	isr_timer_DS_ClearPending
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  275              	.LVL18:
  120:distanceSensor.c ****     CyDelayUs(10);
  276              		.loc 1 120 0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 8
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 8
 
 
  277 0008 0A20     		movs	r0, #10
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  132:distanceSensor.c ****     //char debugStr[50];
  133:distanceSensor.c ****     //sprintf(debugStr, "Counter value: %u\r\n", Counter_ReadCounter());
  134:distanceSensor.c ****     //UART_PC_PutString(debugStr);
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 9
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 9
 
 
  135:distanceSensor.c **** }
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  350 0016 5B68     		ldr	r3, [r3, #4]
  351 0018 13B9     		cbnz	r3, .L27
  153:distanceSensor.c ****     {
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 10
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 10
 
 
  352              		.loc 1 153 0 is_stmt 0 discriminator 1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  390 0050 66666666 		.word	1717986918
  391 0054 66767540 		.word	1081439846
  392 0058 00000000 		.word	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 11
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 11
 
 
  393 005c 004C0D41 		.word	1091390464
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  430 0012 D3E90023 		ldrd	r2, [r3]
  431 0016 FFF7FEFF 		bl	__aeabi_ddiv
  432              	.LVL43:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 12
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 12
 
 
  433 001a 0646     		mov	r6, r0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  484              		.thumb_func
  485              		.type	splash, %function
  486              	splash:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 13
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 13
 
 
  487              	.LFB74:
@@ -778,19 +778,19 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  527 002d 000000   		.space	3
  528              	.LC2:
  529 0030 25642E25 		.ascii	"%d.%02dcm\015\012\000"
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 14
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 14
 
 
  529      30326463 
  529      6D0D0A00 
  530              	.LC3:
- 531 003c 31373A33 		.ascii	"17:32:39\000"
- 531      323A3339 
+ 531 003c 31303A33 		.ascii	"10:37:23\000"
+ 531      373A3233 
  531      00
  532 0045 000000   		.space	3
  533              	.LC4:
- 534 0048 4D617920 		.ascii	"May  8 2025\000"
- 534      20382032 
+ 534 0048 4D617920 		.ascii	"May  9 2025\000"
+ 534      20392032 
  534      30323500 
  535              	.LC5:
  536 0054 48432D53 		.ascii	"HC-SR04 Test CY8CKIT-059 (%s %s)\015\012\000"
@@ -820,8 +820,8 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  556 000c 00000000 		.space	4
  557              		.text
  558              	.Letext0:
- 559              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 560              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 559              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 560              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
  561              		.file 4 "Generated_Source\\PSoC5/isr_echo_int.h"
  562              		.file 5 "Generated_Source\\PSoC5/Counter.h"
  563              		.file 6 "Generated_Source\\PSoC5/isr_timer_DS.h"
@@ -831,19 +831,19 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  567              		.file 10 "Generated_Source\\PSoC5/Clock_5kHz.h"
  568              		.file 11 "Generated_Source\\PSoC5/Counter_Reset.h"
  569              		.file 12 "Generated_Source\\PSoC5/CyLib.h"
- 570              		.file 13 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4
+ 570              		.file 13 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4
  571              		.file 14 "Generated_Source\\PSoC5/core_cm3.h"
  572              		.section	.debug_info,"",%progbits
  573              	.Ldebug_info0:
  574 0000 48050000 		.4byte	0x548
  575 0004 0400     		.2byte	0x4
  576 0006 00000000 		.4byte	.Ldebug_abbrev0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 15
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 15
 
 
  577 000a 04       		.byte	0x4
  578 000b 01       		.uleb128 0x1
- 579 000c 3A010000 		.4byte	.LASF56
+ 579 000c 27010000 		.4byte	.LASF56
  580 0010 0C       		.byte	0xc
  581 0011 0F000000 		.4byte	.LASF57
  582 0015 86000000 		.4byte	.LASF58
@@ -853,24 +853,24 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  586 0025 02       		.uleb128 0x2
  587 0026 01       		.byte	0x1
  588 0027 06       		.byte	0x6
- 589 0028 20010000 		.4byte	.LASF0
+ 589 0028 0D010000 		.4byte	.LASF0
  590 002c 02       		.uleb128 0x2
  591 002d 01       		.byte	0x1
  592 002e 08       		.byte	0x8
- 593 002f 2C010000 		.4byte	.LASF1
+ 593 002f 19010000 		.4byte	.LASF1
  594 0033 02       		.uleb128 0x2
  595 0034 02       		.byte	0x2
  596 0035 05       		.byte	0x5
- 597 0036 65030000 		.4byte	.LASF2
+ 597 0036 50030000 		.4byte	.LASF2
  598 003a 03       		.uleb128 0x3
- 599 003b 5E020000 		.4byte	.LASF4
+ 599 003b 5D020000 		.4byte	.LASF4
  600 003f 02       		.byte	0x2
  601 0040 2B       		.byte	0x2b
  602 0041 45000000 		.4byte	0x45
  603 0045 02       		.uleb128 0x2
  604 0046 02       		.byte	0x2
  605 0047 07       		.byte	0x7
- 606 0048 00020000 		.4byte	.LASF3
+ 606 0048 FF010000 		.4byte	.LASF3
  607 004c 03       		.uleb128 0x3
  608 004d 4E000000 		.4byte	.LASF5
  609 0051 02       		.byte	0x2
@@ -879,26 +879,26 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  612 0057 02       		.uleb128 0x2
  613 0058 04       		.byte	0x4
  614 0059 05       		.byte	0x5
- 615 005a A7030000 		.4byte	.LASF6
+ 615 005a 92030000 		.4byte	.LASF6
  616 005e 03       		.uleb128 0x3
- 617 005f 70020000 		.4byte	.LASF7
+ 617 005f 6F020000 		.4byte	.LASF7
  618 0063 02       		.byte	0x2
  619 0064 41       		.byte	0x41
  620 0065 69000000 		.4byte	0x69
  621 0069 02       		.uleb128 0x2
  622 006a 04       		.byte	0x4
  623 006b 07       		.byte	0x7
- 624 006c D9010000 		.4byte	.LASF8
+ 624 006c D8010000 		.4byte	.LASF8
  625 0070 02       		.uleb128 0x2
  626 0071 08       		.byte	0x8
  627 0072 05       		.byte	0x5
- 628 0073 1A030000 		.4byte	.LASF9
+ 628 0073 19030000 		.4byte	.LASF9
  629 0077 02       		.uleb128 0x2
  630 0078 08       		.byte	0x8
  631 0079 07       		.byte	0x7
- 632 007a BD020000 		.4byte	.LASF10
+ 632 007a BC020000 		.4byte	.LASF10
  633 007e 04       		.uleb128 0x4
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 16
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 16
 
 
  634 007f 04       		.byte	0x4
@@ -907,42 +907,42 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  637 0085 02       		.uleb128 0x2
  638 0086 04       		.byte	0x4
  639 0087 07       		.byte	0x7
- 640 0088 B0020000 		.4byte	.LASF11
+ 640 0088 AF020000 		.4byte	.LASF11
  641 008c 03       		.uleb128 0x3
- 642 008d 8E030000 		.4byte	.LASF12
+ 642 008d 79030000 		.4byte	.LASF12
  643 0091 03       		.byte	0x3
  644 0092 24       		.byte	0x24
  645 0093 3A000000 		.4byte	0x3a
  646 0097 03       		.uleb128 0x3
- 647 0098 09030000 		.4byte	.LASF13
+ 647 0098 08030000 		.4byte	.LASF13
  648 009c 03       		.byte	0x3
  649 009d 2C       		.byte	0x2c
  650 009e 4C000000 		.4byte	0x4c
  651 00a2 03       		.uleb128 0x3
- 652 00a3 9E030000 		.4byte	.LASF14
+ 652 00a3 89030000 		.4byte	.LASF14
  653 00a7 03       		.byte	0x3
  654 00a8 30       		.byte	0x30
  655 00a9 5E000000 		.4byte	0x5e
  656 00ad 02       		.uleb128 0x2
  657 00ae 04       		.byte	0x4
  658 00af 04       		.byte	0x4
- 659 00b0 1A010000 		.4byte	.LASF15
+ 659 00b0 07010000 		.4byte	.LASF15
  660 00b4 02       		.uleb128 0x2
  661 00b5 08       		.byte	0x8
  662 00b6 04       		.byte	0x4
- 663 00b7 69020000 		.4byte	.LASF16
+ 663 00b7 68020000 		.4byte	.LASF16
  664 00bb 02       		.uleb128 0x2
  665 00bc 01       		.byte	0x1
  666 00bd 08       		.byte	0x8
- 667 00be 32030000 		.4byte	.LASF17
+ 667 00be 31030000 		.4byte	.LASF17
  668 00c2 02       		.uleb128 0x2
  669 00c3 08       		.byte	0x8
  670 00c4 04       		.byte	0x4
- 671 00c5 BD030000 		.4byte	.LASF18
+ 671 00c5 A8030000 		.4byte	.LASF18
  672 00c9 02       		.uleb128 0x2
  673 00ca 04       		.byte	0x4
  674 00cb 07       		.byte	0x7
- 675 00cc 11030000 		.4byte	.LASF19
+ 675 00cc 10030000 		.4byte	.LASF19
  676 00d0 05       		.uleb128 0x5
  677 00d1 8C000000 		.4byte	0x8c
  678 00d5 06       		.uleb128 0x6
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  688 00eb 06000000 		.4byte	.LVL0
  689 00ef 85040000 		.4byte	0x485
  690 00f3 07       		.uleb128 0x7
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 17
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 17
 
 
  691 00f4 0A000000 		.4byte	.LVL1
@@ -968,7 +968,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  695 0101 9B040000 		.4byte	0x49b
  696 0105 00       		.byte	0
  697 0106 08       		.uleb128 0x8
- 698 0107 A3020000 		.4byte	.LASF22
+ 698 0107 A2020000 		.4byte	.LASF22
  699 010b 01       		.byte	0x1
  700 010c 20       		.byte	0x20
  701 010d 7E000000 		.4byte	0x7e
@@ -977,7 +977,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  704 0119 01       		.uleb128 0x1
  705 011a 9C       		.byte	0x9c
  706 011b 06       		.uleb128 0x6
- 707 011c B0030000 		.4byte	.LASF21
+ 707 011c 9B030000 		.4byte	.LASF21
  708 0120 01       		.byte	0x1
  709 0121 25       		.byte	0x25
  710 0122 00000000 		.4byte	.LFB66
@@ -994,7 +994,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  721 013c 50       		.byte	0x50
  722 013d 00       		.byte	0
  723 013e 08       		.uleb128 0x8
- 724 013f C9030000 		.4byte	.LASF23
+ 724 013f B4030000 		.4byte	.LASF23
  725 0143 01       		.byte	0x1
  726 0144 36       		.byte	0x36
  727 0145 7E000000 		.4byte	0x7e
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  745 016f 7E000000 		.4byte	0x7e
  746 0173 01       		.uleb128 0x1
  747 0174 50       		.byte	0x50
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 18
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 18
 
 
  748 0175 00       		.byte	0
@@ -1045,7 +1045,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  769 01a2 00       		.byte	0
  770 01a3 00       		.byte	0
  771 01a4 06       		.uleb128 0x6
- 772 01a5 C8010000 		.4byte	.LASF27
+ 772 01a5 B5010000 		.4byte	.LASF27
  773 01a9 01       		.byte	0x1
  774 01aa 59       		.byte	0x59
  775 01ab 00000000 		.4byte	.LFB70
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  802 01ed 50       		.byte	0x50
  803 01ee 05       		.uleb128 0x5
  804 01ef 03       		.byte	0x3
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 19
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 19
 
 
  805 01f0 00000000 		.4byte	ISR_DS_echo
@@ -1129,7 +1129,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  850 0259 00       		.byte	0
  851 025a 00       		.byte	0
  852 025b 06       		.uleb128 0x6
- 853 025c D4020000 		.4byte	.LASF28
+ 853 025c D3020000 		.4byte	.LASF28
  854 0260 01       		.byte	0x1
  855 0261 75       		.byte	0x75
  856 0262 00000000 		.4byte	.LFB71
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  859 026b 9C       		.byte	0x9c
  860 026c FE020000 		.4byte	0x2fe
  861 0270 0C       		.uleb128 0xc
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 20
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 20
 
 
  862 0271 08000000 		.4byte	.LVL18
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  916 02e0 00       		.byte	0
  917 02e1 0C       		.uleb128 0xc
  918 02e2 2E000000 		.4byte	.LVL25
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 21
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 21
 
 
  919 02e6 B1040000 		.4byte	0x4b1
@@ -1214,7 +1214,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  929 02f9 2A050000 		.4byte	0x52a
  930 02fd 00       		.byte	0
  931 02fe 0D       		.uleb128 0xd
- 932 02ff D9000000 		.4byte	.LASF59
+ 932 02ff C6000000 		.4byte	.LASF59
  933 0303 01       		.byte	0x1
  934 0304 90       		.byte	0x90
  935 0305 B4000000 		.4byte	0xb4
@@ -1224,13 +1224,13 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  939 0312 9C       		.byte	0x9c
  940 0313 4E030000 		.4byte	0x34e
  941 0317 0E       		.uleb128 0xe
- 942 0318 7B020000 		.4byte	.LASF29
+ 942 0318 7A020000 		.4byte	.LASF29
  943 031c 01       		.byte	0x1
  944 031d 92       		.byte	0x92
  945 031e 8C000000 		.4byte	0x8c
  946 0322 00000000 		.4byte	.LLST0
  947 0326 0E       		.uleb128 0xe
- 948 0327 11010000 		.4byte	.LASF30
+ 948 0327 FE000000 		.4byte	.LASF30
  949 032b 01       		.byte	0x1
  950 032c 93       		.byte	0x93
  951 032d B4000000 		.4byte	0xb4
@@ -1249,7 +1249,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  964 034c 00       		.byte	0
  965 034d 00       		.byte	0
  966 034e 0F       		.uleb128 0xf
- 967 034f 52020000 		.4byte	.LASF31
+ 967 034f 51020000 		.4byte	.LASF31
  968 0353 01       		.byte	0x1
  969 0354 B8       		.byte	0xb8
  970 0355 00000000 		.4byte	.LFB73
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  973 035e 9C       		.byte	0x9c
  974 035f B5030000 		.4byte	0x3b5
  975 0363 10       		.uleb128 0x10
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 22
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 22
 
 
  976 0364 58000000 		.4byte	.LASF32
@@ -1267,7 +1267,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  979 036a A2000000 		.4byte	0xa2
  980 036e 7A000000 		.4byte	.LLST2
  981 0372 0E       		.uleb128 0xe
- 982 0373 11010000 		.4byte	.LASF30
+ 982 0373 FE000000 		.4byte	.LASF30
  983 0377 01       		.byte	0x1
  984 0378 BA       		.byte	0xba
  985 0379 B4000000 		.4byte	0xb4
@@ -1307,7 +1307,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1019 03b3 00       		.byte	0
  1020 03b4 00       		.byte	0
  1021 03b5 06       		.uleb128 0x6
- 1022 03b6 97030000 		.4byte	.LASF33
+ 1022 03b6 82030000 		.4byte	.LASF33
  1023 03ba 01       		.byte	0x1
  1024 03bb C1       		.byte	0xc1
  1025 03bc 00000000 		.4byte	.LFB74
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1030 03ca 0C       		.uleb128 0xc
  1031 03cb 10000000 		.4byte	.LVL51
  1032 03cf 40050000 		.4byte	0x540
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 23
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 23
 
 
  1033 03d3 F9030000 		.4byte	0x3f9
@@ -1367,7 +1367,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1076 0416 03       		.byte	0x3
  1077 0417 00000000 		.4byte	duration
  1078 041b 11       		.uleb128 0x11
- 1079 041c E2020000 		.4byte	.LASF34
+ 1079 041c E1020000 		.4byte	.LASF34
  1080 0420 01       		.byte	0x1
  1081 0421 11       		.byte	0x11
  1082 0422 2C040000 		.4byte	0x42c
@@ -1377,8 +1377,8 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1086 042c 05       		.uleb128 0x5
  1087 042d 7E000000 		.4byte	0x7e
  1088 0431 11       		.uleb128 0x11
- 1089 0432 13020000 		.4byte	.LASF35
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 24
+ 1089 0432 12020000 		.4byte	.LASF35
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 24
 
 
  1090 0436 01       		.byte	0x1
@@ -1388,7 +1388,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1094 043d 03       		.byte	0x3
  1095 043e 0C000000 		.4byte	timerFlag
  1096 0442 11       		.uleb128 0x11
- 1097 0443 E9030000 		.4byte	.LASF36
+ 1097 0443 D6030000 		.4byte	.LASF36
  1098 0447 01       		.byte	0x1
  1099 0448 13       		.byte	0x13
  1100 0449 7E000000 		.4byte	0x7e
@@ -1396,7 +1396,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1102 044e 03       		.byte	0x3
  1103 044f 08000000 		.4byte	obstruct
  1104 0453 12       		.uleb128 0x12
- 1105 0454 31020000 		.4byte	.LASF37
+ 1105 0454 30020000 		.4byte	.LASF37
  1106 0458 0E       		.byte	0xe
  1107 0459 1207     		.2byte	0x712
  1108 045b 5F040000 		.4byte	0x45f
@@ -1418,27 +1418,27 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1124 0480 03       		.byte	0x3
  1125 0481 00000000 		.4byte	str
  1126 0485 16       		.uleb128 0x16
- 1127 0486 89020000 		.4byte	.LASF38
- 1128 048a 89020000 		.4byte	.LASF38
+ 1127 0486 88020000 		.4byte	.LASF38
+ 1128 048a 88020000 		.4byte	.LASF38
  1129 048e 04       		.byte	0x4
  1130 048f 28       		.byte	0x28
  1131 0490 16       		.uleb128 0x16
- 1132 0491 F4020000 		.4byte	.LASF39
- 1133 0495 F4020000 		.4byte	.LASF39
+ 1132 0491 F3020000 		.4byte	.LASF39
+ 1133 0495 F3020000 		.4byte	.LASF39
  1134 0499 04       		.byte	0x4
  1135 049a 25       		.byte	0x25
  1136 049b 16       		.uleb128 0x16
- 1137 049c 1D020000 		.4byte	.LASF40
- 1138 04a0 1D020000 		.4byte	.LASF40
+ 1137 049c 1C020000 		.4byte	.LASF40
+ 1138 04a0 1C020000 		.4byte	.LASF40
  1139 04a4 05       		.byte	0x5
  1140 04a5 5D       		.byte	0x5d
  1141 04a6 16       		.uleb128 0x16
- 1142 04a7 4B030000 		.4byte	.LASF41
- 1143 04ab 4B030000 		.4byte	.LASF41
+ 1142 04a7 36030000 		.4byte	.LASF41
+ 1143 04ab 36030000 		.4byte	.LASF41
  1144 04af 06       		.byte	0x6
  1145 04b0 28       		.byte	0x28
  1146 04b1 16       		.uleb128 0x16
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 25
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 25
 
 
  1147 04b2 2C000000 		.4byte	.LASF42
@@ -1446,13 +1446,13 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1149 04ba 07       		.byte	0x7
  1150 04bb 26       		.byte	0x26
  1151 04bc 16       		.uleb128 0x16
- 1152 04bd D7030000 		.4byte	.LASF43
- 1153 04c1 D7030000 		.4byte	.LASF43
+ 1152 04bd C6010000 		.4byte	.LASF43
+ 1153 04c1 C6010000 		.4byte	.LASF43
  1154 04c5 08       		.byte	0x8
  1155 04c6 27       		.byte	0x27
  1156 04c7 16       		.uleb128 0x16
- 1157 04c8 EB010000 		.4byte	.LASF44
- 1158 04cc EB010000 		.4byte	.LASF44
+ 1157 04c8 EA010000 		.4byte	.LASF44
+ 1158 04cc EA010000 		.4byte	.LASF44
  1159 04d0 04       		.byte	0x4
  1160 04d1 18       		.byte	0x18
  1161 04d2 16       		.uleb128 0x16
@@ -1461,56 +1461,56 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1164 04db 05       		.byte	0x5
  1165 04dc 70       		.byte	0x70
  1166 04dd 16       		.uleb128 0x16
- 1167 04de 6F030000 		.4byte	.LASF46
- 1168 04e2 6F030000 		.4byte	.LASF46
+ 1167 04de 5A030000 		.4byte	.LASF46
+ 1168 04e2 5A030000 		.4byte	.LASF46
  1169 04e6 05       		.byte	0x5
  1170 04e7 4F       		.byte	0x4f
  1171 04e8 16       		.uleb128 0x16
- 1172 04e9 FF000000 		.4byte	.LASF47
- 1173 04ed FF000000 		.4byte	.LASF47
+ 1172 04e9 EC000000 		.4byte	.LASF47
+ 1173 04ed EC000000 		.4byte	.LASF47
  1174 04f1 09       		.byte	0x9
  1175 04f2 8B       		.byte	0x8b
  1176 04f3 16       		.uleb128 0x16
- 1177 04f4 7D030000 		.4byte	.LASF48
- 1178 04f8 7D030000 		.4byte	.LASF48
+ 1177 04f4 68030000 		.4byte	.LASF48
+ 1178 04f8 68030000 		.4byte	.LASF48
  1179 04fc 0A       		.byte	0xa
  1180 04fd 27       		.byte	0x27
  1181 04fe 16       		.uleb128 0x16
- 1182 04ff EA000000 		.4byte	.LASF49
- 1183 0503 EA000000 		.4byte	.LASF49
+ 1182 04ff D7000000 		.4byte	.LASF49
+ 1183 0503 D7000000 		.4byte	.LASF49
  1184 0507 06       		.byte	0x6
  1185 0508 18       		.byte	0x18
  1186 0509 16       		.uleb128 0x16
- 1187 050a 37030000 		.4byte	.LASF50
- 1188 050e 37030000 		.4byte	.LASF50
+ 1187 050a C2030000 		.4byte	.LASF50
+ 1188 050e C2030000 		.4byte	.LASF50
  1189 0512 0B       		.byte	0xb
  1190 0513 2F       		.byte	0x2f
  1191 0514 16       		.uleb128 0x16
- 1192 0515 28030000 		.4byte	.LASF51
- 1193 0519 28030000 		.4byte	.LASF51
+ 1192 0515 27030000 		.4byte	.LASF51
+ 1193 0519 27030000 		.4byte	.LASF51
  1194 051d 0C       		.byte	0xc
  1195 051e 77       		.byte	0x77
  1196 051f 16       		.uleb128 0x16
- 1197 0520 3E020000 		.4byte	.LASF52
- 1198 0524 3E020000 		.4byte	.LASF52
+ 1197 0520 3D020000 		.4byte	.LASF52
+ 1198 0524 3D020000 		.4byte	.LASF52
  1199 0528 04       		.byte	0x4
  1200 0529 23       		.byte	0x23
  1201 052a 16       		.uleb128 0x16
  1202 052b 00000000 		.4byte	.LASF53
  1203 052f 00000000 		.4byte	.LASF53
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 26
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 26
 
 
  1204 0533 05       		.byte	0x5
  1205 0534 71       		.byte	0x71
  1206 0535 16       		.uleb128 0x16
- 1207 0536 F2030000 		.4byte	.LASF54
- 1208 053a F2030000 		.4byte	.LASF54
+ 1207 0536 DF030000 		.4byte	.LASF54
+ 1208 053a DF030000 		.4byte	.LASF54
  1209 053e 0C       		.byte	0xc
  1210 053f 76       		.byte	0x76
  1211 0540 16       		.uleb128 0x16
- 1212 0541 EC020000 		.4byte	.LASF55
- 1213 0545 EC020000 		.4byte	.LASF55
+ 1212 0541 EB020000 		.4byte	.LASF55
+ 1213 0545 EB020000 		.4byte	.LASF55
  1214 0549 0D       		.byte	0xd
  1215 054a E7       		.byte	0xe7
  1216 054b 00       		.byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1258 0027 49       		.uleb128 0x49
  1259 0028 13       		.uleb128 0x13
  1260 0029 00       		.byte	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 27
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 27
 
 
  1261 002a 00       		.byte	0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1315 0063 2E       		.uleb128 0x2e
  1316 0064 00       		.byte	0
  1317 0065 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 28
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 28
 
 
  1318 0066 19       		.uleb128 0x19
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1372 00a2 0C       		.uleb128 0xc
  1373 00a3 898201   		.uleb128 0x4109
  1374 00a6 01       		.byte	0x1
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 29
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 29
 
 
  1375 00a7 11       		.uleb128 0x11
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1429 00de 19       		.uleb128 0x19
  1430 00df 03       		.uleb128 0x3
  1431 00e0 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 30
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 30
 
 
  1432 00e1 3A       		.uleb128 0x3a
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1486 0118 0B       		.uleb128 0xb
  1487 0119 3B       		.uleb128 0x3b
  1488 011a 05       		.uleb128 0x5
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 31
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 31
 
 
  1489 011b 49       		.uleb128 0x49
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1543 0151 3A       		.uleb128 0x3a
  1544 0152 0B       		.uleb128 0xb
  1545 0153 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 32
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 32
 
 
  1546 0154 0B       		.uleb128 0xb
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1600 0071 04       		.uleb128 0x4
  1601 0072 00000000 		.4byte	0
  1602 0076 00000000 		.4byte	0
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 33
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 33
 
 
  1603              	.LLST2:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1657 0044 4C000000 		.4byte	.LFE70-.LFB70
  1658 0048 00000000 		.4byte	.LFB71
  1659 004c 34000000 		.4byte	.LFE71-.LFB71
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 34
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 34
 
 
  1660 0050 00000000 		.4byte	.LFB72
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1702      44535F65 
  1702      63686F00 
  1703              	.LASF42:
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 35
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 35
 
 
  1704 002c 54726967 		.ascii	"Trigger_Write\000"
@@ -2073,272 +2073,272 @@ ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 1
  1716      5F74635F 
  1716      68616E64 
  1717              	.LASF58:
- 1718 0086 433A5C55 		.ascii	"C:\\Users\\Totos\\Desktop\\elektronik_ingenioer\\PR"
+ 1718 0086 433A5C55 		.ascii	"C:\\Users\\peter\\Documents\\GitHub\\PRJ3\\BattleBo"
  1718      73657273 
- 1718      5C546F74 
- 1718      6F735C44 
- 1718      65736B74 
- 1719 00b4 4A335C47 		.ascii	"J3\\Github\\BattleBot\\Motor_Test.cydsn\000"
- 1719      69746875 
- 1719      625C4261 
- 1719      74746C65 
- 1719      426F745C 
+ 1718      5C706574 
+ 1718      65725C44 
+ 1718      6F63756D 
+ 1719 00b3 745C4D6F 		.ascii	"t\\Motor_Test.cydsn\000"
+ 1719      746F725F 
+ 1719      54657374 
+ 1719      2E637964 
+ 1719      736E00
  1720              	.LASF59:
- 1721 00d9 6D656173 		.ascii	"measure_distance\000"
+ 1721 00c6 6D656173 		.ascii	"measure_distance\000"
  1721      7572655F 
  1721      64697374 
  1721      616E6365 
  1721      00
  1722              	.LASF49:
- 1723 00ea 6973725F 		.ascii	"isr_timer_DS_StartEx\000"
+ 1723 00d7 6973725F 		.ascii	"isr_timer_DS_StartEx\000"
  1723      74696D65 
  1723      725F4453 
  1723      5F537461 
  1723      72744578 
  1724              	.LASF47:
- 1725 00ff 55415254 		.ascii	"UART_PC_PutString\000"
+ 1725 00ec 55415254 		.ascii	"UART_PC_PutString\000"
  1725      5F50435F 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 36
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 36
 
 
  1725      50757453 
  1725      7472696E 
  1725      6700
  1726              	.LASF30:
- 1727 0111 64697374 		.ascii	"distance\000"
+ 1727 00fe 64697374 		.ascii	"distance\000"
  1727      616E6365 
  1727      00
  1728              	.LASF15:
- 1729 011a 666C6F61 		.ascii	"float\000"
+ 1729 0107 666C6F61 		.ascii	"float\000"
  1729      7400
  1730              	.LASF0:
- 1731 0120 7369676E 		.ascii	"signed char\000"
+ 1731 010d 7369676E 		.ascii	"signed char\000"
  1731      65642063 
  1731      68617200 
  1732              	.LASF1:
- 1733 012c 756E7369 		.ascii	"unsigned char\000"
+ 1733 0119 756E7369 		.ascii	"unsigned char\000"
  1733      676E6564 
  1733      20636861 
  1733      7200
  1734              	.LASF56:
- 1735 013a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1735 0127 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  1735      43313120 
  1735      352E342E 
  1735      31203230 
  1735      31363036 
- 1736 016d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1736 015a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  1736      20726576 
  1736      6973696F 
  1736      6E203233 
  1736      37373135 
- 1737 01a0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1737 018d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  1737      66756E63 
  1737      74696F6E 
  1737      2D736563 
  1737      74696F6E 
  1738              	.LASF27:
- 1739 01c8 696E6974 		.ascii	"init_DS_hardware\000"
+ 1739 01b5 696E6974 		.ascii	"init_DS_hardware\000"
  1739      5F44535F 
  1739      68617264 
  1739      77617265 
  1739      00
- 1740              	.LASF8:
- 1741 01d9 6C6F6E67 		.ascii	"long unsigned int\000"
- 1741      20756E73 
- 1741      69676E65 
- 1741      6420696E 
+ 1740              	.LASF43:
+ 1741 01c6 436C6F63 		.ascii	"Clock_24MHz_Start\000"
+ 1741      6B5F3234 
+ 1741      4D487A5F 
+ 1741      53746172 
  1741      7400
- 1742              	.LASF44:
- 1743 01eb 6973725F 		.ascii	"isr_echo_int_StartEx\000"
- 1743      6563686F 
- 1743      5F696E74 
- 1743      5F537461 
- 1743      72744578 
- 1744              	.LASF3:
- 1745 0200 73686F72 		.ascii	"short unsigned int\000"
- 1745      7420756E 
- 1745      7369676E 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 37
+ 1742              	.LASF8:
+ 1743 01d8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1743      20756E73 
+ 1743      69676E65 
+ 1743      6420696E 
+ 1743      7400
+ 1744              	.LASF44:
+ 1745 01ea 6973725F 		.ascii	"isr_echo_int_StartEx\000"
+ 1745      6563686F 
+ 1745      5F696E74 
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 37
 
 
- 1745      65642069 
- 1745      6E7400
- 1746              	.LASF35:
- 1747 0213 74696D65 		.ascii	"timerFlag\000"
- 1747      72466C61 
- 1747      6700
- 1748              	.LASF40:
- 1749 021d 436F756E 		.ascii	"Counter_ReadCounter\000"
- 1749      7465725F 
- 1749      52656164 
- 1749      436F756E 
- 1749      74657200 
- 1750              	.LASF37:
- 1751 0231 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1751      52784275 
- 1751      66666572 
- 1751      00
- 1752              	.LASF52:
- 1753 023e 6973725F 		.ascii	"isr_echo_int_Enable\000"
- 1753      6563686F 
- 1753      5F696E74 
- 1753      5F456E61 
- 1753      626C6500 
- 1754              	.LASF31:
- 1755 0252 7072696E 		.ascii	"print_value\000"
- 1755      745F7661 
- 1755      6C756500 
- 1756              	.LASF4:
- 1757 025e 5F5F7569 		.ascii	"__uint16_t\000"
- 1757      6E743136 
- 1757      5F7400
- 1758              	.LASF16:
- 1759 0269 646F7562 		.ascii	"double\000"
- 1759      6C6500
- 1760              	.LASF7:
- 1761 0270 5F5F7569 		.ascii	"__uint32_t\000"
- 1761      6E743332 
- 1761      5F7400
- 1762              	.LASF29:
- 1763 027b 74696D65 		.ascii	"timeout_count\000"
- 1763      6F75745F 
- 1763      636F756E 
- 1763      7400
- 1764              	.LASF38:
- 1765 0289 6973725F 		.ascii	"isr_echo_int_ClearPending\000"
- 1765      6563686F 
- 1765      5F696E74 
- 1765      5F436C65 
- 1765      61725065 
- 1766              	.LASF22:
- 1767 02a3 6765745F 		.ascii	"get_obstruct\000"
- 1767      6F627374 
- 1767      72756374 
- 1767      00
- 1768              	.LASF11:
- 1769 02b0 756E7369 		.ascii	"unsigned int\000"
- 1769      676E6564 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 38
+ 1745      5F537461 
+ 1745      72744578 
+ 1746              	.LASF3:
+ 1747 01ff 73686F72 		.ascii	"short unsigned int\000"
+ 1747      7420756E 
+ 1747      7369676E 
+ 1747      65642069 
+ 1747      6E7400
+ 1748              	.LASF35:
+ 1749 0212 74696D65 		.ascii	"timerFlag\000"
+ 1749      72466C61 
+ 1749      6700
+ 1750              	.LASF40:
+ 1751 021c 436F756E 		.ascii	"Counter_ReadCounter\000"
+ 1751      7465725F 
+ 1751      52656164 
+ 1751      436F756E 
+ 1751      74657200 
+ 1752              	.LASF37:
+ 1753 0230 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1753      52784275 
+ 1753      66666572 
+ 1753      00
+ 1754              	.LASF52:
+ 1755 023d 6973725F 		.ascii	"isr_echo_int_Enable\000"
+ 1755      6563686F 
+ 1755      5F696E74 
+ 1755      5F456E61 
+ 1755      626C6500 
+ 1756              	.LASF31:
+ 1757 0251 7072696E 		.ascii	"print_value\000"
+ 1757      745F7661 
+ 1757      6C756500 
+ 1758              	.LASF4:
+ 1759 025d 5F5F7569 		.ascii	"__uint16_t\000"
+ 1759      6E743136 
+ 1759      5F7400
+ 1760              	.LASF16:
+ 1761 0268 646F7562 		.ascii	"double\000"
+ 1761      6C6500
+ 1762              	.LASF7:
+ 1763 026f 5F5F7569 		.ascii	"__uint32_t\000"
+ 1763      6E743332 
+ 1763      5F7400
+ 1764              	.LASF29:
+ 1765 027a 74696D65 		.ascii	"timeout_count\000"
+ 1765      6F75745F 
+ 1765      636F756E 
+ 1765      7400
+ 1766              	.LASF38:
+ 1767 0288 6973725F 		.ascii	"isr_echo_int_ClearPending\000"
+ 1767      6563686F 
+ 1767      5F696E74 
+ 1767      5F436C65 
+ 1767      61725065 
+ 1768              	.LASF22:
+ 1769 02a2 6765745F 		.ascii	"get_obstruct\000"
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 38
 
 
- 1769      20696E74 
+ 1769      6F627374 
+ 1769      72756374 
  1769      00
- 1770              	.LASF10:
- 1771 02bd 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1771      206C6F6E 
- 1771      6720756E 
- 1771      7369676E 
- 1771      65642069 
- 1772              	.LASF28:
- 1773 02d4 70756C73 		.ascii	"pulse_trigger\000"
- 1773      655F7472 
- 1773      69676765 
- 1773      7200
- 1774              	.LASF34:
- 1775 02e2 6563686F 		.ascii	"echo_flag\000"
- 1775      5F666C61 
- 1775      6700
- 1776              	.LASF55:
- 1777 02ec 73707269 		.ascii	"sprintf\000"
- 1777      6E746600 
- 1778              	.LASF39:
- 1779 02f4 6973725F 		.ascii	"isr_echo_int_Disable\000"
- 1779      6563686F 
- 1779      5F696E74 
- 1779      5F446973 
- 1779      61626C65 
- 1780              	.LASF13:
- 1781 0309 696E7433 		.ascii	"int32_t\000"
- 1781      325F7400 
- 1782              	.LASF19:
- 1783 0311 73697A65 		.ascii	"sizetype\000"
- 1783      74797065 
- 1783      00
- 1784              	.LASF9:
- 1785 031a 6C6F6E67 		.ascii	"long long int\000"
- 1785      206C6F6E 
- 1785      6720696E 
- 1785      7400
- 1786              	.LASF51:
- 1787 0328 43794465 		.ascii	"CyDelayUs\000"
- 1787      6C617955 
- 1787      7300
- 1788              	.LASF17:
- 1789 0332 63686172 		.ascii	"char\000"
- 1789      00
- 1790              	.LASF50:
- 1791 0337 436F756E 		.ascii	"Counter_Reset_Write\000"
- 1791      7465725F 
- 1791      52657365 
- 1791      745F5772 
- 1791      69746500 
+ 1770              	.LASF11:
+ 1771 02af 756E7369 		.ascii	"unsigned int\000"
+ 1771      676E6564 
+ 1771      20696E74 
+ 1771      00
+ 1772              	.LASF10:
+ 1773 02bc 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1773      206C6F6E 
+ 1773      6720756E 
+ 1773      7369676E 
+ 1773      65642069 
+ 1774              	.LASF28:
+ 1775 02d3 70756C73 		.ascii	"pulse_trigger\000"
+ 1775      655F7472 
+ 1775      69676765 
+ 1775      7200
+ 1776              	.LASF34:
+ 1777 02e1 6563686F 		.ascii	"echo_flag\000"
+ 1777      5F666C61 
+ 1777      6700
+ 1778              	.LASF55:
+ 1779 02eb 73707269 		.ascii	"sprintf\000"
+ 1779      6E746600 
+ 1780              	.LASF39:
+ 1781 02f3 6973725F 		.ascii	"isr_echo_int_Disable\000"
+ 1781      6563686F 
+ 1781      5F696E74 
+ 1781      5F446973 
+ 1781      61626C65 
+ 1782              	.LASF13:
+ 1783 0308 696E7433 		.ascii	"int32_t\000"
+ 1783      325F7400 
+ 1784              	.LASF19:
+ 1785 0310 73697A65 		.ascii	"sizetype\000"
+ 1785      74797065 
+ 1785      00
+ 1786              	.LASF9:
+ 1787 0319 6C6F6E67 		.ascii	"long long int\000"
+ 1787      206C6F6E 
+ 1787      6720696E 
+ 1787      7400
+ 1788              	.LASF51:
+ 1789 0327 43794465 		.ascii	"CyDelayUs\000"
+ 1789      6C617955 
+ 1789      7300
+ 1790              	.LASF17:
+ 1791 0331 63686172 		.ascii	"char\000"
+ 1791      00
  1792              	.LASF41:
- 1793 034b 6973725F 		.ascii	"isr_timer_DS_ClearPending\000"
+ 1793 0336 6973725F 		.ascii	"isr_timer_DS_ClearPending\000"
  1793      74696D65 
  1793      725F4453 
  1793      5F436C65 
  1793      61725065 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 39
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 39
 
 
  1794              	.LASF2:
- 1795 0365 73686F72 		.ascii	"short int\000"
+ 1795 0350 73686F72 		.ascii	"short int\000"
  1795      7420696E 
  1795      7400
  1796              	.LASF46:
- 1797 036f 436F756E 		.ascii	"Counter_Start\000"
+ 1797 035a 436F756E 		.ascii	"Counter_Start\000"
  1797      7465725F 
  1797      53746172 
  1797      7400
  1798              	.LASF48:
- 1799 037d 436C6F63 		.ascii	"Clock_5kHz_Start\000"
+ 1799 0368 436C6F63 		.ascii	"Clock_5kHz_Start\000"
  1799      6B5F356B 
  1799      487A5F53 
  1799      74617274 
  1799      00
  1800              	.LASF12:
- 1801 038e 75696E74 		.ascii	"uint16_t\000"
+ 1801 0379 75696E74 		.ascii	"uint16_t\000"
  1801      31365F74 
  1801      00
  1802              	.LASF33:
- 1803 0397 73706C61 		.ascii	"splash\000"
+ 1803 0382 73706C61 		.ascii	"splash\000"
  1803      736800
  1804              	.LASF14:
- 1805 039e 75696E74 		.ascii	"uint32_t\000"
+ 1805 0389 75696E74 		.ascii	"uint32_t\000"
  1805      33325F74 
  1805      00
  1806              	.LASF6:
- 1807 03a7 6C6F6E67 		.ascii	"long int\000"
+ 1807 0392 6C6F6E67 		.ascii	"long int\000"
  1807      20696E74 
  1807      00
  1808              	.LASF21:
- 1809 03b0 7365745F 		.ascii	"set_obstruct\000"
+ 1809 039b 7365745F 		.ascii	"set_obstruct\000"
  1809      6F627374 
  1809      72756374 
  1809      00
  1810              	.LASF18:
- 1811 03bd 6C6F6E67 		.ascii	"long double\000"
+ 1811 03a8 6C6F6E67 		.ascii	"long double\000"
  1811      20646F75 
  1811      626C6500 
  1812              	.LASF23:
- 1813 03c9 6765745F 		.ascii	"get_timerFlag\000"
+ 1813 03b4 6765745F 		.ascii	"get_timerFlag\000"
  1813      74696D65 
  1813      72466C61 
  1813      6700
- 1814              	.LASF43:
- 1815 03d7 436C6F63 		.ascii	"Clock_24MHz_Start\000"
- 1815      6B5F3234 
- 1815      4D487A5F 
- 1815      53746172 
- 1815      7400
+ 1814              	.LASF50:
+ 1815 03c2 436F756E 		.ascii	"Counter_Reset_Write\000"
+ 1815      7465725F 
+ 1815      52657365 
+ 1815      745F5772 
+ 1815      69746500 
  1816              	.LASF36:
- 1817 03e9 6F627374 		.ascii	"obstruct\000"
+ 1817 03d6 6F627374 		.ascii	"obstruct\000"
  1817      72756374 
  1817      00
  1818              	.LASF54:
- 1819 03f2 43794465 		.ascii	"CyDelay\000"
+ 1819 03df 43794465 		.ascii	"CyDelay\000"
  1819      6C617900 
-ARM GAS  C:\Users\Totos\AppData\Local\Temp\cc1BycM4.s 			page 40
+ARM GAS  C:\Users\peter\AppData\Local\Temp\cct6yzZQ.s 			page 40
 
 
  1820              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
