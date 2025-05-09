@@ -59,6 +59,7 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     driveLabel2 = new QLabel("Drive Var2", this);
     driveSlider2 = new QSlider(Qt::Vertical, this);
     driveSlider2->setRange(-50, 50);
+    driveSlider2->setFixedWidth(100);
     driveSlider2->setStyleSheet(driveSlider1->styleSheet());  // reuse style
     connect(driveSlider2, &QSlider::valueChanged, this, [=](int value){
         VarHandler_->setVar2DriveMode(value);
@@ -86,6 +87,7 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     shootSliderLabel = new QLabel("Shoot Var2 (Elevation)", this);
     shootSlider = new QSlider(Qt::Vertical, this);
     shootSlider->setRange(0, 50);
+    shootSlider->setFixedWidth(100);
     shootSlider->setStyleSheet(driveSlider1->styleSheet());  // reuse style
     connect(shootSlider, &QSlider::valueChanged, this, [=](int value){
         VarHandler_->setVar2ShootMode(value);
@@ -152,6 +154,15 @@ void SliderWindow::updateMode() {
 
 void SliderWindow::toggleMode() {
     int current = VarHandler_->getControlMode();
+
+    // If switching from drive mode to shoot mode, reset speed variables
+    if (current == 2) { // Drive mode
+        VarHandler_->setVar1DriveMode(0); // Reset Drive Var1 to 0
+        VarHandler_->setVar2DriveMode(0); // Reset Drive Var2 to 0
+        std::cout << "Drive mode variables reset to 0." << std::endl;
+    }
+
+    // Toggle between drive mode (2) and shoot mode (3)
     VarHandler_->setControlMode(current == 2 ? 3 : 2);
     updateMode();
 }

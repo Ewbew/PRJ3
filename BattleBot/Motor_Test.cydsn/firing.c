@@ -1,5 +1,4 @@
 #include "firing.h"
-#include "stepper.h"
 
 #define FIRE_STEP_PIN_STEP    fireStepPin_Write(1)
 #define FIRE_STEP_PIN_RESET   fireStepPin_Write(0)
@@ -22,7 +21,7 @@ void fireMechanism(void)
     fireStepsRemaining = FIRE_MAX_STEPS;
 
     Timer_Stepper_Stop();
-    Timer_Stepper_WritePeriod(TIMER_PERIOD);
+    Timer_Stepper_WritePeriod(FIRE_TIMER_PERIOD);
     Timer_Stepper_WriteCounter(0);
     Timer_Stepper_Start();
 }

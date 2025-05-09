@@ -2,17 +2,12 @@
 #include "motor_control.h"
 #include "firing.h"
 #include "stepper.h"
+#include "distanceSensor.h"
 // #include "shootVarHandler.h" // THis is probably deprecated, since we can just call the functions from
                                 // firing.c directly on the variables read from the RPI message
 
 #include <stdio.h>
 #include <string.h>
-
-static shootVarHandler* shootRef = NULL;  // Pointer to shared object
-
-void uartHandler_init(shootVarHandler* handler) {
-    shootRef = handler;
-}
 
 // UART RX interrupt service routine for Bluetooth
 CY_ISR(ISR_UART_rx_handler_BT)
@@ -47,7 +42,9 @@ CY_ISR(ISR_UART_rx_handler_BT)
             if (sscanf(btBuffer, "%c,%d,%d,%d", &tempMode, &temp1, &temp2, &tempBool) == 4)
             {
                 UART_PC_PutString("Parsing successful - sending ACK to RPI\r\n");
-                UART_BT_PutString("ACKX");
+                snprintf(message, sizeof(message), "ACK,%dX", get_obstruct());
+                UART_BT_PutString(message);
+
                 if (tempMode == '$') {
                     VAR1 = (int8_t)temp1;
                     VAR2 = (int8_t)temp2;                    
@@ -55,7 +52,7 @@ CY_ISR(ISR_UART_rx_handler_BT)
                     set_speedB(VAR2);
                     UART_PC_PutString("Speed successfully set\r\n");
                 }
-                else if (tempMode == '@' && shootRef != NULL) {
+                else if (tempMode == '@') {
                     set_speedA(0);
                     set_speedB(0);
                     VAR1 = (int8_t)temp1;
@@ -74,7 +71,11 @@ CY_ISR(ISR_UART_rx_handler_BT)
             else
             {       
                 UART_PC_PutString("Parsing error - sending NACK to RPI\r\n");
-                UART_BT_PutString("NACKX"); 
+                snprintf(message, sizeof(message), "NACK,%dX", get_obstruct());
+                UART_BT_PutString(message);
+                char PC_dbg_msg[50];
+                snprintf(PC_dbg_msg, sizeof(PC_dbg_msg), "Msg sent to RPI is: %s\r\n", message);
+                UART_PC_PutString(PC_dbg_msg);
             }
 
             index = 0; // Reset buffer for next message

@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="BattleBot\Motor_Test\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="BattleBot\Motor_Test\Source Files\distanceSensor.c">
 <ExpandedNodeIds>
 <v>BattleBot</v>
 <v>BattleBot\Motor_Test</v>
@@ -29,51 +29,53 @@
 <v>BattleBot\Motor_Test\Motor_Test.cydwr\Flash Security</v>
 <v>BattleBot\Motor_Test\Motor_Test.cydwr\EEPROM</v>
 <v>BattleBot\Motor_Test\Header Files</v>
+<v>BattleBot\Motor_Test\Header Files\control.h</v>
 <v>BattleBot\Motor_Test\Header Files\cyapicallbacks.h</v>
 <v>BattleBot\Motor_Test\Header Files\distanceSensor.h</v>
+<v>BattleBot\Motor_Test\Header Files\firing.h</v>
 <v>BattleBot\Motor_Test\Header Files\motor_control.h</v>
-<v>BattleBot\Motor_Test\Header Files\shootVarHandler.h</v>
-<v>BattleBot\Motor_Test\Header Files\stepperMotor.h</v>
+<v>BattleBot\Motor_Test\Header Files\stepper.h</v>
 <v>BattleBot\Motor_Test\Header Files\UART_handler.h</v>
 <v>BattleBot\Motor_Test\Source Files</v>
+<v>BattleBot\Motor_Test\Source Files\control.c</v>
 <v>BattleBot\Motor_Test\Source Files\distanceSensor.c</v>
+<v>BattleBot\Motor_Test\Source Files\firing.c</v>
 <v>BattleBot\Motor_Test\Source Files\main.c</v>
 <v>BattleBot\Motor_Test\Source Files\motor_control.c</v>
-<v>BattleBot\Motor_Test\Source Files\shootVarHandler.c</v>
-<v>BattleBot\Motor_Test\Source Files\stepperMotor.c</v>
+<v>BattleBot\Motor_Test\Source Files\stepper.c</v>
 <v>BattleBot\Motor_Test\Source Files\UART_handler.c</v>
 <v>BattleBot\Motor_Test\Generated_Source</v>
 <v>BattleBot\Motor_Test\Generated_Source\PSoC5</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>BattleBot</v>
-<v>BattleBot\Motor_Test</v>
-<v>BattleBot\Motor_Test\TopDesign</v>
-<v>BattleBot\Motor_Test\Motor_Test.cydwr</v>
-<v>BattleBot\Motor_Test\Motor_Test.cydwr\Pins</v>
-<v>BattleBot\Motor_Test\Motor_Test.cydwr\Analog</v>
-<v>BattleBot\Motor_Test\Motor_Test.cydwr\Clocks</v>
-<v>BattleBot\Motor_Test\Motor_Test.cydwr\Interrupts</v>
-<v>BattleBot\Motor_Test\Motor_Test.cydwr\DMA</v>
-<v>BattleBot\Motor_Test\Motor_Test.cydwr\System</v>
-<v>BattleBot\Motor_Test\Motor_Test.cydwr\Directives</v>
-<v>BattleBot\Motor_Test\Motor_Test.cydwr\Flash Security</v>
-<v>BattleBot\Motor_Test\Motor_Test.cydwr\EEPROM</v>
 <v>BattleBot\Motor_Test\Header Files</v>
+<v>BattleBot\Motor_Test\Header Files\control.h</v>
 <v>BattleBot\Motor_Test\Header Files\cyapicallbacks.h</v>
 <v>BattleBot\Motor_Test\Header Files\distanceSensor.h</v>
+<v>BattleBot\Motor_Test\Header Files\firing.h</v>
 <v>BattleBot\Motor_Test\Header Files\motor_control.h</v>
-<v>BattleBot\Motor_Test\Header Files\shootVarHandler.h</v>
-<v>BattleBot\Motor_Test\Header Files\stepperMotor.h</v>
+<v>BattleBot\Motor_Test\Header Files\stepper.h</v>
 <v>BattleBot\Motor_Test\Header Files\UART_handler.h</v>
 <v>BattleBot\Motor_Test\Source Files</v>
+<v>BattleBot\Motor_Test\Source Files\control.c</v>
 <v>BattleBot\Motor_Test\Source Files\distanceSensor.c</v>
+<v>BattleBot\Motor_Test\Source Files\firing.c</v>
 <v>BattleBot\Motor_Test\Source Files\main.c</v>
 <v>BattleBot\Motor_Test\Source Files\motor_control.c</v>
-<v>BattleBot\Motor_Test\Source Files\shootVarHandler.c</v>
-<v>BattleBot\Motor_Test\Source Files\stepperMotor.c</v>
+<v>BattleBot\Motor_Test\Source Files\stepper.c</v>
 <v>BattleBot\Motor_Test\Source Files\UART_handler.c</v>
 <v>BattleBot\Motor_Test\Generated_Source</v>
+<v>BattleBot\Motor_Test\Generated_Source\PSoC5</v>
+<v>BattleBot\Motor_Test\Generated_Source\PSoC5\angleDirPin</v>
+<v>BattleBot\Motor_Test\Generated_Source\PSoC5\angleStepPin</v>
+<v>BattleBot\Motor_Test\Generated_Source\PSoC5\Clock_1</v>
+<v>BattleBot\Motor_Test\Generated_Source\PSoC5\Clock_24MHz</v>
+<v>BattleBot\Motor_Test\Generated_Source\PSoC5\Clock_5kHz</v>
+<v>BattleBot\Motor_Test\Generated_Source\PSoC5\Clock_PWM_A</v>
+<v>BattleBot\Motor_Test\Generated_Source\PSoC5\Clock_PWM_B</v>
+<v>BattleBot\Motor_Test\Generated_Source\PSoC5\Counter</v>
+<v>BattleBot\Motor_Test\Generated_Source\PSoC5\Counter_Reset</v>
+<v>BattleBot\Motor_Test\Generated_Source\PSoC5\cy_boot</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -98,11 +100,15 @@
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\angleDirPin.lst</v>
+<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\angleStepPin.lst</v>
+<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_24MHz.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_5kHz.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_PWM_A.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_PWM_B.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\control.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_PM.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_Reset.lst</v>
@@ -117,9 +123,13 @@
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\DirPin.lst</v>
+<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\dialDirPin.lst</v>
+<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\dialStepPin.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\distanceSensor.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Echo.lst</v>
+<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\fireDirPin.lst</v>
+<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\fireStepPin.lst</v>
+<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\firing.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\IN1.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\IN2.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\IN3.lst</v>
@@ -134,11 +144,12 @@
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_A_PM.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_B.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_B_PM.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\shootVarHandler.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\stepperMotor.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\StepPin.lst</v>
+<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\stepper.lst</v>
+<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\stepper_isr_timer.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_DS.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_DS_PM.lst</v>
+<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_Stepper.lst</v>
+<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_Stepper_PM.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Trigger.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_BT.lst</v>
 <v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_BT_BOOT.lst</v>
@@ -161,32 +172,6 @@
 <VisibleNodeIds>
 <v>BattleBot</v>
 <v>BattleBot\Motor_Test</v>
-<v>BattleBot\Motor_Test\CortexM3</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_24MHz.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_5kHz.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_PWM_A.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_PWM_B.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_PM.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_Reset.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_Reset_PM.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\DirPin.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\distanceSensor.lst</v>
-<v>BattleBot\Motor_Test\CortexM3\ARM_GCC_541\Debug\Listing Files\Echo.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -217,10 +202,12 @@
 <v>BattleBot\Motor_Test\Power_v1_0.pdf</v>
 <v>BattleBot\Motor_Test\PWM_v3_30</v>
 <v>BattleBot\Motor_Test\PWM_v3_30\PWM_v3_30.pdf</v>
-<v>BattleBot\Motor_Test\Timer_v2_80.pdf</v>
+<v>BattleBot\Motor_Test\Timer_v2_80</v>
+<v>BattleBot\Motor_Test\Timer_v2_80\Timer_v2_80.pdf</v>
 <v>BattleBot\Motor_Test\UART_v2_50</v>
 <v>BattleBot\Motor_Test\UART_v2_50\UART_v2_50.pdf</v>
-<v>BattleBot\Motor_Test\ZeroTerminal.pdf</v>
+<v>BattleBot\Motor_Test\ZeroTerminal</v>
+<v>BattleBot\Motor_Test\ZeroTerminal\ZeroTerminal.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>BattleBot</v>
@@ -244,10 +231,12 @@
 <v>BattleBot\Motor_Test\Power_v1_0.pdf</v>
 <v>BattleBot\Motor_Test\PWM_v3_30</v>
 <v>BattleBot\Motor_Test\PWM_v3_30\PWM_v3_30.pdf</v>
-<v>BattleBot\Motor_Test\Timer_v2_80.pdf</v>
+<v>BattleBot\Motor_Test\Timer_v2_80</v>
+<v>BattleBot\Motor_Test\Timer_v2_80\Timer_v2_80.pdf</v>
 <v>BattleBot\Motor_Test\UART_v2_50</v>
 <v>BattleBot\Motor_Test\UART_v2_50\UART_v2_50.pdf</v>
-<v>BattleBot\Motor_Test\ZeroTerminal.pdf</v>
+<v>BattleBot\Motor_Test\ZeroTerminal</v>
+<v>BattleBot\Motor_Test\ZeroTerminal\ZeroTerminal.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
