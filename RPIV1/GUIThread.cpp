@@ -169,7 +169,7 @@ void SliderWindow::toggleMode() {
 
 void SliderWindow::printStatus() {
     int mode = VarHandler_->getControlMode();
-    std::cout << "[Status] Mode: " << mode;
+    // std::cout << "[Status] Mode: " << mode;
 
     if (mode == 2) {
         int v1 = VarHandler_->getVar1DriveMode();

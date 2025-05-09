@@ -95,14 +95,16 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                         int ObstructionState = stoi(ObstructionPart); // Corrected variable name
                         handler->setObstructionState(ObstructionState); // Set the obstruction state in the handler
 
+                        /*
                         if (ObstructionState == 1) { // Corrected variable name
                             cout << "Obstruction detected!" << endl;
                         } else {
                             cout << "No obstruction detected." << endl; // Most of the time
                         }
+                        */
 
                         if (StatusPart == "ACK") {
-                            cout << "ACK received." << endl;
+                            // cout << "ACK received." << endl;
 
                             string ackMessage = "ACK," + to_string(ObstructionState) + "X"; 
 
@@ -118,7 +120,7 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                             break;
 
                         } else if (StatusPart == "NACK") { 
-                            cout << "NACK received." << endl;
+                            // cout << "NACK received." << endl;
 
                             string nackMessage = "NACK," + to_string(ObstructionState) + "X"; 
 
