@@ -197,8 +197,6 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
         } else {
             retryCount = 0; // Reset retry count on successful response
         }
-
-        this_thread::sleep_for(chrono::milliseconds(400)); // Avoid busy-waiting
     }
     
     cout << "Stopping Bluetooth sender/receiver loop." << endl;
