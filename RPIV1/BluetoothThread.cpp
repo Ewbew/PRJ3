@@ -175,11 +175,19 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                         cout << "Invalid message format received: " << fullMessage << endl;
                     }
                 }
+            } else if (bytesRead == 0) {
+                // Connection closed by remote device
+                cout << "Connection closed by remote device." << endl;
+                close(s);
+                s = -1;
+                handler->setSocketDisconnected(true);
+                break; // Exit the read loop to trigger reconnection
             } else if (bytesRead < 0) {
                 perror("Read failed");
                 close(s);
                 s = -1; // Mark socket as invalid
-                continue; // Attempt to reconnect in the next iteration
+                handler->setSocketDisconnected(true);
+                break; // Exit the read loop to trigger reconnection
             }
             this_thread::sleep_for(chrono::milliseconds(100)); // Avoid busy-waiting
         }
