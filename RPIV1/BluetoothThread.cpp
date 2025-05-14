@@ -26,7 +26,7 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
         if (s < 0) {
             perror("Socket creation failed");
             handler->setSocketDisconnected(true);
-            this_thread::sleep_for(chrono::seconds(1));
+            this_thread::sleep_for(chrono::milliseconds(500));
             continue;
         }
 
@@ -34,11 +34,16 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
             perror("Connection failed");
             close(s);
             handler->setSocketDisconnected(true);
-            this_thread::sleep_for(chrono::seconds(1));
+            this_thread::sleep_for(chrono::milliseconds(500));
             continue;
         }
 
-        // Connected successfully
+        // Set receive timeout after successful connect
+        struct timeval tv;
+        tv.tv_sec = 0;
+        tv.tv_usec = 500000; // 0.5 seconds
+        setsockopt(s, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv, sizeof(tv));
+
         handler->setSocketDisconnected(false);
         cout << "Connected to " << destAddr << " - starting send/receive loop." << endl;
         break;
@@ -74,6 +79,12 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
                 this_thread::sleep_for(chrono::seconds(1)); // Wait before retrying
                 continue;
             }
+
+            // Set receive timeout after successful reconnect
+            struct timeval tv;
+            tv.tv_sec = 0;
+            tv.tv_usec = 500000; // 0.5 seconds
+            setsockopt(s, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv, sizeof(tv));
 
             cout << "Reconnected to " << destAddr << endl;
             handler->setSocketDisconnected(false); // Clear the disconnection flag
