@@ -201,6 +201,8 @@ void SliderWindow::printStatus() {
         // Set drive speeds to 0 when obstruction is detected
         VarHandler_->setVar1DriveMode(0);
         VarHandler_->setVar2DriveMode(0);
+        driveSlider1->setValue(0); // <-- Add this
+        driveSlider2->setValue(0); // <-- Add this
     }
 
     // Show warning if the socket is disconnected
