@@ -38,7 +38,7 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     layout->addWidget(warningLabel);
 
     // DRIVE MODE
-    driveLabel1 = new QLabel("Drive Var1", this);
+    driveLabel1 = new QLabel("Left wheel", this);
     driveSlider1 = new QSlider(Qt::Vertical, this);
     driveSlider1->setRange(-50, 50);
     driveSlider1->setFixedWidth(100);
@@ -61,7 +61,7 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
         VarHandler_->setVar1DriveMode(value);
     });
 
-    driveLabel2 = new QLabel("Drive Var2", this);
+    driveLabel2 = new QLabel("Right wheel", this);
     driveSlider2 = new QSlider(Qt::Vertical, this);
     driveSlider2->setRange(-50, 50);
     driveSlider2->setFixedWidth(100);
@@ -82,14 +82,14 @@ SliderWindow::SliderWindow(VarHandler* handler, QWidget *parent)
     controlWidgetLayout->addLayout(driveLayout2);
 
     // SHOOT MODE
-    shootDialLabel = new QLabel("Shoot Var1 (Angle)", this);
+    shootDialLabel = new QLabel("Turret angle (horizontal))", this);
     shootDial = new QDial(this);
     shootDial->setRange(-100, 100);
     connect(shootDial, &QDial::valueChanged, this, [=](int value){
         VarHandler_->setVar1ShootMode(value);
     });
 
-    shootSliderLabel = new QLabel("Shoot Var2 (Elevation)", this);
+    shootSliderLabel = new QLabel("Turret angle (vertical)", this);
     shootSlider = new QSlider(Qt::Vertical, this);
     shootSlider->setRange(0, 50);
     shootSlider->setFixedWidth(100);
@@ -221,6 +221,7 @@ bool SliderWindow::event(QEvent* event)
         QTouchEvent* touchEvent = static_cast<QTouchEvent*>(event);
         const QList<QTouchEvent::TouchPoint>& points = touchEvent->touchPoints();
 
+        bool handled = false;
         for (const QTouchEvent::TouchPoint& point : points) {
             QPointF pos = point.pos(); // touch position
             QWidget* targetWidget = childAt(pos.toPoint()); // Ensure pos is converted to QPoint
@@ -234,6 +235,7 @@ bool SliderWindow::event(QEvent* event)
                 int range = driveSlider1->maximum() - driveSlider1->minimum();
                 int value = driveSlider1->maximum() - (sliderY * range / sliderHeight);
                 driveSlider1->setValue(value);
+                handled = true;
             }
             else if (driveSlider2->isVisible() && driveSlider2->geometry().contains(pos.toPoint())) {
                 int sliderY = driveSlider2->mapFrom(this, pos.toPoint()).y();
@@ -241,6 +243,7 @@ bool SliderWindow::event(QEvent* event)
                 int range = driveSlider2->maximum() - driveSlider2->minimum();
                 int value = driveSlider2->maximum() - (sliderY * range / sliderHeight);
                 driveSlider2->setValue(value);
+                handled = true;
             }
 
             // Handle shoot slider
@@ -250,10 +253,12 @@ bool SliderWindow::event(QEvent* event)
                 int range = shootSlider->maximum() - shootSlider->minimum();
                 int value = shootSlider->maximum() - (sliderY * range / sliderHeight);
                 shootSlider->setValue(value);
+                handled = true;
             }
         }
 
-        return true; // mark event as handled
+        if (handled)
+            return true;
     }
 
     return QWidget::event(event); // fallback

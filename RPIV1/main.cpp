@@ -67,7 +67,7 @@ int main(int argc, char *argv[]) {
 
     SliderWindow window(&handler);
     window.resize(800, 600);
-    window.show();
+    window.showFullScreen();
 
     // Keep the application runnings
     int result = app.exec();
