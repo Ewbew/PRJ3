@@ -176,6 +176,7 @@ void SliderWindow::printStatus() {
     int mode = VarHandler_->getControlMode();
     // std::cout << "[Status] Mode: " << mode;
 
+    /* Commenting this out, since it spams the console too much
     if (mode == 2) {
         int v1 = VarHandler_->getVar1DriveMode();
         int v2 = VarHandler_->getVar2DriveMode();
@@ -191,6 +192,7 @@ void SliderWindow::printStatus() {
     } else {
         std::cout << " | Unknown mode" << std::endl;
     }
+    */
 
     // Show warning if obstruction is detected
     if (VarHandler_->getObstructionState() == 1) {
