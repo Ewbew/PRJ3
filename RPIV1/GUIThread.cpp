@@ -263,3 +263,10 @@ bool SliderWindow::event(QEvent* event)
 
     return QWidget::event(event); // fallback
 }
+
+void SliderWindow::keyPressEvent(QKeyEvent* event) {
+    if (event->key() == Qt::Key_Escape) {
+        this->showNormal(); // Exit fullscreen
+    }
+    QWidget::keyPressEvent(event);
+}

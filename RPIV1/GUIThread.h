@@ -21,6 +21,8 @@ public:
 
 protected:
     bool event(QEvent* event) override;
+    void keyPressEvent(QKeyEvent* event) override; // Add this line
+
 private slots:
     void updateMode();
     void toggleMode();
