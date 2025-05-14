@@ -143,10 +143,14 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
 
                             string ackMessage = "ACK," + to_string(ObstructionState) + "X"; 
 
-                            // Check if the current shoot state is high
-                            if (handler->getShootState()) {
-                                handler->setShootState(false); // Reset shoot state to false
-                                cout << "Shoot state reset to false after ACK." << endl;
+                            // Only reset if lastSentMessage had shootState=1
+                            if (!lastSentMessage.empty()) {
+                                // Assuming your message format is "$,x,y,shootStateX"
+                                size_t lastComma = lastSentMessage.rfind(',');
+                                if (lastComma != std::string::npos && lastSentMessage[lastComma + 1] == '1') {
+                                    handler->setShootState(false);
+                                    cout << "Shoot state reset to false after ACK." << endl;
+                                }
                             }
 
                             lastSentMessage.clear(); 
