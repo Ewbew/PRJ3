@@ -16,25 +16,33 @@ void bluetoothSenderLoop(const string& destAddr, VarHandler* handler) {
     struct sockaddr_rc addr = { 0 };
     int s;
 
-    // Create a Bluetooth socket
-    s = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
-    if (s < 0) {
-        perror("Socket creation failed");
-        return;
-    }
-
     addr.rc_family = AF_BLUETOOTH;
     addr.rc_channel = (uint8_t)1;
     str2ba(destAddr.c_str(), &addr.rc_bdaddr);
 
-    // Connect to the Bluetooth device
-    if (connect(s, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
-        perror("Connection failed");
-        close(s);
-        return;
-    }
+    // Try to connect, retrying if it fails
+    while (keepRunning) {
+        s = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
+        if (s < 0) {
+            perror("Socket creation failed");
+            handler->setSocketDisconnected(true);
+            this_thread::sleep_for(chrono::seconds(1));
+            continue;
+        }
 
-    cout << "Connected to " << destAddr << " - starting send/receive loop." << endl;
+        if (connect(s, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
+            perror("Connection failed");
+            close(s);
+            handler->setSocketDisconnected(true);
+            this_thread::sleep_for(chrono::seconds(1));
+            continue;
+        }
+
+        // Connected successfully
+        handler->setSocketDisconnected(false);
+        cout << "Connected to " << destAddr << " - starting send/receive loop." << endl;
+        break;
+    }
 
     char buffer[1024]; // Temporary buffer for receiving data
     string receivedMessageBuffer; // Accumulate received bytes here
