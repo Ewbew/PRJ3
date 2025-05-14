@@ -15,10 +15,6 @@ CY_ISR_PROTO(ISR_timer_DS_tc_handler); // ISR for timer
  */
 void init_DS_hardware(void);
 
-/**
- * @brief Initializes the timer for periodic distance checks.
- */
-void init_timer(void);
 
 /**
  * @brief Sends a 10 µs trigger pulse to the ultrasonic sensor.

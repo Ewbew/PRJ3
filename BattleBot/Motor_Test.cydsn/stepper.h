@@ -10,7 +10,7 @@
 #define ANGLE_MAX_POSITION 50
 #define ANGLE_MIN_POSITION 0
 
-#define STEPPER_TIMER_PERIOD 25
+#define STEPPER_TIMER_PERIOD 35
 
 // Variabler
 extern volatile int8 dialCurrentPosition;

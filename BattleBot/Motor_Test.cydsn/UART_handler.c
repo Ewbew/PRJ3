@@ -34,23 +34,31 @@ CY_ISR(ISR_UART_rx_handler_BT)
         if (byteReceived == 'X' || index >= sizeof(btBuffer) - 1)
         {
             btBuffer[index] = '\0';  // Null-terminate the string
-
+            
+            /* Debugging code
             snprintf(message, sizeof(message), "[BT Response] %s\r\n", btBuffer);
             UART_PC_PutString(message);
+            */
 
             // Try to parse the format: <char>,<int>,<int>,<int>
             if (sscanf(btBuffer, "%c,%d,%d,%d", &tempMode, &temp1, &temp2, &tempBool) == 4)
             {
-                UART_PC_PutString("Parsing successful - sending ACK to RPI\r\n");
                 snprintf(message, sizeof(message), "ACK,%dX", get_obstruct());
                 UART_BT_PutString(message);
+                int obstruct = get_obstruct();
+                char PC_dbg_msg[50];
+                snprintf(PC_dbg_msg, sizeof(PC_dbg_msg), "Obstruction is: %d\r\n", obstruct);
+                UART_PC_PutString(PC_dbg_msg);
 
-                if (tempMode == '$') {
+                if (get_obstruct()) {
+                    UART_PC_PutString("Speed change ignored due to obstacle\r\n");
+                } else if (tempMode == '$') {
                     VAR1 = (int8_t)temp1;
                     VAR2 = (int8_t)temp2;                    
                     set_speedA(VAR1);
                     set_speedB(VAR2);
-                    UART_PC_PutString("Speed successfully set\r\n");
+                    // Debugging code
+                    // UART_PC_PutString("Speed successfully set\r\n");
                 }
                 else if (tempMode == '@') {
                     set_speedA(0);
@@ -59,7 +67,8 @@ CY_ISR(ISR_UART_rx_handler_BT)
                     VAR2 = (int8_t)temp2; 
                     setStepperTargets(VAR1, VAR2);
                     if(tempBool) fireMechanism();
-                    UART_PC_PutString("Turret direction and shoot mode successfully set\r\n");
+                    // Debugging code
+                    // UART_PC_PutString("Turret direction and shoot mode successfully set\r\n");
                 }
             }
             else if (strncmp(btBuffer, "AT+", 3) == 0)

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
   28              		.loc 1 27 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 2
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 2
 
 
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
   75              		.loc 1 37 0
   76 0008 E0B2     		uxtb	r0, r4
   77 000a FFF7FEFF 		bl	Timer_Stepper_WritePeriod
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 3
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 3
 
 
   78              	.LVL5:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
   49:control.c     **** uint8 isControlIdle(void)
   50:control.c     **** {
  121              		.loc 1 50 0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 4
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 4
 
 
  122              		.cfi_startproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  171              	.LVL12:
   16:control.c     **** 
  172              		.loc 1 16 0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 5
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 5
 
 
  173 000a FFF7FEFF 		bl	firingStepperTick
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  225 003f 02       		.byte	0x2
  226 0040 2B       		.byte	0x2b
  227 0041 45000000 		.4byte	0x45
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 6
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 6
 
 
  228 0045 02       		.uleb128 0x2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  282 00ac 04       		.byte	0x4
  283 00ad 11000000 		.4byte	.LASF15
  284 00b1 02       		.uleb128 0x2
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 7
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 7
 
 
  285 00b2 01       		.byte	0x1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  339 012a 09020000 		.4byte	0x209
  340 012e 0B       		.uleb128 0xb
  341 012f 0E000000 		.4byte	.LVL5
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 8
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 8
 
 
  342 0133 1F020000 		.4byte	0x21f
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  396 01ab 7F000000 		.4byte	.LASF22
  397 01af 01       		.byte	0x1
  398 01b0 08       		.byte	0x8
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 9
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 9
 
 
  399 01b1 00000000 		.4byte	.LFB63
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  453 0236 3B020000 		.4byte	.LASF28
  454 023a 3B020000 		.4byte	.LASF28
  455 023e 07       		.byte	0x7
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 10
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 10
 
 
  456 023f 1C       		.byte	0x1c
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  510 001e 03       		.uleb128 0x3
  511 001f 16       		.uleb128 0x16
  512 0020 00       		.byte	0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 11
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 11
 
 
  513 0021 03       		.uleb128 0x3
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  567 0058 19       		.uleb128 0x19
  568 0059 01       		.uleb128 0x1
  569 005a 13       		.uleb128 0x13
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 12
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 12
 
 
  570 005b 00       		.byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  624 009a 00       		.byte	0
  625 009b 0C       		.uleb128 0xc
  626 009c 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 13
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 13
 
 
  627 009d 01       		.byte	0x1
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  681 00d4 3C       		.uleb128 0x3c
  682 00d5 19       		.uleb128 0x19
  683 00d6 6E       		.uleb128 0x6e
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 14
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 14
 
 
  684 00d7 0E       		.uleb128 0xe
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  738 0018 00000000 		.4byte	.LFB67
  739 001c 1A000000 		.4byte	.LFE67
  740 0020 00000000 		.4byte	.LFB63
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 15
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 15
 
 
  741 0024 1A000000 		.4byte	.LFE63
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  765      726F6C54 
  765      696D6572 
  765      00
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 16
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 16
 
 
  766              	.LASF13:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  785      65707065 
  785      72546963 
  785      6B00
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 17
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 17
 
 
  786              	.LASF4:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 1
  809 0260 63686172 		.ascii	"char\000"
  809      00
  810              	.LASF2:
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccrkIyWa.s 			page 18
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccuw2kIc.s 			page 18
 
 
  811 0265 73686F72 		.ascii	"short int\000"

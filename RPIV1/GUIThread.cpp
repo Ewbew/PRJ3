@@ -198,6 +198,9 @@ void SliderWindow::printStatus() {
     if (VarHandler_->getObstructionState() == 1) {
         warningLabel->setText("You're about to hit a wall, one second.");
         warningLabel->setVisible(true);
+        // Set drive speeds to 0 when obstruction is detected
+        VarHandler_->setVar1DriveMode(0);
+        VarHandler_->setVar2DriveMode(0);
     }
 
     // Show warning if the socket is disconnected

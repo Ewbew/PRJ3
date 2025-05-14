@@ -15,7 +15,6 @@ int main(void)
     splash(); // Print splash message for distance sensor
 
     // Initialize the timer for periodic distance checks
-    //init_timer(); Commented out while debugging
     // Initialiser hardware for motorer og affyring
     initStepperPins();
     initFiringPins();
@@ -33,7 +32,7 @@ int main(void)
     PWM_A_Start();
     PWM_B_Start();
         // Initialize hardware for distance sensor
-    init_DS_hardware();
+    init_DS_hardware(); // UNCOMMENT WHEN DONE DEBUGGING
     UART_PC_PutString("Starting program...\r\n");
     // Optionally initialize motor enable signals if needed:
     // A_ENABLE_Write(0);
@@ -50,20 +49,25 @@ int main(void)
     {
         if (get_timerFlag()) { // Check if the timer has triggered
             set_timerFlag(0); // Reset the timer flag
-            UART_PC_PutString("Timer triggered - measuring distance...\r\n");
     
             double distance = measure_distance(); // Measure the distance
+
+            int distance_print = (int)distance;
             char distanceStr[50];
-            snprintf(distanceStr, sizeof(distanceStr), "Distance: %.2f cm\r\n", distance);
+            snprintf(distanceStr, sizeof(distanceStr), "Distance: %d cm\r\n", distance_print);
             UART_PC_PutString(distanceStr); // Print the distance to the UART
+            CyDelay(10);
             
 
             // Check if the distance is below the threshold
             if (distance >= 0 && distance < obstacle_distance_threshold) { // Example threshold: 30 cm
                 set_obstruct(1); // Set obstruct to true
                 UART_PC_PutString("Obstacle detected\r\n");
+                set_speedA(-30); // Set left motor speed
+                set_speedB(30);  // Set right motor speed
             } else {
                 set_obstruct(0); // Set obstruct to false
+                 // Debugging message
                 UART_PC_PutString("No obstacle detected\r\n");
             }
         }
