@@ -8,6 +8,25 @@
 
 #include <stdio.h>
 #include <string.h>
+volatile uint8_t messageReceivedFlag = 0;
+
+CY_ISR(ISR_comm_timeout_tc_handler)
+{
+    if (!messageReceivedFlag) {
+        set_speedA(0);
+        set_speedB(0);
+    }
+    messageReceivedFlag = 0; // Reset for next period
+}
+
+void init_comm_timer(void)
+{
+    Clock_comm_timeout_Start(); 
+    Timer_Comm_Start(); 
+    isr_comm_timeout_ClearPending(), 
+    isr_comm_timeout_StartEx(ISR_comm_timeout_tc_handler); 
+
+}
 
 // UART RX interrupt service routine for Bluetooth
 CY_ISR(ISR_UART_rx_handler_BT)
@@ -43,6 +62,7 @@ CY_ISR(ISR_UART_rx_handler_BT)
             // Try to parse the format: <char>,<int>,<int>,<int>
             if (sscanf(btBuffer, "%c,%d,%d,%d", &tempMode, &temp1, &temp2, &tempBool) == 4)
             {
+                messageReceivedFlag = 1;
                 snprintf(message, sizeof(message), "ACK,%dX", get_obstruct());
                 UART_BT_PutString(message);
                 int obstruct = get_obstruct();

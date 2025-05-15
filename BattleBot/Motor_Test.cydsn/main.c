@@ -19,6 +19,7 @@ int main(void)
     initStepperPins();
     initFiringPins();
     initControlTimer();
+    init_comm_timer();
 
     // Start the UART RX ISR and UART component
     // TO-DO: Make the functions below into hardware start for comm and motor
@@ -61,7 +62,7 @@ int main(void)
             CyDelay(10);
             
             // Robust obstruction logic
-            static const int obstruction_threshold = 5;
+            static const int obstruction_threshold = 7;
 
             // Only treat as obstruction if distance is valid and below threshold
             if (distance >= 0 && distance < obstacle_distance_threshold) {

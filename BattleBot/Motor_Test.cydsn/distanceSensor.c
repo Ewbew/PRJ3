@@ -100,7 +100,7 @@ void init_DS_hardware(void)
     UART_PC_PutString("Counter initialised\r\n");
     
     // Hardware init for Timer (that drives the periodic obstacle check)
-    Clock_5kHz_Start(); // Start the clock
+    Clock_timer_DS_Start(); // Start the clock
     Timer_DS_Start(); // Start the timer UNCOMMENT THIS WHEN THE PERIODIC DISTANCE CHECK SHOULD BE USED
     isr_timer_DS_ClearPending(), // Clear any pending interrupts
     isr_timer_DS_StartEx(ISR_timer_DS_tc_handler); // Attach the ISR to the timer interrupt (which is connected  
