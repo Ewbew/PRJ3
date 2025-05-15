@@ -30,6 +30,8 @@ int main(void)
     isr_uart_rx_BT_StartEx(ISR_UART_rx_handler_BT);
     UART_PC_Start();
     UART_BT_Start();
+    set_speedA(0);
+    set_speedB(0);
     PWM_A_Start();
     PWM_B_Start();
         // Initialize hardware for distance sensor
