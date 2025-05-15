@@ -19,7 +19,7 @@ int main(void)
     initStepperPins();
     initFiringPins();
     initControlTimer();
-    init_comm_timer();
+    //init_comm_timer();
 
     // Start the UART RX ISR and UART component
     // TO-DO: Make the functions below into hardware start for comm and motor
@@ -50,6 +50,7 @@ int main(void)
 
     for (;;)
     {
+        /*
         if (get_timerFlag()) { // Check if the timer has triggered
             set_timerFlag(0); // Reset the timer flag
     
@@ -79,6 +80,7 @@ int main(void)
                 UART_PC_PutString("No obstacle detected\r\n");
             }
         }
+            */
     
         // Other tasks can be performed here
     }

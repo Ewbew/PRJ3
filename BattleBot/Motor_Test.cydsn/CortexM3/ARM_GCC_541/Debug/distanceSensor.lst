@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 2
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 2
 
 
   33              		.cfi_def_cfa_offset 8
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
   77              	.L6:
   78 0008 00000000 		.word	.LANCHOR0
   79              		.cfi_endproc
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 3
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 3
 
 
   80              	.LFE65:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
   55:distanceSensor.c **** {
  115              		.loc 1 55 0
  116              		.cfi_startproc
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 4
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 4
 
 
  117              		@ args = 0, pretend = 0, frame = 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  163              	ISR_timer_DS_tc_handler:
  164              	.LFB67:
   43:distanceSensor.c ****     isr_timer_DS_ClearPending(); // Clear the interrupt flag
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 5
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 5
 
 
  165              		.loc 1 43 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
   89:distanceSensor.c **** void init_DS_hardware(void)
   90:distanceSensor.c ****     /* Enable global interrupts. */{
  192              		.loc 1 90 0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 6
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 6
 
 
  193              		.cfi_startproc
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  104:distanceSensor.c ****     Timer_DS_Start(); // Start the timer UNCOMMENT THIS WHEN THE PERIODIC DISTANCE CHECK SHOULD BE 
  234              		.loc 1 104 0
  235 002a FFF7FEFF 		bl	Timer_DS_Start
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 7
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 7
 
 
  236              	.LVL15:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  275              		.loc 1 119 0
  276 0002 0120     		movs	r0, #1
  277 0004 FFF7FEFF 		bl	Counter_Reset_Write
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 8
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 8
 
 
  278              	.LVL19:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  321              	measure_distance:
  322              	.LFB72:
  131:distanceSensor.c **** 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 9
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 9
 
 
  132:distanceSensor.c ****     //char debugStr[50];
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  153:distanceSensor.c ****     {
  351              		.loc 1 153 0
  352 0014 124B     		ldr	r3, .L32+16
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 10
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 10
 
 
  353 0016 5B68     		ldr	r3, [r3, #4]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  390              	.L33:
  391              		.align	3
  392              	.L32:
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 11
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 11
 
 
  393 0050 66666666 		.word	1717986918
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  430 000c FFF7FEFF 		bl	__aeabi_dmul
  431              	.LVL43:
  432 0010 15A3     		adr	r3, .L36+8
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 12
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 12
 
 
  433 0012 D3E90023 		ldrd	r2, [r3]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  484              		.align	2
  485              		.global	splash
  486              		.thumb
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 13
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 13
 
 
  487              		.thumb_func
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  529      69746961 
  529      6C697A65 
  529      642E0D0A 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 14
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 14
 
 
  530 002d 000000   		.space	3
@@ -787,8 +787,8 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  532      30326463 
  532      6D0D0A00 
  533              	.LC3:
- 534 003c 31303A32 		.ascii	"10:21:29\000"
- 534      313A3239 
+ 534 003c 31313A30 		.ascii	"11:01:12\000"
+ 534      313A3132 
  534      00
  535 0045 000000   		.space	3
  536              	.LC4:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  574              		.file 14 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4
  575              		.file 15 "Generated_Source\\PSoC5/core_cm3.h"
  576              		.section	.debug_info,"",%progbits
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 15
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 15
 
 
  577              	.Ldebug_info0:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  631 0072 05       		.byte	0x5
  632 0073 36030000 		.4byte	.LASF9
  633 0077 02       		.uleb128 0x2
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 16
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 16
 
 
  634 0078 08       		.byte	0x8
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  688 00e4 01       		.uleb128 0x1
  689 00e5 9C       		.byte	0x9c
  690 00e6 06010000 		.4byte	0x106
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 17
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 17
 
 
  691 00ea 07       		.uleb128 0x7
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  745 0168 09       		.uleb128 0x9
  746 0169 48000000 		.4byte	.LASF25
  747 016d 01       		.byte	0x1
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 18
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 18
 
 
  748 016e 3D       		.byte	0x3d
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  802 01e3 D0040000 		.4byte	0x4d0
  803 01e7 F5010000 		.4byte	0x1f5
  804 01eb 0B       		.uleb128 0xb
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 19
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 19
 
 
  805 01ec 01       		.uleb128 0x1
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  859 0264 06       		.uleb128 0x6
  860 0265 F0020000 		.4byte	.LASF28
  861 0269 01       		.byte	0x1
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 20
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 20
 
 
  862 026a 75       		.byte	0x75
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  916 02dc 28050000 		.4byte	0x528
  917 02e0 EA020000 		.4byte	0x2ea
  918 02e4 0B       		.uleb128 0xb
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 21
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 21
 
 
  919 02e5 01       		.uleb128 0x1
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  973 0357 0F       		.uleb128 0xf
  974 0358 63020000 		.4byte	.LASF31
  975 035c 01       		.byte	0x1
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 22
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 22
 
 
  976 035d B8       		.byte	0xb8
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1030 03c3 01       		.byte	0x1
  1031 03c4 C1       		.byte	0xc1
  1032 03c5 00000000 		.4byte	.LFB74
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 23
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 23
 
 
  1033 03c9 28000000 		.4byte	.LFE74-.LFB74
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1087 0429 01       		.byte	0x1
  1088 042a 11       		.byte	0x11
  1089 042b 35040000 		.4byte	0x435
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 24
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 24
 
 
  1090 042f 05       		.uleb128 0x5
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1144 04a5 2E020000 		.4byte	.LASF40
  1145 04a9 2E020000 		.4byte	.LASF40
  1146 04ad 05       		.byte	0x5
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 25
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 25
 
 
  1147 04ae 5D       		.byte	0x5d
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1201 0526 0C       		.byte	0xc
  1202 0527 2F       		.byte	0x2f
  1203 0528 16       		.uleb128 0x16
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 26
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 26
 
 
  1204 0529 44030000 		.4byte	.LASF52
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1258 001b 0E       		.uleb128 0xe
  1259 001c 00       		.byte	0
  1260 001d 00       		.byte	0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 27
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 27
 
 
  1261 001e 03       		.uleb128 0x3
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1315 0055 00       		.byte	0
  1316 0056 00       		.byte	0
  1317 0057 07       		.uleb128 0x7
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 28
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 28
 
 
  1318 0058 898201   		.uleb128 0x4109
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1372 0093 13       		.uleb128 0x13
  1373 0094 00       		.byte	0
  1374 0095 00       		.byte	0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 29
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 29
 
 
  1375 0096 0B       		.uleb128 0xb
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1429 00d2 3B       		.uleb128 0x3b
  1430 00d3 0B       		.uleb128 0xb
  1431 00d4 49       		.uleb128 0x49
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 30
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 30
 
 
  1432 00d5 13       		.uleb128 0x13
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1486 010c 49       		.uleb128 0x49
  1487 010d 13       		.uleb128 0x13
  1488 010e 02       		.uleb128 0x2
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 31
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 31
 
 
  1489 010f 18       		.uleb128 0x18
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1543 0145 00       		.byte	0
  1544 0146 16       		.uleb128 0x16
  1545 0147 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 32
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 32
 
 
  1546 0148 00       		.byte	0
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1600 0058 9E       		.byte	0x9e
  1601 0059 08       		.uleb128 0x8
  1602 005a 00000000 		.4byte	0
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 33
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 33
 
 
  1603 005e 0000F0BF 		.4byte	0xbff00000
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1657 0014 1C000000 		.4byte	.LFE64-.LFB64
  1658 0018 00000000 		.4byte	.LFB65
  1659 001c 0C000000 		.4byte	.LFE65-.LFB65
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 34
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 34
 
 
  1660 0020 00000000 		.4byte	.LFB66
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1710 0000 436F756E 		.ascii	"Counter_Enable\000"
  1710      7465725F 
  1710      456E6162 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 35
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 35
 
 
  1710      6C6500
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1732              	.LASF60:
  1733 00c6 6D656173 		.ascii	"measure_distance\000"
  1733      7572655F 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 36
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 36
 
 
  1733      64697374 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1753 01ca 696E6974 		.ascii	"init_DS_hardware\000"
  1753      5F44535F 
  1753      68617264 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 37
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 37
 
 
  1753      77617265 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1774              	.LASF8:
  1775 027a 6C6F6E67 		.ascii	"long unsigned int\000"
  1775      20756E73 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 38
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 38
 
 
  1775      69676E65 
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1797      325F7400 
  1798              	.LASF19:
  1799 032d 73697A65 		.ascii	"sizetype\000"
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 39
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 39
 
 
  1799      74797065 
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 1
  1825 03c0 6765745F 		.ascii	"get_timerFlag\000"
  1825      74696D65 
  1825      72466C61 
-ARM GAS  C:\Users\peter\AppData\Local\Temp\ccpb8id6.s 			page 40
+ARM GAS  C:\Users\peter\AppData\Local\Temp\ccIftYDb.s 			page 40
 
 
  1825      6700
