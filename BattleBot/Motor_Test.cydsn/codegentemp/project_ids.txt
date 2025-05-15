@@ -1,6 +1,6 @@
-C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\Motor_Test.cyprj|6ee36069-4888-49b2-91ad-41cfb352b953
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|c1933f2a-4fa1-497f-9205-eaa0915a6cbc
-C:\Users\peter\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|d0e35326-8e0f-40c8-aa69-d26bfae7177f
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|f4972693-04f0-4439-8a1d-6160be258131
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|21c0e546-56b2-4a98-bd0f-3238f29d5681
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|ece1fe1b-4c03-4778-a7d7-6688f40f8068
+C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\Motor_Test.cyprj|961804f0-ba7d-4b88-bbc8-a10fd5bc2148
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|5512e190-902a-495c-bd4c-bd9c5b933149
+C:\Users\peter\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|df88d28c-139e-44a1-8ca5-b02d3e51947f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|c4772a18-2495-416b-91d7-5224ae3dfacc
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|330bf448-9dd5-4261-bb1c-8dfda4d512cf
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|cac3a879-1a7e-4ee6-b161-0c8c099ebe48

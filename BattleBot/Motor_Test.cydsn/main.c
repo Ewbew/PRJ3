@@ -7,7 +7,7 @@
 #include "control.h"
 #include "distanceSensor.h" // Include the distance sensor module
 
-#define obstacle_distance_threshold 30.0
+#define obstacle_distance_threshold 15.0
 
 int main(void)
 {
@@ -45,6 +45,8 @@ int main(void)
 
     splash(); // Print splash message for distance sensor
 
+    int obstruction_counter = 0; // Static variable to count consecutive obstructions
+
     for (;;)
     {
         if (get_timerFlag()) { // Check if the timer has triggered
@@ -58,16 +60,21 @@ int main(void)
             UART_PC_PutString(distanceStr); // Print the distance to the UART
             CyDelay(10);
             
+            // Robust obstruction logic
+            static const int obstruction_threshold = 5;
 
-            // Check if the distance is below the threshold
-            if (distance >= 0 && distance < obstacle_distance_threshold) { // Example threshold: 30 cm
-                set_obstruct(1); // Set obstruct to true
-                UART_PC_PutString("Obstacle detected\r\n");
-                set_speedA(-30); // Set left motor speed
-                set_speedB(30);  // Set right motor speed
+            // Only treat as obstruction if distance is valid and below threshold
+            if (distance >= 0 && distance < obstacle_distance_threshold) {
+                obstruction_counter++;
+                if (obstruction_counter >= obstruction_threshold) {
+                    set_obstruct(1); // Set obstruct to true
+                    UART_PC_PutString("Obstacle detected\r\n");
+                    set_speedA(-15); // Set left motor speed
+                    set_speedB(15);  // Set right motor speed
+                }
             } else {
+                obstruction_counter = 0;
                 set_obstruct(0); // Set obstruct to false
-                 // Debugging message
                 UART_PC_PutString("No obstacle detected\r\n");
             }
         }

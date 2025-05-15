@@ -168,7 +168,7 @@ void Timer_Stepper_Wakeup(void)        ;
 *    Initialial Parameter Constants
 ***************************************/
 
-#define Timer_Stepper_INIT_PERIOD             199u
+#define Timer_Stepper_INIT_PERIOD             99u
 #define Timer_Stepper_INIT_CAPTURE_MODE       ((uint8)((uint8)0u << Timer_Stepper_CTRL_CAP_MODE_SHIFT))
 #define Timer_Stepper_INIT_TRIGGER_MODE       ((uint8)((uint8)0u << Timer_Stepper_CTRL_TRIG_MODE_SHIFT))
 #if (Timer_Stepper_UsingFixedFunction)
