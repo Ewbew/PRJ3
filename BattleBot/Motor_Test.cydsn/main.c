@@ -33,7 +33,7 @@ int main(void)
     PWM_A_Start();
     PWM_B_Start();
         // Initialize hardware for distance sensor
-    init_DS_hardware(); // UNCOMMENT WHEN DONE DEBUGGING
+    //init_DS_hardware(); // UNCOMMENT WHEN DONE DEBUGGING
     UART_PC_PutString("Starting program...\r\n");
     // Optionally initialize motor enable signals if needed:
     // A_ENABLE_Write(0);
@@ -62,7 +62,7 @@ int main(void)
             CyDelay(10);
             
             // Robust obstruction logic
-            static const int obstruction_threshold = 7;
+            static const int obstruction_threshold = 5;
 
             // Only treat as obstruction if distance is valid and below threshold
             if (distance >= 0 && distance < obstacle_distance_threshold) {

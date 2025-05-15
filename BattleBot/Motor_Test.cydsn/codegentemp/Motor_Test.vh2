@@ -2,7 +2,7 @@
 --	Conversion of Motor_Test.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu May 15 09:31:26 2025
+--	Thu May 15 10:21:17 2025
 --
 
 USE cypress.cypress.all;
@@ -2034,6 +2034,16 @@ SIGNAL tmpFB_0__fireStepPin_net_0 : bit;
 SIGNAL tmpIO_0__fireStepPin_net_0 : bit;
 TERMINAL tmpSIOVREF__fireStepPin_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__fireStepPin_net_0 : bit;
+SIGNAL Net_716 : bit;
+SIGNAL Net_714 : bit;
+SIGNAL \Timer_Comm:Net_260\ : bit;
+SIGNAL \Timer_Comm:Net_266\ : bit;
+SIGNAL \Timer_Comm:Net_51\ : bit;
+SIGNAL \Timer_Comm:Net_261\ : bit;
+SIGNAL \Timer_Comm:Net_57\ : bit;
+SIGNAL Net_719 : bit;
+SIGNAL Net_724 : bit;
+SIGNAL \Timer_Comm:Net_102\ : bit;
 SIGNAL \UART_PC:BUART:reset_reg\\D\ : bit;
 SIGNAL \UART_PC:BUART:txn\\D\ : bit;
 SIGNAL \UART_PC:BUART:tx_state_1\\D\ : bit;
@@ -4351,7 +4361,7 @@ isr_timer_DS:cy_isr_v1_0
 		tc=>Net_698,
 		compare=>\Timer_DS:Net_261\,
 		interrupt=>\Timer_DS:Net_57\);
-Clock_5kHz:cy_clock_v1_0
+Clock_timer_DS:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"c3e6aaac-ac76-46d9-b787-56e482d6993c",
 		source_clock_id=>"",
@@ -4840,6 +4850,30 @@ fireStepPin:cy_psoc3_pins_v1_10
 		out_clock_en=>one,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__fireStepPin_net_0);
+\Timer_Comm:TimerHW\:cy_psoc3_timer_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(clock=>Net_714,
+		kill=>zero,
+		enable=>one,
+		capture=>zero,
+		timer_reset=>zero,
+		tc=>Net_724,
+		compare=>\Timer_Comm:Net_261\,
+		interrupt=>\Timer_Comm:Net_57\);
+Clock_comm_timeout:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"0b90dacb-5ba5-41c2-a3d6-61d7994ae816",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"10000000000000",
+		is_direct=>'0',
+		is_digital=>'1')
+	PORT MAP(clock_out=>Net_714,
+		dig_domain_out=>open);
+isr_comm_timeout:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_724);
 \UART_PC:BUART:reset_reg\:cy_dff
 	PORT MAP(d=>zero,
 		clk=>\UART_PC:BUART:clock_op\,

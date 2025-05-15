@@ -1,5 +1,5 @@
 -- Project:   Motor_Test
--- Generated: 05/15/2025 09:31:26
+-- Generated: 05/15/2025 10:21:18
 -- PSoC Creator  4.4
 
 ENTITY Motor_Test IS
@@ -88,7 +88,11 @@ ARCHITECTURE __DEFAULT__ OF Motor_Test IS
     ATTRIBUTE udbclken_assigned OF Net_702 : SIGNAL IS "True";
     ATTRIBUTE global_signal OF Net_702 : SIGNAL IS true;
     SIGNAL Net_702_local : bit;
+    SIGNAL Net_714 : bit;
+    ATTRIBUTE global_signal OF Net_714 : SIGNAL IS true;
+    SIGNAL Net_714_local : bit;
     SIGNAL Net_72 : bit;
+    SIGNAL Net_724 : bit;
     SIGNAL Net_8 : bit;
     SIGNAL Rx_BT(0)__PA : bit;
     SIGNAL Rx_PC(0)__PA : bit;
@@ -163,6 +167,8 @@ ARCHITECTURE __DEFAULT__ OF Motor_Test IS
     SIGNAL \PWM_B:PWMUDB:status_2\ : bit;
     SIGNAL \PWM_B:PWMUDB:status_3\ : bit;
     SIGNAL \PWM_B:PWMUDB:tc_i\ : bit;
+    SIGNAL \Timer_Comm:Net_261\ : bit;
+    SIGNAL \Timer_Comm:Net_57\ : bit;
     SIGNAL \Timer_DS:Net_261\ : bit;
     SIGNAL \Timer_DS:Net_57\ : bit;
     SIGNAL \Timer_Stepper:TimerUDB:control_0\ : bit;
@@ -270,6 +276,7 @@ ARCHITECTURE __DEFAULT__ OF Motor_Test IS
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
     SIGNAL \ClockBlock.dclk_glb_ff_6__sig\ : bit;
+    SIGNAL \ClockBlock.dclk_glb_ff_7__sig\ : bit;
     SIGNAL \Counter:CounterUDB:sC16:counterdp:u0.ce0__sig\ : bit;
     SIGNAL \Counter:CounterUDB:sC16:counterdp:u0.cl0__sig\ : bit;
     SIGNAL \Counter:CounterUDB:sC16:counterdp:u0.z0__sig\ : bit;
@@ -783,9 +790,12 @@ BEGIN
             dclk_4 => Net_191_local,
             dclk_glb_5 => Net_702,
             dclk_5 => Net_702_local,
-            dclk_glb_6 => Net_682,
-            dclk_6 => Net_682_local,
-            dclk_glb_ff_6 => \ClockBlock.dclk_glb_ff_6__sig\);
+            dclk_glb_6 => Net_714,
+            dclk_6 => Net_714_local,
+            dclk_glb_7 => Net_682,
+            dclk_7 => Net_682_local,
+            dclk_glb_ff_6 => \ClockBlock.dclk_glb_ff_6__sig\,
+            dclk_glb_ff_7 => \ClockBlock.dclk_glb_ff_7__sig\);
 
     Rx_PC:logicalport
         GENERIC MAP(
@@ -3214,7 +3224,7 @@ BEGIN
         GENERIC MAP(
             cy_registers => "")
         PORT MAP(
-            clock => \ClockBlock.dclk_glb_ff_6__sig\,
+            clock => \ClockBlock.dclk_glb_ff_7__sig\,
             kill => open,
             enable => __ONE__,
             capture => open,
@@ -3303,6 +3313,27 @@ BEGIN
             is_nmi => 0)
         PORT MAP(
             interrupt => Net_176,
+            clock => ClockBlock_BUS_CLK);
+
+    \Timer_Comm:TimerHW\:timercell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            clock => \ClockBlock.dclk_glb_ff_6__sig\,
+            kill => open,
+            enable => __ONE__,
+            capture => open,
+            timer_reset => open,
+            tc => Net_724,
+            cmp => \Timer_Comm:Net_261\,
+            irq => \Timer_Comm:Net_57\);
+
+    isr_comm_timeout:interrupt
+        GENERIC MAP(
+            int_type => "10",
+            is_nmi => 0)
+        PORT MAP(
+            interrupt => Net_724,
             clock => ClockBlock_BUS_CLK);
 
     \UART_PC:BUART:txn\:macrocell

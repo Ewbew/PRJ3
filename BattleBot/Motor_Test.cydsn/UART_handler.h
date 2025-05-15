@@ -8,9 +8,11 @@
 // Prototype for the UART RX interrupt service routine for both UART to PC and to Bluetooth
 CY_ISR_PROTO(ISR_UART_rx_handler_PC);
 CY_ISR_PROTO(ISR_UART_rx_handler_BT);
+CY_ISR_PROTO(ISR_comm_timeout_tc_handler);
 
 // Function to handle received bytes
 // This function will be called from the ISR for the PC to process the received byte
 void handleByteReceived(uint8_t byteReceived);
+void init_comm_timer(void);
 
 #endif /* UART_HANDLER_H */

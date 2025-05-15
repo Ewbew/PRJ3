@@ -78,8 +78,8 @@
   <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_DS.c" value="SOURCE_C;CortexM3;;;;Timer_DS" />
   <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_DS.h" value="HEADER;;;;;Timer_DS" />
   <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_DS_PM.c" value="SOURCE_C;CortexM3;;;;Timer_DS" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_5kHz.c" value="SOURCE_C;CortexM3;;;;Clock_5kHz" />
-  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_5kHz.h" value="HEADER;;;;;Clock_5kHz" />
+  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_timer_DS.c" value="SOURCE_C;CortexM3;;;;Clock_timer_DS" />
+  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_timer_DS.h" value="HEADER;;;;;Clock_timer_DS" />
   <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\dialDirPin_aliases.h" value="HEADER;;;;;dialDirPin" />
   <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\dialDirPin.c" value="SOURCE_C;CortexM3;;;;dialDirPin" />
   <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\dialDirPin.h" value="HEADER;;;;;dialDirPin" />
@@ -102,6 +102,13 @@
   <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\fireStepPin_aliases.h" value="HEADER;;;;;fireStepPin" />
   <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\fireStepPin.c" value="SOURCE_C;CortexM3;;;;fireStepPin" />
   <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\fireStepPin.h" value="HEADER;;;;;fireStepPin" />
+  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_Comm.c" value="SOURCE_C;CortexM3;;;;Timer_Comm" />
+  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_Comm.h" value="HEADER;;;;;Timer_Comm" />
+  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Timer_Comm_PM.c" value="SOURCE_C;CortexM3;;;;Timer_Comm" />
+  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_comm_timeout.c" value="SOURCE_C;CortexM3;;;;Clock_comm_timeout" />
+  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\Clock_comm_timeout.h" value="HEADER;;;;;Clock_comm_timeout" />
+  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_comm_timeout.c" value="SOURCE_C;CortexM3;;;;isr_comm_timeout" />
+  <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\isr_comm_timeout.h" value="HEADER;;;;;isr_comm_timeout" />
   <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_PC_IntClock" />
   <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_PC_IntClock.h" value="HEADER;;;;;UART_PC_IntClock" />
   <file name="C:\Users\peter\Documents\GitHub\PRJ3\BattleBot\Motor_Test.cydsn\codegentemp\UART_BT_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_BT_IntClock" />
