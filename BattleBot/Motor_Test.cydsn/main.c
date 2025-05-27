@@ -7,7 +7,7 @@
 #include "control.h"
 #include "distanceSensor.h" // Include the distance sensor module
 
-#define obstacle_distance_threshold 15.0
+#define obstacle_distance_threshold 20.0
 
 int main(void)
 {
