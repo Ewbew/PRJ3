@@ -30,24 +30,5 @@ void set_speedA(int8_t speedA_);
  */
 void set_speedB(int8_t speedB_);
 
-/**
- * @brief Sets the direction of Motor A (deprecated or for advanced use).
- *
- * @param speedA_ Signed 8-bit value; sign determines direction.
- */
-void set_directionA(int8_t speedA_);
-
-/**
- * @brief Sets the direction of Motor B (deprecated or for advanced use).
- *
- * @param speedB_ Signed 8-bit value; sign determines direction.
- */
-void set_directionB(int8_t speedB_);
-
-/**
- * @brief Stops both motors by disabling PWM and setting all direction pins high.
- */
-void stop(void);
-
 #endif /* MOTOR_CONTROL_H */
 

@@ -2,19 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-// Stops the motors by setting all direction pins to logic high
-void stop(void)
-{
-    UART_PC_PutString("Stop \r\n");
-     // Motor A: disable PWM and force both pins high.
-    PWM_A_WriteCompare1(0);
-    PWM_A_WriteCompare2(0);
-
-    // Motor B: disable PWM and force both pins high.
-    PWM_B_WriteCompare1(0);
-    PWM_B_WriteCompare2(0);
-}
-
 void set_speedA(int8_t var1)
 {    
     uint8_t dutyCycle = (uint16_t)((abs(var1) * 255UL) / PWM_MAX_DUTY);
