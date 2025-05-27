@@ -1,0 +1,25 @@
+var class_var_handler =
+[
+    [ "VarHandler", "class_var_handler.html#a5fdf8798d29491664fa49a6e1de7c3c8", null ],
+    [ "getControlMode", "class_var_handler.html#ab2981410b067f89adb75e3554ab6ce9b", null ],
+    [ "getMessage", "class_var_handler.html#aeaf0252a04d7849e78c7e50962774d67", null ],
+    [ "getObstructionState", "class_var_handler.html#a2811be1a37bec10c9bed4012e4b5c323", null ],
+    [ "getPreparedMessage", "class_var_handler.html#af00206bc80430f90d29df0ae831d20c0", null ],
+    [ "getShootState", "class_var_handler.html#a6c52667234ba85b440b9c836d3ecd03b", null ],
+    [ "getVar1DriveMode", "class_var_handler.html#a06debb8ed38985c7ad72a1d45e290cd1", null ],
+    [ "getVar1ShootMode", "class_var_handler.html#ac233856dc424bb8f98384d990371f397", null ],
+    [ "getVar2DriveMode", "class_var_handler.html#a06c1e51c4211c2e6c374448af61bb64c", null ],
+    [ "getVar2ShootMode", "class_var_handler.html#a8bd1ce246dd40475f69df8d54b821a15", null ],
+    [ "isLastMessageAcknowledged", "class_var_handler.html#ac7fd07f74bcb46568dd98652816d8696", null ],
+    [ "isSocketDisconnected", "class_var_handler.html#a96b29421d575b5912a8b189493c2610a", null ],
+    [ "setControlMode", "class_var_handler.html#a4f9e14f84e9a237871eab71ba11bf355", null ],
+    [ "setLastMessageAcknowledged", "class_var_handler.html#aaf9c1d16a8ba2688a69e3e1ec44cabb5", null ],
+    [ "setObstructionState", "class_var_handler.html#af1844dc4170d5cc58f8e8977a88287e6", null ],
+    [ "setPreparedMessage", "class_var_handler.html#a39e23590d6cbe6ac1f5cbe221eeaefa0", null ],
+    [ "setShootState", "class_var_handler.html#aec145eaf8e2d5635bcdf2b1cd0d8a997", null ],
+    [ "setSocketDisconnected", "class_var_handler.html#a6271d0f59349cf057531f2752bf8e273", null ],
+    [ "setVar1DriveMode", "class_var_handler.html#a3b1fed8dacd46f61132f2c606b007ec7", null ],
+    [ "setVar1ShootMode", "class_var_handler.html#a92d66aa287218ef182d105eccd395e36", null ],
+    [ "setVar2DriveMode", "class_var_handler.html#af5e0e9851eec8dd49f8a49cab0d16159", null ],
+    [ "setVar2ShootMode", "class_var_handler.html#a061053137fe4a4d7aaa3839a23f8a5f2", null ]
+];
