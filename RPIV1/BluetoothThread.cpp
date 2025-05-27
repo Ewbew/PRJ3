@@ -7,7 +7,7 @@
 #include <thread>
 #include <atomic>
 #include <chrono>
-//https://people.csail.mit.edu/albert/bluez-intro/c33.html
+
 using namespace std;
 
 extern atomic<bool> keepRunning;
