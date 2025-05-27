@@ -28,28 +28,12 @@ CY_ISR(Stepper_Timer_ISR_Handler)
     }
 
     // Fire
-    if (fireStepsRemaining > 0)
-    {
-        fireStepPin_Write(1);
-        CyDelayUs(50);
-        fireStepPin_Write(0);
-        fireStepsRemaining--;
-    }
-    else if (fireInProgress && fireStepPhase == 0)
-    {
-        fireStepPhase = 1;
-        fireDirection = -1;
-        fireDirPin_Write(0);
-        fireStepsRemaining = FIRE_MAX_STEPS;
-    }
-    else if (fireInProgress && fireStepPhase == 1)
-    {
-        fireInProgress = 0;
-    }
+   firingStepperTick();
 
     // Stop timer hvis alt er færdigt
     if (dialStepsRemaining == 0 && angleStepsRemaining == 0 && fireStepsRemaining == 0 && !fireInProgress)
     {
+        
         Timer_1_Stop();
     }
 }

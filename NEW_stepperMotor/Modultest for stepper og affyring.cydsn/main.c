@@ -24,13 +24,15 @@ int main(void)
         setStepperTargets(0, 0);      //
         CyDelay(500);
 
-        setStepperTargets(50, 50);      //
+        setStepperTargets(-50, 15);      //
         CyDelay(1500);
         
         setStepperTargets(25, 25);      // 
         CyDelay(1500);
 
         fireMechanism();                 // Kør affyringssekvens (frem og tilbage)
+        CyDelay(500);
+        fireMechanism();
         CyDelay(3000);
     }
 }

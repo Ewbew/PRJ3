@@ -8,7 +8,7 @@
 #define DIAL_MIN_POSITION -100
 #define ANGLE_MAX_POSITION 50
 #define ANGLE_MIN_POSITION 0
-#define TIMER_PERIOD 25
+#define TIMER_PERIOD_STEPPER 25
 
 // Variabler tilgængelige for ISR
 extern volatile int8 dialCurrentPosition;

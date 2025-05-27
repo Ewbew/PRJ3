@@ -512,7 +512,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 [!provide]                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00000000      0x8ce
+.text           0x00000000      0x8de
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -529,215 +529,216 @@ END GROUP
                 0x00000001                ASSERT ((((appl_start + .) <= 0x10000) || 0x1), DMA Init must be within the first 64k of flash)
  *(.text .text.* .gnu.linkonce.t.*)
  .text          0x00000028       0x5c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- .text.main     0x00000084       0x70 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .text.main     0x00000084       0x7c .\CortexM3\ARM_GCC_541\Debug\main.o
                 0x00000084                main
  .text.setStepperTargets
-                0x000000f4       0xc8 .\CortexM3\ARM_GCC_541\Debug\stepper.o
-                0x000000f4                setStepperTargets
+                0x00000100       0xc8 .\CortexM3\ARM_GCC_541\Debug\stepper.o
+                0x00000100                setStepperTargets
  .text.initStepperPins
-                0x000001bc       0x1c .\CortexM3\ARM_GCC_541\Debug\stepper.o
-                0x000001bc                initStepperPins
+                0x000001c8       0x1c .\CortexM3\ARM_GCC_541\Debug\stepper.o
+                0x000001c8                initStepperPins
  .text.fireMechanism
-                0x000001d8       0x38 .\CortexM3\ARM_GCC_541\Debug\firing.o
-                0x000001d8                fireMechanism
+                0x000001e4       0x38 .\CortexM3\ARM_GCC_541\Debug\firing.o
+                0x000001e4                fireMechanism
  .text.initFiringPins
-                0x00000210       0x10 .\CortexM3\ARM_GCC_541\Debug\firing.o
-                0x00000210                initFiringPins
+                0x0000021c       0x10 .\CortexM3\ARM_GCC_541\Debug\firing.o
+                0x0000021c                initFiringPins
  .text.Stepper_Timer_ISR_Handler
-                0x00000220      0x13c .\CortexM3\ARM_GCC_541\Debug\control.o
-                0x00000220                Stepper_Timer_ISR_Handler
+                0x0000022c      0x13c .\CortexM3\ARM_GCC_541\Debug\control.o
+                0x0000022c                Stepper_Timer_ISR_Handler
  .text.initControlTimer
-                0x0000035c       0x18 .\CortexM3\ARM_GCC_541\Debug\control.o
-                0x0000035c                initControlTimer
+                0x00000368       0x18 .\CortexM3\ARM_GCC_541\Debug\control.o
+                0x00000368                initControlTimer
  .text.CyClockStartupError
-                0x00000374        0x4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000380        0x4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.cfg_write_bytes32
-                0x00000378       0x34 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000384       0x34 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.AnalogSetDefault
-                0x000003ac       0x28 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000003b8       0x28 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYMEMZERO
-                0x000003d4        0xc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000003e0        0xc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.ClockSetup
-                0x000003e0       0xb8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000003ec       0xb8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYCONFIGCPY
-                0x00000498        0x8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000004a4        0x8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.cyfitter_cfg
-                0x000004a0       0xf0 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x000004a0                cyfitter_cfg
+                0x000004ac       0xf0 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000004ac                cyfitter_cfg
  .text.IntDefaultHandler
-                0x00000590       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00000590                IntDefaultHandler
- .text.Start_c  0x000005a0       0x4c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x000005a0                Start_c
+                0x0000059c       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x0000059c                IntDefaultHandler
+ .text.Start_c  0x000005ac       0x4c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x000005ac                Start_c
  .text.initialize_psoc
-                0x000005ec       0x68 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x000005ec                initialize_psoc
+                0x000005f8       0x68 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x000005f8                initialize_psoc
  .text.dialDirPin_Write
-                0x00000654       0x18 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(dialDirPin.o)
-                0x00000654                dialDirPin_Write
+                0x00000660       0x18 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(dialDirPin.o)
+                0x00000660                dialDirPin_Write
  .text.dialStepPin_Write
-                0x0000066c       0x18 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(dialStepPin.o)
-                0x0000066c                dialStepPin_Write
+                0x00000678       0x18 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(dialStepPin.o)
+                0x00000678                dialStepPin_Write
  .text.Timer_1_Enable
-                0x00000684       0x10 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
-                0x00000684                Timer_1_Enable
+                0x00000690       0x10 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
+                0x00000690                Timer_1_Enable
  .text.Timer_1_Stop
-                0x00000694       0x10 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
-                0x00000694                Timer_1_Stop
+                0x000006a0       0x10 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
+                0x000006a0                Timer_1_Stop
  .text.Timer_1_SetInterruptMode
-                0x000006a4        0xc .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
-                0x000006a4                Timer_1_SetInterruptMode
- .text.Timer_1_ReadStatusRegister
                 0x000006b0        0xc .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
-                0x000006b0                Timer_1_ReadStatusRegister
- .text.Timer_1_WritePeriod
+                0x000006b0                Timer_1_SetInterruptMode
+ .text.Timer_1_ReadStatusRegister
                 0x000006bc        0xc .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
-                0x000006bc                Timer_1_WritePeriod
- .text.Timer_1_ReadCapture
+                0x000006bc                Timer_1_ReadStatusRegister
+ .text.Timer_1_WritePeriod
                 0x000006c8        0xc .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
-                0x000006c8                Timer_1_ReadCapture
- .text.Timer_1_WriteCounter
+                0x000006c8                Timer_1_WritePeriod
+ .text.Timer_1_ReadCapture
                 0x000006d4        0xc .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
-                0x000006d4                Timer_1_WriteCounter
+                0x000006d4                Timer_1_ReadCapture
+ .text.Timer_1_WriteCounter
+                0x000006e0        0xc .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
+                0x000006e0                Timer_1_WriteCounter
  .text.Timer_1_ClearFIFO
-                0x000006e0       0x14 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
-                0x000006e0                Timer_1_ClearFIFO
+                0x000006ec       0x14 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
+                0x000006ec                Timer_1_ClearFIFO
  .text.Timer_1_Init
-                0x000006f4       0x30 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
-                0x000006f4                Timer_1_Init
+                0x00000700       0x30 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
+                0x00000700                Timer_1_Init
  .text.Timer_1_Start
-                0x00000724       0x1c .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
-                0x00000724                Timer_1_Start
+                0x00000730       0x1c .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
+                0x00000730                Timer_1_Start
  .text.angleDirPin_Write
-                0x00000740       0x18 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(angleDirPin.o)
-                0x00000740                angleDirPin_Write
+                0x0000074c       0x18 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(angleDirPin.o)
+                0x0000074c                angleDirPin_Write
  .text.angleStepPin_Write
-                0x00000758       0x18 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(angleStepPin.o)
-                0x00000758                angleStepPin_Write
- .text.CyDelay  0x00000770       0x2c .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyLib.o)
-                0x00000770                CyDelay
+                0x00000764       0x18 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(angleStepPin.o)
+                0x00000764                angleStepPin_Write
+ .text.CyDelay  0x0000077c       0x2c .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyLib.o)
+                0x0000077c                CyDelay
  .text.CyDelayUs
-                0x0000079c       0x14 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyLib.o)
-                0x0000079c                CyDelayUs
+                0x000007a8       0x14 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyLib.o)
+                0x000007a8                CyDelayUs
  .text.fireDirPin_Write
-                0x000007b0       0x18 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(fireDirPin.o)
-                0x000007b0                fireDirPin_Write
+                0x000007bc       0x18 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(fireDirPin.o)
+                0x000007bc                fireDirPin_Write
  .text.fireStepPin_Write
-                0x000007c8       0x18 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(fireStepPin.o)
-                0x000007c8                fireStepPin_Write
+                0x000007d4       0x18 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(fireStepPin.o)
+                0x000007d4                fireStepPin_Write
  .text.stepper_isr_timer_SetVector
-                0x000007e0        0xc .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(stepper_isr_timer.o)
-                0x000007e0                stepper_isr_timer_SetVector
+                0x000007ec        0xc .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(stepper_isr_timer.o)
+                0x000007ec                stepper_isr_timer_SetVector
  .text.stepper_isr_timer_SetPriority
-                0x000007ec       0x10 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(stepper_isr_timer.o)
-                0x000007ec                stepper_isr_timer_SetPriority
+                0x000007f8       0x10 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(stepper_isr_timer.o)
+                0x000007f8                stepper_isr_timer_SetPriority
  .text.stepper_isr_timer_Enable
-                0x000007fc        0xc .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(stepper_isr_timer.o)
-                0x000007fc                stepper_isr_timer_Enable
- .text.stepper_isr_timer_Disable
                 0x00000808        0xc .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(stepper_isr_timer.o)
-                0x00000808                stepper_isr_timer_Disable
+                0x00000808                stepper_isr_timer_Enable
+ .text.stepper_isr_timer_Disable
+                0x00000814        0xc .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(stepper_isr_timer.o)
+                0x00000814                stepper_isr_timer_Disable
  .text.stepper_isr_timer_StartEx
-                0x00000814       0x1c .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(stepper_isr_timer.o)
-                0x00000814                stepper_isr_timer_StartEx
- .text          0x00000830       0x20 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyBootAsmGnu.o)
-                0x00000830                CyDelayCycles
-                0x00000840                CyEnterCriticalSection
-                0x00000848                CyExitCriticalSection
- .text.__errno  0x00000850        0xc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
-                0x00000850                __errno
+                0x00000820       0x1c .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(stepper_isr_timer.o)
+                0x00000820                stepper_isr_timer_StartEx
+ *fill*         0x0000083c        0x4 
+ .text          0x00000840       0x20 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyBootAsmGnu.o)
+                0x00000840                CyDelayCycles
+                0x00000850                CyEnterCriticalSection
+                0x00000858                CyExitCriticalSection
+ .text.__errno  0x00000860        0xc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x00000860                __errno
  .text.__libc_init_array
-                0x0000085c       0x4c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
-                0x0000085c                __libc_init_array
- .text.memcpy   0x000008a8       0x16 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
-                0x000008a8                memcpy
- .text.memset   0x000008be       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
-                0x000008be                memset
+                0x0000086c       0x4c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x0000086c                __libc_init_array
+ .text.memcpy   0x000008b8       0x16 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x000008b8                memcpy
+ .text.memset   0x000008ce       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x000008ce                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x000008ce        0x0 linker stubs
+ .glue_7t       0x000008de        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x000008ce        0x0 linker stubs
+ .glue_7        0x000008de        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x000008ce        0x0 linker stubs
+ .vfp11_veneer  0x000008de        0x0 linker stubs
  *(.bootloader)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x000008d0        0x0
- .v4_bx         0x000008d0        0x0 linker stubs
+.v4_bx          0x000008e0        0x0
+ .v4_bx         0x000008e0        0x0 linker stubs
 
-.iplt           0x000008d0        0x0
- .iplt          0x000008d0        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.iplt           0x000008e0        0x0
+ .iplt          0x000008e0        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x000008d0        0x4
+.eh_frame       0x000008e0        0x4
  *(.eh_frame)
- .eh_frame      0x000008d0        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- .eh_frame      0x000008d0        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .eh_frame      0x000008e0        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .eh_frame      0x000008e0        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
                 [!provide]                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000008d4                __exidx_end = .
+                0x000008e4                __exidx_end = .
 
-.rodata         0x000008d4       0x6c
+.rodata         0x000008e4       0x6c
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x000008d4       0x36 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .rodata        0x000008e4       0x36 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .rodata.str1.1
-                0x0000090a        0x2 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
-                0x0000090c                . = ALIGN (0x4)
+                0x0000091a        0x2 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x0000091c                . = ALIGN (0x4)
  *(.init)
- .init          0x0000090c        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x0000090c                _init
- .init          0x00000910        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
-                0x00000918                . = ALIGN (0x4)
-                0x00000918                __preinit_array_start = .
+ .init          0x0000091c        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x0000091c                _init
+ .init          0x00000920        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x00000928                . = ALIGN (0x4)
+                0x00000928                __preinit_array_start = .
  *(.preinit_array)
-                0x00000918                __preinit_array_end = .
-                0x00000918                . = ALIGN (0x4)
-                0x00000918                __init_array_start = .
+                0x00000928                __preinit_array_end = .
+                0x00000928                . = ALIGN (0x4)
+                0x00000928                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00000918        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- .init_array    0x0000091c        0x4 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00000920                __init_array_end = .
-                0x00000920                . = ALIGN (0x4)
- *(.fini)
- .fini          0x00000920        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x00000920                _fini
- .fini          0x00000924        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
-                0x0000092c                . = ALIGN (0x4)
-                0x0000092c                __fini_array_start = .
- *(.fini_array)
- .fini_array    0x0000092c        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- *(SORT(.fini_array.*))
-                0x00000930                __fini_array_end = .
+ .init_array    0x00000928        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .init_array    0x0000092c        0x4 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000930                __init_array_end = .
                 0x00000930                . = ALIGN (0x4)
+ *(.fini)
+ .fini          0x00000930        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x00000930                _fini
+ .fini          0x00000934        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x0000093c                . = ALIGN (0x4)
+                0x0000093c                __fini_array_start = .
+ *(.fini_array)
+ .fini_array    0x0000093c        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x00000940                __fini_array_end = .
+                0x00000940                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00000930                . = ALIGN (0x4)
+                0x00000940                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x00000930                . = ALIGN (0x4)
-                0x00000930                __cy_regions = .
-                0x00000930        0x4 LONG 0x940 __cy_region_init_ram
-                0x00000934        0x4 LONG 0x1fff80c8 __cy_region_start_data
-                0x00000938        0x4 LONG 0x80 __cy_region_init_size_ram
-                0x0000093c        0x4 LONG 0x28 __cy_region_zero_size_ram
-                0x00000940                __cy_regions_end = .
-                0x00000940                . = ALIGN (0x8)
-                0x00000940                _etext = .
+                0x00000940                . = ALIGN (0x4)
+                0x00000940                __cy_regions = .
+                0x00000940        0x4 LONG 0x950 __cy_region_init_ram
+                0x00000944        0x4 LONG 0x1fff80c8 __cy_region_start_data
+                0x00000948        0x4 LONG 0x80 __cy_region_init_size_ram
+                0x0000094c        0x4 LONG 0x28 __cy_region_zero_size_ram
+                0x00000950                __cy_regions_end = .
+                0x00000950                . = ALIGN (0x8)
+                0x00000950                _etext = .
 
 .cy_checksum_exclude
-                0x00000940        0x0
+                0x00000950        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x1fff8000       0xc0
@@ -751,7 +752,7 @@ END GROUP
  .noinit        0x1fff80c0        0x1 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyLib.o)
                 0x1fff80c0                CyResetStatus
 
-.data           0x1fff80c8       0x80 load address 0x00000940
+.data           0x1fff80c8       0x80 load address 0x00000950
                 0x1fff80c8                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff80c8        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
@@ -781,10 +782,10 @@ END GROUP
  *(.ram)
                 0x1fff8148                _edata = .
 
-.igot.plt       0x1fff8148        0x0 load address 0x000009c0
+.igot.plt       0x1fff8148        0x0 load address 0x000009d0
  .igot.plt      0x1fff8148        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
-.bss            0x1fff8148       0x28 load address 0x000009c0
+.bss            0x1fff8148       0x28 load address 0x000009d0
                 0x1fff8148                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -808,11 +809,11 @@ END GROUP
                 0x1fff8170                __end = .
                 0x1fff8170                PROVIDE (end, .)
                 0x1fff8170                PROVIDE (__bss_end__, .)
-                0x00000940                __cy_region_init_ram = LOADADDR (.data)
+                0x00000950                __cy_region_init_ram = LOADADDR (.data)
                 0x00000080                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x00000028                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x1fff8170       0x80 load address 0x000009c0
+.heap           0x1fff8170       0x80 load address 0x000009d0
                 0x1fff8170                . = _end
                 0x1fff81f0                . = (. + 0x80)
  *fill*         0x1fff8170       0x80 
@@ -863,8 +864,8 @@ END GROUP
  .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
                 0x90500000                cy_metadata
 
-.rel.dyn        0x000009c0        0x0 load address 0x9050000c
- .rel.iplt      0x000009c0        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.rel.dyn        0x000009d0        0x0 load address 0x9050000c
+ .rel.iplt      0x000009d0        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
 .stab
  *(.stab)
@@ -930,28 +931,28 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x49e5
+.debug_info     0x00000000     0x4a03
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x22c .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_info    0x0000022c      0x2b6 .\CortexM3\ARM_GCC_541\Debug\stepper.o
- .debug_info    0x000004e2      0x209 .\CortexM3\ARM_GCC_541\Debug\firing.o
- .debug_info    0x000006eb      0x2de .\CortexM3\ARM_GCC_541\Debug\control.o
- .debug_info    0x000009c9      0x4c9 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_info    0x00000e92      0x134 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_info    0x00000fc6      0x3bb .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_info    0x00001381      0x11f .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(dialDirPin.o)
- .debug_info    0x000014a0      0x11f .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(dialStepPin.o)
- .debug_info    0x000015bf      0x2d1 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
- .debug_info    0x00001890      0x11f .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(angleDirPin.o)
- .debug_info    0x000019af      0x11f .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(angleStepPin.o)
- .debug_info    0x00001ace     0x1374 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyLib.o)
- .debug_info    0x00002e42      0xa2a .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(cyPm.o)
- .debug_info    0x0000386c      0x11f .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(fireDirPin.o)
- .debug_info    0x0000398b      0x11f .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(fireStepPin.o)
- .debug_info    0x00003aaa      0x2d2 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(stepper_isr_timer.o)
- .debug_info    0x00003d7c       0xcc .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyBootAsmGnu.o)
- .debug_info    0x00003e48      0x64d .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyFlash.o)
- .debug_info    0x00004495      0x550 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CySpc.o)
+ .debug_info    0x00000000      0x24a .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_info    0x0000024a      0x2b6 .\CortexM3\ARM_GCC_541\Debug\stepper.o
+ .debug_info    0x00000500      0x209 .\CortexM3\ARM_GCC_541\Debug\firing.o
+ .debug_info    0x00000709      0x2de .\CortexM3\ARM_GCC_541\Debug\control.o
+ .debug_info    0x000009e7      0x4c9 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x00000eb0      0x134 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x00000fe4      0x3bb .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_info    0x0000139f      0x11f .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(dialDirPin.o)
+ .debug_info    0x000014be      0x11f .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(dialStepPin.o)
+ .debug_info    0x000015dd      0x2d1 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
+ .debug_info    0x000018ae      0x11f .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(angleDirPin.o)
+ .debug_info    0x000019cd      0x11f .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(angleStepPin.o)
+ .debug_info    0x00001aec     0x1374 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyLib.o)
+ .debug_info    0x00002e60      0xa2a .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(cyPm.o)
+ .debug_info    0x0000388a      0x11f .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(fireDirPin.o)
+ .debug_info    0x000039a9      0x11f .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(fireStepPin.o)
+ .debug_info    0x00003ac8      0x2d2 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(stepper_isr_timer.o)
+ .debug_info    0x00003d9a       0xcc .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyBootAsmGnu.o)
+ .debug_info    0x00003e66      0x64d .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyFlash.o)
+ .debug_info    0x000044b3      0x550 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CySpc.o)
 
 .debug_abbrev   0x00000000     0x14b0
  *(.debug_abbrev)
@@ -976,28 +977,28 @@ END GROUP
  .debug_abbrev  0x00001175      0x1a7 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyFlash.o)
  .debug_abbrev  0x0000131c      0x194 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CySpc.o)
 
-.debug_line     0x00000000     0x23b6
+.debug_line     0x00000000     0x23c0
  *(.debug_line)
- .debug_line    0x00000000      0x1c7 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_line    0x000001c7      0x21a .\CortexM3\ARM_GCC_541\Debug\stepper.o
- .debug_line    0x000003e1      0x1af .\CortexM3\ARM_GCC_541\Debug\firing.o
- .debug_line    0x00000590      0x23e .\CortexM3\ARM_GCC_541\Debug\control.o
- .debug_line    0x000007ce      0x1d7 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x000009a5      0x141 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x00000ae6      0x234 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_line    0x00000d1a       0x97 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(dialDirPin.o)
- .debug_line    0x00000db1       0x98 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(dialStepPin.o)
- .debug_line    0x00000e49      0x172 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
- .debug_line    0x00000fbb       0x98 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(angleDirPin.o)
- .debug_line    0x00001053       0x99 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(angleStepPin.o)
- .debug_line    0x000010ec      0x816 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyLib.o)
- .debug_line    0x00001902      0x367 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(cyPm.o)
- .debug_line    0x00001c69       0x97 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(fireDirPin.o)
- .debug_line    0x00001d00       0x98 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(fireStepPin.o)
- .debug_line    0x00001d98      0x13e .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(stepper_isr_timer.o)
- .debug_line    0x00001ed6       0x66 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyBootAsmGnu.o)
- .debug_line    0x00001f3c      0x21a .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyFlash.o)
- .debug_line    0x00002156      0x260 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CySpc.o)
+ .debug_line    0x00000000      0x1d1 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_line    0x000001d1      0x21a .\CortexM3\ARM_GCC_541\Debug\stepper.o
+ .debug_line    0x000003eb      0x1af .\CortexM3\ARM_GCC_541\Debug\firing.o
+ .debug_line    0x0000059a      0x23e .\CortexM3\ARM_GCC_541\Debug\control.o
+ .debug_line    0x000007d8      0x1d7 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x000009af      0x141 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x00000af0      0x234 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_line    0x00000d24       0x97 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(dialDirPin.o)
+ .debug_line    0x00000dbb       0x98 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(dialStepPin.o)
+ .debug_line    0x00000e53      0x172 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(Timer_1.o)
+ .debug_line    0x00000fc5       0x98 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(angleDirPin.o)
+ .debug_line    0x0000105d       0x99 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(angleStepPin.o)
+ .debug_line    0x000010f6      0x816 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyLib.o)
+ .debug_line    0x0000190c      0x367 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(cyPm.o)
+ .debug_line    0x00001c73       0x97 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(fireDirPin.o)
+ .debug_line    0x00001d0a       0x98 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(fireStepPin.o)
+ .debug_line    0x00001da2      0x13e .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(stepper_isr_timer.o)
+ .debug_line    0x00001ee0       0x66 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyBootAsmGnu.o)
+ .debug_line    0x00001f46      0x21a .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CyFlash.o)
+ .debug_line    0x00002160      0x260 .\CortexM3\ARM_GCC_541\Debug\Modultest for stepper og affyring.a(CySpc.o)
 
 .debug_frame    0x00000000     0x13ac
  *(.debug_frame)

@@ -43,10 +43,11 @@ void setStepperTargets(int8 dialTarget, int8 angleTarget)
     angleStepsRemaining = abs(delta);
     if (angleDirection > 0) ANGLE_DIR_PIN_FORWARD; else ANGLE_DIR_PIN_BACKWARD;
 
+    // Start timer hvis der er steps tilbage på nogen af motorerne
     if (dialStepsRemaining > 0 || angleStepsRemaining > 0)
     {
         Timer_1_Stop();
-        Timer_1_WritePeriod(TIMER_PERIOD);
+        Timer_1_WritePeriod(TIMER_PERIOD_STEPPER);
         Timer_1_WriteCounter(0);
         Timer_1_Start();
     }
