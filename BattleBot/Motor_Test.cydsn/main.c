@@ -11,22 +11,17 @@
 
 int main(void)
 {
-    CyGlobalIntEnable;  /* Enable global interrupts. */
-    splash(); // Print splash message for distance sensor
-
-    // Initialize the timer for periodic distance checks
-    // Initialiser hardware for motorer og affyring
+    // Enable global interrupts.
+    CyGlobalIntEnable;  
+    
+    // Initialize all hardware components
+        //init_comm_timer(); // Timer for communication timeout – not used in this version
+        // due to time constraints. 
+        //init_DS_hardware(); // Uncommented, since there wasn't time to 
+        // debug the distance sensor functionality.
     initStepperPins();
     initFiringPins();
     initControlTimer();
-    //init_comm_timer();
-
-    // Start the UART RX ISR and UART component
-    // TO-DO: Make the functions below into hardware start for comm and motor
-    // TO-DO: Start the main by setting the speed variables to 0 (using the set_speedX() functions)
-    // isr_uart_rx_PC_StartEx(ISR_UART_rx_handler_PC); // Removed while debugging – for some reason, 
-                                                        // an AT command was sent to the BT module
-   
     isr_uart_rx_BT_StartEx(ISR_UART_rx_handler_BT);
     UART_PC_Start();
     UART_BT_Start();
@@ -34,24 +29,14 @@ int main(void)
     set_speedB(0);
     PWM_A_Start();
     PWM_B_Start();
-        // Initialize hardware for distance sensor
-    //init_DS_hardware(); // UNCOMMENT WHEN DONE DEBUGGING
     UART_PC_PutString("Starting program...\r\n");
-    // Optionally initialize motor enable signals if needed:
-    // A_ENABLE_Write(0);
-    // B_ENABLE_Write(0);
-
-    // Print flag value
-    char flagStr[50];
-    snprintf(flagStr, sizeof(flagStr), "Flag value: %d\r\n", get_timerFlag());
-    UART_PC_PutString(flagStr); // Print the flag value to the UART
-
-    splash(); // Print splash message for distance sensor
 
     int obstruction_counter = 0; // Static variable to count consecutive obstructions
 
     for (;;)
     {
+        // Nedenstående linje er kommenteret ud, da funktionaliteten om at automatisk at undgå forhindringer
+        // var for sensitiv og forårsagede uønsket adfærd – det ville kræve en mere robust logik for at debugge dette.
         /*
         if (get_timerFlag()) { // Check if the timer has triggered
             set_timerFlag(0); // Reset the timer flag
@@ -83,7 +68,6 @@ int main(void)
             }
         }
             */
-    
-        // Other tasks can be performed here
+
     }
 }

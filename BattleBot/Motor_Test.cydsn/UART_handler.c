@@ -10,8 +10,10 @@
 #include <string.h>
 volatile uint8_t messageReceivedFlag = 0;
 
+// Interrupt service routine for communication timeout
 CY_ISR(ISR_comm_timeout_tc_handler)
 {
+    // If no message was received during the last period, stop the motors
     if (!messageReceivedFlag) {
         set_speedA(0);
         set_speedB(0);
@@ -19,6 +21,7 @@ CY_ISR(ISR_comm_timeout_tc_handler)
     messageReceivedFlag = 0; // Reset for next period
 }
 
+// Function to initialize the communication timer timeout
 void init_comm_timer(void)
 {
     Clock_comm_timeout_Start(); 
@@ -31,7 +34,7 @@ void init_comm_timer(void)
 // UART RX interrupt service routine for Bluetooth
 CY_ISR(ISR_UART_rx_handler_BT)
 {
-    static char btBuffer[50];     // Buffer for the incoming string
+    static char btBuffer[50];   
     static uint8_t index = 0;
     int temp1, temp2, tempBool;
     char tempMode;
@@ -39,8 +42,10 @@ CY_ISR(ISR_UART_rx_handler_BT)
     
     int8_t VAR1, VAR2;
 
+    // While there are bytes in the RX buffer, read them
     while (UART_BT_GetRxBufferSize() > 0)
     {
+        // Read a byte from the Bluetooth UART
         char byteReceived = UART_BT_ReadRxData();
 
         // Store the byte if we have room
@@ -49,15 +54,11 @@ CY_ISR(ISR_UART_rx_handler_BT)
             btBuffer[index++] = byteReceived;
         }
 
-        // Message is considered done if we get \n, \r, or if buffer is full
+        // Message is considered done if we receive the termination character 'X'
+        // or if the buffer is full (to prevent overflow)
         if (byteReceived == 'X' || index >= sizeof(btBuffer) - 1)
         {
-            btBuffer[index] = '\0';  // Null-terminate the string
-            
-            /* Debugging code
-            snprintf(message, sizeof(message), "[BT Response] %s\r\n", btBuffer);
-            UART_PC_PutString(message);
-            */
+            btBuffer[index] = '\0';  // Null-terminate the string            
 
             // Try to parse the format: <char>,<int>,<int>,<int>
             if (sscanf(btBuffer, "%c,%d,%d,%d", &tempMode, &temp1, &temp2, &tempBool) == 4)
@@ -65,11 +66,7 @@ CY_ISR(ISR_UART_rx_handler_BT)
                 messageReceivedFlag = 1;
                 snprintf(message, sizeof(message), "ACK,%dX", get_obstruct());
                 UART_BT_PutString(message);
-                int obstruct = get_obstruct();
-                char PC_dbg_msg[50];
-                snprintf(PC_dbg_msg, sizeof(PC_dbg_msg), "Obstruction is: %d\r\n", obstruct);
-                UART_PC_PutString(PC_dbg_msg);
-
+                
                 if (tempMode == '$') {
                     // Only allow speed setting if not obstructed
                     if (get_obstruct() == 0) {
@@ -92,6 +89,7 @@ CY_ISR(ISR_UART_rx_handler_BT)
                     // UART_PC_PutString("Turret direction and shoot mode successfully set\r\n");
                 }
             }
+            // Test code
             else if (strncmp(btBuffer, "AT+", 3) == 0)
             {
                 // It's a valid AT command or response — not a control command (used for debugging)
@@ -115,6 +113,11 @@ CY_ISR(ISR_UART_rx_handler_BT)
 }
 
 
+
+/*
+All the code below is related to the UART_PC handler, which is used to
+communicate with the PC for debugging and control purposes – not part of the main functionality.
+*/
 
 
 // UART RX interrupt service routine for PC
